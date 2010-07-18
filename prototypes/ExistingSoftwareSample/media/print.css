@@ -1,0 +1,74 @@
+body{color:#000; font: 13px Arial, Helvetica, sans-serif;}
+h1,h2,h3,h4,h5{color:#FF6600}
+a{color:#777}
+h1{font-size: 2em;}
+h2{font-size: 12pt}
+h3{font-size: 11pt}
+h4{font-size: 11pt}
+h5{font-size: 11pt}
+img, a img{border: none}
+#container{
+display: block !important;
+width:100%;
+}
+
+/* header rules */
+
+#utilities {
+display:none;
+}
+
+#utilitiesSecureFR {
+display:none;
+}
+
+#navMain {
+display:none;
+}
+
+#navSubContainer{
+display:none;
+}
+
+#breadcrumb{
+display:none;
+}
+
+#buttons{
+display:none;
+}
+#contentRight{
+display:none;
+}
+#footer{
+display:none;
+}
+
+#feature{
+display:none;
+}
+
+#homefeatures{
+display:none;
+}
+
+#contentMiddleFull{
+margin:0;
+padding:0;
+display: block !important;
+width:600px;
+}
+
+#contentFull{
+margin:0;
+padding:0;
+display: block !important;
+width:600px;
+}
+
+#contentMiddle{
+margin:0;
+padding:0;
+display: block !important;
+width:600px;
+}
