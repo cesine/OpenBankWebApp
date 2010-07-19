@@ -1,0 +1,774 @@
+P
+{
+    MARGIN-TOP: 0;
+    FONT-SIZE: 11pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+H1
+{
+    FONT-SIZE: 13pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+H2
+{
+    FONT-FAMILY: Arial
+}
+H3
+{
+    FONT-FAMILY: Arial
+}
+A
+{
+    COLOR: #000066;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: underline
+}
+BODY
+{
+    FONT-SIZE: 11pt;
+    LEFT: 0px;
+    COLOR: #000066;
+    FONT-FAMILY: Arial;
+    POSITION: static;
+    TOP: 0px
+}
+TH
+{
+    FONT-SIZE: 11pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+H4
+{
+    FONT-SIZE: 18pt;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial
+}
+A:link
+{
+    FONT-FAMILY: Arial
+    FONT-SIZE: 11pt
+}
+A:active
+{
+    FONT-FAMILY: Arial
+    FONT-SIZE: 11pt
+}
+A:visited
+{
+    FONT-FAMILY: Arial
+    FONT-SIZE: 11pt
+}
+A:hover
+{
+    FONT-FAMILY: Arial
+    FONT-SIZE: 11pt
+}
+UL
+{
+    FONT-SIZE: 11pt;
+    FONT-FAMILY: Arial
+}
+LI
+{
+    FONT-SIZE: 11pt;
+    FONT-FAMILY: Arial
+}
+.pageheader
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 13pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+.subheader
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+.footertext
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+.orangetitle
+{
+    FONT-SIZE: 12pt;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+.newtext
+{
+    FONT-SIZE: 11pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+.errormessage
+{
+    FONT-FAMILY: Arial
+}
+.boldorangetext
+{
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+A.cdicmainpage
+{
+    FONT-SIZE: 9pt;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+A.cdicmainpage:link
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial
+}
+A.cdicmainpage:visited
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial
+}
+A.cdicmainpage:hover
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial
+}
+A.mainpage
+{
+    FONT-SIZE: 11pt;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+A.mainpage:link
+{
+    FONT-SIZE: 11pt;
+    FONT-FAMILY: Arial
+}
+A.mainpage:visited
+{
+    FONT-SIZE: 11pt;
+    FONT-FAMILY: Arial
+}
+A.mainpage:hover
+{
+    FONT-SIZE: 11pt;
+    FONT-FAMILY: Arial
+}
+TD.pageheader
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 13pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+TD
+{
+    FONT-SIZE: 11pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+.OrangeBG
+{
+    COLOR: #ffffff;
+    BACKGROUND-COLOR: #ff6600
+}
+.BlueBG
+{
+    COLOR: #ffffff;
+    BACKGROUND-COLOR: #000066
+}
+.WhiteBG
+{
+    COLOR: #000066;
+    BACKGROUND-COLOR: #ffffff
+}
+.Orange
+{
+    COLOR: #ff6600
+}
+.OrangeSmall
+{
+    FONT-SIZE: 10px;
+    COLOR: #ff6600
+}
+.yellowBG
+{
+    COLOR: #000066;
+    BACKGROUND-COLOR: #ffffcc
+}
+.nav1BG
+{
+    BACKGROUND-COLOR: #ffffcc
+}
+.nav1
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1:link
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1:visited
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1:active
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1:hover
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1on
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1on:visited
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1on:active
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1on:hover
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 12px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2BG
+{
+    BACKGROUND-COLOR: #ffffff
+}
+.nav2orange
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2orange:link
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2orange:visited
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2orange:active
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2orange:hover
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2:link
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2:visited
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2:active
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2:hover
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2on
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2on:link
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2on:visited
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2on:active
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav2on:hover
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 10px;
+    COLOR: #000066;
+    FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+    TEXT-DECORATION: none
+}
+.nav1:hover
+{
+    COLOR: #ff6600
+}
+.nav2:hover
+{
+    COLOR: #ff6600
+}
+.nav1on
+{
+    COLOR: #ff6600
+}
+.nav1on:visited
+{
+    COLOR: #ff6600
+}
+.nav1on:active
+{
+    COLOR: #ff6600
+}
+.nav1on:hover
+{
+    COLOR: #ff6600
+}
+.nav2on
+{
+    COLOR: #ff6600
+}
+.nav2on:link
+{
+    COLOR: #ff6600
+}
+.nav2on:visited
+{
+    COLOR: #ff6600
+}
+.nav2on:active
+{
+    COLOR: #ff6600
+}
+.nav2on:hover
+{
+    COLOR: #ff6600
+}
+.chart
+{
+    BORDER-RIGHT: #ff6600 1px solid;
+    PADDING-RIGHT: 5px;
+    BORDER-TOP: #ff6600 1px solid;
+    PADDING-LEFT: 5px;
+    PADDING-BOTTOM: 5px;
+    BORDER-LEFT: #ff6600 1px solid;
+    PADDING-TOP: 5px;
+    BORDER-BOTTOM: #ff6600 1px solid;
+    BORDER-COLLAPSE: collapse
+}
+.chart TD
+{
+    BORDER-RIGHT: #ff6600 1px solid;
+    BORDER-TOP: #ff6600 1px solid;
+    BORDER-LEFT: #ff6600 1px solid;
+    BORDER-BOTTOM: #ff6600 1px solid
+}
+.chart TH
+{
+    BORDER-RIGHT: #ff6600 1px solid;
+    BORDER-TOP: #ff6600 1px solid;
+    BORDER-LEFT: #ff6600 1px solid;
+    BORDER-BOTTOM: #ff6600 1px solid
+}
+TH
+{
+    BACKGROUND-COLOR: #ffffcc;
+    TEXT-ALIGN: left
+}
+.footnote
+{
+    FONT-SIZE: 10px
+}
+SUB
+{
+    FONT-SIZE: 8px
+}
+.PRODOrangeRate
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 22px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+.PRODOrangeRatePrefix
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 16px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+.PRODOrangeRateLarge
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 42px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+.PRODOrangeRateMedium
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 18px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+.PRODOrangeRateSmall
+{
+    FONT-SIZE: 11px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+.PRODOrangeRateSmallBold
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+.PRODTextForOrangeRate
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 16px;
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial
+}
+A.PRODOrangeContentLink
+{
+    FONT-WEIGHT: bold;
+    COLOR: #ff6600
+}
+A.PRODOrangeContentLink:hover
+{
+    COLOR: #ff6600
+}
+TABLE.PRODToolBarBG
+{
+    BACKGROUND-COLOR: #ff6600
+}
+TD.PRODToolBar
+{
+    BACKGROUND-COLOR: #ffffff
+}
+TD.PRODToolBarHeader
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #ff6600
+}
+TR.sitemapheader
+{
+    BACKGROUND-COLOR: #003366
+}
+TABLE.sitemaptable
+{
+}
+P.sitemapsection
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #003366;
+    TEXT-ALIGN: center
+}
+.smalltrademark
+{
+    FONT-SIZE: 9pt
+}
+.sitemapsubsection
+{
+    FONT-WEIGHT: 900;
+    FONT-SIZE: 11pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+.sitemapsidenav
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial
+}
+.openrate
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial
+}
+.openratename
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial
+}
+.nowrap
+{
+	white-space: nowrap;
+}
+TD.selectrate
+{
+    BACKGROUND-COLOR: #FFD1B2
+}
+A.noline
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+A.noline:link
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+A.noline:active
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+A.noline:visited
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+A.noline:hover
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000066;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+
+/* Add for Mortgage ekit */
+ol.tools li {
+	padding-top:0px;
+	font-size:11px;
+	COLOR: #ff6600;
+	list-style-type:decimal;
+	padding-bottom:5px
+}
+
+A.mtgekit
+{
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+
+A.mtgekit:hover
+{
+    FONT-FAMILY: Arial;
+	color:#000066;
+	
+}
+
+/* Start of added css definition for RSP Command Centre */
+/* @media below used to control how printer-friendly version of page looks */
+@media print {
+		#rightColumn {
+			display:none;
+		}
+	}
+
+#container {
+margin-top:32px;
+width:775px;
+margin-left:auto;
+margin-right:auto;
+
+}
+#leftColumn {
+	font-size:11px;
+}
+
+#rightColumn {
+	font-size:11px;
+}
+
+div.dashedBorder {
+margin-top:3px;
+margin-bottom:3px;
+border-top:1px dashed #7F7F7F;
+width:100%;
+font-size:1px;
+}
+
+div.solidBorder {
+border-top:1px solid #000066;
+width:100%;
+font-size:0px;
+}
+
+div.footerBorder {
+margin-top:10px;
+border-top:2px solid #ff6600;
+width:100%;
+font-size:1px;
+}
+
+div.pageNav {
+	text-align:right;
+}
+
+A.rsp
+{
+    COLOR: #ff6600;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: underline
+}
+
+A.rsp:hover
+{
+    FONT-FAMILY: Arial;
+	color:#000066;
+	
+}
+
+/** add for RSP Command Centre **/
+ul.tools {
+	padding-top:0px;
+	margin-left:0px;
+	padding-bottom:0px;
+}
+
+ul.tools li {
+	padding-top:0px;
+	font-size:11px;
+	list-style-type:none;
+	padding-bottom:5px;
+}
+
+ul[class=tools] {
+	padding:0px;
+}
+
+ol.nav {
+	margin-left:29px;
+}
+
+/* declaration below used to style non IE browsers*/
+ol[class=nav] {
+	padding:0px;
+	margin-left:24px;
+}
+
+LI.nav
+{
+	padding-left:0px;
+	color:#ff6600;
+	font-weight:bold;
+}
+
+li.copy
+{
+	padding-bottom:5px;
+}
+/* End of added css definition for RSP Command Centre */
