@@ -1,0 +1,1098 @@
+<html><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>BANK NAME Canada: Move My Money</title>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<meta content="no-cache" http-equiv="Pragma">
+<!-- base href="https://secure.bankname.ca/en_CA/web/" -->
+<!-- base href="https://secure.bankname.ca/en_CA/web/" -->
+<style media="screen" type="text/css">
+          @import url(/framework.css);
+          @import url(/border.css);
+          @import url(/formatting.css);
+          @import url(/css/isa.css);
+          @import url(/css/moveMoneyAccordion.css);
+        </style>
+<style media="print" type="text/css">
+          @import url(/print.css);
+        </style>
+<style type="text/css">
+          #FROMACCT, #X_TOACCT { width: 450px; }
+          body {overflow: scroll;}
+        </style>
+	<link rel="stylesheet" href="media/formatting.css" type="text/css">
+	<link rel="stylesheet" href="media/framework.css" type="text/css">
+	<link rel="stylesheet" href="media/print.css" type="text/css" media="print">
+<script src="media/swfobject.js" type="text/javascript"></script><script src="media/navSecure.js" type="text/javascript"></script><script src="media/global.js" type="text/javascript"></script><script src="media/iehover-fix.js" type="text/javascript"></script><script type="text/javascript"><!--
+            var isPmtRPOO = '' == 'Y';
+            var tabCurrent = 'NavMoveMyMoneyLink';
+            var tabMoveMoney = '/BANKname.html?command=goToDisplayInitialMoveMoney';
+            var tabEmailMoney = '';
+            var tabPayBills = '';
+            var tabBuySellMF = '';
+            var refreshLink;
+            if (tabCurrent == 'NavMoveMyMoneyLink') {
+              refreshLink = tabMoveMoney;
+            } else if (tabCurrent == 'NavEmailMyMoneyLink') {
+              refreshLink = tabEmailMoney;
+            } else if (tabCurrent == 'NavBillPaymentLink') {
+              refreshLink = tabPayBills;
+            } else if (tabCurrent == 'NavMFBuyLink') {
+              refreshLink = tabBuySellMF;
+            }
+          //--></script><script src="media/movemoney.js" type="text/javascript"></script><script xmlns:xalan="http://xml.apache.org/xslt" type="text/javascript" src="media/transactiontoken.js"></script><script src="media/zapatec.js" type="text/javascript"><!--  --></script><script type="text/javascript" src="media/form.js" id="Zapatec.FormWidget"></script><script type="text/javascript" src="media/ing-validator.js" id="Zapatec.FormWidget"></script><script src="media/effects.js" type="text/javascript"><!--  --></script><script src="media/form.js" type="text/javascript"><!--  --></script><script src="media/ing-validator.js" type="text/javascript"><!--  --></script>
+<link type="text/css" rel="stylesheet" href="media/validation.css"><!--  -->
+<link type="text/css" rel="stylesheet" href="media/ing_form.css"><!--  -->
+<script src="media/ingFormFunctions.js" type="text/javascript"><!--  --></script><script src="media/window.js" type="text/javascript"><!--  --></script><script language="javascript">
+			//Fix to avoid flickering when scrolling a window with a popup window
+			//Have to remove the scroll event that has already been registered in the Zapatec window.js
+			for (var iLis = Zapatec.Utils.removeOnUnload.length - 1; iLis >= 0; iLis--) {
+				var oParams = Zapatec.Utils.removeOnUnload[iLis];
+				if (!oParams) {
+					continue;
+				}
+				if (window == oParams['element'] && (oParams['event'].indexOf('scroll') > -1)) {
+					Zapatec.Utils.removeOnUnload[iLis] = null;
+					Zapatec.Utils.removeEvent(
+					 oParams['element'],
+					 oParams['event'],
+					 oParams['listener'],
+					 oParams['capture']
+					);
+					break;
+				}
+			}
+			
+			//Add the 'modified' scroll event so that the modal window is at a fixed position and size 
+			Zapatec.Utils.addEvent(window,'scroll',function(){
+				if(Zapatec.Window && Zapatec.Window.currentWindow && Zapatec.Window.currentWindow.modal){
+					Zapatec.Window.currentWindow.modal.container.style.left = '0px';
+					Zapatec.Window.currentWindow.modal.container.style.top = '0px'
+					Zapatec.Window.currentWindow.modal.container.style.height = document.body.scrollHeight + "px";
+					Zapatec.Window.currentWindow.modal.container.style.width = document.body.scrollWidth + "px";	
+				}
+			},false,true);
+		
+		</script><script type="text/javascript">
+			function resizeBlockSection(divBlockSection,size, show){
+				strCurrSize = divBlockSection.style.height;
+				currSize = parseInt(strCurrSize.substring(0,strCurrSize.indexOf('px',0)));
+				if(!show){
+					if(currSize-20 < 0){
+						divBlockSection.style.display='none';
+						divBlockSection.style.height=size+'px';
+					} else {
+						if(size==null || size=='undefined'){
+							size = currSize;
+						}
+						currSize = currSize-20;
+						divBlockSection.style.height=currSize+'px';
+						setTimeout(function(){resizeBlockSection(divBlockSection,size,show)},0);			
+					}			
+				} else {
+					if(divBlockSection.style.display=='none'){
+						currSize == 0;
+					}
+					if(currSize+20 <= size || divBlockSection.style.display=='none'){
+						currSize = currSize+20;
+						divBlockSection.style.height=currSize+'px';
+						divBlockSection.style.display='block';
+						setTimeout(function(){resizeBlockSection(divBlockSection,size,show)},0);			
+					}			
+				}
+			}
+			
+			function toggleSection(tabId,divName,show,scroll,canResizeActiveTab,delay){
+				var divSection= document.getElementById(divName);
+				var myDivBlockName = divName+'_BLOCK';
+				var myDivBlockSize = eval(divName+'_SIZE');
+				var divBlockSection= document.getElementById(myDivBlockName);
+				if(show){
+					if(!scroll){
+						delay=0;
+						divSection.style.position='relative';
+						divSection.style.display='block';
+					} else {
+						divSection.style.position='absolute';
+						Zapatec.Effects.show(divSection, 20, ['slideTop']);
+						setTimeout(function(){resizeBlockSection(divBlockSection,myDivBlockSize,show, scroll)},0);						
+					}
+					if(canResizeActiveTab){
+						setTimeout(function(){parent.resizeActiveTab(parent.getBodyHeight(document), tabId,scroll)},delay);						
+					}
+				} else {
+					if(!scroll){
+						delay = 0;
+						divSection.style.position='relative';
+						divSection.style.display='none';				
+					} else {
+						divSection.style.position='absolute';
+						Zapatec.Effects.hide(divSection, 20, ['slideTop']);
+						setTimeout(function(){resizeBlockSection(divBlockSection,0,show, scroll)},250);
+					}			
+					if(canResizeActiveTab){
+						if(delay == null || delay =='undefined'){
+							delay=500;
+						}
+						setTimeout(function(){parent.resizeActiveTab(parent.getBodyHeight(document),tabId,scroll)},delay);
+					}
+				}
+			}
+		</script><script src="media/calendar.js" type="text/javascript"><!--  --></script><script src="media/calendar-en.js" type="text/javascript"><!--  --></script>
+<link type="text/css" rel="stylesheet" href="media/ing_zapa.css"><!--  -->
+<script src="media/ingCalendarFunctions.js" type="text/javascript"><!--  --></script><script src="media/zptooltip.js" type="text/javascript"><!--  --></script><script language="JavaScript"><!--
+				function createToolTip(element, tip){
+				    new Zapatec.Tooltip({target: element, tooltip: tip, theme: 'ing',  offsetX: -115});
+				};
+			//--></script><script type="text/javascript"><!--
+	      	document.iframeWinemailTransferRecipients= null; 	
+	      	function openWinemailTransferRecipients(height, width, elementOffset, queryString){
+				var windowHeight = height;
+				var windowWidth = width;
+				var windowX = null
+				var windowY = null
+				
+				if (elementOffset){  
+					// Optional usage to get window to show up near the element you clicked
+					// no implementation yet, just to default
+						//  put in the middle of the window
+						windowX = (window.screen.height/2) - (windowHeight /2);
+						windowY = (window.screen.width/2) - (windowWidth /2);
+		
+					// get position of the element passed in 
+					// put the element near the position
+					
+					// please note: this is dangerous, you need to check if the window is still in the bounds on the parent
+					// top is greater than 0
+					// bottom is less than window.screen.height
+					// left is greater than 0
+					// right is les than window.screen.width
+				} else {
+					// put in the middle of the window
+					windowX = (document.body.clientHeight/2) - (windowHeight /2);
+					windowY = (document.body.clientWidth/2) - (windowWidth /2);
+				}
+	
+				var urlString = '';
+				if (queryString) {
+					urlString += (urlString.indexOf('?') >= 0) ? '&' : '?';
+					urlString += queryString;
+				}
+				
+				//showCloseButton defaulted to true
+				var closeButton = "";
+				var showCloseButton = (closeButton != 'false');
+
+				//theme defaulted to ing_winxp
+				var theme = "ing_winxp";
+				if (theme.length == 0)
+					theme = 'ing_winxp_fr';
+	
+				//template defaulted to ing
+				var template = "";
+				if (template.length == 0)
+					template = '/zapatec/ing/ingWindowStruc.html';
+					
+				var onCloseFunc='onCloseDefault';
+				
+				
+				
+				document.iframeWinemailTransferRecipients= Zapatec.Window.setup({
+					theme: theme,
+					template: template,
+					height: windowHeight,				
+					width: windowWidth, 
+					left: windowY,
+					top: windowX,
+					modal: true,
+					showMaxButton: false, 
+					showMinButton: false,
+					showCloseButton: showCloseButton,
+					canResize: false,
+				  	showStatus: false,
+					iframeContent: true,
+					urlContent: urlString,
+					onClose: onCloseFunc
+				});
+			}
+			
+			/*
+			 * Default onClose function - if no parameter passed (onClose) to this xsl template
+			 */
+			function onCloseDefault() {}
+			
+			/*
+			* Resize and move window to the center of the screen
+			*/
+	      	function resizeWinemailTransferRecipients(width, height){
+				if (document.iframeWinemailTransferRecipients){
+					var left = (document.body.clientWidth/2) - (width/2);
+                                                     if (left <= 0) left = 20;
+					var top = (document.body.clientHeight/2) - (height/2);
+                                                     if (top <= 0) top = 20;
+					document.iframeWinemailTransferRecipients.setPosAndSize(left, top, width, height);
+				}
+			}		
+			
+			
+			/*
+			* Close window
+			*/
+	      	function closeWinemailTransferRecipients(){
+				if (document.iframeWinemailTransferRecipients){
+					document.iframeWinemailTransferRecipients.close();
+				}
+			}
+			
+			/*
+			* Close window and Refresh the active tab content 
+			* optionally renames the tab caption if tabTitle parameter is present
+			*/
+			function closeWinWithTabRefreshemailTransferRecipients(tabTitle){				
+				closeWinemailTransferRecipients();
+	
+				if (window.parent.refreshActiveTab) {
+					if (tabTitle) {
+						window.parent.refreshActiveTab(tabTitle);
+					}
+					else {
+						window.parent.refreshActiveTab();
+					}
+				}
+			}		
+	
+			/*
+			* Close the pop-up window and submit the form
+			*/
+			function closeAndSubmitWinemailTransferRecipients() {
+				closeWinemailTransferRecipients();
+	
+			
+				if (window.parent.submitTab) {
+					window.parent.submitTab();
+				} else {
+					window.saveAndSubmit();
+				}
+			}
+			function getBodyHeight(doc){
+		
+				var agt=navigator.userAgent.toLowerCase();
+				if((agt.indexOf("msie")!=-1)){
+					return doc.body.scrollHeight;
+				} else {
+					return doc.body.offsetHeight;
+				}
+			}
+	    //--></script><script type="text/javascript"><!--
+	      	document.iframeWinAddPayee= null; 	
+	      	function openWinAddPayee(height, width, elementOffset, queryString){
+				var windowHeight = height;
+				var windowWidth = width;
+				var windowX = null
+				var windowY = null
+				
+				if (elementOffset){  
+					// Optional usage to get window to show up near the element you clicked
+					// no implementation yet, just to default
+						//  put in the middle of the window
+						windowX = (window.screen.height/2) - (windowHeight /2);
+						windowY = (window.screen.width/2) - (windowWidth /2);
+		
+					// get position of the element passed in 
+					// put the element near the position
+					
+					// please note: this is dangerous, you need to check if the window is still in the bounds on the parent
+					// top is greater than 0
+					// bottom is less than window.screen.height
+					// left is greater than 0
+					// right is les than window.screen.width
+				} else {
+					// put in the middle of the window
+					windowX = (document.body.clientHeight/2) - (windowHeight /2);
+					windowY = (document.body.clientWidth/2) - (windowWidth /2);
+				}
+	
+				var urlString = '';
+				if (queryString) {
+					urlString += (urlString.indexOf('?') >= 0) ? '&' : '?';
+					urlString += queryString;
+				}
+				
+				//showCloseButton defaulted to true
+				var closeButton = "";
+				var showCloseButton = (closeButton != 'false');
+
+				//theme defaulted to ing_winxp
+				var theme = "ing_winxp";
+				if (theme.length == 0)
+					theme = 'ing_winxp_fr';
+	
+				//template defaulted to ing
+				var template = "";
+				if (template.length == 0)
+					template = '/zapatec/ing/ingWindowStruc.html';
+					
+				var onCloseFunc='onCloseDefault';
+				
+				
+				
+				document.iframeWinAddPayee= Zapatec.Window.setup({
+					theme: theme,
+					template: template,
+					height: windowHeight,				
+					width: windowWidth, 
+					left: windowY,
+					top: windowX,
+					modal: true,
+					showMaxButton: false, 
+					showMinButton: false,
+					showCloseButton: showCloseButton,
+					canResize: false,
+				  	showStatus: false,
+					iframeContent: true,
+					urlContent: urlString,
+					onClose: onCloseFunc
+				});
+			}
+			
+			/*
+			 * Default onClose function - if no parameter passed (onClose) to this xsl template
+			 */
+			function onCloseDefault() {}
+			
+			/*
+			* Resize and move window to the center of the screen
+			*/
+	      	function resizeWinAddPayee(width, height){
+				if (document.iframeWinAddPayee){
+					var left = (document.body.clientWidth/2) - (width/2);
+                                                     if (left <= 0) left = 20;
+					var top = (document.body.clientHeight/2) - (height/2);
+                                                     if (top <= 0) top = 20;
+					document.iframeWinAddPayee.setPosAndSize(left, top, width, height);
+				}
+			}		
+			
+			
+			/*
+			* Close window
+			*/
+	      	function closeWinAddPayee(){
+				if (document.iframeWinAddPayee){
+					document.iframeWinAddPayee.close();
+				}
+			}
+			
+			/*
+			* Close window and Refresh the active tab content 
+			* optionally renames the tab caption if tabTitle parameter is present
+			*/
+			function closeWinWithTabRefreshAddPayee(tabTitle){				
+				closeWinAddPayee();
+	
+				if (window.parent.refreshActiveTab) {
+					if (tabTitle) {
+						window.parent.refreshActiveTab(tabTitle);
+					}
+					else {
+						window.parent.refreshActiveTab();
+					}
+				}
+			}		
+	
+			/*
+			* Close the pop-up window and submit the form
+			*/
+			function closeAndSubmitWinAddPayee() {
+				closeWinAddPayee();
+	
+			
+				if (window.parent.submitTab) {
+					window.parent.submitTab();
+				} else {
+					window.saveAndSubmit();
+				}
+			}
+			function getBodyHeight(doc){
+		
+				var agt=navigator.userAgent.toLowerCase();
+				if((agt.indexOf("msie")!=-1)){
+					return doc.body.scrollHeight;
+				} else {
+					return doc.body.offsetHeight;
+				}
+			}
+	    //--></script><script type="text/javascript"><!--
+	      	document.iframeWinEditPayee= null; 	
+	      	function openWinEditPayee(height, width, elementOffset, queryString){
+				var windowHeight = height;
+				var windowWidth = width;
+				var windowX = null
+				var windowY = null
+				
+				if (elementOffset){  
+					// Optional usage to get window to show up near the element you clicked
+					// no implementation yet, just to default
+						//  put in the middle of the window
+						windowX = (window.screen.height/2) - (windowHeight /2);
+						windowY = (window.screen.width/2) - (windowWidth /2);
+		
+					// get position of the element passed in 
+					// put the element near the position
+					
+					// please note: this is dangerous, you need to check if the window is still in the bounds on the parent
+					// top is greater than 0
+					// bottom is less than window.screen.height
+					// left is greater than 0
+					// right is les than window.screen.width
+				} else {
+					// put in the middle of the window
+					windowX = (document.body.clientHeight/2) - (windowHeight /2);
+					windowY = (document.body.clientWidth/2) - (windowWidth /2);
+				}
+	
+				var urlString = '';
+				if (queryString) {
+					urlString += (urlString.indexOf('?') >= 0) ? '&' : '?';
+					urlString += queryString;
+				}
+				
+				//showCloseButton defaulted to true
+				var closeButton = "";
+				var showCloseButton = (closeButton != 'false');
+
+				//theme defaulted to ing_winxp
+				var theme = "ing_winxp";
+				if (theme.length == 0)
+					theme = 'ing_winxp_fr';
+	
+				//template defaulted to ing
+				var template = "";
+				if (template.length == 0)
+					template = '/zapatec/ing/ingWindowStruc.html';
+					
+				var onCloseFunc='onCloseDefault';
+				
+				
+				
+				document.iframeWinEditPayee= Zapatec.Window.setup({
+					theme: theme,
+					template: template,
+					height: windowHeight,				
+					width: windowWidth, 
+					left: windowY,
+					top: windowX,
+					modal: true,
+					showMaxButton: false, 
+					showMinButton: false,
+					showCloseButton: showCloseButton,
+					canResize: false,
+				  	showStatus: false,
+					iframeContent: true,
+					urlContent: urlString,
+					onClose: onCloseFunc
+				});
+			}
+			
+			/*
+			 * Default onClose function - if no parameter passed (onClose) to this xsl template
+			 */
+			function onCloseDefault() {}
+			
+			/*
+			* Resize and move window to the center of the screen
+			*/
+	      	function resizeWinEditPayee(width, height){
+				if (document.iframeWinEditPayee){
+					var left = (document.body.clientWidth/2) - (width/2);
+                                                     if (left <= 0) left = 20;
+					var top = (document.body.clientHeight/2) - (height/2);
+                                                     if (top <= 0) top = 20;
+					document.iframeWinEditPayee.setPosAndSize(left, top, width, height);
+				}
+			}		
+			
+			
+			/*
+			* Close window
+			*/
+	      	function closeWinEditPayee(){
+				if (document.iframeWinEditPayee){
+					document.iframeWinEditPayee.close();
+				}
+			}
+			
+			/*
+			* Close window and Refresh the active tab content 
+			* optionally renames the tab caption if tabTitle parameter is present
+			*/
+			function closeWinWithTabRefreshEditPayee(tabTitle){				
+				closeWinEditPayee();
+	
+				if (window.parent.refreshActiveTab) {
+					if (tabTitle) {
+						window.parent.refreshActiveTab(tabTitle);
+					}
+					else {
+						window.parent.refreshActiveTab();
+					}
+				}
+			}		
+	
+			/*
+			* Close the pop-up window and submit the form
+			*/
+			function closeAndSubmitWinEditPayee() {
+				closeWinEditPayee();
+	
+			
+				if (window.parent.submitTab) {
+					window.parent.submitTab();
+				} else {
+					window.saveAndSubmit();
+				}
+			}
+			function getBodyHeight(doc){
+		
+				var agt=navigator.userAgent.toLowerCase();
+				if((agt.indexOf("msie")!=-1)){
+					return doc.body.scrollHeight;
+				} else {
+					return doc.body.offsetHeight;
+				}
+			}
+	    //--></script>
+<meta content="1560; " http-equiv="Refresh"></head><body onload="bodyOnLoad();">
+<div id="container">
+<form class="zpFormValidation" action="/BANKname.html" id="MainForm" name="MainForm" method="post">
+<span id="zpFormField1StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none; display: none;"><span id="zpFormField1StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField1StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField1StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField1StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField1StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input value="validateMoveMoney" name="command" type="hidden">
+	
+		
+			<script language="JavaScript">
+					function PopWin() {
+						newwindow=window.open("","PopWin","height=705,width=705,scrollbars=yes,resizable=yes,top=50,left=50,screenX=50,screenY=50,location=no,toolbar=yes");
+					}
+					function PopWinRAF() {
+						newwindow=window.open("","PopWinRAF","height=550,width=800,scrollbars=no,resizable=yes,top=50,left=50,screenX=50,screenY=50,location=no,toolbar=yes");
+					}
+				</script><script language="JavaScript">
+					function PopWinE() {
+						newwindow=window.open("","PopWinE","height=705,width=705,scrollbars=yes,resizable=yes,top=50,left=50,screenX=50,screenY=50,location=no,toolbar=yes, menubar=yes");
+					}
+					
+				</script>
+<div id="header">
+<div id="logo">
+<a href="https://secure.bankname.ca/BANKname.html?command=displayAccountSummary"><img alt="BANK NAME - save your money" src="media/mrtgapp_logo.gif" height="53" width="190"></a>
+</div>
+<div id="utilitiesSecure">
+<ul>
+<li class="first">
+<a href="https://secure.bankname.ca/BANKname.html?command=displayHelp">Help!</a>
+</li>
+<li>
+<a target="PopWin" onclick="PopWin()" href="http://www.bankname.ca/en/aboutus/faq/index.html">FAQ</a>
+</li>
+<li>
+<a target="PopWin" onclick="PopWin()" href="https://secure.bankname.ca/BANKname.html?command=displayWebFormList">Forms</a>
+</li>
+<li>
+<a target="PopWin" onclick="PopWin()" href="http://www.bankname.ca/en/aboutus/contactus/clientcontactus/index.html">Contact Us</a>
+</li>
+<li class="last">Jul 13/10 - 09:53 AM ET</li>
+</ul>
+</div>
+</div>
+<ul class="clearfix" id="navMain">
+<li>
+<a href="https://secure.bankname.ca/InitialBANKname.html?command=displayLogout&amp;locale=en_CA&amp;device=web"><img alt="Log me out" name="SignOff" id="SignOff" onmouseover="imageSwap('SignOff',1)" onmouseout="imageSwap('SignOff',0)" src="media/nav_main_logout-off.gif" border="0" height="29" width="99"></a>
+</li>
+<li>
+<a href="https://secure.bankname.ca/BANKname.html?command=displayAccountSummary"><img alt="View my accounts" name="MyAccounts" id="MyAccounts" onmouseover="imageSwap('MyAccounts',1)" onmouseout="imageSwap('MyAccounts',0)" src="media/nav_main_view-off.gif" border="0" height="29" width="146"></a>
+</li>
+<li>
+<a href="https://secure.bankname.ca/BANKname.html?command=goToDisplayInitialMoveMoney"><img id="MoveMyMoney" name="MoveMyMoney" alt="Move my money" src="media/nav_main_move-on.gif" height="29" width="132"></a>
+</li>
+<li>
+<a href="https://secure.bankname.ca/BANKname.html?command=displayOpenNewAccountMenu"><img alt="Open new account" name="OpenNewAccount" id="OpenNewAccount" onmouseover="imageSwap('OpenNewAccount',1)" onmouseout="imageSwap('OpenNewAccount',0)" src="media/nav_main_open-off.gif" border="0" height="29" width="150"></a>
+</li>
+<li>
+<a href="https://secure.bankname.ca/BANKname.html?command=displayAdministration"><img alt="My info and options" name="Change" onmouseover="imageSwap('Change',1)" id="Change" onmouseout="imageSwap('Change',0)" src="media/nav_main_change-off.gif" border="0" height="29" width="199"></a>
+<ul class="secure">
+<div class="secure" id="AdminDiv">
+<li>
+<a href="https://secure.bankname.ca/BANKname.html?command=retrieveGeneralSettingsInfo" style="border-top-color: rgb(255, 255, 255);">General Settings</a>
+</li>
+<li>
+<a href="https://secure.bankname.ca/BANKname.html?command=goToTaxReceipt">View My e-Receipts</a>
+</li>
+<li>
+<a href="https://secure.bankname.ca/BANKname.html?command=displayExternalLinks">Links to External Accounts</a>
+</li>
+</div>
+<iframe style="position: absolute; top: 0px; left: 0px; display: none;" src="javascript:false;" id="AdminFrame" scrolling="no"></iframe>
+</ul>
+</li>
+</ul>
+<div class="clearfix" id="content">
+<table width="100%">
+<tbody><tr>
+<td aligh="left" width="48">
+<table>
+<tbody><tr>
+<td align="left" valign="top"><a href="https://secure.bankname.ca/BANKname.html?command=displayInitialCreateNewASP"><img alt="Start an Automatic Savings Program" src="media/pic-asp.gif" border="0" height="31"></a></td><td><a target="PopWinRAF" onclick="PopWinRAF();" href="https://secure.bankname.ca/BANKname.html?command=displayReferAFriendMenu"><img alt="Earn $$$ Refer a Friend" src="media/pic-refer.gif" border="0" height="31"></a></td>
+</tr>
+<tr>
+<td align="left" valign="top"><a target="PopWin" onclick="PopWin();" href="https://secure.bankname.ca/BANKname.html?command=displayGetRateList"><img alt="View Our Rates" src="media/pic-rates.gif" border="0" height="31"></a></td><td><a href="https://secure.bankname.ca/BANKname.html?command=goToRSPTransferIn"><img alt="Transfer RSPs from another bank" src="media/pic-rsptransfer.gif" border="0" height="31" width="170"></a></td>
+</tr>
+<tr>
+<td align="left" valign="top"><a href="https://secure.bankname.ca/BANKname.html?command=displayNewsletters"><img alt="Read our Newletters" src="media/es_read_newsletters.gif" border="0" height="31" width="170"></a></td><td align="left" valign="top"><a href="https://secure.bankname.ca/BANKname.html?command=gotoEstmtList"><img alt="View my e-Statement" src="media/es_view_estatement.gif" border="0" height="31" width="170"></a></td>
+</tr>
+</tbody></table>
+</td><td align="left" width="52%">
+<div style="width: 370px;" class="box_OrangeBorder">
+<b class="box_OrangeBorder_Top"><b class="box_OrangeBorder_Layer1"></b><b class="box_OrangeBorder_Layer2 color_white_on_orange"></b><b class="box_OrangeBorder_Layer3 color_white_on_orange"></b><b class="box_OrangeBorder_Layer4 color_white_on_orange"></b></b>
+<div class="box_OrangeBorder_Content">
+<h2 class="color_white_on_orange" align="left">
+<font style="font-size: 16px;">Message Board</font>
+</h2>
+<table class="mesgboard" cellpadding="4" cellspacing="0" width="368">
+<tbody><tr>
+<td align="center" width="7%"><img src="media/en_e_mail.gif" height="15" width="15"></td><td width="88%"><a style="text-decoration: underline; color: rgb(0, 51, 102);" href="https://secure.bankname.ca/BANKname.html?command=eMsgCenter&amp;MainFormAction=view&amp;Message=0"><b><font style="font-family: arial; font-size: 10pt; color: rgb(0, 51, 102); font-weight: bold;">$25 Bonus when you start saving automatically</font></b></a></td><td width="5%">&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color: rgb(243, 243, 243);" align="center" width="7%"><img src="media/en_e_mail.gif" height="15" width="15"></td><td style="background-color: rgb(243, 243, 243);" width="88%"><a style="text-decoration: underline; color: rgb(0, 51, 102);" href="https://secure.bankname.ca/BANKname.html?command=eMsgCenter&amp;MainFormAction=view&amp;Message=1"><font style="font-family: arial; font-size: 10pt; color: rgb(0, 51, 102); font-weight: bold;">Happy Birthday John!</font></a></td><td style="background-color: rgb(243, 243, 243);" width="5%">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: right;" colspan="2"><span class="viewstatement"><a href="https://secure.bankname.ca/BANKname.html?command=displayEMsgCenter"><font style="font-family: arial; font-size: 8pt; color: rgb(255, 102, 0); font-weight: bold;">View all messages...</font></a></span></td>
+</tr>
+</tbody></table>
+</div>
+<b class="box_OrangeBorder_Bottom"><b class="box_OrangeBorder_Layer4"></b><b class="box_OrangeBorder_Layer3"></b><b class="box_OrangeBorder_Layer2"></b><b class="box_OrangeBorder_Layer1"></b></b>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<script language="javascript">
+			//wlew div layer over iframe - this is a workaround to show an element over a dropdown
+			//For IE
+		  	var agt = navigator.userAgent.toLowerCase();
+			function showMenuOverDropDown(menuId, frameId) {
+			if((agt.indexOf("msie")!=-1)){
+					var div = document.getElementById(menuId);
+				  	var iframe = document.getElementById(frameId);
+			  	
+			  	if (div && iframe) {
+				   	iframe.style.width = div.offsetWidth;
+				   	iframe.style.height = div.offsetHeight;
+				   	iframe.style.top = div.style.top + 1;
+				   	iframe.style.left = div.style.left - 1;
+				   	iframe.style.zIndex = div.style.zIndex - 1;
+				   	iframe.style.display = "block";		
+			  	}
+			  }
+			}
+						
+			//Save and Invest Menu
+			showMenuOverDropDown('SaveInvestDiv', 'SaveInvestFrame');
+			
+			//Mortgages Menu
+			showMenuOverDropDown('MortgagesDiv', 'MortgagesFrame');
+
+			//About Us Menu
+			showMenuOverDropDown('AboutUsDiv', 'AboutUsFrame');
+
+			//Save and Invest Enroll Menu
+			showMenuOverDropDown('SaveInvestEnrollDiv', 'SaveInvestEnrollFrame');
+			
+			//Mortgages Enroll Menu
+			showMenuOverDropDown('MortgagesEnrollDiv', 'MortgagesEnrollFrame');
+
+			//About Us Enroll Menu
+			showMenuOverDropDown('AboutUsEnrollDiv', 'AboutUsEnrollFrame');
+
+			//Administration Menu
+			showMenuOverDropDown('AdminDiv', 'AdminFrame');			
+		</script>
+			
+			
+				
+		
+		
+		
+		
+		
+		
+			
+			
+	
+	
+<div class="box_OrangeBorder"><br> 
+	<!-- <B class="box_GreySolid_Top"><B class="box_GreySolid_Layer1"/><B class="box_GreySolid_Layer2"/><B class="box_GreySolid_Layer3"/><B class="box_GreySolid_Layer4"/></B> -->
+	<img src="media/bkg_securesite_top.gif"><table bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="0" width="740">
+	<tbody><tr><td>
+	</td></tr>
+	<tr><td>
+	<table bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="0" width="725">
+	<tbody><tr><td>&nbsp;</td>
+	<td style="border-right: 1px solid rgb(204, 204, 204);" valign="top">
+	<style type="text/css">		
+#securesite {
+	position: relative;
+	z-index: 1;
+}
+
+#sidebar { 
+	background:#f0f0f0; 
+	float: left; 
+	width:140px; 
+	margin-left:5px;
+	margin-top: 0px;
+	position: relative;
+	z-index: 2;
+	padding: 0px 0px 0px 0px; 
+}
+
+.mmmNavLink a { 
+	width: 140px; 
+	padding: 0px; 
+	font-size: 16px; 
+	font-weight:bold; 
+	color: #666666; 
+	display: block;
+	text-decoration: none;
+	background: url(/images/mmmNavLinkLine.gif) no-repeat bottom left;
+}
+
+.mmmNavLink a:hover {
+	background: #cccccc;	
+}
+
+.mmmNavLink.select a { 
+	background:#ffffff url(/images/mmmNavLinkLine.gif) no-repeat bottom left; 
+	border-right: 1px #ffffff solid; 
+	position:relative; 
+	z-index:3; 
+	color: #ff6600;
+}
+
+#mmmContent { background:#ffffff; float: left; width: 516px; padding: 7px 12px 0px 22px; border-left: 1px solid #cccccc; }
+				</style>
+<div id="sidebar">
+<img src="media/mmmNavLinkLine.gif" height="1" width="140"><div class="mmmNavLink select"><a><font size="-4"><br>&nbsp;</font>Transfer my <br>&nbsp;money<font size="-4"><br>&nbsp;</font></a></div></div></td><td style="border-top: 1px solid rgb(204, 204, 204);" bgcolor="#ffffff" valign="top" width="99%"><script type="text/javascript"><!--
+        function bodyOnLoad() {
+          if (isPmtRPOO) {
+            disableFormField(document.MainForm.X_TOACCT);
+          }
+        }
+
+        function doSubmit() {
+          // Do nothing if "FROM" or "TO" selection is empty
+          if (document.MainForm.FROMACCT.options.length==0 || document.MainForm.X_TOACCT.options.length==0){
+        		return;
+          } 
+          document.MainForm.TAMT.value = document.MainForm.X_TAMT.value;
+          var currency = (isPmtRPOO)
+              ? document.MainForm.X_XBCRCD.value
+              : getSelectedValue(document.MainForm.X_XBCRCD);
+          document.MainForm.XBCRCD.value = currency;
+          document.MainForm.TOACCT.value = getSelectedValue(document.MainForm.X_TOACCT);
+          //document.MainForm.submit();
+        }
+
+        function showTfsaNotification() {
+          var fromAcct = document.getElementById("FROMACCT");
+          var toAcct = document.getElementById("X_TOACCT");
+          var fromAcctIsTfsa = fromAcct[fromAcct.selectedIndex].text.indexOf("(TFSA)") >= 0;
+          var toAcctIsTfsa = toAcct[toAcct.selectedIndex].text.indexOf("(TFSA)") >= 0;
+        
+          var notification = document.getElementById("tfsa-notification-withdrawal");
+          notification.style.display = (fromAcctIsTfsa && !toAcctIsTfsa) ? "block" : "none";
+        
+          notification = document.getElementById("tfsa-notification-deposit");
+          notification.style.display = (toAcctIsTfsa && !fromAcctIsTfsa) ? "block" : "none";
+        }
+      //--></script>
+<style type="text/css">
+      .paddingLeft {padding-left: 16px;} 
+      .paddingTop {padding-top: 6px;} 
+      .paddingBottom {padding-bottom: 2px;} 
+    </style>
+<span id="zpFormField2StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none; display: none;"><span id="zpFormField2StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField2StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField2StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField2StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField2StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input value="" name="TAMT" type="hidden"><span id="zpFormField3StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none; display: none;"><span id="zpFormField3StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField3StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField3StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField3StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField3StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input value="" name="XBCRCD" type="hidden"><span id="zpFormField4StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none; display: none;"><span id="zpFormField4StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField4StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField4StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField4StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField4StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input value="" name="TOACCT" type="hidden">
+<div id="divMoveMoneyForm">
+<table cellpadding="0" cellspacing="2" width="100%">
+<tbody><tr>
+<td colspan="3" class="paddingTop paddingBottom" align="center">
+<table width="95%">
+<tbody><tr>
+<td></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="paddingLeft paddingTop paddingBottom" width="33%"><label for="X_TAMT" class="fieldname">Amount ($):</label></td><td class="paddingLeft paddingTop paddingBottom" width="33%"><label for="X_XBCRCD" class="fieldname">Currency:</label></td><td width="34%">&nbsp;</td>
+</tr>
+<tr>
+<td class="paddingBottom"><span id="zpFormField5StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input value="" autocomplete="OFF" maxlength="8" size="8" name="X_TAMT" type="text"></td><td class="paddingBottom"><span id="zpFormField6StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><select class="" name="X_XBCRCD" id="X_XBCRCD" size="1"><option value="CAD">CAD</option><option value="USD">USD</option></select></td><td>&nbsp;</td>
+</tr>
+<tr>
+<td class="paddingLeft paddingTop paddingBottom" colspan="3"><label for="FROMACCT" class="fieldname">From:</label></td>
+</tr>
+<tr>
+<td class="paddingBottom" colspan="3"><span id="zpFormField7StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><select class="" name="FROMACCT" id="FROMACCT" size="1" onchange="showTfsaNotification()"><option value="">Select an Account</option><option value="0">Investment Savings Account (ISA) 3018217195 - CAD - 9.92</option><option value="1">US$ Investment Savings Account (ISA) 3018374280 - USD - 0.30</option><option value="2">Conjoint 3018471648 - CAD - 1,302.57</option><option value="3">Tax-Free Investment Savings Account (TFSA) 3404320574 - CAD - 10.16</option><option value="4">BANK OF MONTREAL - 3224383 - CAD</option><option value="5">BANK OF MONTREAL - 4549947 - USD</option></select></td>
+</tr>
+<tr>
+<td class="paddingLeft paddingTop paddingBottom" colspan="3"><label for="X_TOACCT" class="fieldname">To:</label></td>
+</tr>
+<tr>
+<td colspan="3"><span id="zpFormField8StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><select class="" name="X_TOACCT" id="X_TOACCT" size="1" onchange="showTfsaNotification()"><option value="">Select an Account</option><option value="0">Investment Savings Account (ISA) 3018217195 - CAD - 9.92</option><option value="1">US$ Investment Savings Account (ISA) 3018374280 - USD - 0.30</option><option value="2">Conjoint 3018471648 - CAD - 1,302.57</option><option value="3">RSP Investment Savings Account (RISA) 3103086840 - CAD - 22.17</option><option value="4">Tax-Free Investment Savings Account (TFSA) 3404320574 - CAD - 10.16</option><option value="5">BANK OF MONTREAL - 3224383 - CAD</option><option value="6">BANK OF MONTREAL - 4549947 - USD</option></select></td>
+</tr>
+<tr>
+<td class="paddingLeft" colspan="3">
+<div style="display: none;" id="tfsa-notification-withdrawal">
+<table>
+<tbody><tr>
+<td><img alt="!" src="media/icon-exclamation.gif" border="0" height="31" width="32"></td><td width="15">&nbsp;</td><td>
+<div style="line-height: 18pt;" class="securesite_item">
+<a class="rsplink" target="PopWin" onclick="PopWin()" href="https://secure.bankname.ca/en_CA/web/help/help_tfsa.html">
+                        Are you moving this money into another bank's TFSA?
+                      </a>
+<br>
+<a class="rsplink" target="PopWin" onclick="PopWin()" href="https://secure.bankname.ca/en_CA/web/help/help_tfsa.html">
+                        How might this withdrawal affect my annual TFSA contribution limits?
+                      </a>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+<tr>
+<td class="paddingLeft" colspan="3">
+<div style="display: none;" id="tfsa-notification-deposit">
+<table>
+<tbody><tr>
+<td><img alt="!" src="media/icon-exclamation.gif" border="0" height="31" width="32"></td><td width="15">&nbsp;</td><td>
+<div style="line-height: 18pt;" class="securesite_item">
+<a class="rsplink" target="PopWin" onclick="PopWin()" href="https://secure.bankname.ca/en_CA/web/help/help_tfsa.html">
+                        How might this deposit affect my annual TFSA contribution limit?
+                      </a>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+<tr>
+<td class="paddingLeft" colspan="3">
+<table width="40%">
+<tbody><tr>
+<td><span id="zpFormField9StatusImg1" class="zpFormInternalEl zpNotRequired" style="-moz-user-select: none;"><span id="zpFormField9StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField9StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField9StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField9StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField9StatusImg" class="zpFormInternalEl zpNotRequired zpRadioStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input onclick="changeSchedule(this);" value="Now" id="WHEN" name="WHEN" class="zpFormRadio" checked="true" type="radio"><label class="fieldname">Now</label></td><td><span id="zpFormField10StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField10StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField10StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField10StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField10StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField10StatusImg" class="zpFormInternalEl zpNotRequired zpRadioStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input onclick="changeSchedule(this);" value="Later" id="WHEN" name="WHEN" class="zpFormRadio" type="radio"><label class="fieldname">Later</label></td><td><span id="zpFormField11StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField11StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField11StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField11StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField11StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField11StatusImg" class="zpFormInternalEl zpNotRequired zpRadioStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input onclick="changeSchedule(this);" value="Ongoing" id="WHEN" name="WHEN" class="zpFormRadio" type="radio"><label class="fieldname">Ongoing</label></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<div id="freq_now">&nbsp;</div>
+<div id="freq_later" style="display: none;">
+<table>
+<tbody><tr>
+<td class="paddingLeft"><label for="EFDDATE" class="subfieldname">Date:</label></td>
+</tr>
+<tr>
+<td><span id="zpFormField12StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField12StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField12StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField12StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField12StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField12StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input autocomplete="off" size="12" value="14/07/2010" style="background: transparent url(images/calendarDatePicker.gif) no-repeat scroll right center; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" class="" name="EFDDATE" id="LaterDate" type="text"></td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+</tbody></table>
+</div>
+<div id="freq_ongoing" style="display: none;">
+<table width="95%">
+<tbody><tr>
+<td class="paddingLeft"><label for="FREQ" class="subfieldname">Every:</label></td><td class="paddingLeft"><label for="RECDATE" class="subfieldname">Start Date:</label></td><td class="paddingLeft"><label for="EXPDATE" class="subfieldname">End Date:</label></td>
+</tr>
+<tr>
+<td><span id="zpFormField13StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField13StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField13StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField13StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField13StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField13StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><select class="" name="FREQ" id="FREQ" size="1"><option value="Daily">Daily</option><option value="Weekly">Weekly</option><option value="Biweekly">Biweekly</option><option value="Monthly">Monthly</option></select></td><td><span id="zpFormField14StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField14StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField14StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField14StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField14StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField14StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input autocomplete="off" size="12" value="14/07/2010" style="background: transparent url(images/calendarDatePicker.gif) no-repeat scroll right center; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" class="" name="RECDATE" id="ASPStartDate" type="text"></td><td><span id="zpFormField15StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField15StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField15StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField15StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField15StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField15StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input autocomplete="off" size="12" value="" style="background: transparent url(images/calendarDatePicker.gif) no-repeat scroll right center; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" class="" name="EXPDATE" id="ASPEndDate" type="text"></td>
+</tr>
+<tr>
+<td colspan="3">&nbsp;</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding-bottom: 5px;" class="paddingLeft" colspan="3">
+<table width="100%">
+<tbody><tr>
+<td width="50%"><a class="rsplink" target="_top" href="https://secure.bankname.ca/BANKname.html?command=displayInitialRSPWithdrawal"><img style="float: left;" src="media/bkg_li_arrow.gif" border="0" height="21" width="25">
+                      Withdraw from my RSP
+                    </a>
+                  &nbsp;
+                </td><td align="right" width="48%"><a href="https://secure.bankname.ca/BANKname.html?command=goToDisplayInitialMoveMoney"><img alt="CLEAR" src="media/btn_clear.gif" border="no"></a>&nbsp;
+	                <input onclick="doSubmit();" src="media/btn_go_blue.gif" alt="GO" name="YES, I WANT TO CONTINUE." border="0" type="image"></td><td width="2%">&nbsp;</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</div>
+	</td></tr>
+	</tbody></table>
+	</td></tr>
+	<tr><td>
+	<img src="media/mmmNavLinkLine.gif" style="margin-left: 15px;" height="1" width="710"></td></tr>
+	</tbody></table>
+	<img src="media/bkg_securesite_bottom.gif"></div>
+	
+	
+<center>
+<table border="0" cellpadding="0" cellspacing="0" height="69">
+<tbody><tr>
+<td colspan="2" height="1" valign="top">
+<br>
+<br>
+</td>
+</tr>
+<tr>
+<td align="center" valign="bottom">
+<iframe marginheight="0" marginwidth="0" src="media/ASPE.html" frameborder="0" height="60" scrolling="no" width="430"></iframe>&nbsp;<p></p>
+</td>
+</tr>
+</tbody></table>
+</center>
+<span id="zpFormField16StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none; display: none;"><span id="zpFormField16StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField16StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField16StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField16StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField16StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input value="wUBbsYrs7TUJezZP" name="TRANSACTION_TOKEN" type="hidden"><script>populateTransactionToken();</script>
+</form>
+</div>
+<script type="text/javascript"><!--
+				new Zapatec.Form({
+							form: 'MainForm',
+						    showErrors: showIncorrectInputErrorsInRed,
+						    statusImgPos: 'beforeField',
+						    showErrorsOnSubmit: false,
+						    theme: "validation",
+						    displayErrorWhileTyping: false,
+						    conditionalEvents:['focus','blur','valueChanged']
+						});
+			//--></script><script type="text/javascript" src="media/securewtinit.js"></script><script type="text/javascript" src="media/securewtbase.js"></script>
+<noscript>
+<div>
+<img
+src="https://secureinfo.bankname.ca/dcsdzdd0r10000cx9jjdww31i_9k8f/njs.gif?dcsuri=/nojavascript&WT.js=No&WT.tv=8.0.2"
+height="1" width="1" id="DCSIMG" alt="DCSIMG"></div>
+</noscript>
+
+<script language="JavaScript"><!--
+				//Overwrite Zapatec tooltip show method to fix left alignment in case tooltip left 
+				//coordinate goes beyond the parent window x-coordinate
+				Zapatec.Tooltip.prototype.show = function(x, y) {
+				  if (Zapatec.Tooltip._currentTooltip) {
+				    if (Zapatec.Tooltip._currentTooltip.timeout) {
+				      clearTimeout(Zapatec.Tooltip._currentTooltip.timeout);
+				      Zapatec.Tooltip._currentTooltip.timeout = null;
+				    }
+				    Zapatec.Tooltip._currentTooltip.hide();
+				  }
+				
+				  // Display tooltip
+				  this.tooltip.style.display = 'block';
+				  // If tooltip position is not specified
+ 			      var targetOffset = Zapatec.Utils.getElementOffset(this.config.target);
+				  if (null == x && null == y) {
+				    x = targetOffset.left;
+				    y = targetOffset.top;
+				  }
+
+				  //verify that the left coordinate is not beyond the parent body x coordinate
+				  var parentOffset = Zapatec.Utils.getElementOffset(this.config.parent);
+				  if (parentOffset && x < parentOffset.x) {
+				  	x = parentOffset.x;
+				  }
+				  this.tooltip.style.left = x + 'px';
+				  this.tooltip.style.top = y + 'px';
+				
+				  // Adjust tooltip position because it may be inside relatively positioned element
+				  var oOffset = Zapatec.Utils.getElementOffset(this.tooltip);
+				  var iDiffTop = y - oOffset.top;
+				  if (iDiffTop) {
+				    y += iDiffTop;
+				    this.tooltip.style.top = y + 'px';
+				  }
+				  // Adjust tooltip position if it is displayed outside of visible area
+				  oOffset = Zapatec.Utils.getElementOffset(this.tooltip);
+				  var iRight = oOffset.left + oOffset.width;
+				  var iBottom = oOffset.top + oOffset.height;
+				  var oWindowSize = Zapatec.Utils.getWindowSize();
+				  var iWinW = Zapatec.Utils.getPageScrollX() + oWindowSize.width;
+				  var iWinH = Zapatec.Utils.getPageScrollY() + oWindowSize.height;
+				  if (iRight > iWinW) {
+				    x += iWinW - iRight;
+				    this.tooltip.style.left = x + 'px';
+				  }
+				  if (iBottom > iWinH) {
+				    y += iWinH - iBottom;
+				    this.tooltip.style.top = y + 'px';
+				  }
+				  // Setup WCH
+				  Zapatec.Utils.setupWCH(this.wch, 0, 0, oOffset.width, oOffset.height);
+				
+				  Zapatec.Utils.addClass(this.config.target,
+				          this.getClassName({prefix: "zpTooltip", suffix: "Hover"}));
+				  this.visible = true;
+				  Zapatec.Tooltip._currentTooltip = this;
+				};
+
+ 				Zapatec.Tooltip.setupFromDFN('ing',-115); 
+			//--></script><script type="text/javascript"><!--
+				new Zapatec.Calendar({
+									inputField     :    "LaterDate",    	// id of the input field
+									ifFormat       :    "%d/%m/%Y",     							// format of the input field
+									button         :    "LaterDate",  	// trigger button (well, IMG in our case)
+									align		   :    "Bl",
+									
+									onClose      :    onCalendarClose,
+									
+									showsTime      :    false,
+									cache          :    true,
+									weekNumbers    :    false,
+									electric       :    true,
+									theme		   : 	"ing_zapa"
+								});
+			//--></script><script type="text/javascript"><!--
+				new Zapatec.Calendar({
+									inputField     :    "ASPStartDate",    	// id of the input field
+									ifFormat       :    "%d/%m/%Y",     							// format of the input field
+									button         :    "ASPStartDate",  	// trigger button (well, IMG in our case)
+									align		   :    "Bl",
+									
+									onClose      :    onCalendarClose,
+									
+									showsTime      :    false,
+									cache          :    true,
+									weekNumbers    :    false,
+									electric       :    true,
+									theme		   : 	"ing_zapa"
+								});
+			//--></script><script type="text/javascript"><!--
+				new Zapatec.Calendar({
+									inputField     :    "ASPEndDate",    	// id of the input field
+									ifFormat       :    "%d/%m/%Y",     							// format of the input field
+									button         :    "ASPEndDate",  	// trigger button (well, IMG in our case)
+									align		   :    "Bl",
+									
+									onClose      :    onCalendarClose,
+									
+									showsTime      :    false,
+									cache          :    true,
+									weekNumbers    :    false,
+									electric       :    true,
+									theme		   : 	"ing_zapa"
+								});
+			//--></script>
+</body></html>
