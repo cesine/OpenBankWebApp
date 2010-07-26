@@ -14,6 +14,6 @@
 
 <div id="section">
 <h1>Open Bank</h1>
-<p> Online Banking Made Easy: <br/>The Open Bank sytem is designed to model the website for any Canadian bank.</p>
+<p> Online Banking Made Easy: <br/>The Open Bank system is designed to model the website for any Canadian bank.</p>
 </div>
 </div>
