@@ -43,7 +43,7 @@ class Branch{
 		echo 'Displaying the branch.';
 	}
 	function __construct(){
-		echo 'Creating a branch.';
+		echo 'Creating a branch. Change somethings';
 		$this->branchName ="Metro Mcgill";
 	}
 }
