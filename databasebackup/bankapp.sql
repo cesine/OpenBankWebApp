@@ -37,7 +37,7 @@ CREATE TABLE `accounttype` (
 
 LOCK TABLES `accounttype` WRITE;
 /*!40000 ALTER TABLE `accounttype` DISABLE KEYS */;
-INSERT INTO `accounttype` VALUES (1,1,1,'Powerchequing Account'),(2,1,1,'Money Master Savings Account'),(3,1,3,'US Dollar Account'),(4,1,4,'No-Fee Value VISA'),(5,1,5,'No-fee Value VISA'),(6,1,6,'GIC(6mos) with Flex for RSPs Account'),(7,1,7,'GIC with Flex for TFSAs Account'),(8,1,9,'Accidental Death Insurance '),(10,2,1,'Basic Business Chequing Account'),(11,2,2,'Basic Business Savings Account'),(12,2,3,'Basic Business Foreign Currency Account'),(13,1,2,'GIC(12mos) with Flex for RSPs Account'),(14,1,2,'GIC(18mos) with Flex for RSPs Account');
+INSERT INTO `accounttype` VALUES (1,1,1,'Powerchequing Account'),(2,1,2,'Money Master Savings Account'),(3,1,3,'US Dollar Account'),(4,1,4,'No-Fee Value VISA'),(5,1,5,'No-fee Value VISA'),(6,1,6,'GIC(6mos) with Flex for RSPs Account'),(7,1,7,'GIC with Flex for TFSAs Account'),(8,1,9,'Accidental Death Insurance '),(10,2,1,'Basic Business Chequing Account'),(11,2,2,'Basic Business Savings Account'),(12,2,3,'Basic Business Foreign Currency Account'),(13,1,6,'GIC(12mos) with Flex for RSPs Account'),(14,1,6,'GIC(18mos) with Flex for RSPs Account');
 /*!40000 ALTER TABLE `accounttype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -495,7 +495,7 @@ CREATE TABLE `servicetype` (
 
 LOCK TABLES `servicetype` WRITE;
 /*!40000 ALTER TABLE `servicetype` DISABLE KEYS */;
-INSERT INTO `servicetype` VALUES (1,1,'Chequing'),(2,2,'Savings'),(3,1,'Foreign Currency'),(4,4,'Credit Cards'),(5,4,'Line Of Credit'),(6,2,'RSP'),(7,2,'TFSA'),(9,3,'Life');
+INSERT INTO `servicetype` VALUES (1,1,'Chequing'),(2,1,'Savings'),(3,1,'Foreign Currency'),(4,4,'Credit Cards'),(5,4,'Line Of Credit'),(6,2,'RSP'),(7,2,'TFSA'),(9,3,'Life');
 /*!40000 ALTER TABLE `servicetype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -541,4 +541,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-07-29 17:03:01
+-- Dump completed on 2010-07-29 23:03:01
