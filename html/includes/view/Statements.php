@@ -77,7 +77,7 @@ else
 {
 	echo '<table width="100%" border="1" cellpadding="3" cellspacing="1">';
 
-	echo '</th>';
+	//echo '</th>';
 	//$resultsArray[0]->displayTableHeadingRow();
 
 	for ($i = 0; $i < $hit; $i++)
