@@ -14,11 +14,35 @@ echo'<hr><p>';
 print_r($_SESSION);	
 echo '<hr><p>';
 
+
+
+
+
 $content = $_GET["content"];
 echo 'The content to display is '.$content;
 
-if($content=="BranchLocator"){	
+if($content=="BranchLocator"){
+	echo "For Gina<br />";	
 	include ('includes/view/BranchLocator.php');
+}
+if($content=="Statement"){
+	echo "For Lena<br />";	
+	include ('includes/view/Statements.php');
+}
+if ($content=="AccountType"){
+	echo "For Thomas<br />";
+	include ('includes/view/AccountType.php');
+}
+if ($content=="AddClient"){
+	echo "For Abi<br />";
+	include ('includes/view/AddClient.php');
+}
+if($content=="Summary"){
+	echo "For Anshu<br />";
+	include ('includes/view/Summary.php');
+}
+if($content==""){
+	
 }
 
 ?>
