@@ -121,12 +121,31 @@ class Transaction{
 		.'</td><td>'.$this->withdrawalAmount				
 		.'</td><td>'.$this->depositAmount		
 		.'</td><td>'.$this->balance		
-		.'</td></tr>'; 				
+		.'</td></tr>'; 	
+	}
+	function displayTransactionInRowFormatted(){
+		echo '<tr class="bgcoloroption1" valign="top">
+	<td class="tableDataLeftC" nowrap="nowrap">2010-07-26</td>
+	<td class="tableDataCenterC">-</td>
+	
+		<td class="tableDataLeftC">Deposit<br> </td>
+	
+		<td class="tableDataCenterC">-</td>
+	
+		<td class="tableDataRightC" align="right">
+     		$3,612.00
+  		</td>
+		
+		   <td class="tableDataRightC" align="right">
+		     
+     			$3,648.10
+		     
+		  </td>
+	
+</tr>			
+		';
 
 	}		
-				
-		
-		
-		
+			
 }
 ?>
