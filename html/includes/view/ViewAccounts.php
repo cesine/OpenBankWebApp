@@ -15,7 +15,7 @@ echo '</div>';
 	<TD class="fieldTitleRightC" valign=top width="25%"><A class="hyperlinkItem" HREF="/html/en/infoaccts.hlp.html#current_balance" onClick="staticPage('')" TARGET="HelpWindow">Current<br> Balance&nbsp;CAD</A></TD>
 	<TD class="fieldTitleRightC" valign=top width="25%"><A class="hyperlinkItem" HREF="/html/en/infoaccts.hlp.html#available_balance" onClick="staticPage('')" TARGET="HelpWindow">Available<br> Balance&nbsp;CAD</A></TD>
 </TR>
-
+<?php $accountNo1->DisplayAcountDetailsInRow();?>
 
 
 </TABLE>
