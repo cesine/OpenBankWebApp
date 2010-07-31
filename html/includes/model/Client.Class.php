@@ -100,7 +100,7 @@ class Client{
 		echo '<p class="name">'.$this->clientID.
 		'<br/>'.$this->firstName.
 		'<br/>'.$this->lastName.
-		'</p>\n\n';
+		'</p>';
 	}
 	function __construct(){
 		echo 'Adding a client, changing firstName';
