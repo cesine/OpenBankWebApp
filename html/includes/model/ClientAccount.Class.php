@@ -1,6 +1,6 @@
 <?php
 
-class Account{
+class ClientAccount{
 	private $clientAccountId;
 	private $branchId;
 	private $clientId;
