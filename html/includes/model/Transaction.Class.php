@@ -90,23 +90,29 @@ class Transaction{
 
 		function displayTransaction(){
 		echo '<p class="Transaction ID">'.
-		$this->transactionid.
-		'<br/>\n'.$this->clientid.		
-		'<br/>\n'.$this->accounteid.
+		$this->transactionID.
+		'<br/>\n'.$this->clientID.		
+		'<br/>\n'.$this->accounteID.
 		'<br/>\n'.$this->date.		
-		'<br/>\n'.$this->transactionfeecharged.		
-		'<br/>\n'.$this->depositamount.		
-		'<br/>\n'.$this->withdrawalamount.	
+		'<br/>\n'.$this->transactionFeeCharged.		
+		'<br/>\n'.$this->depositAmount.		
+		'<br/>\n'.$this->withdrawalAmount.	
 		'<br/>\n'.$this->balance.		
-		'<br/>\n'.$this->transactiondescription.				
-		
-		
-		
+		'<br/>\n'.$this->transactionDescription.				
 		'</p>\n\n';
 		}
 		function __construct(){
-			echo 'Creating a branch. Change somethings';
-			$this->branchName ="Metro Mcgill";
+			echo 'Creating transaction. Change somethings';
+			$this->transactionID =0001;
+			$this->clientID =0002;
+			$this->accounteID =0003;			
+			$this->date ="2010-01-01";			
+			$this->transactionFeeCharged =5;			
+			$this->depositAmount =1000;			
+			$this->withdrawalAmount =0;			
+			$this->balance =1000;
+			$this->transactionDescription ="my deposit";
+			
 		}		
 		
 		
