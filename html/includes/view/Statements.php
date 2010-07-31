@@ -2,7 +2,7 @@
 include('includes/model/Transaction.Class.php');
 echo '<div>';
 $transactionToDisplay = new Transaction();
-$transactionToDisplay->displayTest();
+$transactionToDisplay->test();
 $transactionToDisplay->displayTransaction();
 echo '</div>';
 ?>
