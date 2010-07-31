@@ -66,7 +66,7 @@ else
 	{    		
 	
 		// Display array of Transactions
-		$resultsArray[$i]->displayTransactionInRowFormatted();
+		$resultsArray[0]->displayTransactionInRowFormatted();
 	}
  
 	echo '</table>';
