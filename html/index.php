@@ -37,11 +37,10 @@ if($content=="BranchLocator"){
 }elseif ($content=="AddClient"){
 	echo "For Abi<br />";
 	include ('includes/view/AddClient.php');
-}elseif ($content=="OpenNewClient"){
+}elseif ($content=="OpenNewAccount"){
 	echo "For Abi<br />";
-	include ('includes/view/OpenNewClient.php');
-}
-elseif($content=="Summary"){
+	include ('includes/view/OpenNewAccount.php');
+}elseif($content=="Summary"){
 	echo "For Anshu<br />";
 	include ('includes/view/Summary.php');
 }elseif($content=="ViewAccount"){
