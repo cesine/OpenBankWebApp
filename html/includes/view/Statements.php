@@ -5,9 +5,9 @@ $transactionToDisplay = new Transaction();
 $transactionToDisplay->test();
 $transactionToDisplay->displayTransaction();
 echo '</div>';
-
 ?>
-<!-- Ctreate row in table -->
+
+<!-- Ctreate header for table -->
 <table width="100%" border="1" cellpadding="3" cellspacing="1">
 <tr>
 <td>
@@ -27,7 +27,75 @@ Balance
 </td>
 </tr>
 
-<?php $transactionToDisplay->displayTransactionInRowFormatted();?>
+
+<?php
+//Check to see if there is a transactions_array in the sessions variable, 
+//if there is it is because the mapper put one there. The transactions array is the 
+//serialzed version of a transaction object. If it is set, it means that there is 
+//some results to display. 
+
+if ($_SESSION['TransactionsArray']){
+	 if ($_SESSION['TransactionsArray'][0]){ 
+ 		//put the result objects into the results array 
+  		$resultsArray = unserialize($_SESSION['TransactionsArray']); 
+  		//put the number of results into hit 
+	 	$hit= count($resultsArray);  						
+ 	 }
+ 	 else{	 
+  			$hit=0;	 	
+ 	 }
+ }
+
+
+// For each hit - Displays transactions
+
+if ($hit == 0)
+{
+    echo ('No results found.');
+    echo '<br>';
+}
+else
+{
+	echo '<table width="100%" border="1" cellpadding="3" cellspacing="1">';
+
+	echo '</th>';
+	//$resultsArray[0]->displayTableHeadingRow();
+
+	for ($i = 0; $i < $hit; $i++)
+	{    		
+	
+		// Display search results
+		$resultsArray[$i]->displayTransactionInRowFormatted();
+	}
+ 
+	echo '</table>';
+	echo '<br>';   
+}
+?>
+
+
+
+<!-- Ctreate row in table -->
+ <!-- <table width="100%" border="1" cellpadding="3" cellspacing="1">
+<tr>
+<td>
+Date
+</td>
+<td>
+Desctiption
+</td>
+<td>
+Withdraw
+</td>
+<td>
+Deposits
+</td>
+<td>
+Balance
+</td>
+</tr>
+
+<?php //$transactionToDisplay->displayTransactionInRowFormatted();?>
 </table>
 
 <P> </P>
@@ -188,3 +256,4 @@ Balance
 	
 
 </tbody></table>
+ -->
