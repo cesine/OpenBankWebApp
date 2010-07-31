@@ -1,4 +1,5 @@
 <?php 
+echo "testing";
 class Branch{
 	private $branchName;
 	private $openingHours;
