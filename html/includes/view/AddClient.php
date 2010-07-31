@@ -18,13 +18,14 @@ echo '</div>';
 <!-- Form to add a client -->
 <P>Please fill in the details below.</P>
 <Form>
-
-First name:    <INPUT type="text" name="firstName"><BR>
-Last name:     <INPUT type="text" name="lastName"><BR>
-SIN:           <INPUT type="text" name="socialInsuranceNumber"><BR>
-Date of Birth: <INPUT type="text" name="dateOfBirth"><BR>
-
+<table>
+<tr><td>First name:   </td><td> <INPUT type="text" name="firstName"></td></tr>
+<tr><td>Last name:    </td><td> <INPUT type="text" name="lastName"></td></tr>
+<tr><td>SIN:          </td><td> <INPUT type="text" name="socialInsuranceNumber"></td></tr>
+<tr><td>Date of Birth:</td><td> <INPUT type="text" name="dateOfBirth"></td></tr>
+</table>
 </Form>
+<P> </P>
 <P>Please select your choice.</P>
 <table border="1">
 <tr><td>Services:</td><td><select name="service" size="4" multiple="multiple">
