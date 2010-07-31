@@ -467,28 +467,7 @@ function openHelp(URL)
 						<td class="darkgreyLine" align="right" width="1"><img
 							src="/images/spacer.gif" height="1" width="1"></td>
 						<td colspan="1">
-						<table border="0" cellpadding="2" cellspacing="0" width="100%">
 
-							<tr valign="top">
-								<td colspan="2" class="notesBold"><strong>Need Financial Advice?
-								Talk to your <i>Scotia</i><sup>&reg;</sup> advisor.</strong></td>
-							</tr>
-
-							<tr valign="top">
-								<td class="notes" colspan="2">Eric Huynh</td>
-							</tr>
-
-							<tr valign="top">
-								<td class="notes" colspan="2">514-731-6032</td>
-							</tr>
-
-							<tr valign="top">
-								<td class="notes" colspan="2"><a
-									href="http://maps.scotiabank.com/en/results.php?searchterm=80051"
-									class="notes" target="tool">Branch Location</a></td>
-							</tr>
-
-						</table>
 						</td>
 						<td class="darkgreyLine" align="left" width="1"><img
 							src="/images/spacer.gif" height="1" width="1"></td>
