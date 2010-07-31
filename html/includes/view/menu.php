@@ -1,8 +1,9 @@
 <div id="top"> <!-- The top panel -->
   <nav>
     <ul>
-      <li><a href="#">Banking</a></li>
-      <li><a href="#">Borrowing</a></li>
+    	<li><a href="?&content=Summary">Home</a></li>
+      <li><a href="?&content=Summary&service=banking">Banking</a></li>
+      <li><a href="">Borrowing</a></li>
       <li><a href="#">Investing</a></li>
       <li><a href="#">Insurance</a></li>
       <li><a href="#">Menu 5</a></li>
