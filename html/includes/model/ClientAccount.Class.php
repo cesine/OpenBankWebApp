@@ -1,3 +1,5 @@
+<?php
+
 class Account{
 	private $clientAccountId;
 	private $branchId;
@@ -37,26 +39,28 @@ class Account{
 		return $this->closingDate;
 	}	
 	public function setBranchId($branchId){
-		return $this->branchId;
+		$this->branchId=$branchId;
 	}
 	public function setclientId($clientId) {
-		return $this->clientId;
+		$this->clientId=$clientId;
 	}
 	public function setAccountTypeId($accountTypeId){
-		return $this->accountTypeId;
+		$this->accountTypeId=$accountTypeId;
 	}
 	public function setCurrentBalance($currentBalance) {
-		return $this->currentBalance;
+		$this->currentBalance=$currentBalance;
 	}	
 	public function setAvailableBalance($availableBalance){
-		return $this->availableBalance;
+		$this->availableBalance=$availableBalance;
 	}	
 	public function setStatus($status) {
-		return $this->status;
+		$this->status=$status;
 	}	
 	public function setOpeningDate($openingDate){
-		return $this->openingDate;
+		$this->openingDate=$openingDate;
 	}
 	public function setClosingDate($closingDate){
-		return $this->closingDate;
+		$this->closingDate=$closingDate;
 	}
+}	
+?>
