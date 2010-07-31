@@ -96,7 +96,7 @@ class Client{
 		$this->setBranchID(1001);
 		$this->setClientAccountID(95432453);
 	}
-	function displayBranch(){
+	function displayClientDetails(){
 		echo '<p class="name">'.$this->clientID.
 		'<br/>\n'.$this->firstName.
 		'<br/>\n'.$this->lastName.
