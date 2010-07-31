@@ -87,8 +87,8 @@ class Transaction{
 		$this->setWithdrawalAmount(0);	
 		$this->setBalance(1000);
 		$this->setTransactionDescription("my deposit");	
-
-		function displayTransaction(){
+	}
+	function displayTransaction(){
 		echo '<p class="Transaction ID">'.
 		$this->transactionID.
 		'<br/>\n'.$this->clientID.		
@@ -100,8 +100,8 @@ class Transaction{
 		'<br/>\n'.$this->balance.		
 		'<br/>\n'.$this->transactionDescription.				
 		'</p>\n\n';
-		}
-		function __construct(){
+	}
+	function __construct(){
 			echo 'Creating transaction. Change somethings';
 			$this->transactionID =0001;
 			$this->clientID =0002;
@@ -114,13 +114,5 @@ class Transaction{
 			$this->transactionDescription ="my deposit";
 			
 		}		
-		
-		
-		
-	}	
-	
-	
-	
-	
 }
 ?>
