@@ -1,0 +1,549 @@
+/* Table Elements  */
+TABLE { FONT-SIZE: 9pt; FONT-WEIGHT: normal; FONT-FAMILY: Arial, Helvetica, sans-serif }
+TR { TEXT-ALIGN: left; FONT-WEIGHT: normal }
+TD { FONT-SIZE: 9pt; FONT-FAMILY: Arial, Helvetica, sans-serif }
+TH { vertical-align: top; TEXT-ALIGN: center; FONT-SIZE: 9pt; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-WEIGHT: normal }
+
+/* Background Elements */ 
+.background1 { border: #FFFFFF ; BACKGROUND-COLOR: #DAD9C0; FONT-WEIGHT: normal; COLOR: #990000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; }
+.background1Bold { border: #FFFFFF ; BACKGROUND-COLOR: #DAD9C0; FONT-WEIGHT: bold; COLOR: #993300; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; }
+.background2 { border: #FFFFFF; BACKGROUND-COLOR: #DAD9C0; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; }
+.background2Bold { border: #FFFFFF; BACKGROUND-COLOR: #DAD9C0; FONT-WEIGHT: bold; COLOR: #993300; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; }
+.background3 { FONT-STYLE: normal; FONT-WEIGHT: normal; BACKGROUND-COLOR: #F9F9F0; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; }
+.background3Bold { FONT-STYLE: normal; FONT-WEIGHT: bold; BACKGROUND-COLOR: #F9F9F0; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; }
+.background4Bold { FONT-STYLE: normal; FONT-WEIGHT: bolder; BACKGROUND-COLOR: #999966; COLOR: #FFFFCC; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; }
+.background5 { BACKGROUND-COLOR: #CCCC99 }
+.bgcoloroption0 { BACKGROUND-COLOR: #DAD9C0 }
+.bgcoloroption1 { BACKGROUND-COLOR: #F5F5F5 }
+.bgcoloroption2 { BACKGROUND-COLOR: #FFFFFF }
+.bgcoloroption3 { BACKGROUND-COLOR: #8A8879 }
+.bgcoloroption4 { BACKGROUND-COLOR: #DDDDDD }
+.bgcoloroption5 { BACKGROUND-COLOR: #A50000 }
+.bgcoloroption6 { BACKGROUND-COLOR: #333333 }
+.bgcoloroption7 { BACKGROUND-COLOR: #CFCEAF } /* trading efficiency */
+.bgcoloroption8 { BACKGROUND-COLOR: #AAAAAA } /* For snap quote of trading efficiency */
+.bgcoloroption9 { BACKGROUND-COLOR: #ECECDF } /* Visa Account Redesign & Business Resources Redesign */
+.bgcoloroptionA { BACKGROUND-COLOR: #F9F9F0 }
+.bgcoloroptionB { BACKGROUND-COLOR: #E8E8E8 }
+.bgcoloroptionD { BACKGROUND-COLOR: #999966 }
+.bgcoloroptionE { BACKGROUND-COLOR: #ECEDDF } /* Banking Experience Part II */
+.bgcoloroptionF { BACKGROUND-COLOR: #666699 } /* Cheque Image pop-up page */
+.bgcoloroptionG { BACKGROUND-COLOR: #9E9E9E } /* Cheque Image pop-up page */
+.bgcoloroptionH { BACKGROUND-COLOR: #E5E5E5 } /* Weekend */
+.bgcoloroptionI { BACKGROUND-COLOR: #ADD8E6 } /* Light Blue */
+.mac2background { BACKGROUND-COLOR: #FFFFFE; }
+
+/* Title and Heading Elements */
+.colheadingdark { FONT-SIZE: 13px; COLOR: #000000; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.colheading { FONT-SIZE: 12.5px; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.fieldTitleLeftA { FONT-SIZE: 12px; COLOR: #000000; BACKGROUND-COLOR: #f1f1e0; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftB { FONT-SIZE: 13px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftC { FONT-SIZE: 12px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftWhiteC { FONT-SIZE: 12px; COLOR: #FFFFFF; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftRedC { FONT-SIZE: 12px; COLOR: #a50000; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftD { FONT-SIZE: 10px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftWhiteE { FONT-SIZE: 11px; COLOR: #FFFFFF; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftE { FONT-SIZE: 11px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftGrayE { FONT-SIZE: 11px; COLOR: #555555; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+
+.fieldTitleRightA { FONT-SIZE: 12px; COLOR: #000000; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right; }
+.fieldTitleRightB { FONT-SIZE: 13px; COLOR: #000000; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right; }
+.fieldTitleRightC { FONT-SIZE: 12px; COLOR: #000000; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right; }
+.fieldTitleRightCLinked { FONT-SIZE: 12px; COLOR: #0000cc; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; TEXT-ALIGN: right; }
+.fieldTitleRightWhiteC { FONT-SIZE: 12px; COLOR: #FFFFFF; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right; }
+.fieldTitleRightD { FONT-SIZE: 10px; COLOR: #000000; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right; }
+.fieldTitleCenterA { FONT-SIZE: 12px; COLOR: #000000; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: center; }
+.fieldTitleCenterB { FONT-SIZE: 13px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; }
+.fieldTitleCenterC { FONT-SIZE: 12px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; }
+.fieldTitleCenterWhiteC { FONT-SIZE: 12px; COLOR: #FFFFFF; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; }
+.fieldTitleCenterWhiteD { FONT-SIZE: 10px; COLOR: #FFFFFF; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; }
+.fieldTitleCenterD { FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-WEIGHT: bold; TEXT-ALIGN: center; }
+.fieldTitleCenterE { FONT-SIZE: 11px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; }
+
+.footerTitle { FONT-SIZE: 8pt; COLOR: #000066; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-STYLE: normal; }
+.greyTableTitle { FONT-SIZE: 11pt; COLOR: #444444; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+
+.heading2 { FONT-SIZE: 14pt; COLOR: black; FONT-STYLE: normal; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.menuTitle { FONT-SIZE: 12px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.pageTitle { FONT-SIZE: 13pt; COLOR: black; FONT-STYLE: normal; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.regularTDBold { FONT-SIZE: 9pt; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.scotiaTitle { FONT-SIZE: 12pt; COLOR: #333366; FONT-STYLE: italic; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.scotiaTitleSup { FONT-SIZE: 9px; COLOR: #333366; FONT-STYLE: italic; FONT-WEIGHT: bold; FONT-VARIANT: small-caps; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; }
+.tableColHeadings { FONT-SIZE: 9pt; BACKGROUND-COLOR: #F9F9F0; FONT-STYLE: normal; TEXT-ALIGN: center; FONT-WEIGHT: bold; TEXT-DECORATION: none; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.tableSortedHeading {FONT-SIZE: 9pt; COLOR: #FFFFFF; BACKGROUND-COLOR: #999966; FONT-WEIGHT: bold; TEXT-DECORATION: none; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.tableSortedHeadingD { BACKGROUND-COLOR: #999966; COLOR: #ffffff; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; TEXT-DECORATION: none }
+.tableSortedHeadingE { COLOR: #ffffff; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; TEXT-DECORATION: none } 
+.tableTitle { FONT-SIZE: 11pt; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; } 
+.tableTitles { FONT-SIZE: 11pt; COLOR: #000000; FONT-WEIGHT: bold; BACKGROUND-COLOR: #DAD9C0; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; vertical-align: middle; }
+.tableTitlesLevel2 { FONT-SIZE: 10pt; COLOR: #000000; BACKGROUND-COLOR: #DAD9C0; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.tableTitles3 { FONT-SIZE: 8pt; BACKGROUND-COLOR: #DAD9C0; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.tableTitleRightC { FONT-SIZE: 11pt; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right; }
+.tdBoldRight { FONT-WEIGHT: bold; TEXT-ALIGN: right }
+
+
+/* Text Elements */
+.chromeText { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold; COLOR: #000000 }
+.greenText { FONT-WEIGHT: bold; COLOR: #006633; FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.greenTextBold { FONT-WEIGHT: bold; COLOR: #009900; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; }
+.normaltext { FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.normalboldtext { FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.normalboldgraytext { FONT-WEIGHT: bold; COLOR: #666666; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.normalboldredtext { FONT-WEIGHT: bold; COLOR: #A50000; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.redText { COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9pt; }
+.redTextA { FONT-SIZE: 12pt; COLOR: #A50000; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.redTextB { FONT-SIZE: 13pt; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.redTextC { FONT-SIZE: 12pt; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.redTextBold { FONT-WEIGHT: bold; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9pt; }
+.regularText { FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.regularTextBold { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.regularTextLite { FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #444444; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.regularTextLiteBold { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #444444; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+
+.printerFriendly { FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Helvetica, sans-serif }
+
+/* Input Elements */
+.buttonText { FONT-SIZE: 9pt; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.dropdownBox { FONT-SIZE: 8pt; FONT-WEIGHT: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+/* tentative for AccountHistory */
+.ahdropdownBox { FONT-SIZE: 8pt; FONT-WEIGHT: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; width: 70px}
+.dropdownBoxWithBkg { FONT-SIZE: 8pt; BACKGROUND-COLOR: #f9f9f0; FONT-WEIGHT: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.formSubmission { FONT-SIZE: 9pt; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.inputSelect { FONT-SIZE: 10px; FONT-WEIGHT: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.inputText { FONT-SIZE: 12px; FONT-WEIGHT: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.orderInputText { FONT-SIZE: 10px; FONT-WEIGHT: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.printButtonText { FONT-SIZE: 9pt; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+.radiobg { COLOR: #000000; BACKGROUND: #FEFEFE; }
+textarea.exchText { FONT-FAMILY: Arial, Helvetica, sans-serif; WIDTH: 100%; }
+input.optionSymbolSelect { width: 20px; height: 18px; }
+
+/* Data Display Elements */
+.acct { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px }
+.acctA { FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.acctB { FONT-SIZE: 13px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.acctC { FONT-SIZE: 12px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.acctCenter { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; TEXT-ALIGN: center }
+.acctCenterA { FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: center }
+.acctCenterB { FONT-SIZE: 13px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center }
+.acctCenterC { FONT-SIZE: 12px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center }
+.balance { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; COLOR: #000000; TEXT-ALIGN: right }
+.balanceNotAvailableA { FONT-SIZE: 12px; COLOR: #A50000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.balanceNotAvailableB { FONT-SIZE: 13px; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.balanceNotAvailableC { FONT-SIZE: 12px; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.categoryName { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: bold; COLOR: black; TEXT-DECORATION: none }
+.colTotal { TEXT-ALIGN: left; FONT-WEIGHT: bold; BACKGROUND-COLOR: #DAD9C0; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9pt }
+.colTotalR { TEXT-ALIGN: right; FONT-WEIGHT: bold; BACKGROUND-COLOR: #DAD9C0; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9pt }
+.date { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; COLOR: #333366; FONT-STYLE: normal }
+.dateA { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #333366; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: Left }
+.dateB { FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #333366; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: Left }
+.dateC { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #333366; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: Left }
+.dollarAmountA { FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.dollarAmountB { FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.dollarAmountC { FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.dollarAmountD { FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.dollarAmountBold { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.dollarAmountRed { FONT-SIZE: 12px; COLOR: #A50000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.dollarAmountRedD { FONT-SIZE: 10px; COLOR: #a50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.dollarAmountBoldRed { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #A50000; FONT-STYLE: italic; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.formattedDate { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-STYLE: normal; FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black }
+.formattedDateB { FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.negativeChange { FONT-SIZE: 13pt; FONT-WEIGHT: bold; COLOR: #CC0000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.negDollarA { FONT-SIZE: 12px; COLOR: #A50000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.negDollarB { FONT-SIZE: 13px; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.negDollarC { FONT-SIZE: 12px; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.negDollarD { FONT-SIZE: 10px; COLOR: #a50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.noChange { FONT-SIZE: 13pt; FONT-WEIGHT: bold; COLOR: #996666; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.pageID { FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000066; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.positiveChange { FONT-SIZE: 13pt; FONT-WEIGHT: bold; COLOR: #006633; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.productNameBlueA { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000066; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.productNameBlueB{ FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000066; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.productNameBlueC{ FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000066; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.readOnlyTotal { TEXT-ALIGN: right; WIDTH: 100px }
+.returnInfo{ FONT-FAMILY: Helvetica,Arial,Geneva; FONT-STYLE: normal; FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #A50000 }
+.subcol { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; COLOR: #000000 }
+.subcolCenter { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; COLOR: #000000; TEXT-ALIGN: center }
+.subcolRight { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; COLOR: #000000; TEXT-ALIGN: right }
+.totalBalanceC { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.tableDataLeftA { FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: left; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.tableDataLeftB { FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: left; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.tableDataLeftC { FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: left; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.tableDataLeftRedC { FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-STYLE: normal; TEXT-ALIGN: left }
+.tableDataLeftRedD { FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-STYLE: normal; TEXT-ALIGN: left }
+.tableDataLeftD { FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: left; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.tableDataRightA { FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: right; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.tableDataRightB { FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: right; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.tableDataRightC { FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: right; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.tableDataRightD { FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-STYLE: normal; TEXT-ALIGN: right }
+.tableDataRightE { FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-STYLE: normal; TEXT-ALIGN: right }
+
+.tableDataRightRedC { FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-STYLE: normal; TEXT-ALIGN: right }
+.tableDataRightRedD { FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-STYLE: normal; TEXT-ALIGN: right }
+.tableDataCenterA { FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: center; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.tableDataCenterB { FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: center; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.tableDataCenterC { FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; TEXT-ALIGN: center; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.tableDataCenterRedC { COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: center }
+.tableDataCenterD { COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: center }
+
+.tableDataCenterRedD { COLOR: #A50000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: center }
+.tableWarningData { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #A50000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.tableWarningDataB { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #A50000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.total { FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-ALIGN: right }
+.totalA { FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.totalB { FONT-WEIGHT: bold; FONT-SIZE: 13px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.totalC { FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.totalBalanceA { FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+.totalBalanceB { FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: right }
+
+/* Hyper-Link Elements */
+#a:link { FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #0000CC; TEXT-DECORATION: none }
+A.hyperlinkItem:visited { COLOR: #000066; TEXT-DECORATION: none }
+A.hyperlinkItem:link { COLOR: #0000cc; TEXT-DECORATION: none }
+A.hyperlinkItem:hover { TEXT-DECORATION: underline }
+A.hyperlinkItem:active { TEXT-DECORATION: none }
+A.hyperlinkItemWhite:visited { COLOR: #FFFFFF; TEXT-DECORATION: none }
+A.hyperlinkItemWhite:link { COLOR: #FFFFFF; TEXT-DECORATION: none }
+A.hyperlinkItemWhite:hover { TEXT-DECORATION: underline }
+A.hyperlinkItemWhite:active { TEXT-DECORATION: none }
+A.menuItem { FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial; TEXT-DECORATION: none }
+A.menuLink:link { COLOR: #000099; TEXT-DECORATION: none }
+A.menuLink:visited { COLOR: #000066; TEXT-DECORATION: none }
+A.menuLink:hover { TEXT-DECORATION: underline }
+A.menuLink:active { TEXT-DECORATION: none }
+A.clFoldLinks { FONT-FAMILY:Verdana; FONT-SIZE:11px; TEXT-DECORATION:none; FONT-WEIGHT:bold; COLOR:black }
+A.clSubLinks { FONT-FAMILY:Verdana; FONT-SIZE:11px; FONT-WEIGHT:bold; TEXT-DECORATION:none; COLOR:black }
+A.linkHorzMenu:visited { COLOR: #333333; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkHorzMenu:link { COLOR: #333333; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkHorzMenu:hover { TEXT-DECORATION: underline; COLOR: #CE0000 }
+A.linkHorzMenu:active { TEXT-DECORATION: none }
+A.linkHorzMenuBold:visited { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkHorzMenuBold:link { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkHorzMenuBold:hover { TEXT-DECORATION: underline; COLOR: #CE0000 }
+A.linkHorzMenuBold:active { TEXT-DECORATION: none }
+A.linkVertMenu:visited { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.linkVertMenu:link { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.linkVertMenu:hover { TEXT-DECORATION: underline; COLOR: #CE0000 }
+A.linkVertMenu:active { TEXT-DECORATION: none }
+A.linkVertMenuBold:visited { COLOR: #CE0000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkVertMenuBold:link { COLOR: #CE0000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkVertMenuBold:hover { TEXT-DECORATION: underline;  COLOR: #CE0000 }
+A.linkVertMenuBold:active { TEXT-DECORATION: none }
+
+A.regularTextLink:visited { FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #CC0000; TEXT-DECORATION: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+A.regularTextLink:link { FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #CC0000; TEXT-DECORATION: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+A.regularTextLink:hover { FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #CC0000; TEXT-DECORATION: underline; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+A.regularTextLink:active { FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #CC0000; TEXT-DECORATION: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+A.regularTextBoldLink:visited { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #CC0000; TEXT-DECORATION: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+A.regularTextBoldLink:link { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #CC0000; TEXT-DECORATION: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+A.regularTextBoldLink:hover { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #CC0000; TEXT-DECORATION: underline; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+A.regularTextBoldLink:active { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #CC0000; TEXT-DECORATION: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+
+/* Site Map */
+A.linkSiteMapTitle:visited { COLOR: #333333; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkSiteMapTitle:link { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkSiteMapTitle:hover { TEXT-DECORATION: underline;  COLOR: #CE0000 }
+A.linkSiteMapTitle:active { TEXT-DECORATION: none }
+
+A.linkSiteMapTitleWht:visited { COLOR: #ffffff; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkSiteMapTitleWht:link { COLOR: #ffffff; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkSiteMapTitleWht:hover { TEXT-DECORATION: underline;  COLOR: #CE0000 }
+A.linkSiteMapTitleWht:active { TEXT-DECORATION: none }
+
+A.linkSiteMapSubTitle:visited { COLOR: #333333; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkSiteMapSubTitle:link { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkSiteMapSubTitle:hover { TEXT-DECORATION: underline;  COLOR: #CE0000 }
+A.linkSiteMapSubTitle:active { TEXT-DECORATION: none }
+
+A.linkSiteMapItem:visited { COLOR: #000066; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.linkSiteMapItem:link { COLOR: #0000cc; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.linkSiteMapItem:hover { TEXT-DECORATION: underline; COLOR: #CE0000 }
+A.linkSiteMapItem:active { TEXT-DECORATION: none }
+
+.accountLink{ FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #0000CC; TEXT-DECORATION: none; FONT-SIZE: 12px }
+.accountLinkA { FONT-SIZE: 12px; COLOR: #0000cc; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none }
+.accountLinkB { FONT-SIZE: 13px; COLOR: #0000cc; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: none }
+.accountLinkC { FONT-SIZE: 12px; COLOR: #0000cc; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: none }
+.clSubLinks2 { FONT-FAMILY:Verdana; FONT-SIZE:8pt; TEXT-DECORATION:none; COLOR:black }
+.clSubLinks2Red { FONT-FAMILY:Verdana; FONT-SIZE:8pt; TEXT-DECORATION:none; COLOR:red }
+.globallinks { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; color: #666666 }
+.helpLink { FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: black; TEXT-DECORATION: none }
+.helpLinkA { COLOR: black; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none }
+.helpLinkB { COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: none }
+.helpLinkC { COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: none }
+.linkName { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9pt; COLOR:blue }
+.SignOnLinks { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold; TEXT-DECORATION: none }
+.SOLinksSmall { FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none }
+.linktoTop { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 8pt; COLOR:white TEXT-DECORATION: underline }
+
+/* Borders */
+.border { border: 1px solid #ECEBEA; }
+
+/* Message Display Elements */
+.disclaimers { border: #FFFFFF; BACKGROUND-COLOR: #DAD9C0; FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.errorDisplay { FONT-STYLE: italic; FONT-WEIGHT: bold; COLOR: #FFFFCC; BACKGROUND-COLOR: #999966; FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.errMsg { TEXT-ALIGN:center; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12.5px; COLOR: red }
+.errMsgLeft { TEXT-ALIGN:left; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12.5px; COLOR: red }
+.footer { FONT-SIZE: 8pt; FONT-FAMILY: Arial, Helvetica, sans-serif}
+.instructions { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: normal; COLOR: #FFFFFF }
+.notes { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: normal; COLOR: #000000 }
+.notesBold { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: bold; COLOR: #000000 }
+.redBoldNotes { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: bold; COLOR: #CE0000 }
+.redNotes { FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: normal; COLOR: #CE0000 }
+.systemError1 { FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: #a50000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.systemError2 { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #a50000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+.tableDataError{font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;font-style: normal;font-weight: bold;font-size: 11pt; color: #A50000}
+
+/* Sub-Tab Elements */
+.subTabDark { background-color: #999966; color: #000000; font-style: normal; font-weight: bold; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 9pt; text-align: center }
+.subTabLight { background-color: #CCCC99; color: #000000; font-style: normal; font-weight: bold; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 9pt; text-align: center }
+
+/* TOA-Tab Elements */
+.toaTabDark { background-color: #686868; color: #ffffff; font-style: normal; font-weight: bold; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 9pt; text-align: center }
+.toaTabLight { background-color: #ececdf; color: #000000; font-style: normal; font-weight: bold; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 9pt; text-align: center }
+
+/* Layers Elements */
+DIV.clFold { POSITION: absolute; WIDTH: 160px; CLIP: rect(0,160px,300px,0); FONT-FAMILY: Verdana; FONT-SIZE: 11px }
+DIV.clFoldSub { POSITION: absolute; LEFT: 10px; WIDTH: 150px; VISIBILITY: hidden; CLIP: rect(0,0,0,0) }
+DIV.clFoldSub2 { POSITION: absolute; LEFT: 15px; WIDTH: 145px; VISIBILITY: hidden; CLIP: rect(0,0,0,0) }
+#divFoldCont { POSITION: relative; LEFT: 3px; TOP: 0; HEIGHT: 200px; WIDTH: 160px; VISIBILITY: hidden }
+
+/* Message Centre Redesign */
+A.msgcentreTitle:visited { COLOR: #ffffff; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.msgcentreTitle:link { COLOR: #ffffff; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.msgcentreTitle:hover { TEXT-DECORATION: underline; COLOR: #cccccc }
+A.msgcentreTitle:active { TEXT-DECORATION: none }
+
+A.msgcentreMore:visited { COLOR: #CE0000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.msgcentreMore:link { COLOR: #CE0000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.msgcentreMore:hover { TEXT-DECORATION: underline; COLOR: #CE0000 }
+A.msgcentreMore:active { TEXT-DECORATION: none }
+
+A.msgcentrebillboard:visited { COLOR: #CE0000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: oblique; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.msgcentrebillboard:link { COLOR: #CE0000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: oblique; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.msgcentrebillboard:hover { TEXT-DECORATION: underline; COLOR: #CE0000 }
+A.msgcentrebillboard:active { TEXT-DECORATION: none }
+
+A.msgcentreMain:visited { COLOR: #ffffff; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.msgcentreMain:link { COLOR: #ffffff; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.msgcentreMain:hover { TEXT-DECORATION: underline; COLOR: #cccccc }
+A.msgcentreMain:active { TEXT-DECORATION: none }
+
+A.msgcentreInboxItemsred:visited { COLOR: #CE0000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.msgcentreInboxItemsred:link { COLOR: #CE0000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.msgcentreInboxItemsred:hover { TEXT-DECORATION: underline;  COLOR: #ce0000 }
+A.msgcentreInboxItemsred:active { TEXT-DECORATION: none }
+
+A.msgcentreInboxItemsgray:visited { COLOR: #999999; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.msgcentreInboxItemsgray:link { COLOR: #999999; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.msgcentreInboxItemsgray:hover { TEXT-DECORATION: underline;  COLOR: #ce0000 }
+A.msgcentreInboxItemsgray:active { TEXT-DECORATION: none }
+
+.darkgreyLine { background-color: #686868; }
+
+.dotline { background-image: url(/images/dotline.gif); }
+
+.smallboldtext { font-weight : bold; font-size : 11px; color: #666666; font-family : Verdana, Arial, Helvetica, sans-serif;} 
+
+.rewardsItem { font-size: 10px; font-style: normal; color: #333333; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;  TEXT-ALIGN: left;}
+
+.rewardsText { font-size: 11px; font-style: normal; color: #333333; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;  TEXT-ALIGN: left;}
+
+.rewardsTextBold { font-size: 11px; font-weight: bold; font-style: normal; color: #333333; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;  TEXT-ALIGN: left;}
+
+.rewardsItemAlt { font-weight: normal; font-size: 11px; color: #666666; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+
+.marketingTextBold { font-size: 11px; font-weight: bold; font-style: normal; color: #666666; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;  TEXT-ALIGN: left;}
+
+.marketingTitlelink { font-weight: bold; font-size: 11px; color: #CC0000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+a.marketingTitlelink:link { font-size: 11px; text-decoration: none; color: #CC0000; font-weight: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+a.marketingTitlelink:visited { font-size: 11px; text-decoration: none; color: #CC0000; font-weight: bold;FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+a.marketingTitlelink:hover { font-size: 11px; text-decoration: underline; color: #CC0000; font-weight: bold;FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+
+.rewardslink { font-size: 10px; color: #CC0000; font-weight: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+a.rewardslink:link { font-size: 11px; text-decoration: none; color: #CC0000; font-weight: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+a.rewardslink:visited { font-size: 11px; text-decoration: none; color: #CC0000; font-weight: normal;FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+a.rewardslink:hover { font-size: 11px; text-decoration: underline; color: #CC0000; font-weight: normal;FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; line-height: 15px;}
+
+.rewardsItemlink { font-size: 11px; color: #CC0000; font-weight: bold;}
+a.rewardsItemlink:link { font-size: 11px; text-decoration: none; color: #CC0000; font-weight: bold;}
+a.rewardsItemlink:visited { font-size: 11px; text-decoration: none; color: #CC0000; font-weight: bold;}
+a.rewardsItemlink:hover { font-size: 11px; text-decoration: underline; color: #CC0000; font-weight: bold;}
+
+.rewardsItemLinkNoBold { font-size: 11px; color: #CC0000; FONT-WEIGHT: normal}
+a.rewardsItemLinkNoBold:link { font-size: 11px; text-decoration: none; color: #CC0000; FONT-WEIGHT: normal}
+a.rewardsItemLinkNoBold:visited { font-size: 11px; text-decoration: none; color: #CC0000; FONT-WEIGHT: normal}
+a.rewardsItemLinkNoBold:hover { font-size: 11px; text-decoration: underline; color: #CC0000; FONT-WEIGHT: normal}
+
+.style1 {color: #CCCCCC}
+.style3 {font-size: small; font-weight: bold;}
+.tanLine { background-color: #AD9F84; }
+
+/* Function Lock-down */
+A.linkAccessCode:visited { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.linkAccessCode:link { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+A.linkAccessCode:hover { TEXT-DECORATION: underline; COLOR: #CE0000 }
+A.linkAccessCode:active { TEXT-DECORATION: none }
+
+
+.fieldTitleCenterC_BgGray {
+	BACKGROUND-COLOR: #DDDDDD; FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center
+}
+
+A.hyperlinkItemGray:visited {
+	COLOR: #555555; TEXT-DECORATION: none
+}
+A.hyperlinkItemGray:link {
+	COLOR: #555555; TEXT-DECORATION: none
+}
+A.hyperlinkItemGray:hover {
+	COLOR: #A50000; TEXT-DECORATION: underline
+}
+A.hyperlinkItemGray:active {
+	TEXT-DECORATION: none
+}
+
+
+A.hyperlinkItemRed:visited {
+	COLOR: #A50000; TEXT-DECORATION: none
+}
+A.hyperlinkItemRed:link {
+	COLOR: #A50000; TEXT-DECORATION: none
+}
+A.hyperlinkItemRed:hover {
+	COLOR: #A50000; TEXT-DECORATION: underline
+}
+A.hyperlinkItemRed:active {
+	TEXT-DECORATION: none
+}
+
+
+.ViewTabOn      { BORDER-TOP: #a50000 2px solid; PADDING: 0px; WIDTH: 150px; FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; }
+.ViewTabOn2      { BORDER-TOP: #a50000 2px solid; PADDING: 0px; FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; }
+.ViewTabOnLeft  { BORDER-LEFT: #a50000 2px solid; PADDING: 0px; }
+.ViewTabOnRight { BORDER-RIGHT: #a50000 2px solid; PADDING: 0px; }
+
+/* Security & Activity Status  */
+.smallreditalictext {font-size: 10px; color: #cc0000; font-weight: normal; font-family : Verdana, Arial, Helvetica, sans-serif; font-style: italic; } 
+
+/* Option Chain Page */
+.tableDataLeftD1 { BACKGROUND-COLOR: #F5f5f5; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+.tableDataCenterD1 { BACKGROUND-COLOR: #F5f5f5; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: center }
+.tableDataRightD1 { BACKGROUND-COLOR: #F5f5f5; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: right }
+.tableDataLeftD2 { BACKGROUND-COLOR: #Ffffff; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: left }
+.tableDataCenterD2 { BACKGROUND-COLOR: #Ffffff; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: center }
+.tableDataRightD2 { BACKGROUND-COLOR: #Ffffff; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-ALIGN: right }
+.tableDataCenterCALLon {FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: center}
+.tableDataCenterCALLonDrop {FONT-WEIGHT: normal; WIDTH: 70px; FONT-SIZE: 9px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #8DB4B4; TEXT-ALIGN: center}
+.tableDataCenterPUTonDrop {FONT-WEIGHT: normal; WIDTH: 70px; FONT-SIZE: 9px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #FBF0A6; TEXT-ALIGN: center}
+.tableDataCenterStrike {FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: center}
+.tableDataCenterCALLonDropBasket {FONT-WEIGHT: normal; WIDTH: 72px; FONT-SIZE: 9px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #8DB4B4; TEXT-ALIGN: center}
+
+/* Banking Experience Part II */
+A.linkTabON:visited { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkTabON:link { COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkTabON:hover { TEXT-DECORATION: underline; COLOR: #cc0000}
+A.linkTabON:active { TEXT-DECORATION: none }
+
+A.linkTab:visited { COLOR: #ffffff; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkTab:link { COLOR: #ffffff; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+A.linkTab:hover { TEXT-DECORATION: underline; COLOR: #000000}
+A.linkTab:active { TEXT-DECORATION: none }
+
+
+/* Push To talk */
+.headline2 {
+   font-weight : normal; 
+   font-size : 20px; 
+   font-family : Verdana, Arial, Helvetica, sans-serif; 
+   color : #cc0000;
+   line-height: 105%; }
+.headline3 {
+   font-weight : bold; 
+   font-size : 12px; 
+   font-family : Verdana, Arial, Helvetica, sans-serif; 
+   color : #cc0000; }   
+.leftnavHeader { font-size: 11px; font-weight: bold; font-style: normal; color: #000000; }   
+.regularTextLite2 { FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #444444; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+
+
+/* MFA */
+.tabON{ COLOR: #000000; TEXT-DECORATION: none; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-ALIGN: left }
+.dropdownBoxMFA { FONT-SIZE: 8pt; FONT-WEIGHT: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; width: 390px; }
+
+/* Insurance Tab */
+.regularTextBoldIns { FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #00274C; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif }
+
+
+/* Recent Doc Pagination Color Fix*/
+A.linking:link { COLOR: #0000cc; TEXT-DECORATION: none }
+A.linking:visited { COLOR: #0000cc; TEXT-DECORATION: none }
+A.linking:hover { color: #0000cc; TEXT-DECORATION: underline }
+A.linking:active { color: #0000cc; }
+
+/* ScotiaCard First Use Activation*/
+a.squarebutton{
+background: transparent url('/images/cssElements/bg_button_left_tr_red.gif') no-repeat top left;
+display: block;
+float: left;
+font: bold 12px Arial; /* Change 12px as desired */
+letter-spacing: 1px;
+line-height: 15px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 23px) */
+height: 23px; /* Height of button background height */
+padding-left: 9px; /* Width of left menu image */
+text-decoration: none;
+}
+
+a:link.squarebutton, a:visited.squarebutton, a:active.squarebutton{
+color: #fff; /*button text color*/
+}
+
+a.squarebutton span{
+background: transparent url('/images/cssElements/bg_button_right_tr_red.gif') no-repeat top right;
+display: block;
+padding: 4px 9px 4px 0; /*Set 9px below to match value of 'padding-left' value above*/
+}
+
+a.squarebutton:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.squarebutton:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: fff;
+}
+
+a.squarebutton_taupe{
+background: transparent url('/images/cssElements/bg_button_left_tr_taupe.gif') no-repeat top left;
+display: block;
+float: left;
+font: bold 12px Arial; /* Change 12px as desired */
+letter-spacing: 1px;
+line-height: 15px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 23px) */
+height: 23px; /* Height of button background height */
+padding-left: 9px; /* Width of left menu image */
+text-decoration: none;
+}
+
+a:link.squarebutton_taupe, a:visited.squarebutton_taupe, a:active.squarebutton_taupe{
+color: #666; /*button text color*/
+}
+
+a.squarebutton_taupe span{
+background: transparent url('/images/cssElements/bg_button_right_tr_taupe.gif') no-repeat top right;
+display: block;
+padding: 4px 9px 4px 0; /*Set 9px below to match value of 'padding-left' value above*/
+}
+
+a.squarebutton_taupe:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.squarebutton_taupe:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: 666;}
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+width: 100%;
+}
+
+.background2div { border: #FFFFFF; BACKGROUND-COLOR: #DAD9C0; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; margin: 0px 50px 0px  50px; padding:12px;}
+.bgcoloroption2div { BACKGROUND-COLOR: #FFFFFF; margin: 10px 50px 0px  50px; border-top:25px solid #dad9c0; border-left:1px solid #dad9c0; border-right:1px solid #dad9c0; padding:7px;}
