@@ -8,7 +8,7 @@ echo '</div>';
 
 ?>
 <!-- Ctreate row in table -->
-<table width="100%" border="0" cellpadding="3" cellspacing="1">
+<table width="100%" border="1" cellpadding="3" cellspacing="1">
 <tr>
 <td>
 Date
