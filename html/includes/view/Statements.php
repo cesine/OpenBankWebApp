@@ -39,7 +39,8 @@ if ($_SESSION['TransactionsArray']){
  		//put the result objects into the results array 
   		$resultsArray = unserialize($_SESSION['TransactionsArray']); 
   		//put the number of results into hit 
-	 	$hit= count($resultsArray);  						
+	 	//$hit= count($resultsArray);  	
+	 	$hit=3;					
  	 }
  	 else{	 
   			$hit=0;	 	
@@ -64,7 +65,7 @@ else
 	for ($i = 0; $i < $hit; $i++)
 	{    		
 	
-		// Display search results
+		// Display array of Transactions
 		$resultsArray[$i]->displayTransactionInRowFormatted();
 	}
  
