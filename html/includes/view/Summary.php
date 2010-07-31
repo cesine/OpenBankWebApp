@@ -7,7 +7,7 @@
 	<meta http-equiv="EXPIRES" content="NOW">
 	<meta http-equiv="PRAGMA" content="NO-CACHE">
 	<title>Scotia OnLine</title>
-	<link rel="stylesheet" href="/html/SOPStyles.css" >
+	<link rel="stylesheet" href="/css/SOPStyles.css" >
 	<script language="javascript">
 	<!--
                 function openThirdPartySite(URL)
