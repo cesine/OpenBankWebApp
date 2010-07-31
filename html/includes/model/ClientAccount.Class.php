@@ -62,5 +62,10 @@ class Account{
 	public function setClosingDate($closingDate){
 		$this->closingDate=$closingDate;
 	}
+	public function test(){
+		$this->setCurrentBalance(12.99);
+	}
+	
+	
 }	
 ?>
