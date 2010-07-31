@@ -26,9 +26,11 @@ Deposits
 Balance
 </td>
 </tr>
-<?php $transactionToDisplay->displayTransactionInRow();?>
+
+<?php $transactionToDisplay->displayTransactionInRowFormatted();?>
 </table>
 
+<P> </P>
 <table width="100%" border="0" cellpadding="3" cellspacing="1">
 
 <tbody><tr class="bgcoloroption0">
