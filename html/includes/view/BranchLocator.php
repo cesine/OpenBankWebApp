@@ -1,7 +1,8 @@
 <?php 
-include('Branch.Class.php');
-
-//$branchToDispaly = new Branch();
-echo 'Branch display';
+include('includes/model/Branch.Class.php');
+echo '<div>';
+$branchToDisplay = new Branch();
+$branchToDisplay->displayBranch();
+echo '</div>';
 ?>
 
