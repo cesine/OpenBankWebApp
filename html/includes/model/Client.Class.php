@@ -98,8 +98,8 @@ class Client{
 	}
 	function displayClientDetails(){
 		echo '<p class="name">'.$this->clientID.
-		'<br/>\n'.$this->firstName.
-		'<br/>\n'.$this->lastName.
+		'<br/>'.$this->firstName.
+		'<br/>'.$this->lastName.
 		'</p>\n\n';
 	}
 	function __construct(){
