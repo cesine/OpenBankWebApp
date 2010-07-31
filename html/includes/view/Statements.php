@@ -28,9 +28,11 @@ Balance
 </tr>
 </table>
 
+<table width="100%" border="1" cellpadding="3" cellspacing="1">
 <?php
 $transactionToDisplay->displayTransactionInRowFormatted();
 ?>
+</table>
 
 <?php
 //Check to see if there is a transactions_array in the sessions variable, 
