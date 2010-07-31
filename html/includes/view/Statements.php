@@ -37,7 +37,45 @@ $hit =3;
 		
 		$transactionToDisplay->displayTransactionInRowFormatted();
 	}
+if ($_SESSION['TransactionsArray']){
+	 if ($_SESSION['TransactionsArray'][0]){ 
+ 		//put the result objects into the results array 
+  		$resultsArray = unserialize($_SESSION['TransactionsArray']); 
+  		//put the number of results into hit 
+	 	//$hit= count($resultsArray);  	
+	 	$hit=3;					
+ 	 }
+ 	 else{	 
+  			$hit=0;	 	
+ 	 }
+ }
 
+
+// For each hit - Displays transactions
+
+if ($hit == 0)
+{
+    echo ('No results found.');
+    echo '<br>';
+}
+else
+{
+	//echo '<table width="100%" border="1" cellpadding="5" cellspacing="1">';
+
+	//echo '</th>';
+	//$resultsArray[0]->displayTableHeadingRow();
+
+	for ($i = 0; $i < $hit; $i++)
+	{    		
+	
+		// Display array of Transactions
+		//$resultsArray[$i]->displayTransactionInRowFormatted();
+		
+		$transactionToDisplay->displayTransactionInRowFormatted();
+	}
+ 
+	   
+}
 	
 ?>
 
@@ -76,7 +114,7 @@ if ($hit == 0)
 }
 else
 {
-	echo '<table width="80%" border="1" cellpadding="5" cellspacing="1">';
+	echo '<table width="100%" border="1" cellpadding="5" cellspacing="1">';
 
 	//echo '</th>';
 	//$resultsArray[0]->displayTableHeadingRow();
