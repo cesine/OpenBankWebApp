@@ -27,27 +27,27 @@ class Branch{
 	public function getOpeningDate(){
 		return $this->openingDate;
 	}
-	public function setSqlTableName($sqlTName) {
-		$this->sqlTablesName=$sqlTName;
+	public function setSqlTableName($sqlTNameIn) {
+		$this->sqlTablesName=$sqlTNameIn;
 	}
-	public function setBranchName($branchName) {
-		$this->branchName=$branchName;
+	public function setBranchName($branchNameIn) {
+		$this->branchName=$branchNameIn;
 	}
-	public function setOpeningHours($openingHours){
-		$this->openingHours=$openingHours;
+	public function setOpeningHours($openingHoursIn){
+		$this->openingHours=$openingHoursIn;
 	}
-	public function setManagerName($managerName){
-		$this->managerName=$managerName;
+	public function setManagerName($managerNameIn){
+		$this->managerName=$managerNameIn;
 	}
 	public function setManagerNameFromId(){
 		echo "Setting Manager name from ID, getting id from object, then querying DB";
 	}
 	
-	public function setManagerId($managerId){
-		$this->managerId=$managerId;
+	public function setManagerId($managerIdIn){
+		$this->managerId=$managerIdIn;
 	}
-	public function setOpeningDate($openingDate){
-		$this->openingDate=$openingDate;
+	public function setOpeningDate($openingDateIn){
+		$this->openingDate=$openingDateIn;
 	}
 	
 	function test(){
@@ -61,8 +61,8 @@ class Branch{
 	}
 	function displayBranch(){
 		echo '<p class="name">'.$this->branchName.
-		'<br/>\n'.$this->openingHours.
-		'</p>\n\n';
+		'<br/>'.$this->openingHours.
+		'</p>';
 	}
 	function __construct(){
 		echo 'Creating a branch. Change somethings';
