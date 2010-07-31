@@ -10,11 +10,14 @@
 
 
 //for debugging this will print out all the information in the session
-echo'<hr><p>/n';
-print_r($_SESSION);
+echo'<hr><p>';
+print_r($_SESSION);	
 echo '<hr><p>';
 
-if($_GET['content']='BranchLocator'){
+$content == $_GET['content'];
+echo 'The content to display is '.$content;
+
+if($content=='BranchLocator'){	
 	include ('includes/view/BranchLocator.php');
 }
 
