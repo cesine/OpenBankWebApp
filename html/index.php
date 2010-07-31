@@ -64,7 +64,7 @@ if($content=="BranchLocator"){
 	';
 }else{
 	echo "Content is null<br />".$content;
-	include ('includes/view/Summary.php');
+	include ('includes/view/Welcome.php');
 }
 
 ?>
