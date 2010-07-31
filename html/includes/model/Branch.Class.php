@@ -1,5 +1,4 @@
 <?php 
-echo "testing";
 class Branch{
 	private $branchName;
 	private $openingHours;
@@ -29,26 +28,26 @@ class Branch{
 		return $this->openingDate;
 	}
 	public function setSqlTableName($sqlTName) {
-		return $this->sqlTablesName;
+		$this->sqlTablesName=$sqlTName;
 	}
 	public function setBranchName($branchName) {
-		return $this->branchName;
+		$this->branchName=$branchName;
 	}
 	public function setOpeningHours($openingHours){
-		return $this->openingHours;
+		$this->openingHours=$openingHours;
 	}
 	public function setManagerName($managerName){
-		return $this->managerName;
+		$this->managerName=$managerName;
 	}
 	public function setManagerNameFromId(){
 		echo "Setting Manager name from ID, getting id from object, then querying DB";
 	}
 	
 	public function setManagerId($managerId){
-		return $this->managerId;
+		$this->managerId=$managerId;
 	}
 	public function setOpeningDate($openingDate){
-		return $this->openingDate;
+		$this->openingDate=$openingDate;
 	}
 	
 	function test(){
