@@ -88,8 +88,17 @@ if($content=="BranchLocator"){
 	include ('includes/view/Login.php');
 }elseif($content=="TransferFunds"){
 	include ('includes/view/Transfer.php');
-}
-else{
+}elseif($content=="EmployeeInterface"){
+	echo '<a href="?&content=Summary">View a Clients Info</a>
+	</p>
+	<p>
+	List Employees<br />
+	Add Employee<br />
+	Modify Employee<br />
+	Delete Employee<br />
+	</p>
+	';
+}else{
 	echo "Content is null<br />".$content;
 	include ('includes/view/Summary.php');
 }
