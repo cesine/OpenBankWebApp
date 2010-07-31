@@ -27,6 +27,9 @@ Balance
 </td>
 </tr>
 
+<?php
+//$transactionToDisplay->displayTransactionInRowFormatted();
+?>
 
 <?php
 //Check to see if there is a transactions_array in the sessions variable, 
@@ -66,7 +69,9 @@ else
 	{    		
 	
 		// Display array of Transactions
-		$resultsArray[0]->displayTransactionInRowFormatted();
+		//$resultsArray[$i]->displayTransactionInRowFormatted();
+		
+		$transactionToDisplay->displayTransactionInRowFormatted();
 	}
  
 	echo '</table>';
