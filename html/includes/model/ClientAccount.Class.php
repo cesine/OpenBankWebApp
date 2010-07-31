@@ -67,7 +67,5 @@ class ClientAccount{
 		'<br/>\n'.$this->CurrentBalance.			
 		'</p>\n\n';
 	}
-	
-	
 }	
 ?>
