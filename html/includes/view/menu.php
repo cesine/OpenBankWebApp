@@ -3,9 +3,9 @@
     <ul>
     	<li><a href="?&content=Summary">Home</a></li>
       <li><a href="?&content=Summary&service=banking">Banking</a></li>
-      <li><a href="">Borrowing</a></li>
-      <li><a href="#">Investing</a></li>
-      <li><a href="#">Insurance</a></li>
+      <li><a href="&content=Summary&service=borrowing">Borrowing</a></li>
+      <li><a href="&content=Summary&service=investing">Investing</a></li>
+      <li><a href="&content=Summary&service=insurance">Insurance</a></li>
       <li><a href="#">Menu 5</a></li>
        <li><a href="#">Menu 6</a></li>
       <li><a href="#">Log In</a></li>
