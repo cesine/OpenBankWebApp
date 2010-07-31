@@ -5,6 +5,7 @@ class ClientAccount{
 	private $branchId;
 	private $clientId;
 	private $accountTypeId;
+	private $accountName;
 	private $currentBalance;
 	private $availableBalance;
 	private $status;
@@ -22,6 +23,9 @@ class ClientAccount{
 	}
 	public function getAccountTypeId(){
 		return $this->accountTypeId;
+	}
+	public function getAccountName(){
+		return $this->accountName;
 	}
 	public function getCurrentBalance(){
 		return $this->currentBalance;
@@ -47,6 +51,9 @@ class ClientAccount{
 	public function setAccountTypeId($accountTypeId){
 		$this->accountTypeId=$accountTypeId;
 	}
+	public function setAccountName($accountName){
+		$this->accountTypeId=$accountName;
+	}
 	public function setCurrentBalance($currentBalance) {
 		$this->currentBalance=$currentBalance;
 	}	
@@ -66,6 +73,14 @@ class ClientAccount{
 		$this->setCurrentBalance(12.99);
 		'<br/>\n'.$this->CurrentBalance.			
 		'</p>\n\n';
+	}
+	public function DisplayAcountDetailsInRow(){
+		echo '<TR class="bgcoloroption1">
+		<TD class="tableDataLeftC">'.$this->accountName.'</TD>
+		<TD class="tableDataLeftC">'.$this->clientAccountId.'</TD>
+		<TD class="tableDataRightC">'.$this->currentBalance.'</TD>
+		<TD class="tableDataRightC">'.$this->availableBalance.'</TD>
+		</TR>';
 	}
 }	
 ?>
