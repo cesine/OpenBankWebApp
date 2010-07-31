@@ -19,14 +19,16 @@ class Account{
 		return $this->accountName;
 	}
 	public function setAccountTypeId($accountTypeId){
-		return $this->accountTypeId;
+		$this->accountTypeId=$accountTypeId;
 	}
 	public function setServiceCategoryId($serviceCategoryId) {
-		return $this->serviceCategoryId;
+		$this->serviceCategoryId=$serviceCategoryId;
 	}
 	public function setServiceTypeId($serviceTypeId){
-		return $this->serviceTypeId;
+		$this->serviceTypeId=$serviceTypeId;
 	}
 	public function setAccountName($accountName) {
-		return $this->AccountName;
+		$this->AccountName=$accountName;
 	}	
+}
+?>
