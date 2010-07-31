@@ -28,6 +28,8 @@ echo 'The content to display is '.$content;
 if($content=="BranchLocator"){
 	echo "For Gina<br />";	
 	include ('includes/view/BranchLocator.php');
+}elseif($content=="Welcome"){
+	include ('includes/view/Welcome.php');
 }elseif($content=="Statement"){
 	echo "For Lena<br />";	
 	include ('includes/view/Statements.php');
