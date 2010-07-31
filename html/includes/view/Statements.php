@@ -38,12 +38,13 @@ $hit =3;
 		$transactionToDisplay->displayTransactionInRowFormatted();
 	}
 
-
+	
 ?>
 
 
 </table>
 
+<P></P>
 
 
 <?php
@@ -75,7 +76,7 @@ if ($hit == 0)
 }
 else
 {
-	echo '<table width="100%" border="1" cellpadding="3" cellspacing="1">';
+	echo '<table width="80%" border="1" cellpadding="5" cellspacing="1">';
 
 	//echo '</th>';
 	//$resultsArray[0]->displayTableHeadingRow();
