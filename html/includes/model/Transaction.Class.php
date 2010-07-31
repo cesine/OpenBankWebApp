@@ -124,7 +124,6 @@ class Transaction{
 		.'</td></tr>'; 	
 	}
 	
-	
 	function displayTransactionInRowFormatted(){
 		
 	echo '<TR class="bgcoloroption1">
@@ -134,7 +133,13 @@ class Transaction{
 	<TD class="tableDataRightC">'.$this->withdrawalAmount.'</TD>
 	<td class="tableDataRightC" align="right">'.$this->balance.'</td>		
 	</TR>';		
-}		
+}
+
+	function displayTableHeadingRow(){
+
+}	
+
+
 			
 }
 ?>
