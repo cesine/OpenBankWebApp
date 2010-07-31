@@ -118,9 +118,9 @@ class Transaction{
 	function displayTransactionInRow(){
 		echo '<tr><td>'.$this->date
 		.'</td><td>'.$this->transactionDescription	
-		.'</td><td>'.$this->withdrawalAmount				
-		.'</td><td>'.$this->depositAmount		
-		.'</td><td>'.$this->balance		
+		.'</td><td align="right">'.$this->withdrawalAmount				
+		.'</td><td align="right">'.$this->depositAmount		
+		.'</td><td align="right">'.$this->balance		
 		.'</td></tr>'; 	
 	}
 	function displayTransactionInRowFormatted(){
