@@ -378,13 +378,13 @@ LOCK TABLES `employeeworkhistory` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `insuranceplan`
+-- Table structure for table `insuranceplans`
 --
 
-DROP TABLE IF EXISTS `insuranceplan`;
+DROP TABLE IF EXISTS `insuranceplans`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `insuranceplan` (
+CREATE TABLE `insuranceplans` (
   `accounttypeid` int(2) unsigned NOT NULL,
   `coverage` double NOT NULL,
   `monthlypremium` double NOT NULL,
@@ -393,12 +393,12 @@ CREATE TABLE `insuranceplan` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `insuranceplan`
+-- Dumping data for table `insuranceplans`
 --
 
-LOCK TABLES `insuranceplan` WRITE;
-/*!40000 ALTER TABLE `insuranceplan` DISABLE KEYS */;
-/*!40000 ALTER TABLE `insuranceplan` ENABLE KEYS */;
+LOCK TABLES `insuranceplans` WRITE;
+/*!40000 ALTER TABLE `insuranceplans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `insuranceplans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -541,4 +541,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-07-31 10:03:01
+-- Dump completed on 2010-07-31 13:03:01
