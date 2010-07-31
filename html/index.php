@@ -33,7 +33,12 @@ if($content=="BranchLocator"){
 }elseif($content=="ViewAccount"){
 	echo "For Thomas<br />";
 	include ('includes/view/ViewAccounts.php');
-}else{
+}elseif($content=="Login"){
+	include ('includes/view/Login.php');
+}elseif($content=="TransferFunds"){
+	include ('includes/view/Transfer.php');
+}
+else{
 	echo "Content is null<br />".$content;
 	include ('includes/view/Summary.php');
 }

@@ -82,5 +82,9 @@ class ClientAccount{
 		<TD class="tableDataRightC">'.$this->availableBalance.'</TD>
 		</TR>';
 	}
+	public function createAccount(){
+		//use auto increment to create a new account number, and take in the account information for them 
+		//add account page
+	}
 }	
 ?>
