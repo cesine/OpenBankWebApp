@@ -14,10 +14,10 @@ echo'<hr><p>';
 print_r($_SESSION);	
 echo '<hr><p>';
 
-$content == $_GET['content'];
+$content = $_GET["content"];
 echo 'The content to display is '.$content;
 
-if($content=='BranchLocator'){	
+if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
 }
 
