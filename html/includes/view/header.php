@@ -17,6 +17,7 @@ require_once ('includes/model/Authentication.Class.php');
 <head>
 <title>The Bank</title>
 <link href="css/master.css" rel="stylesheet" type="text/css" />
+<link href="css/SOPStyles.css" rel="stylesheet" type="text/css" />
 <script language="Javascript" src="javascript/script.js" type="text/javascript">
 <!-- -->
 </script>
