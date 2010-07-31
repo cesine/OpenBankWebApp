@@ -28,7 +28,20 @@ Balance
 </tr>
 <?php
 $transactionToDisplay->displayTransactionInRowFormatted();
+$hit =3;
+	for ($i = 0; $i < $hit; $i++)
+	{    		
+	
+		// Display array of Transactions
+		//$resultsArray[$i]->displayTransactionInRowFormatted();
+		
+		$transactionToDisplay->displayTransactionInRowFormatted();
+	}
+
+
 ?>
+
+
 </table>
 
 
