@@ -8,7 +8,7 @@ echo '</div>';
 
 ?>
 <!-- Ctreate row in table -->
-<table border = "1">
+<table width="100%" border="0" cellpadding="3" cellspacing="1">
 <tr>
 <td>
 Date
@@ -56,24 +56,17 @@ Balance
 	
 		<td class="tableDataLeftC">Credit Memo<br>OTHER </td>
 	
-
-	
 		<td class="tableDataCenterC">-</td>
-	
 	
 		<td class="tableDataRightC" align="right">
      		$700.00
   		</td>
-	
-	
 		
 		   <td class="tableDataRightC" align="right">
-
 		     
      			$4,890.80
 		     
 		  </td>
-	    	
 	
 </tr>
 
@@ -81,24 +74,17 @@ Balance
 <tr class="bgcoloroption2" valign="top">
 	<td class="tableDataLeftC" nowrap="nowrap">2010-07-06</td>
 	<td class="tableDataCenterC">-</td>
-	
+
 		<td class="tableDataLeftC">Customer Transfer Dr.<br>PC TO 4538156430915 </td>
-
-	
-
 	
 		<td class="tableDataRightC" align="right">
 		$4,190.00
 		</td>
 	
-	
 		<td class="tableDataCenterC">-</td>
-	
-	
 		
 		   <td class="tableDataCenterC">-</td>
 		
-	
 </tr>
 
 
@@ -109,24 +95,17 @@ Balance
 	
 		<td class="tableDataLeftC">Customer Transfer Dr.<br>PC TO 4538156430915 </td>
 	
-
-	
 		<td class="tableDataRightC" align="right">
 		$10.00
 		</td>
 	
-	
 		<td class="tableDataCenterC">-</td>
-	
-	
 		
 		   <td class="tableDataRightC" align="right">
-
 		     
      			$690.80
 		     
 		  </td>
-	    	
 	
 </tr>
 
@@ -136,25 +115,18 @@ Balance
 	<td class="tableDataCenterC">-</td>
 	
 		<td class="tableDataLeftC">Deposit<br> </td>
-
-	
-
 	
 		<td class="tableDataCenterC">-</td>
-	
 	
 		<td class="tableDataRightC" align="right">
      		$4,515.00
   		</td>
-	
-	
 		
 		   <td class="tableDataRightC" align="right">
 		     
      			$5,205.80
 		     
 		  </td>
-	    	
 	
 </tr>
 
@@ -165,28 +137,20 @@ Balance
 	
 		<td class="tableDataLeftC"><a class="accountLinkB" title="View Cheque Image" href="/portal/index.jsp?pageID=financial_services_banking&amp;subPageId=Banking_Accounts&amp;reqOption=ChqImgDisclaimer&amp;src=AccountHistory&amp;an=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144&amp;idx=4">Cheque</a><br> </td>
 	
-
-	
 		<td class="tableDataRightC" align="right">
 		$669.70
 		</td>
-	
-	
+
 		<td class="tableDataCenterC">-</td>
 
 	
-	
-		
 		   <td class="tableDataRightC" align="right">
 		     
      			$4,536.10
 		     
 		  </td>
-	    	
 	
 </tr>
-
-
 
 
 
@@ -196,28 +160,19 @@ Balance
 	
 		<td class="tableDataLeftC">Deposit<br> </td>
 	
-
-	
 		<td class="tableDataCenterC">-</td>
-	
 	
 		<td class="tableDataRightC" align="right">
      		$3,612.00
   		</td>
-
-	
-	
 		
 		   <td class="tableDataRightC" align="right">
 		     
      			$3,648.10
 		     
 		  </td>
-	    	
 	
 </tr>
-
-
 
 	<tr class="bgcoloroption2" valign="top">
 	  <td colspan="3" class="fieldTitleRightC">Total
