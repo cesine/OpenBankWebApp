@@ -45,7 +45,10 @@
 
 
 
-
+				<td align="right" valign="top" width="1%"><a
+					href="user_bean_edit.jsp?beanID=79&pageID=sme_home_prelogin"><img
+					src="/images/CustomizeEN.gif" width="70" height="20"
+					alt="Customize this module" border="0"></a></td>
 
 
 
