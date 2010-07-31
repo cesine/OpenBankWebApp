@@ -4,17 +4,21 @@
 
 <div id="content">
 <div id="main">
-	
-<h1>Hello</h1>
-<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <a href="#">laboris nisi ut aliquip</a> ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-</p>
 
 <?php
-include ('includes/view/BranchLocator.php');
-?>
 
-<!-- <img src="" width="400" height="400" alt="Place holder for main content">
-	-->
+
+
+//for debugging this will print out all the information in the session
+echo'<hr><p>/n';
+print_r($_SESSION);
+echo '<hr><p>';
+
+if($_GET['content']='BranchLocator'){
+	include ('includes/view/BranchLocator.php');
+}
+
+?>
 
 </div>
 </div>
