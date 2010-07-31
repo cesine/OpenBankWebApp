@@ -7,16 +7,10 @@
 
 <?php
 
-
-
 //for debugging this will print out all the information in the session
 echo'<hr><p>';
 print_r($_SESSION);	
 echo '<hr><p>';
-
-
-
-
 
 $content = $_GET["content"];
 echo 'The content to display is '.$content;
@@ -24,26 +18,24 @@ echo 'The content to display is '.$content;
 if($content=="BranchLocator"){
 	echo "For Gina<br />";	
 	include ('includes/view/BranchLocator.php');
-}
-if($content=="Statement"){
+}elseif($content=="Statement"){
 	echo "For Lena<br />";	
 	include ('includes/view/Statements.php');
-}
-if ($content=="AccountType"){
+}elseif ($content=="AccountType"){
 	echo "For Thomas<br />";
 	include ('includes/view/AccountType.php');
-}
-if ($content=="AddClient"){
+}elseif ($content=="AddClient"){
 	echo "For Abi<br />";
 	include ('includes/view/AddClient.php');
-}
-if($content=="Summary"){
+}elseif($content=="Summary"){
 	echo "For Anshu<br />";
 	include ('includes/view/Summary.php');
-}
-if($content=="ViewAccount"){
+}elseif($content=="ViewAccount"){
 	echo "For Thomas<br />";
 	include ('includes/view/ViewAccounts.php');
+}else{
+	echo "Content is null<br />".$content;
+	include ('includes/view/Summary.php');
 }
 
 ?>
