@@ -91,14 +91,14 @@ class Transaction{
 	function displayTransaction(){
 		echo '<p class="Transaction ID">'.
 		$this->transactionID.
-		'<br/>\n'.$this->clientID.		
-		'<br/>\n'.$this->accounteID.
-		'<br/>\n'.$this->date.		
-		'<br/>\n'.$this->transactionFeeCharged.		
-		'<br/>\n'.$this->depositAmount.		
-		'<br/>\n'.$this->withdrawalAmount.	
-		'<br/>\n'.$this->balance.		
-		'<br/>\n'.$this->transactionDescription.				
+		'<br/>'.$this->clientID.		
+		'<br/>'.$this->accounteID.
+		'<br/>'.$this->date.		
+		'<br/>'.$this->transactionFeeCharged.		
+		'<br/>'.$this->depositAmount.		
+		'<br/>'.$this->withdrawalAmount.	
+		'<br/>'.$this->balance.		
+		'<br/>'.$this->transactionDescription.				
 		'</p>\n\n';
 	}
 	function __construct(){
@@ -113,6 +113,20 @@ class Transaction{
 			$this->balance =1000;
 			$this->transactionDescription ="my deposit";
 			
-		}		
+		}	
+
+	function displayTransactionInRow(){
+		echo '<tr><td>'.$this->date
+		.'</td><td>'.$this->transactionDescription	
+		.'</td><td>'.$this->withdrawalAmount				
+		.'</td><td>'.$this->depositAmount		
+		.'</td><td>'.$this->balance		
+		.'</td></tr>'; 				
+
+	}		
+				
+		
+		
+		
 }
 ?>
