@@ -41,8 +41,9 @@ if($content=="Summary"){
 	echo "For Anshu<br />";
 	include ('includes/view/Summary.php');
 }
-if($content==""){
-	
+if($content=="ViewAccount"){
+	echo "For Thomas<br />";
+	include ('includes/view/ViewAccounts.php');
 }
 
 ?>
