@@ -64,6 +64,8 @@ class ClientAccount{
 	}
 	public function test(){
 		$this->setCurrentBalance(12.99);
+		'<br/>\n'.$this->CurrentBalance.			
+		'</p>\n\n';
 	}
 	
 	
