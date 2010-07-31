@@ -1,14 +1,14 @@
 <div id="top"> <!-- The top panel -->
   <nav>
     <ul>
-    	<li><a href="?&content=Summary">Home</a></li>
-      <li><a href="?&content=Summary&service=banking">Banking</a></li>
-      <li><a href="&content=Summary&service=borrowing">Borrowing</a></li>
-      <li><a href="&content=Summary&service=investing">Investing</a></li>
-      <li><a href="&content=Summary&service=insurance">Insurance</a></li>
-      <li><a href="#">Menu 5</a></li>
-       <li><a href="#">Menu 6</a></li>
-      <li><a href="#">Log In</a></li>
+    	<li><a href="index.php">Home</a></li>
+      <li><a href="index.php?&content=Summary&service=banking">Banking</a></li>
+      <li><a href="index.php?&content=Summary&service=borrowing">Borrowing</a></li>
+      <li><a href="index.php?&content=Summary&service=investing">Investing</a></li>
+      <!-- <li><a href="index.php?&content=Summary&service=insurance">Insurance</a></li>-->
+      <li><a href="index.php?&content=">Menu 5</a></li>
+       <li><a href="index.php?&content=BranchLocator">Branch Locator</a></li>
+      <li><a href="index.php?&content=Login">Log In</a></li>
     </ul>
 	</nav>
 
