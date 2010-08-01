@@ -23,6 +23,8 @@ if($topMenu =="ClientTopMenu"){
 	include ('includes/view/clienttopmenu.php');
 }elseif($topMenu=="EmployeeTopMenu"){
 	include ('includes/view/employeetopmenu.php');
+}else{
+	include ('includes/view/clienttopmenu.php');
 }
 
 
