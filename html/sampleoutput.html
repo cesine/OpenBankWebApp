@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>The Bank</title>
-<link href="css/SOPStyles.css" rel="stylesheet" type="text/css" />
+<!-- <link href="css/SOPStyles.css" rel="stylesheet" type="text/css" />-->
 <link href="css/master.css" rel="stylesheet" type="text/css" />
 
 <script language="Javascript" src="javascript/script.js" type="text/javascript">
@@ -99,33 +99,22 @@
 <a href="">Transfers</a></td><td width="20%">
 <a href="">More Features</a></td></tr>
 <tr><td>.</td></tr></table>
-<p>&nbsp;</p><div>Creating a branch. Change somethingsTesting the branch functionalities.<p>Setting Manager name from ID, getting id from object, then querying DBArray
-(
-    [0] => Alisa
-    [firstname] => Alisa
-    [1] => Kleybanova
-    [lastname] => Kleybanova
-)
-<p class="name">Mcgill Street</b><p><b>Branch Manager:</b>Alisa Kleybanova</p><p>Monday-Friday<br> 8am to 3pm</p>Testing the database connection.openbankArray
-(
-    [0] => 10001
-    [branchid] => 10001
-    [1] => Downtown Mtl
-    [branchname] => Downtown Mtl
-    [2] => 10000001
-    [addressid] => 10000001
-    [3] => 2147483647
-    [managerid] => 2147483647
-    [4] => 1990-01-01
-    [openingdate] => 1990-01-01
-    [5] => Mon-Fri 10:00-17:00
-    [openinghours] => Mon-Fri 10:00-17:00
-    [6] => 0
-    [branchsclientid] => 0
-    [7] => 0
-    [status] => 0
-)
-</div>
+<p>&nbsp;</p><div><form action="?&content=BranchLocator&search=ByCity" method="post">
+<fieldset>
+<legend><font color=cornflowerblue><b>Search Branches </b></font></legend>
+<table>
+	<tr><td>Enter City (ex. Montreal):</td><td>
+    <input type="text" name="$FormCity" size ="32"  maxlength="64"  class="inputtext">
+  	</td></tr>
+</table>
+<input type="submit" name="mysubmit" value="Search">
+</fieldset>
+</form>
+     
+
+<h2>4 Branches are in your area:</h2><h3>Montreal W.I</h3><p><b>Branch Manager: </b>20000005</p><p><b>Branch Opening Hours</b></p><p>Mon-Fri 10:00-17:00</p>Destroying Montreal W.I
+<h3>Downtown T.O</h3><p><b>Branch Manager: </b>2147483647</p><p><b>Branch Opening Hours</b></p><p>Mon-Fri 10:00-17:00</p>Destroying Downtown T.O
+<h3>Quebec QC</h3><p><b>Branch Manager: </b>2147483647</p><p><b>Branch Opening Hours</b></p><p>Mon-Fri 10:00-17:00</p></div>
 </div>
 </div>
 </td></tr></table>
@@ -145,8 +134,11 @@
 </blockquote><p><font color="red">Printing the URL information in case you need to see it (eg, index.php?&variable=value)</font></p><blockquote>Array
 (
     [content] => BranchLocator
+    [search] => ByCity
 )
 </blockquote><p><font color="red">Printing the Post information in case you need to see it (eg, information that you submitted using the PoST method in a form) </font></p><blockquote>Array
 (
+    [$FormCity] => 
+    [mysubmit] => Search
 )
-</blockquote><font color="red">The content to display is BranchLocator<p>End Debugging.</font</p><hr>
+</blockquote><font color="red">The content to display is BranchLocator<p>End Debugging.</font</p><hr>Destroying Quebec QC
