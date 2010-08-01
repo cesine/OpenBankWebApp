@@ -106,8 +106,7 @@ ul{ list-style:none;}
 
 #content{
    height: 50em;
-   background-color:silver; 
-
+   background-color: white; 
    margin: 0;
    padding: 0px;
 }
@@ -225,4 +224,4 @@ footer {
 	
 		footer ul li a {
 			display: block;
-		}ls
+		}
