@@ -76,7 +76,7 @@ class Address{
 	public function initializeAddress($addressIdIn){
 		$db = new Database();
 		$db->connect();
-		$queryToDo= "SELECT DISTINCT * FROM address	WHERE adressid=".$addressIdIn;
+		$queryToDo= "SELECT DISTINCT * FROM address	WHERE addressid=".$addressIdIn;
 		$db->query($queryToDo);
 		$db->close();//just closes the connection to the db so that some other object can connect. the 
 					//db object is still alive and contains the results. 
@@ -101,7 +101,7 @@ class Address{
 		$this->postalcode."</p>";
 	}
 	public function __construct(){
-		echo "Creating an Address object";
+		//echo "Creating an Address object";
 	}
 
 	

@@ -40,10 +40,13 @@ class Database {
 		
 		//mysql_query will connect to the connection number provided 
 		if ($this->queryResultsResource= mysql_query($querystring,$this->link_id)){
-			//mysql_fetch_array must be used on the resource which is returned by mysql_query
-			$this->queryFirstResult= mysql_fetch_array($this->queryResultsResource);
 			//mysql_num_rows will give the number of rows in the result resource
 			$this->queryResultsCount=mysql_num_rows($this->queryResultsResource);
+			//mysql_fetch_array must be used on the resource which is returned by mysql_query,
+			//it eats a row off of the results.
+			$copyResource= mysql_query($querystring,$this->link_id);
+			$this->queryFirstResult= mysql_fetch_array($copyResource);
+
 		}else{
 			$this->queryFirstResult="";
 			$this->queryResultsCount="0";
