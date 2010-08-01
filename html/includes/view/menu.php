@@ -6,7 +6,6 @@
       <li><a href="index.php?&content=Summary&service=borrowing">Borrowing</a></li>
       <li><a href="index.php?&content=Summary&service=investing">Investing</a></li>
       <!-- <li><a href="index.php?&content=Summary&service=insurance">Insurance</a></li>-->
-      <li><a href="index.php?&content=">Menu 5</a></li>
        <li><a href="index.php?&content=BranchLocator">Branch Locator</a></li>
       <li><a href="index.php?&content=Login">Log In</a></li>
     </ul>
