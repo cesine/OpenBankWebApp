@@ -15,6 +15,21 @@
 <div id="content">
 <div id="main">
 <?php
+/*
+ * Control logic to change which small top menu to display in the main window
+ */
+$topMenu = $_GET["topMenu"];
+if($topMenu =="ClientTopMenu"){
+	include ('includes/view/clienttopmenu.php');
+}elseif($topMenu=="EmployeeTopMenu"){
+	include ('includes/view/employeetopmenu.php');
+}
+
+
+/*
+ * Main Control Switch to change which page to display
+ */
+$content = $_GET["content"];
 if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
 }elseif($content=="Welcome"){
@@ -70,7 +85,6 @@ echo '<p><font color="red">Printing the Post information in case you need to see
 echo '<blockquote>';
 print_r($_POST);
 echo '</blockquote>';
-$content = $_GET["content"];
 echo '<font color="red">The content to display is '.$content;
 echo '<p>End Debugging.</font</p><hr>';
 ?>
