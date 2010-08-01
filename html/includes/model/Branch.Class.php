@@ -1,4 +1,5 @@
 <?php 
+require_once 'includes/model/Address.Class.php';
 class Branch{
 	private $branchName;
 	private $openingHours;
@@ -41,11 +42,12 @@ class Branch{
 		$this->managerName=$managerNameIn;
 	}
 	public function setManagerNameFromId($manageridIn){
-		echo "Setting Manager name from ID, getting id from object, then querying DB";
+		//echo "Setting Manager name from ID, getting id from object, then querying DB";
 		$db = new Database();
 		$db->connect();
 		$queryToDo= "SELECT DISTINCT firstname,lastname FROM employee e	WHERE e.employeeid=".$manageridIn;
 		$db->query($queryToDo);
+		$db->close();
 		//$db->query("SELECT * FROM branch",$db->link_id);
 		/*
 		 * Loop through the results (there should only be one result)
@@ -70,7 +72,8 @@ class Branch{
 		$this->setManagerName($row[managerid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setOpeningDate($row[openingdate]);
 		$this->setOpeningHours($row[openinghours]);
-		//set the address too
+		$this->address = new Address();
+		//$this->address->initializeAddress($row[addressid]);
 	}
 	
 	public function test(){
@@ -96,9 +99,9 @@ class Branch{
 	}
 	public function displayBranch(){
 		echo '<h3>'.$this->branchName.
-		'</h3><p><b>Branch Manager: </b>'.$this->managerName.
-		'<p>Adress goes here</p>'.
-		'</p><p><b>Branch Opening Hours</b></p><p>'.$this->openingHours.
+		'</h3><p><b>Branch Manager: </p>'.$this->managerName.
+		$this->address->displayAddress().
+		'<p><b>Branch Opening Hours</b></p><p>'.$this->openingHours.
 		'</p>';
 	}
 	public function __construct(){
