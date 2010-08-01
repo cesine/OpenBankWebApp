@@ -69,11 +69,13 @@ class Branch{
 	public function initializeBranch($row){
 		$this->setBranchName($row[branchname]);
 		$this->setManagerId($row[managerid]);
-		$this->setManagerName($row[managerid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
+		$this->setManagerNameFromId($row[managerid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setOpeningDate($row[openingdate]);
 		$this->setOpeningHours($row[openinghours]);
+		
 		$this->address = new Address();
-		//$this->address->initializeAddress($row[addressid]);
+		$this->address->initializeAddress($row[addressid]);
+		//$this->address->displayAddress();
 	}
 	
 	public function test(){
@@ -99,13 +101,13 @@ class Branch{
 	}
 	public function displayBranch(){
 		echo '<h3>'.$this->branchName.
-		'</h3><p><b>Branch Manager: </p>'.$this->managerName.
-		$this->address->displayAddress().
+		'</h3><p><b>Branch Manager: </b>'.$this->managerName.'</p>';
+		echo $this->address->displayAddress().
 		'<p><b>Branch Opening Hours</b></p><p>'.$this->openingHours.
 		'</p>';
 	}
 	public function __construct(){
-		//echo 'Creating a branch.';	
+		echo 'Creating a branch.';	
 	}
 	public function __destruct() {
        print "Destroying " . $this->branchName . "\n";

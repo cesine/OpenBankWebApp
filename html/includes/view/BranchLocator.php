@@ -33,11 +33,14 @@ $dbToGetAllBranches->connect();
 $search=$_GET["search"];
 $searchCity=$_POST['$FormCity'];//this comes from the sumbit of the form. 
 if($search=="ByCity" && $searchCity!=""){
-	$querystrg="SELECT branchid, branchname,managerid,openingdate,openinghours,status 
+//	$querystrg="SELECT branchid, branchname,managerid,openingdate,openinghours,status 
+//		FROM address a, branch b 
+//		WHERE a.addressid=b.addressid AND a.city LIKE '".$searchCity."%'";
+	$querystrg="SELECT DISTINCT * 
 		FROM address a, branch b 
 		WHERE a.addressid=b.addressid AND a.city LIKE '".$searchCity."%'";
 }else{
-	$querystrg="SELECT * FROM branch";
+	$querystrg="SELECT DISTINCT * FROM branch";
 }
 $dbToGetAllBranches->query($querystrg);
 $dbToGetAllBranches->close();
@@ -46,21 +49,23 @@ $dbToGetAllBranches->close();
  * Print out each branch
  */
 //print_r($dbToGetAllBranches->queryFirstResult);
-$objectCount=0;
 
 /*
  * Print out the number of branches found
  */
 echo "<h2>".$dbToGetAllBranches->queryResultsCount." Branches are in your area:</h2>";
 //if($dbToGetAllBranches->queryResultsCount=="0"){//cant get it to work...
-	/*
-	 * TBD: figure out why it wont display results if use the city query., 
-	 */
+//$count=$dbToGetAllBranches->queryResultsCount;
 
-	while($row=mysql_fetch_array($dbToGetAllBranches->queryResultsResource)){
+for($count=0;$count<$dbToGetAllBranches->queryResultsCount;$count=$count+1){
+	$row=mysql_fetch_array($dbToGetAllBranches->queryResultsResource);
+		//echo "Here is the row: ";
+		//print_r($row);
+	
 		$b = new Branch();
 		$b->initializeBranch($row);	
 		$b->displayBranch();
+	
 		//$b->__destruct(); //called automatically when the object goes out of scope
 	//}
 }//endl if to only print when there are any results
