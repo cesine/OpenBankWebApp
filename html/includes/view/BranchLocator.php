@@ -59,12 +59,7 @@ echo "<h2>".$dbToGetAllBranches->queryResultsCount." Branches are in your area:<
 
 	while($row=mysql_fetch_array($dbToGetAllBranches->queryResultsResource)){
 		$b = new Branch();
-		$b->setBranchName($row[branchname]);
-		$b->setManagerId($row[managerid]);
-		$b->setManagerName($row[managerid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
-		$b->setOpeningDate($row[openingdate]);
-		$b->setOpeningHours($row[openinghours]);
-	
+		$b->initializeBranch($row);	
 		$b->displayBranch();
 		//$b->__destruct(); //called automatically when the object goes out of scope
 	//}
