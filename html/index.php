@@ -3,50 +3,33 @@
 <?php include ('includes/view/menu.php')?>
 
 
-<table><tr><td>
+<table border="1" with="940"><tr valign="top"><td width="20%">
 <!-- Sidemenu Cell -->
-
-
 <?php include ('includes/view/sidemenu.php')?>
 
 
 
-</td><td>
+
+</td><td width= "80%">
 <!-- Main Content Cell -->
 <div id="content">
 <div id="main">
 <?php
-
-//for debugging this will print out all the information in the session
-echo'<hr><p>';
-print_r($_SESSION);	
-echo '<hr><p>';
-
-$content = $_GET["content"];
-echo 'The content to display is '.$content;
-
-if($content=="BranchLocator"){
-	echo "For Gina<br />";	
+if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
 }elseif($content=="Welcome"){
 	include ('includes/view/Welcome.php');
 }elseif($content=="Statement"){
-	echo "For Lena<br />";	
 	include ('includes/view/Statements.php');
 }elseif ($content=="AccountType"){
-	echo "For Thomas<br />";
 	include ('includes/view/AccountType.php');
 }elseif ($content=="AddClient"){
-	echo "For Abi<br />";
 	include ('includes/view/AddClient.php');
 }elseif ($content=="OpenNewAccount"){
-	echo "For Abi<br />";
 	include ('includes/view/OpenNewAccount.php');
 }elseif($content=="Summary"){
-	echo "For Anshu<br />";
 	include ('includes/view/Summary.php');
 }elseif($content=="ViewAccount"){
-	echo "For Thomas<br />";
 	include ('includes/view/ViewAccounts.php');
 }elseif($content=="Login"){
 	include ('includes/view/Login.php');
@@ -63,7 +46,6 @@ if($content=="BranchLocator"){
 	</p>
 	';
 }else{
-	echo "Content is null<br />".$content;
 	include ('includes/view/Welcome.php');
 }
 
@@ -74,3 +56,21 @@ if($content=="BranchLocator"){
 
 
 <?php  include ('includes/view/footer.php')?>
+<?php 
+//for debugging this will print out all the information in the session
+echo'<hr><p><font color="red">Begin Debugging: </p><p>Printing the Session information in case you need to see it </font></p>';
+echo '<blockquote>';
+print_r($_SESSION);	
+echo '</blockquote>';
+echo '<p><font color="red">Printing the URL information in case you need to see it (eg, index.php?&variable=value)</font></p>';
+echo '<blockquote>';
+print_r($_GET);
+echo '</blockquote>';
+echo '<p><font color="red">Printing the Post information in case you need to see it (eg, information that you submitted using the PoST method in a form) </font></p>';
+echo '<blockquote>';
+print_r($_POST);
+echo '</blockquote>';
+$content = $_GET["content"];
+echo '<font color="red">The content to display is '.$content;
+echo '<p>End Debugging.</font</p><hr>';
+?>
