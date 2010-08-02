@@ -350,7 +350,6 @@ $dbSelectionListClientAccounts->query($querySelectClientAccounts);
 $result = $dbSelectionListClientAccounts->query($querySelectClientAccounts);						
 
 /* Create form containing selection list */
-//echo "<form action='process_form.php' method='POST'
 echo "<form action='?&content=Statement' method='POST'
 			style='margin-left: 2em'>
 	  <label for 'clientaccountid'
@@ -381,7 +380,6 @@ $f_today = date("M-d-Y",$today); 					// formats today's date
 //echo "<h4> </h4>\n";
 echo "<h4> Select date since: </h4>\n";
 
-//echo "<form action='process_form.php' method='POST'>\n";
 echo "<form action='?&content=Statement' method='POST'>\n";
 
 /*build selection list for year*/
@@ -467,7 +465,7 @@ $dbClientAccountTransactions->connect();
 $queryClientAccountTransactions=
 "SELECT date, transactiondescription,depositamount,withdrawalamount, balance
 FROM transaction
-WHERE clientid = 54010001 AND accountid=10000001";
+WHERE clientid = 54010001 AND accountid=$selectedAccount";
 							
 $dbClientAccountTransactions->query($queryClientAccountTransactions);	
 
