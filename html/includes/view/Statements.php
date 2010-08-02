@@ -371,13 +371,15 @@ $dbSelectionListClientAccounts->close();
 /*Select date since for displaying transactions*/
 
 $today = time(); 									// stores today's date
-$f_today = date("Y-m-D",$today); 					// formats today's date
+$f_today = date("M-d-Y",$today); 					// formats today's date
 
-echo "<h3>Today is $f_today </h3>\n";
+echo "<h2> Today is $f_today </h2>\n";
+echo "<h2> Select date since for displaying transactions </h2>\n";
+
 echo "<form action='process_form.php' method='POST'>\n";
 
 /*build selection list for year*/
-$startYr = 1990;
+$startYr = date("Y",$f_today) - 20;
 $endYr = date("Y",$f_today); 						// get year from $today
 echo "<select name='dateYear'>\n";
 for ($n=$startYr; $n<=$endYr; $n++)
