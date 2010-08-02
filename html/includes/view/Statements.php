@@ -194,7 +194,7 @@ echo "<h5> date since: $selectedDate </h5>\n";
 /* Convert string to date yyyy-mm-dd */
 $date = strtotime( $selectedDate ); 								
 $dateSince = date( 'y-m-d', $date ); 								
-//echo "<h5> Date since: $dateSince </h5>\n";
+//echo "<h5> Date since: $dateSince </h5>\n"; 						// output in format yy-mm-dd
 
 ?>
 
@@ -231,7 +231,7 @@ $dbClientAccountTransactions->connect();
 $queryClientAccountTransactions=
 "SELECT date, transactiondescription,depositamount,withdrawalamount, balance
 FROM transaction
-WHERE clientid = 54010001 AND accountid=$selectedAccount";
+WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>=$dateSince";
 							
 $dbClientAccountTransactions->query($queryClientAccountTransactions);	
 
