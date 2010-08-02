@@ -100,6 +100,20 @@ for ($n=1; $n<=31; $n++)
 }
 echo "</select>\n";
 
+?>
+
+<!-- read input from user after submition -->
+
+<P></P>
+<input type="submit" value="submit selection"/>
+<P></P>
+
+<?php
+$selectedAccount=$_POST["clientaccountid"];
+$selectedYear=$_POST["dateYear"];
+$selectedMonth=$_POST["dateMonth"];
+$selectedDay=$_POST["dateDay"];
+
 /* put leading zero into month if it is only one digit */
 switch($selectedMonth)
 {
@@ -170,20 +184,6 @@ switch($selectedDay)
 		break;			
 } // end switch($selectedDay)
 
-?>
-
-<!-- read input from user after submition -->
-
-<P></P>
-<input type="submit" value="submit selection"/>
-<P></P>
-
-<?php
-$selectedAccount=$_POST["clientaccountid"];
-$selectedYear=$_POST["dateYear"];
-$selectedMonth=$_POST["dateMonth"];
-$selectedDay=$_POST["dateDay"];
-
 $s="-"; 															// date have format yyyy-mm-dd
 $selectedDate= $selectedYear.$s.$selectedMonth.$s.$selectedDay; 	// concatenation of strings
 
@@ -194,7 +194,7 @@ echo "<h5> date since: $selectedDate </h5>\n";
 /* Convert string to date yyyy-mm-dd */
 $date = strtotime( $selectedDate ); 								
 $dateSince = date( 'y-m-d', $date ); 								
-echo "<h5> Date since: $dateSince </h5>\n";
+//echo "<h5> Date since: $dateSince </h5>\n";
 
 ?>
 
