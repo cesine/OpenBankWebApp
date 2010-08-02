@@ -105,7 +105,7 @@ class Transaction{
 	}
 	function __construct()
 	{
-			echo 'Creating transaction. Change somethings';
+			//echo 'Creating transaction. Change somethings';
 			$this->transactionID =0001;
 			$this->clientID =0002;
 			$this->accounteID =0003;			
