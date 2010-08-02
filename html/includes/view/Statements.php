@@ -422,6 +422,11 @@ echo "</select>\n";
 
 <P></P>
 
+$selectedAccount=$_POST["clientaccountid"];
+echo "<h5> Selected account: $selectedAccount </h5>\n";
+$selectedYear=$_POST["dateYear"];
+echo "<h5> Selected year: $selectedYear </h5>\n";
+
 <table width="100%" border="1" cellpadding="3" cellspacing="1">
 <tr>
 <td>
