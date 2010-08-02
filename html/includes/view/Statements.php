@@ -344,7 +344,7 @@ $querySelectClientAccounts="SELECT DISTINCT clientaccountid
 							WHERE clientaccountid = 54010001";
 							
 $dbSelectionListClientAccounts->query($querySelectClientAccounts);	
-$result = query($querySelectClientAccounts);						
+$result = $dbSelectionListClientAccounts->query($querySelectClientAccounts);						
 
 /* Create form containing selection list */
 echo "<form action='process_form.php' method='POST'
