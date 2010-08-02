@@ -120,6 +120,15 @@ echo "<h5> since: $selectedYear-$selectedMonth-$selectedDay. </h4>\n";
 echo strtotime("10 September 2000"), "\n";
 $timestamp = strtotime(str_replace(' ', '-', '10 September 2000'));
 
+// Do this instead:
+$today = '2009-11-01';
+$tomorrow = strtotime('+1 day', strtotime($today));
+print date('Y-m-d', $tomorrow);
+// Output: 2009-11-02 
+
+$selectedDate= $selectedYear.$selectedMonth.$selectedDay;
+echo "Selected date: $selectedDate\n";
+
 $selectedDate =$selectedDay+"-"+$selectedMonth+"-"+$selectedYear; 
 echo strtotime($selectedDate), "\n";
 
