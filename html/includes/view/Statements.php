@@ -365,6 +365,57 @@ for($count=0;$count<$dbSelectionListClientAccounts->queryResultsCount;$count=$co
 echo "</select>\n";	
 $dbSelectionListClientAccounts->close();	   		
 ?>
+<P></P>
+
+<table width="100%" border="1" cellpadding="3" cellspacing="1">
+<tr>
+<td>
+Date
+</td>
+<td>
+Desctiption
+</td>
+<td>
+Withdraw
+</td>
+<td>
+Deposits
+</td>
+<td>
+Balance
+</td>
+</tr>
+<?php
+
+
+// Display transactions from table "transaction"
+$dbClientAccountTransactions = new Database();
+$dbClientAccountTransactions->connect();
+
+$queryClientAccountTransactions=
+"SELECT date, transactiondescription,depositamount,withdrawalamount, balance
+FROM transaction
+WHERE clientid = 54010001 AND accountid=10000001";
+							
+$dbClientAccountTransactions->query($querySelectClientTransactions);	
+$result = $dbClientAccountTransactions->query($querySelectClientTransactions);	
+
+/*Put results of query into table on the screen*/
+for($count=0;$count<$dbClientAccountTransactions->queryResultsCount;$count=$count+1)
+{
+	//$row=mysql_fetch_array($dbClientAccountTransactions->queryResultsResource);
+	//extract($row);
+	//echo "<option value='$clientaccountid'>$clientaccountid</option>";
+	$transactionToDisplay->displayTransactionInRowFormatted();	
+
+}//endl if to only print when there are any results
+
+$dbSelectionListClientAccounts->close();
+
+?>
+</table>
 
 <P></P>
+
+
  
