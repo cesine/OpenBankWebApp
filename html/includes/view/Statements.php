@@ -116,6 +116,10 @@ $selectedDay=$_POST["dateDay"];
 echo "<h4> Transactions details for: </h4>\n";
 echo "<h5> account number: $selectedAccount.</h5>\n";
 echo "<h5> since: $selectedYear-$selectedMonth-$selectedDay. </h4>\n";
+echo strtotime("10 September 2000"), "\n";
+$selectedDate =$selectedDay+$selectedMonth+$selectedYear; 
+echo strtotime($selectedDate), "\n";
+
 ?>
 
 <!-- display transactions details on the screen -->
