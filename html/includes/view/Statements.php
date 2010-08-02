@@ -425,6 +425,8 @@ echo "</select>\n";
 ?>
 
 <P></P>
+<input type="submit" value="submit"/>
+<P></P>
 
 <?php
 $selectedAccount=$_POST["clientaccountid"];
