@@ -341,7 +341,7 @@ $dbSelectionListClientAccounts->connect();
 
 $querySelectClientAccounts="SELECT DISTINCT clientaccountid 
 							FROM clientaccount
-							WHERE clientaccountid = 54010001";
+							WHERE clientid = 54010001";
 							
 $dbSelectionListClientAccounts->query($querySelectClientAccounts);	
 $result = $dbSelectionListClientAccounts->query($querySelectClientAccounts);						
