@@ -350,8 +350,8 @@ $dbSelectionListClientAccounts->query($querySelectClientAccounts);
 $result = $dbSelectionListClientAccounts->query($querySelectClientAccounts);						
 
 /* Create form containing selection list */
-//echo "<form action='process_form.php' method='POST'
-echo "<form action='?&content=Statement' method='POST'
+//echo "<form action='?&content=Statement' method='POST'
+echo "<form action='process_form.php' method='POST'
 			style='margin-left: 2em'>
 	  <label for 'clientaccountid'
 	  		 style='font-weight: bold'>Select account:</label>
@@ -381,8 +381,8 @@ $f_today = date("M-d-Y",$today); 					// formats today's date
 //echo "<h4> </h4>\n";
 echo "<h4> Select date since: </h4>\n";
 
-//echo "<form action='process_form.php' method='POST'>\n";
-echo "<form action='?&content=Statement' method='POST'>\n";
+echo "<form action='process_form.php' method='POST'>\n";
+//echo "<form action='?&content=Statement' method='POST'>\n";
 
 /*build selection list for year*/
 $startYr1 = date("Y",$today); 					// get year from $today
@@ -431,13 +431,12 @@ echo "</select>\n";
 
 <?php
 $selectedAccount=$_POST["clientaccountid"];
-echo "<h5> Selected account: $selectedAccount </h5>\n";
 $selectedYear=$_POST["dateYear"];
 $selectedMonth=$_POST["dateMonth"];
 $selectedDay=$_POST["dateDay"];
 echo "<h4> Transactions details for: </h4>\n";
-echo "<h5> account# $selectedAccount.</h5>\n";
-echo "<h5> since: $selectedYear,-$selectedMonth,-$selectedDay. </h4>\n";
+echo "<h5> accountnumber: $selectedAccount.</h5>\n";
+echo "<h5> since: $selectedYear-$selectedMonth-$selectedDay. </h4>\n";
 ?>
 
 <table width="100%" border="1" cellpadding="3" cellspacing="1">
