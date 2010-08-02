@@ -354,13 +354,7 @@ echo "<form action='process_form.php' method='POST'
 	   <select ID='clientaccountid'	NAME='clientaccountid'	 					
 			   style='margin-left: 3em'>\n";
 			   
-/*while($row=mysql_fetch_array($result))
-{
-	extract($row);
-	echo "<option value='$clientaccountid'>$clientaccountid</option>";
-}
-*/	
-
+/*Put results of query into dynamic list*/
 for($count=0;$count<$dbSelectionListClientAccounts->queryResultsCount;$count=$count+1)
 {
 	$row=mysql_fetch_array($dbSelectionListClientAccounts->queryResultsResource);
@@ -368,16 +362,8 @@ for($count=0;$count<$dbSelectionListClientAccounts->queryResultsCount;$count=$co
 	echo "<option value='$clientaccountid'>$clientaccountid</option>";
 
 }//endl if to only print when there are any results
-
-
-
-
-
-
 echo "</select>\n";	
-
 $dbSelectionListClientAccounts->close();	   		
- 
 ?>
 
 <P></P>
