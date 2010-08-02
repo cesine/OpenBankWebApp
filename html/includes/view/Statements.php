@@ -100,6 +100,76 @@ for ($n=1; $n<=31; $n++)
 }
 echo "</select>\n";
 
+/* put leading zero into month if it is only one digit */
+switch($selectedMonth)
+{
+	case '1': 
+		$selectedMonth ='01';
+		break;
+	case '2': 
+		$selectedMonth ='02';
+		break;	
+	case '3': 
+		$selectedMonth ='03';
+		break;	
+	case '4': 
+		$selectedMonth ='04';
+		break;	
+	case '5': 
+		$selectedMonth ='05';
+		break;	
+	case '6': 
+		$selectedMonth ='06';
+		break;	
+	case '7': 
+		$selectedMonth ='07';
+		break;	
+	case '6': 
+		$selectedMonth ='08';
+		break;	
+	case '9': 
+		$selectedMonth ='09';
+		break;	
+	default: 
+		$selectedMonth =$selectedMonth;
+		break;					
+} // end switch($selectedMonth)
+
+/* put leading zero into day if it is only one digit */
+switch($selectedDay)
+{
+	case '1': 
+		$selectedDay ='01';
+		break;
+	case '2': 
+		$selectedDay ='02';
+		break;	
+	case '3': 
+		$selectedDay ='03';
+		break;	
+	case '4': 
+		$selectedDay ='04';
+		break;	
+	case '5': 
+		$selectedDay ='05';
+		break;	
+	case '6': 
+		$selectedDay ='06';
+		break;	
+	case '7': 
+		$selectedDay ='07';
+		break;	
+	case '6': 
+		$selectedDay ='08';
+		break;	
+	case '9': 
+		$selectedDay ='09';
+		break;	
+	default: 
+		$selectedDay =$selectedDay;
+		break;			
+} // end switch($selectedDay)
+
 ?>
 
 <!-- read input from user after submition -->
@@ -113,55 +183,18 @@ $selectedAccount=$_POST["clientaccountid"];
 $selectedYear=$_POST["dateYear"];
 $selectedMonth=$_POST["dateMonth"];
 $selectedDay=$_POST["dateDay"];
+
+$s="-"; 															// date have format yyyy-mm-dd
+$selectedDate= $selectedYear.$s.$selectedMonth.$s.$selectedDay; 	// concatenation of strings
+
 echo "<h4> Transactions details for: </h4>\n";
-echo "<h5> account number: $selectedAccount.</h5>\n";
-echo "<h5> since: $selectedYear-$selectedMonth-$selectedDay. </h4>\n";
+echo "<h5> account number: $selectedAccount </h5>\n";
+echo "<h5> date since: $selectedDate </h5>\n";
 
-
-/* put leading zero into month if it is only one digit */
-switch($selectedMonth)
-{
-	case '1': 
-		$selectedMonth ='01';
-		break;
-	
-} // end switch($selectedMonth)
-
-/* put leading zero into day if it is only one digit */
-switch($selectedDay)
-{
-	case '1': 
-		$selectedDay ='01';
-		break;
-	
-} // end switch($selectedDay)
-
-$s="-";
-$selectedDate= $selectedYear.$s.$selectedMonth.$s.$selectedDay;
-echo "<h5> Selected date: $selectedDate </h5>\n"; 
+/* Convert string to date yyyy-mm-dd */
 $date = strtotime( $selectedDate ); 								
 $dateSince = date( 'y-m-d', $date ); 								
 echo "<h5> Date since: $dateSince </h5>\n";
-
-/* Convert string to date yyyy-mm-dd */
-echo strtotime('10 September 2000'), "\n";
-$timestamp = strtotime(str_replace(' ', '-', '10 September 2000'));
-
-/* working
-// Do this instead:
-$today = '2009-11-01';
-$tomorrow = strtotime('+1 day', strtotime($today));
-print date('Y-m-d', $tomorrow);
-// Output: 2009-11-02 
- */
-
-//$selectedDate= $selectedYear.$selectedMonth.$selectedDay;
-$selectedDate= '2010-08-01'; 										// this works
-echo "<h5> Selected date: $selectedDate </h5>\n"; 					//201082
-$date = strtotime( $selectedDate ); 								// wrong convertion
-$dateSince = date( 'y-m-d', $date ); 								// wrong convertion
-echo "<h5> Date since: $dateSince </h5>\n";
-
 
 ?>
 
