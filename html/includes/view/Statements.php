@@ -374,7 +374,8 @@ $today = time(); 									// stores today's date
 $f_today = date("M-d-Y",$today); 					// formats today's date
 
 echo "<h4> Today is $f_today </h4>\n";
-echo "<h4> Select date since for displaying transactions </h4>\n";
+echo "<h4> </h4>\n";
+echo "<h4> Select date since: </h4>\n";
 
 echo "<form action='process_form.php' method='POST'>\n";
 
@@ -385,10 +386,12 @@ echo "<select name='dateYear'>\n";
 for ($n=$startYr; $n<=$startYr1; $n++)
 {
 	echo "<option value=$n>";
+	/*
 	if ($startYr1==$n)
 	{
 		echo " selected";
 	}
+	*/
 	echo "$n</option>\n";
 }
 echo "</select>\n";
@@ -405,10 +408,12 @@ echo "<select name='dateMonth'>\n";
 for ($n=1; $n<=12; $n++)
 {
 	echo "<option value=$n>";
+	/*
 	if ($todayMO==$n)
 	{
 		echo " selected";
 	}
+	*/
 	echo "$monthName[$n]\n</option>";
 }
 echo "</select>\n";
@@ -421,10 +426,12 @@ echo "<select name='dateDay'>\n";
 for ($n=1; $n<=31; $n++)
 {
 	echo "<option value=$n>";
+	/*
 	if ($todayDay==$n)
 	{
 		echo " selected";
 	}
+	*/
 	echo "$n</option>\n";
 }
 echo "</select>\n";
