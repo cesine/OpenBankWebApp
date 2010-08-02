@@ -379,7 +379,7 @@ echo "<h4> Today is $f_today </h4>\n";
 echo "<form action='process_form.php' method='POST'>\n";
 
 /*build selection list for year*/
-$startYr1 = date("Y",$f_today); 					// get year from $today
+$startYr1 = date("Y",$today); 					// get year from $today
 $startYr = $startYr1-20;
 echo "<select name='dateYear'>\n";
 for ($n=$startYr; $n<=$startYr1; $n++)
@@ -400,7 +400,7 @@ $monthName = array(1=> "January", "February", "March",
 					   "April", "May", "June", "July", "August",
 					   "September", "October", "November", "December");
 
-$todayMO = date("m",$f_today); 						// get month from $today
+$todayMO = date("n",$today); 						// get month from $today
 echo "<select name='dateMonth'>\n";
 for ($n=1; $n<=12; $n++)
 {
@@ -416,7 +416,7 @@ echo "</select>\n";
 
 /*build selection list for day*/
 
-$todayDay = date("d",$f_today); 					// get day from $today
+$todayDay = date("d",$today); 					// get day from $today
 echo "<select name='dateDay'>\n";
 for ($n=1; $n<=31; $n++)
 {
