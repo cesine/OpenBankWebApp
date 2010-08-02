@@ -37,18 +37,20 @@ $hit =3;
 		
 		$transactionToDisplay->displayTransactionInRowFormatted();
 	}
+
+/*
 if ($_SESSION['TransactionsArray']){
-	 if ($_SESSION['TransactionsArray'][0]){ 
- 		//put the result objects into the results array 
-  		$resultsArray = unserialize($_SESSION['TransactionsArray']); 
-  		//put the number of results into hit 
-	 	//$hit= count($resultsArray);  	
-	 	$hit=3;					
- 	 }
- 	 else{	 
-  			$hit=0;	 	
- 	 }
- }
+	if ($_SESSION['TransactionsArray'][0]){ 
+		//put the result objects into the results array 
+		$resultsArray = unserialize($_SESSION['TransactionsArray']); 
+		//put the number of results into hit 
+		//$hit= count($resultsArray);  	
+		$hit=3;					
+		}
+		else{	 
+			$hit=0;	 	
+	}
+}
 
 
 // For each hit - Displays transactions
@@ -76,7 +78,7 @@ else
  
 	   
 }
-	
+*/	
 ?>
 
 
