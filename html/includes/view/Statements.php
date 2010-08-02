@@ -118,6 +118,7 @@ echo "<h5> account number: $selectedAccount.</h5>\n";
 echo "<h5> since: $selectedYear-$selectedMonth-$selectedDay. </h4>\n";
 
 
+/* put leading zero into month if it is only one digit */
 switch($selectedMonth)
 {
 	case '1': 
@@ -126,7 +127,20 @@ switch($selectedMonth)
 	
 } // end switch($selectedMonth)
 
-echo "<h5> Selected month: $selectedMonth </h5>\n"; 
+/* put leading zero into day if it is only one digit */
+switch($selectedDay)
+{
+	case '1': 
+		$selectedDay ='01';
+		break;
+	
+} // end switch($selectedDay)
+
+$selectedDate= $selectedYear+'-'+$selectedMonth+'-'+$selectedDay;
+echo "<h5> Selected date: $selectedDate </h5>\n"; 
+$date = strtotime( $selectedDate ); 								
+$dateSince = date( 'y-m-d', $date ); 								
+echo "<h5> Date since: $dateSince </h5>\n";
 
 /* Convert string to date yyyy-mm-dd */
 echo strtotime('10 September 2000'), "\n";
