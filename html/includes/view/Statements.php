@@ -1,5 +1,12 @@
 <?php 
 include('includes/model/Transaction.Class.php');
+
+include('includes/controller/Database.Class.php');
+
+// access client_account_id
+require_once 'includes/model/ClientAccount.Class.php';
+
+
 echo '<div>';
 $transactionToDisplay = new Transaction();
 $transactionToDisplay->test();
