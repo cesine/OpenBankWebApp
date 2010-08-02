@@ -328,9 +328,12 @@ Balance
 
 </tbody></table>
  -->
-
  
  <P> Transactions details. </P>
+ 
+ <!--
+ <form action="?&content=Statement" method="post">
+ -->
 
 <?php
  /*
@@ -347,7 +350,8 @@ $dbSelectionListClientAccounts->query($querySelectClientAccounts);
 $result = $dbSelectionListClientAccounts->query($querySelectClientAccounts);						
 
 /* Create form containing selection list */
-echo "<form action='process_form.php' method='POST'
+//echo "<form action='process_form.php' method='POST'
+echo "<form action='?&content=Statement' method='POST'
 			style='margin-left: 2em'>
 	  <label for 'clientaccountid'
 	  		 style='font-weight: bold'>Select account:</label>
@@ -474,6 +478,7 @@ $dbClientAccountTransactions->close();
 
 ?>
 </table>
+
 
 <P></P>
 
