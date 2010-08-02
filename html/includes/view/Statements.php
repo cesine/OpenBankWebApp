@@ -231,8 +231,8 @@ $dbClientAccountTransactions->connect();
 $queryClientAccountTransactions=
 "SELECT date, transactiondescription,depositamount,withdrawalamount, balance
 FROM transaction
-WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>=$selectedDate";
-//WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>=$dateSince";
+WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>='$dateSince'";
+//WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>=$selectedDate";
 							
 $dbClientAccountTransactions->query($queryClientAccountTransactions);	
 
