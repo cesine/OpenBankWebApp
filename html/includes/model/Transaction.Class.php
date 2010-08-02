@@ -142,10 +142,11 @@ class Transaction{
 
 	public function initializeTransaction($row)
 	{
+		// in the line ($row[withdrawalamount]), parameter name [] from db table
 		$this->setDate($row[date]);
-		$this->setTransactionDescription($row[transactionDescription]);
-		$this->setDepositAmount($row[depositAmount]);
-		$this->setWithdrawalAmount($row[withdrawalAmount]);
+		$this->setTransactionDescription($row[transactiondescription]);
+		$this->setDepositAmount($row[depositamount]);
+		$this->setWithdrawalAmount($row[withdrawalamount]);
 		$this->setBalance($row[balance]);
 	}
 
