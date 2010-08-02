@@ -398,7 +398,7 @@ FROM transaction
 WHERE clientid = 54010001 AND accountid=10000001";
 							
 $dbClientAccountTransactions->query($queryClientAccountTransactions);	
-$result = $dbClientAccountTransactions->query($queryClientAccountTransactions);	
+//$result = $dbClientAccountTransactions->query($queryClientAccountTransactions);	
 
 /*Put results of query into table on the screen*/
 for($count=0;$count<$dbClientAccountTransactions->queryResultsCount;$count=$count+1)
@@ -406,8 +406,14 @@ for($count=0;$count<$dbClientAccountTransactions->queryResultsCount;$count=$coun
 	//$row=mysql_fetch_array($dbClientAccountTransactions->queryResultsResource);
 	//extract($row);
 	//echo "<option value='$clientaccountid'>$clientaccountid</option>";
-	$transactionToDisplay->displayTransactionInRowFormatted();	
-	echo "$result";
+	
+	$row=mysql_fetch_array($dbClientAccountTransactions->queryResultsResource);	
+	
+	//$transactionToDisplay->displayTransactionInRowFormatted();	
+	//echo "$result";
+	
+	$transactionToDisplay->initializeTransaction($row);
+	$transactionToDisplay->displayTransactionInRowFormatted();
 
 }//endl if to only print when there are any results
 
