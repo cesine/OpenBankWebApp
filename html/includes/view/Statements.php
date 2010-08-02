@@ -118,7 +118,7 @@ echo "<h5> account number: $selectedAccount.</h5>\n";
 echo "<h5> since: $selectedYear-$selectedMonth-$selectedDay. </h4>\n";
 
 /* Convert string to date yyyy-mm-dd */
-echo strtotime("10 September 2000"), "\n";
+echo strtotime('10 September 2000'), "\n";
 $timestamp = strtotime(str_replace(' ', '-', '10 September 2000'));
 
 /* working
@@ -129,16 +129,13 @@ print date('Y-m-d', $tomorrow);
 // Output: 2009-11-02 
  */
 
-$selectedDate= $selectedYear.$selectedMonth.$selectedDay;
-echo "<h5> Selected date: $selectedDate </h5>\n";
-$date = strtotime( $selectedDate );
-$dateSince = date( 'y-m-d', $date );
+//$selectedDate= $selectedYear.$selectedMonth.$selectedDay;
+$selectedDate= '2010-08-01';
+echo "<h5> Selected date: $selectedDate </h5>\n"; 					//201082
+$date = strtotime( $selectedDate ); 								// wrong convertion
+$dateSince = date( 'y-m-d', $date ); 								// wrong convertion
 echo "<h5> Date since: $dateSince </h5>\n";
 
-
-
-$selectedDate =$selectedDay+"-"+$selectedMonth+"-"+$selectedYear; 
-echo strtotime($selectedDate), "\n";
 
 ?>
 
