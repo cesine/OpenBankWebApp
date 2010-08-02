@@ -75,7 +75,8 @@ class Transaction{
 		$this->transactionDescription=$transactionDescription;
 	}
 	
-	function test(){
+	function test()
+	{
 		echo 'Testing the transactions functionalities.';
 		$this->setTransactionID(0001);
 		$this->setClientID(0002);
@@ -88,7 +89,8 @@ class Transaction{
 		$this->setBalance(1000);
 		$this->setTransactionDescription("my deposit");	
 	}
-	function displayTransaction(){
+	function displayTransaction()
+	{
 		echo '<p class="Transaction ID">'.
 		$this->transactionID.
 		'<br/>'.$this->clientID.		
@@ -101,7 +103,8 @@ class Transaction{
 		'<br/>'.$this->transactionDescription.				
 		'</p>\n\n';
 	}
-	function __construct(){
+	function __construct()
+	{
 			echo 'Creating transaction. Change somethings';
 			$this->transactionID =0001;
 			$this->clientID =0002;
@@ -115,7 +118,8 @@ class Transaction{
 			
 		}	
 
-	function displayTransactionInRow(){
+	function displayTransactionInRow()
+	{
 		echo '<tr><td>'.$this->date
 		.'</td><td>'.$this->transactionDescription	
 		.'</td><td align="right">'.$this->withdrawalAmount				
@@ -124,7 +128,8 @@ class Transaction{
 		.'</td></tr>'; 	
 	}
 	
-	function displayTransactionInRowFormatted(){
+	function displayTransactionInRowFormatted()
+	{
 		
 	echo '<TR class="bgcoloroption1">
 	<TD class="tableDataLeftC">'.$this->date.'</TD>
@@ -133,11 +138,16 @@ class Transaction{
 	<TD class="tableDataRightC">'.$this->withdrawalAmount.'</TD>
 	<td class="tableDataRightC" align="right">'.$this->balance.'</td>		
 	</TR>';		
-}
+	}
 
-	function displayTableHeadingRow(){
-
-}	
+	public function initializeTransaction($row)
+	{
+		$this->setDate($row[date]);
+		$this->setTransactionDescription($row[transactionDescription]);
+		$this->setDepositAmount($row[depositAmount]);
+		$this->setWithdrawalAmount($row[withdrawalAmount]);
+		$this->setBalance($row[balance]);
+	}
 
 
 			
