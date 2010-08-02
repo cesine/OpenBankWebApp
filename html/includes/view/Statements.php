@@ -136,7 +136,8 @@ switch($selectedDay)
 	
 } // end switch($selectedDay)
 
-$selectedDate= $selectedYear+"-"+$selectedMonth+"-"+$selectedDay;
+$s="-";
+$selectedDate= $selectedYear.$s.$selectedMonth.$s.$selectedDay;
 echo "<h5> Selected date: $selectedDate </h5>\n"; 
 $date = strtotime( $selectedDate ); 								
 $dateSince = date( 'y-m-d', $date ); 								
