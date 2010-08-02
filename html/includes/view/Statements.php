@@ -435,8 +435,9 @@ echo "<h5> Selected account: $selectedAccount </h5>\n";
 $selectedYear=$_POST["dateYear"];
 $selectedMonth=$_POST["dateMonth"];
 $selectedDay=$_POST["dateDay"];
-echo "<h5> Selected year: $selectedYear, selected month: $selectedMonth,
-selected day: $selectedDay. </h5>\n";
+echo "<h4> Transactions details for: </h4>\n";
+echo "<h5> account# $selectedAccount.</h5>\n";
+echo "<h5> since: $selectedYear,-$selectedMonth,-$selectedDay. </h4>\n";
 ?>
 
 <table width="100%" border="1" cellpadding="3" cellspacing="1">
