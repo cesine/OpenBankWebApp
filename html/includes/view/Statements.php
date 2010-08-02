@@ -9,8 +9,8 @@ require_once 'includes/model/ClientAccount.Class.php';
 
 echo '<div>';
 $transactionToDisplay = new Transaction();
-$transactionToDisplay->test();
-$transactionToDisplay->displayTransaction();
+//$transactionToDisplay->test();
+//$transactionToDisplay->displayTransaction();
 echo '</div>';
 ?>
 
@@ -350,7 +350,7 @@ $result = $dbSelectionListClientAccounts->query($querySelectClientAccounts);
 echo "<form action='process_form.php' method='POST'
 			style='margin-left: 2em'>
 	  <label for 'clientaccountid'
-	  		 style='font-weight: bold'>Account:</label>
+	  		 style='font-weight: bold'>Select account:</label>
 	   <select ID='clientaccountid'	NAME='clientaccountid'	 					
 			   style='margin-left: 3em'>\n";
 			   
@@ -366,6 +366,71 @@ echo "</select>\n";
 $dbSelectionListClientAccounts->close();	   		
 ?>
 <P></P>
+
+<?php
+/*Select date since for displaying transactions*/
+
+$today = time(); 									// stores today's date
+$f_today = date("Y-m-D",$today); 					// formats today's date
+
+echo "<h3>Today is $f_today </h3>\n";
+echo "<form action='process_form.php' method='POST'>\n";
+
+/*build selection list for year*/
+$startYr = 1990;
+$endYr = date("Y",$f_today); 						// get year from $today
+echo "<select name='dateYear'>\n";
+for ($n=$startYr; $n<=$endYr; $n++)
+{
+	echo "<option value=$n>";
+	if ($endYr==$n)
+	{
+		echo "selected";
+	}
+	echo "> $n</option>\n";
+}
+echo "</select>\n";
+
+
+/*build selection list for month*/
+
+$monthName = array(1=> "January", "February", "March",
+					   "April", "May", "June", "July", "August",
+					   "September", "October", "November", "December");
+
+$todayMO = date("m",$f_today); 						// get month from $today
+echo "<select name='dateMonth'>\n";
+for ($n=1; $n<=12; $n++)
+{
+	echo "<option value=$n>";
+	if ($todayMO==$n)
+	{
+		echo "selected";
+	}
+	echo " > $monthName[$n]\n</option>";
+}
+echo "</select>\n";
+
+
+/*build selection list for day*/
+
+$todayDay = date("d",$f_today); 					// get day from $today
+echo "<select name='dateDay'>\n";
+for ($n=1; $n<=31; $n++)
+{
+	echo "<option value=$n>";
+	if ($todayDay==$n)
+	{
+		echo "selected";
+	}
+	echo "> $n</option>\n";
+}
+echo "</select>\n";
+
+
+?>
+
+
 
 <table width="100%" border="1" cellpadding="3" cellspacing="1">
 <tr>
@@ -398,20 +463,11 @@ FROM transaction
 WHERE clientid = 54010001 AND accountid=10000001";
 							
 $dbClientAccountTransactions->query($queryClientAccountTransactions);	
-//$result = $dbClientAccountTransactions->query($queryClientAccountTransactions);	
 
 /*Put results of query into table on the screen*/
 for($count=0;$count<$dbClientAccountTransactions->queryResultsCount;$count=$count+1)
 {
-	//$row=mysql_fetch_array($dbClientAccountTransactions->queryResultsResource);
-	//extract($row);
-	//echo "<option value='$clientaccountid'>$clientaccountid</option>";
-	
 	$row=mysql_fetch_array($dbClientAccountTransactions->queryResultsResource);	
-	
-	//$transactionToDisplay->displayTransactionInRowFormatted();	
-	//echo "$result";
-	
 	$transactionToDisplay->initializeTransaction($row);
 	$transactionToDisplay->displayTransactionInRowFormatted();
 
