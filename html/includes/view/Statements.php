@@ -321,3 +321,43 @@ Balance
 
 </tbody></table>
  -->
+
+ 
+ <P> Transactions details. </P>
+
+<?php
+ /*
+ * Build dynamic selection list
+ */
+$dbSelectionListClientAccounts = new Database();
+$dbSelectionListClientAccounts->connect();
+
+$querySelectClientAccounts="SELECT DISTINCT clientaccountid 
+							FROM clientaccount
+							WHERE clientaccountid = 54010001";
+							
+$dbSelectionListClientAccounts->query($querySelectClientAccounts);	
+$result = query($querySelectClientAccounts);						
+
+/* Create form containing selection list */
+echo "<form action='process_form.php' method='POST'
+			style='margin-left: 2em'>
+	  <label for 'clientaccountid'
+	  		 style='font-weight: bold'>Account:</label>
+	   <select ID='clientaccountid'	NAME='clientaccountid'	 					
+			   style='margin-left: 3em'>\n";
+			   
+while($row=mysql_fetch_array($result))
+{
+	extract($row);
+	echo "<option value='$clientaccountid'>$clientaccountid</option>";
+}	
+
+echo "</select>\n";	
+
+$dbSelectionListClientAccounts->close();	   		
+ 
+?>
+
+<P></P>
+ 
