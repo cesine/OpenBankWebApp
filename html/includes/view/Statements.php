@@ -88,6 +88,7 @@ else
 
 
 <?php
+/*
 //Check to see if there is a transactions_array in the sessions variable, 
 //if there is it is because the mapper put one there. The transactions array is the 
 //serialzed version of a transaction object. If it is set, it means that there is 
@@ -133,6 +134,7 @@ else
 	echo '</table>';
 	echo '<br>';   
 }
+*/
 ?>
 
 
