@@ -1,42 +1,108 @@
 <?php
 
 class Account{
-	private $employeeid;
-	private $addressid;
-	private $branchid;
-	private $titleid;
+	private $employeeID;
+	private $salary;
+	private $firstName;	
+	private $lastName;		
+	private $timeOffID;
+	private $status;
+	private $addressID;
+	private $branchID;	
+	private $titleID;	
 
-	public function getAccountTypeId() {
-		return $this->accountTypeId;
+	public function getEmployeeID() 
+	{
+		return $this->employeeID;
 	}
-	public function getServiceCategoryId() {
-		return $this->serviceCategoryId;
+	
+	public function getSalary() 
+	{
+		return $this->salary;
 	}
-	public function getServiceTypeId(){
-		return $this->serviceTypeId;
+
+	public function getFirstName()
+	{
+		return $this->firstName;
 	}
-	public function getAccountName(){
-		return $this->accountName;
+	
+	public function getLastName()
+	{
+		return $this->lastName;
 	}
-	public function setAccountTypeId($accountTypeId){
-		$this->accountTypeId=$accountTypeId;
-	}
-	public function setServiceCategoryId($serviceCategoryId) {
-		$this->serviceCategoryId=$serviceCategoryId;
-	}
-	public function setServiceTypeId($serviceTypeId){
-		$this->serviceTypeId=$serviceTypeId;
-	}
-	public function setAccountName($accountName) {
-		$this->AccountName=$accountName;
+
+	public function getTimeOffID()
+	{
+		return $this->timeOffID;
 	}	
+
+	public function getStatus()
+	{
+		return $this->status;
+	}	
+	
+	public function getAddressID()
+	{
+		return $this->addressID;
+	}	
+	
+	public function getBranchID()
+	{
+		return $this->branchID;
+	}		
+	
+	public function getTitleID()
+	{
+		return $this->titleID;
+	}	
+	
+	
+	public function setEmployeeID($employeeID) 
+	{
+		$this->employeeID=$employeeID;
+	}
+	
+	public function setSalary($salary) 
+	{
+		$this->salary=$salary;
+	}	
+	
+	public function setFirstName($firstName) 
+	{
+		$this->firstName=$firstName;
+	}	
+
+	public function setLastName($lastName) 
+	{
+		$this->lastName=$lastName;
+	}
+
+	public function setTimeOffID($timeOffID) 
+	{
+		$this->timeOffID=$timeOffID;
+	}
+
+	public function setStatus($status) 
+	{
+		$this->status=$status;
+	}
+
+	public function setAddressID($addressID) 
+	{
+		$this->addressID=$addressID;
+	}	
+	
+	public function setBranchID($branchID) 
+	{
+		$this->branchID=$branchID;
+	}
+
+	public function setTitleID($titleID) 
+	{
+		$this->titleID=$titleID;
+	}	
+	
+	
 }
 ?>
 
-<!--  
-salary 	double 			No 	None 		Browse distinct values 	Change 	Drop 	Primary 	Unique 	Index 	Fulltext
-	firstname 	varchar(20) 	utf8_general_ci 		No 	None 		Browse distinct values 	Change 	Drop 	Primary 	Unique 	Index 	Fulltext
-	lastname 	varchar(20) 	utf8_general_ci 		No 	None 		Browse distinct values 	Change 	Drop 	Primary 	Unique 	Index 	Fulltext
-	vacationdaysallowed 	int(2) 		UNSIGNED 	Yes 	NULL 		Browse distinct values 	Change 	Drop 	Primary 	Unique 	Index 	Fulltext
-	status 	int(1) 
--->	
