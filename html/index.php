@@ -9,7 +9,7 @@
 <?php 
 $content = $_GET["content"];
 $topMenu = $_GET["topMenu"];
-if($content!="EmployeeLogin")
+if($content!="EmployeeLogin" && $content!="ViewEmployeeInfo")
 {
 	include ('includes/view/sidemenu.php');
 }
