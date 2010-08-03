@@ -55,17 +55,17 @@ if (isset($_POST["EmployeeIDSubmit"]))
 							   WHERE employeeid=$EmployeeID";
 									
 		$dbCheckEmployeeID->query($queryCheckEmployeeID);	
-		$result = $dbCheckEmployeeID->query($queryCheckEmployeeID);
-		echo "<h4> Result = $result. </h4>\n";			
+		//$result = $dbCheckEmployeeID->query($queryCheckEmployeeID);
+		//echo "<h4> Result = $result. </h4>\n";			
 
 		$count = $dbCheckEmployeeID->queryResultsCount;
-		echo "<h4> Count = $count. </h4>\n";		
+		//echo "<h4> Count = $count. </h4>\n";		
 				
-		$row=mysql_fetch_array($dbCheckEmployeeID->queryResultsResource);	
-		echo "<h4> Number of rows = $row. </h4>\n";						
+		//$row=mysql_fetch_array($dbCheckEmployeeID->queryResultsResource);	
+		//echo "<h4> Number of rows = $row. </h4>\n";						
 
 		
-		if($row==1)
+		if($count==1)
 		{
 			echo "<h4> Employee found in DB. </h4>\n";
 		}
