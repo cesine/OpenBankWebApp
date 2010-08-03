@@ -5,7 +5,7 @@
 
 <table border="1" with="940"><tr valign="top"><td width="20%">
 <!-- Sidemenu Cell -->
-<?php include ('includes/view/sidemenu.php')?>
+<!-- <?php //include ('includes/view/sidemenu.php')?> -->
 
 
 
@@ -20,11 +20,20 @@
  */
 $content = $_GET["content"];
 $topMenu = $_GET["topMenu"];
-if($topMenu =="ClientTopMenu"){
+if($topMenu =="ClientTopMenu")
+{
+	include ('includes/view/sidemenu.php');
 	include ('includes/view/clienttopmenu.php');
-}elseif($topMenu=="EmployeeTopMenu" || $content=="EmployeeLogin"){
-	include ('includes/view/employeetopmenu.php');
-}else{
+//}elseif($topMenu=="EmployeeTopMenu" || $content=="EmployeeLogin"){
+//	include ('includes/view/employeetopmenu.php');
+}
+elseif($topMenu=="EmployeeTopMenu")
+{
+	include ('includes/view/employeetopmenu.php');	
+}
+else
+{
+	include ('includes/view/sidemenu.php');
 	include ('includes/view/clienttopmenu.php');
 }
 
