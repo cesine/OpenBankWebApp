@@ -30,7 +30,7 @@ if($topMenu =="ClientTopMenu")
 //}elseif($topMenu=="EmployeeTopMenu" || $content=="EmployeeLogin"){
 //	include ('includes/view/employeetopmenu.php');
 }
-elseif($topMenu=="EmployeeTopMenu" || $content=="EmployeeLogin")
+elseif($topMenu=="EmployeeTopMenu")
 {
 	include ('includes/view/employeetopmenu.php');	
 }
