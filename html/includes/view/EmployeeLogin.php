@@ -50,8 +50,9 @@ if (isset($_POST["EmployeeIDSubmit"]))
 		$dbCheckEmployeeID = new Database();
 		$dbCheckEmployeeID->connect();
 		
-		$queryCheckEmployeeID="SELECT DISTINCT $EmployeeID 
-							   FROM employee";
+		$queryCheckEmployeeID="SELECT employeeid 
+							   FROM employee
+							   WHERE employeeid=$EmployeeID";
 									
 		$dbCheckEmployeeID->query($queryCheckEmployeeID);	
 		$result = $dbCheckEmployeeID->query($queryCheckEmployeeID);
