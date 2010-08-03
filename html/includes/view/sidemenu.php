@@ -16,7 +16,7 @@
 		<td width="14" height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td width="124"><a
-		href="/portal/index.jsp?pageID=financial_services_banking&subPageId=Banking_Accounts&reqOption=DepositAccountOpen&action=display"
+		href="index.php?&content=OpenNewAccount"
 		class="linkVertMenu">Open an Account</a></td>
 	</tr>
 
