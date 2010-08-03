@@ -22,7 +22,6 @@ $content = $_GET["content"];
 $topMenu = $_GET["topMenu"];
 if($topMenu =="ClientTopMenu")
 {
-	include ('includes/view/sidemenu.php');
 	include ('includes/view/clienttopmenu.php');
 //}elseif($topMenu=="EmployeeTopMenu" || $content=="EmployeeLogin"){
 //	include ('includes/view/employeetopmenu.php');
@@ -33,7 +32,6 @@ elseif($topMenu=="EmployeeTopMenu")
 }
 else
 {
-	include ('includes/view/sidemenu.php');
 	include ('includes/view/clienttopmenu.php');
 }
 
