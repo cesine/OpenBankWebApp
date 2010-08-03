@@ -3,7 +3,7 @@
 session_start();
 include('includes/model/Employee.Class.php');
 include('includes/controller/Database.Class.php');
-echo "<h5> Please log in. </h5>\n";
+echo "<h4> Please log in. </h4>\n";
 echo "<form action='?&content=EmployeeLogin' method='POST'>";
 
 ?>
@@ -35,9 +35,8 @@ echo "<form action='?&content=EmployeeLogin' method='POST'>";
 $EmployeeID=$_POST["EmployeeID"]; 							// read employee ID from user input
 
 //if login button is pressed:
-if (isset($_POST["EmployeeIDSubmit"]))
+if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 {
-	echo "<h4> User press login button. </h4>\n";
 
 	//to check if employee ID is provided:
     if($EmployeeID == '')
@@ -55,19 +54,14 @@ if (isset($_POST["EmployeeIDSubmit"]))
 							   WHERE employeeid=$EmployeeID";
 									
 		$dbCheckEmployeeID->query($queryCheckEmployeeID);	
-		//$result = $dbCheckEmployeeID->query($queryCheckEmployeeID);
-		//echo "<h4> Result = $result. </h4>\n";			
-
 		$count = $dbCheckEmployeeID->queryResultsCount;
-		//echo "<h4> Count = $count. </h4>\n";		
-				
-		//$row=mysql_fetch_array($dbCheckEmployeeID->queryResultsResource);	
-		//echo "<h4> Number of rows = $row. </h4>\n";						
-
 		
 		if($count==1)
 		{
-			echo "<h4> Employee found in DB. </h4>\n";
+			// employee found in DB
+			echo "<h4> Employee ID: $EmployeeID found in DB. </h4>\n";	
+			$_SESSION['EmployeeID']=$_POST['EmployeeID']; // put employee ID into session variable	
+			echo "<h4> Employee ID: $_SESSION[EmployeeID] found in DB. </h4>\n";						
 		}
 		else
 		{
