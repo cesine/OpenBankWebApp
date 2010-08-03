@@ -57,9 +57,13 @@ if (isset($_POST["EmployeeIDSubmit"]))
 		$result = $dbCheckEmployeeID->query($queryCheckEmployeeID);
 
 		$count = $dbCheckEmployeeID->queryResultsCount;
-		echo "<h4> Count = $count. </h4>\n";		
+		//echo "<h4> Count = $count. </h4>\n";		
+				
+		$row=mysql_fetch_array($dbCheckEmployeeID->queryResultsCount);	
+		echo "<h4> Number of rows = $row. </h4>\n";						
+
 		
-		if($count==1)
+		if($row==1)
 		{
 			echo "<h4> Employee found in DB. </h4>\n";
 		}
