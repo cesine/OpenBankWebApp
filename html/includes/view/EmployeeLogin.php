@@ -6,6 +6,8 @@ include('includes/controller/Database.Class.php');
 echo "<h4> Please log in. </h4>\n";
 echo "<form action='?&content=EmployeeLogin' method='POST'>";
 
+$employee = new Employee();
+
 ?>
 
 <form>
@@ -61,7 +63,8 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 			// employee found in DB
 			echo "<h4> Employee ID: $EmployeeID found in DB. </h4>\n";	
 			$_SESSION['EmployeeID']=$_POST['EmployeeID']; 							// put employee ID into session variable	
-			//echo "<h4> Employee ID: $_SESSION[EmployeeID] found in DB. </h4>\n"; 	//correct						
+			//echo "<h4> Employee ID: $_SESSION[EmployeeID] found in DB. </h4>\n"; 	//correct	
+			$dbCheckEmployeeID->close();					
 		}
 		else
 		{
@@ -79,7 +82,15 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 						   WHERE employeeid=$EmployeeID";
 									
 	$dbCheckBranchManager->query($queryCheckBranchManager);		
-	echo "<h4> Employee title ID: $titleid </h4>\n";		
+	$dbCheckBranchManager->close();
+
+	$row=mysql_fetch_array($dbCheckBranchManager->queryResultsResource);
+	$employee->initializeEmployee($row);
+	
+	//echo $row[titleid];
+	
+	echo "<h4> Employee title ID: $row[titleid] </h4>\n";			
+	echo "<h4> Employee title ID: $employee->getTitleID()</h4>\n";		
 	
 	
 } // end if (isset($_POST['EmployeeIDSubmit']))
