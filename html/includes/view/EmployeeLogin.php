@@ -22,7 +22,7 @@ echo "<form action='?&content=EmployeeLogin' method='POST'>";
 		<tr>
 			<td valign="middle">&nbsp;</td>
 			<td height="35" valign="middle">
-			<input type="submit" name="EmployeeIDSubmit" value="Login" />
+			<input type="submit" name="EmployeeIDSubmit" value="   Log in   " />
 			</td>
 		</tr>
 	
@@ -39,11 +39,11 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 {
 
 	//to check if employee ID is provided:
-    if($EmployeeID == '')
+    if($EmployeeID == '')									// employee ID doesn't provided
     {	
-    	echo '<p class="err_mess">Please, provide employee ID.</p>';
+    	echo "<h4>Please, provide employee ID.</h4>";
     }
-	else
+	else 													// employee ID is provided
 	{
 		//to check if employee ID exist in DB 
 		$dbCheckEmployeeID = new Database();
@@ -67,7 +67,11 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 		{
 			echo "<h4> Employee ID: $EmployeeID doesn't exist in DB !</h4>\n";			
 		}
-	}
+	} // end else // employee ID is provided
+	
+	// check if employee is a Branch Manager
+	// if titleid=10 than employee is a Branch Manager
+	
 } // end if (isset($_POST['EmployeeIDSubmit']))
 
 ?>
