@@ -55,6 +55,7 @@ if (isset($_POST["EmployeeIDSubmit"]))
 									
 		$dbCheckEmployeeID->query($queryCheckEmployeeID);	
 		$result = $dbCheckEmployeeID->query($queryCheckEmployeeID);
+		echo "<h4> Result = $result. </h4>\n";			
 
 		$count = $dbCheckEmployeeID->queryResultsCount;
 		echo "<h4> Count = $count. </h4>\n";		
