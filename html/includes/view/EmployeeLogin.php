@@ -1,19 +1,46 @@
 <?php 
 
 session_start();
-
 include('includes/model/Employee.Class.php');
 include('includes/controller/Database.Class.php');
+echo "<h5> Please log in. </h5>\n";
+echo "<form action='?&content=EmployeeLogin' method='POST'>";
 
-//echo '<div>';
-//$transactionToDisplay = new Transaction();
-//echo '</div>';
+?>
+
+<form>
+
+	<table width="240" border="0" align="center" cellpadding="1" cellspacing="3">
+	
+		<tr>
+		
+			<td class="fieldTitleLeftB">Employee ID:</td>
+			<td><input type="text" name="EmployeeID" size="20" maxlength="8" value=""/></td>
+			
+		</tr>
+	
+		<tr>
+			<td valign="middle">&nbsp;</td>
+			<td height="35" valign="middle">
+			<input type="submit" name="EmployeeIDSubmit" value="Login" />
+			</td>
+		</tr>
+	
+	</table>
+
+</form>
+
+<?php 
+
+$EmployeeID=$_POST["EmployeeID"]; 							// read employee ID from user input
 
 //if login button is pressed:
-if (isset($_POST['EmployeeIDSubmit']))
+if (isset($_POST["EmployeeIDSubmit"]))
 {
+	echo "<h4> User press login button. </h4>\n";
+
 	//to check if employee ID is provided:
-    if(($_POST['EmployeeID'] == ''))
+    if($EmployeeID == '')
     {	
     	echo '<p class="err_mess">Please, provide employee ID.</p>';
     }
@@ -41,30 +68,3 @@ if (isset($_POST['EmployeeIDSubmit']))
 } // end if (isset($_POST['EmployeeIDSubmit']))
 
 ?>
-
-<p></p>
-<?php 
-echo "<h5> Please log in. </h5>\n";
-?>
-
-<form>
-
-	<table width="240" border="0" align="center" cellpadding="1" cellspacing="3">
-	
-		<tr>
-		
-			<td class="fieldTitleLeftB">Employee ID:</td>
-			<td><input type="text" name="EmployeeID" size="20" maxlength="8" value=""/></td>
-			
-		</tr>
-	
-		<tr>
-			<td valign="middle">&nbsp;</td>
-			<td height="35" valign="middle">
-			<input type="submit" name="EmployeeIDSubmit" value="Login" />
-			</td>
-		</tr>
-	
-	</table>
-
-</form>
