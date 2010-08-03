@@ -27,8 +27,6 @@ if($content!="EmployeeLogin")
 if($topMenu =="ClientTopMenu")
 {
 	include ('includes/view/clienttopmenu.php');
-//}elseif($topMenu=="EmployeeTopMenu" || $content=="EmployeeLogin"){
-//	include ('includes/view/employeetopmenu.php');
 }
 elseif($topMenu=="EmployeeTopMenu")
 {
@@ -66,6 +64,8 @@ if($content=="BranchLocator"){
 	include ('includes/view/Transfer.php');
 }elseif($content=="EmployeeLogin"){
 	include ('includes/view/EmployeeLogin.php');
+}elseif($content=="ViewEmployeeInfo"){
+	include ('includes/view/ViewEmployeeInfo.php');	
 }elseif($content=="EmployeeInterface"){
 	echo '<a href="?&content=Summary">View a Clients Info</a>
 	</p>
