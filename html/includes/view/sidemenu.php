@@ -1,5 +1,7 @@
 <!-- Side Menu -->
-
+<a
+		href="index.php?&content=OpenNewAccount"
+		class="linkVertMenu">Online Banking</a>
 
 <table width="145" 
 	style="BORDER-RIGHT: #999966 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #999966 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; BORDER-LEFT: #999966 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #999966 1px solid; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #f9f9f0; TEXT-ALIGN: left">
