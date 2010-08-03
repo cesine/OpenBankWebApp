@@ -83,7 +83,7 @@ class Client{
 		$this->clientAccountID=$clientAccountID;
 	}
 	
-	function test(){
+	public function test(){
 		echo 'Testing the client functionalities.';
 		$this->setClientID(12300045);
 		$this->setFirstName("John");
@@ -96,15 +96,19 @@ class Client{
 		$this->setBranchID(1001);
 		$this->setClientAccountID(95432453);
 	}
-	function displayClientDetails(){
+	public function displayClientDetails(){
 		echo '<p class="name">'.$this->clientID.
 		'<br/>'.$this->firstName.
 		'<br/>'.$this->lastName.
 		'</p>';
 	}
-	function __construct(){
+	public function __construct(){
 		echo 'Adding a client, changing firstName';
 		$this->firstName="Jack";
+	}
+	public function addClient(){
+		$this->setFirstName($_POST["firstName"]);
+		//add all variables
 	}
 }
 
