@@ -78,10 +78,10 @@ DROP TABLE IF EXISTS `bankingplans`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `bankingplans` (
   `accounttypeid` int(2) unsigned NOT NULL,
-  `monthlyfee` decimal(3,2) NOT NULL,
+  `monthlyfee` decimal(4,2) NOT NULL,
   `freetransactions` int(3) unsigned NOT NULL,
   `transactionfee` decimal(2,2) NOT NULL,
-  `overdraftamount` decimal(5,2) NOT NULL,
+  `overdraftamount` decimal(7,2) NOT NULL,
   `overdraftprotectionfee` decimal(3,2) NOT NULL,
   `minimumbalance` decimal(10,2) NOT NULL,
   `interestrate` decimal(2,2) NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE `bankingplans` (
 
 LOCK TABLES `bankingplans` WRITE;
 /*!40000 ALTER TABLE `bankingplans` DISABLE KEYS */;
-INSERT INTO `bankingplans` VALUES (1,'4.00',20,'0.65','999.99','5.00','0.00','0.00'),(3,'9.99',10,'0.99','0.00','0.00','0.00','0.00');
+INSERT INTO `bankingplans` VALUES (1,'4.00',20,'0.65','1000.00','5.00','0.00','0.00'),(3,'10.00',10,'0.99','0.00','0.00','0.00','0.00');
 /*!40000 ALTER TABLE `bankingplans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -566,4 +566,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-08-02 17:03:01
+-- Dump completed on 2010-08-02 23:03:01
