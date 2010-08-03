@@ -1,4 +1,5 @@
 <?php 
+
 include('includes/model/Transaction.Class.php');
 
 include('includes/controller/Database.Class.php');
@@ -12,11 +13,13 @@ $transactionToDisplay = new Transaction();
 //$transactionToDisplay->test();
 //$transactionToDisplay->displayTransaction();
 echo '</div>';
+
 ?>
 
 <P> Transactions details. </P>
 
 <?php
+
 /*Build dynamic selection list */
 $dbSelectionListClientAccounts = new Database();
 $dbSelectionListClientAccounts->connect();
@@ -45,11 +48,15 @@ for($count=0;$count<$dbSelectionListClientAccounts->queryResultsCount;$count=$co
 
 }//endl if to only print when there are any results
 echo "</select>\n";	
-$dbSelectionListClientAccounts->close();	   		
+$dbSelectionListClientAccounts->close();	
+   		
 ?>
+
 <P></P>
 
+
 <?php
+
 /*Select date since for displaying transactions*/
 
 $today = time(); 									// stores today's date
@@ -103,12 +110,12 @@ echo "</select>\n";
 ?>
 
 <!-- read input from user after submition -->
-
 <P></P>
 <input type="submit" value="submit selection"/>
 <P></P>
 
 <?php
+
 $selectedAccount=$_POST["clientaccountid"];
 $selectedYear=$_POST["dateYear"];
 $selectedMonth=$_POST["dateMonth"];
