@@ -110,7 +110,7 @@ echo "</select>\n";
 
 <?php
 $selectedAccount=$_POST["clientaccountid"];
-$selectedYear=$_POST["dateYear"]
+$selectedYear=$_POST["dateYear"];
 $selectedMonth=$_POST["dateMonth"];
 $selectedDay=$_POST["dateDay"];
 
