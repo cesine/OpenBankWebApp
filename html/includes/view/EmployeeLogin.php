@@ -56,13 +56,16 @@ if (isset($_POST["EmployeeIDSubmit"]))
 		$dbCheckEmployeeID->query($queryCheckEmployeeID);	
 		$result = $dbCheckEmployeeID->query($queryCheckEmployeeID);
 
-		if(($dbCheckEmployeeID->queryResultsCount)==1)
+		$count = $dbCheckEmployeeID->queryResultsCount;
+		echo "<h4> Count = $count. </h4>\n";		
+		
+		if($count==1)
 		{
 			echo "<h4> Employee found in DB. </h4>\n";
 		}
 		else
 		{
-			echo "<h4> Employee ID: $EmployeeID not exist in DB !</h4>\n";			
+			echo "<h4> Employee ID: $EmployeeID doesn't exist in DB !</h4>\n";			
 		}
 	}
 } // end if (isset($_POST['EmployeeIDSubmit']))
