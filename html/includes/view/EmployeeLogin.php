@@ -60,8 +60,8 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 		{
 			// employee found in DB
 			echo "<h4> Employee ID: $EmployeeID found in DB. </h4>\n";	
-			$_SESSION['EmployeeID']=$_POST['EmployeeID']; // put employee ID into session variable	
-			echo "<h4> Employee ID: $_SESSION[EmployeeID] found in DB. </h4>\n";						
+			$_SESSION['EmployeeID']=$_POST['EmployeeID']; 							// put employee ID into session variable	
+			//echo "<h4> Employee ID: $_SESSION[EmployeeID] found in DB. </h4>\n"; 	//correct						
 		}
 		else
 		{
