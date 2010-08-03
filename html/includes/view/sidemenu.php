@@ -24,7 +24,7 @@
 		<td height="22" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="/portal/index.jsp?pageID=borrowing&subPageId=Borrowing_Apply&reqOption=SpecialRequests&module=apply"
+		href="index.php?&content=Statement"
 		class="linkVertMenu">Transfer Funds</a></td>
 	</tr>
 
