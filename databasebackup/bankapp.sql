@@ -27,8 +27,12 @@ CREATE TABLE `accounttype` (
   `servicecategoryid` int(2) unsigned NOT NULL,
   `servicetypeid` int(2) unsigned NOT NULL,
   `accountname` varchar(50) NOT NULL,
-  PRIMARY KEY (`accounttypeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`accounttypeid`),
+  KEY `servicecategoryid` (`servicecategoryid`),
+  KEY `servicetypeid` (`servicetypeid`),
+  CONSTRAINT `accounttype_ibfk_2` FOREIGN KEY (`servicetypeid`) REFERENCES `servicetype` (`servicetypeid`),
+  CONSTRAINT `accounttype_ibfk_1` FOREIGN KEY (`servicecategoryid`) REFERENCES `servicecategory` (`servicecategoryid`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +41,7 @@ CREATE TABLE `accounttype` (
 
 LOCK TABLES `accounttype` WRITE;
 /*!40000 ALTER TABLE `accounttype` DISABLE KEYS */;
-INSERT INTO `accounttype` VALUES (1,1,1,'Powerchequing Account'),(2,1,2,'Money Master Savings Account'),(3,1,3,'US Dollar Account'),(4,1,4,'Credit Card No-Fee Value VISA'),(5,1,5,'Basic Line of Credit'),(6,1,6,'GIC(6mos) with Flex for RSPs Account'),(7,1,7,'GIC with Flex for TFSAs Account'),(8,1,8,'Accidental Death Insurance '),(10,2,1,'Basic Business Chequing Account'),(11,2,2,'Basic Business Savings Account'),(12,2,3,'Basic Business Foreign Currency Account'),(13,1,6,'GIC(12mos) with Flex for RSPs Account'),(14,1,6,'GIC(18mos) with Flex for RSPs Account');
+INSERT INTO `accounttype` VALUES (1,1,1,'Powerchequing Account'),(2,1,2,'Money Master Savings Account'),(3,1,3,'US Dollar Account'),(4,1,4,'Credit Card No-Fee Value VISA'),(5,1,5,'Basic Line of Credit'),(6,1,6,'GIC(6mos) with Flex for RSPs Account'),(7,1,7,'GIC(6mos) with Flex for TFSAs Account'),(8,1,8,'Accidental Death Insurance - 1'),(9,1,6,'GIC(24mos) with Flex for RSPs Account'),(10,2,1,'Basic Business Chequing Account'),(11,2,2,'Basic Business Savings Account'),(12,2,3,'Basic Business Foreign Currency Account'),(13,1,6,'GIC(12mos) with Flex for RSPs Account'),(14,1,6,'GIC(18mos) with Flex for RSPs Account'),(15,1,7,'GIC(12mos) with Flex for TFSAs Account'),(16,1,7,'GIC(18mos) with Flex for TFSAs Account'),(17,1,7,'GIC(24mos) with Flex for TFSAs Account'),(18,1,8,'Accidental Death Insurance - 2'),(19,1,8,'Accidental Death Insurance - 3'),(20,1,8,'Accidental Death Insurance - 4');
 /*!40000 ALTER TABLE `accounttype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,13 +53,12 @@ DROP TABLE IF EXISTS `address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `address` (
-  `addressid` int(8) NOT NULL,
-  `streetname` varchar(25) NOT NULL,
+  `addressid` int(8) unsigned NOT NULL,
   `streetnumber` int(6) NOT NULL,
-  `city` varchar(15) NOT NULL,
-  `province` varchar(15) NOT NULL,
   `postalcode` varchar(7) NOT NULL,
-  PRIMARY KEY (`addressid`)
+  PRIMARY KEY (`addressid`),
+  KEY `postalcode` (`postalcode`),
+  CONSTRAINT `address_ibfk_1` FOREIGN KEY (`postalcode`) REFERENCES `postalcodes` (`postalcodes`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,7 +68,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (10000001,'Ste-Catherine',1200,'Montreal','Quebec','H3K-1Z2'),(10000002,'Hymus Ave.',98,'Beaconsfield','Quebec','H1T-1A1'),(10000003,'Front Street',1234,'Toronto','Ontario','J7Y-1R1'),(10000004,'Rue Paradis',1195,'Quebec','Quebec','G4R-1Z7'),(10000005,'1st Street',7632,'Montreal','Quebec','H1A-5F9'),(10000006,'2nd Street',8380,'Lachine','Quebec','H2B-6G0'),(10000007,'3rd Avenue',9768,'Toronto','Ontario','J3C-7H1'),(10000008,'Joliette Street',5822,'Quebec','Quebec','G4D-8I2'),(10000009,'Arnaud Avenue',89,'Montreal','Quebec','H5E-9J3'),(10000010,'Smith Street',3025,'Westmount','Quebec','H6F-0K4'),(10000011,'Laure Avenue',8089,'Toronto','Ontario','J7G-1L5'),(10000012,'Lafayette Avenue',1736,'Ste-Foy','Quebec','G8H-2A6'),(10000013,'Brochu Street',7734,'Montreal','Quebec','H9I-3B7'),(10000014,'McRae Street',6702,'Lachine','Quebec','H0J-4C8'),(10000015,'Arsenault Avenue',5654,'Westmount','Quebec','H1K-5D9'),(10000016,'2nd Street',3092,'St-Hubert','Quebec','H2L-6E0'),(10000017,'3rd Avenue',3957,'Laval','Quebec','H3A-7F5'),(10000018,'Laure Avenue',6643,'Montreal','Quebec','H4B-8G6'),(10000019,'Arnaud Avenue',9923,'Lachine','Quebec','H5C-9H7'),(10000020,'Joliette Street',2763,'Laval','Quebec','H6D-0F8'),(10000021,'Lafayette Avenue',2357,'Montreal','Quebec','H7E-5G9'),(10000022,'McRae Street',3551,'Lachine','Quebec','H8F-6H0'),(10000023,'Arsenault Avenue',797,'Westmount','Quebec','H9G-7I1'),(10000024,'Arnaud Street',5591,'Montreal','Quebec','H0H-8J2'),(10000025,'Arsenault Avenue',3456,'Westmount','Quebec','H1K-5D9'),(10000026,'3rd Avenue',47,'Montreal','Quebec','H2L-6E0'),(10000027,'Brochu Avenue',2363,'Westmount','Quebec','H3A-7F5'),(10000028,'Laure Street',824,'St-Hubert','Quebec','H4B-8G6'),(10000029,'Joliette Avenue',4158,'Toronto','Ontario','J5C-9H7'),(10000030,'Lafayette Avenue',1861,'Toronto','Ontario','J6D-0F8'),(10000031,'McRae Street',9600,'Toronto','Ontario','J7E-5G9'),(10000032,'Arsenault Avenue',1715,'Toronto','Ontario','J8F-6H0'),(10000033,'2nd Street',8684,'Toronto','Ontario','J9G-7I1'),(10000034,'McRae Street',47,'Toronto','Ontario','J0H-8J2'),(10000035,'Rue Paradis',453,'Quebec','Quebec','G1E-5A4'),(10000036,'Rue Paradis',345,'Quebec','Quebec','G1E-2E5'),(10000037,'Lafayette Avenue',674,'Ste-Foy','Quebec','G8H-2E5'),(10000038,'Joliette Street',2345,'Quebec','Quebec','G1E-1A1'),(10000039,'Lafayette Avenue',6756,'Ste-Foy','Quebec','G8H-7T3'),(10000040,'Joliette Street',34,'Quebec','Quebec','G8H-1E2'),(10000041,'Maisonneuve blvd. west',1400,'Montreal','Quebec','H3G-1M8'),(10000042,'Avenue des Pins',675,'Montreal','Quebec','H3G-1A4'),(10000043,'Avenue Bonavista',1006,'Westmount','Quebec','H3G-1R7'),(10000044,'Stratford street',54,'Hampstead','Quebec','H3X-1F3'),(10000045,'Avenue Grosvenor',1278,'Westmount','Quebec','H3G-1E8'),(10000046,'Blvd. Rene Levesque west',865,'Montreal','Quebec','H3H-2S4'),(10000047,'Avenue des Pins',675,'Montreal','Quebec','H3G-1A4'),(10000048,'Sherbrooke street west',5674,'Montreal','Quebec','H4J-5R5'),(10000049,'Maisonneuve blvd. west',1400,'Montreal','Quebec','H3G-1M8'),(10000050,'Avenue Mount Pleasant',24,'Westmount','Quebec','H3D-4E3');
+INSERT INTO `address` VALUES (10000001,1200,'H3K-1Z2'),(10000002,98,'H1T-1A1'),(10000003,1234,'J7Y-1R1'),(10000004,1195,'G4R-1Z7'),(10000005,7632,'H1A-5F9'),(10000006,8380,'H2B-6G0'),(10000007,9768,'J3C-7H1'),(10000008,5822,'G4D-8I2'),(10000009,89,'H5E-9J3'),(10000010,3025,'H6F-0K4'),(10000011,8089,'J7G-1L5'),(10000012,1736,'G8H-2A6'),(10000013,7734,'H9I-3B7'),(10000014,6702,'H0J-4C8'),(10000015,5654,'H1K-5D9'),(10000016,3092,'H2L-6E0'),(10000017,3957,'H3A-7F5'),(10000018,6643,'H4B-8G6'),(10000019,9923,'H5C-9H7'),(10000020,2763,'H6D-0F8'),(10000021,2357,'H7E-5G9'),(10000022,3551,'H8F-6H0'),(10000023,797,'H9G-7I1'),(10000024,5591,'H0H-8J2'),(10000025,3456,'H1K-5D9'),(10000026,47,'H2L-6E0'),(10000027,2363,'H3A-7F5'),(10000028,824,'H4B-8G6'),(10000029,4158,'J5C-9H7'),(10000030,1861,'J6D-0F8'),(10000031,9600,'J7E-5G9'),(10000032,1715,'J8F-6H0'),(10000033,8684,'J9G-7I1'),(10000034,47,'J0H-8J2'),(10000035,453,'G1E-5A4'),(10000036,345,'G1E-2E5'),(10000037,674,'G8H-2E5'),(10000038,2345,'G1E-1A1'),(10000039,6756,'G8H-7T3'),(10000040,34,'G8H-1E2'),(10000041,1400,'H3G-1M8'),(10000042,675,'H3G-1A4'),(10000043,1006,'H3G-1R7'),(10000044,54,'H3X-1F3'),(10000045,1278,'H3G-1E8'),(10000046,865,'H3H-2S4'),(10000047,675,'H3G-1A4'),(10000048,5674,'H4J-5R5'),(10000049,1400,'H3G-1M8'),(10000050,24,'H3D-4E3');
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +88,8 @@ CREATE TABLE `bankingplans` (
   `overdraftprotectionfee` decimal(3,2) NOT NULL,
   `minimumbalance` decimal(10,2) NOT NULL,
   `interestrate` decimal(2,2) NOT NULL,
-  UNIQUE KEY `accounttypeid` (`accounttypeid`)
+  UNIQUE KEY `accounttypeid` (`accounttypeid`),
+  CONSTRAINT `bankingplans_ibfk_1` FOREIGN KEY (`accounttypeid`) REFERENCES `accounttype` (`accounttypeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -95,7 +99,7 @@ CREATE TABLE `bankingplans` (
 
 LOCK TABLES `bankingplans` WRITE;
 /*!40000 ALTER TABLE `bankingplans` DISABLE KEYS */;
-INSERT INTO `bankingplans` VALUES (1,'4.00',20,'0.65','1000.00','5.00','0.00','0.00'),(3,'10.00',10,'0.99','0.00','0.00','0.00','0.00');
+INSERT INTO `bankingplans` VALUES (1,'4.00',20,'0.65','1000.00','5.00','0.00','0.00'),(2,'0.00',0,'0.00','0.00','0.00','0.00','0.99'),(3,'10.00',10,'0.99','0.00','0.00','0.00','0.00'),(10,'0.00',0,'0.00','0.00','0.00','0.00','0.00'),(11,'0.00',0,'0.00','0.00','0.00','0.00','0.00'),(12,'0.00',0,'0.00','0.00','0.00','0.00','0.00');
 /*!40000 ALTER TABLE `bankingplans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,8 +115,9 @@ CREATE TABLE `borrowingplans` (
   `creditlimit` decimal(10,2) NOT NULL,
   `monthlyfee` decimal(3,2) NOT NULL,
   `graceperiod` int(2) unsigned NOT NULL,
-  `interestrate` decimal(2,2) NOT NULL,
-  UNIQUE KEY `accounttypeid` (`accounttypeid`)
+  `interestrate` decimal(4,2) NOT NULL,
+  UNIQUE KEY `accounttypeid` (`accounttypeid`),
+  CONSTRAINT `borrowingplans_ibfk_1` FOREIGN KEY (`accounttypeid`) REFERENCES `accounttype` (`accounttypeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -122,6 +127,7 @@ CREATE TABLE `borrowingplans` (
 
 LOCK TABLES `borrowingplans` WRITE;
 /*!40000 ALTER TABLE `borrowingplans` DISABLE KEYS */;
+INSERT INTO `borrowingplans` VALUES (4,'500.00','0.00',21,'15.00'),(5,'50000.00','0.00',21,'3.25');
 /*!40000 ALTER TABLE `borrowingplans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,7 +146,8 @@ CREATE TABLE `branch` (
   `openinghours` tinytext NOT NULL,
   `branchsclientid` int(8) unsigned NOT NULL,
   PRIMARY KEY (`branchid`),
-  KEY `managerid` (`managerid`)
+  KEY `managerid` (`managerid`),
+  CONSTRAINT `branch_ibfk_1` FOREIGN KEY (`managerid`) REFERENCES `employee` (`employeeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -256,12 +263,15 @@ CREATE TABLE `employee` (
   `salary` double NOT NULL,
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
-  `vacationdaysallowed` int(2) unsigned DEFAULT NULL,
+  `timeoffid` int(2) unsigned DEFAULT NULL,
   `status` int(1) unsigned NOT NULL,
   PRIMARY KEY (`employeeid`),
   KEY `addressid` (`addressid`),
   KEY `branchid` (`branchid`),
-  KEY `titleid` (`titleid`)
+  KEY `titleid` (`titleid`),
+  CONSTRAINT `employee_ibfk_3` FOREIGN KEY (`titleid`) REFERENCES `employeetitle` (`titleid`),
+  CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`addressid`) REFERENCES `address` (`addressid`),
+  CONSTRAINT `employee_ibfk_2` FOREIGN KEY (`branchid`) REFERENCES `branch` (`branchid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -271,7 +281,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (20000001,10000005,10001,10,120000,'Carla','Suarez',20,1),(20000002,10000006,10002,10,110000,'Daniela','Hantuchova',20,1),(20000003,10000007,10003,10,110000,'Flavia','Pennetta',20,1),(20000004,10000008,10004,10,100000,'Arantxa','Parra',20,1),(20000005,10000009,10001,15,80000,'Alisa','Kleybanova',20,1),(20000006,10000010,10002,15,75000,'Kateryna','Bondarenko',20,1),(20000007,10000011,10003,15,70000,'Jie','Zheng',20,1),(20000008,10000012,10004,15,75000,'Francesca','Schiavone',20,1),(20000009,10000013,10001,20,55000,'Caroline','Wozniacki',15,1),(20000010,10000014,10002,20,58000,'Dominika','Cibulkova',20,1),(20000011,10000015,10003,20,60000,'Sybille','Bammer',15,1),(20000012,10000016,10004,20,65000,'Yanina','Wickmayer',20,1),(20000013,10000017,10001,30,30000,'Olga','Govortsova',15,1),(20000014,10000018,10001,30,32000,'Jo-Wilfried','Tsonga',10,1),(20000015,10000019,10001,30,35000,'John','Isner',15,1),(20000016,10000020,10001,30,30000,'Ernests','Gulbis',15,1),(20000017,10000021,10001,30,32000,'Albert','Montanes',15,1),(20000018,10000022,10001,30,35000,'Tommy','Robredo',10,1),(20000019,10000023,10002,30,30000,'Sam','Querrey',15,1),(20000020,10000024,10002,30,32000,'Eduardo','Schwank',10,1),(20000021,10000025,10002,30,35000,'Brian','Blanchette',15,1),(20000022,10000026,10002,30,30000,'Patsy','Keays',15,1),(20000023,10000027,10002,30,32000,'Philipp','Petzschner',15,1),(20000024,10000028,10002,30,35000,'Richard','Gasquet',10,1),(20000025,10000029,10003,30,30000,'Gael','Monfils',15,1),(20000026,10000030,10003,30,32000,'Ivan','Ljubicic',10,1),(20000027,10000031,10003,30,35000,'Sabine','Lisicki',15,1),(20000028,10000032,10003,30,30000,'Maria','Sharapova',15,1),(20000029,10000033,10003,30,32000,'Venus','Williams',15,1),(20000030,10000034,10003,30,35000,'Marcos','Baghdatis',10,1),(20000031,10000035,10004,30,30000,'Feliciano','Lopez',15,1),(20000032,10000036,10004,30,32000,'Mikhail','Youzhny',10,1),(20000033,10000037,10004,30,35000,'Fernando','Verdasco',15,1),(20000034,10000038,10004,30,30000,'Guillermo','Garcia-Lopez',15,1),(20000035,10000039,10004,30,32000,'Rafael','Nadal',15,1),(20000036,10000040,10004,30,35000,'Andy','Roddick',10,1);
+INSERT INTO `employee` VALUES (20000001,10000005,10001,10,120000,'Carla','Suarez',2,1),(20000002,10000006,10002,10,110000,'Daniela','Hantuchova',2,1),(20000003,10000007,10003,10,110000,'Flavia','Pennetta',2,1),(20000004,10000008,10004,10,100000,'Arantxa','Parra',3,1),(20000005,10000009,10001,15,80000,'Alisa','Kleybanova',3,1),(20000006,10000010,10002,15,75000,'Kateryna','Bondarenko',1,1),(20000007,10000011,10003,15,70000,'Jie','Zheng',1,1),(20000008,10000012,10004,15,75000,'Francesca','Schiavone',1,1),(20000009,10000013,10001,20,55000,'Caroline','Wozniacki',4,1),(20000010,10000014,10002,20,58000,'Dominika','Cibulkova',1,1),(20000011,10000015,10003,20,60000,'Sybille','Bammer',1,1),(20000012,10000016,10004,20,65000,'Yanina','Wickmayer',1,1),(20000013,10000017,10001,30,30000,'Olga','Govortsova',1,1),(20000014,10000018,10001,30,32000,'Jo-Wilfried','Tsonga',1,1),(20000015,10000019,10001,30,35000,'John','Isner',1,1),(20000016,10000020,10001,30,30000,'Ernests','Gulbis',1,1),(20000017,10000021,10001,30,32000,'Albert','Montanes',1,1),(20000018,10000022,10001,30,35000,'Tommy','Robredo',1,1),(20000019,10000023,10002,30,30000,'Sam','Querrey',1,1),(20000020,10000024,10002,30,32000,'Eduardo','Schwank',1,1),(20000021,10000025,10002,30,35000,'Brian','Blanchette',1,1),(20000022,10000026,10002,30,30000,'Patsy','Keays',1,1),(20000023,10000027,10002,30,32000,'Philipp','Petzschner',1,1),(20000024,10000028,10002,30,35000,'Richard','Gasquet',1,1),(20000025,10000029,10003,30,30000,'Gael','Monfils',4,1),(20000026,10000030,10003,30,32000,'Ivan','Ljubicic',4,1),(20000027,10000031,10003,30,35000,'Sabine','Lisicki',4,1),(20000028,10000032,10003,30,30000,'Maria','Sharapova',1,1),(20000029,10000033,10003,30,32000,'Venus','Williams',1,1),(20000030,10000034,10003,30,35000,'Marcos','Baghdatis',1,1),(20000031,10000035,10004,30,30000,'Feliciano','Lopez',15,1),(20000032,10000036,10004,30,32000,'Mikhail','Youzhny',10,1),(20000033,10000037,10004,30,35000,'Fernando','Verdasco',15,1),(20000034,10000038,10004,30,30000,'Guillermo','Garcia-Lopez',15,1),(20000035,10000039,10004,30,32000,'Rafael','Nadal',15,1),(20000036,10000040,10004,30,35000,'Andy','Roddick',10,1);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -285,7 +295,8 @@ DROP TABLE IF EXISTS `employeelogin`;
 CREATE TABLE `employeelogin` (
   `employeeid` int(8) unsigned NOT NULL,
   `passwd` varchar(20) NOT NULL,
-  UNIQUE KEY `employeeid` (`employeeid`)
+  UNIQUE KEY `employeeid` (`employeeid`),
+  CONSTRAINT `employeelogin_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`employeeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -295,6 +306,7 @@ CREATE TABLE `employeelogin` (
 
 LOCK TABLES `employeelogin` WRITE;
 /*!40000 ALTER TABLE `employeelogin` DISABLE KEYS */;
+INSERT INTO `employeelogin` VALUES (20000001,'csuar163'),(20000002,'dhant694'),(20000003,'fpenn683'),(20000004,'aparr183'),(20000005,'akley559'),(20000006,'kbond784'),(20000007,'jzhen419'),(20000008,'fschi542'),(20000009,'cwozn675'),(20000010,'dcibu596'),(20000011,'sbamm842'),(20000012,'ywick786'),(20000013,'ogovo720'),(20000014,'jtson328'),(20000015,'jisne365'),(20000016,'egulb105'),(20000017,'amont152'),(20000018,'trobr927'),(20000019,'squer412'),(20000020,'eschw130'),(20000021,'bblan784'),(20000022,'pkeay921'),(20000023,'ppetz354'),(20000024,'rgasq857'),(20000025,'gmonf813'),(20000026,'iljub598'),(20000027,'slisi213'),(20000028,'mshar213'),(20000029,'vwill892'),(20000030,'mbagh363'),(20000031,'flope723'),(20000032,'myouz727'),(20000033,'fverd415'),(20000034,'ggarc634'),(20000035,'rnada932'),(20000036,'arodd372');
 /*!40000 ALTER TABLE `employeelogin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,7 +344,7 @@ DROP TABLE IF EXISTS `employeetimeoffplan`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employeetimeoffplan` (
   `timeoffid` int(5) NOT NULL,
-  `timeoffname` varchar(20) NOT NULL,
+  `timeoffname` varchar(30) NOT NULL,
   `numberofdays` int(2) NOT NULL,
   PRIMARY KEY (`timeoffid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -344,6 +356,7 @@ CREATE TABLE `employeetimeoffplan` (
 
 LOCK TABLES `employeetimeoffplan` WRITE;
 /*!40000 ALTER TABLE `employeetimeoffplan` DISABLE KEYS */;
+INSERT INTO `employeetimeoffplan` VALUES (10001,'regular vacation',20),(10002,'branch manager vacation',25),(10003,'senior vacation',30),(10004,'shortest vacation',14);
 /*!40000 ALTER TABLE `employeetimeoffplan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,7 +368,7 @@ DROP TABLE IF EXISTS `employeetitle`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employeetitle` (
-  `titleid` int(2) NOT NULL,
+  `titleid` int(2) unsigned NOT NULL,
   `titlename` varchar(25) NOT NULL,
   `basesalary` decimal(8,2) NOT NULL,
   PRIMARY KEY (`titleid`)
@@ -412,7 +425,8 @@ CREATE TABLE `insuranceplans` (
   `accounttypeid` int(2) unsigned NOT NULL,
   `coverage` decimal(10,2) NOT NULL,
   `monthlypremium` decimal(8,2) NOT NULL,
-  UNIQUE KEY `accounttypeid` (`accounttypeid`)
+  UNIQUE KEY `accounttypeid` (`accounttypeid`),
+  CONSTRAINT `insuranceplans_ibfk_1` FOREIGN KEY (`accounttypeid`) REFERENCES `accounttype` (`accounttypeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -422,6 +436,7 @@ CREATE TABLE `insuranceplans` (
 
 LOCK TABLES `insuranceplans` WRITE;
 /*!40000 ALTER TABLE `insuranceplans` DISABLE KEYS */;
+INSERT INTO `insuranceplans` VALUES (8,'50000.00','5.83'),(18,'100000.00','11.67'),(19,'150000.00','17.50'),(20,'200000.00','23.50');
 /*!40000 ALTER TABLE `insuranceplans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -435,8 +450,9 @@ DROP TABLE IF EXISTS `investmentplans`;
 CREATE TABLE `investmentplans` (
   `accounttypeid` int(2) unsigned NOT NULL,
   `investmentterm` int(3) unsigned NOT NULL,
-  `interestrate` decimal(2,2) NOT NULL,
-  UNIQUE KEY `accounttypeid` (`accounttypeid`)
+  `interestrate` decimal(4,2) NOT NULL,
+  UNIQUE KEY `accounttypeid` (`accounttypeid`),
+  CONSTRAINT `investmentplans_ibfk_1` FOREIGN KEY (`accounttypeid`) REFERENCES `accounttype` (`accounttypeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -446,8 +462,34 @@ CREATE TABLE `investmentplans` (
 
 LOCK TABLES `investmentplans` WRITE;
 /*!40000 ALTER TABLE `investmentplans` DISABLE KEYS */;
-INSERT INTO `investmentplans` VALUES (6,6,'0.99'),(13,12,'0.99'),(14,18,'0.99');
+INSERT INTO `investmentplans` VALUES (6,6,'1.00'),(7,6,'1.00'),(9,24,'2.00'),(13,12,'1.50'),(14,18,'1.75'),(15,12,'1.50'),(16,18,'1.75'),(17,24,'2.00');
 /*!40000 ALTER TABLE `investmentplans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `postalcodes`
+--
+
+DROP TABLE IF EXISTS `postalcodes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `postalcodes` (
+  `postalcodes` varchar(7) NOT NULL,
+  `street` varchar(25) NOT NULL,
+  `city` varchar(15) NOT NULL,
+  `province` varchar(15) NOT NULL,
+  PRIMARY KEY (`postalcodes`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `postalcodes`
+--
+
+LOCK TABLES `postalcodes` WRITE;
+/*!40000 ALTER TABLE `postalcodes` DISABLE KEYS */;
+INSERT INTO `postalcodes` VALUES ('G1E-1A1','Joliette Street','Quebec','Quebec'),('G1E-2E5','Rue Paradis','Quebec','Quebec'),('G1E-5A4','Rue Paradis','Quebec','Quebec'),('G4D-8I2','Joliette Street','Quebec','Quebec'),('G4R-1Z7','Rue Paradis','Quebec','Quebec'),('G8H-1E2','Joliette Street','Quebec','Quebec'),('G8H-2A6','Lafayette Avenue','Ste-Foy','Quebec'),('G8H-2E5','Lafayette Avenue','Ste-Foy','Quebec'),('G8H-7T3','Lafayette Avenue','Ste-Foy','Quebec'),('H0H-8J2','Arnaud Street','Montreal','Quebec'),('H0J-4C8','McRae Street','Lachine','Quebec'),('H1A-5F9','1st Street','Montreal','Quebec'),('H1K-5D9','Arsenault Avenue','Westmount','Quebec'),('H1T-1A1','Hymus Ave.','Beaconsfield','Quebec'),('H2B-6G0','2nd Street','Lachine','Quebec'),('H2L-6E0','3rd Avenue','Montreal','Quebec'),('H3A-7F5','Brochu Avenue','Westmount','Quebec'),('H3D-4E3','Avenue Mount Pleasant','Westmount','Quebec'),('H3G-1A4','Avenue des Pins','Montreal','Quebec'),('H3G-1E8','Avenue Grosvenor','Westmount','Quebec'),('H3G-1M8','Maisonneuve blvd. west','Montreal','Quebec'),('H3G-1R7','Avenue Bonavista','Westmount','Quebec'),('H3H-2S4','Blvd. Rene Levesque west','Montreal','Quebec'),('H3K-1Z2','Ste-Catherine','Montreal','Quebec'),('H3X-1F3','Stratford street','Hampstead','Quebec'),('H4B-8G6','Laure Street','St-Hubert','Quebec'),('H4J-5R5','Sherbrooke street west','Montreal','Quebec'),('H5C-9H7','Arnaud Avenue','Lachine','Quebec'),('H5E-9J3','Arnaud Avenue','Montreal','Quebec'),('H6D-0F8','Joliette Street','Laval','Quebec'),('H6F-0K4','Smith Street','Westmount','Quebec'),('H7E-5G9','Lafayette Avenue','Montreal','Quebec'),('H8F-6H0','McRae Street','Lachine','Quebec'),('H9G-7I1','Arsenault Avenue','Westmount','Quebec'),('H9I-3B7','Brochu Street','Montreal','Quebec'),('J0H-8J2','McRae Street','Toronto','Ontario'),('J3C-7H1','3rd Avenue','Toronto','Ontario'),('J5C-9H7','Joliette Avenue','Toronto','Ontario'),('J6D-0F8','Lafayette Avenue','Toronto','Ontario'),('J7E-5G9','McRae Street','Toronto','Ontario'),('J7G-1L5','Laure Avenue','Toronto','Ontario'),('J7Y-1R1','Front Street','Toronto','Ontario'),('J8F-6H0','Arsenault Avenue','Toronto','Ontario'),('J9G-7I1','2nd Street','Toronto','Ontario');
+/*!40000 ALTER TABLE `postalcodes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -509,7 +551,9 @@ CREATE TABLE `servicetype` (
   `servicetypeid` int(2) unsigned NOT NULL,
   `serviceid` int(2) unsigned NOT NULL,
   `servicetypename` varchar(25) NOT NULL,
-  UNIQUE KEY `servicetypeid` (`servicetypeid`)
+  UNIQUE KEY `servicetypeid` (`servicetypeid`),
+  KEY `serviceid` (`serviceid`),
+  CONSTRAINT `servicetype_ibfk_1` FOREIGN KEY (`serviceid`) REFERENCES `service` (`serviceid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -566,4 +610,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-08-03 13:03:01
+-- Dump completed on 2010-08-03 17:03:01
