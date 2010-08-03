@@ -1,4 +1,8 @@
-Please log in.
+<p></p>
+<?php 
+echo "<h5> Please log in. </h5>\n";
+?>
+
 <form>
 
 	<table width="240" border="0" align="center" cellpadding="1" cellspacing="3">
@@ -11,11 +15,9 @@ Please log in.
 		</tr>
 	
 		<tr>
-		
 			<td valign="middle">&nbsp;</td>
-			
 			<td height="35" valign="middle">
-			<input type="submit" name="EmployeeIDSubmit" value="EmployeeLogin" />
+			<input type="submit" name="EmployeeIDSubmit" value="Login" />
 			</td>
 		</tr>
 	
