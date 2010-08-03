@@ -7,7 +7,7 @@
       <li><a href="index.php?&content=Summary&service=investing">Investing</a></li>
       <!-- <li><a href="index.php?&content=Summary&service=insurance">Insurance</a></li>-->
        <li><a href="index.php?&content=BranchLocator">Branch Locator</a></li>
-      <li><a href="index.php?&content=EmployeeLogin">Employee Login</a></li>
+      <li><a href="index.php?&content=EmployeeLogin&&topMenu=EmployeeTopMenu">Employee Login</a></li>
     </ul>
 	</nav>
 
