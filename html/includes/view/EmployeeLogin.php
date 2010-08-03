@@ -71,6 +71,16 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 	
 	// check if employee is a Branch Manager
 	// if titleid=10 than employee is a Branch Manager
+	$dbCheckBranchManager = new Database();
+	$dbCheckBranchManager->connect();
+		
+	$queryCheckBranchManager="SELECT titleid 
+						   FROM employee
+						   WHERE employeeid=$EmployeeID";
+									
+	$dbCheckBranchManager->query($queryCheckBranchManager);		
+	echo "<h4> Employee title ID: $titleid </h4>\n";		
+	
 	
 } // end if (isset($_POST['EmployeeIDSubmit']))
 
