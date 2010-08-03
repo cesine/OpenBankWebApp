@@ -90,7 +90,13 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 	}	
 	
 	echo "<h4> Employee title ID: $row[titleid] </h4>\n"; 							// correct			
-	//echo "<h4> Employee title ID: $employee->getTitleID()</h4>\n"; 					// wrong	
+	//echo "<h4> Employee title ID: $employee->getTitleID()</h4>\n"; 				// wrong
+
+	if ($row[titleid]==10)
+	{
+		
+	}
+	
 	$dbCheckBranchManager->close();		
 	
 	
