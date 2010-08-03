@@ -4,7 +4,7 @@ session_start();
 include('includes/model/Employee.Class.php');
 include('includes/controller/Database.Class.php');
 echo "<h4> Please log in. </h4>\n";
-echo "<form action='?&content=EmployeeLogin' method='POST'>";
+echo "<form action='?&content=EmployeeLogin&topMenu=EmployeeTopMenu' method='POST'>";
 
 $employee = new Employee();
 
