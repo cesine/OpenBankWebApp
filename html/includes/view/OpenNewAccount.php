@@ -1,4 +1,5 @@
 <P>Please select your choice.</P>
+<!-- 
 <table border="1">
 <tr><td>Services:</td><td><select name="service" size="4" single="single">
 <option value="banking">Banking</option>
@@ -37,7 +38,7 @@
 
 <P></P>
 
-
+ -->
 <table border="1"> 
 <tr><td>Account name:</td><td><select name="accountType" size="8" single="single">
 <option value="powerChecking">Powerchequing Account</option>
