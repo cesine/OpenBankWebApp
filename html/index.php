@@ -5,21 +5,25 @@
 
 <table border="1" with="940"><tr valign="top"><td width="20%">
 <!-- Sidemenu Cell -->
-<!-- <?php //include ('includes/view/sidemenu.php')?> -->
 
-
-
+<?php 
+$content = $_GET["content"];
+$topMenu = $_GET["topMenu"];
+if($content!="EmployeeLogin")
+{
+	include ('includes/view/sidemenu.php');
+}
+?>
 
 </td><td width= "80%">
 <!-- Main Content Cell -->
 <div id="content">
 <div id="main">
+
 <?php
 /*
  * Control logic to change which small top menu to display in the main window
  */
-$content = $_GET["content"];
-$topMenu = $_GET["topMenu"];
 if($topMenu =="ClientTopMenu")
 {
 	include ('includes/view/clienttopmenu.php');
