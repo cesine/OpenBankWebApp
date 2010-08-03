@@ -52,6 +52,8 @@ if($content=="BranchLocator"){
 	include ('includes/view/Login.php');
 }elseif($content=="TransferFunds"){
 	include ('includes/view/Transfer.php');
+}elseif($content=="EmployeeLogin"){
+	include ('includes/view/EmployeeLogin.php');
 }elseif($content=="EmployeeInterface"){
 	echo '<a href="?&content=Summary">View a Clients Info</a>
 	</p>
