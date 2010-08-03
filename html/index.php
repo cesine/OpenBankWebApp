@@ -18,10 +18,11 @@
 /*
  * Control logic to change which small top menu to display in the main window
  */
+$content = $_GET["content"];
 $topMenu = $_GET["topMenu"];
 if($topMenu =="ClientTopMenu"){
 	include ('includes/view/clienttopmenu.php');
-}elseif($topMenu=="EmployeeTopMenu"){
+}elseif($topMenu=="EmployeeTopMenu" || $content=="EmployeeLogin"){
 	include ('includes/view/employeetopmenu.php');
 }else{
 	include ('includes/view/clienttopmenu.php');
@@ -31,7 +32,7 @@ if($topMenu =="ClientTopMenu"){
 /*
  * Main Control Switch to change which page to display
  */
-$content = $_GET["content"];
+
 if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
 }elseif($content=="Welcome"){
