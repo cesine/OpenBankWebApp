@@ -33,8 +33,10 @@ class Account{
 }
 ?>
 
+<!--  
 salary 	double 			No 	None 		Browse distinct values 	Change 	Drop 	Primary 	Unique 	Index 	Fulltext
 	firstname 	varchar(20) 	utf8_general_ci 		No 	None 		Browse distinct values 	Change 	Drop 	Primary 	Unique 	Index 	Fulltext
 	lastname 	varchar(20) 	utf8_general_ci 		No 	None 		Browse distinct values 	Change 	Drop 	Primary 	Unique 	Index 	Fulltext
 	vacationdaysallowed 	int(2) 		UNSIGNED 	Yes 	NULL 		Browse distinct values 	Change 	Drop 	Primary 	Unique 	Index 	Fulltext
 	status 	int(1) 
+-->	
