@@ -82,15 +82,17 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 						   WHERE employeeid=$EmployeeID";
 									
 	$dbCheckBranchManager->query($queryCheckBranchManager);		
-	$dbCheckBranchManager->close();
 
+
+	//$row=mysql_fetch_array($dbSelectionListClientAccounts->queryResultsResource);
 	$row=mysql_fetch_array($dbCheckBranchManager->queryResultsResource);
 	$employee->initializeEmployee($row);
 	
 	//echo $row[titleid];
 	
 	echo "<h4> Employee title ID: $row[titleid] </h4>\n";			
-	echo "<h4> Employee title ID: $employee->getTitleID()</h4>\n";		
+	echo "<h4> Employee title ID: $employee->getTitleID()</h4>\n";	
+	$dbCheckBranchManager->close();		
 	
 	
 } // end if (isset($_POST['EmployeeIDSubmit']))
