@@ -57,8 +57,7 @@ function check_valid(form)
 </table>
 <P></P>
 <P>Address:<BR>
-If applicable, please give the apartment number with a hyphen,
- before the door number. (ex: 45-3456)</P>
+</P>
 <table>
 <tr><td>Door Number:</td><td> <INPUT type="text" name="streetNumber"></td></tr>
 <tr><td>Street name:</td><td> <INPUT type="text" name="streetName"></td></tr>
