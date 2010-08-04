@@ -8,7 +8,7 @@ if (!isset($_SESSION['User']))
 }
 
 //Include the Authentication information
-require_once ('includes/model/Authentication.Class.php');
+require_once ('includes/model/User.Class.php');
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,7 +16,7 @@ require_once ('includes/model/Authentication.Class.php');
 <html>
 <head>
 <title>The Bank</title>
-<!-- <link href="css/SOPStyles.css" rel="stylesheet" type="text/css" />-->
+<link href="css/SOPStyles.css" rel="stylesheet" type="text/css" />
 <link href="css/master.css" rel="stylesheet" type="text/css" />
 
 <script language="Javascript" src="javascript/script.js" type="text/javascript">
