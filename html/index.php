@@ -62,10 +62,14 @@ if($content=="BranchLocator"){
 	include ('includes/view/Login.php');
 }elseif($content=="TransferFunds"){
 	include ('includes/view/Transfer.php');
+
 }elseif($content=="EmployeeLogin"){
 	include ('includes/view/EmployeeLogin.php');
 }elseif($content=="ViewEmployeeInfo"){
 	include ('includes/view/ViewEmployeeInfo.php');	
+}elseif($content=="EmployeeSideMenu"){
+	include ('includes/view/EmployeeSideMenu.php');		
+
 }elseif($content=="EmployeeInterface"){
 	echo '<a href="?&content=Summary">View a Clients Info</a>
 	</p>
