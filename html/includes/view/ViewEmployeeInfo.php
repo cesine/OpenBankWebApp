@@ -175,10 +175,12 @@ $EmployeePersonalInfo->connect();
 
 // note: in query we use data, selected by user
 $queryEmployeePersonalInfos=
-"SELECT date, transactiondescription,depositamount,withdrawalamount, balance
-FROM transaction
-WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>='$dateSince'";
-//WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>=$selectedDate";
+"SELECT e.employeeid, e.firstname, e.lastname,
+       CONCAT_WS (' ', p.postalcodes, p.province, p.city, a.streetnumber, p.street)
+FROM   employee e, address a, postalcodes p	
+WHERE  e.addressid=a.addressid AND
+       a.postalcode=p.postalcodes AND
+       e.employeeid=$selectedEmployee";
 							
 $dbEmployeePersonalInfo->query($queryEmployeePersonalInfo);	
 
