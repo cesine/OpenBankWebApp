@@ -98,7 +98,7 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 	{
 		
 		//header("Location: employeetopmenu.php");
-        exit();	
+        //exit();	
 		include ('includes/view/employeetopmenu.php');       		
 	}
 	
