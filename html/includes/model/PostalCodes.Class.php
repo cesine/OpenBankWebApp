@@ -59,31 +59,27 @@ class PostalCodes
 	public function displayInRowFormatted()
 	{
 		
-	echo '<TR class="bgcoloroption1">
-			<TD class="tableDataLeftC">'.$this->postalCodes.'</TD>
-			<TD class="tableDataLeftC">'.$this->province.'</TD>		
-			<TD class="tableDataLeftC">'.$this->city.'</TD>		
-			<TD class="tableDataLeftC">'.$this->street.'</TD>					
-    	  </TR>';		
+		echo '<TR class="bgcoloroption1">
+				<TD class="tableDataLeftC">'.$this->postalCodes.'</TD>
+				<TD class="tableDataLeftC">'.$this->province.'</TD>		
+				<TD class="tableDataLeftC">'.$this->city.'</TD>		
+				<TD class="tableDataLeftC">'.$this->street.'</TD>					
+	    	  </TR>';		
 	}	
 
-	public function displayInOneCell()
-	{
-		
-	$s=' ';
-	echo '<TR class="bgcoloroption1">
-			<TD class="tableDataLeftC">'.$this->postalCodes.$this->province.$this->city.$this->street.'</TD>
-    	  </TR>';		
-	}	
 
 	public function displayCodeProvinceCity()
 	{
 		
-	echo '	<TD>'.$this->postalCodes.'</TD>
-			<TD>'.$this->province.'</TD>		
-			<TD>'.$this->city.'</TD>		
-			<TD>'.$this->street.'</TD>';		
-	}		
+		echo '	<TD>'.$this->postalCodes.'</TD>
+				<TD>'.$this->province.'</TD>		
+				<TD>'.$this->city.'</TD>';		
+	}	
+
+	public function displayStreet()
+	{
+		echo '	<TD>'.$this->street.'</TD>';		
+	}	
 	
 }
 
