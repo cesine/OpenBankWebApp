@@ -65,7 +65,16 @@ class PostalCodes
 			<TD class="tableDataLeftC">'.$this->city.'</TD>		
 			<TD class="tableDataLeftC">'.$this->street.'</TD>					
     	  </TR>';		
-	}		
+	}	
+
+	public function displayInOneCell()
+	{
+		
+	$s=' ';
+	echo '<TR class="bgcoloroption1">
+			<TD class="tableDataLeftC">'.$this->postalCodes.$this->province.$this->city.$this->street.'</TD>
+    	  </TR>';		
+	}			
 	
 }
 
