@@ -1,5 +1,4 @@
 <?php
-//include ('includes/view/employeetopmenu.php');
 echo "<form action='?&content=EmployeeSideMenu&topMenu=EmployeeTopMenu' method='POST'>";  
 ?>
 
