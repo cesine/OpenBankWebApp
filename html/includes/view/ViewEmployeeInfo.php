@@ -26,7 +26,7 @@ echo "<h4> View employee info. </h4>\n";
 		<select name="choice1">
 		
 			<option value="personal info" selected>personal info</option>
-			<option value="workHistory">work history</option>
+			<option value="work history">work history</option>
 			<option value="shedule">shedule</option>
 			<option value="holidays">holidays</option>
 		
@@ -131,9 +131,9 @@ $selectedEmployee=$_POST["choice2"];
 if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 {
 	
-	echo "<h4> Show: </h4>\n";
-	echo "<h5> $selectedInfo </h5>\n";
-	echo "<h5> for employee ID: $selectedEmployee </h5>\n";
+	echo "<h4> Selected: </h4>\n";
+	echo "<h5> kind of information: $selectedInfo </h5>\n";
+	echo "<h5> employee ID:         $selectedEmployee </h5>\n";
 		
 }
 
