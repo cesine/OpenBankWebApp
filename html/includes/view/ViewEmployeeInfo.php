@@ -214,8 +214,9 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$employee->displayEmployeePersonalInRowFormatted();
 	
 	$postalCodes->initializePostalCodes($row);
-	$postalCodes->displayInRowFormatted();
+	//$postalCodes->displayInRowFormatted();
 	//$postalCodes->displayInOneCell();
+	$postalCodes->displayCodeProvinceCity($row);
 	
 	$address->initializeAddressZ($row);
 	$address->displayStreetNumberInRowFormatted();
