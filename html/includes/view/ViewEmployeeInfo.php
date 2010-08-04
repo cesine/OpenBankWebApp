@@ -2,6 +2,8 @@
 session_start();
 include('includes/model/Employee.Class.php');
 include('includes/model/Branch.Class.php');
+include('includes/model/Address.Class.php');
+include('includes/model/PostalCodes.Class.php');
 include('includes/controller/Database.Class.php');
 include ('includes/view/employeetopmenu.php');  
 echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>";
@@ -11,7 +13,14 @@ echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='
 <p></p>
 
 <?php 
+
 echo "<h4> View employee info. </h4>\n";
+
+// create new objects
+$employee = new Employee();
+$address = new Address();
+$postalCodes = new PostalCodes();
+
 ?>
 
 <p></p>
@@ -134,10 +143,63 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 	echo "<h4> Selected: </h4>\n";
 	echo "<h5> kind of information: $selectedInfo </h5>\n";
 	echo "<h5> employee ID:         $selectedEmployee </h5>\n";
-		
 }
-
-
 
 ?>
 
+<!-- display personal info of employee on the screen -->
+
+<!-- create header for table -->
+<table width="100%" border="1" cellpadding="3" cellspacing="1">
+<tr>
+	<td>
+	Employee ID
+	</td>
+	<td>
+	First Name
+	</td>
+	<td>
+	Last Name
+	</td>
+	<td>
+	Address
+	</td>
+</tr>
+
+<?php
+
+/* Display personal info of employee from tables "employee", "address", "postalcodes" */
+
+$dbEmployeePersonalInfo = new Database();
+$EmployeePersonalInfo->connect();
+
+// note: in query we use data, selected by user
+$queryEmployeePersonalInfos=
+"SELECT date, transactiondescription,depositamount,withdrawalamount, balance
+FROM transaction
+WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>='$dateSince'";
+//WHERE clientid = 54010001 AND accountid=$selectedAccount AND date>=$selectedDate";
+							
+$dbEmployeePersonalInfo->query($queryEmployeePersonalInfo);	
+
+/*Put results of query into table on the screen*/
+for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
+{
+	$row=mysql_fetch_array($dbEmployeePersonalInfo->queryResultsResource);	
+
+	$employee->initializeEmployee($row);
+	$employee->displayEmployeePersonalInRowFormatted();
+	
+	$postalCodes->initializePostalCodes($row);
+	$postalCodes->displayInRowFormatted();
+	
+	$address->initializeAddressZ($row);
+	$address->displayStreetNumberInRowFormatted();
+
+}
+
+$dbEmployeePersonalInfo->close();
+
+?>
+</table>
+<P></P>
