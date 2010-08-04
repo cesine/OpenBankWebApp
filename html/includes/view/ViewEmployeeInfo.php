@@ -4,8 +4,8 @@ include('includes/model/Employee.Class.php');
 include('includes/model/Branch.Class.php');
 include('includes/controller/Database.Class.php');
 include ('includes/view/employeetopmenu.php');  
-//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>";
-echo "<form action='?&content=ViewEmployeeInfo method='POST'>";
+echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>";
+//echo "<form action='?&content=ViewEmployeeInfo method='POST'>";
 ?>
 
 <p></p>
@@ -20,7 +20,8 @@ echo "<h4> View employee info. </h4>\n";
 <table border="1"> 
 	<tr><td width="180">Select information to show:</td><td width="180">
 		<?php
-			echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n"; 
+			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
+			echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
 		?>
 		<select name="choice1">
 		
@@ -79,7 +80,8 @@ echo "<h4> View employee info. </h4>\n";
 	<tr><td width="180">Select employee to show:</td><td width="180">
 	
 		<?php
-			echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n"; 
+			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
+			echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
 		?>	
 	
 		<select name="choice2">
