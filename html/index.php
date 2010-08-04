@@ -42,13 +42,13 @@ if($topMenu =="ClientTopMenu")
 }
 
 
-/*
 elseif($topMenu=="EmployeeTopMenu")
 {
 	include ('includes/view/employeetopmenu.php');	
 }
 
 
+/*
 else
 {
 	include ('includes/view/clienttopmenu.php');
