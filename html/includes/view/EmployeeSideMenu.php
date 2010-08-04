@@ -1,5 +1,5 @@
 <?php
-include ('includes/view/employeetopmenu.php');  
+//include ('includes/view/employeetopmenu.php');  
 ?>
 
 <!-- Side Menu For Employee (branch manager) -->
