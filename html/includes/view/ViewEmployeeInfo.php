@@ -116,7 +116,8 @@ echo "<h4> View employee info. </h4>\n";
 
 <!-- read input from user after submition -->
 <P></P>
-<input type="submit" value="submit selection"/>
+<input type="submit" name="SelectedOptionsSubmit" value="submit selection" />
+<!--  <input type="submit" value="submit selection"/> -->
 <P></P>
 
 <?php
@@ -124,9 +125,17 @@ echo "<h4> View employee info. </h4>\n";
 $selectedInfo=$_POST["choice1"];
 $selectedEmployee=$_POST["choice2"];
 
-echo "<h4> Show: </h4>\n";
-echo "<h5> $selectedInfo </h5>\n";
-echo "<h5> for employee ID: $selectedEmployee </h5>\n";
+//if submit selection button is pressed:
+if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
+{
+	
+	echo "<h4> Show: </h4>\n";
+	echo "<h5> $selectedInfo </h5>\n";
+	echo "<h5> for employee ID: $selectedEmployee </h5>\n";
+		
+}
+
+
 
 ?>
 
