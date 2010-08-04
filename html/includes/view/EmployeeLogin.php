@@ -11,8 +11,10 @@ $employee = new Employee();
 ?>
 
 <form>
-
-	<table width="240" border="0" align="center" cellpadding="1" cellspacing="3">
+	
+	<table  width="600" border="0">
+	
+	<!--  <table width="240" border="0" align="center" cellpadding="1" cellspacing="3">-->
 	
 		<tr>
 		
@@ -94,12 +96,12 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 
 	if ($row[titleid]==10)
 	{
-		
+		include ('includes/view/employeetopmenu.php');	
 	}
 	
 	$dbCheckBranchManager->close();		
 	
-	include ('includes/view/employeetopmenu.php');	
+	//include ('includes/view/employeetopmenu.php');	
 	
 	
 } // end if (isset($_POST['EmployeeIDSubmit']))
