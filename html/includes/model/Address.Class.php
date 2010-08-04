@@ -86,12 +86,10 @@ class Address{
 		$this->setPostalCode($row[postalcode]);	
 	}
 
-	public function displayStreetNumberInRowFormatted()
+	public function displayStreetNumber()
 	{
 		
-	echo '<TR class="bgcoloroption1">
-			<TD class="tableDataLeftC">'.$this->streetNumber.'</TD>
-    	  </TR>';		
+	echo '<TD class="tableDataLeftC">'.$this->streetNumber.'</TD>';		
 	}		
 }
 ?>
