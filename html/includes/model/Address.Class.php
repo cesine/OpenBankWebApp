@@ -34,6 +34,8 @@ class Address{
 
 	public function setPostalCode($row)
 	{
+		//echo "Setting and creating a postal code object: ".$row[postalcodes];
+		//print_r($row);
 		$this->postalCode = new PostalCodes();
 		$this->postalCode->initializePostalCodes($row);
 	}
@@ -48,29 +50,32 @@ class Address{
 	 */
 	public function initializeAddress($addressIdIn)
 	{
-		$db = new Database();
-		$db->connect();
+		//echo "Initialising an address object for: ".$addressIdIn;
+		$dbForAddress = new Database();
+		$dbForAddress->connect();
 		$queryToDo= "SELECT DISTINCT * FROM address	WHERE addressid=".$addressIdIn;
-		$db->query($queryToDo);
+		$dbForAddress->query($queryToDo);
 		/* 
 		 * put the results into the object
 		 */
-		$this->streetNumber=$db->queryFirstResult[streetnumber];
-		$this->addressID=$db->queryFirstResult[addressid];
+		//print_r($dbForAddress->queryFirstResult);
+		$this->streetNumber=$dbForAddress->queryFirstResult[streetnumber];
+		$this->addressID=$dbForAddress->queryFirstResult[addressid];
 		$this->country="Canada";
 		$this->appartmentNumber="";
 		/*
 		 * do the postalcode object 
 		 */
-		//$this->streetName=$db->queryFirstResult[streetname];
-		//$this->city=$db->queryFirstResult[city];
-		//$this->province=$db->queryFirstResult[province];
-		$postalcodeString=$db->queryFirstResult[postalcode];
-		$queryToDo= "SELECT DISTINCT * FROM postalcodes	WHERE postalcodes=".$postalcodeString;
-		$db->query($queryToDo);
-		$db->close();//just closes the connection to the db so that some other object can connect. the 
+		//$this->streetName=$dbForAddress->queryFirstResult[streetname];
+		//$this->city=$dbForAddress->queryFirstResult[city];
+		//$this->province=$dbForAddress->queryFirstResult[province];
+		$postalcodeString=$dbForAddress->queryFirstResult[postalcode];
+		$queryToDo= "SELECT DISTINCT * FROM postalcodes	WHERE postalcodes='".$postalcodeString."'";
+		$dbForAddress->query($queryToDo);
+		$dbForAddress->close();//just closes the connection to the db so that some other object can connect. the 
 					//db object is still alive and contains the results. 
-		$this->setPostalCode($db->queryFirstResult);
+		$postalCodeRow=$dbForAddress->queryFirstResult;
+		$this->setPostalCode($postalCodeRow);
 	}
 	
 	public function displayAddress()
