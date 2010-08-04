@@ -96,10 +96,7 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 
 	if ($row[titleid]==10)
 	{
-		
-		//header("Location: employeetopmenu.php");
-        //exit();	
-		include ('includes/view/employeetopmenu.php');       		
+		//include ('includes/view/employeetopmenu.php');       		
 	}
 	
 	$dbCheckBranchManager->close();		
