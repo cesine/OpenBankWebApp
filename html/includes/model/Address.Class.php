@@ -33,7 +33,7 @@ class Address{
 
 
 	public function setPostalCode($row)
-	{s
+	{
 		$this->postalCode = new PostalCodes();
 		$this->postalCode->initializePostalCodes($row);
 	}
