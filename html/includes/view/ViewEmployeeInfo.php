@@ -185,11 +185,11 @@ $dbEmployeePersonalInfo->connect();
 // note: in query we use data, selected by user
 $queryEmployeePersonalInfo=
 "SELECT e.employeeid, e.firstname, e.lastname,
-       CONCAT_WS (' ', p.postalcodes, p.province, p.city, a.streetnumber, p.street)
-FROM   employee e, address a, postalcodes p	
-WHERE  e.addressid=a.addressid AND
-       a.postalcode=p.postalcodes AND
-       e.employeeid=$selectedEmployee";
+        p.postalcodes, p.province, p.city, a.streetnumber, p.street)
+FROM    employee e, address a, postalcodes p	
+WHERE   e.addressid=a.addressid AND
+        a.postalcode=p.postalcodes AND
+        e.employeeid=$selectedEmployee";
 							
 $dbEmployeePersonalInfo->query($queryEmployeePersonalInfo);	
 
