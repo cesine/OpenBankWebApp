@@ -6,6 +6,7 @@ class Branch{
 	private $managerName;
 	private $managerId;
 	private $openingDate;
+	private $branchClientId;
 	private $address;
 	private static $sqlTableName="branch";
 	private static $sqlTableAttributes;
@@ -67,14 +68,26 @@ class Branch{
 		$this->openingDate=$openingDateIn;
 	}
 	public function initializeBranch($row){
-		$this->setBranchName($row[branchname]);
+		
 		$this->setManagerId($row[managerid]);
 		$this->setManagerNameFromId($row[managerid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setOpeningDate($row[openingdate]);
 		$this->setOpeningHours($row[openinghours]);
 		
+		$this->branchClientId=$row[branchsclientid];
+		
+		/*
+		 * get branch name and address from its client row, in the client table
+		*/
+		$db = new Database();
+		$db->connect();
+		$queryToDo= "SELECT DISTINCT firstname, addressid FROM client WHERE clientid=".$this->branchClientId;
+		$db->query($queryToDo);
+		$db->close();//just closes the connection to the db so that some other object can connect. the 
+					//db object is still alive and contains the results. 
+		$this->branchName=$db->queryFirstResult[firstname];
 		$this->address = new Address();
-		$this->address->initializeAddress($row[addressid]);
+		//$this->address->initializeAddress($row[addressid]);
 		//$this->address->displayAddress();
 	}
 	
@@ -102,7 +115,7 @@ class Branch{
 	public function displayBranch(){
 		echo '<h3>'.$this->branchName.
 		'</h3><p><b>Branch Manager: </b>'.$this->managerName.'</p>';
-		echo $this->address->displayAddress().
+		//echo $this->address->displayAddress().
 		'<p><b>Branch Opening Hours</b></p><p>'.$this->openingHours.
 		'</p>';
 	}
