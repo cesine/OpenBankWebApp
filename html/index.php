@@ -15,14 +15,14 @@ if($content!="EmployeeLogin" && $content!="EmployeeInfo"
 	&& $content!="ViewEmployeeInfo" && $content!="AddEmployee"
 	&& $content!="ModifyEmployee" && $content!="DeactivateEmployee")
 {
-	//include ('includes/view/sidemenu.php'); // should be corrected !!!
+	include ('includes/view/sidemenu.php'); // should be corrected !!!
 }
 
 if($content=="EmployeeInfo" || $content=="ViewEmployeeInfo" || 
    $content=="AddEmployee"	|| $content=="ModifyEmployee" || 
    $content=="DeactivateEmployee")
 {
-	//include ('includes/view/EmployeeSideMenu.php'); // should be corrected !!!
+	include ('includes/view/EmployeeSideMenu.php'); // should be corrected !!!
 }
 
 
