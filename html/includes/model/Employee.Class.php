@@ -137,15 +137,10 @@ class Employee{
 	
 	public function displayEmployeePersonalInRowFormatted()
 	{
-		
-	echo '<TR class="bgcoloroption1">
-			<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
-			<TD class="tableDataRightC">'.$this->firstName.'</TD>
-			<TD class="tableDataRightC">'.$this->lastName.'</TD>	
-		  </TR>';		
+		echo '	<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
+				<TD class="tableDataRightC">'.$this->firstName.'</TD>
+				<TD class="tableDataRightC">'.$this->lastName.'</TD>';		
 	}	
-	
-	
 }
 ?>
 
