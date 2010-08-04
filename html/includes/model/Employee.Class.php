@@ -135,7 +135,7 @@ class Employee{
 		$this->setStatus($row[status]);
 	}	
 	
-	function displayEmployeePersonalInRowFormatted()
+	public function displayEmployeePersonalInRowFormatted()
 	{
 		
 	echo '<TR class="bgcoloroption1">
