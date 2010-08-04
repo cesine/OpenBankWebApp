@@ -198,15 +198,15 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 {
 	$row=mysql_fetch_array($dbEmployeePersonalInfo->queryResultsResource);	
 
-	//$employee->initializeEmployee($row);
-	//$employee->displayEmployeePersonalInRowFormatted();
+	$employee->initializeEmployee($row);
+	$employee->displayEmployeePersonalInRowFormatted();
 	
 	$postalCodes->initializePostalCodes($row);
 	$postalCodes->displayInRowFormatted();
 	//$postalCodes->displayInOneCell();
 	
 	$address->initializeAddressZ($row);
-	//$address->displayStreetNumberInRowFormatted();
+	$address->displayStreetNumberInRowFormatted();
 	
 	echo "$row[postalcodes]";
 
@@ -214,6 +214,9 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 
 echo "Province: $row[province]\n";
 echo "City: $row[city]\n";
+
+$postalCodes->displayInRowFormatted();
+$address->displayStreetNumberInRowFormatted();
 
 $dbEmployeePersonalInfo->close();
 
