@@ -233,3 +233,8 @@ $dbEmployeePersonalInfo->close();
 ?>
 </table>
 <P></P>
+
+<?php
+echo "Province: $row[province]\n";
+echo "City: $row[city]\n"; 
+?>
