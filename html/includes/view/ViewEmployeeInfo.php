@@ -185,7 +185,7 @@ $dbEmployeePersonalInfo->connect();
 // note: in query we use data, selected by user
 $queryEmployeePersonalInfo=
 "SELECT e.employeeid, e.firstname, e.lastname,
-        p.postalcodes, p.province, p.city, a.streetnumber, p.street)
+        p.postalcodes, p.province, p.city, a.streetnumber, p.street
 FROM    employee e, address a, postalcodes p	
 WHERE   e.addressid=a.addressid AND
         a.postalcode=p.postalcodes AND
@@ -209,11 +209,11 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$address->displayStreetNumberInRowFormatted();
 }
 
-//echo "Province: $row[province]\n";
-//echo "City: $row[city]\n";
+echo "Province: $row[province]\n";
+echo "City: $row[city]\n";
 
-//$postalCodes->displayInRowFormatted();
-//$address->displayStreetNumberInRowFormatted();
+$postalCodes->displayInRowFormatted();
+$address->displayStreetNumberInRowFormatted();
 
 $dbEmployeePersonalInfo->close();
 
