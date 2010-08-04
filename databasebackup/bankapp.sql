@@ -53,13 +53,13 @@ DROP TABLE IF EXISTS `address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `address` (
-  `addressid` int(8) unsigned NOT NULL,
+  `addressid` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `streetnumber` int(6) NOT NULL,
   `postalcode` varchar(7) NOT NULL,
   PRIMARY KEY (`addressid`),
   KEY `postalcode` (`postalcode`),
   CONSTRAINT `address_ibfk_1` FOREIGN KEY (`postalcode`) REFERENCES `postalcodes` (`postalcodes`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10000053 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -356,7 +356,8 @@ CREATE TABLE `employeetimeoffplan` (
   `timeoffid` int(5) unsigned NOT NULL,
   `timeoffname` varchar(30) NOT NULL,
   `numberofdays` int(2) NOT NULL,
-  PRIMARY KEY (`timeoffid`)
+  PRIMARY KEY (`timeoffid`),
+  CONSTRAINT `employeetimeoffplan_ibfk_1` FOREIGN KEY (`timeoffid`) REFERENCES `employee` (`timeoffid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -366,7 +367,7 @@ CREATE TABLE `employeetimeoffplan` (
 
 LOCK TABLES `employeetimeoffplan` WRITE;
 /*!40000 ALTER TABLE `employeetimeoffplan` DISABLE KEYS */;
-INSERT INTO `employeetimeoffplan` VALUES (10001,'regular vacation',20),(10002,'branch manager vacation',25),(10003,'senior vacation',30),(10004,'shortest vacation',14);
+INSERT INTO `employeetimeoffplan` VALUES (10001,'regular vacation',20),(10002,'branch manager vacation',25),(10003,'senior vacation',30),(10004,'shortest vacation',10);
 /*!40000 ALTER TABLE `employeetimeoffplan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -423,6 +424,7 @@ CREATE TABLE `employeeworkhistory` (
 
 LOCK TABLES `employeeworkhistory` WRITE;
 /*!40000 ALTER TABLE `employeeworkhistory` DISABLE KEYS */;
+INSERT INTO `employeeworkhistory` VALUES (20000017,10001,'2009-01-01','2009-05-31',30,'25000.00'),(20000017,10001,'2009-06-01','2009-12-31',30,'30000.00'),(20000017,10001,'2010-01-01','0000-00-00',20,'45000.00');
 /*!40000 ALTER TABLE `employeeworkhistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -597,7 +599,9 @@ CREATE TABLE `transaction` (
   `withdrawalamount` decimal(8,2) DEFAULT NULL,
   `transactiondescription` varchar(50) NOT NULL,
   PRIMARY KEY (`transactionid`),
-  KEY `fullaccountnumber` (`branchid`,`accountid`)
+  KEY `fullaccountnumber` (`branchid`,`accountid`),
+  KEY `accountid` (`accountid`),
+  CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`branchid`) REFERENCES `branch` (`branchid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -620,4 +624,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-08-04 13:03:01
+-- Dump completed on 2010-08-04 17:03:01
