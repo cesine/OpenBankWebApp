@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/model/PostalCodes.Class.php';
 class Address{
 	private $addressID;
 	private $streetNumber;
@@ -31,19 +32,20 @@ class Address{
 	}
 
 
-	public function setPostalCode($postalCodeIn)
-	{
-	        $this->postalcode=$postalCodeIn;
+	public function setPostalCode($row)
+	{s
+		$this->postalCode = new PostalCodes();
+		$this->postalCode->initializePostalCodes($row);
 	}
 	
 	
 	/*
-	 * Takes any adressId and puts all the appropriate values into the address object it is called on
+	 * Takes any adressId and puts all the appropriate values into the address object it is called on.
+	 *   Used by: all objects that have an addressId and need to get an address object, eg, Branch, Employee, Client
+	 * 
 	 * It uses the variable "queryFirstResult" from the db object, which is essentially the first row 
 	 * hopefully in this case, the only row.
 	 */
-	
-	/*
 	public function initializeAddress($addressIdIn)
 	{
 		$db = new Database();
@@ -55,18 +57,26 @@ class Address{
 		/* 
 		 * put the results into the object
 		 */
-		/*
-		$this->streetName=$db->queryFirstResult[streetname];
 		$this->streetNumber=$db->queryFirstResult[streetnumber];
-		$this->city=$db->queryFirstResult[city];
 		$this->addressID=$db->queryFirstResult[addressid];
-		$this->province=$db->queryFirstResult[province];
 		$this->country="Canada";
 		$this->appartmentNumber="";
-		$this->postalcode=$db->queryFirstResult[postalcode];
+		
+		/*
+		 * this information is contained in the  postalcode object now. 
+		 */
+		//$this->streetName=$db->queryFirstResult[streetname];
+		//$this->city=$db->queryFirstResult[city];
+		//$this->province=$db->queryFirstResult[province];
+		$postalcodeString=$db->queryFirstResult[postalcode];
+		$queryToDo= "SELECT DISTINCT * FROM postalcodes	WHERE postalcodes=".$postalcodeString;
+		$db->query($queryToDo);
+		$db->close();//just closes the connection to the db so that some other object can connect. the 
+					//db object is still alive and contains the results. 
+		$this->setPostalCode($db->queryFirstResult);
 		
 	}
-	*/
+	
 	public function displayAddress()
 	{
 		echo '<p>'.$this->streetNumber." ".
