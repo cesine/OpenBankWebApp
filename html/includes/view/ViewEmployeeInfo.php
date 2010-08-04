@@ -104,3 +104,20 @@ echo "<h4> View employee info. </h4>\n";
 	</td></tr>
 </table>
 <!-- End select employee to show -->
+
+<!-- read input from user after submition -->
+<P></P>
+<input type="submit" value="submit selection"/>
+<P></P>
+
+<?php
+
+$selectedInfo=$_POST["choice1"];
+$selectedEmployee=$_POST["choice2"];
+
+echo "<h4> Show: </h4>\n";
+echo "<h5> $selectedInfo </h5>\n";
+echo "<h5> for employee ID: $selectedEmployee </h5>\n";
+
+?>
+
