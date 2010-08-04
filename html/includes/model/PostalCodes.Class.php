@@ -65,8 +65,6 @@ class PostalCodes
 			<TD class="tableDataLeftC">'.$this->street.'</TD>					
     	  </TR>';		
 	}		
-
-
 	
 }
 
