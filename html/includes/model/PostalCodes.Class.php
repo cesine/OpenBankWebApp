@@ -79,10 +79,10 @@ class PostalCodes
 	public function displayCodeProvinceCity()
 	{
 		
-	echo '	<TD class="tableDataLeftC">'.$this->postalCodes.'</TD>
-			<TD class="tableDataLeftC">'.$this->province.'</TD>		
-			<TD class="tableDataLeftC">'.$this->city.'</TD>		
-			<TD class="tableDataLeftC">'.$this->street.'</TD>';		
+	echo '	<TD>'.$this->postalCodes.'</TD>
+			<TD>'.$this->province.'</TD>		
+			<TD>'.$this->city.'</TD>		
+			<TD>'.$this->street.'</TD>';		
 	}		
 	
 }
