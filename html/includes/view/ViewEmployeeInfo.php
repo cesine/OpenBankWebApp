@@ -208,7 +208,7 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$address->initializeAddressZ($row);
 	//$address->displayStreetNumberInRowFormatted();
 	
-	$row[postalcodes];
+	echo "$row[postalcodes]";
 
 }
 
