@@ -16,7 +16,7 @@ echo "<h4> View employee info. </h4>\n";
 
 <!-- Choose information to show -->
 <table border="1"> 
-	<tr><td width="15">Select option to show:</td><td>
+	<tr><td width="40">Select option to show:</td><td>
 		<select name="choice1">
 		
 			<option value="personalInfo" selected>personal info</option>
