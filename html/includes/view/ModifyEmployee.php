@@ -107,10 +107,94 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 	elseif ($selectedInfo=="branch/title/salary")
 	{
 			
-		echo "<h4> Selected: </h4>\n";
-		echo "<h5> information to change: $selectedInfo </h5>\n";
-		echo "<h5> employee ID:           $selectedEmployee </h5>\n";
+		//echo "<h4> Selected: </h4>\n";
+		//echo "<h5> information to change: $selectedInfo </h5>\n";
+		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
+		echo "<h4> Current Info: </h4>\n";
+		?>
+		<!-- Show current info -->
+		<table width="100%" border="1" cellpadding="3" cellspacing="1">
+		<tr>
+			<td>
+			Employee ID
+			</td>
+			<td>
+			Branch ID
+			</td>
+			<td>
+			Start date
+			</td>
+			<td>
+			Last date
+			</td>
+			<td>
+			Title
+			</td>	
+			<td>
+			Salary
+			</td>	
+		</tr>
 		
+		<?php
+		
+		// Display current info of employee from table "employeeworkhistory" 
+		$dbEmployeeWorkHistory = new Database();
+		$dbEmployeeWorkHistory->connect();
+		
+		// note: in query we use data, selected by user
+		$queryEmployeeWorkHistory=
+		"SELECT *
+		 FROM   employeeworkhistory	
+		 WHERE  employeeid=$selectedEmployee AND lastdate='0000-00-00'";
+									
+		$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
+		
+		//Put results of query 1 into table on the screen
+		for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
+		
+			$employeeWorkHistory->initializeEmployeeWorkHistory($row);
+			$employeeWorkHistory->displayEmployeeWorkHistory2();
+		}
+		// save current values
+		$branchIdCurrent=$row[branchid];	
+		$startDateCurrent=$row[startdate];	
+		$lastDateCurrent=$row[lastdate];
+		$titleIDCurrent=$row[titleid];	
+		$salaryCurrent=$row[salary];											
+		
+		// Display current title name of employee from table "employeetitle" 		
+		$dbEmployeeTitle = new Database();
+		$dbEmployeeTitle->connect();
+		
+		// note: in query we use data, selected by user
+		$queryEmployeeTitle=
+		"SELECT titlename
+		 FROM   employeetitle	
+		 WHERE  titleid=$titleIDCurrent";
+									
+		$dbEmployeeTitle->query($queryEmployeeTitle);			
+		
+		//Put results of query 2 into table on the screen
+		for($count=0;$count<$dbEmployeeTitle->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbEmployeeTitle->queryResultsResource);	
+			$employeeTitle->initializeEmployeeTitle($row);
+			$employeeTitle->displayEmployeeTitleName();
+			$employeeWorkHistory->displayEmployeeWorkHistorySalary();			
+		}
+		// save current values
+		$titleCurrent=$row[titlename];	
+		
+		$dbEmployeeWorkHistory->close();
+		$dbEmployeeTitle->close();		
+		?>
+		</table>
+		<P></P>
+
+		
+<?php 		
 	} // end elseif ($selectedInfo=="branch/title/salary")	
 
 	elseif ($selectedInfo=="vacation type")
