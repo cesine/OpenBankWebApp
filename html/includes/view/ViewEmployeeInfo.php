@@ -14,9 +14,10 @@ echo "<h4> View employee info. </h4>\n";
 
 <p></p>
 
+<!-- Choose information to show -->
 <table border="1"> 
-	<tr><td>Select option to show:</td><td>
-		<select name="choice1" size="4">
+	<tr><td width="15">Select option to show:</td><td>
+		<select name="choice1">
 		
 			<option value="personalInfo" selected>personal info</option>
 			<option value="workHistory">work history</option>
@@ -27,5 +28,19 @@ echo "<h4> View employee info. </h4>\n";
 	</td></tr>
 </table>
 
+<p></p>
 
+<!-- Choose branch to show -->
+<table border="1"> 
+	<tr><td>Select option to show:</td><td>
+		<select name="choice2" size="2">
+		
+			<option value="personalInfo" selected>personal info</option>
+			<option value="workHistory">work history</option>
+			<option value="shedule">shedule</option>
+			<option value="holidays">holidays</option>
+		
+		</select>
+	</td></tr>
+</table>
 
