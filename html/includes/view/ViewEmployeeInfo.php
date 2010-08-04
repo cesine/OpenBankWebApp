@@ -209,11 +209,11 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$address->displayStreetNumberInRowFormatted();
 }
 
-echo "Province: $row[province]\n";
-echo "City: $row[city]\n";
+//echo "Province: $row[province]\n";
+//echo "City: $row[city]\n";
 
-$postalCodes->displayInRowFormatted();
-$address->displayStreetNumberInRowFormatted();
+//$postalCodes->displayInRowFormatted();
+//$address->displayStreetNumberInRowFormatted();
 
 $dbEmployeePersonalInfo->close();
 
