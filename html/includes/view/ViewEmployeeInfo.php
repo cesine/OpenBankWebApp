@@ -199,7 +199,7 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$row=mysql_fetch_array($dbEmployeePersonalInfo->queryResultsResource);	
 
 	$employee->initializeEmployee($row);
-	$employee->displayEmployeePersonalInRowFormatted();
+	//$employee->displayEmployeePersonalInRowFormatted();
 	
 	$postalCodes->initializePostalCodes($row);
 	$postalCodes->displayInRowFormatted();
