@@ -88,8 +88,7 @@ class Address{
 
 	public function displayStreetNumber()
 	{
-		
-	echo '<TD class="tableDataLeftC">'.$this->streetNumber.'</TD>';		
+		echo '<TD class="tableDataLeftC">'.$this->streetNumber.'</TD>';		
 	}		
 }
 ?>
