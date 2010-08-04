@@ -90,6 +90,8 @@ if($content=="BranchLocator"){
 	include ('includes/view/ViewEmployeeInfo.php');	
 }elseif($content=="AddEmployee"){
 	include ('includes/view/AddEmployee.php');	
+}elseif($content=="ModifyEmployee"){
+	include ('includes/view/ModifyEmployee.php');	
 }elseif($content=="DeactivateEmployee"){
 	include ('includes/view/DeactivateEmployee.php');	
 	
