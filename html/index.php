@@ -7,15 +7,18 @@
 <!-- Sidemenu Cell -->
 
 <?php 
+
 $content = $_GET["content"];
 $topMenu = $_GET["topMenu"];
 
-if($content!="EmployeeLogin" && $content!="ViewEmployeeInfo")
+if($content!="EmployeeLogin" && $content!="ViewEmployeeInfo" && $content!="AddEmployee"
+	&& $content!="ModifyEmployee" && $content!="DeactivateEmployee")
 {
 	include ('includes/view/sidemenu.php');
 }
 
-if($content=="ViewEmployeeInfo")
+if($content=="ViewEmployeeInfo" || $content=="AddEmployee"
+	|| $content=="ModifyEmployee" || $content=="DeactivateEmployee")
 {
 	include ('includes/view/EmployeeSideMenu.php');
 }
@@ -84,7 +87,12 @@ if($content=="BranchLocator"){
 }elseif($content=="EmployeeSideMenu"){
 	include ('includes/view/EmployeeSideMenu.php');		
 }elseif($content=="ViewEmployeeInfo"){
-	include ('includes/view/ViewEmployeeInfo.php');		
+	include ('includes/view/ViewEmployeeInfo.php');	
+}elseif($content=="AddEmployee"){
+	include ('includes/view/AddEmployee.php');	
+}elseif($content=="DeactivateEmployee"){
+	include ('includes/view/DeactivateEmployee.php');	
+	
 
 
 }elseif($content=="EmployeeInterface"){
