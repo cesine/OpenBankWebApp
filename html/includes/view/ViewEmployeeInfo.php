@@ -25,7 +25,7 @@ echo "<h4> View employee info. </h4>\n";
 		?>
 		<select name="choice1">
 		
-			<option value="personalInfo" selected>personal info</option>
+			<option value="personal info" selected>personal info</option>
 			<option value="workHistory">work history</option>
 			<option value="shedule">shedule</option>
 			<option value="holidays">holidays</option>
