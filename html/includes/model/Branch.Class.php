@@ -87,7 +87,7 @@ class Branch{
 					//db object is still alive and contains the results. 
 		$this->branchName=$db->queryFirstResult[firstname];
 		$this->address = new Address();
-		//$this->address->initializeAddress($row[addressid]);
+		$this->address->initializeAddress($db->queryFirstResult[addressid]);
 		//$this->address->displayAddress();
 	}
 	
@@ -115,7 +115,7 @@ class Branch{
 	public function displayBranch(){
 		echo '<h3>'.$this->branchName.
 		'</h3><p><b>Branch Manager: </b>'.$this->managerName.'</p>';
-		//echo $this->address->displayAddress().
+		echo $this->address->displayAddress().
 		'<p><b>Branch Opening Hours</b></p><p>'.$this->openingHours.
 		'</p>';
 	}
