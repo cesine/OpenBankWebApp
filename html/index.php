@@ -18,7 +18,7 @@ if($content!="EmployeeLogin" && $content!="EmployeeInfo"
 	include ('includes/view/sidemenu.php');
 }
 
-if($content!="EmployeeInfo" || $content=="ViewEmployeeInfo" || 
+if($content=="EmployeeInfo" || $content=="ViewEmployeeInfo" || 
    $content=="AddEmployee"	|| $content=="ModifyEmployee" || 
    $content=="DeactivateEmployee")
 {
