@@ -21,7 +21,7 @@ echo "<h4> View employee info. </h4>\n";
 	<tr><td width="180">Select information to show:</td><td width="180">
 		<?php
 			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
-			echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
+			//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
 		?>
 		<select name="choice1">
 		
@@ -81,7 +81,7 @@ echo "<h4> View employee info. </h4>\n";
 	
 		<?php
 			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
-			echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
+			//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
 		?>	
 	
 		<select name="choice2">
