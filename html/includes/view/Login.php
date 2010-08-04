@@ -1,3 +1,12 @@
+<?php 
+$clientId=$_POST[clientid];
+$pass=$_POST[pass];
+
+?>
+
+
+
+
 
 <form action="?&content=Summary" method="post">
 <fieldset>
@@ -19,3 +28,4 @@
 <input type="submit" name="mysubmit" value="Submit">
 </fieldset>
 </form>
+
