@@ -30,7 +30,7 @@ class PostalCodes
 	
 	public function setPostalCodes($postalCodesIn)
 	{
-	        $this->postalcode=$postalCodesIn;
+	        $this->postalCodes=$postalCodesIn;
 	}	
 
 	public function setStreet($streetIn)
