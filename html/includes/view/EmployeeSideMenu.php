@@ -15,7 +15,7 @@
 		<td width="14" height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td width="124"><a
-		href="index.php?&content=OpenNewAccount"
+		href="index.php?&content=ViewEmployeeInfo"
 		class="linkVertMenu">View employee info</a></td>
 	</tr>
 
@@ -23,7 +23,7 @@
 		<td height="22" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="index.php?&content=Statement"
+		href="index.php?&content=AddEmployee"
 		class="linkVertMenu">Add employee</a></td>
 	</tr>
 
@@ -31,7 +31,7 @@
 		<td height="36" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="javascript:surfToHyperLinkWindow('https://access.scotiamcleoddirect.com')"
+		href="index.php?&content=ModifyEmployee"
 		class="linkVertMenu">Modify employee</a></td>
 	</tr>
 
@@ -39,7 +39,7 @@
 		<td height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="/portal/SopInvestmentNav.jsp?func=ctx&subfunction=clrSelAcct&ctxId=411000"
+		href="index.php?&content=DeactivateEmployee"
 		class="linkVertMenu">Deactivate employee</a></td>
 	</tr>
 </tbody>
