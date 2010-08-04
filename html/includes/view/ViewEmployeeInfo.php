@@ -171,10 +171,10 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 /* Display personal info of employee from tables "employee", "address", "postalcodes" */
 
 $dbEmployeePersonalInfo = new Database();
-$EmployeePersonalInfo->connect();
+$dbEmployeePersonalInfo->connect();
 
 // note: in query we use data, selected by user
-$queryEmployeePersonalInfos=
+$queryEmployeePersonalInfo=
 "SELECT e.employeeid, e.firstname, e.lastname,
        CONCAT_WS (' ', p.postalcodes, p.province, p.city, a.streetnumber, p.street)
 FROM   employee e, address a, postalcodes p	
@@ -192,11 +192,11 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$employee->initializeEmployee($row);
 	$employee->displayEmployeePersonalInRowFormatted();
 	
-	$postalCodes->initializePostalCodes($row);
-	$postalCodes->displayInRowFormatted();
+	//$postalCodes->initializePostalCodes($row);
+	//$postalCodes->displayInRowFormatted();
 	
-	$address->initializeAddressZ($row);
-	$address->displayStreetNumberInRowFormatted();
+	//$address->initializeAddressZ($row);
+	//$address->displayStreetNumberInRowFormatted();
 
 }
 
