@@ -1,5 +1,4 @@
 <?php
-
 class Address{
 	private $addressID;
 	private $streetNumber;
@@ -94,9 +93,5 @@ class Address{
 			<TD class="tableDataLeftC">'.$this->streetNumber.'</TD>
     	  </TR>';		
 	}		
-	
-
-	
 }
-
 ?>
