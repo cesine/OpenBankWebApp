@@ -189,7 +189,7 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 
 <?php
 
-/* Display personal info of employee from tables "employee", "address", "postalcodes" */
+// Display personal info of employee from tables "employee", "address", "postalcodes" 
 
 $dbEmployeePersonalInfo = new Database();
 $dbEmployeePersonalInfo->connect();
@@ -205,7 +205,7 @@ WHERE   e.addressid=a.addressid AND
 							
 $dbEmployeePersonalInfo->query($queryEmployeePersonalInfo);	
 
-/*Put results of query into table on the screen*/
+//Put results of query into table on the screen
 for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 {
 	$row=mysql_fetch_array($dbEmployeePersonalInfo->queryResultsResource);	
@@ -219,14 +219,8 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$postalCodes->displayCodeProvinceCity($row);
 	
 	$address->initializeAddressZ($row);
-	$address->displayStreetNumberInRowFormatted();
+	$address->displayStreetNumber();
 }
-
-//echo "Province: $row[province]\n";
-//echo "City: $row[city]\n";
-
-//$postalCodes->displayInRowFormatted();
-//$address->displayStreetNumberInRowFormatted();
 
 $dbEmployeePersonalInfo->close();
 
