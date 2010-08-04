@@ -37,15 +37,21 @@ if($topMenu =="ClientTopMenu")
 {
 	include ('includes/view/clienttopmenu.php');
 }
+
+
+/*
 elseif($topMenu=="EmployeeTopMenu")
 {
 	include ('includes/view/employeetopmenu.php');	
 }
+
+
 else
 {
 	include ('includes/view/clienttopmenu.php');
 }
 
+*/
 
 /*
  * Main Control Switch to change which page to display
@@ -72,12 +78,14 @@ if($content=="BranchLocator"){
 }elseif($content=="TransferFunds"){
 	include ('includes/view/Transfer.php');
 
+
 }elseif($content=="EmployeeLogin"){
 	include ('includes/view/EmployeeLogin.php');
-}elseif($content=="ViewEmployeeInfo"){
-	include ('includes/view/ViewEmployeeInfo.php');	
 }elseif($content=="EmployeeSideMenu"){
 	include ('includes/view/EmployeeSideMenu.php');		
+}elseif($content=="ViewEmployeeInfo"){
+	include ('includes/view/ViewEmployeeInfo.php');		
+
 
 }elseif($content=="EmployeeInterface"){
 	echo '<a href="?&content=Summary">View a Clients Info</a>
