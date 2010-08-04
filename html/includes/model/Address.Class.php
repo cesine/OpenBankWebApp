@@ -52,8 +52,6 @@ class Address{
 		$db->connect();
 		$queryToDo= "SELECT DISTINCT * FROM address	WHERE addressid=".$addressIdIn;
 		$db->query($queryToDo);
-		$db->close();//just closes the connection to the db so that some other object can connect. the 
-					//db object is still alive and contains the results. 
 		/* 
 		 * put the results into the object
 		 */
@@ -61,9 +59,8 @@ class Address{
 		$this->addressID=$db->queryFirstResult[addressid];
 		$this->country="Canada";
 		$this->appartmentNumber="";
-		
 		/*
-		 * this information is contained in the  postalcode object now. 
+		 * do the postalcode object 
 		 */
 		//$this->streetName=$db->queryFirstResult[streetname];
 		//$this->city=$db->queryFirstResult[city];
@@ -74,13 +71,15 @@ class Address{
 		$db->close();//just closes the connection to the db so that some other object can connect. the 
 					//db object is still alive and contains the results. 
 		$this->setPostalCode($db->queryFirstResult);
-		
 	}
 	
 	public function displayAddress()
 	{
 		echo '<p>'.$this->streetNumber." ".
-		$this->postalcode."</p>";
+		$this->postalCode->getStreet()." <br/>".
+		$this->postalCode->getCity()."<br/>".
+		$this->postalCode->getProvince()." ".
+		$this->postalCode->getPostalCodes()."</p>";
 	}
 	
 	public function __construct()
