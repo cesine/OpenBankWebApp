@@ -4,19 +4,12 @@ include('includes/model/Employee.Class.php');
 include('includes/controller/Database.Class.php');
 include ('includes/view/employeetopmenu.php');  
 
-/*
-include('includes/model/Branch.Class.php');
-include('includes/model/Address.Class.php');
-include('includes/model/PostalCodes.Class.php');
-*/
-
 require_once('includes/model/Branch.Class.php');
 require_once('includes/model/Address.Class.php');
 require_once('includes/model/PostalCodes.Class.php');
 
-
 echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>";
-//echo "<form action='?&content=ViewEmployeeInfo method='POST'>";
+
 ?>
 
 <p></p>
@@ -33,6 +26,26 @@ $postalCodes = new PostalCodes();
 ?>
 
 <p></p>
+
+<!-- ion to show -->
+<table border="1"> 
+	<tr><td width="180">Select information to show:</td><td width="180">
+		<?php
+			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
+			//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
+		?>
+		<select name="choice1">
+		
+			<option value="personal info" selected>personal info</option>
+			<option value="work history">work history</option>
+			<option value="shedule">shedule</option>
+			<option value="holidays">holidays</option>
+		
+		</select>
+	</td></tr>
+</table>
+
+
 
 <!-- Choose information to show -->
 <table border="1"> 
@@ -229,6 +242,5 @@ $dbEmployeePersonalInfo->close();
 <P></P>
 
 <?php
-echo "Province: $row[province]\n";
-echo "City: $row[city]\n"; 
+//echo "Province: $row[province]\n"; // correct
 ?>
