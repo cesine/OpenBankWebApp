@@ -99,6 +99,8 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 	
 	$dbCheckBranchManager->close();		
 	
+	include ('includes/view/employeetopmenu.php');	
+	
 	
 } // end if (isset($_POST['EmployeeIDSubmit']))
 
