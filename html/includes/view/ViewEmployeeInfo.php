@@ -27,26 +27,6 @@ $postalCodes = new PostalCodes();
 
 <p></p>
 
-<!-- ion to show -->
-<table border="1"> 
-	<tr><td width="180">Select information to show:</td><td width="180">
-		<?php
-			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
-			//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
-		?>
-		<select name="choice1">
-		
-			<option value="personal info" selected>personal info</option>
-			<option value="work history">work history</option>
-			<option value="shedule">shedule</option>
-			<option value="holidays">holidays</option>
-		
-		</select>
-	</td></tr>
-</table>
-
-
-
 <!-- Choose information to show -->
 <table border="1"> 
 	<tr><td width="180">Select information to show:</td><td width="180">
