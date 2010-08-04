@@ -11,14 +11,16 @@
 $content = $_GET["content"];
 $topMenu = $_GET["topMenu"];
 
-if($content!="EmployeeLogin" && $content!="ViewEmployeeInfo" && $content!="AddEmployee"
+if($content!="EmployeeLogin" && $content!="EmployeeInfo"
+	&& $content!="ViewEmployeeInfo" && $content!="AddEmployee"
 	&& $content!="ModifyEmployee" && $content!="DeactivateEmployee")
 {
 	include ('includes/view/sidemenu.php');
 }
 
-if($content=="ViewEmployeeInfo" || $content=="AddEmployee"
-	|| $content=="ModifyEmployee" || $content=="DeactivateEmployee")
+if($content!="EmployeeInfo" || $content=="ViewEmployeeInfo" || 
+   $content=="AddEmployee"	|| $content=="ModifyEmployee" || 
+   $content=="DeactivateEmployee")
 {
 	include ('includes/view/EmployeeSideMenu.php');
 }
@@ -85,7 +87,9 @@ if($content=="BranchLocator"){
 }elseif($content=="EmployeeLogin"){
 	include ('includes/view/EmployeeLogin.php');
 }elseif($content=="EmployeeSideMenu"){
-	include ('includes/view/EmployeeSideMenu.php');		
+	include ('includes/view/EmployeeSideMenu.php');	
+}elseif($content=="EmployeeInfo"){
+	include ('includes/view/EmployeeInfo.php');			
 }elseif($content=="ViewEmployeeInfo"){
 	include ('includes/view/ViewEmployeeInfo.php');	
 }elseif($content=="AddEmployee"){
