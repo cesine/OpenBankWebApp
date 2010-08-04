@@ -37,8 +37,11 @@ if($search=="ByCity" && $searchCity!=""){
 //		FROM address a, branch b 
 //		WHERE a.addressid=b.addressid AND a.city LIKE '".$searchCity."%'";
 	$querystrg="SELECT DISTINCT * 
-		FROM address a, branch b 
-		WHERE a.addressid=b.addressid AND a.city LIKE '".$searchCity."%'";
+		FROM branch b, client c, address a, postalcodes p
+		WHERE c.clientid=b.branchsclientid AND
+		c.addressid=a.addressid AND
+		a.postalcode=p.postalcodes AND
+		p.city LIKE '".$searchCity."%'";
 }else{
 	$querystrg="SELECT DISTINCT * FROM branch";
 }
