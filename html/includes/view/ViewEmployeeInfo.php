@@ -211,15 +211,15 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$row=mysql_fetch_array($dbEmployeePersonalInfo->queryResultsResource);	
 
 	$employee->initializeEmployee($row);
-	$employee->displayEmployeePersonalInRowFormatted();
+	$employee->displayEmployeePersonalInfo();
 	
 	$postalCodes->initializePostalCodes($row);
-	//$postalCodes->displayInRowFormatted();
-	//$postalCodes->displayInOneCell();
 	$postalCodes->displayCodeProvinceCity($row);
 	
 	$address->initializeAddressZ($row);
 	$address->displayStreetNumber();
+	
+	$postalCodes->displayStreet();
 }
 
 $dbEmployeePersonalInfo->close();
