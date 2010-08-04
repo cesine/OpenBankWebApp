@@ -19,6 +19,9 @@ echo "<h4> View employee info. </h4>\n";
 <!-- Choose information to show -->
 <table border="1"> 
 	<tr><td width="180">Select information to show:</td><td width="180">
+		<?php
+			echo "<form action='?&content=ZViewEmployeeInfo' method='POST'>\n"; 
+		?>
 		<select name="choice1">
 		
 			<option value="personalInfo" selected>personal info</option>
@@ -74,6 +77,11 @@ echo "<h4> View employee info. </h4>\n";
 <!-- Select employee to show -->
 <table border="1"> 
 	<tr><td width="180">Select employee to show:</td><td width="180">
+	
+		<?php
+			echo "<form action='?&content=ZViewEmployeeInfo' method='POST'>\n"; 
+		?>	
+	
 		<select name="choice2">
 		
 		<?php 
@@ -108,7 +116,8 @@ echo "<h4> View employee info. </h4>\n";
 
 <!-- read input from user after submition -->
 <P></P>
-<input type="submit" value="submit selection"/>
+<input type="submit" name="SelectedOptionsSubmitZ" value="submit selection" />
+<!--  <input type="submit" value="submit selection"/> -->
 <P></P>
 
 <?php
@@ -116,9 +125,17 @@ echo "<h4> View employee info. </h4>\n";
 $selectedInfo=$_POST["choice1"];
 $selectedEmployee=$_POST["choice2"];
 
-echo "<h4> Show: </h4>\n";
-echo "<h5> $selectedInfo </h5>\n";
-echo "<h5> for employee ID: $selectedEmployee </h5>\n";
+//if submit selection button is pressed:
+if (isset($_POST["SelectedOptionsSubmitZ"])) 						// if user press login button
+{
+	
+	echo "<h4> Show: </h4>\n";
+	echo "<h5> $selectedInfo </h5>\n";
+	echo "<h5> for employee ID: $selectedEmployee </h5>\n";
+		
+}
+
+
 
 ?>
 
