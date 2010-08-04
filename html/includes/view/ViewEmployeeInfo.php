@@ -1,11 +1,20 @@
 <?php 
-session_start();
+//session_start();
 include('includes/model/Employee.Class.php');
+include('includes/controller/Database.Class.php');
+include ('includes/view/employeetopmenu.php');  
+
+/*
 include('includes/model/Branch.Class.php');
 include('includes/model/Address.Class.php');
 include('includes/model/PostalCodes.Class.php');
-include('includes/controller/Database.Class.php');
-include ('includes/view/employeetopmenu.php');  
+*/
+
+require_once('includes/model/Branch.Class.php');
+require_once('includes/model/Address.Class.php');
+require_once('includes/model/PostalCodes.Class.php');
+
+
 echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>";
 //echo "<form action='?&content=ViewEmployeeInfo method='POST'>";
 ?>
@@ -192,11 +201,11 @@ for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
 	$employee->initializeEmployee($row);
 	$employee->displayEmployeePersonalInRowFormatted();
 	
-	//$postalCodes->initializePostalCodes($row);
-	//$postalCodes->displayInRowFormatted();
+	$postalCodes->initializePostalCodes($row);
+	$postalCodes->displayInRowFormatted();
 	
-	//$address->initializeAddressZ($row);
-	//$address->displayStreetNumberInRowFormatted();
+	$address->initializeAddressZ($row);
+	$address->displayStreetNumberInRowFormatted();
 
 }
 
