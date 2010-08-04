@@ -171,8 +171,20 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 	Last Name
 	</td>
 	<td>
-	Address
+	Postal code
 	</td>
+	<td>
+	Provance
+	</td>	
+	<td>
+	City
+	</td>	
+	<td>
+	Street number
+	</td>
+	<td>
+	Street name
+	</td>		
 </tr>
 
 <?php
