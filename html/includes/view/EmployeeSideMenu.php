@@ -1,5 +1,5 @@
 <?php
-echo "<form action='?&content=EmployeeSideMenu&topMenu=EmployeeTopMenu' method='POST'>";  
+//echo "<form action='?&content=EmployeeSideMenu&topMenu=EmployeeTopMenu' method='POST'>";  
 ?>
 
 <!-- Side Menu For Employee (branch manager) -->
