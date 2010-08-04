@@ -4,7 +4,8 @@ include('includes/model/Employee.Class.php');
 include('includes/model/Branch.Class.php');
 include('includes/controller/Database.Class.php');
 include ('includes/view/employeetopmenu.php');  
-echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>";
+//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>";
+echo "<form action='?&content=ViewEmployeeInfo method='POST'>";
 ?>
 
 <p></p>
