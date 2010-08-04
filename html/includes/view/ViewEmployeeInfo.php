@@ -19,6 +19,9 @@ echo "<h4> View employee info. </h4>\n";
 <!-- Choose information to show -->
 <table border="1"> 
 	<tr><td width="180">Select information to show:</td><td width="180">
+		<?php
+			echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n"; 
+		?>
 		<select name="choice1">
 		
 			<option value="personalInfo" selected>personal info</option>
@@ -74,6 +77,11 @@ echo "<h4> View employee info. </h4>\n";
 <!-- Select employee to show -->
 <table border="1"> 
 	<tr><td width="180">Select employee to show:</td><td width="180">
+	
+		<?php
+			echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n"; 
+		?>	
+	
 		<select name="choice2">
 		
 		<?php 
