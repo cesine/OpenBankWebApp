@@ -9,10 +9,19 @@
 <?php 
 $content = $_GET["content"];
 $topMenu = $_GET["topMenu"];
+
 if($content!="EmployeeLogin" && $content!="ViewEmployeeInfo")
 {
 	include ('includes/view/sidemenu.php');
 }
+
+if($content=="ViewEmployeeInfo")
+{
+	include ('includes/view/EmployeeSideMenu.php');
+}
+
+
+
 ?>
 
 </td><td width= "80%">
