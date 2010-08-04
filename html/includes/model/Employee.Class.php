@@ -135,6 +135,17 @@ class Employee{
 		$this->setStatus($row[status]);
 	}	
 	
+	function displayEmployeePersonalInRowFormatted()
+	{
+		
+	echo '<TR class="bgcoloroption1">
+			<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
+			<TD class="tableDataRightC">'.$this->firstName.'</TD>
+			<TD class="tableDataRightC">'.$this->lastName.'</TD>	
+		  </TR>';		
+	}	
+	
+	
 }
 ?>
 
