@@ -88,10 +88,36 @@ $selectedEmployee=$_POST["choice1"];
 //if submit selection button is pressed:
 if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 {
+
+	if ($selectedInfo=="first name")
+	{
+		
+	} // end if ($selectedInfo=="first name")
 	
-	echo "<h4> Selected: </h4>\n";
-	echo "<h5> information to change: $selectedInfo </h5>\n";
-	echo "<h5> employee ID:           $selectedEmployee </h5>\n";
-}
+	elseif ($selectedInfo=="last name")
+	{
+		
+	} // end elseif ($selectedInfo=="last name")	
+	
+	elseif ($selectedInfo=="address")
+	{
+		
+	} // end elseif ($selectedInfo=="address")	
+
+	elseif ($selectedInfo=="branch/title/salary")
+	{
+			
+		echo "<h4> Selected: </h4>\n";
+		echo "<h5> information to change: $selectedInfo </h5>\n";
+		echo "<h5> employee ID:           $selectedEmployee </h5>\n";
+		
+	} // end elseif ($selectedInfo=="branch/title/salary")	
+
+	elseif ($selectedInfo=="vacation type")
+	{
+		
+	} // end elseif ($selectedInfo=="vacation type")		
+	
+} // if (isset($_POST["SelectedOptionsSubmit"])) 
 
 ?>
