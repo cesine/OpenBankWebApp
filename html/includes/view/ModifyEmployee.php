@@ -235,22 +235,22 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$dbEmployeeTitleID->close();
 				*/
 				
-				if ($titleNameCurrent=="Branch Manager")
+				if ($titleNameNew=="Branch Manager")
 				{
 					$titleIDNew = 10;
 				}	
 
-				elseif ($titleNameCurrent=="Assistant Manager")
+				elseif ($titleNameNew=="Assistant Manager")
 				{
 					$titleIDNew = 15;
 				}	
 
-				elseif ($titleNameCurrent=="Banking Consultant")
+				elseif ($titleNameNew=="Banking Consultant")
 				{
 					$titleIDNew = 20;
 				}	
 
-				elseif ($titleNameCurrent=="Teller")
+				elseif ($titleNameNew=="Teller")
 				{
 					$titleIDNew = 30;
 				}					
