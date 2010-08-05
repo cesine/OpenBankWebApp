@@ -258,7 +258,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
 				
 				//Put results of query 1 into table on the screen
-				for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
+				//for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
 				{
 					$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
 					$employeeWorkHistory->initializeEmployeeWorkHistory($row);
@@ -295,6 +295,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h4> Change on: </h4>\n";	
 
 				// put "last date" for old title
+/*				
 				
 				$dbEmployeeTitleOld = new Database();
 				$dbEmployeeTitleOld->connect();
@@ -307,7 +308,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIdCurrent AND 
 				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
-*/				        
+*/	
+/*							        
 				
 				"UPDATE employeeworkhistory 
 				SET    lastdate = CURDATE()
@@ -316,19 +318,10 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				       titleid=20 AND salary=40000";				
 											
 				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
-				
-				//Put results of query 1 into table on the screen
-/*				
-				for($count=0;$count<$dbEmployeeTitleOld->queryResultsCount;$count=$count+1)
-				{
-					$row=mysql_fetch_array($dbEmployeeTitleOld->queryResultsResource);	
-					$employeeWorkHistory->initializeEmployeeWorkHistory($row);
-				}
-*/				
 				$dbEmployeeTitleOld->close();	
-							
 				// end put "last date" for old title
-				
+			
+*/
 				
 			} // end input is OK
 
