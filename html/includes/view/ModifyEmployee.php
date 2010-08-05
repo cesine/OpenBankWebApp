@@ -183,7 +183,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 					$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
 				}
 				// save current values
-				$branchIdCurrent=$row[branchid];	
+				$branchIDCurrent=$row[branchid];	
 				$startDateCurrent=$row[startdate];	
 				$lastDateCurrent=$row[lastdate];
 				$titleIDCurrent=$row[titleid];	
@@ -275,7 +275,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				
 				"UPDATE employeeworkhistory 
 				 SET    lastdate = CURDATE()
-				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIdCurrent AND 
+				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIDCurrent AND 
 				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
 				        
