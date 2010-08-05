@@ -53,7 +53,7 @@ $employee->EmployeeList();
 $selectedInfo=$_POST["choiceInfo"];
 $selectedEmployee=$_POST["choiceEmployee"];
 //$selectedEmployeeCurrent=$selectedEmployee;
-$_SESSION["selectedEmployeeCurrent"]=$selectedEmployee;
+//$_SESSION["selectedEmployeeCurrent"]=$selectedEmployee;
 
 //if submit selection button is pressed:
 if (isset($_POST["SelectedOptionsSubmit"])) 						
@@ -196,9 +196,9 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 			{
 				echo "<h4> New info: </h4>\n";
 				echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
-				echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
+				//echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
 				
-				echo $_SESSION["selectedEmployeeCurrent"];
+				//echo $_SESSION["selectedEmployeeCurrent"];
 				
 				echo "<h5> branch ID:      $branchIDNew </h5>\n";
 				echo "<h5> employee title: $titleNameNew </h5>\n";
