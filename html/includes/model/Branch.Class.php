@@ -120,11 +120,53 @@ class Branch{
 		'</p>';
 	}
 	public function __construct(){
-		echo 'Creating a branch.';	
+		//echo 'Creating a branch.';	
 	}
 	public function __destruct() {
        print "Destroying " . $this->branchName . "\n";
    }
+   
+	
+   
+   public function BranchList() 
+	{
+?>
+		<!-- Select branch to show -->
+		<table border="1"> 
+			<tr><td width="180">Select option to show:</td><td width="180">
+				<select name="choice2">
+				
+				<?php 
+				
+					//Build dynamic selection list
+					$dbSelectBrach = new Database();
+					$dbSelectBrach->connect();
+					
+					$querySelectBrach="SELECT DISTINCT branchid 
+									   FROM branch";
+												
+					$dbSelectBrach->query($querySelectBrach);	
+					$result = $dbSelectBrach->query($querySelectBrach);						
+								   
+					//Put results of query into dynamic list
+					for($count=0;$count<$dbSelectBrach->queryResultsCount;$count=$count+1)
+					{
+						$row=mysql_fetch_array($dbSelectBrach->queryResultsResource);
+						extract($row);
+						echo "<option value='$branchid'>$branchid</option>";
+					
+					}//endl if to only print when there are any results
+					echo "</select>\n";	
+					$dbSelectBrach->close();
+				?>
+				
+				</select>
+			</td></tr>
+		</table>
+		<!-- End select branch to show -->
+<?php 		
+		
+    }  // end public function BranchList() 
 	
 }
 ?>
