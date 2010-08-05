@@ -183,7 +183,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 			if($salaryNew=="")
 			{
 				echo "<h4>Please, provide salary ID.</h4>";
-				unset($_POST["SelectedOptionsSubmit"]); 
+				//unset($_POST["SelectedOptionsSubmit"]); 
 			}	
 			elseif (is_numeric($salaryNew)==false) 
 			{
@@ -198,7 +198,31 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 				echo "<h5> employee ID:    $selectedEmployee </h5>\n";			
 				echo "<h5> branch ID:      $branchIDNew </h5>\n";
 				echo "<h5> employee title: $titleNameNew </h5>\n";
-				echo "<h5> salary:         $salaryNew </h5>\n";						
+				echo "<h5> salary:         $salaryNew </h5>\n";		
+
+				// put "last date" for old title
+				$dbEmployeeTitleOld = new Database();
+				$dbEmployeeTitleOld->connect();
+				
+				// note: in query we use data, selected by user
+				$queryEmployeeTitleOld=
+				"UPDATE employeeworkhistory 
+				 SET    lastdate = CURDATE()
+				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIdCurrent AND 
+				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
+				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
+											
+				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
+				
+				//Put results of query 1 into table on the screen
+				for($count=0;$count<$dbEmployeeTitleOld->queryResultsCount;$count=$count+1)
+				{
+					$row=mysql_fetch_array($dbEmployeeTitleOld->queryResultsResource);	
+					$employeeWorkHistory->initializeEmployeeWorkHistory($row);
+				}
+				$dbEmployeeTitleOld->close();				
+				// end put "last date" for old title
+				
 				
 			} // end input is OK		
 		
