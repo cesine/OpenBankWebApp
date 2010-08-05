@@ -1,3 +1,14 @@
+
+<?php 
+//client is opening a new account
+
+require_once('includes/model/ClientAccount.Class.php');
+
+echo "<form action='?&content=OpenNewAccount method='POST'>";
+?>
+
+
+
 <P>Please select your choice.</P>
 <!-- 
 <table border="1">
@@ -65,5 +76,106 @@
 </select>
 </td>
 </tr></table>
+
+<P></P>
+<input type="submit" name="submitAccountName" value="submit" />
+<P></P>
+
+<?php
+$clientAccount = new ClientAccount();
+$userChoice=$_POST["accountType"];
+
+//if user submitted choice
+if (isset($_POST['submitAccountName'])) 
+{
+switch ($userChoice)
+{
+	case "powerChecking":
+		$clientAccount->setAccountTypeId(1);
+		break;
+		
+	case "moneyMasterSavings":
+		$clientAccount->setAccountTypeId(2);
+		break;
+		
+	case "usDollarAccount":
+		$clientAccount->setAccountTypeId(3);
+		break;
+		
+	case "creditCard":
+		$clientAccount->setAccountTypeId(4);
+		break;
+		
+	case "lineOfCredits":
+		$clientAccount->setAccountTypeId(5);
+		break;
+		
+	case "rSPSix":
+		$clientAccount->setAccountTypeId(6);
+		break;
+		
+	case "tSFASix":
+		$clientAccount->setAccountTypeId(7);
+		break;
+		
+	case "lifeOne":
+		$clientAccount->setAccountTypeId(8);
+		break;
+				
+	case "rSPTFour":
+		$clientAccount->setAccountTypeId(9);
+		break;
+		
+	case "businessChecking":
+		$clientAccount->setAccountTypeId(10);
+		break;
+		
+	case "businessSavings":
+		$clientAccount->setAccountTypeId(11);
+		break;
+		
+	case "businessFC":
+		$clientAccount->setAccountTypeId(12);
+		break;
+		
+	case "rSPTwelve":
+		$clientAccount->setAccountTypeId(13);
+		break;
+		
+	case "rSPEighteen":
+		$clientAccount->setAccountTypeId(14);
+		break;
+		
+	case "tSFAtwelve":
+		$clientAccount->setAccountTypeId(15);
+		break;
+		
+	case "tSFAEighteen":
+		$clientAccount->setAccountTypeId(16);
+		break;
+		
+	case "tSFATfour":
+		$clientAccount->setAccountTypeId(17);
+		break;
+		
+	case "lifeTwo":
+		$clientAccount->setAccountTypeId(18);
+		break;
+		
+	case "lifeThree":
+		$clientAccount->setAccountTypeId(19);
+		break;
+		
+	case "lifeFour":
+		$clientAccount->setAccountTypeId(20);
+		break;
+	default:
+		print "Please try again!";	
+}
+//end of switch
+	echo "You picked account type", $clientAccount->getAccountTypeId();
+}
+?>
+
 
 
