@@ -128,8 +128,11 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 			Last date
 			</td>
 			<td>
-			Title
-			</td>	
+			Title ID
+			</td>
+			<td>
+			Title name
+			</td>					
 			<td>
 			Salary
 			</td>	
