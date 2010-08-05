@@ -252,9 +252,17 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h5> branch ID:         $branchIDNew </h5>\n";
 				echo "<h5> employee title:    $titleNameNew </h5>\n";
 				echo "<h5> employee title ID: $titleIDNew </h5>\n";					
-				echo "<h5> salary:            $salaryNew </h5>\n";					
+				echo "<h5> salary:            $salaryNew </h5>\n";	
 
-				echo "<h4> Change on: </h4>\n";	
+				echo "<h4> Old info: </h4>\n";
+				echo "<h5> employee ID:    	  $selectedEmployee </h5>\n";	
+				echo "<h5> branch ID:         $branchIDCurrent </h5>\n";
+				echo "<h5> start date:        $startDateCurrent </h5>\n";				
+				echo "<h5> employee title:    $titleNameCurrent </h5>\n";
+				echo "<h5> employee title ID: $titleIDCurrent </h5>\n";					
+				echo "<h5> salary:            $salaryCurrent </h5>\n";					
+
+				//echo "<h4> Change on: </h4>\n";	
 					
 				// end find title id from title name
 				
@@ -264,19 +272,21 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				
 				// note: in query we use data, selected by user
 				$queryEmployeeTitleOld=
-				/*
+				
 				"UPDATE employeeworkhistory 
 				 SET    lastdate = CURDATE()
 				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIdCurrent AND 
 				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
-				*/        
+				        
 				
+				/*
 				"UPDATE employeeworkhistory 
 				SET    lastdate = CURDATE()
 				WHERE  employeeid=20000014 AND branchid=10001 AND 
 				       startdate = '2009-01-01' AND lastdate='0000-00-00' AND 
-				       titleid=20 AND salary=40000";				
+				       titleid=20 AND salary=40000";	
+				*/       			
 				
 											
 				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
