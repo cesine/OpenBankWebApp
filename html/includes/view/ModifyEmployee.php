@@ -316,7 +316,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				// save values
 				$titleIDNew=$row[titleid];
 					
-				$dbEmployeeTitleName->close();
+				$dbEmployeeTitleID->close();
 
 				echo "<h5> employee title ID: $titleIDNew </h5>\n";				
 					
