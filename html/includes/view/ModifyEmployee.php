@@ -353,7 +353,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				
 				// put "start date" for new title
 				
-				
+				/*
 				$dbEmployeeTitleNew = new Database();
 				$dbEmployeeTitleNew->connect();
 				
@@ -366,6 +366,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 									
 				$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
+				*/
 				
 					
 				// end put "last date" for old title				
