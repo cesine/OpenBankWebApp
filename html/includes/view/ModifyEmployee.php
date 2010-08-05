@@ -28,12 +28,13 @@ $employeeWorkHistory = new EmployeeWorkHistory();
 ?>
 
 <!-- Select employee to show -->
+<!--  
 <table border="1"> 
 	<tr><td width="180">Select employee to show:</td><td width="180">
 		<select name="choice1">
-		
+-->		
 		<?php 
-			
+			/*
 			//Build dynamic selection list
 			$dbSelectEmployee = new Database();
 			$dbSelectEmployee->connect();
@@ -54,13 +55,22 @@ $employeeWorkHistory = new EmployeeWorkHistory();
 			}//endl if to only print when there are any results
 			echo "</select>\n";	
 			$dbSelectEmployee->close();
+			
+			*/
 						
 		?>
-		
+<!--		
 		</select>
 	</td></tr>
 </table>
+-->
+
 <!-- End select employee to show -->
+
+<?php 
+$employee->EmployeeList();
+?>
+
 
 <!-- Choose what should be shanged -->
 <table border="1"> 
@@ -107,9 +117,9 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 	elseif ($selectedInfo=="branch/title/salary")
 	{
 			
-		echo "<h4> Selected: </h4>\n";
-		echo "<h5> information to change: $selectedInfo </h5>\n";
-		echo "<h5> employee ID:           $selectedEmployee </h5>\n";
+		//echo "<h4> Selected: </h4>\n";
+		//echo "<h5> information to change: $selectedInfo </h5>\n";
+		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
 		echo "<h4> Current Info: </h4>\n";
 		?>
 		<!-- Show current info -->
