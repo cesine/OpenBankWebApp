@@ -25,54 +25,12 @@ $employee = new Employee();
 $branch = new Branch();
 $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
+
+// create dynamic list of employee and let user to select
+$employee->EmployeeList(); 
 ?>
 
-<!-- Select employee to show -->
-<!--  
-<table border="1"> 
-	<tr><td width="180">Select employee to show:</td><td width="180">
-		<select name="choice1">
--->		
-		<?php 
-			/*
-			//Build dynamic selection list
-			$dbSelectEmployee = new Database();
-			$dbSelectEmployee->connect();
-			
-			$querySelectEmployee="SELECT DISTINCT employeeid 
-							   FROM employee";
-										
-			$dbSelectEmployee->query($querySelectEmployee);	
-			$result = $dbSelectEmployee->query($querySelectEmployee);						
-						   
-			//Put results of query into dynamic list
-			for($count=0;$count<$dbSelectEmployee->queryResultsCount;$count=$count+1)
-			{
-				$row=mysql_fetch_array($dbSelectEmployee->queryResultsResource);
-				extract($row);
-				echo "<option value='$employeeid'>$employeeid</option>";
-			
-			}//endl if to only print when there are any results
-			echo "</select>\n";	
-			$dbSelectEmployee->close();
-			
-			*/
-						
-		?>
-<!--		
-		</select>
-	</td></tr>
-</table>
--->
-
-<!-- End select employee to show -->
-
-<?php 
-$employee->EmployeeList();
-?>
-
-
-<!-- Choose what should be shanged -->
+<!-- Choose what should be changed -->
 <table border="1"> 
 	<tr><td width="180">Select information to change:</td><td width="180">
 		<select name="choice2">
@@ -121,69 +79,16 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		//echo "<h5> information to change: $selectedInfo </h5>\n";
 		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
 		echo "<h4> Current Info: </h4>\n";
+		
+		$employeeWorkHistory->EmployeeWorkHistoryCurrent();
+		echo "<h5> current title: $titleIDCurrent </h5>\n";		
+		
 		?>
-		<!-- Show current info -->
-		<table width="100%" border="1" cellpadding="3" cellspacing="1">
-		<tr>
-			<td>
-			Employee ID
-			</td>
-			<td>
-			Branch ID
-			</td>
-			<td>
-			Start date
-			</td>
-			<td>
-			Last date
-			</td>
-			<td>
-			Title ID
-			</td>
-			<td>
-			Title name
-			</td>					
-			<td>
-			Salary
-			</td>	
-		</tr>
-		
-		<?php
-		
-			// Display current info of employee from table "employeeworkhistory" 
-			$dbEmployeeWorkHistory = new Database();
-			$dbEmployeeWorkHistory->connect();
-			
-			// note: in query we use data, selected by user
-			$queryEmployeeWorkHistory=
-			"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
-			 FROM   employeeworkhistory e, employeetitle t	
-			 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
-										
-			$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
-			
-			//Put results of query 1 into table on the screen
-			for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
-			{
-				$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
-				$employeeWorkHistory->initializeEmployeeWorkHistory($row);
-				$employeeWorkHistory->displayEmployeeWorkHistory2();
-				$employeeTitle->initializeEmployeeTitle($row);
-				$employeeTitle->displayEmployeeTitleName();	
-				$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
-			}
-			// save current values
-			$branchIdCurrent=$row[branchid];	
-			$startDateCurrent=$row[startdate];	
-			$lastDateCurrent=$row[lastdate];
-			$titleIDCurrent=$row[titleid];	
-			$titleNameCurrent=$row[titlename];			
-			$salaryCurrent=$row[salary];											
-		
-			$dbEmployeeWorkHistory->close();
-		?>
-		</table>
-		<P></P>
+
+
+
+
+
 
 		
 <?php 		
