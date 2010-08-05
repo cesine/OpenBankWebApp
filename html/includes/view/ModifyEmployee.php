@@ -33,7 +33,7 @@ $employee->EmployeeList();
 <!-- Choose what should be changed -->
 <table border="1"> 
 	<tr><td width="180">Select information to change:</td><td width="180">
-		<select name="choice2">
+		<select name="choiceInfo">
 			<option value="first name">first name</option>
 			<option value="last name">last name</option>
 			<option value="address">address</option>			
@@ -50,11 +50,11 @@ $employee->EmployeeList();
 
 <?php
 
-$selectedInfo=$_POST["choice2"];
-$selectedEmployee=$_POST["choice1"];
+$selectedInfo=$_POST["choiceInfo"];
+$selectedEmployee=$_POST["choiceEmployee"];
 
 //if submit selection button is pressed:
-if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
+if (isset($_POST["SelectedOptionsSubmit"])) 						
 {
 
 	if ($selectedInfo=="first name")
@@ -180,7 +180,7 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		$salaryNew=$_POST["choiceSalary"];		
 		
 		//if submit selection button is pressed:
-		if (isset($_POST["SubmitChanges"])) 						
+		//if (isset($_POST["SubmitChanges"])) 						
 		{
 			
 			echo "<h4> New info: </h4>\n";
