@@ -183,9 +183,9 @@ $clientAccount = new Database();
 $clientAccount->connect();
 
 //query to find client's branch id
-$queryBranchid = "SELECT distinct `branchid`
-FROM `clientaccount` 
-WHERE `clientid` = 54010015";
+$queryBranchid =   "SELECT distinct `branchid`
+					FROM `clientaccount` 
+					WHERE `clientid` = 54010015";
 
 $row=mysql_fetch_array($clientAccount->queryResultsResource);
 $branchID = $row[branchid];
