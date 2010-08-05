@@ -152,7 +152,11 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		
 		<?php 	
 			echo "<h4> Change on: </h4>\n";	
+			// show dynamic list with branches id
 			$branch->BranchList();
+			
+			// show dynamic list with employee title names
+			$employeeTitle->displayEmployeeTitleList();			
 
 		?>
 
