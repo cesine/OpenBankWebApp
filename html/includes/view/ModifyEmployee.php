@@ -27,8 +27,50 @@ $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
 
 // create dynamic list of employee and let user to select
-$employee->EmployeeList(); 
+//$employee->EmployeeList(); 
 ?>
+
+		<!-- Select employee to show -->
+		<table border="1"> 
+			<tr><td width="180">Select employee to show:</td><td width="180">
+				<select name="choiceEmployee">
+				
+				<?php 
+					
+					//Build dynamic selection list
+					$dbSelectEmployee = new Database();
+					$dbSelectEmployee->connect();
+					
+					$querySelectEmployee="SELECT DISTINCT employeeid 
+									   FROM employee";
+												
+					$dbSelectEmployee->query($querySelectEmployee);	
+					$result = $dbSelectEmployee->query($querySelectEmployee);						
+								   
+					//Put results of query into dynamic list
+					for($count=0;$count<$dbSelectEmployee->queryResultsCount;$count=$count+1)
+					{
+						$row=mysql_fetch_array($dbSelectEmployee->queryResultsResource);
+						extract($row);
+						echo "<option value='$employeeid'>$employeeid</option>";
+					
+					}//endl if to only print when there are any results
+					echo "</select>\n";	
+					$dbSelectEmployee->close();
+								
+				?>
+				
+				</select>
+			</td></tr>
+		</table>
+		<!-- End select employee to show -->
+
+
+
+
+
+
+
 
 <!-- Choose what should be changed -->
 <table border="1"> 
