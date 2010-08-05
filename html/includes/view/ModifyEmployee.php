@@ -107,9 +107,9 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 	elseif ($selectedInfo=="branch/title/salary")
 	{
 			
-		//echo "<h4> Selected: </h4>\n";
-		//echo "<h5> information to change: $selectedInfo </h5>\n";
-		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
+		echo "<h4> Selected: </h4>\n";
+		echo "<h5> information to change: $selectedInfo </h5>\n";
+		echo "<h5> employee ID:           $selectedEmployee </h5>\n";
 		echo "<h4> Current Info: </h4>\n";
 		?>
 		<!-- Show current info -->
@@ -137,58 +137,37 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		
 		<?php
 		
-		// Display current info of employee from table "employeeworkhistory" 
-		$dbEmployeeWorkHistory = new Database();
-		$dbEmployeeWorkHistory->connect();
+			// Display current info of employee from table "employeeworkhistory" 
+			$dbEmployeeWorkHistory = new Database();
+			$dbEmployeeWorkHistory->connect();
+			
+			// note: in query we use data, selected by user
+			$queryEmployeeWorkHistory=
+			"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
+			 FROM   employeeworkhistory e, employeetitle t	
+			 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
+										
+			$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
+			
+			//Put results of query 1 into table on the screen
+			for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
+			{
+				$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
+				$employeeWorkHistory->initializeEmployeeWorkHistory($row);
+				$employeeWorkHistory->displayEmployeeWorkHistory2();
+				$employeeTitle->initializeEmployeeTitle($row);
+				$employeeTitle->displayEmployeeTitleName();	
+				$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
+			}
+			// save current values
+			$branchIdCurrent=$row[branchid];	
+			$startDateCurrent=$row[startdate];	
+			$lastDateCurrent=$row[lastdate];
+			$titleIDCurrent=$row[titleid];	
+			$titleNameCurrent=$row[titlename];			
+			$salaryCurrent=$row[salary];											
 		
-		// note: in query we use data, selected by user
-		$queryEmployeeWorkHistory=
-		"SELECT *
-		 FROM   employeeworkhistory	
-		 WHERE  employeeid=$selectedEmployee AND lastdate='0000-00-00'";
-									
-		$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
-		
-		//Put results of query 1 into table on the screen
-		for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
-		{
-			$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
-		
-			$employeeWorkHistory->initializeEmployeeWorkHistory($row);
-			$employeeWorkHistory->displayEmployeeWorkHistory2();
-		}
-		// save current values
-		$branchIdCurrent=$row[branchid];	
-		$startDateCurrent=$row[startdate];	
-		$lastDateCurrent=$row[lastdate];
-		$titleIDCurrent=$row[titleid];	
-		$salaryCurrent=$row[salary];											
-		
-		// Display current title name of employee from table "employeetitle" 		
-		$dbEmployeeTitle = new Database();
-		$dbEmployeeTitle->connect();
-		
-		// note: in query we use data, selected by user
-		$queryEmployeeTitle=
-		"SELECT titlename
-		 FROM   employeetitle	
-		 WHERE  titleid=$titleIDCurrent";
-									
-		$dbEmployeeTitle->query($queryEmployeeTitle);			
-		
-		//Put results of query 2 into table on the screen
-		for($count=0;$count<$dbEmployeeTitle->queryResultsCount;$count=$count+1)
-		{
-			$row=mysql_fetch_array($dbEmployeeTitle->queryResultsResource);	
-			$employeeTitle->initializeEmployeeTitle($row);
-			$employeeTitle->displayEmployeeTitleName();
-			$employeeWorkHistory->displayEmployeeWorkHistorySalary();			
-		}
-		// save current values
-		$titleCurrent=$row[titlename];	
-		
-		$dbEmployeeWorkHistory->close();
-		$dbEmployeeTitle->close();		
+			$dbEmployeeWorkHistory->close();
 		?>
 		</table>
 		<P></P>
