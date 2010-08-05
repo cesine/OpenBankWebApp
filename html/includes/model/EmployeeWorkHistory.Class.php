@@ -10,6 +10,13 @@ class EmployeeWorkHistory{
 	private $lastDate;	
 	private $titleID;					
 	private $salary;
+	
+	private $titleIDCurrent;
+	
+	public function getTitleIDCurrent() 
+	{
+		return $this->titleIDCurrent;
+	}	
 
 	public function getEmployeeID() 
 	{
