@@ -293,6 +293,39 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h5> salary:         $salaryNew </h5>\n";					
 
 				echo "<h4> Change on: </h4>\n";	
+				
+				// find title id from title name
+			
+				$dbEmployeeTitleID = new Database();
+				$dbEmployeeTitleID->connect();
+				
+				// note: in query we use data, selected by user
+				$queryEmployeeTitleID=
+				
+				"SELECT titleid  
+				 FROM   employeetitle	
+				 WHERE  titlename=$titleNameNew";					
+											
+				$dbEmployeeTitleID->query($queryEmployeeTitleID);
+				
+				for($count=0;$count<$dbEmployeeTitleID->queryResultsCount;$count=$count+1)
+				{
+					$row=mysql_fetch_array($dbEmployeeTitleID->queryResultsResource);	
+					$employeeTitle->initializeEmployeeTitle($row);
+				}
+				// save values
+				$titleIDNew=$row[titleid];
+					
+				$dbEmployeeTitleName->close();
+
+				echo "<h5> employee title ID: $titleIDNew </h5>\n";				
+					
+				// end find title id from title name
+				
+				// put "start date" for new title				
+				
+				
+				
 
 				// put "last date" for old title
 				
@@ -326,8 +359,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				
 				"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
 												  titleid, salary)
-	            VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', 15, $salaryNew)";								  
-                //VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', $titleIDNew, $salaryNew)";
+                 VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', $titleIDNew, $salaryNew)";
 									
 				$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
