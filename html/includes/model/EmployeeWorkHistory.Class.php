@@ -110,7 +110,7 @@ class EmployeeWorkHistory{
 		echo '<TD class="tableDataRightC">'.$this->salary.'</TD>';	
 	}		
 
-	public function EmployeeWorkHistoryCurrent()
+	public function EmployeeWorkHistoryCurrent($selectedEmployee)
 	{
 ?>
 		<!-- Show current info -->
