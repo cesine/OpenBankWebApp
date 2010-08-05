@@ -1,6 +1,6 @@
 <?php  include ('includes/view/header.php')?>
 
-<?php include ('includes/view/menu.php')?>
+ <?php include ('includes/view/menu.php')?>
 
 
 <table border="1" with="940"><tr valign="top"><td width="20%">
