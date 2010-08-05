@@ -1,5 +1,5 @@
 <?php 
-session_start();
+//session_start();
 include('includes/model/Employee.Class.php');
 include ('includes/view/employeetopmenu.php');  
 
@@ -52,7 +52,7 @@ $employee->EmployeeList();
 
 $selectedInfo=$_POST["choiceInfo"];
 $selectedEmployee=$_POST["choiceEmployee"];
-//$selectedEmployeeCurrent=$selectedEmployee;
+$selectedEmployeeCurrent=$selectedEmployee;
 //$_SESSION["selectedEmployeeCurrent"]=$selectedEmployee;
 
 //if submit selection button is pressed:
