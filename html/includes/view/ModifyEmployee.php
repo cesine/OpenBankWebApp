@@ -83,7 +83,7 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		$employeeWorkHistory->EmployeeWorkHistoryCurrent($selectedEmployee);
 		
 		echo "<h4> current title: </h4>\n";	
-		echo "<h4> $titleIDCurrent </h4>\n";				
+		echo "<h4> $employeeWorkHistory->getTitleIDCurrent() </h4>\n";				
 		
 		?>
 
