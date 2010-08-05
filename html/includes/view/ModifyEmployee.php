@@ -180,6 +180,10 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		
 		<?php
 		
+		if (isset($_POST["SubmitChanges"])) 						
+		{
+
+		
 			$branchIDNew=$_POST["choiceBranch"];
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];		
@@ -232,7 +236,9 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 				// end put "last date" for old title
 				
 				
-			} // end input is OK		
+			} // end input is OK
+
+		} // end if (isset($_POST["SubmitChanges"]))
 		
 		?>			
 
