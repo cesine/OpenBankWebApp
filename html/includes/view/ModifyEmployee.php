@@ -296,7 +296,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				
 				// find title id from title name
 				
-				/*
+				
 			
 				$dbEmployeeTitleID = new Database();
 				$dbEmployeeTitleID->connect();
@@ -319,7 +319,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$titleIDNew=$row[titleid];
 					
 				$dbEmployeeTitleID->close();
-				*/
+				
 
 				echo "<h5> employee title ID: $titleIDNew </h5>\n";				
 					
@@ -332,7 +332,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 
 				// put "last date" for old title
 				
-				/*
+				
 				$dbEmployeeTitleOld = new Database();
 				$dbEmployeeTitleOld->connect();
 				
@@ -347,7 +347,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 											
 				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
 				$dbEmployeeTitleOld->close();
-				*/
+				
 					
 				// end put "last date" for old title
 				
