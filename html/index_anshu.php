@@ -35,7 +35,7 @@ if($content=="EmployeeInfo" || $content=="ViewEmployeeInfo" ||
 <div id="main">
 
 <?php
-	include ('includes/view/branchtopmenu.php');
+	include ('includes/view/branchtopmenu_anshu.php');
 
 /*
  * Control logic to change which small top menu to display in the main window
