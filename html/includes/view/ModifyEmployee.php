@@ -253,12 +253,13 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$queryEmployeeWorkHistory=
 				"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
 				 FROM   employeeworkhistory e, employeetitle t	
-				 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
+				 WHERE  e.employeeid=20000014 AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";		
+				 //WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid"						
 											
 				$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
 				
 				//Put results of query 1 into table on the screen
-				//for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
+				for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
 				{
 					$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
 					$employeeWorkHistory->initializeEmployeeWorkHistory($row);
