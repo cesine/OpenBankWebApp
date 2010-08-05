@@ -164,7 +164,7 @@ class EmployeeWorkHistory{
 				$employeeWorkHistory->displayEmployeeWorkHistory2();
 				$employeeTitle->initializeEmployeeTitle($row);
 				$employeeTitle->displayEmployeeTitleName();	
-				displayEmployeeWorkHistorySalary();								
+				$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
 			}
 			// save current values
 			$branchIdCurrent=$row[branchid];	
