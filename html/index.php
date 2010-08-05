@@ -72,8 +72,8 @@ if($content=="BranchLocator"){
 	include ('includes/view/AccountType.php');
 }elseif ($content=="AddClient"){
 	include ('includes/view/AddClient.php');
-}elseif ($content=="OpenNewAccount"){
-	include ('includes/view/OpenNewAccount.php');
+}elseif ($content=="NewOpenNewAccount"){
+	include ('includes/view/NewOpenNewAccount.php');
 }elseif($content=="Summary"){
 	include ('includes/view/Summary.php');
 }elseif($content=="ViewAccount"){
