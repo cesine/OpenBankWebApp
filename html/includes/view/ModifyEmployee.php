@@ -90,7 +90,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		<!-- Create field to change salary -->
 		<table border="1"> 
 			<tr><td width="180">Salary:</td><td width="180">
-				<input type="text" name="choiceSalary" value=0 maxlength=9 />
+				<input type="text" name="choiceSalary" value=0 maxlength=8 />
 			</td></tr>
 		</table>
 		<!-- End create field to change salary -->		
@@ -310,8 +310,24 @@ if (isset($_POST['SelectedOptionsSubmit']))
 									
 				$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
-				// end put "last date" for old title				
+				// end put "last date" for old title	
+
+								 
+				// update branch/title/salary in employee table
+				$dbEmployeeUpdate = new Database();
+				$dbEmployeeUpdate->connect();
 				
+				// note: in query we use data, selected by user
+				$queryEmployeeUpdate=
+				
+				"UPDATE employee 
+				 SET    branchid=$branchIDNew, titleid=$titleIDNew, salary=$salaryNew
+				 WHERE  employeeid=$selectedEmployee";				
+				
+				$dbEmployeeUpdate->query($queryEmployeeUpdate);
+				$dbEmployeeUpdate->close();
+				// end update branch/title/salary in employee table	
+	
 		
 			} // end input is OK
 
