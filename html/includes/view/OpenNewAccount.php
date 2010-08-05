@@ -5,7 +5,7 @@
 require_once('includes/model/ClientAccount.Class.php');
 require_once('includes/controller/Database.Class.php');
 
-echo "<form action='?&content=OpenNewAccount method='POST'>";
+echo "<form action='?&content=OpenNewAccount' method='POST'>";
 ?>
 
 
