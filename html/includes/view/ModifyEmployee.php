@@ -318,11 +318,13 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
 				
 				//Put results of query 1 into table on the screen
+/*				
 				for($count=0;$count<$dbEmployeeTitleOld->queryResultsCount;$count=$count+1)
 				{
 					$row=mysql_fetch_array($dbEmployeeTitleOld->queryResultsResource);	
 					$employeeWorkHistory->initializeEmployeeWorkHistory($row);
 				}
+*/				
 				$dbEmployeeTitleOld->close();	
 							
 				// end put "last date" for old title
