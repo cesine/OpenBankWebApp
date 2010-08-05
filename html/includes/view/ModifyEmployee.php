@@ -79,9 +79,7 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		//echo "<h5> information to change: $selectedInfo </h5>\n";
 		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
 		echo "<h4> Current Info: </h4>\n";
-		
-		//$employeeWorkHistory->EmployeeWorkHistoryCurrent($selectedEmployee);
-		?>
+?>
 		
 		
 		<!-- Show current info -->
@@ -152,11 +150,13 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		
 		<?php 		
 		
+		$employeeWorkHistory->EmployeeWorkHistoryCurrent($selectedEmployee);
 		//echo "<h4> current title: </h4>\n";	
 		//$s=$employeeWorkHistory->getTitleIDCurrent();
-		//$s2=$employeeWorkHistory->getTitleID();		
+		$s2=($employeeWorkHistory->getTitleID());		
 		//echo "<h4> s= $s </h4>\n";		
-		//echo "<h4> s2= $s2 </h4>\n";	
+		echo "<h4> s2= $s2 </h4>\n";	
+		echo "<h4> $employeeWorkHistory->getTitleID </h4>\n";			
 
 		$titleIDCurrent=$row[titleid];	
 		echo "<h4> titleIDCurrent = $titleIDCurrent </h4>\n";			
