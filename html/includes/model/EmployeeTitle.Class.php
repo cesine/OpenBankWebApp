@@ -53,7 +53,6 @@ class EmployeeTitle{
 		// in the line ($row[]), parameter name [] from db table
 		$this->setTitleID($row[titleid]);
 		$this->setTitleName($row[titlename]);
-		$this->setLastName($row[lastname]);	
 		$this->setBaseSalary($row[basesalary]);	
 	}	
 	
