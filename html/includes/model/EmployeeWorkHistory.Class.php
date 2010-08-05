@@ -141,6 +141,8 @@ class EmployeeWorkHistory{
 		
 		<?php
 		
+			$employeeTitle = new EmployeeTitle();
+			
 			// Display current info of employee from table "employeeworkhistory" 
 			$dbEmployeeWorkHistory = new Database();
 			$dbEmployeeWorkHistory->connect();
@@ -157,11 +159,11 @@ class EmployeeWorkHistory{
 			for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
 			{
 				$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
-				$employeeWorkHistory->initializeEmployeeWorkHistory($row);
-				$employeeWorkHistory->displayEmployeeWorkHistory2();
+				initializeEmployeeWorkHistory($row);
+				displayEmployeeWorkHistory2();
 				$employeeTitle->initializeEmployeeTitle($row);
 				$employeeTitle->displayEmployeeTitleName();	
-				$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
+				displayEmployeeWorkHistorySalary();								
 			}
 			// save current values
 			$branchIdCurrent=$row[branchid];	
