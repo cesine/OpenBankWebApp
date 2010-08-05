@@ -56,7 +56,8 @@ $selectedEmployee=$_POST["choiceEmployee"];
 $_SESSION['selectedEmployeeCurrent']=$selectedEmployee;
 
 //if submit selection button is pressed:
-if (isset($_POST["SelectedOptionsSubmit"])) 						
+//if (isset($_POST["SelectedOptionsSubmit"])) 	
+if ($_POST['SelectedOptionsSubmit']) 						
 {
 
 	if ($selectedInfo=="first name")
@@ -180,7 +181,8 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		
 		<?php
 		
-		if (isset($_POST["SubmitChanges"])) 						
+		//if (isset($_POST["SubmitChanges"])) 	
+		if ($_POST['SubmitChanges']) 							
 		{
 
 		
