@@ -77,99 +77,15 @@ if (isset($_POST['SelectedOptionsSubmit']))
 
 	elseif ($selectedInfo=="branch/title/salary")
 	{
-			
-		//echo "<h4> Selected: </h4>\n";
-		//echo "<h5> information to change: $selectedInfo </h5>\n";
-		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
-		//require_once('includes/view/AddEmployee.Class.php');	
-		
+
 		// create dynamic list of employee and let user to select
 		$employee->EmployeeList(); 
-		
-		//echo "<h4> Current Info: </h4>\n";
-?>
-		
-		
-		<!-- Show current info -->
-		<!--<table width="100%" border="1" cellpadding="3" cellspacing="1">
-		<tr>
-			<td>
-			Employee ID
-			</td>
-			<td>
-			Branch ID
-			</td>
-			<td>
-			Start date
-			</td>
-			<td>
-			Last date
-			</td>
-			<td>
-			Title ID
-			</td>
-			<td>
-			Title name
-			</td>					
-			<td>
-			Salary
-			</td>	
-		</tr>
-		-->
-		<?php
-		/*
-		
-			$employeeTitle = new EmployeeTitle();
-			$employeeWorkHistory = new EmployeeWorkHistory();			
-			
-			// Display current info of employee from table "employeeworkhistory" 
-			$dbEmployeeWorkHistory = new Database();
-			$dbEmployeeWorkHistory->connect();
-			
-			// note: in query we use data, selected by user
-			$queryEmployeeWorkHistory=
-			"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
-			 FROM   employeeworkhistory e, employeetitle t	
-			 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
-										
-			$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
-			
-			//Put results of query 1 into table on the screen
-			for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
-			{
-				$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
-				$employeeWorkHistory->initializeEmployeeWorkHistory($row);
-				$employeeWorkHistory->displayEmployeeWorkHistory2();
-				$employeeTitle->initializeEmployeeTitle($row);
-				$employeeTitle->displayEmployeeTitleName();	
-				$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
-			}
-			// save current values
-			$branchIdCurrent=$row[branchid];	
-			$startDateCurrent=$row[startdate];	
-			$lastDateCurrent=$row[lastdate];
-			$titleIDCurrent=$row[titleid];	
-			$titleNameCurrent=$row[titlename];			
-			$salaryCurrent=$row[salary];											
-		
-			$dbEmployeeWorkHistory->close();
-		*/
-		?>
 
-<!-- 		
-		</table>
-		<P></P>	
- -->		
-		
-		<?php 	
+		$branch->BranchList();
 			
-			//echo "<h4> Change on: </h4>\n";	
-			// show dynamic list with branches id
-			$branch->BranchList();
-			
-			// show dynamic list with employee title names
-			$employeeTitle->displayEmployeeTitleList();	
-		?>
+		// show dynamic list with employee title names
+		$employeeTitle->displayEmployeeTitleList();	
+?>
 
 		<!-- Create field to change salary -->
 		<table border="1"> 
@@ -241,7 +157,6 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			
 			<?php
 			
-			
 				$employeeTitle = new EmployeeTitle();
 				$employeeWorkHistory = new EmployeeWorkHistory();			
 				
@@ -295,8 +210,6 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h4> Change on: </h4>\n";	
 				
 				// find title id from title name
-				
-				
 			
 				$dbEmployeeTitleID = new Database();
 				$dbEmployeeTitleID->connect();
@@ -325,11 +238,6 @@ if (isset($_POST['SelectedOptionsSubmit']))
 					
 				// end find title id from title name
 				
-				// put "start date" for new title				
-				
-				
-				
-
 				// put "last date" for old title
 				
 				
