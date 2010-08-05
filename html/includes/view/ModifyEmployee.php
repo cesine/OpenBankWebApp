@@ -1,5 +1,5 @@
 <?php 
-session_start();
+//session_start();
 include('includes/model/Employee.Class.php');
 include ('includes/view/employeetopmenu.php');  
 
@@ -53,7 +53,7 @@ $employeeWorkHistory = new EmployeeWorkHistory();
 $selectedInfo=$_POST["choiceInfo"];
 //$selectedEmployee=$_POST["choiceEmployee"];
 //$selectedEmployeeCurrent=$selectedEmployee;
-$_SESSION['selectedEmployeeCurrent']=$selectedEmployee;
+//$_SESSION['selectedEmployeeCurrent']=$selectedEmployee;
 
 //if submit selection button is pressed:
 if (isset($_POST['SelectedOptionsSubmit'])) 	
@@ -253,8 +253,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$queryEmployeeWorkHistory=
 				"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
 				 FROM   employeeworkhistory e, employeetitle t	
-				 WHERE  e.employeeid=20000014 AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";		
-				 //WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid"						
+				 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";						
 											
 				$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
 				
