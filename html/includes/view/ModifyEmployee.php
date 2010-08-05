@@ -301,11 +301,19 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				
 				// note: in query we use data, selected by user
 				$queryEmployeeTitleOld=
+/*				
 				"UPDATE employeeworkhistory 
 				 SET    lastdate = CURDATE()
 				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIdCurrent AND 
 				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
+*/				        
+				
+				"UPDATE employeeworkhistory 
+				SET    lastdate = CURDATE()
+				WHERE  employeeid=20000014 AND branchid=10001 AND 
+				       startdate = '2009-01-01' AND lastdate='0000-00-00' AND 
+				       titleid=20 AND salary=40000";				
 											
 				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
 				
