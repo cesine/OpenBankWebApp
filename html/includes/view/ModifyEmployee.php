@@ -30,48 +30,6 @@ $employeeWorkHistory = new EmployeeWorkHistory();
 //$employee->EmployeeList(); 
 ?>
 
-		<!-- Select employee to show -->
-		<table border="1"> 
-			<tr><td width="180">Select employee to show:</td><td width="180">
-				<select name="choiceEmployee">
-				
-				<?php 
-					
-					//Build dynamic selection list
-					$dbSelectEmployee = new Database();
-					$dbSelectEmployee->connect();
-					
-					$querySelectEmployee="SELECT DISTINCT employeeid 
-									   FROM employee";
-												
-					$dbSelectEmployee->query($querySelectEmployee);	
-					$result = $dbSelectEmployee->query($querySelectEmployee);						
-								   
-					//Put results of query into dynamic list
-					for($count=0;$count<$dbSelectEmployee->queryResultsCount;$count=$count+1)
-					{
-						$row=mysql_fetch_array($dbSelectEmployee->queryResultsResource);
-						extract($row);
-						echo "<option value='$employeeid'>$employeeid</option>";
-					
-					}//endl if to only print when there are any results
-					echo "</select>\n";	
-					$dbSelectEmployee->close();
-								
-				?>
-				
-				</select>
-			</td></tr>
-		</table>
-		<!-- End select employee to show -->
-
-
-
-
-
-
-
-
 <!-- Choose what should be changed -->
 <table border="1"> 
 	<tr><td width="180">Select information to change:</td><td width="180">
@@ -93,7 +51,7 @@ $employeeWorkHistory = new EmployeeWorkHistory();
 <?php
 
 $selectedInfo=$_POST["choiceInfo"];
-$selectedEmployee=$_POST["choiceEmployee"];
+//$selectedEmployee=$_POST["choiceEmployee"];
 //$selectedEmployeeCurrent=$selectedEmployee;
 $_SESSION['selectedEmployeeCurrent']=$selectedEmployee;
 
@@ -123,14 +81,17 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		//echo "<h4> Selected: </h4>\n";
 		//echo "<h5> information to change: $selectedInfo </h5>\n";
 		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
-		//require_once('includes/view/AddEmployee.Class.php');		
+		//require_once('includes/view/AddEmployee.Class.php');	
 		
-		echo "<h4> Current Info: </h4>\n";
+		// create dynamic list of employee and let user to select
+		$employee->EmployeeList(); 
+		
+		//echo "<h4> Current Info: </h4>\n";
 ?>
 		
 		
 		<!-- Show current info -->
-		<table width="100%" border="1" cellpadding="3" cellspacing="1">
+		<!--<table width="100%" border="1" cellpadding="3" cellspacing="1">
 		<tr>
 			<td>
 			Employee ID
@@ -154,8 +115,9 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			Salary
 			</td>	
 		</tr>
-		
+		-->
 		<?php
+		/*
 		
 			$employeeTitle = new EmployeeTitle();
 			$employeeWorkHistory = new EmployeeWorkHistory();			
@@ -191,11 +153,13 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			$salaryCurrent=$row[salary];											
 		
 			$dbEmployeeWorkHistory->close();
-
+		*/
 		?>
-		
+
+<!-- 		
 		</table>
 		<P></P>	
+ -->		
 		
 		<?php 	
 			
@@ -227,11 +191,11 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		//if ($_POST['SubmitChanges']) 							
 		{
 
-		
+			$selectedEmployee=$_POST["choiceEmployee"];				
 			$branchIDNew=$_POST["choiceBranch"];
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
-			$selectedEmployee=$_POST["choiceEmployee"];					
+			
 			
 		    // validate values 
 			if($salaryNew=="")
@@ -258,6 +222,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h5> salary:         $salaryNew </h5>\n";		
 
 				// put "last date" for old title
+				/*
 				$dbEmployeeTitleOld = new Database();
 				$dbEmployeeTitleOld->connect();
 				
@@ -277,7 +242,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 					$row=mysql_fetch_array($dbEmployeeTitleOld->queryResultsResource);	
 					$employeeWorkHistory->initializeEmployeeWorkHistory($row);
 				}
-				$dbEmployeeTitleOld->close();				
+				$dbEmployeeTitleOld->close();	
+				*/			
 				// end put "last date" for old title
 				
 				
