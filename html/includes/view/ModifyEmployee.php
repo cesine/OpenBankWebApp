@@ -52,8 +52,8 @@ $employee->EmployeeList();
 
 $selectedInfo=$_POST["choiceInfo"];
 $selectedEmployee=$_POST["choiceEmployee"];
-$selectedEmployeeCurrent=$selectedEmployee;
-//$_SESSION["selectedEmployeeCurrent"]=$selectedEmployee;
+//$selectedEmployeeCurrent=$selectedEmployee;
+$_SESSION['selectedEmployeeCurrent']=$selectedEmployee;
 
 //if submit selection button is pressed:
 if (isset($_POST["SelectedOptionsSubmit"])) 						
@@ -80,7 +80,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		//echo "<h4> Selected: </h4>\n";
 		//echo "<h5> information to change: $selectedInfo </h5>\n";
 		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
-		require_once('includes/view/AddEmployee.Class.php');		
+		//require_once('includes/view/AddEmployee.Class.php');		
 		
 		echo "<h4> Current Info: </h4>\n";
 ?>
@@ -201,6 +201,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 				//echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
 				
 				//echo $_SESSION["selectedEmployeeCurrent"];
+				echo $_SESSION['selectedEmployeeCurrent'];
 				
 				echo "<h5> branch ID:      $branchIDNew </h5>\n";
 				echo "<h5> employee title: $titleNameNew </h5>\n";
