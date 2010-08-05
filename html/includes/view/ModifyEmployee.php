@@ -211,6 +211,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				
 				// find title id from title name
 			
+				/*
 				$dbEmployeeTitleID = new Database();
 				$dbEmployeeTitleID->connect();
 				
@@ -232,6 +233,28 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$titleIDNew=$row[titleid];
 					
 				$dbEmployeeTitleID->close();
+				*/
+				
+				if ($titleNameCurrent=="Branch Manager")
+				{
+					$titleIDNew = 10;
+				}	
+
+				elseif ($titleNameCurrent=="Assistant Manager")
+				{
+					$titleIDNew = 15;
+				}	
+
+				elseif ($titleNameCurrent=="Banking Consultant")
+				{
+					$titleIDNew = 20;
+				}	
+
+				elseif ($titleNameCurrent=="Teller")
+				{
+					$titleIDNew = 30;
+				}					
+				
 				
 
 				echo "<h5> employee title ID: $titleIDNew </h5>\n";				
