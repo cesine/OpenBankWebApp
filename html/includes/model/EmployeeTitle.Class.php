@@ -87,7 +87,7 @@ class EmployeeTitle{
 					{
 						$row=mysql_fetch_array($dbSelectTitle->queryResultsResource);
 						extract($row);
-						echo "<option value='$employeetitlename'>$employeetitlename</option>";
+						echo "<option value='$titlename'>$titlename</option>";
 					
 					}//endl if to only print when there are any results
 					echo "</select>\n";	
