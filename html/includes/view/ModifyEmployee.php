@@ -210,17 +210,6 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			}
 			else
 			{
-				echo "<h4> New info: </h4>\n";
-				echo "<h5> employee ID:    $selectedEmployee </h5>\n";	
-				//echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
-				
-				//echo $_SESSION["selectedEmployeeCurrent"];
-				echo $_SESSION['selectedEmployeeCurrent'];
-				
-				echo "<h5> branch ID:      $branchIDNew </h5>\n";
-				echo "<h5> employee title: $titleNameNew </h5>\n";
-				echo "<h5> salary:         $salaryNew </h5>\n";	
-				
 				echo "<h4> Old info: </h4>\n";
 			?>
 				
@@ -294,12 +283,19 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			<P></P>	
 <?php 				
 				
-				
+				echo "<h4> New info: </h4>\n";
+				echo "<h5> employee ID:    $selectedEmployee </h5>\n";	
+				//echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
+				//echo $_SESSION["selectedEmployeeCurrent"];
+				//echo $_SESSION['selectedEmployeeCurrent']; // correct
+				echo "<h5> branch ID:      $branchIDNew </h5>\n";
+				echo "<h5> employee title: $titleNameNew </h5>\n";
+				echo "<h5> salary:         $salaryNew </h5>\n";					
 
 				echo "<h4> Change on: </h4>\n";	
 
 				// put "last date" for old title
-				/*
+				
 				$dbEmployeeTitleOld = new Database();
 				$dbEmployeeTitleOld->connect();
 				
@@ -307,7 +303,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$queryEmployeeTitleOld=
 				"UPDATE employeeworkhistory 
 				 SET    lastdate = CURDATE()
-				 WHERE  employeeid=$selectedEmployeeCurrent AND branchid=$branchIdCurrent AND 
+				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIdCurrent AND 
 				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
 											
@@ -320,7 +316,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 					$employeeWorkHistory->initializeEmployeeWorkHistory($row);
 				}
 				$dbEmployeeTitleOld->close();	
-				*/			
+							
 				// end put "last date" for old title
 				
 				
