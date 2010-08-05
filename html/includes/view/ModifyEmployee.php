@@ -80,13 +80,83 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
 		echo "<h4> Current Info: </h4>\n";
 		
-		$employeeWorkHistory->EmployeeWorkHistoryCurrent($selectedEmployee);
+		//$employeeWorkHistory->EmployeeWorkHistoryCurrent($selectedEmployee);
+		?>
 		
-		echo "<h4> current title: </h4>\n";	
-		$s=$employeeWorkHistory->getTitleIDCurrent();
-		$s2=$employeeWorkHistory->getTitleID();		
-		echo "<h4> s= $s </h4>\n";		
-		echo "<h4> s2= $s2 </h4>\n";	
+		
+		<!-- Show current info -->
+		<table width="100%" border="1" cellpadding="3" cellspacing="1">
+		<tr>
+			<td>
+			Employee ID
+			</td>
+			<td>
+			Branch ID
+			</td>
+			<td>
+			Start date
+			</td>
+			<td>
+			Last date
+			</td>
+			<td>
+			Title ID
+			</td>
+			<td>
+			Title name
+			</td>					
+			<td>
+			Salary
+			</td>	
+		</tr>
+		
+		<?php
+		
+			$employeeTitle = new EmployeeTitle();
+			$employeeWorkHistory = new EmployeeWorkHistory();			
+			
+			// Display current info of employee from table "employeeworkhistory" 
+			$dbEmployeeWorkHistory = new Database();
+			$dbEmployeeWorkHistory->connect();
+			
+			// note: in query we use data, selected by user
+			$queryEmployeeWorkHistory=
+			"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
+			 FROM   employeeworkhistory e, employeetitle t	
+			 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
+										
+			$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
+			
+			//Put results of query 1 into table on the screen
+			for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
+			{
+				$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
+				$employeeWorkHistory->initializeEmployeeWorkHistory($row);
+				$employeeWorkHistory->displayEmployeeWorkHistory2();
+				$employeeTitle->initializeEmployeeTitle($row);
+				$employeeTitle->displayEmployeeTitleName();	
+				$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
+			}
+			// save current values
+			$branchIdCurrent=$row[branchid];	
+			$startDateCurrent=$row[startdate];	
+			$lastDateCurrent=$row[lastdate];
+			$titleIDCurrent=$row[titleid];	
+			$titleNameCurrent=$row[titlename];			
+			$salaryCurrent=$row[salary];											
+		
+			$dbEmployeeWorkHistory->close();
+		?>
+		</table>
+		<P></P>		
+		
+		<?php 		
+		
+		//echo "<h4> current title: </h4>\n";	
+		//$s=$employeeWorkHistory->getTitleIDCurrent();
+		//$s2=$employeeWorkHistory->getTitleID();		
+		//echo "<h4> s= $s </h4>\n";		
+		//echo "<h4> s2= $s2 </h4>\n";	
 
 		$titleIDCurrent=$row[titleid];	
 		echo "<h4> titleIDCurrent = $titleIDCurrent </h4>\n";			
