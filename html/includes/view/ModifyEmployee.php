@@ -166,7 +166,30 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 				<input type="text" name="choiceSalary" />
 			</td></tr>
 		</table>
-		<!-- End create field to change salary -->			
+		<!-- End create field to change salary -->		
+		
+		<!-- read input from user after submition -->
+		<P></P>
+		<input type="submit" name="SelectedOptionsSubmit" value="submit selection" />
+		<P></P>		
+		
+		<?php
+		
+		$branchIDNew=$_POST["choiceBranch"];
+		$titleNameNew=$_POST["choiceTitle"];
+		$salaryNew=$_POST["choiceSalary"];		
+		
+		//if submit selection button is pressed:
+		if (isset($_POST["SelectedOptionsSubmit"])) 						
+		{
+			
+			echo "<h4> New info: </h4>\n";
+			echo "<h5> branch ID:      $branchIDNew </h5>\n";
+			echo "<h5> employee title: $titleNameNew </h5>\n";
+			echo "<h5> salary:         $salaryNew </h5>\n";			
+		}
+		
+		?>			
 
 
 
