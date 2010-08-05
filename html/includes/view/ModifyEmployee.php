@@ -80,7 +80,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		//echo "<h4> Selected: </h4>\n";
 		//echo "<h5> information to change: $selectedInfo </h5>\n";
 		//echo "<h5> employee ID:           $selectedEmployee </h5>\n";
-		include('includes/model/AddClient.Class.php');		
+		require_once('includes/view/AddClient.Class.php');		
 		
 		echo "<h4> Current Info: </h4>\n";
 ?>
