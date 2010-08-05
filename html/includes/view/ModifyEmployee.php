@@ -366,7 +366,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 					$dbEmployeeWorkHistoryNew->connect();
 					
 					// note: in query we use data, selected by user
-					$queryEmployeeWorkHistory=
+					$queryEmployeeWorkHistoryNew=
 					"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
 					 FROM   employeeworkhistory e, employeetitle t	
 					 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";						
