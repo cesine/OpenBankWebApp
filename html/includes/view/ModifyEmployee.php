@@ -163,7 +163,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		<!-- Create field to change salary -->
 		<table border="1"> 
 			<tr><td width="180">Salary:</td><td width="180">
-				<input type="text" name="choiceSalary" value="$salaryCurrent" maxlength=9 />
+				<input type="text" name="choiceSalary" value="0" maxlength=9 />
 			</td></tr>
 		</table>
 		<!-- End create field to change salary -->		
@@ -186,7 +186,10 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 			}	
 			elseif (is_numeric($salaryNew)==false) 
 			{
-				echo "<h4>Salary field can contain only digits.</h4>";					
+				echo "<h4>Salary field can contain only digits.</h4>";	
+				exit;
+	
+	
 			}
 			else
 			{
