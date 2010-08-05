@@ -186,6 +186,7 @@ $clientAccount->connect();
 $queryBranchid =   "SELECT distinct `branchid`
 					FROM `clientaccount` 
 					WHERE `clientid` = 54010015";
+					//WHERE 'clientid' = $_SESSION[""];
 
 $clientAccount->query($queryBranchid);
 
@@ -193,6 +194,7 @@ $row=mysql_fetch_array($clientAccount->queryResultsResource);
 $branchID = $row[branchid];
 
 echo"The cliend's branch is", $branchID, "<br/>";
+echo "Today's date: ", date();
 ?>
 
 
