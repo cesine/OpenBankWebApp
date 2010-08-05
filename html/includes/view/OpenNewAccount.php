@@ -174,7 +174,7 @@ switch ($userChoice)
 		print "Please try again!";	
 }
 //end of switch
-	echo "You picked account type", $clientAccount->getAccountTypeId(), "<br/>";
+	echo  "<br/>", "You picked account type", $clientAccount->getAccountTypeId(), "<br/>";
 }
 //end of if
 
@@ -186,6 +186,8 @@ $clientAccount->connect();
 $queryBranchid =   "SELECT distinct `branchid`
 					FROM `clientaccount` 
 					WHERE `clientid` = 54010015";
+
+$clientAccount->query($queryBranchid);
 
 $row=mysql_fetch_array($clientAccount->queryResultsResource);
 $branchID = $row[branchid];
