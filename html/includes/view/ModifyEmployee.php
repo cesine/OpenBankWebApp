@@ -197,18 +197,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			</table>
 			<P></P>	
 <?php 				
-				
-				echo "<h4> New info: </h4>\n";
-				echo "<h5> employee ID:    $selectedEmployee </h5>\n";	
-				//echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
-				//echo $_SESSION["selectedEmployeeCurrent"];
-				//echo $_SESSION['selectedEmployeeCurrent']; 						// correct
-				echo "<h5> branch ID:      $branchIDNew </h5>\n";
-				echo "<h5> employee title: $titleNameNew </h5>\n";
-				echo "<h5> salary:         $salaryNew </h5>\n";					
-
-				echo "<h4> Change on: </h4>\n";	
-				
+			
 				// find title id from title name
 			
 				/*
@@ -235,6 +224,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$dbEmployeeTitleID->close();
 				*/
 				
+				// find title id from title name
 				if ($titleNameNew=="Branch Manager")
 				{
 					$titleIDNew = 10;
@@ -254,27 +244,40 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				{
 					$titleIDNew = 30;
 				}					
+				// end find title id from title name				
 				
-				
+				echo "<h4> New info: </h4>\n";
+				echo "<h5> employee ID:    	  $selectedEmployee </h5>\n";	
+				//echo $_SESSION['selectedEmployeeCurrent']; 						// correct
+				echo "<h5> branch ID:         $branchIDNew </h5>\n";
+				echo "<h5> employee title:    $titleNameNew </h5>\n";
+				echo "<h5> employee title ID: $titleIDNew </h5>\n";					
+				echo "<h5> salary:            $salaryNew </h5>\n";					
 
-				echo "<h5> employee title ID: $titleIDNew </h5>\n";				
+				echo "<h4> Change on: </h4>\n";	
 					
 				// end find title id from title name
 				
 				// put "last date" for old title
-				
-				
 				$dbEmployeeTitleOld = new Database();
 				$dbEmployeeTitleOld->connect();
 				
 				// note: in query we use data, selected by user
 				$queryEmployeeTitleOld=
-				
+				/*
 				"UPDATE employeeworkhistory 
 				 SET    lastdate = CURDATE()
 				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIdCurrent AND 
 				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
+				*/        
+				
+				"UPDATE employeeworkhistory 
+				SET    lastdate = CURDATE()
+				WHERE  employeeid=20000014 AND branchid=10001 AND 
+				       startdate = '2009-01-01' AND lastdate='0000-00-00' AND 
+				       titleid=20 AND salary=40000";				
+				
 											
 				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
 				$dbEmployeeTitleOld->close();
