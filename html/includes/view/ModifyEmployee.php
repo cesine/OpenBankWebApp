@@ -170,7 +170,7 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		
 		<!-- read input from user after submition -->
 		<P></P>
-		<input type="submit" name="SelectedOptionsSubmit" value="submit selection" />
+		<input type="submit" name="SubmitChanges" value="submit changes" />
 		<P></P>		
 		
 		<?php
@@ -180,7 +180,7 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		$salaryNew=$_POST["choiceSalary"];		
 		
 		//if submit selection button is pressed:
-		if (isset($_POST["SelectedOptionsSubmit"])) 						
+		if (isset($_POST["SubmitChanges"])) 						
 		{
 			
 			echo "<h4> New info: </h4>\n";
