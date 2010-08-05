@@ -125,7 +125,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 			$queryEmployeeWorkHistory=
 			"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
 			 FROM   employeeworkhistory e, employeetitle t	
-			 WHERE  e.employeeid=$selectedEmployeeCurrent AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
+			 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
 										
 			$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
 			
@@ -197,7 +197,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 			else
 			{
 				echo "<h4> New info: </h4>\n";
-				echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
+				echo "<h5> employee ID:    $selectedEmployee </h5>\n";	
 				//echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
 				
 				//echo $_SESSION["selectedEmployeeCurrent"];
