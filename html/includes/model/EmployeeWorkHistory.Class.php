@@ -13,10 +13,7 @@ class EmployeeWorkHistory{
 	
 	private $titleIDCurrent;
 	
-	public function getTitleIDCurrent() 
-	{
-		return $this->titleIDCurrent;
-	}	
+
 
 	public function getEmployeeID() 
 	{
@@ -187,7 +184,13 @@ class EmployeeWorkHistory{
 		<P></P>		
 
 <?php 
-	} // end public function EmployeeWorkHistoryCurrent()		
+	} // end public function EmployeeWorkHistoryCurrent()	
+
+
+	public function getTitleIDCurrent() 
+	{
+		return $this->titleIDCurrent;
+	}		
 	
 	
 }
