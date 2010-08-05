@@ -1,5 +1,5 @@
 <?php 
-//include('includes/controller/Database.Class.php');
+//include('includes/controller/Database.Class.php'); //included automaticaly by the header
 class User{
 	private $userId;
 	private $password;

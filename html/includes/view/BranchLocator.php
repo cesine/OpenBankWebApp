@@ -1,6 +1,6 @@
 <?php 
-include('includes/model/Branch.Class.php');
-include('includes/controller/Database.Class.php');
+require_once 'includes/model/Branch.Class.php';
+//include('includes/controller/Database.Class.php');  //included automatically by the header
 echo '<div>';
 //$branchToDisplay = new Branch();
 //$branchToDisplay->test();
