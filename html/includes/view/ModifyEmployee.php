@@ -83,7 +83,6 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		
 		
 		<!-- Show current info -->
-		<!--  
 		<table width="100%" border="1" cellpadding="3" cellspacing="1">
 		<tr>
 			<td>
@@ -108,11 +107,9 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 			Salary
 			</td>	
 		</tr>
-		-->
 		
 		<?php
 		
-			/*
 			$employeeTitle = new EmployeeTitle();
 			$employeeWorkHistory = new EmployeeWorkHistory();			
 			
@@ -147,27 +144,16 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 			$salaryCurrent=$row[salary];											
 		
 			$dbEmployeeWorkHistory->close();
-			*/
+
 		?>
 		
-		<!--  
 		</table>
 		<P></P>	
-		-->			
 		
-		<?php 		
-		
-		$employeeWorkHistory->EmployeeWorkHistoryCurrent($selectedEmployee);
-		//echo "<h4> current title: </h4>\n";	
-		//$s=$employeeWorkHistory->getTitleIDCurrent();
-		$s2=($employeeWorkHistory->getTitleID());		
-		//echo "<h4> s= $s </h4>\n";		
-		echo "<h4> s2= $s2 </h4>\n";	
-		echo "<h4> $employeeWorkHistory->getTitleID </h4>\n";			
+		<?php 	
+			echo "<h4> Change on: </h4>\n";	
+			$branch->BranchList();
 
-		$titleIDCurrent=$row[titleid];	
-		echo "<h4> titleIDCurrent = $titleIDCurrent </h4>\n";			
-		
 		?>
 
 
