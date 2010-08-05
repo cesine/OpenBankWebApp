@@ -142,6 +142,7 @@ class EmployeeWorkHistory{
 		<?php
 		
 			$employeeTitle = new EmployeeTitle();
+			$employeeWorkHistory = new EmployeeWorkHistory();			
 			
 			// Display current info of employee from table "employeeworkhistory" 
 			$dbEmployeeWorkHistory = new Database();
@@ -159,8 +160,8 @@ class EmployeeWorkHistory{
 			for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
 			{
 				$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
-				initializeEmployeeWorkHistory($row);
-				displayEmployeeWorkHistory2();
+				$employeeWorkHistory->initializeEmployeeWorkHistory($row);
+				$employeeWorkHistory->displayEmployeeWorkHistory2();
 				$employeeTitle->initializeEmployeeTitle($row);
 				$employeeTitle->displayEmployeeTitleName();	
 				displayEmployeeWorkHistorySalary();								
