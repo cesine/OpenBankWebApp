@@ -296,7 +296,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 
 				// put "last date" for old title
 				
-				
+				/*
 				$dbEmployeeTitleOld = new Database();
 				$dbEmployeeTitleOld->connect();
 				
@@ -310,7 +310,9 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
 											
 				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
-				$dbEmployeeTitleOld->close();	
+				$dbEmployeeTitleOld->close();
+				*/
+					
 				// end put "last date" for old title
 		
 			} // end input is OK
