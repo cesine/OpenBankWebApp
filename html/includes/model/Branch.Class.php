@@ -134,7 +134,7 @@ class Branch{
 		<!-- Select branch to show -->
 		<table border="1"> 
 			<tr><td width="180">Select branch:</td><td width="180">
-				<select name="choice2">
+				<select name="choiceBranch">
 				
 				<?php 
 				
