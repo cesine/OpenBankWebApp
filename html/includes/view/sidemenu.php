@@ -26,7 +26,7 @@
 		<td width="14" height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td width="124"><a
-		href="index.php?&content=OpenNewAccount"
+		href="index.php?&content=NewOpenNewAccount"
 		class="linkVertMenu">Open an Account</a></td>
 	</tr>
 
