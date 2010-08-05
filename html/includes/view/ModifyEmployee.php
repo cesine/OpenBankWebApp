@@ -86,7 +86,10 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		$s=$employeeWorkHistory->getTitleIDCurrent();
 		$s2=$employeeWorkHistory->getTitleID();		
 		echo "<h4> s= $s </h4>\n";		
-		echo "<h4> s2= $s2 </h4>\n";					
+		echo "<h4> s2= $s2 </h4>\n";	
+
+		$titleIDCurrent=$row[titleid];	
+		echo "<h4> titleIDCurrent = $titleIDCurrent </h4>\n";			
 		
 		?>
 
