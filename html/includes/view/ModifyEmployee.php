@@ -129,7 +129,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h4> Old info: </h4>\n";
 			?>
 				
-			<!-- Show current info -->
+			<!-- Show old info -->
 			<table width="100%" border="1" cellpadding="3" cellspacing="1">
 			<tr>
 				<td>
@@ -246,6 +246,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				}					
 				// end find title id from title name				
 				
+				/*
 				echo "<h4> New info: </h4>\n";
 				echo "<h5> employee ID:    	  $selectedEmployee </h5>\n";	
 				//echo $_SESSION['selectedEmployeeCurrent']; 						// correct
@@ -260,7 +261,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h5> start date:        $startDateCurrent </h5>\n";				
 				echo "<h5> employee title:    $titleNameCurrent </h5>\n";
 				echo "<h5> employee title ID: $titleIDCurrent </h5>\n";					
-				echo "<h5> salary:            $salaryCurrent </h5>\n";					
+				echo "<h5> salary:            $salaryCurrent </h5>\n";		
+				*/			
 
 				//echo "<h4> Change on: </h4>\n";	
 					
@@ -327,20 +329,78 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$dbEmployeeUpdate->query($queryEmployeeUpdate);
 				$dbEmployeeUpdate->close();
 				// end update branch/title/salary in employee table	
+				
+				echo "<h4> New info: </h4>\n";
+?>				
+				
+				<!-- Show new info -->
+				<table width="100%" border="1" cellpadding="3" cellspacing="1">
+				<tr>
+					<td>
+					Employee ID
+					</td>
+					<td>
+					Branch ID
+					</td>
+					<td>
+					Start date
+					</td>
+					<td>
+					Last date
+					</td>
+					<td>
+					Title ID
+					</td>
+					<td>
+					Title name
+					</td>					
+					<td>
+					Salary
+					</td>	
+				</tr>
+				
+				<?php
+					
+					// Display new info of employee from table "employeeworkhistory" 
+					$dbEmployeeWorkHistoryNew = new Database();
+					$dbEmployeeWorkHistoryNew->connect();
+					
+					// note: in query we use data, selected by user
+					$queryEmployeeWorkHistory=
+					"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
+					 FROM   employeeworkhistory e, employeetitle t	
+					 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";						
+												
+					$dbEmployeeWorkHistoryNew->query($queryEmployeeWorkHistoryNew);
+					
+					//Put results of query 1 into table on the screen
+					for($count=0;$count<$dbEmployeeWorkHistoryNew->queryResultsCount;$count=$count+1)
+					{
+						$row=mysql_fetch_array($dbEmployeeWorkHistoryNew->queryResultsResource);	
+						$employeeWorkHistory->initializeEmployeeWorkHistory($row);
+						$employeeWorkHistory->displayEmployeeWorkHistory2();
+						$employeeTitle->initializeEmployeeTitle($row);
+						$employeeTitle->displayEmployeeTitleName();	
+						$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
+					}
+			
+					$dbEmployeeWorkHistoryNew->close();
+				
+?>
+		
+				</table>
+				<P></P>
+<?php 									
 	
 		
 			} // end input is OK
 
 		} // end if (isset($_POST["SubmitChanges"]))
 		
-?>			
-
-
-
 		
-<?php 		
 	} // end elseif ($selectedInfo=="branch/title/salary")	
 
+	
 	elseif ($selectedInfo=="vacation type")
 	{
 		
