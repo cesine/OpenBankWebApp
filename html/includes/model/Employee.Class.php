@@ -149,7 +149,7 @@ class Employee{
 		<!-- Select employee to show -->
 		<table border="1"> 
 			<tr><td width="180">Select employee to show:</td><td width="180">
-				<select name="choice1">
+				<select name="choiceEmployee">
 				
 				<?php 
 					
