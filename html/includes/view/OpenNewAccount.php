@@ -194,7 +194,7 @@ $row=mysql_fetch_array($clientAccount->queryResultsResource);
 $branchID = $row[branchid];
 
 echo"The cliend's branch is", $branchID, "<br/>";
-echo "Today's date: ", date('Y m d');
+echo "Today's date: ", date('Y-m-d');
 ?>
 
 
