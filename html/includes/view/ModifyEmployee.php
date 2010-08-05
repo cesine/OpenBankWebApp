@@ -163,7 +163,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		<!-- Create field to change salary -->
 		<table border="1"> 
 			<tr><td width="180">Salary:</td><td width="180">
-				<input type="text" name="choiceSalary" value=$salaryCurrent maxlength=8 />
+				<input type="text" name="choiceSalary" value="$salaryCurrent" maxlength=9 />
 			</td></tr>
 		</table>
 		<!-- End create field to change salary -->		
@@ -175,32 +175,28 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		
 		<?php
 		
-		$branchIDNew=$_POST["choiceBranch"];
-		$titleNameNew=$_POST["choiceTitle"];
-		$salaryNew=$_POST["choiceSalary"];		
-		
-		//if submit selection button is pressed:
-		//if (isset($_POST["SubmitChanges"])) 						
-		{
+			$branchIDNew=$_POST["choiceBranch"];
+			$titleNameNew=$_POST["choiceTitle"];
+			$salaryNew=$_POST["choiceSalary"];		
 			
 		    // validate values 
-		    
-		    if($salaryNew=="")
+			if($salaryNew=="")
 			{
-				$error_message .= "Salary field is empty! <br/>";
-			}			
-			if($salaryNew != "")
-		    {
-		        if(! ereg("^[[:digit:]]+$", $salaryNew))
-		        {$error_message .= "Salary must contain only numbers<br/>";}
-		    }
-	
-			echo "<h4> New info: </h4>\n";
-			echo "<h5> employee ID:    $selectedEmployee </h5>\n";			
-			echo "<h5> branch ID:      $branchIDNew </h5>\n";
-			echo "<h5> employee title: $titleNameNew </h5>\n";
-			echo "<h5> salary:         $salaryNew </h5>\n";			
-		}
+				echo "<h4>Please, provide salary ID.</h4>";
+			}	
+			elseif (is_numeric($salaryNew)==false) 
+			{
+				echo "<h4>Salary field can contain only digits.</h4>";					
+			}
+			else
+			{
+				echo "<h4> New info: </h4>\n";
+				echo "<h5> employee ID:    $selectedEmployee </h5>\n";			
+				echo "<h5> branch ID:      $branchIDNew </h5>\n";
+				echo "<h5> employee title: $titleNameNew </h5>\n";
+				echo "<h5> salary:         $salaryNew </h5>\n";						
+				
+			} // end input is OK		
 		
 		?>			
 
