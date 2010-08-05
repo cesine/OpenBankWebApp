@@ -295,6 +295,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h4> Change on: </h4>\n";	
 				
 				// find title id from title name
+				
+				/*
 			
 				$dbEmployeeTitleID = new Database();
 				$dbEmployeeTitleID->connect();
@@ -317,6 +319,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$titleIDNew=$row[titleid];
 					
 				$dbEmployeeTitleID->close();
+				*/
 
 				echo "<h5> employee title ID: $titleIDNew </h5>\n";				
 					
