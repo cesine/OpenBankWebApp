@@ -1,14 +1,24 @@
 <?php 
-$clientId=$_POST[clientid];
-$pass=$_POST[pass];
-
+$clientId=$_POST['$clientid'];
+$pass=$_POST['$pass'];
+require_once ('includes/model/User.Class.php');
+//echo "From post: ".$clientId.$pass;
+$userLoggedIn= new User($clientId,$pass);
+if($userLoggedIn->isClient()||$userLoggedIn->isEmployee()){
+	$_SESSION['User']=serialize($userLoggedIn);
+}else{
+	unset($_SESSION['User']);
+}
+if($_GET['action']=="logout"){
+	unset($_SESSION['User']);
+}
 ?>
 
 
 
 
 
-<form action="?&content=Summary" method="post">
+<form action="?&content=Login" method="post">
 <fieldset>
 <legend><font color=cornflowerblue><b>Please log in</b></font></legend>
 <table width="240" border="0" align="center" cellpadding="10"
@@ -16,13 +26,13 @@ $pass=$_POST[pass];
 	<tr>
 		<td class="fieldTitleLeftB">Bank Card Number</td>
 
-		<td><input type="text" value="54010015" name="clientid" size=17
+		<td><input type="text" value="54010015" name="$clientid" size=8
 			maxlength=16></td>
 	</tr>
 	<tr>
 		<td class="fieldTitleLeftB">Password</td>
-		<td height=""><input type="password" name="pass" value="Hi89R!23" size=17
-			maxlength=16 autocomplete="off"></td>
+		<td height=""><input type="password" name="$pass" value="Hi89R!23" size=20
+			maxlength=16 ></td>
 	</tr>
 </table>
 <input type="submit" name="mysubmit" value="Submit">
