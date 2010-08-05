@@ -151,17 +151,22 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		<P></P>	
 		
 		<?php 	
+			
 			echo "<h4> Change on: </h4>\n";	
 			// show dynamic list with branches id
 			$branch->BranchList();
 			
 			// show dynamic list with employee title names
-			$employeeTitle->displayEmployeeTitleList();			
-
+			$employeeTitle->displayEmployeeTitleList();	
 		?>
 
-
-
+		<!-- Create field to change salary -->
+		<table border="1"> 
+			<tr><td width="180">Salary:</td><td width="180">
+				<input type="text" name="choiceSalary" />
+			</td></tr>
+		</table>
+		<!-- End create field to change salary -->			
 
 
 
