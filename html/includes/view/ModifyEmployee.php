@@ -83,6 +83,7 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 		
 		
 		<!-- Show current info -->
+		<!--  
 		<table width="100%" border="1" cellpadding="3" cellspacing="1">
 		<tr>
 			<td>
@@ -107,9 +108,11 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 			Salary
 			</td>	
 		</tr>
+		-->
 		
 		<?php
 		
+			/*
 			$employeeTitle = new EmployeeTitle();
 			$employeeWorkHistory = new EmployeeWorkHistory();			
 			
@@ -144,9 +147,13 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 			$salaryCurrent=$row[salary];											
 		
 			$dbEmployeeWorkHistory->close();
+			*/
 		?>
+		
+		<!--  
 		</table>
-		<P></P>		
+		<P></P>	
+		-->			
 		
 		<?php 		
 		
