@@ -1,5 +1,5 @@
 <?php 
-include('includes/controller/Database.Class.php');
+//include('includes/controller/Database.Class.php');
 class User{
 	private $userId;
 	private $password;
