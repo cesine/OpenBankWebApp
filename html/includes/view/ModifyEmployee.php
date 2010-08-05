@@ -188,7 +188,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		
 			$branchIDNew=$_POST["choiceBranch"];
 			$titleNameNew=$_POST["choiceTitle"];
-			$salaryNew=$_POST["choiceSalary"];		
+			$salaryNew=$_POST["choiceSalary"];	
+			$selectedEmployee=$_POST["choiceEmployee"];					
 			
 		    // validate values 
 			if($salaryNew=="")
