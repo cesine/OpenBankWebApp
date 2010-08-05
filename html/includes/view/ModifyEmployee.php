@@ -52,6 +52,7 @@ $employee->EmployeeList();
 
 $selectedInfo=$_POST["choiceInfo"];
 $selectedEmployee=$_POST["choiceEmployee"];
+$selectedEmployeeCurrent=$selectedEmployee;
 
 //if submit selection button is pressed:
 if (isset($_POST["SelectedOptionsSubmit"])) 						
@@ -121,7 +122,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 			$queryEmployeeWorkHistory=
 			"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
 			 FROM   employeeworkhistory e, employeetitle t	
-			 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
+			 WHERE  e.employeeid=$selectedEmployeeCurrent AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
 										
 			$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
 			
@@ -188,14 +189,12 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 			elseif (is_numeric($salaryNew)==false) 
 			{
 				echo "<h4>Salary field can contain only digits.</h4>";	
-				exit;
-	
 	
 			}
 			else
 			{
 				echo "<h4> New info: </h4>\n";
-				echo "<h5> employee ID:    $selectedEmployee </h5>\n";			
+				echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";			
 				echo "<h5> branch ID:      $branchIDNew </h5>\n";
 				echo "<h5> employee title: $titleNameNew </h5>\n";
 				echo "<h5> salary:         $salaryNew </h5>\n";		
@@ -208,7 +207,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 				$queryEmployeeTitleOld=
 				"UPDATE employeeworkhistory 
 				 SET    lastdate = CURDATE()
-				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIdCurrent AND 
+				 WHERE  employeeid=$selectedEmployeeCurrent AND branchid=$branchIdCurrent AND 
 				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
 											
