@@ -9,7 +9,7 @@ echo "<form action='?&content=OpenNewAccount method='POST'>";
 
 
 
-<P>Please select your choice.</P>
+<P>Please choose an account of your choice.</P>
 <!-- 
 <table border="1">
 <tr><td>Services:</td><td><select name="service" size="4" single="single">
