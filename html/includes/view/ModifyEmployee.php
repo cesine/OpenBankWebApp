@@ -198,7 +198,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			
 			
 		    // validate values 
-			if($salaryNew=="")
+			if($salaryNew=="" || $salaryNew=="0")
 			{
 				echo "<h4>Please, provide salary ID.</h4>";
 				//unset($_POST["SelectedOptionsSubmit"]); 
@@ -287,7 +287,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				echo "<h5> employee ID:    $selectedEmployee </h5>\n";	
 				//echo "<h5> employee ID:    $selectedEmployeeCurrent </h5>\n";	
 				//echo $_SESSION["selectedEmployeeCurrent"];
-				//echo $_SESSION['selectedEmployeeCurrent']; // correct
+				//echo $_SESSION['selectedEmployeeCurrent']; 						// correct
 				echo "<h5> branch ID:      $branchIDNew </h5>\n";
 				echo "<h5> employee title: $titleNameNew </h5>\n";
 				echo "<h5> salary:         $salaryNew </h5>\n";					
@@ -314,6 +314,27 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				*/
 					
 				// end put "last date" for old title
+				
+				// put "start date" for new title
+				
+				
+				$dbEmployeeTitleNew = new Database();
+				$dbEmployeeTitleNew->connect();
+				
+				// note: in query we use data, selected by user
+				$queryEmployeeTitleNew=
+				
+				"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
+												  titleid, salary)
+	            VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', 15, $salaryNew)";								  
+                //VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', $titleIDNew, $salaryNew)";
+									
+				$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
+				$dbEmployeeTitleNew->close();
+				
+					
+				// end put "last date" for old title				
+				
 		
 			} // end input is OK
 
