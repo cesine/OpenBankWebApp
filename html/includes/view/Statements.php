@@ -2,7 +2,7 @@
 
 include('includes/model/Transaction.Class.php');
 
-include('includes/controller/Database.Class.php');
+require_once('includes/controller/Database.Class.php');
 
 // access client_account_id
 require_once 'includes/model/ClientAccount.Class.php';
