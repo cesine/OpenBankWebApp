@@ -163,7 +163,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		<!-- Create field to change salary -->
 		<table border="1"> 
 			<tr><td width="180">Salary:</td><td width="180">
-				<input type="text" name="choiceSalary" />
+				<input type="text" name="choiceSalary" value=$salaryCurrent maxlength=8 />
 			</td></tr>
 		</table>
 		<!-- End create field to change salary -->		
@@ -183,7 +183,20 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		//if (isset($_POST["SubmitChanges"])) 						
 		{
 			
+		    // validate values 
+		    
+		    if($salaryNew=="")
+			{
+				$error_message .= "Salary field is empty! <br/>";
+			}			
+			if($salaryNew != "")
+		    {
+		        if(! ereg("^[[:digit:]]+$", $salaryNew))
+		        {$error_message .= "Salary must contain only numbers<br/>";}
+		    }
+	
 			echo "<h4> New info: </h4>\n";
+			echo "<h5> employee ID:    $selectedEmployee </h5>\n";			
 			echo "<h5> branch ID:      $branchIDNew </h5>\n";
 			echo "<h5> employee title: $titleNameNew </h5>\n";
 			echo "<h5> salary:         $salaryNew </h5>\n";			
