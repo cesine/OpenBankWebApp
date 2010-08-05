@@ -293,17 +293,11 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				       startdate = '2009-01-01' AND lastdate='0000-00-00' AND 
 				       titleid=20 AND salary=40000";	
 				*/       			
-				
-											
 				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
 				$dbEmployeeTitleOld->close();
-				
-					
 				// end put "last date" for old title
 				
 				// put "start date" for new title
-				
-				/*
 				$dbEmployeeTitleNew = new Database();
 				$dbEmployeeTitleNew->connect();
 				
@@ -316,9 +310,6 @@ if (isset($_POST['SelectedOptionsSubmit']))
 									
 				$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
-				*/
-				
-					
 				// end put "last date" for old title				
 				
 		
