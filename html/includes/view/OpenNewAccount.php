@@ -3,6 +3,7 @@
 //client is opening a new account
 
 require_once('includes/model/ClientAccount.Class.php');
+require_once('includes/controller/Database.Class.php');
 
 echo "<form action='?&content=OpenNewAccount method='POST'>";
 ?>
@@ -86,7 +87,7 @@ $clientAccount = new ClientAccount();
 $userChoice=$_POST["accountType"];
 
 //if user submitted choice
-if (isset($_POST['submitAccountName'])) 
+//if (isset($_POST['submitAccountName'])) 
 {
 switch ($userChoice)
 {
@@ -175,7 +176,24 @@ switch ($userChoice)
 //end of switch
 	echo "You picked account type", $clientAccount->getAccountTypeId();
 }
+//end of if
+
+//object for the table clientaccount
+$clientAccount = new Database();
+$clientAccount->connect();
+
+//query to find client's branch id
+$queryBranchid = "SELECT distinct `branchid`
+FROM `clientaccount` 
+WHERE `clientid` = 54010015";
+
+$row=mysql_fetch_array($clientAccount->queryResultsResource);
+$branchID = $row[branchid];
+
+
 ?>
 
+
+ 
 
 
