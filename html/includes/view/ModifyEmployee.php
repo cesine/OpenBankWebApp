@@ -1,5 +1,5 @@
 <?php 
-//session_start();
+session_start();
 include('includes/model/Employee.Class.php');
 include ('includes/view/employeetopmenu.php');  
 
@@ -56,8 +56,8 @@ $selectedEmployee=$_POST["choiceEmployee"];
 $_SESSION['selectedEmployeeCurrent']=$selectedEmployee;
 
 //if submit selection button is pressed:
-//if (isset($_POST["SelectedOptionsSubmit"])) 	
-if ($_POST['SelectedOptionsSubmit']) 						
+if (isset($_POST['SelectedOptionsSubmit'])) 	
+//if ($_POST['SelectedOptionsSubmit']) 						
 {
 
 	if ($selectedInfo=="first name")
@@ -181,8 +181,8 @@ if ($_POST['SelectedOptionsSubmit'])
 		
 		<?php
 		
-		//if (isset($_POST["SubmitChanges"])) 	
-		if ($_POST['SubmitChanges']) 							
+		if (isset($_POST['SubmitChanges'])) 	
+		//if ($_POST['SubmitChanges']) 							
 		{
 
 		
