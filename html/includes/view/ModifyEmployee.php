@@ -275,9 +275,15 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				
 				"UPDATE employeeworkhistory 
 				 SET    lastdate = CURDATE()
+				 WHERE  employeeid=$selectedEmployee AND lastdate='0000-00-00'";				
+				
+				/*
+				"UPDATE employeeworkhistory 
+				 SET    lastdate = CURDATE()
 				 WHERE  employeeid=$selectedEmployee AND branchid=$branchIDCurrent AND 
 				        startdate = $startDateCurrent AND lastdate='0000-00-00' AND 
 				        titleid=$titleIDCurrent AND salary=$salaryCurrent";
+				*/
 				        
 				
 				/*
