@@ -68,30 +68,36 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	
 <?php
 
-	$employeeFirstName=$_POST["choiceFirstName"];
-	$employeeLastName=$_POST["choiceLastName"];	
-	$employeeBranch=$_POST["choiceBranch"];	
-	$employeeTitle=$_POST["choiceTitle"];
-	$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
-	$employeePostalCode=$_POST["choicePostalCode"];				
-	
 	//if submit selection button is pressed:
 	if (isset($_POST['EmployeeInfoSubmit'])) 	
 	{
+		
+		$employeeFirstName=$_POST["choiceFirstName"];
+		$employeeLastName=$_POST["choiceLastName"];	
+		$employeeBranch=$_POST["choiceBranch"];	
+		$employeeTitle=$_POST["choiceTitle"];
+		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
+		$employeePostalCode=$_POST["choicePostalCode"];	
+	
+		echo "<h4> Selected: </h4>\n";
+		echo "<h5> first name: 		$employeeFirstName </h5>\n";
+		echo "<h5> last name:  		$employeeLastName </h5>\n";		
+		echo "<h5> branch:  		$employeeBranch </h5>\n";	
+		echo "<h5> title:  			$employeeTitle </h5>\n";	
+		echo "<h5> time off plan:  	$employeeTimeOffPlan </h5>\n";	
+		echo "<h5> postal code:  	$employeePostalCode </h5>\n";							
+		
 		
 	    // validate values 
 		if($employeeFirstName=="" || $employeeLastName=="")
 		{
 			echo "<h4>Please, provide first name and last name.</h4>";
 		}	
-		elseif (is_numeric($employeeFirstName)==true) 
+		elseif (is_numeric($employeeFirstName)==true ||
+				is_numeric($employeeLastName)==true) 
 		{
-			echo "<h4>First name should be a string.</h4>";	
+			echo "<h4>First and last name should be a string.</h4>";	
 		}
-		elseif (is_numeric($employeeLastName)==true) 
-		{
-			echo "<h4>Last name should be a string.</h4>";	
-		}		
 		else 																	// input is OK
 		{
 			//find base salary for selected title name
