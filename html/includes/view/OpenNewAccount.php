@@ -198,7 +198,8 @@ $clientAccount->close();
 echo "The cliend's branch is", $branchID, "<br/>";
 echo "Today's date: ", date('Y-m-d');
 
-if (($userChoice==1)||($userChoice==2)||($userChoice== 10)||($userChoice=11))
+if (($clientAccount->getAccountTypeId()==1)||($clientAccount->getAccountTypeId()==2)||
+        ($clientAccount->getAccountTypeId()== 10)||($clientAccount->getAccountTypeId()=11))
 {echo "<Br/>","Please fill in the amount you'd like to deposit in your new account.";
 //input for chequing and savings
 
@@ -206,7 +207,7 @@ if (($userChoice==1)||($userChoice==2)||($userChoice== 10)||($userChoice=11))
 
 
 ?>
-<table align="centre" border="1">
+<table align="centre" border="0">
     <tr> <td width="200"> <input type="text" name="amount"  maxlength=10 /> </td>
         <td width ="200"> <input type="submit" name="submitAmount" value="Submit" /></td>
     </tr>
