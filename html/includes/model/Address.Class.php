@@ -103,6 +103,48 @@ class Address{
 	public function displayStreetNumber()
 	{
 		echo '<TD class="tableDataLeftC">'.$this->streetNumber.'</TD>';		
-	}		
+	}	
+
+	public function PostalCodesList()
+	{
+?>
+		<!-- Build dynamic list of postal codes -->
+		<table border="1"> 
+			<tr><td width="180">Select postal code:</td><td width="180">
+				<select name="choiceTimeOffPlan">
+				
+				<?php 
+				
+					//Build dynamic selection list
+					$dbSelectPostalCode = new Database();
+					$dbSelectPostalCode->connect();
+					
+					$querySelectPostalCode="SELECT DISTINCT postalcodes 
+									   FROM postalcode";
+												
+					$dbSelectPostalCode->query($querySelectPostalCode);	
+					$result = $dbSelectPostalCode->query($querySelectPostalCode);						
+								   
+					//Put results of query into dynamic list
+					for($count=0;$count<$dbSelectPostalCode->queryResultsCount;$count=$count+1)
+					{
+						$row=mysql_fetch_array($dbSelectPostalCode->queryResultsResource);
+						extract($row);
+						echo "<option value='$postalcode'>$postalcode</option>";
+					
+					}//endl if to only print when there are any results
+					echo "</select>\n";	
+					$dbSelectPostalCode->close();
+				?>
+				
+				</select>
+			</td></tr>
+		</table>
+		<!-- End Build dynamic list of postal codes -->
+<?php 		
+	} // end public function PostalCodesList()		
+	
+	
+	
 }
 ?>
