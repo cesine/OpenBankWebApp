@@ -123,7 +123,7 @@ class EmployeeTitle{
 		}
 		
 		// save current values
-		$employeeBaseSalary=$row[basesalary];			
+		//$employeeBaseSalary=$row[basesalary];			
 		$dbSelectBaseSalary->close();
 	} // end public function EmployeeTitleBaseSalary()
 	
