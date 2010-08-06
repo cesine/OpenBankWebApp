@@ -106,7 +106,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 							
 			$querySelectBaseSalary="SELECT basesalary 
 							   		FROM employeetitle
-							   		WHERE titlename='Branch Manager'";
+							   		WHERE titlename=$employeeTitle";
 														
 			$dbSelectBaseSalary->query($querySelectBaseSalary);	
 			$result = $dbSelectBaseSalary->query($querySelectBaseSalary);						
@@ -114,7 +114,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			for($count=0;$count<$dbSelectBaseSalary->queryResultsCount;$count=$count+1)
 			{
 				$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
-				$title->initializeEmployeeTitle();
+				$title->initializeEmployeeTitle($row);
 			}
 			
 			// save current values
