@@ -119,7 +119,9 @@ class EmployeeTitle{
 		for($count=0;$count<$dbSelectBaseSalary->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
-			initializeEmployeeTitle($row);			
+			$title=new EmployeeTitle();
+			$title->initializeEmployeeTitle($row);
+			//initializeEmployeeTitle($row);			
 		}
 		$employeeBaseSalary=$row[basesalary];	
 		$dbSelectBaseSalary->close();
