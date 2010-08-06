@@ -61,6 +61,22 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	
 ?>
 
+	<!-- Create field for street name -->
+	<table border="1"> 
+		<tr><td width="180">Street name:</td><td width="180">
+			<input type="text" name="choiceStreet" maxlength=25 />
+		</td></tr>
+	</table>
+	<!-- End create field to put first name -->		
+	
+	<!-- Create field to put last name -->
+	<table border="1"> 
+		<tr><td width="180">Street number:</td><td width="180">
+			<input type="text" name="choiceStreetNumber" maxlength=6 />
+		</td></tr>
+	</table>
+	<!-- End create field to put last name -->	
+
 	<!-- read input from user after submition -->
 	<P></P>
 	<input type="submit" name="EmployeeInfoSubmit" value="submit selection" />
@@ -78,6 +94,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$employeeTitle=$_POST["choiceTitle"];
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
 		$employeePostalCode=$_POST["choicePostalCode"];	
+		$employeeStreet=$_POST["choiceStreet"];	
+		$employeeStreetNumber=$_POST["choiceStreetNumber"];			
 	
 		/*
 		echo "<h4> Selected: </h4>\n";
@@ -91,15 +109,21 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		
 		
 	    // validate values 
-		if($employeeFirstName=="" || $employeeLastName=="")
+		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet=="" ||
+		   $employeeStreetNumber=="")
 		{
-			echo "<h4>Please, provide first name and last name.</h4>";
+			echo "<h4>Empty values are not valid.</h4>";
 		}	
 		elseif (is_numeric($employeeFirstName)==true ||
-				is_numeric($employeeLastName)==true) 
+				is_numeric($employeeLastName)==true ||
+				is_numeric($employeeStreet)==true) 
 		{
-			echo "<h4>First and last name should be a string.</h4>";	
+			echo "<h4>First name, last name and street name should be a string.</h4>";	
 		}
+		elseif (is_numeric($employeeStreetNumber)==false) 
+		{
+			echo "<h4>Street number should contain only digits.</h4>";	
+		}		
 		else 																	// input is OK
 		{
 			
