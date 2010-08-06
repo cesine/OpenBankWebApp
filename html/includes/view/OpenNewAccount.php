@@ -199,7 +199,8 @@ echo "The cliend's branch is", $branchID, "<br/>";
 echo "Today's date: ", date('Y-m-d');
 
 if (($userChoice==1)||($userChoice==2)||($userChoice== 10)||($userChoice=11))
-echo "Please fill in the amount you'd like to deposit in your new account."; //input for chequing and savings
+{echo "<Br/>","Please fill in the amount you'd like to deposit in your new account.";
+//input for chequing and savings
 
 
 
@@ -212,9 +213,12 @@ echo "Please fill in the amount you'd like to deposit in your new account."; //i
 </table>
 
 
-/*should redirect to transaction/summary page to reflect new account and changes in the old account*/
+
 
 <?php
+
+/*should redirect to transaction/summary page to reflect new account and changes in the old account*/
  $userDeposit=$_POST["amount"];
  echo "<br/>", "Amount: ", $userDeposit, "<br/>";
+}
 ?>
