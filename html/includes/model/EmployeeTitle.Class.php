@@ -102,7 +102,7 @@ class EmployeeTitle{
 	} // end public function displayEmployeeTitleList()	
 		
 	
-	
+	/*
 	public function EmployeeTitleBaseSalary()
 	{
 		//find base salary for selected title name
@@ -126,6 +126,7 @@ class EmployeeTitle{
 		$employeeBaseSalary=$row[basesalary];	
 		$dbSelectBaseSalary->close();
 	} // end public function EmployeeTitleBaseSalary()
+	*/
 	
 	
 }
