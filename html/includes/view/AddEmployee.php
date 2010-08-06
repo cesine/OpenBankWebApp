@@ -127,6 +127,10 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			$dbSelectBaseSalary->close();	
 
 			$title->EmployeeTitleBaseSalary();
+			
+			$employeeBaseSalary=$title->getBaseSalary();
+			echo  "<br/>", "You picked base salary", $employeeBaseSalary, "<br/>";			
+			
 			echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
 			
 			// show base salary for selected title, which can be corrected
