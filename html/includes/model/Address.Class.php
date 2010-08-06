@@ -130,7 +130,7 @@ class Address{
 					{
 						$row=mysql_fetch_array($dbSelectPostalCode->queryResultsResource);
 						extract($row);
-						echo "<option value='$postalcode'>$postalcode</option>";
+						echo "<option value='$postalcodes'>$postalcodes</option>";
 					
 					}//endl if to only print when there are any results
 					echo "</select>\n";	
