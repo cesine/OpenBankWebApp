@@ -265,7 +265,7 @@ $result = $newClientAccount->query($queryAddAccount);
 
 
 
-/*if ($result)
+if ($result)
     {
         echo  "<br/>", "You're account has been created!" , "<br/>";
         echo 'Pl. follow the link to make a transfer';
@@ -275,5 +275,5 @@ else
         echo 'Sorry, there was a problem inserting values!';
     }
 
-    $newClientAccount->close();*/
+    $newClientAccount->close();
 ?>
