@@ -121,9 +121,7 @@ class EmployeeTitle{
 			$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
 			$title->initializeEmployeeTitle($row);			
 		}
-		
-		// save current values
-		//$employeeBaseSalary=$row[basesalary];			
+
 		$dbSelectBaseSalary->close();
 	} // end public function EmployeeTitleBaseSalary()
 	
