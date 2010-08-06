@@ -84,11 +84,11 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		{
 			echo "<h4>Please, provide first name and last name.</h4>";
 		}	
-		elseif (is_string($employeeFirstName)==false) 
+		elseif (is_numeric($employeeFirstName)==true) 
 		{
 			echo "<h4>First name should be a string.</h4>";	
 		}
-		elseif (is_string($employeeLastName)==false) 
+		elseif (is_numeric($employeeLastName)==true) 
 		{
 			echo "<h4>Last name should be a string.</h4>";	
 		}		
@@ -108,6 +108,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			for($count=0;$count<$dbSelectBaseSalary->queryResultsCount;$count=$count+1)
 			{
 				$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
+				$title->initializeEmployeeTitle();
 			}
 			
 			// save current values
@@ -134,7 +135,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 
 
-	echo "<input type=text disabled name=\"choiceFirstName\" size=\"25\" maxlength=\"20\" value=\"" . $s . "\">";
+	//echo "<input type=text disabled name=\"choiceFirstName\" size=\"25\" maxlength=\"20\" value=\"" . $s . "\">";
 	
 
 
