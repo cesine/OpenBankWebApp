@@ -102,7 +102,7 @@ class EmployeeTitle{
 	} // end public function displayEmployeeTitleList()	
 		
 	
-/*	
+	
 	public function EmployeeTitleBaseSalary()
 	{
 		//find base salary for selected title name
@@ -119,11 +119,14 @@ class EmployeeTitle{
 		for($count=0;$count<$dbSelectBaseSalary->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
+			$title->initializeEmployeeTitle($row);			
 		}
-		//echo "</select>\n";	
+		
+		// save current values
+		$employeeBaseSalary=$row[basesalary];			
 		$dbSelectBaseSalary->close();
 	} // end public function EmployeeTitleBaseSalary()
-*/	
+	
 	
 }
 ?>
