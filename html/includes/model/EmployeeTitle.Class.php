@@ -99,9 +99,10 @@ class EmployeeTitle{
 		</table>
 		<!-- End Build dynamic list of employee title names -->
 <?php 		
-	} // end public function displayEmployeeTitleList()		
+	} // end public function displayEmployeeTitleList()	
+		
 	
-	
+/*	
 	public function EmployeeTitleBaseSalary()
 	{
 		//find base salary for selected title name
@@ -121,11 +122,8 @@ class EmployeeTitle{
 		}
 		//echo "</select>\n";	
 		$dbSelectBaseSalary->close();
-
-	
 	} // end public function EmployeeTitleBaseSalary()
-	
-
+*/	
 	
 }
 ?>
