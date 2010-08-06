@@ -179,7 +179,7 @@ switch ($userChoice)
 }
 //end of if
 $accountTypeID=$clientAccount->getAccountTypeId();
-echo  "<br/>", "You picked account type", $accountID, "<br/>";
+echo  "<br/>", "You picked account type", $accountTypeID, "<br/>";
 //object for the table clientaccount
 $clientAccount = new Database();
 $clientAccount->connect();
