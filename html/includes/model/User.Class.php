@@ -34,9 +34,9 @@ class User{
 		print_r($db->queryFirstResult);
 		echo "<p>";
 		$_SESSION['LoggedInMessage']="";
+		unset($_SESSION['LoggedInMessage']);
 		//echo $userIdIn.$passwordIn;
-		if($db->queryFirstResult[passwd]==$this->password){
-			$_SESSION['LoggedInMessage']="Logged in as employee: ".$this->employeeId;
+		if($db->queryFirstResult[passwd]==$this->password && $db->queryResultsCount>0){
 			$this->employeeId=$this->userId;
 			$this->isEmployee=true;
 		}
@@ -50,24 +50,29 @@ class User{
 		$db->close();
 		//echo "clientlogin results";
 		//print_r($db->queryFirstResult);
-		if($db->queryFirstResult[passwd]==$this->password){
+		if($db->queryFirstResult[passwd]==$this->password  && $db->queryResultsCount>0){
 			$this->clientId=$this->userId;
 			$this->isClient=true;
 		}
 		/*
 		 * Display logged in as client, or swith to client if the user can be both client and employee
 		 */
-		if($this->isEmployee!=true && $this->isClient==true){
+		if($this->isEmployee==false && $this->isClient==true){
 			$_SESSION['LoggedInMessage']="Logged in as client: ".$this->clientId;
-		}elseif($this->isEmployee!=true && $this->isClient!=true){
-			$_SESSION['LoggedInMessage']="Not logged in.";
+		}elseif($this->isEmployee==false && $this->isClient==false){
+			$_SESSION['LoggedInMessage']="Username or password invalid.";
+		}elseif($this->isEmployee==true && $this->isClient==true){
+			$_SESSION['LoggedInMessage']="Logged in as employee: ".$this->employeeId."<br/><a href=''>Switch to ".$this->clientId."</a>";
+		}elseif($this->isEmployee==true && $this->isClient==false){
+			$_SESSION['LoggedInMessage']="Logged in as employee: ".$this->employeeId;
 		}else{
-			$_SESSION['LoggedInMessage']=$_SESSION['LoggedInMessage']."<a href=''>Switch to ".$this->clientId."</a>";
+			$_SESSION['LoggedInMessage']="Login error.";
 		}
-	
+				
 		echo "</p>";
 	
-}
+
+	}
 
 
 

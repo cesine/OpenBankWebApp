@@ -1,24 +1,5 @@
-<?php 
-$clientId=$_POST['$clientid'];
-$pass=$_POST['$pass'];
-require_once ('includes/model/User.Class.php');
-//echo "From post: ".$clientId.$pass;
-$userLoggedIn= new User($clientId,$pass);
-if($userLoggedIn->isClient()||$userLoggedIn->isEmployee()){
-	$_SESSION['User']=serialize($userLoggedIn);
-}else{
-	unset($_SESSION['User']);
-}
-if($_GET['action']=="logout"){
-	unset($_SESSION['User']);
-}
-?>
 
-
-
-
-
-<form action="?&content=Login" method="post">
+<form action="?&content=Summary&action=Login" method="post">
 <fieldset>
 <legend><font color=cornflowerblue><b>Please log in</b></font></legend>
 <table width="240" border="0" align="center" cellpadding="10"
