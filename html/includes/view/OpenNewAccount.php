@@ -254,13 +254,13 @@ if (isset($_POST[submitAmount]))
 $newClientAccount = new Database();
 $newClientAccount->connect();
 
-//$queryAddAccount = "INSERT INTO clientaccount (clientaccountid, branchid, clientid, accounttypeid,
-//                                        currentbalance, availablebalance, status, openingdate, closingdate)
-//                    VALUES ('110005000', $userBranch, '54010015', $userAccountChoice, '', '', '0' date('Y-m-d'), ' ')";
+$queryAddAccount = "INSERT INTO clientaccount (clientaccountid, branchid, clientid, accounttypeid,
+                                       currentbalance, availablebalance, status, openingdate, closingdate)
+                   VALUES ('110005000', $userBranch, '54010015', $userAccountChoice, '', '', '0' date('Y-m-d'), ' ')";
 
-$queryAddAccount = "INSERT INTO clientaccount SET clientaccountid = '110005000', branchid = '$userBranch', clientid = '54010015'
-accounttypeid = '$userAccountChoice', currentbalance = DEFAULT, availablebalance = DEFAULT, status = '0',
-openingdate = date('Y-m-d'), closingdate = DEFAULT";
+//$queryAddAccount = "INSERT INTO clientaccount SET clientaccountid = '110005000', branchid = '$userBranch', clientid = '54010015'
+//accounttypeid = '$userAccountChoice', currentbalance = DEFAULT, availablebalance = DEFAULT, status = '0',
+//openingdate = date('Y-m-d'), closingdate = DEFAULT";
 
 $result = $newClientAccount->query($queryAddAccount);
 
