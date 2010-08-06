@@ -264,7 +264,7 @@ $queryAddAccount = "INSERT INTO clientaccount (clientaccountid, branchid, client
 
 $result = $newClientAccount->query($queryAddAccount);
 
-$newClientAccount->close();
+
 
 if ($result)
     {
@@ -275,4 +275,6 @@ else
     {
         echo 'Sorry, there was a problem inserting values!';
     }
+
+    $newClientAccount->close();
 ?>
