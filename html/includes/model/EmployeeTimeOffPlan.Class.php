@@ -77,7 +77,7 @@ class EmployeeTimeOffPlan{
 					$dbSelectTimeOffPlan->connect();
 					
 					$querySelectTimeOffPlan="SELECT DISTINCT timeoffname 
-									   FROM employeetimeoffname";
+									   FROM employeetimeoffplan";
 												
 					$dbSelectTimeOffPlan->query($querySelectTimeOffPlan);	
 					$result = $dbSelectTimeOffPlan->query($querySelectTimeOffPlan);						
