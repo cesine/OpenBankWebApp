@@ -256,7 +256,7 @@ $newClientAccount->connect();
 
 $queryAddAccount = "INSERT INTO clientaccount (clientaccountid, branchid, clientid, accounttypeid,
                                        currentbalance, availablebalance, status, openingdate, closingdate)
-                   VALUES (110005001, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 'NULL'";
+                   VALUES (110005001, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00";
 
 //$queryAddAccount = "INSERT INTO clientaccount SET clientaccountid = '110005000', branchid = '$userBranch', clientid = '54010015'
 //accounttypeid = '$userAccountChoice', currentbalance = DEFAULT, availablebalance = DEFAULT, status = '0',
