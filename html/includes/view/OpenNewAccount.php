@@ -174,10 +174,12 @@ switch ($userChoice)
 		print "Please try again!";	
 }
 //end of switch
-	echo  "<br/>", "You picked account type", $clientAccount->getAccountTypeId(), "<br/>";
+
+	
 }
 //end of if
-
+$accountTypeID=$clientAccount->getAccountTypeId();
+echo  "<br/>", "You picked account type", $accountID, "<br/>";
 //object for the table clientaccount
 $clientAccount = new Database();
 $clientAccount->connect();
@@ -198,8 +200,8 @@ $clientAccount->close();
 echo "The cliend's branch is", $branchID, "<br/>";
 echo "Today's date: ", date('Y-m-d');
 
-if (($clientAccount->getAccountTypeId()==1)||($clientAccount->getAccountTypeId()==2)||
-        ($clientAccount->getAccountTypeId()== 10)||($clientAccount->getAccountTypeId()=11))
+if (($accountTypeID == 1)||($accountTypeID == 2)||
+        ($accountTypeID == 10)||($accountTypeID == 11))
 {echo "<Br/>","Please fill in the amount you'd like to deposit in your new account.";
 //input for chequing and savings
 
