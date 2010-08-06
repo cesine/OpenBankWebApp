@@ -119,8 +119,8 @@ class Address{
 					$dbSelectPostalCode = new Database();
 					$dbSelectPostalCode->connect();
 					
-					$querySelectPostalCode="SELECT DISTINCT postalcodes 
-									   FROM postalcode";
+					$querySelectPostalCode="SELECT DISTINCT postalcode 
+									   FROM postalcodes";
 												
 					$dbSelectPostalCode->query($querySelectPostalCode);	
 					$result = $dbSelectPostalCode->query($querySelectPostalCode);						
