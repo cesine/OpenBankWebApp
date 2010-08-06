@@ -103,7 +103,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		else 																	// input is OK
 		{
 			
-			/*
+			
 			//find base salary for selected title name
 			$dbSelectBaseSalary = new Database();
 			$dbSelectBaseSalary->connect();
@@ -122,28 +122,19 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			}
 			
 			// save current values
-			//$employeeBaseSalary=$row[basesalary];	
-
+			$employeeBaseSalary=$row[basesalary];	
 			//echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
-
 			$dbSelectBaseSalary->close();	
-			
-			*/
-			
-			
 
-			$title->EmployeeTitleBaseSalary();
-			
-			$employeeBaseSalary=$title->getBaseSalary();
-			//echo  "<br/>", "You picked base salary", $employeeBaseSalary, "<br/>";			
-			
-			echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
+			//$title->EmployeeTitleBaseSalary();
+			//$employeeBaseSalary=$title->getBaseSalary();
+			//echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
 			
 			// show base salary for selected title, which can be corrected
 ?>
 			<!-- Create field to put salary, by defalt base salary -->
 			<table border="1"> 
-				<tr><td width="180">Salary:</td><td width="180">
+				<tr><td width="180">Salary (base by default):</td><td width="180">
 					<?php 
 						// example, how to put value of variable into text box
 						//echo "<input type=text disabled name=\"choiceFirstName\" size=\"25\" maxlength=\"20\" value=\"" . $s . "\">";
@@ -152,7 +143,46 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 					?>				
 				</td></tr>
 			</table>
-			<!-- End create field to put salary -->		
+			<!-- End create field to put salary -->	
+<?php 
+			
+			//find province and city from postal code
+			$dbSelectProvanceCity = new Database();
+			$dbSelectProvanceCity->connect();
+							
+			$querySelectProvanceCity="SELECT province, city 
+							   		FROM postalcodes
+							   		WHERE postalcodes='$employeePostalCode'";
+														
+			$dbSelectProvanceCity->query($querySelectProvanceCity);	
+			$result = $dbSelectProvanceCity->query($querySelectProvanceCity);						
+										   
+			for($count=0;$count<$dbSelectProvanceCity->queryResultsCount;$count=$count+1)
+			{
+				$row=mysql_fetch_array($dbSelectProvanceCity->queryResultsResource);
+				$address->initializeAddress($row);
+			}
+			
+			// save current values
+			$employeeProvince=$row[province];
+			$employeeCity=$row[city];				
+			$dbSelectProvanceCity->close();	
+?>
+
+			<!-- Show province and city according to postal code -->
+			<table border="1"> 
+				<tr><td width="180">Province:</td><td width="180">
+					<?php 
+						echo "<input type=text disabled name=\"choiceProvince\" value=\"" . $employeeProvince . "\">";
+					?>				
+				</td></tr>
+				<tr><td width="180">City:</td><td width="180">
+					<?php 
+						echo "<input type=text disabled name=\"choiceCity\" value=\"" . $employeeCity . "\">";
+					?>				
+				</td></tr>				
+			</table>
+			<!-- End Show province and city according to postal code -->	
 
 <?php 
 		} // end input is OK		
