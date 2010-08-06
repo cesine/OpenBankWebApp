@@ -178,7 +178,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 				</td></tr>
 				<tr><td width="180">City:</td><td width="180">
 					<?php 
-						//echo "<input type=text disabled name=\"choiceCity\" value=\"" . $employeeCity . "\">";
+						echo "<input type=text disabled name=\"choiceCity\" value=\"" . $employeeCity . "\">";
 					?>				
 				</td></tr>				
 			</table>
