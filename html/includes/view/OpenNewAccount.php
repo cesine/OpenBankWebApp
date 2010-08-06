@@ -70,7 +70,7 @@ echo "<br/>", $userGName.$userLName, " please choose the account you'd like to o
 
  <!--displaying choice of account types-->
 <table border="1"> 
-<tr><td>Account name:</td><td><select name="accountType" size="15" single="single">
+<tr><td>Account name:</td><td><select name="accountType" size="15" >
 <option value="powerChecking">Powerchequing Account</option>
 <option value="moneyMasterSavings">Money Master Savings Account</option>
 <option value="usDollarAccount">US Dollar Account</option>
