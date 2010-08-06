@@ -49,7 +49,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<!-- Create field to put first name -->
 	<table border="1"> 
 		<tr><td width="180">First name:</td><td width="180">
-			<input type="text" name="choiceFirstName" value=$s maxlength=20 />
+			<input type="text" name="choiceFirstName" value=.$s maxlength=20 />
 		</td></tr>
 	</table>
 	<!-- End create field to put first name -->		
