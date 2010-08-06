@@ -65,7 +65,7 @@ $userGName = $row[firstname];
 $userLName = $row[lastname];
 $clientName->close();
 
-echo "<br/>", $userGName.$userLName, " please choose the account you'd like to open."
+echo "<br/>", $userGName, $userLName, ", please choose the account you'd like to open."
  ?>
 
  <!--displaying choice of account types-->
@@ -239,9 +239,10 @@ if (($accountTypeID == 1)||($accountTypeID == 2)||
 
 
 <?php
-
-/*should redirect to transaction/summary page to reflect new account and changes in the old account*/
- $userDeposit=$_POST["amount"];
- echo "<br/>", "Amount: ", $userDeposit, "<br/>";
 }
+
+$userDeposit=$_POST["amount"];
+ echo "<br/>", "Amount: ", $userDeposit, "<br/>";
+
+
 ?>
