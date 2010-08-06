@@ -143,22 +143,13 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 
 
+	// example, how to put value of variable into text box
 	//echo "<input type=text disabled name=\"choiceFirstName\" size=\"25\" maxlength=\"20\" value=\"" . $s . "\">";
-	
-
+    //echo "<input type=text name=\"question\" size=\"25\" value=\"" . $rows4['question'] . "\">";
 
 
 ?>					
 
-	<!-- Create field to put salary -->
-	<table border="1"> 
-		<tr><td width="180">Salary:</td><td width="180">
-			<input type="text" name="choiceSalary" value=0 maxlength=8 />
-		</td></tr>
-	</table>
-	<!-- End create field to put salary -->		
-	
-		
 
 
 
