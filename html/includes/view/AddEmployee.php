@@ -102,7 +102,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		}
 		else 																	// input is OK
 		{
-			/*
+			
 			//find base salary for selected title name
 			$dbSelectBaseSalary = new Database();
 			$dbSelectBaseSalary->connect();
@@ -127,7 +127,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 			$dbSelectBaseSalary->close();	
 			
-			*/
+			
 
 			$title->EmployeeTitleBaseSalary();
 			
