@@ -52,7 +52,7 @@ class ClientAccount{
 		$this->accountTypeId=$accountTypeId;
 	}
 	public function setAccountName($accountName){
-		$this->accountTypeId=$accountName;
+		$this->accountName=$accountName;
 	}
 	public function setCurrentBalance($currentBalance) {
 		$this->currentBalance=$currentBalance;

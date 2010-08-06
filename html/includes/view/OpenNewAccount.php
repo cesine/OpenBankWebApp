@@ -65,7 +65,7 @@ $userGName = $row[firstname];
 $userLName = $row[lastname];
 $clientName->close();
 
-echo "<br/> Dear", $userGName," ", $userLName, ", please choose the account you'd like to open."
+echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you'd like to open."
  ?>
 
  <!--displaying choice of account types-->
@@ -196,11 +196,13 @@ switch ($userChoice)
 	
 }
 //end of if
-$accountTypeID=$clientAccount->getAccountTypeId();
-echo  "<br/>", "You picked account type ", $accountTypeID, "<br/>";
-//object for the table clientaccount
-$clientAccount = new Database();
-$clientAccount->connect();
+$userAccountChoice = $clientAccount->getAccountTypeId();
+echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
+
+
+//object for the Database to find the user's branch
+$branch = new Database();
+$branch->connect();
 
 //query to find client's branch id
 $queryBranchid =   "SELECT distinct `branchid`
@@ -208,12 +210,13 @@ $queryBranchid =   "SELECT distinct `branchid`
 		    WHERE `clientid` = 54010015";
 		   //WHERE 'clientid' = $_SESSION["User"];
 
-$clientAccount->query($queryBranchid);
-
+$branch->query($queryBranchid);
 $row=mysql_fetch_array($clientAccount->queryResultsResource);
-$branchID = $row[branchid];
+//setting and getting branchid
+$clientAccount->setBranchId($row[branchid]);
+$userBranch = $clientAccount->getBranchId();
 
-$clientAccount->close();
+$branch->close();
 
 
 /*
@@ -221,8 +224,8 @@ echo "The cliend's branch is", $branchID, "<br/>";
 
 //input for chequing and savings
 //I am not using it 'cause I'll have to transfer them to transaction
-if (($accountTypeID == 1)||($accountTypeID == 2)||
-        ($accountTypeID == 10)||($accountTypeID == 11))
+if (($userAccountChoice == 1)||($userAccountChoice == 2)||
+        ($userAccountChoice == 10)||($userAccountChoice == 11))
 {echo "<Br/>","Please fill in the amount you'd like to deposit in your new account.";
 
 
@@ -250,13 +253,26 @@ if (isset($_POST[submitAmount]))
 //inserting new account
 $newClientAccount = new Database();
 $newClientAccount->connect();
-$queryAddAccount = "INSERT INTO clientaccount (clientaccountid, branchid, clientid, accounttypeid,
-                                        currentbalance, availablebalance, status, openingdate, closingdate)
-                    VALUES ('110005000', $branchID, '54010015', $accountTypeID, '', '', '0' date('Y-m-d'), ' ')";
 
-$newClientAccount->query($queryEmployeeTitleNew);
+//$queryAddAccount = "INSERT INTO clientaccount (clientaccountid, branchid, clientid, accounttypeid,
+//                                        currentbalance, availablebalance, status, openingdate, closingdate)
+//                    VALUES ('110005000', $userBranch, '54010015', $userAccountChoice, '', '', '0' date('Y-m-d'), ' ')";
+
+$queryAddAccount = "INSERT INTO clientaccount SET clientaccountid = '110005000', branchid = '$userBranch', clientid = '54010015'
+accounttypeid = '$userAccountChoice', currentbalance = DEFAULT, availablebalance = DEFAULT, status = '0',
+openingdate = date('Y-m-d'), closingdate = DEFAULT";
+
+$result = $newClientAccount->query($queryAddAccount);
+
 $newClientAccount->close();
 
-
-echo  "<br/>", "You're account has been created!" , "<br/>";
+if ($result)
+    {
+        echo  "<br/>", "You're account has been created!" , "<br/>";
+        echo 'Pl. follow the link to make a transfer';
+    }
+else
+    {
+        echo 'Sorry, there was a problem inserting values!';
+    }
 ?>
