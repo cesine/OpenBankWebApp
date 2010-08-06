@@ -65,7 +65,7 @@ $userGName = $row[firstname];
 $userLName = $row[lastname];
 $clientName->close();
 
-echo "<br/>", $userGName, $userLName, ", please choose the account you'd like to open."
+echo "<br/> Dear", $userGName," ", $userLName, ", please choose the account you'd like to open."
  ?>
 
  <!--displaying choice of account types-->
@@ -216,14 +216,14 @@ $branchID = $row[branchid];
 $clientAccount->close();
 
 
-
+/*
 echo "The cliend's branch is", $branchID, "<br/>";
-echo "Today's date: ", date('Y-m-d');
 
+//input for chequing and savings
+//I am not using it 'cause I'll have to transfer them to transaction
 if (($accountTypeID == 1)||($accountTypeID == 2)||
         ($accountTypeID == 10)||($accountTypeID == 11))
 {echo "<Br/>","Please fill in the amount you'd like to deposit in your new account.";
-//input for chequing and savings
 
 
 
@@ -242,7 +242,21 @@ if (($accountTypeID == 1)||($accountTypeID == 2)||
 }
 
 $userDeposit=$_POST["amount"];
+
+if (isset($_POST[submitAmount]))
  echo "<br/>", "Amount: ", $userDeposit, "<br/>";
+*/
+
+//inserting new account
+$newClientAccount = new Database();
+$newClientAccount->connect();
+$queryAddAccount = "INSERT INTO clientaccount (clientaccountid, branchid, clientid, accounttypeid,
+                                        currentbalance, availablebalance, status, openingdate, closingdate)
+                    VALUES ('110005000', $branchID, '54010015', $accountTypeID, '', '', '0' date('Y-m-d'), ' ')";
+
+$newClientAccount->query($queryEmployeeTitleNew);
+$newClientAccount->close();
 
 
+echo  "<br/>", "You're account has been created!" , "<br/>";
 ?>
