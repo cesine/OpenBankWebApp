@@ -26,6 +26,27 @@ if (!isset($_SESSION['User']))
 <body>
 <?php 
 require_once ('includes/controller/Database.Class.php');
-//Include the Authentication information
-//require_once ('includes/model/User.Class.php');
+
+if($_GET['action']=='Logout'){
+	//$_SESSION['LoggedInMessage']="";
+	//$_SESSION['User']="";
+	session_unset();
+}
+/*
+ * Check for login information, if present, create a user (which will try to authenticate)
+ */
+$clientId=$_POST['$clientid'];
+unset($_POST['$clientid']);
+$pass=$_POST['$pass'];
+unset($_POST['$pass']);
+//if both clientID and password are present, check for authentication
+if($_GET['action']=='Login'){
+	require_once ('includes/model/User.Class.php');
+	$userLoggedIn= new User($clientId,$pass);
+	if($userLoggedIn->isClient()||$userLoggedIn->isEmployee()){
+		$_SESSION['User']=serialize($userLoggedIn);
+	}else{
+		session_unset;
+	}
+}
 ?>
