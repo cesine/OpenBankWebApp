@@ -7,17 +7,7 @@ require_once('includes/controller/Database.Class.php');
 
 echo "<form action='?&content=OpenNewAccount' method='POST'>";
 
-$clientName = new Database();
-$clientName->query($queryName);
-$queryName = "SELECT `firstname`,`lastname`
-              FROM `client`
-              WHERE `clientid` = 54010015"; //change to $_SESSION[]
-$row=mysql_fetch_array($queryName->queryResultsResource);
-$userGName = $row[firstname];
-$userLName = $row[lastname];
-$queryName->close();
 
-echo "<br/>", $userGName.$userLName, " please choose the account you'd like to open."
 ?>
 
 
@@ -63,6 +53,21 @@ echo "<br/>", $userGName.$userLName, " please choose the account you'd like to o
 <P></P>
 
  -->
+ <?php
+ $clientName = new Database();
+$clientName->query($queryName);
+$queryName = "SELECT `firstname`,`lastname`
+              FROM `client`
+              WHERE `clientid` = 54010015"; //change to $_SESSION[]
+$row=mysql_fetch_array($queryName->queryResultsResource);
+$userGName = $row[firstname];
+$userLName = $row[lastname];
+$queryName->close();
+
+echo "<br/>", $userGName.$userLName, " please choose the account you'd like to open."
+ ?>
+
+ <!--displaying choice of account types-->
 <table border="1"> 
 <tr><td>Account name:</td><td><select name="accountType" size="15" single="single">
 <option value="powerChecking">Powerchequing Account</option>
