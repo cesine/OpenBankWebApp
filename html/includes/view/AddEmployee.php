@@ -66,7 +66,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 	//echo "<input type=text name="choiceFirstName" value=\"" .$s. "\" maxlength=20 />";	
 	
-	echo "<input type=text name=\"choiceFirstName\" size=\"25\" value=\"" . $s . "\">";
+	echo "<input type=text disabled name=\"choiceFirstName\" size=\"25\" maxlength=\"20\" value=\"" . $s . "\">";
 	
 
 	// create dynamic list of employee's time off plan names and let user to select
