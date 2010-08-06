@@ -106,7 +106,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 							
 			$querySelectBaseSalary="SELECT basesalary 
 							   		FROM employeetitle
-							   		WHERE titlename=$employeeTitle";
+							   		WHERE titlename='$employeeTitle'";
 														
 			$dbSelectBaseSalary->query($querySelectBaseSalary);	
 			$result = $dbSelectBaseSalary->query($querySelectBaseSalary);						
