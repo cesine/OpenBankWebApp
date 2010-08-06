@@ -1,4 +1,4 @@
-//testing
+
 <?php 
 //client is opening a new account
 
@@ -87,7 +87,7 @@ $clientAccount = new ClientAccount();
 $userChoice=$_POST["accountType"];
 
 //if user submitted choice
-//if (isset($_POST['submitAccountName'])) 
+if (isset($_POST['submitAccountName'])) 
 {
 switch ($userChoice)
 {
@@ -184,22 +184,37 @@ $clientAccount->connect();
 
 //query to find client's branch id
 $queryBranchid =   "SELECT distinct `branchid`
-					FROM `clientaccount` 
-					WHERE `clientid` = 54010015";
-					//WHERE 'clientid' = $_SESSION["User"];
+                    FROM `clientaccount`
+		    WHERE `clientid` = 54010015";
+		   //WHERE 'clientid' = $_SESSION["User"];
 
 $clientAccount->query($queryBranchid);
 
 $row=mysql_fetch_array($clientAccount->queryResultsResource);
 $branchID = $row[branchid];
 
-echo"The cliend's branch is", $branchID, "<br/>";
+$clientAccount->close();
+
+echo "The cliend's branch is", $branchID, "<br/>";
 echo "Today's date: ", date('Y-m-d');
 
-$clientAccount->close();
+if (($userChoice==1)||($userChoice==2)||($userChoice== 10)||($userChoice=11))
+echo "Please fill in the amount you'd like to deposit in your new account."; //input for chequing and savings
+
+
+
+
 ?>
+<table align="centre" border="1">
+    <tr> <td width="200"> <input type="text" name="amount"  maxlength=10 /> </td>
+        <td width ="200"> <input type="submit" name="submitAmount" value="Submit" /></td>
+    </tr>
+</table>
 
 
- 
+/*should redirect to transaction/summary page to reflect new account and changes in the old account*/
 
-
+<?php
+ $userDeposit=$_POST["amount"];
+ echo "<br/>", "Amount: ", $userDeposit, "<br/>";
+?>
