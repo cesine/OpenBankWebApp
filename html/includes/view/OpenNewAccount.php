@@ -65,7 +65,7 @@ $userGName = $row[firstname];
 $userLName = $row[lastname];
 $clientName->close();
 
-echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you'd like to open."
+echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you'd like to open.<br/>"
  ?>
 
  <!--displaying choice of account types-->
@@ -211,7 +211,7 @@ $queryBranchid =   "SELECT distinct `branchid`
 		   //WHERE 'clientid' = $_SESSION["User"];
 
 $branch->query($queryBranchid);
-$row=mysql_fetch_array($clientAccount->queryResultsResource);
+$row=mysql_fetch_array($branch->queryResultsResource);
 //setting and getting branchid
 $clientAccount->setBranchId($row[branchid]);
 $userBranch = $clientAccount->getBranchId();
@@ -219,9 +219,9 @@ $userBranch = $clientAccount->getBranchId();
 $branch->close();
 
 
-/*
-echo "The cliend's branch is", $branchID, "<br/>";
 
+echo "The cliend's branch is", $userBranch, "<br/>";
+/*
 //input for chequing and savings
 //I am not using it 'cause I'll have to transfer them to transaction
 if (($userAccountChoice == 1)||($userAccountChoice == 2)||
