@@ -203,7 +203,7 @@ $clientAccount = new Database();
 $clientAccount->connect();
 
 //query to find client's branch id
-$queryBranchid =   "SELECT distinct `branchid`,
+$queryBranchid =   "SELECT distinct `branchid`
                     FROM `clientaccount`
 		    WHERE `clientid` = 54010015";
 		   //WHERE 'clientid' = $_SESSION["User"];
