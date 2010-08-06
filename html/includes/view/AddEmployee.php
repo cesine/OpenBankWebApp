@@ -47,7 +47,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<!-- Create field to put first name -->
 	<table border="1"> 
 		<tr><td width="180">First name:</td><td width="180">
-			<input type="text" name="choiceFirstName" value=0 maxlength=20 />
+			<input type="text" name="choiceFirstName" maxlength=20 />
 		</td></tr>
 	</table>
 	<!-- End create field to put first name -->		
@@ -55,7 +55,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<!-- Create field to put last name -->
 	<table border="1"> 
 		<tr><td width="180">Last name:</td><td width="180">
-			<input type="text" name="choiceLastName" value=0 maxlength=20 />
+			<input type="text" name="choiceLastName" maxlength=20 />
 		</td></tr>
 	</table>
 	<!-- End create field to put last name -->	
