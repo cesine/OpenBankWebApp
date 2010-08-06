@@ -100,6 +100,33 @@ class EmployeeTitle{
 		<!-- End Build dynamic list of employee title names -->
 <?php 		
 	} // end public function displayEmployeeTitleList()		
+	
+	
+	public function EmployeeTitleBaseSalary()
+	{
+		//find base salary for selected title name
+		$dbSelectBaseSalary = new Database();
+		$dbSelectBaseSalary->connect();
+						
+		$querySelectBaseSalary="SELECT basesalary 
+						   		FROM employeetitle
+						   		WHERE titlename=$employeeTitle";
+													
+		$dbSelectBaseSalary->query($querySelectBaseSalary);	
+		$result = $dbSelectBaseSalary->query($querySelectBaseSalary);						
+									   
+		for($count=0;$count<$dbSelectBaseSalary->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
+		}
+		//echo "</select>\n";	
+		$dbSelectBaseSalary->close();
+
+	
+	} // end public function EmployeeTitleBaseSalary()
+	
+
+	
 }
 ?>
 
