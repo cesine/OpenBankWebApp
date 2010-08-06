@@ -367,7 +367,7 @@ CREATE TABLE `employeetimeoffplan` (
 
 LOCK TABLES `employeetimeoffplan` WRITE;
 /*!40000 ALTER TABLE `employeetimeoffplan` DISABLE KEYS */;
-INSERT INTO `employeetimeoffplan` VALUES (10001,'regular vacation',20),(10002,'branch manager vacation',25),(10003,'senior vacation',30),(10004,'shortest vacation',10);
+INSERT INTO `employeetimeoffplan` VALUES (10001,'regular plan',20),(10002,'branch manager plan',25),(10003,'senior plan',30),(10004,'probation plan',10);
 /*!40000 ALTER TABLE `employeetimeoffplan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -622,4 +622,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-08-06 13:03:02
+-- Dump completed on 2010-08-06 17:03:01
