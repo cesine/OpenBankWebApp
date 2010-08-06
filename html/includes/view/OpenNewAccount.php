@@ -6,11 +6,23 @@ require_once('includes/model/ClientAccount.Class.php');
 require_once('includes/controller/Database.Class.php');
 
 echo "<form action='?&content=OpenNewAccount' method='POST'>";
+
+$clientName = new Database();
+$clientName->query($queryName);
+$queryName = "SELECT `firstname`,`lastname`
+              FROM `client`
+              WHERE `clientid` = 54010015"; //change to $_SESSION[]
+$row=mysql_fetch_array($queryName->queryResultsResource);
+$userGName = $row[firstname];
+$userLName = $row[lastname];
+$queryName->close();
+
+echo "<br/>", $userGName.$userLName, " please choose the account you'd like to open."
 ?>
 
 
 
-<P>Please choose an account of your choice.</P>
+<P>&nbsp;</P>
 <!-- 
 <table border="1">
 <tr><td>Services:</td><td><select name="service" size="4" single="single">
@@ -179,13 +191,13 @@ switch ($userChoice)
 }
 //end of if
 $accountTypeID=$clientAccount->getAccountTypeId();
-echo  "<br/>", "You picked account type", $accountTypeID, "<br/>";
+echo  "<br/>", "You picked account type ", $accountTypeID, "<br/>";
 //object for the table clientaccount
 $clientAccount = new Database();
 $clientAccount->connect();
 
 //query to find client's branch id
-$queryBranchid =   "SELECT distinct `branchid`
+$queryBranchid =   "SELECT distinct `branchid`,
                     FROM `clientaccount`
 		    WHERE `clientid` = 54010015";
 		   //WHERE 'clientid' = $_SESSION["User"];
@@ -196,6 +208,8 @@ $row=mysql_fetch_array($clientAccount->queryResultsResource);
 $branchID = $row[branchid];
 
 $clientAccount->close();
+
+
 
 echo "The cliend's branch is", $branchID, "<br/>";
 echo "Today's date: ", date('Y-m-d');
