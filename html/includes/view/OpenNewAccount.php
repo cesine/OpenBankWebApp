@@ -59,7 +59,7 @@ $clientName->connect();
 $queryName = "SELECT `firstname`,`lastname`
               FROM `client`
               WHERE `clientid` = 54010015"; //change to $_SESSION[]
-$clientName->quer($queryName);
+$clientName->query($queryName);
 $row=mysql_fetch_array($queryName->queryResultsResource);
 $userGName = $row[firstname];
 $userLName = $row[lastname];
