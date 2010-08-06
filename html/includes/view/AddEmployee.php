@@ -118,7 +118,9 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			}
 			
 			// save current values
-			$employeeBaseSalary=$row[basesalary];				
+			$employeeBaseSalary=$row[basesalary];	
+
+			echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
 
 			$dbSelectBaseSalary->close();			
 			
