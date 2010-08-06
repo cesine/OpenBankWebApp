@@ -60,10 +60,10 @@ $queryName = "SELECT `firstname`,`lastname`
               FROM `client`
               WHERE `clientid` = 54010015"; //change to $_SESSION[]
 $clientName->query($queryName);
-$row=mysql_fetch_array($queryName->queryResultsResource);
+$row=mysql_fetch_array($clientName->queryResultsResource);
 $userGName = $row[firstname];
 $userLName = $row[lastname];
-$queryName->close();
+$clientName->close();
 
 echo "<br/>", $userGName.$userLName, " please choose the account you'd like to open."
  ?>
