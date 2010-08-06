@@ -256,7 +256,7 @@ $newClientAccount->connect();
 
 $queryAddAccount = "INSERT INTO clientaccount (clientaccountid, branchid, clientid, accounttypeid,
                                        currentbalance, availablebalance, status, openingdate, closingdate)
-                   VALUES (110005001, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), NULL";
+                   VALUES (110005001, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 'NULL'";
 
 //$queryAddAccount = "INSERT INTO clientaccount SET clientaccountid = '110005000', branchid = '$userBranch', clientid = '54010015'
 //accounttypeid = '$userAccountChoice', currentbalance = DEFAULT, availablebalance = DEFAULT, status = '0',
@@ -266,7 +266,7 @@ $result = $newClientAccount->query($queryAddAccount);
 
 
 
-/*if ($result)
+if ($result)
     {
         echo  "<br/>", "You're account has been created!" , "<br/>";
         echo 'Pl. follow the link to make a transfer';
@@ -276,5 +276,5 @@ else
         echo 'Sorry, there was a problem inserting values!';
     }
 
-    $newClientAccount->close();*/
+    $newClientAccount->close();
 ?>
