@@ -7,6 +7,7 @@ require_once('includes/controller/Database.Class.php');
 require_once('includes/model/Branch.Class.php');
 require_once('includes/model/EmployeeTitle.Class.php');
 require_once('includes/model/EmployeeWorkHistory.Class.php');
+require_once('includes/model/EmployeeTimeOffPlan.Class.php');
 
 echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'>";
 
@@ -26,11 +27,12 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	$branch = new Branch();
 	$employeeTitle = new EmployeeTitle();
 	$employeeWorkHistory = new EmployeeWorkHistory();
+	$employeeTimeOffPlan = new EmployeeTimeOffPlan();	
 	
 	// create dynamic list of branches and let user to select
 	$branch->BranchList();
 	
-	// show dynamic list with employee title names
+	// create dynamic list of employee title names and let user to select
 	$employeeTitle->displayEmployeeTitleList();	
 ?>
 
@@ -56,7 +58,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			<input type="text" name="choiceLastName" value=0 maxlength=20 />
 		</td></tr>
 	</table>
-	<!-- End create field to put last name -->					
+	<!-- End create field to put last name -->	
+
+<?php
+
+	// create dynamic list of employee's time off plan names and let user to select
+	$employeeTimeOffPlan->displayEmployeeTimeOffPlanList();
+
+?>					
 		
 
 
