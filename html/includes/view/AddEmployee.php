@@ -79,13 +79,15 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
 		$employeePostalCode=$_POST["choicePostalCode"];	
 	
+		/*
 		echo "<h4> Selected: </h4>\n";
 		echo "<h5> first name: 		$employeeFirstName </h5>\n";
 		echo "<h5> last name:  		$employeeLastName </h5>\n";		
 		echo "<h5> branch:  		$employeeBranch </h5>\n";	
 		echo "<h5> title:  			$employeeTitle </h5>\n";	
 		echo "<h5> time off plan:  	$employeeTimeOffPlan </h5>\n";	
-		echo "<h5> postal code:  	$employeePostalCode </h5>\n";							
+		echo "<h5> postal code:  	$employeePostalCode </h5>\n";	
+		 */						
 		
 		
 	    // validate values 
@@ -118,11 +120,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			}
 			
 			// save current values
-			$employeeBaseSalary=$row[basesalary];	
+			//$employeeBaseSalary=$row[basesalary];	
 
+			//echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
+
+			$dbSelectBaseSalary->close();	
+
+			$title->EmployeeTitleBaseSalary();
 			echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
-
-			$dbSelectBaseSalary->close();			
 			
 			// show base salary for selected title, which can be corrected
 ?>
@@ -130,6 +135,9 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			<table border="1"> 
 				<tr><td width="180">Salary:</td><td width="180">
 					<?php 
+						// example, how to put value of variable into text box
+						//echo "<input type=text disabled name=\"choiceFirstName\" size=\"25\" maxlength=\"20\" value=\"" . $s . "\">";
+ 						//echo "<input type=text name=\"question\" size=\"25\" value=\"" . $rows4['question'] . "\">";
 						echo "<input type=text name=\"choiceSalary\" maxlength=\"8\" value=\"" . $employeeBaseSalary . "\">";
 					?>				
 				</td></tr>
@@ -140,13 +148,6 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		} // end input is OK		
 	
 	} // end if (isset($_POST['EmployeeInfoSubmit'])) 
-
-
-
-	// example, how to put value of variable into text box
-	//echo "<input type=text disabled name=\"choiceFirstName\" size=\"25\" maxlength=\"20\" value=\"" . $s . "\">";
-    //echo "<input type=text name=\"question\" size=\"25\" value=\"" . $rows4['question'] . "\">";
-
 
 ?>					
 
