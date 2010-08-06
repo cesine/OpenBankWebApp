@@ -111,7 +111,7 @@ class Address{
 		<!-- Build dynamic list of postal codes -->
 		<table border="1"> 
 			<tr><td width="180">Select postal code:</td><td width="180">
-				<select name="choiceTimeOffPlan">
+				<select name="choicePostalCode">
 				
 				<?php 
 				
