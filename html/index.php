@@ -81,6 +81,18 @@ if($userIsClient || $userIsEmployee){
 	}elseif($content=="MyEmployeeInfo"){
 		include ('includes/view/MyEmployeeInfo.php');		
 	}
+	}elseif($content=="EmployeeInfo"){
+		include ('includes/view/EmployeeInfo.php');			
+	}elseif($content=="ViewEmployeeInfo"){
+		include ('includes/view/ViewEmployeeInfo.php');	
+	}elseif($content=="AddEmployee"){
+		include ('includes/view/AddEmployee.php');	
+	}elseif($content=="ModifyEmployee"){
+		include ('includes/view/ModifyEmployee.php');	
+	}elseif($content=="DeactivateEmployee"){
+		include ('includes/view/DeactivateEmployee.php');	
+	}elseif($content=="ZViewEmployeeInfo"){
+		include ('includes/view/ZViewEmployeeInfo.php');
 }else{
 	//echo "<p>You must log on to access pages".$content."</p>";
 
@@ -104,30 +116,8 @@ if($userIsClient || $userIsEmployee){
 		include ('includes/view/Login.php');
 	}elseif($content=="EmployeeLogin"){
 		include ('includes/view/EmployeeLogin.php');
-	}elseif($content=="EmployeeInfo"){
-		include ('includes/view/EmployeeInfo.php');			
-	}elseif($content=="ViewEmployeeInfo"){
-		include ('includes/view/ViewEmployeeInfo.php');	
-	}elseif($content=="AddEmployee"){
-		include ('includes/view/AddEmployee.php');	
-	}elseif($content=="ModifyEmployee"){
-		include ('includes/view/ModifyEmployee.php');	
-	}elseif($content=="DeactivateEmployee"){
-		include ('includes/view/DeactivateEmployee.php');	
-	}elseif($content=="ZViewEmployeeInfo"){
-		include ('includes/view/ZViewEmployeeInfo.php');
 	}elseif($content=="TestClientAccount"){
 		include ('includes/view/TestClientAccount.php');	// need to be removed later !!!	
-	}elseif($content=="EmployeeInterface"){
-		echo '<a href="?&content=Summary">View a Clients Info</a>
-		</p>
-		<p>
-		List Employees<br />
-		Add Employee<br />
-		Modify Employee<br />
-		Delete Employee<br />
-		</p>
-		';
 	}else{
 		$content="PersonalServices";
 		include('includes/view/AboutTheBank.php');
