@@ -8,8 +8,9 @@
 	
 	if (isset($_SESSION['Employee']))
 	{
-		$employeeID=unserialize($_SESSION['Employee']);
-		$employeeID->getEmployeeID();
+		$employee=unserialize($_SESSION['Employee']);
+		$employee->getEmployeeID();
+		$employeeID=$employee->getEmployeeID();
 		echo "<h5> Employee ID: $employeeID </h5><p></p>";		
 
 	}
