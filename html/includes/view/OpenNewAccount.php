@@ -1,7 +1,7 @@
 
 <?php 
 //client is opening a new account
-include('includes/model/AccountType.Class.php');
+include('includes/model/AccountType.php');
 require_once('includes/model/ClientAccount.Class.php');
 require_once('includes/controller/Database.Class.php');
 
@@ -68,6 +68,7 @@ $clientName->close();
 
 echo "Dear ", $userGName," ", $userLName, ", please choose the account you'd like to open.<br/>";
 
+//object to call planlist
 $banking = new AccountType();
 
  ?>
