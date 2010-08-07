@@ -18,9 +18,9 @@ if($content=="Banking"){?>
 						<td><a href="index.php?&content=Banking"
 							class="boldnav">Day-To-Day Banking</a> <br>
 							<a href="index.php?&content=Chequing"
-							style="font-size: 11px;">Chequing</a>
+							style="font-size: 11px;">Chequing</a>,
 							<a href="index.php?&content=Savings"
-							style="font-size: 11px;">Savings</a>
+							style="font-size: 11px;">Savings</a>,
 							<a href="index.php?&content=ForeignCurrency"
 							style="font-size: 11px;">Foreign Currency</a>
 						</td>
