@@ -269,7 +269,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 									
 				$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
-				// end put "last date" for old title	
+				// end put "start date" for new title
 
 								 
 				// update branch/title/salary in employee table
