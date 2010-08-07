@@ -38,11 +38,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		<tr><td width="180">Last name:</td><td width="180">
 			
 			<!-- Making A Value In A Textbox Stay  -->
-			<input id="text" name="choiceLastName" maxlength=20
-			value="
-			<?php 
-				if(isset($_POST['choiceLastName'])){ echo htmlentities($_POST['choiceLastName']); } 
-			?>" />	
+			<input id="text" name="choiceLastName" maxlength=20 value="<?php if(isset($_POST['choiceLastName'])){ echo htmlentities($_POST['choiceLastName']); }?>" />	
 			
 		</td></tr>
 	</table>
@@ -76,11 +72,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		<tr><td width="180">Street name:</td><td width="180">
 			
 			<!-- Making A Value In A Textbox Stay  -->
-			<input id="text" name="choiceStreet" maxlength=25
-			value="
-			<?php 
-				if(isset($_POST['choiceStreet'])){ echo htmlentities($_POST['choiceStreet']); } 
-			?>" />				
+			<input id="text" name="choiceStreet" maxlength=25 value="<?php if(isset($_POST['choiceStreet'])){ echo htmlentities($_POST['choiceStreet']); }?>" />				
 			
 		</td></tr>
 	</table>
@@ -92,11 +84,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			<!-- <input type="text" name="choiceStreetNumber" maxlength=6 />-->
 			
 			<!-- Making A Value In A Textbox Stay  -->
-			<input id="text" name="choiceStreetNumber" maxlength=6
-			value="
-			<?php 
-				if(isset($_POST['choiceStreetNumber'])){ echo htmlentities($_POST['choiceStreetNumber']); } 
-			?>" />				
+			<input id="text" name="choiceStreetNumber" maxlength=6 value="<?php if(isset($_POST['choiceStreetNumber'])){ echo htmlentities($_POST['choiceStreetNumber']); }?>" />				
 		</td></tr>
 	</table>
 	<!-- End create field to put last name -->	
