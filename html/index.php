@@ -68,7 +68,7 @@ if($userIsClient || $userIsEmployee){
 		include ('includes/view/AccountType.php');
 	}elseif ($content=="AddClient"){
 		include ('includes/view/AddClient.php');
-	}elseif($content=="Summary"){
+	}elseif($content=="AllAccountsSummary"){
 		include ('includes/view/Summary.php');
 	}elseif($content=="ViewAccount"){
 		include ('includes/view/ViewAccounts.php');
