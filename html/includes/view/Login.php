@@ -1,5 +1,5 @@
 
-<form action="?&content=Summary&action=Login" method="post">
+<form action="?&action=Login" method="post">
 <fieldset>
 <legend><font color=cornflowerblue><b>Please log in</b></font></legend>
 <table width="240" border="0" align="center" cellpadding="10"

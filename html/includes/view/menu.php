@@ -2,12 +2,12 @@
   <nav>
     <ul>
     	<li><a href="index.php">Home</a></li>
-      <li><a href="index.php?&content=Summary&service=banking">Banking</a></li>
-      <li><a href="index.php?&content=Summary&service=borrowing">Borrowing</a></li>
-      <li><a href="index.php?&content=Summary&service=investing">Investing</a></li>
-      <!-- <li><a href="index.php?&content=Summary&service=insurance">Insurance</a></li>-->
+      <li><a href="index.php?&content=Banking">Banking</a></li>
+      <li><a href="index.php?&content=Borrowing">Borrowing</a></li>
+      <li><a href="index.php?&content=Investing">Investing</a></li>
+      <!-- <li><a href="index.php?&content=Insurance">Insurance</a></li>-->
        <li><a href="index.php?&content=BranchLocator">Branch Locator</a></li>
-      <li><a href="index.php?&content=EmployeeLogin&topMenu=EmployeeTopMenu">Employee Login</a></li>
+      <li><a href="index.php?&content=EmployeeLogin">Employee Login</a></li>
     </ul>
 	</nav>
 
