@@ -76,7 +76,11 @@ if($userIsClient || $userIsEmployee){
 		include ('includes/view/ViewAccounts.php');
 	}elseif($content=="TransferFunds"){
 		include ('includes/view/Transfer.php');
-	}	
+	}elseif($content=="LoginAsClient"){
+		include ('includes/view/LoginAsClient.php');
+	}elseif($content=="MyEmployeeInfo"){
+		include ('includes/view/MyEmployeeInfo.php');		
+	}
 }else{
 	//echo "<p>You must log on to access pages".$content."</p>";
 
