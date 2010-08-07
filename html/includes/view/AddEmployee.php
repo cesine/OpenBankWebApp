@@ -96,7 +96,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			<!-- <input type="text" name="choiceStreetNumber" maxlength=6 />-->
 			
 			<!-- Making A Value In A Textbox Stay  -->
-			<input id="text" name="choiceStreetNumber" maxlength=25
+			<input id="text" name="choiceStreetNumber" maxlength=6
 			value="
 			<?php 
 				if(isset($_POST['choiceStreetNumber'])){ echo htmlentities($_POST['choiceStreetNumber']); } 
@@ -138,7 +138,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		
 	    // validate values 
 		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet=="" ||
-		   $employeeStreetNumber=="")
+		   empty($employeeStreetNumber)==true)
 		{
 			echo "<h4>Empty values are not valid.</h4>";
 		}	
