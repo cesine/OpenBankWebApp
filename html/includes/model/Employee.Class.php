@@ -1,6 +1,6 @@
 <?php
 require_once('includes/model/Address.Class.php');
-
+require_once('includes/model/PostalCodes.Class.php');
 class Employee{
 	private $employeeID;
 	private $salary;
