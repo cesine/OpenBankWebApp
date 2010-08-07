@@ -14,7 +14,7 @@ echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='
 echo "<h4> View employee info. </h4>\n";
 
 // create new objects
-$employee = new Employee(2);
+//$employee = new Employee(2);
 $address = new Address();
 $postalCodes = new PostalCodes();
 
@@ -132,6 +132,8 @@ $postalCodes = new PostalCodes();
 
 $selectedInfo=$_POST["choice1"];
 $selectedEmployee=$_POST["choice2"];
+
+$employee = new Employee($selectedEmployee);
 
 //if submit selection button is pressed:
 if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
