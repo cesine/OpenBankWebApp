@@ -93,6 +93,8 @@ if($userIsClient || $userIsEmployee){
 		include ('includes/view/ZViewEmployeeInfo.php');
 	}elseif($content=="TestClientAccount"){
 		include ('includes/view/TestClientAccount.php');	// need to be removed later !!!	
+	}elseif($content=="testclientclass"){
+		include ('includes/view/testclientclass.php');	// need to be removed later !!!	
 	}else{
 	//echo "<p>You must log on to access pages".$content."</p>";
 	}
