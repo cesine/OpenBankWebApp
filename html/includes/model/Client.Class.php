@@ -7,7 +7,7 @@ class Client{
 	private $dateOfBirth;
 	private $startDate;
 	private $status;
-	private $addressID;
+	private $address;
 	private $branchID;	//maybe we need
 	private $clientAccountID;	//maybe we need
 	private static $sqlTableName="client";
@@ -38,7 +38,7 @@ class Client{
 	public function getStatus() {
 		return $this->status;
 	}
-	public function getAddressID() {
+	public function getAddress() {
 		return $this->addressID;
 	}
 	public function getBranchID() {
@@ -73,8 +73,15 @@ class Client{
 	public function setStatus($status) {
 		$this->status=$status;
 	}
-	public function setAddressID($addressID) {
-		$this->addressID=$addressID;
+	public function setAddress($addressid) {
+		$db = new Database();
+		$db->connect();
+		$queryToDo= "SELECT DISTINCT * FROM address WHERE addressid=".$addressid;
+		$db->query($queryToDo);
+		$db->close();//just closes the connection to the db so that some other object can connect. the 
+					//db object is still alive and contains the results. 
+		$this->address = new Address();
+		$this->address->initializeAddress($db->queryFirstResult[addressid]);
 	}
 	public function setBranchID($branchID) {
 		$this->branchID=$branchID;
@@ -93,13 +100,20 @@ class Client{
 		$this->setStartDate("2010-03-15");
 		$this->setStatus(1);
 		$this->setAddressID(10000049);
-		$this->setBranchID(1001);
+		$this->setBranchID(10001);
 		$this->setClientAccountID(95432453);
 	}
 	public function displayClientDetails(){
 		echo '<p class="name">'.$this->clientID.
 		'<br/>'.$this->firstName.
 		'<br/>'.$this->lastName.
+		'<br/>'.$this->socialInsuranceNumber.
+		'<br/>'.$this->dateOfBirth.
+		'<br/>'.$this->startDate.
+		'<br/>'.$this->status.
+		'<br/>'.$this->Address.
+		'<br/>'.$this->branchID.
+		'<br/>'.$this->clientAccountID.
 		'</p>';
 	}
 	public function __construct($clientid){
@@ -108,7 +122,15 @@ class Client{
 	}
 	public function addClient(){
 		$this->setFirstName($_POST["firstName"]);
-		//add all variables
+		$this->setLastName($_POST["lastName"]);
+		$this->setSocialInsuranceNumber($_POST["socialInsuranceNumber"]);
+		$this->setDateOfBirth($_POST["dateOfBirth"]);
+		$this->setStartDate($_POST["startDate"]);
+		$this->setStatus($_POST["status"]);
+		$this->setAddressID($_POST["addressID"]);
+		$this->setBranchID($_POST["branchID"]);
+		$this->setClientAccountID($_POST["clientAccountID"]);
+				
 	}
 }
 
