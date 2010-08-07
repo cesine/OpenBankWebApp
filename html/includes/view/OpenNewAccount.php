@@ -68,14 +68,36 @@ $clientName->close();
 echo "Dear ", $userGName," ", $userLName, ", please choose the account you'd like to open.<br/>";
 
 //object to call planlist
-$banking = new AccountType();
+//$banking = new AccountType();
+//object to call ClientAccount
+$clientAccount = new ClientAccount();
+//object for the Database to find the user's branch
+$branch = new Database();
+$branch->connect();
 
+//query to find client's branch id
+$queryBranchid =   "SELECT distinct `branchid`
+                    FROM `clientaccount`
+		    WHERE `clientid` = 54010015";
+		   //WHERE 'clientid' = $_SESSION["User"];
+
+$branch->query($queryBranchid);
+$queryResult=mysql_fetch_array($branch->queryResultsResource);
+//setting and getting branchid
+$clientAccount->setBranchId($queryResult[branchid]);
+$userBranch = $clientAccount->getBranchId();
+
+$branch->close();
+
+
+//checking branch query result
+echo "The cliend's branch is", $userBranch, "<br/>";
  ?>
 
- <h3> Account Types </h3>
+ <h3 align ="centre"> Account Types </h3>
  
 <table border="0">
-    <tr><td > <b> <u>Banking Plans</u> </b></td> <td>&nbsp;&nbsp;</td> <td > <b><u> Insurance Plans </u></b> </td></tr>
+    <tr><td > <b> <u>Banking Plans</u> </b></td> <td>&nbsp;&nbsp;&nbsp;</td> <td > <b><u> Insurance Plans </u></b> </td></tr>
 
 <tr><td><select name="accountType" size="5" >
 <option value="powerChecking">Powerchequing Account</option>
@@ -85,17 +107,19 @@ $banking = new AccountType();
 <option value="businessSavings">Basic Business Savings Account</option>
 <option value="businessFC">Basic Business Foreign Currency Account</option>
         </select></td>
-        <td>&nbsp;&nbsp;</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
     <td><select name="accountType" size="5" >
 <option value="lifeOne">Accidental Death Insurance - 1</option>
 <option value="lifeTwo">Accidental Death Insurance - 2</option>
 <option value="lifeThree">Accidental Death Insurance - 3</option>
 <option value="lifeFour">Accidental Death Insurance - 4</option>
         </select> </td></tr>
-
-<tr><td > <b><u> Investment Plans </u></b></td> <td>&nbsp;&nbsp;</td> <td > <b><u> Borrowing Plans </u></b> </td></tr>
-<tr>&nbsp;</tr> 
 <tr>&nbsp;</tr>
+<tr>&nbsp;</tr>
+<tr>&nbsp;</tr>
+<tr>&nbsp;</tr>
+<tr><td > <b><u> Investment Plans </u></b></td> <td>&nbsp;&nbsp;&nbsp;</td> <td > <b><u> Borrowing Plans </u></b> </td></tr>
+
 <tr><td><select name="accountType" size="5" >
 <option value="rSPSix">GIC(6mos) with Flex for RSPs Account</option>
 <option value="rSPTwelve">GIC(12mos) with Flex for RSPs Account</option>
@@ -106,7 +130,7 @@ $banking = new AccountType();
 <option value="tSFAEighteen">GIC(18mos) with Flex for TFSAs Account</option>
 <option value="tSFATfour">GIC(24mos) with Flex for TFSAs Account</option>
         </select></td>
-        <td>&nbsp;&nbsp;</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
      <td><select name="accountType" size="5" >
 <option value="creditCard">Credit Card No-Fee Value VISA</option>
 <option value="lineOfCredits">Basic Line of Credit</option>
@@ -136,7 +160,7 @@ $banking = new AccountType();
 <p>&nbsp;</p>
 
 <?php
-$clientAccount = new ClientAccount();
+
 $userChoice=$_POST["accountType"];
 
 
@@ -231,8 +255,7 @@ switch ($userChoice)
 //end of switch
 
 	
-}
-//end of if
+
 
 /*belongs to the second table
 
@@ -292,29 +315,9 @@ $userAccountChoice = $clientAccount->getAccountTypeId();
 echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
 
 
-//object for the Database to find the user's branch
-$branch = new Database();
-$branch->connect();
-
-//query to find client's branch id
-$queryBranchid =   "SELECT distinct `branchid`
-                    FROM `clientaccount`
-		    WHERE `clientid` = 54010015";
-		   //WHERE 'clientid' = $_SESSION["User"];
-
-$branch->query($queryBranchid);
-$queryResult=mysql_fetch_array($branch->queryResultsResource);
-//setting and getting branchid
-$clientAccount->setBranchId($queryResult[branchid]);
-$userBranch = $clientAccount->getBranchId();
-
-$branch->close();
 
 
-//checking branch query result
-//echo "The cliend's branch is", $userBranch, "<br/>";
-
-//query to determine clientid
+//query to determine clientaccountid
 $clientAc = new Database();
 $clientAc->connect();
 $queryMax = "SELECT MAX(clientaccountid)
@@ -325,9 +328,10 @@ $result = mysql_fetch_array($clientAc->queryResultsResource);
 $clientAccount->setClientAccountId($result[clientaccountid]);
 $maxClientAcID = $clientAccount->getClientAccountId();
 $clientAc->close();
-$newClientAcID=$maxClientAcID+1;
+
 //print new clientaccountid to check
 echo "Max: ", $maxClientAcID, "<br/>";
+$newClientAcID=$maxClientAcID+1;
 echo "Your new account number is :", $newClientAcID, "<br/";
 
 
@@ -363,4 +367,7 @@ else
     }
 
     $newClientAccount->close();
+
+    }
+//end of if
 ?>
