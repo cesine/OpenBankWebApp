@@ -227,6 +227,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			$dbEmployeeAddressNew->query($queryEmployeeAddressNew);
 			$dbEmployeeAddressNew->close();
 			// end insert row into table Address		
+			echo "";
 
 			
 
