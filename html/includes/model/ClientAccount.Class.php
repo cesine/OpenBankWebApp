@@ -1,6 +1,8 @@
 <?php
 
+
 class ClientAccount{
+
 	private $clientAccountId;
 	private $branchId;
 	private $clientId;
@@ -127,5 +129,19 @@ class ClientAccount{
 		//$newClientAccount->query($queryAddAccount);
 		$newClientAccount->close();
 	}
+	public function initializeClientAccount($row)
+	{
+		$this->setClientAccountId($row[clientAccountId]);
+		$this->setBranchId($row[branchId]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
+		$this->setclientId($row[clientId]);
+		$this->setAccountTypeId($row[accountTypeId]);
+		$this->setAccountName($row[accountName]);
+		$this->setCurrentBalance($row[currentBalance]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
+		$this->setAvailableBalance($row[availableBalance]);
+		$this->setStatus($row[$status]);
+		$this->setOpeningDate($row[openingdate]);
+		$this->setClosingDate($row[$closingDate]);
+	}
+	
 }	
 ?>
