@@ -27,11 +27,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		<tr><td width="180">First name:</td><td width="180">
 		
 			<!-- Making A Value In A Textbox Stay  -->
-			<input id="text" name="choiceFirstName" maxlength=20
-			value="
-			<?php 
-				if(isset($_POST['choiceFirstName'])){ echo htmlentities($_POST['choiceFirstName']); } 
-			?>" />
+			<input id="text" name="choiceFirstName" maxlength=20 value="<?php if(isset($_POST['choiceFirstName'])){ echo htmlentities($_POST['choiceFirstName']); }?>" />
 			
 		</td></tr>
 	</table>
