@@ -10,7 +10,7 @@
 	<tr>
 		<td colspan="2" class="bgcoloroption0">
 		<div align="center">
-		<p class="fieldTitleLeftC">Select current option</p>
+		<p class="fieldTitleLeftC">Select An Employee Option</p>
 		</div>
 		</td>
 	</tr>
@@ -26,7 +26,7 @@ if (!isset($_SESSION['User'])){
 		src='/images/red_bullet_trans.gif' width='6' height='7'></td>
 		<td width='124'><a
 		href='index.php?&content=Login'
-		class='linkVertMenu'>Log in to Online Banking</a></td>
+		class='linkVertMenu'>Log in Employee Interface</a></td>
 	</tr>";
 }else{
 	echo "<tr valign='middle'>

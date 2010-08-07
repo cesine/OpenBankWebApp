@@ -116,7 +116,7 @@ if($content=="BranchLocator"){
 	</p>
 	';
 }else{
-	include ('includes/view/Welcome.php');
+	//include ('includes/view/Welcome.php');
 }
 
 ?>
