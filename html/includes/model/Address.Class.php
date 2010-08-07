@@ -3,6 +3,7 @@ require_once 'includes/model/PostalCodes.Class.php';
 class Address{
 	private $addressID;
 	private $streetNumber;
+	private $street;
 	private $postalCode;
 	
 	
@@ -15,7 +16,10 @@ class Address{
 	{
 	        return $this->streetNumber;
 	}
-
+	public function getStreet()
+	{
+	        return $this->street;
+	}
 	public function getPostalCode()
 	{
 	        return $this->postalCode;
@@ -30,7 +34,10 @@ class Address{
 	{
         $this->streetNumber=$streetNumberIn;
 	}
-
+	public function setStreet($streetIn)
+	{
+        $this->street=$streetIn;
+	}
 
 	public function setPostalCode($row)
 	{
@@ -60,6 +67,7 @@ class Address{
 		 */
 		//print_r($dbForAddress->queryFirstResult);
 		$this->streetNumber=$dbForAddress->queryFirstResult[streetnumber];
+		$this->setStreet($dbForAddress->queryFirstResult[street]);
 		$this->addressID=$dbForAddress->queryFirstResult[addressid];
 		$this->country="Canada";
 		$this->appartmentNumber="";
@@ -77,11 +85,15 @@ class Address{
 		$postalCodeRow=$dbForAddress->queryFirstResult;
 		$this->setPostalCode($postalCodeRow);
 	}
+	public function displayStreet()
+	{
+		echo '	<TD>'.$this->street.'</TD>';		
+	}
 	
 	public function displayAddress()
 	{
 		echo '<p>'.$this->streetNumber." ".
-		$this->postalCode->getStreet()." <br/>".
+		$this->getStreet()." <br/>".
 		$this->postalCode->getCity()."<br/>".
 		$this->postalCode->getProvince()." ".
 		$this->postalCode->getPostalCodes()."</p>";
@@ -97,15 +109,17 @@ class Address{
 		// in the line ($row[addressid]), parameter name [] from db table
 		$this->setAddressID($row[addressid]);
 		$this->setStreetNumber($row[streetnumber]);
+		$this->setStreet($row[street]);
 		$this->setPostalCode($row[postalcode]);	
 	}
 	
 	public function initializeProvinceCityStreet($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
-		$this->setAddressID($row[province]);
-		$this->setStreetNumber($row[city]);
-		$this->setPostalCode($row[street]);		
+		$this->setAddressID($row[addressid]);
+		$this->setStreetNumber($row[streetnumber]);
+		$this->setStreet($row[street]);
+		$this->setPostalCode($row[postalcode]);		
 	}	
 
 	public function displayStreetNumber()
