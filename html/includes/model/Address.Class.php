@@ -22,7 +22,15 @@ class Address{
 	}
 	public function getPostalCode()
 	{
-	        return $this->postalCode;
+	        return $this->postalCode->getPostalCodes();
+	}
+	public function getCity()
+	{
+	        return $this->postalCode->getCity();
+	}
+	public function getProvince()
+	{
+	        return $this->postalCode->getProvince();
 	}
 	
 	public function setAddressID($addressIDIn)
