@@ -91,7 +91,7 @@ $branch->close();
 
 
 //checking branch query result
-echo "The cliend's branch is", $userBranch, "<br/>";
+//echo "The cliend's branch is", $userBranch, "<br/>";
  ?>
 
  <h3 align ="centre"> Account Types </h3>
@@ -316,7 +316,7 @@ echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
 
 
 
-
+$clientAccountN = new ClientAccount();
 //query to determine clientaccountid
 $clientAc = new Database();
 $clientAc->connect();
@@ -325,8 +325,8 @@ $queryMax = "SELECT MAX(clientaccountid)
 
 $clientAc->query($queryMax);
 $result = mysql_fetch_array($clientAc->queryResultsResource);
-$clientAccount->setClientAccountId($result[clientaccountid]);
-$maxClientAcID = $clientAccount->getClientAccountId();
+$clientAccountN->setClientAccountId($result[clientaccountid]);
+$maxClientAcID = $clientAccountN->getClientAccountId();
 $clientAc->close();
 
 //print new clientaccountid to check
