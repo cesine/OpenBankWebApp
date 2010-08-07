@@ -107,15 +107,15 @@ class ClientAccount{
 		//set all the member variables using 
 	}
 	
-	public function __construct($newClientAcID, $userBranch, $clientId, $userAccountChoice, $curentBal, $availBal="0", $status, $date, $dateNull){
-		$this->setAutoIncAccID();
+	public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curentBal="0", $availBal, $status, CURDATE(), $dateNull){
+		$this->setAutoIncAccID($clientAccountId);
 		$this->setBranchId($userBranch);
 		$this->setclientId($clientId);
-		$this->setCurrentBalance('0');
 		$this->setAccountTypeId($userAccountChoice);
-		$this->setAvailableBalance();
-		$this->setStatus('1');
-		$this->setOpeningDate(CURDATE());
+		$this->setCurrentBalance($curentBal);
+		$this->setAvailableBalance("0");
+		$this->setStatus("1");
+		$this->setOpeningDate($date);
 		$this->setClosingDate('NULL');
 		
 	}
@@ -123,12 +123,30 @@ class ClientAccount{
 		//open a database, connect, insert the objects values, and insert into whatever extra other tables are needed
 		$newClientAccount = new Database();
 		$newClientAccount->connect();
-		$newDataRow = 
-		//change this to be a concatineted string from the object
-		//$queryAddAccount = "INSERT INTO clientaccount VALUES ($newClientAcID, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00)";
-		
-		//$newClientAccount->query($queryAddAccount);
+		$newDataRow = getAutoIncAccID().",".getBranchId().",".getClientId().",".getAccountTypeId().",".
+				getCurrentBalance().",".getAvailableBalance().",".getStatus().",".getOpeningDate().
+				",".getClosingDate();
+		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
+		$newClientAccount->query($queryAddAccount);
 		$newClientAccount->close();
+		
+	if ($newClientAccount->queryResultsResource)
+    {
+        echo  "<br/>", "You're account has been created!" , "<br/>";
+        echo 'Pl. follow the link to make a ';
+        ?>
+<a href = "index.php?&content=Transfer">transaction</a>
+
+       <?php
+       echo ' in your new account. <br/>';
+    }
+else
+    {
+        //echo 'Sorry, there was a problem inserting values! ';
+        ?>
+<a href = "index.php?&content=OpenNewAccount">Please try again</a>
+       <?php
+    }
 	}
 	public function initializeClientAccount($row)
 	{
