@@ -71,15 +71,29 @@ echo "Dear ", $userGName," ", $userLName, ", please choose the account you'd lik
 $banking = new AccountType();
 
  ?>
+<p>&nbsp;</p>
+ <table border="1">
+ <caption> Account Types </caption>
+ <p>&nbsp;</p>
 
- <!--displaying choice of account types
-<table border="1"> 
-<tr><td>Account name:</td><td><select name="accountType" size="5" >
+ <tr><td > <b> Banking Plans </b></td> <td > <b> Insurance Plans</b> </td></tr>
+
+<tr><td><select name="accountType" size="5" >
 <option value="powerChecking">Powerchequing Account</option>
 <option value="moneyMasterSavings">Money Master Savings Account</option>
 <option value="usDollarAccount">US Dollar Account</option>
-<option value="creditCard">Credit Card No-Fee Value VISA</option>
-<option value="lineOfCredits">Basic Line of Credit</option>
+<option value="businessChecking">Basic Business Chequing Account</option>
+<option value="businessSavings">Basic Business Savings Account</option>
+<option value="businessFC">Basic Business Foreign Currency Account</option>
+        </select></td>
+    <td><select name="accountType" size="5" >
+<option value="lifeOne">Accidental Death Insurance - 1</option>
+<option value="lifeTwo">Accidental Death Insurance - 2</option>
+<option value="lifeThree">Accidental Death Insurance - 3</option>
+<option value="lifeFour">Accidental Death Insurance - 4</option>
+        </select> </td></tr>
+
+<tr><td><select name="accountType" size="5" >
 <option value="rSPSix">GIC(6mos) with Flex for RSPs Account</option>
 <option value="rSPTwelve">GIC(12mos) with Flex for RSPs Account</option>
 <option value="rSPEighteen">GIC(18mos) with Flex for RSPs Account</option>
@@ -88,29 +102,21 @@ $banking = new AccountType();
 <option value="tSFAtwelve">GIC(12mos) with Flex for TFSAs Account</option>
 <option value="tSFAEighteen">GIC(18mos) with Flex for TFSAs Account</option>
 <option value="tSFATfour">GIC(24mos) with Flex for TFSAs Account</option>
-<option value="lifeOne">Accidental Death Insurance - 1</option>
-<option value="lifeTwo">Accidental Death Insurance - 2</option>
-<option value="lifeThree">Accidental Death Insurance - 3</option>
-<option value="lifeFour">Accidental Death Insurance - 4</option>
-<option value="businessChecking">Basic Business Chequing Account</option>
-<option value="businessSavings">Basic Business Savings Account</option>
-<option value="businessFC">Basic Business Foreign Currency Account</option>
+        </select></td>
+     <td><select name="accountType" size="5" >
+<option value="creditCard">Credit Card No-Fee Value VISA</option>
+<option value="lineOfCredits">Basic Line of Credit</option>
+</select></td></tr>
 
-</select>
-</td>
-</tr></table>
 
-<P></P>
-<input type="submit" name="submitAccountName" value="submit" />
-<P></P> -->
- <p>&nbsp;</p>
- <h3> Account Types </h3>
- <p>&nbsp;</p>
+</table>
+
+<!--dynamic list
 
 <table  border="1">
      
     <tr><th > Banking Plans </th> <td > <b> Insurance Plans</b> </td></tr>
-    <tr><td > <?php $banking->bankingPlans();?> </td>
+    <tr><td > <?php //$banking->bankingPlans();?> </td>
         <td > <?php //$banking->insurancePlans(); ?> </td></tr>
 
     <tr><th > Borrowing Plans </th> <td ><b> Investment Plans</b> </td></tr>
@@ -118,6 +124,8 @@ $banking = new AccountType();
         <td > <?php //$banking->investPlans(); ?> </td></tr>
 
 </table>
+
+-->
 <p>&nbsp;</p>
 <input type="submit" name="submitAccountName" value="Submit" />
 <input type="reset" name="submitReset" value="Reset" />
@@ -127,7 +135,7 @@ $banking = new AccountType();
 $clientAccount = new ClientAccount();
 $userChoice1=$_POST["accountType"];
 
-/*
+
 //belongs to the firsttable
 //if user submitted choice
 if (isset($_POST['submitAccountName'])) 
@@ -221,7 +229,8 @@ switch ($userChoice)
 	
 }
 //end of if
-  */
+
+/*belongs to the second table
 
 if (isset($_POST['submitAccountName']))
 {
@@ -271,6 +280,7 @@ if (isset($_POST['submitAccountName']))
 else
     $clientAccount->setAccountTypeId('');
 
+*/
 
 $userAccountChoice = $clientAccount->getAccountTypeId();
 echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
@@ -295,38 +305,11 @@ $userBranch = $clientAccount->getBranchId();
 $branch->close();
 
 
-
-echo "The cliend's branch is", $userBranch, "<br/>";
-/*
-//input for chequing and savings
-//I am not using it 'cause I'll have to transfer them to transaction
-if (($userAccountChoice == 1)||($userAccountChoice == 2)||
-        ($userAccountChoice == 10)||($userAccountChoice == 11))
-{echo "<Br/>","Please fill in the amount you'd like to deposit in your new account.";
+//checking branch query result
+//echo "The cliend's branch is", $userBranch, "<br/>";
 
 
-
-
-?>
-<table align="centre" border="0">
-    <tr> <td width="200"> <input type="text" name="amount"  maxlength=10 /> </td>
-        <td width ="200"> <input type="submit" name="submitAmount" value="Submit" /></td>
-    </tr>
-</table>
-
-
-
-
-<?php
-}
-
-$userDeposit=$_POST["amount"];
-
-if (isset($_POST[submitAmount]))
- echo "<br/>", "Amount: ", $userDeposit, "<br/>";
-*/
-
-//inserting new account
+//inserting new account, should change clientaccountid
 $newClientAccount = new Database();
 $newClientAccount->connect();
 
@@ -342,11 +325,19 @@ $newClientAccount->query($queryAddAccount);
 if ($newClientAccount->queryResultsResource)
     {
         echo  "<br/>", "You're account has been created!" , "<br/>";
-        echo 'Pl. follow the link to make a transfer';
+        echo 'Pl. follow the link to make a';
+        ?>
+<a href = "index.php?&content=Transfer">transaction</a>
+
+       <?php
+       echo ' in your new account';
     }
 else
     {
-        echo 'Sorry, there was a problem inserting values!';
+        echo 'Sorry, there was a problem inserting values! ';
+        ?>
+<a href = "index.php?&content=OpenNewAccount">Please try again</a>
+       <?php
     }
 
     $newClientAccount->close();
