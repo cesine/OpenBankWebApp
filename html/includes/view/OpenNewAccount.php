@@ -100,6 +100,14 @@ echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you
 <input type="submit" name="submitAccountName" value="submit" />
 <P></P>
 
+<table width ="800" border="1">
+    <thead> Account Types </thead>
+    <tr><td width ="400"> Banking Plans</td> <td width ="400"> Insurance Plans </td></tr>
+    <tr><td width ="400"><select name="accountType" size="4" ></select></td> <td width ="400"><select name="accountType" size="4" ></select> </td></tr>
+    <tr><td width ="400"> Borrowing Plans</td> <td width ="400"> Investment Plans </td></tr>
+    <tr><td width ="400"><select name="accountType" size="4" ></select></td> <td width ="400"><select name="accountType" size="4" ></select> </td></tr>
+
+</table>
 <?php
 $clientAccount = new ClientAccount();
 $userChoice=$_POST["accountType"];
