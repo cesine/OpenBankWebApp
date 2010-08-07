@@ -1,4 +1,6 @@
-require_once('includes/model/Employee.Class.php');
+<?php 
+	require_once('includes/model/Employee.Class.php');
+?>
 <p></p>
 <?php 
 
