@@ -56,7 +56,7 @@ class PostalCodes
 		$this->setProvince($row[province]);			
 	}
 	
-	public function initializeProvinceCityStreet($row)
+	public function initializeProvinceCityStreet2($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
 		$this->setProvince($row[province]);
