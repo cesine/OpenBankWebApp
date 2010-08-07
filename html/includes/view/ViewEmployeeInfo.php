@@ -3,7 +3,7 @@ require_once('includes/model/Branch.Class.php');
 require_once('includes/model/Address.Class.php');
 require_once('includes/model/PostalCodes.Class.php');
 
-echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>";
+echo "<form action='?&content=ViewEmployeeInfo' method='POST'>";
 
 ?>
 
@@ -187,7 +187,7 @@ $dbEmployeePersonalInfo->connect();
 // note: in query we use data, selected by user
 $queryEmployeePersonalInfo=
 "SELECT e.employeeid, e.firstname, e.lastname,
-        p.postalcodes, p.province, p.city, a.streetnumber, p.street
+        p.postalcodes, p.province, p.city, a.streetnumber, a.street
 FROM    employee e, address a, postalcodes p	
 WHERE   e.addressid=a.addressid AND
         a.postalcode=p.postalcodes AND
