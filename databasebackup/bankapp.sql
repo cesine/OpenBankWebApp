@@ -60,7 +60,7 @@ CREATE TABLE `address` (
   PRIMARY KEY (`addressid`),
   KEY `postalcode` (`postalcode`),
   CONSTRAINT `address_ibfk_1` FOREIGN KEY (`postalcode`) REFERENCES `postalcodes` (`postalcodes`)
-) ENGINE=InnoDB AUTO_INCREMENT=10000053 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10000085 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -622,4 +622,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-08-06 23:03:01
+-- Dump completed on 2010-08-07 10:03:01
