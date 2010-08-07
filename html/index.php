@@ -60,7 +60,6 @@ if($topMenu =="ClientTopMenu"){
 /*
  * Main Control Switch to change which page to display
  */
-
 if($userIsClient || $userIsEmployee){
 	if($content=="Statement"){
 		include ('includes/view/Statements.php');
@@ -96,6 +95,7 @@ if($userIsClient || $userIsEmployee){
 		include ('includes/view/TestClientAccount.php');	// need to be removed later !!!	
 	}else{
 	//echo "<p>You must log on to access pages".$content."</p>";
+	}
 }
 
 /*
