@@ -52,6 +52,11 @@ class Database {
 			$this->queryResultsCount="0";
 		}
 	}
+	public function updateInsert($querystring){
+		$recordId=1;
+		mysql_query($querystring,$this->link_id);
+		return $recordId;
+	}
 	public function close(){
 		//close the database connection
 		if(!@mysql_close($this->link_id)){
