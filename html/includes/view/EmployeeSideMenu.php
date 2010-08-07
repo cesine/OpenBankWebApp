@@ -38,7 +38,11 @@ if (!isset($_SESSION['User'])){
 	</tr>";
 }
 ?>
-
+	<?php 
+	$employee=unserialize($_SESSION['Employee']);
+	if ($employee->canEditHR())
+	{
+	?>
 	<tr valign="middle">
 		<td width="14" height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
@@ -70,5 +74,9 @@ if (!isset($_SESSION['User'])){
 		href="index.php?&content=DeactivateEmployee"
 		class="linkVertMenu">Deactivate employee</a></td>
 	</tr>
+	<?php 
+	}
+	?>
+
 </tbody>
 </table>
