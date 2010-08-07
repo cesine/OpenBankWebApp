@@ -53,8 +53,7 @@ class Database {
 		}
 	}
 	public function updateInsert($querystring){
-		$recordId=1;
-		mysql_query($querystring,$this->link_id);
+		$recordId=mysql_query($querystring,$this->link_id);
 		return $recordId;
 	}
 	public function close(){
