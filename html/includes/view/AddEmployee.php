@@ -43,7 +43,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 <?php 
 	// create new objects
-	$employee = new Employee();
+	//$employee = new Employee();
 	$branch = new Branch();
 	$title = new EmployeeTitle();
 	$workHistory = new EmployeeWorkHistory();
