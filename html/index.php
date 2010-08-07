@@ -79,56 +79,56 @@ if($userIsClient || $userIsEmployee){
 	}	
 }else{
 	//echo "<p>You must log on to access pages".$content."</p>";
+
+
+	/*
+	 * These pages can still be seen with out logging in.
+	 * Please move them inside the if(userisClient or userisEmployee) section above 
+	 * once they are finished, or if they use the user session information
+	 */
+	
+	if($content=="BranchLocator"){	
+		include ('includes/view/BranchLocator.php');
+	}elseif($content=="Banking"|| $content=="Borrowing" || $content=="Insurance" || $content=="Investing" || $content=="PersonalServices" 
+				|| $content=="BusinessServices" || $content=="RSP"){
+		include('includes/view/AboutTheBank.php');
+	}elseif($content=="Welcome"){
+		include ('includes/view/Welcome.php');
+	}elseif ($content=="OpenNewAccount"){
+		include ('includes/view/OpenNewAccount.php');
+	}elseif($content=="Login"){
+		include ('includes/view/Login.php');
+	}elseif($content=="EmployeeLogin"){
+		include ('includes/view/EmployeeLogin.php');
+	}elseif($content=="EmployeeInfo"){
+		include ('includes/view/EmployeeInfo.php');			
+	}elseif($content=="ViewEmployeeInfo"){
+		include ('includes/view/ViewEmployeeInfo.php');	
+	}elseif($content=="AddEmployee"){
+		include ('includes/view/AddEmployee.php');	
+	}elseif($content=="ModifyEmployee"){
+		include ('includes/view/ModifyEmployee.php');	
+	}elseif($content=="DeactivateEmployee"){
+		include ('includes/view/DeactivateEmployee.php');	
+	}elseif($content=="ZViewEmployeeInfo"){
+		include ('includes/view/ZViewEmployeeInfo.php');
+	}elseif($content=="TestClientAccount"){
+		include ('includes/view/TestClientAccount.php');	// need to be removed later !!!	
+	}elseif($content=="EmployeeInterface"){
+		echo '<a href="?&content=Summary">View a Clients Info</a>
+		</p>
+		<p>
+		List Employees<br />
+		Add Employee<br />
+		Modify Employee<br />
+		Delete Employee<br />
+		</p>
+		';
+	}else{
+		$content="PersonalServices";
+		include('includes/view/AboutTheBank.php');
+	}
 }
-
-/*
- * These pages can still be seen with out logging in.
- * Please move them inside the if(userisClient or userisEmployee) section above 
- * once they are finished, or if they use the user session information
- */
-
-if($content=="BranchLocator"){	
-	include ('includes/view/BranchLocator.php');
-}elseif($content=="Banking"|| $content=="Borrowing" || $content=="Insurance" || $content=="Investing" || $content=="PersonalServices" 
-			|| $content=="BusinessServices" || $content=="RSP"){
-	include('includes/view/AboutTheBank.php');
-}elseif($content=="Welcome"){
-	include ('includes/view/Welcome.php');
-}elseif ($content=="OpenNewAccount"){
-	include ('includes/view/OpenNewAccount.php');
-}elseif($content=="Login"){
-	include ('includes/view/Login.php');
-}elseif($content=="EmployeeLogin"){
-	include ('includes/view/EmployeeLogin.php');
-}elseif($content=="EmployeeInfo"){
-	include ('includes/view/EmployeeInfo.php');			
-}elseif($content=="ViewEmployeeInfo"){
-	include ('includes/view/ViewEmployeeInfo.php');	
-}elseif($content=="AddEmployee"){
-	include ('includes/view/AddEmployee.php');	
-}elseif($content=="ModifyEmployee"){
-	include ('includes/view/ModifyEmployee.php');	
-}elseif($content=="DeactivateEmployee"){
-	include ('includes/view/DeactivateEmployee.php');	
-}elseif($content=="ZViewEmployeeInfo"){
-	include ('includes/view/ZViewEmployeeInfo.php');
-}elseif($content=="TestClientAccount"){
-	include ('includes/view/TestClientAccount.php');	// need to be removed later !!!	
-}elseif($content=="EmployeeInterface"){
-	echo '<a href="?&content=Summary">View a Clients Info</a>
-	</p>
-	<p>
-	List Employees<br />
-	Add Employee<br />
-	Modify Employee<br />
-	Delete Employee<br />
-	</p>
-	';
-}else{
-	$content="PersonalServices";
-	include('includes/view/AboutTheBank.php');
-}
-
 ?>
 </div>
 </div>
