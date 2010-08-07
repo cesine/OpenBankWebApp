@@ -1,7 +1,7 @@
 
 <?php 
 //client is opening a new account
-include('includes/model/AccountType.php');
+require_once('includes/model/AccountType.php');
 require_once('includes/model/ClientAccount.Class.php');
 require_once('includes/controller/Database.Class.php');
 
@@ -110,18 +110,13 @@ $banking = new AccountType();
 
 <table width ="100%" border="1">
      
-    <tr><th width ="50%"><b> Banking Plans </b></th> <td width ="50%"> <b> Insurance Plans</b> </td></tr>
-    <tr><td width ="50%">
-<?php $banking->bankingPlans();
- ?>
-
-        <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
-
+    <tr><th width ="50%"> Banking Plans </th> <td width ="50%"> <b> Insurance Plans</b> </td></tr>
+    <tr><td width ="50%"> <?php $banking->bankingPlans();?> </td>
+        <td width ="50%"> <?php $banking->insurancePlans(); ?> </td></tr>
 
     <tr><th width ="50%"> Borrowing Plans </th> <td width ="50%"><b> Investment Plans</b> </td></tr>
-    <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
-
-        <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
+    <tr><td width ="50%"> <?php $banking->borrowingPlans(); ?> </td>
+        <td width ="50%"> <?php $banking->investPlans(); ?> </td></tr>
 
 </table>
 <p>&nbsp;</p>
@@ -231,27 +226,52 @@ switch ($userChoice)
 
 if (isset($_POST['submitAccountName']))
 {
-    if (strcmp($userChoice,"Powerchequing Account"))
+    if (!strcmp($userChoice,"Powerchequing Account"))
          $clientAccount->setAccountTypeId(1);
-    if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);
-
-
-
-
-
-
-
+    elseif (!strcmp($userChoice,"Money Master Savings Account"))
+         $clientAccount->setAccountTypeId(2);
+    elseif (!strcmp($userChoice,"US Dollar Account"))
+         $clientAccount->setAccountTypeId(3);
+    elseif (!strcmp($userChoice,"Basic Business Chequing Account"))
+         $clientAccount->setAccountTypeId(10);
+    elseif (!strcmp($userChoice,"Basic Business Savings Account"))
+         $clientAccount->setAccountTypeId(11);
+    elseif (!strcmp($userChoice,"Basic Business Foreign Currency Account"))
+         $clientAccount->setAccountTypeId(12);
+    elseif (!strcmp($userChoice,"GIC(6mos) with Flex for RSPs Account"))
+         $clientAccount->setAccountTypeId(6);
+    elseif (!strcmp($userChoice,"GIC(6mos) with Flex for TFSAs Account"))
+         $clientAccount->setAccountTypeId(7);
+    elseif (!strcmp($userChoice,"GIC(24mos) with Flex for RSPs Account"))
+         $clientAccount->setAccountTypeId(9);
+    elseif (!strcmp($userChoice,"GIC(12mos) with Flex for RSPs Account"))
+         $clientAccount->setAccountTypeId(13);
+    elseif (!strcmp($userChoice,"GIC(18mos) with Flex for RSPs Account"))
+         $clientAccount->setAccountTypeId(14);
+    elseif (!strcmp($userChoice,"GIC(12mos) with Flex for TFSAs Account"))
+         $clientAccount->setAccountTypeId(15);
+    elseif (!strcmp($userChoice,"GIC(18mos) with Flex for TFSAs Account"))
+         $clientAccount->setAccountTypeId(16);
+    elseif (!strcmp($userChoice,"GIC(24mos) with Flex for TFSAs Account"))
+         $clientAccount->setAccountTypeId(17);
+    elseif (!strcmp($userChoice,"Accidental Death Insurance - 1"))
+         $clientAccount->setAccountTypeId(8);
+    elseif (!strcmp($userChoice,"Accidental Death Insurance - 2"))
+         $clientAccount->setAccountTypeId(18);
+    elseif (!strcmp($userChoice,"Accidental Death Insurance - 3"))
+         $clientAccount->setAccountTypeId(19);
+    elseif (!strcmp($userChoice,"Accidental Death Insurance - 4"))
+         $clientAccount->setAccountTypeId(20);
+    elseif (!strcmp($userChoice,"Credit Card No-Fee Value VISA"))
+         $clientAccount->setAccountTypeId(4);
+    elseif (!strcmp($userChoice,"Basic Line of Credit"))
+         $clientAccount->setAccountTypeId(5);
+    else echo"Please try again.<br/>";
 
 }
+else
+    $clientAccount->setAccountTypeId('');
+
 
 $userAccountChoice = $clientAccount->getAccountTypeId();
 echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
