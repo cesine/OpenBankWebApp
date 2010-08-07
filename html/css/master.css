@@ -19,7 +19,7 @@ body {
 	width: 800px;
 	font-family:Arial, Helvetica, sans-serif;
 	background: #F0F0F0;
-        height: 100%;	
+    height: 100%;	
 }
 
 h1, h2 {
@@ -64,7 +64,6 @@ ul{ list-style:none;}
       float:left;	
       padding-left: 20px;
       padding-top: 25px; 
-      height: 40em;
  }
  <!--http://www.smashingmagazine.com/2008/08/13/top-10-css-table-designs/-->
 	  
@@ -105,7 +104,6 @@ ul{ list-style:none;}
 }
 
 #content{
-   height: 50em;
    background-color: white; 
    margin: 0;
    padding: 0px;
