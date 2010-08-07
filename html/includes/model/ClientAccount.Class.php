@@ -47,6 +47,7 @@ class ClientAccount{
 		return $this->closingDate;
 	}
 	public function getAutoIncAccID() {
+		$this->setAutoIncAccID();
 		return $this->autoIncAccID;
 	}
     public function setClientAccountId($clientAccountId){
@@ -126,8 +127,8 @@ class ClientAccount{
 		//open a database, connect, insert the objects values, and insert into whatever extra other tables are needed
 		$newClientAccount = new Database();
 		$newClientAccount->connect();
-		$newDataRow = getAutoIncAccID().",".getBranchId().",".getClientId().",".getAccountTypeId().",".
-				getCurrentBalance().",".getAvailableBalance().",".getStatus().",".getOpeningDate().
+		$newDataRow = $this->getAutoIncAccID().",".$this->getBranchId().",".$this->getClientId().",".$this->getAccountTypeId().",".
+				$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus().",".getOpeningDate().
 				",".getClosingDate();
 		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
 		$newClientAccount->query($queryAddAccount);
