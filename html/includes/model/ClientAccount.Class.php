@@ -107,7 +107,7 @@ class ClientAccount{
 		//set all the member variables using 
 	}
 	
-	public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curentBal="0", $availBal, $status, CURDATE(), $dateNull){
+/*	public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curentBal="0", $availBal, $status, CURDATE(), $dateNull){
 		$this->setAutoIncAccID($clientAccountId);
 		$this->setBranchId($userBranch);
 		$this->setclientId($clientId);
@@ -118,7 +118,8 @@ class ClientAccount{
 		$this->setOpeningDate($date);
 		$this->setClosingDate('NULL');
 		
-	}
+	} */
+	
 	public function InsertAccountIntoDatabase(){
 		//open a database, connect, insert the objects values, and insert into whatever extra other tables are needed
 		$newClientAccount = new Database();
