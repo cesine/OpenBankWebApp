@@ -195,9 +195,9 @@ class Employee{
 				<TD class="tableDataRightC">'.$this->lastName.'</TD>
 				<TD class="tableDataRightC">'.$this->address->getStreetNumber().'</TD>
 				<TD class="tableDataRightC">'.$this->address->getStreet().'</TD>
-				<TD class="tableDataRightC">'.$this->address->postalCode->getCity().'</TD>
-				<TD class="tableDataRightC">'.$this->address->postalCode->getProvince().'</TD>
-				<TD class="tableDataRightC">'.$this->address->postalCode->getPostalCodes().'</TD></tr>';	
+				<TD class="tableDataRightC">'.$this->address->getCity().'</TD>
+				<TD class="tableDataRightC">'.$this->address->getProvince().'</TD>
+				<TD class="tableDataRightC">'.$this->address->getPostalCodes().'</TD></tr>';	
 			
 	}	
 	
