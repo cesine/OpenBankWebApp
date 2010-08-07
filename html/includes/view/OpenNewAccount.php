@@ -100,7 +100,7 @@ echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you
 <input type="submit" name="submitAccountName" value="submit" />
 <P></P> -->
 
-<table width ="800" border="1">
+<table width ="100%" border="1">
     <thead> <h5> Account Types </h5> </thead>
 <tr><td width ="50%"><h6> Banking Plans</h6></td> <td width ="50%"><h6> Insurance Plans</h6> </td></tr>
     <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
@@ -108,15 +108,17 @@ echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you
     <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
 
 
-    <tr><td width ="50%"> <h6>Borrowing Plans</h6></td> <td width ="50%"><h6> Investment Plans</h6> </td></tr>
+    <tr><td width ="50%"> <h6>Borrowing Plans</h6></td> <td width ="50%"><b> Investment Plans</b> </td></tr>
     <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
 
     <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
 
 </table>
 <P></P>
-<input type="submit" name="submitAccountName" value="submit" />
+<input type="submit" name="submitAccountName" value="Submit" />
+<input type="reset" name="submitAccountName" value="Reset" />
 <P></P>
+
 <?php
 $clientAccount = new ClientAccount();
 $userChoice=$_POST["accountType"];
