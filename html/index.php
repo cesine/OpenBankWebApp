@@ -26,6 +26,8 @@ if($content=="EmployeeLogin"||$userIsEmployee){
 }elseif($userIsClient){
 	include ('includes/view/ClientSideMenu.php');
 	$topMenu="ClientTopMenu";
+}elseif($content=="BusinessServices"){
+	include ('includes/view/BusinesSideMenu.php');
 }else{
 	include ('includes/view/sidemenu.php'); 
 	$topMenu="";
