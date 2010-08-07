@@ -84,9 +84,7 @@ if($content=="Banking"){
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="/cda/eventdetail/0,1005,LIDen_SID3043,00.html"
 							class="boldnav">Investing</a> <br>
-						<a href="/cda/content/0,1608,CID836_LIDen,00.html"
-							style="font-size: 11px;">GICs</a>, <a
-							href="/cda/content/0,1608,CID7207_LIDen,00.html"
+						<a href="index.php?&content=RSP"
 							style="font-size: 11px;">RSPs</a>, <a
 							href="/cda/content/0,1608,CID12354_LIDen,00.html"
 							style="font-size: 11px;">TFSA</a> 
@@ -125,6 +123,8 @@ if($content=="Banking"){
 </table>
 <?php 
 }elseif($content=="BusinessServices"){
+	echo "paste some text here";
+}elseif($content=="RSP"){
 	echo "paste some text here";
 }
 ?>
