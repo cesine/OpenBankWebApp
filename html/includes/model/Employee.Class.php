@@ -169,6 +169,21 @@ class Employee{
 		$this->setStatus($row[status]);
 	}	
 	
+	public function initializeEmployeeIDFirstLastName($row)
+	{
+		// in the line ($row[employeeid]), parameter name [] from db table
+		$this->setEmployeeID($row[employeeid]);
+		$this->setFirstName($row[firstname]);
+		$this->setLastName($row[lastname]);	
+		$this->setBranchID($row[branchid]);	
+		$this->setTitleID($row[titleid]);	
+		$this->setTitleName($row[titleid]);			
+		$this->setSalary($row[salary]);
+		$this->setAddressID($row[addressid]);	
+		$this->setTimeOffID($row[timeoffid]);
+		$this->setStatus($row[status]);
+	}		
+	
 	public function displayEmployeePersonalInfo()
 	{
 		echo '	<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
