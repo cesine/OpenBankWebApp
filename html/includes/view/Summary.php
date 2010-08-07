@@ -12,7 +12,6 @@ if (isset($_SESSION['Client']))
 	$clientId = $client->getClientID();
 }
 
-
 $branch = new Database();
 $branch->connect();
 

@@ -102,11 +102,11 @@ class ClientAccount{
 		<TD class="tableDataRightC">'.$this->availableBalance.'</TD>
 		</TR>';
 	}
-	/*
-	public function __construct($row){
+	
+	public function __construct(){
 		//set all the member variables using 
 	}
-	*/
+	
 	public function __construct($newClientAcID, $userBranch, $clientId, $userAccountChoice, $curentBal, $availBal="0", $status, $date, $dateNull){
 		$this->setAutoIncAccID();
 		$this->setBranchId($userBranch);
