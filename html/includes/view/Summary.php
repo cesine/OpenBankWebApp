@@ -1,4 +1,60 @@
 
+<?php 
+//client is opening a new account
+require_once('includes/model/AccountType.php');
+require_once('includes/model/ClientAccount.Class.php');
+?>
+
+<?php
+
+if (isset($_SESSION['Client']))
+{
+	$client = unserialize($_SESSION['Client']);
+	$clientId = $client->getClientID();
+}
+
+
+//object to call planlist
+//$banking = new AccountType();
+//object to call ClientAccount
+//object for the Database to find the user's branch
+$branch = new Database();
+$branch->connect();
+
+//query to find client's branch id
+$queryBranchid =   "SELECT distinct *
+                    FROM `clientaccount`
+		    WHERE `clientid` = $clientId";
+
+$branch->query($queryBranchid);
+$queryResult=mysql_fetch_array($branch->queryResultsResource);
+//setting and getting branchid
+/*
+ * Get all Client Accounts
+ */
+$branch->close();
+
+
+for($count=0;$count<$queryResult->queryResultsCount;$count=$count+1){
+	$row=mysql_fetch_array($queryResult->queryResultsResource);
+		//echo "Here is the row: ";
+		//print_r($row);
+	
+		$b = new ClientAccount();
+		$b->initializeClientAccount($row);	
+		$b->DisplayAcountDetailsInRow();
+	
+		//$b->__destruct(); //called automatically when the object goes out of scope
+	//}
+}//endl if to only print when there are any results
+
+echo '</div>';
+?>
+
+
+
+
+
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   
