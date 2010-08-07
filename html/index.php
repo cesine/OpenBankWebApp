@@ -80,7 +80,6 @@ if($userIsClient || $userIsEmployee){
 		include ('includes/view/LoginAsClient.php');
 	}elseif($content=="MyEmployeeInfo"){
 		include ('includes/view/MyEmployeeInfo.php');		
-	}
 	}elseif($content=="EmployeeInfo"){
 		include ('includes/view/EmployeeInfo.php');			
 	}elseif($content=="ViewEmployeeInfo"){
