@@ -68,9 +68,9 @@ $clientName->close();
 echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you'd like to open.<br/>"
  ?>
 
- <!--displaying choice of account types-->
+ <!--displaying choice of account types
 <table border="1"> 
-<tr><td>Account name:</td><td><select name="accountType" size="15" >
+<tr><td>Account name:</td><td><select name="accountType" size="5" >
 <option value="powerChecking">Powerchequing Account</option>
 <option value="moneyMasterSavings">Money Master Savings Account</option>
 <option value="usDollarAccount">US Dollar Account</option>
@@ -98,16 +98,25 @@ echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you
 
 <P></P>
 <input type="submit" name="submitAccountName" value="submit" />
-<P></P>
+<P></P> -->
 
 <table width ="800" border="1">
-    <thead> Account Types </thead>
-    <tr><td width ="400"> Banking Plans</td> <td width ="400"> Insurance Plans </td></tr>
-    <tr><td width ="400"><select name="accountType" size="4" ></select></td> <td width ="400"><select name="accountType" size="4" ></select> </td></tr>
-    <tr><td width ="400"> Borrowing Plans</td> <td width ="400"> Investment Plans </td></tr>
-    <tr><td width ="400"><select name="accountType" size="4" ></select></td> <td width ="400"><select name="accountType" size="4" ></select> </td></tr>
+    <thead> <h5> Account Types </h5> </thead>
+<tr><td width ="50%"><h6> Banking Plans</h6></td> <td width ="50%"><h6> Insurance Plans</h6> </td></tr>
+    <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
+
+    <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
+
+
+    <tr><td width ="50%"> <h6>Borrowing Plans</h6></td> <td width ="50%"><h6> Investment Plans</h6> </td></tr>
+    <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
+
+    <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
 
 </table>
+<P></P>
+<input type="submit" name="submitAccountName" value="submit" />
+<P></P>
 <?php
 $clientAccount = new ClientAccount();
 $userChoice=$_POST["accountType"];
