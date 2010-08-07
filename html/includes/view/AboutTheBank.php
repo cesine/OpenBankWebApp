@@ -34,7 +34,7 @@ if($content=="Banking"){
 							<tbody>
 
 					<tr valign="top">
-						<td width="13"><img src="/images/greyarrow.gif" alt="image" width="5"
+						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="/cda/eventdetail/0,1005,LIDen_SID3041,00.html"
 							class="boldnav">Day-To-Day Banking</a> <br>
@@ -54,7 +54,7 @@ if($content=="Banking"){
 
 				<tbody>
 					<tr valign="top">
-						<td width="13"><img src="/images/greyarrow.gif" alt="image" width="5"
+						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="/cda/eventdetail/0,1005,LIDen_SID3042,00.html"
 							class="boldnav">Borrowing</a> <br>
@@ -105,7 +105,7 @@ if($content=="Banking"){
 
 				<tbody>
 					<tr valign="top">
-						<td width="13"><img src="/images/greyarrow.gif" alt="image" width="5"
+						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="/cda/eventdetail/0,1005,LIDen_SID3044,00.html"
 							class="boldnav">Insurance</a> <br>
