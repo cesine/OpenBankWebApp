@@ -168,6 +168,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";						
 											
 				$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
+				//$dbEmployeeWorkHistory->updateInsert($queryEmployeeWorkHistory);
 				
 				//Put results of query 1 into table on the screen
 				for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
@@ -254,7 +255,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				 SET    lastdate = CURDATE()
 				 WHERE  employeeid=$selectedEmployee AND lastdate='0000-00-00'";				
 
-				$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
+				//$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
+				$dbEmployeeTitleOld->updateInsert($queryEmployeeTitleOld);
 				$dbEmployeeTitleOld->close();
 				// end put "last date" for old title
 				
@@ -269,7 +271,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 												  titleid, salary)
                  VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', $titleIDNew, $salaryNew)";
 									
-				$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
+				//$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
+				$dbEmployeeTitleNew->updateInsert($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
 				// end put "start date" for new title
 
