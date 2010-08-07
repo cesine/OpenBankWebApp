@@ -44,6 +44,8 @@ if (!isset($_SESSION['User'])){
 		
 	
 	$employee=unserialize($_SESSION['Employee']);
+	echo "Employee can edit HR is ";
+	$employee->displayEmployeeInRowFormatted();
 	if ($employee->canEditHR())
 	{
 	?>
