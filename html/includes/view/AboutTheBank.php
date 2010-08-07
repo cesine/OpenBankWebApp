@@ -1,6 +1,6 @@
 <?php
 
-$content = $_GET["content"];
+//$content = $_GET["content"];
 
 if($content=="Banking"){?>
 <table width="397" border="0" cellspacing="0" cellpadding="0">
