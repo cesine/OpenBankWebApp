@@ -17,8 +17,12 @@ if($content=="Banking"){?>
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="index.php?&content=Banking"
 							class="boldnav">Day-To-Day Banking</a> <br>
-							<a href="/cda/content/0,1608,CID13190_LIDen,00.html"
-							style="font-size: 11px;">Accounts & Plans</a>
+							<a href="index.php?&content=Chequing"
+							style="font-size: 11px;">Chequing</a>
+							<a href="index.php?&content=Savings"
+							style="font-size: 11px;">Savings</a>
+							<a href="index.php?&content=ForeignCurrency"
+							style="font-size: 11px;">Foreign Currency</a>
 						</td>
 					</tr>
 				</tbody>
@@ -32,7 +36,37 @@ if($content=="Banking"){?>
 			
 <?php 			
 }elseif($content=="Borrowing"){
-	echo "paste some text here";
+?>
+<table width="397" border="0" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr></tr>
+		<tr valign="top">
+			<td width="5"><img src="/static/spacer.gif" width="5" height="10"></td>
+			<td width="188">
+			<table width="188" border="0" cellspacing="0" cellpadding="0">
+
+				<tbody>
+					<tr valign="top">
+						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
+							height="5" hspace="4" vspace="6" border="0"></td>
+						<td><a href="index.php?&content=Borrowing"
+							class="boldnav">Borrowing</a> <br>
+						<a href="index.php?&content=CreditCards"
+							style="font-size: 11px;">Credit Cards</a>, <a
+							href="index.php?&content=LineOfCredit"
+							style="font-size: 11px;">Line of Credit</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			</td>
+			<td width="11"><img src="/static/spacer.gif" width="5" height="10"></td>
+		</tr>
+	</tbody>
+</table>
+			
+<?php 			
 }elseif($content=="Investing"){
 	echo "paste some text here";
 }elseif($content=="Insurance"){
@@ -53,8 +87,12 @@ if($content=="Banking"){?>
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="index.php?&content=Banking"
 							class="boldnav">Day-To-Day Banking</a> <br>
-							<a href="/cda/content/0,1608,CID13190_LIDen,00.html"
-							style="font-size: 11px;">Accounts & Plans</a>
+							<a href="index.php?&content=Chequing"
+							style="font-size: 11px;">Chequing</a>
+							<a href="index.php?&content=Savings"
+							style="font-size: 11px;">Savings</a>
+							<a href="index.php?&content=ForeignCurrency"
+							style="font-size: 11px;">Foreign Currency</a>
 						</td>
 					</tr>
 				</tbody>
@@ -73,9 +111,9 @@ if($content=="Banking"){?>
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="index.php?&content=Borrowing"
 							class="boldnav">Borrowing</a> <br>
-						<a href="/cda/content/0,1608,CID13386_LIDen,00.html"
+						<a href="index.php?&content=CreditCards"
 							style="font-size: 11px;">Credit Cards</a>, <a
-							href="/cda/content/0,1608,CID518_LIDen,00.html"
+							href="index.php?&content=LineOfCredit"
 							style="font-size: 11px;">Line of Credit</a>
 						</td>
 					</tr>
