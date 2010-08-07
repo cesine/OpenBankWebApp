@@ -107,15 +107,15 @@ $banking = new AccountType();
  <h3> Account Types </h3>
  <p>&nbsp;</p>
 
-<table width ="100%" border="1">
+<table  border="1">
      
-    <tr><th width ="50%"> Banking Plans </th> <td width ="50%"> <b> Insurance Plans</b> </td></tr>
-    <tr><td width ="50%"> <?php $banking->bankingPlans();?> </td>
-        <td width ="50%"> <?php //$banking->insurancePlans(); ?> </td></tr>
+    <tr><th > Banking Plans </th> <td > <b> Insurance Plans</b> </td></tr>
+    <tr><td > <?php $banking->bankingPlans();?> </td>
+        <td > <?php //$banking->insurancePlans(); ?> </td></tr>
 
-    <tr><th width ="50%"> Borrowing Plans </th> <td width ="50%"><b> Investment Plans</b> </td></tr>
-    <tr><td width ="50%"> <?php //$banking->borrowingPlans(); ?> </td>
-        <td width ="50%"> <?php //$banking->investPlans(); ?> </td></tr>
+    <tr><th > Borrowing Plans </th> <td ><b> Investment Plans</b> </td></tr>
+    <tr><td > <?php //$banking->borrowingPlans(); ?> </td>
+        <td > <?php //$banking->investPlans(); ?> </td></tr>
 
 </table>
 <p>&nbsp;</p>
