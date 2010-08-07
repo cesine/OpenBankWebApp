@@ -85,6 +85,8 @@ if($userIsClient || $userIsEmployee){
 
 if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
+}elseif($content=="Banking"|| $content=="Borrowing" || $content=="Insurance" || $content=="Investment"){
+	include('includes/view/AboutTheBank.php');
 }elseif($content=="Welcome"){
 	include ('includes/view/Welcome.php');
 }elseif ($content=="OpenNewAccount"){

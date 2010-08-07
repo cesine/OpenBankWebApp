@@ -13,11 +13,6 @@
 	</tr>
 
 <?php 
-echo "<tr valign='middle'>
-		<td width='14' height='33' align='center'></td>
-		<td width='124'>".$_SESSION['LoggedInMessage']."</td>
-	</tr>";
-
 if (!isset($_SESSION['User'])){
 	echo "<tr valign='middle'>
 		<td width='14' height='22' align='center'><img
@@ -43,7 +38,12 @@ if (!isset($_SESSION['User'])){
 		href=""
 		class="linkVertMenu">Brokerage sign-on</a></td>
 	</tr>
-	
+<?php 
+echo "<tr valign='middle'>
+		<td width='14' height='22' align='center'></td>
+		<td width='124'>".$_SESSION['LoggedInMessage']."</td>
+	</tr>";
+?>	
 	<tr>
 		<td colspan="2" class="bgcoloroption0">
 		<div align="center">
