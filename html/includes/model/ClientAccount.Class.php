@@ -94,6 +94,7 @@ class ClientAccount{
 		'</p>\n\n';
 	}
 	public function DisplayAcountDetailsInRow(){
+		echo "Anshu Garg";
 		echo '<TR class="bgcoloroption1">
 		<TD class="tableDataLeftC">'.$this->accountName.'</TD>
 		<TD class="tableDataLeftC">'.$this->clientAccountId.'</TD>
