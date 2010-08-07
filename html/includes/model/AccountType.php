@@ -136,10 +136,14 @@ public function investPlans()
 	extract($oneRow);
 	echo "<option value='$accountname'>$accountname</option>";
     }
- ?>
-   </select>
-    <?php
+    //echo "</select>\n";
+ 
+   
+    
     $investPlan->close();
+   ?>
+    </select>
+<?php
 }
 
 
