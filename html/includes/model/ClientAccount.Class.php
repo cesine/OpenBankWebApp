@@ -41,7 +41,10 @@ class ClientAccount{
 	}
 	public function getClosingDate($closingDate) {
 		return $this->closingDate;
-	}	
+	}
+        public function setClientAccountId($clientAccountId){
+		$this->clientAccountId=$clientAccountId;
+	}
 	public function setBranchId($branchId){
 		$this->branchId=$branchId;
 	}
