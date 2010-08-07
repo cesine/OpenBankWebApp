@@ -120,6 +120,7 @@ if($content=="BranchLocator"){
 	</p>
 	';
 }else{
+	$content="PersonalServices";
 	include('includes/view/AboutTheBank.php');
 }
 
