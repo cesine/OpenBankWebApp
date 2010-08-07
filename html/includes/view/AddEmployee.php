@@ -9,6 +9,7 @@ require_once('includes/model/EmployeeTitle.Class.php');
 require_once('includes/model/EmployeeWorkHistory.Class.php');
 require_once('includes/model/EmployeeTimeOffPlan.Class.php');
 require_once('includes/model/Address.Class.php');
+require_once('includes/model/PostalCodes.Class.php');
 
 echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'>";
 
@@ -52,6 +53,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	$workHistory = new EmployeeWorkHistory();
 	$timeOffPlan = new EmployeeTimeOffPlan();	
 	$address = new Address();
+	$postalCode = new PostalCodes();
 	
 	// create dynamic list of branches and let user to select
 	$branch->BranchList();
@@ -68,17 +70,21 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 ?>
 
 	<!-- Create field for street name -->
+	<!-- 
 	<table border="1"> 
 		<tr><td width="180">Street name:</td><td width="180">
 			
 			<!-- Making A Value In A Textbox Stay  -->
 			<input id="text" name="choiceStreet" maxlength=25 value="<?php if(isset($_POST['choiceStreet'])){ echo htmlentities($_POST['choiceStreet']); }?>" />				
-			
+		<!--	
 		</td></tr>
 	</table>
-	<!-- End create field to put first name -->		
+	-->
+	<!-- End create field to put street name -->
 	
-	<!-- Create field to put last name -->
+			
+	
+	<!-- Create field to put street number -->
 	<table border="1"> 
 		<tr><td width="180">Street number:</td><td width="180">
 			<!-- <input type="text" name="choiceStreetNumber" maxlength=6 />-->
@@ -87,7 +93,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			<input id="text" name="choiceStreetNumber" maxlength=6 value="<?php if(isset($_POST['choiceStreetNumber'])){ echo htmlentities($_POST['choiceStreetNumber']); }?>" />				
 		</td></tr>
 	</table>
-	<!-- End create field to put last name -->	
+	<!-- End create field to put street number -->	
 
 	<!-- read input from user after submition -->
 	<P></P>
@@ -106,7 +112,6 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$employeeTitle=$_POST["choiceTitle"];
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
 		$employeePostalCode=$_POST["choicePostalCode"];	
-		$employeeStreet=$_POST["choiceStreet"];	
 		$employeeStreetNumber=$_POST["choiceStreetNumber"];			
 	
 		/*
@@ -121,16 +126,15 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		
 		
 	    // validate values 
-		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet=="" ||
+		if($employeeFirstName=="" || $employeeLastName=="" || 
 		   empty($employeeStreetNumber)==true)
 		{
 			echo "<h4>Empty values are not valid.</h4>";
 		}	
 		elseif (is_numeric($employeeFirstName)==true ||
-				is_numeric($employeeLastName)==true ||
-				is_numeric($employeeStreet)==true) 
+				is_numeric($employeeLastName)==true) 
 		{
-			echo "<h4>First name, last name and street name should be a string.</h4>";	
+			echo "<h4>First name and last name should be a string.</h4>";	
 		}
 		elseif (is_numeric($employeeStreetNumber)==false) 
 		{
@@ -175,38 +179,41 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 						// example, how to put value of variable into text box
 						//echo "<input type=text disabled name=\"choiceFirstName\" size=\"25\" maxlength=\"20\" value=\"" . $s . "\">";
  						//echo "<input type=text name=\"question\" size=\"25\" value=\"" . $rows4['question'] . "\">";
-						echo "<input type=text name=\"choiceSalary\" maxlength=\"8\" value=\"" . $employeeBaseSalary . "\">";
+						echo "<input type=text disabled name=\"choiceSalary\" maxlength=\"8\" value=\"" . $employeeBaseSalary . "\">";
 					?>				
 				</td></tr>
 			</table>
 			<!-- End create field to put salary -->	
 <?php 
 			
-			//find province and city from postal code
-			$dbSelectProvanceCity = new Database();
-			$dbSelectProvanceCity->connect();
+			//find province, city, street from postal code
+			$dbSelectProvinceCityStreet = new Database();
+			$dbSelectProvinceCityStreet->connect();
 							
-			$querySelectProvanceCity="SELECT province, city 
-							   		FROM postalcodes
-							   		WHERE postalcodes='$employeePostalCode'";
+			$querySelectProvinceCityStreet="SELECT province, city, street 
+							   		FROM postalcodes, address
+							   		WHERE postalcodes='$employeePostalCode'
+							   		      AND postalcode=postalcodes";
 														
-			$dbSelectProvanceCity->query($querySelectProvanceCity);	
-			$result = $dbSelectProvanceCity->query($querySelectProvanceCity);						
+			$dbSelectProvinceCityStreet->query($querySelectProvinceCityStreet);	
+			$result = $dbSelectProvinceCityStreet->query($querySelectProvinceCityStreet);						
 										   
-			for($count=0;$count<$dbSelectProvanceCity->queryResultsCount;$count=$count+1)
+			for($count=0;$count<$dbSelectProvinceCityStreet->queryResultsCount;$count=$count+1)
 			{
-				$row=mysql_fetch_array($dbSelectProvanceCity->queryResultsResource);
-				//$address->initializeAddress($row);
-				$address->initializeProvinceCity($row);
+				$row=mysql_fetch_array($dbSelectProvinceCityStreet->queryResultsResource);
+				//$address->initializeProvinceCity($row);
+				$postalCodes->initializeProvinceCityStreet($row);
 			}
 			
 			// save current values
 			$employeeProvince=$row[province];
-			$employeeCity=$row[city];				
-			$dbSelectProvanceCity->close();	
+			$employeeCity=$row[city];	
+			$employeeStreet=$row[street];
+										
+			$dbSelectProvinceCityStreet->close();	
 ?>
 
-			<!-- Show province and city according to postal code -->
+			<!-- Show province, city and street according to postal code -->
 			<table border="1"> 
 				<tr><td width="180">Province:</td><td width="180">
 					<?php 
@@ -217,11 +224,21 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 					<?php 
 						echo "<input type=text disabled name=\"choiceCity\" value=\"" . $employeeCity . "\">";
 					?>				
-				</td></tr>				
+				</td></tr>	
+				<tr><td width="180">Street name:</td><td width="180">
+					<?php 
+						echo "<input type=text disabled name=\"choiceStreet\" value=\"" . $employeeStreet . "\">";
+					?>				
+				</td></tr>								
 			</table>
 			<!-- End Show province and city according to postal code -->	
 
 <?php 
+
+			// insert row into table Address
+			
+
+
 		} // end input is OK		
 	
 	} // end if (isset($_POST['EmployeeInfoSubmit'])) 
