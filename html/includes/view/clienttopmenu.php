@@ -2,7 +2,7 @@
 <tr><td>.</td></tr>
 <tr>
 	<td width="20%">
-		<a href="index.php?&content=AllAccountsSummary">Home</a>
+		<a href="index.php?&content=AllAccountsSummary">All Summary</a>
 	</td>
 	<td width="20%">
 		<a href="index.php?&content=BankingSummary">Banking</a>
