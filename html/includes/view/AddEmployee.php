@@ -196,7 +196,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			for($count=0;$count<$dbSelectProvanceCity->queryResultsCount;$count=$count+1)
 			{
 				$row=mysql_fetch_array($dbSelectProvanceCity->queryResultsResource);
-				$address->initializeAddress($row);
+				//$address->initializeAddress($row);
+				$address->initializeProvinceCity($row);
 			}
 			
 			// save current values
