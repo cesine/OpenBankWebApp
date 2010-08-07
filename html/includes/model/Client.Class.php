@@ -119,7 +119,6 @@ class Client{
 	public function __construct($clientid){
 		//echo 'Adding a client, changing firstName';
 		$this->clientID = $clientid;
-		$this->firstName="Jack";
 	}
 	public function addClient(){
 		$this->setFirstName($_POST["firstName"]);
