@@ -179,40 +179,40 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 
 <?php
 
-// Display personal info of employee from tables "employee", "address", "postalcodes" 
-
-$dbEmployeePersonalInfo = new Database();
-$dbEmployeePersonalInfo->connect();
-
-// note: in query we use data, selected by user
-$queryEmployeePersonalInfo=
-"SELECT e.employeeid, e.firstname, e.lastname,
-        p.postalcodes, p.province, p.city, a.streetnumber, a.street
-FROM    employee e, address a, postalcodes p	
-WHERE   e.addressid=a.addressid AND
-        a.postalcode=p.postalcodes AND
-        e.employeeid=$selectedEmployee";
-							
-$dbEmployeePersonalInfo->query($queryEmployeePersonalInfo);	
-
-//Put results of query into table on the screen
-for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
-{
-	$row=mysql_fetch_array($dbEmployeePersonalInfo->queryResultsResource);	
-
-	$employee->initializeEmployee($row);
-	$employee->displayEmployeePersonalInfo();
-	
-	$postalCodes->initializePostalCodes($row);
-	$postalCodes->displayCodeProvinceCity($row);
-	
-	$address->initializeAddressZ($row);
-	$address->displayStreetNumber();
-	
-	$postalCodes->displayStreet();
-}
-
-$dbEmployeePersonalInfo->close();
+//// Display personal info of employee from tables "employee", "address", "postalcodes" 
+//
+//$dbEmployeePersonalInfo = new Database();
+//$dbEmployeePersonalInfo->connect();
+//
+//// note: in query we use data, selected by user
+//$queryEmployeePersonalInfo=
+//"SELECT e.employeeid, e.firstname, e.lastname,
+//        p.postalcodes, p.province, p.city, a.streetnumber, a.street
+//FROM    employee e, address a, postalcodes p	
+//WHERE   e.addressid=a.addressid AND
+//        a.postalcode=p.postalcodes AND
+//        e.employeeid=$selectedEmployee";
+//							
+//$dbEmployeePersonalInfo->query($queryEmployeePersonalInfo);	
+//
+////Put results of query into table on the screen
+//for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
+//{
+//	$row=mysql_fetch_array($dbEmployeePersonalInfo->queryResultsResource);	
+//
+//	$employee->initializeEmployee($row);
+//	$employee->displayEmployeePersonalInfo();
+//	
+//	$postalCodes->initializePostalCodes($row);
+//	$postalCodes->displayCodeProvinceCity($row);
+//	
+//	$address->initializeAddressZ($row);
+//	$address->displayStreetNumber();
+//	
+//	$postalCodes->displayStreet();
+//}
+//
+//$dbEmployeePersonalInfo->close();
 
 ?>
 </table>
