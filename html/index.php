@@ -20,7 +20,7 @@ if (isset($_SESSION['User'])){
 /*
  * Control Logic to change the side menu and set the top menus
  */
-if($content=="EmployeeLogin"||$userIsEmployee){
+if($userIsEmployee){
 	include ('includes/view/EmployeeSideMenu.php'); 
 	$topMenu="EmployeeTopMenu";
 }elseif($userIsClient){
