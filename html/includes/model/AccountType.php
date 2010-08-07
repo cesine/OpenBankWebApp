@@ -1,6 +1,6 @@
 <?php
 
-class Account{
+class AccountType{
 	private $accountTypeId;
 	private $serviceCategoryId;
 	private $serviceTypeId;
