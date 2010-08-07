@@ -71,11 +71,10 @@ echo "Dear ", $userGName," ", $userLName, ", please choose the account you'd lik
 $banking = new AccountType();
 
  ?>
-<p>&nbsp;</p>
- <table border="1">
- <caption> Account Types </caption>
- <p>&nbsp;</p>
 
+ <h3> Account Types </h3>
+ <p>&nbsp;</p>
+<table border="1">
  <tr><td > <b> Banking Plans </b></td> <td > <b> Insurance Plans</b> </td></tr>
 
 <tr><td><select name="accountType" size="5" >
@@ -92,6 +91,8 @@ $banking = new AccountType();
 <option value="lifeThree">Accidental Death Insurance - 3</option>
 <option value="lifeFour">Accidental Death Insurance - 4</option>
         </select> </td></tr>
+
+<tr><td > <b> Investment Plans </b></td> <td > <b> Borrowing Plans</b> </td></tr>
 
 <tr><td><select name="accountType" size="5" >
 <option value="rSPSix">GIC(6mos) with Flex for RSPs Account</option>
@@ -133,7 +134,7 @@ $banking = new AccountType();
 
 <?php
 $clientAccount = new ClientAccount();
-$userChoice1=$_POST["accountType"];
+$userChoice=$_POST["accountType"];
 
 
 //belongs to the firsttable
@@ -283,6 +284,8 @@ else
 */
 
 $userAccountChoice = $clientAccount->getAccountTypeId();
+
+//printing user's choice, comment it out later on
 echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
 
 
