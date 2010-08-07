@@ -61,5 +61,87 @@ public function bankingPlans()
     $bankPlan->close();
 }
 
+public function insurancePlans()
+{
+    $insurePlan = new Database();
+    $insurePlan->connect();
+    $insureList = "SELECT a.accountname
+                    FROM servicetype s, accounttype a
+                    WHERE s.servicetypeid = a.servicetypeid
+                    AND s.serviceid = 3
+                    ORDER BY a.accounttypeid";
+
+    $insurePlan->query($insureList);
+    $rowsSelected = $insurePlan->queryResultsCount;
+     ?>
+<select name="accountType" size="4" >
+<?php
+    for ($n=0;$n<$rowsSelected;++$rowsResulted)
+    {
+        $row=mysql_fetch_array($bankPlan->queryResultsResource);
+	extract($row);
+	echo "<option value='$accountname'>$accountname</option>";
+    }
+ ?>
+   </select>
+    <?php
+    $insurePlan->close();
+}
+
+public function borrowingPlans()
+{
+    $borrowPlan = new Database();
+    $borrowPlan->connect();
+    $borrowList = "SELECT a.accountname
+                    FROM servicetype s, accounttype a
+                    WHERE s.servicetypeid = a.servicetypeid
+                    AND s.serviceid = 4
+                    ORDER BY a.accounttypeid";
+
+    $borrowPlan->query($borrowList);
+    $rowResults = $borrowPlan->queryResultsCount;
+     ?>
+<select name="accountType" size="4" >
+<?php
+    for ($n=0;$n<$rowResults;++$rowsResulted)
+    {
+        $Row=mysql_fetch_array($bankPlan->queryResultsResource);
+	extract($Row);
+	echo "<option value='$accountname'>$accountname</option>";
+    }
+ ?>
+   </select>
+    <?php
+    $borrowPlan->close();
+}
+
+public function investPlans()
+{
+    $investPlan = new Database();
+    $investPlan->connect();
+    $investList = "SELECT a.accountname
+                    FROM servicetype s, accounttype a
+                    WHERE s.servicetypeid = a.servicetypeid
+                    AND s.serviceid = 2
+                    ORDER BY a.accounttypeid";
+
+    $investPlan->query($investList);
+    $allRows = $investPlan->queryResultsCount;
+     ?>
+<select name="accountType" size="4" >
+<?php
+    for ($n=0;$n<$allRows;++$rowsResulted)
+    {
+        $oneRow=mysql_fetch_array($bankPlan->queryResultsResource);
+	extract($oneRow);
+	echo "<option value='$accountname'>$accountname</option>";
+    }
+ ?>
+   </select>
+    <?php
+    $investPlan->close();
+}
+
+
 }//end of class
 ?>
