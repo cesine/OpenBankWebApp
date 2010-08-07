@@ -55,27 +55,13 @@ echo "<form action='?&content=OpenNewAccount' method='POST'>";
  -->
  <?php
  
-//1. see if client is set
-//	see if client is in the session
-//	see if client has alrady been discovered by another page
-//	
-//if (isset($_SESSION['Client']))
-//{
-//	$client = unserialize($_SESSION['Client']);
-//	$clientName = $client->getFirstName()." ".$client->getLastName();
-//}
-//2. get clients first and last name
+	
+if (isset($_SESSION['Client']))
+{
+	$client = unserialize($_SESSION['Client']);
+	$clientName = $client->getFirstName()." ".$client->getLastName();
+}
 
-//$clientName = new Database();
-//$clientName->connect();
-//$queryName = "SELECT `firstname`,`lastname`
-//              FROM `client`
-//              WHERE `clientid` = 54010015"; //change to $_SESSION[]
-//$clientName->query($queryName);
-//$row=mysql_fetch_array($clientName->queryResultsResource);
-//$userGName = $row[firstname];
-//$userLName = $row[lastname];
-//$clientName->close();
 
 echo "Dear ", $clientName, ", please choose the account you'd like to open.<br/>";
 
@@ -107,6 +93,7 @@ $branch->close();
  ?>
 <p>&nbsp;</p>
  <b > <big> Account Types </big></b>
+ <p>&nbsp;</p>
  
 <table border="0">
     <tr><td > <b> <u>Banking Plans</u> </b></td> <td>&nbsp;&nbsp;&nbsp;</td> <td > <b><u> Insurance Plans </u></b> </td></tr>
