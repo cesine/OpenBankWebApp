@@ -80,7 +80,7 @@ if($content=="Banking"){
 			<table width="188" border="0" cellspacing="0" cellpadding="0">
 				<tbody>
 					<tr valign="top">
-						<td width="13"><img src="../../images/greyarrow.gif" alt="image" width="5"
+						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="/cda/eventdetail/0,1005,LIDen_SID3043,00.html"
 							class="boldnav">Investing</a> <br>
