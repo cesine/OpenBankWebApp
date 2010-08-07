@@ -11,6 +11,11 @@ class Employee{
 	private $addressID;
 	private $branchID;	
 	private $titleID;	
+	private $titleName;
+	
+	public function canEditHR(){
+		return ($titleName=="Branch Manager");
+	}
 
 	public function getEmployeeID() 
 	{
@@ -102,9 +107,33 @@ class Employee{
 	{
 		$this->titleID=$titleID;
 	}	
+	public function setTitleName($titleID) 
+	{
+		//go in database and get title name
+		$dbCheckBranchManager = new Database();
+		$dbCheckBranchManager->connect();
+			
+		$queryCheckBranchManager="SELECT titlename
+							   FROM employeetitle
+							   WHERE titleid=$titleID";
+										
+		$dbCheckBranchManager->query($queryCheckBranchManager);	
+		$dbCheckBranchManager->close();	
+		
+		$this->titleName=$dbCheckBranchManager->queryFirstResult[titlename];
+				
+	}
 	
 	public function __construct($employeeid){
 		//build an employee object	
+		$dbConstructEmployee= new Database();
+		$dbConstructEmployee->connect();
+		$queryGetEmployee="SELECT *
+							   FROM employee
+							   WHERE employeeid=$employeeid";
+		$dbConstructEmployee->query($queryGetEmployee);
+		$dbConstructEmployee->close();
+		$this->initializeEmployee($dbConstructEmployee->queryFirstResult);
 	}
 	function displayEmployeeInRowFormatted()
 	{
@@ -131,7 +160,8 @@ class Employee{
 		$this->setFirstName($row[firstname]);
 		$this->setLastName($row[lastname]);	
 		$this->setBranchID($row[branchid]);	
-		$this->setTitleID($row[titleid]);				
+		$this->setTitleID($row[titleid]);	
+		$this->setTitleName($row[titleid]);			
 		$this->setSalary($row[salary]);
 		$this->setAddressID($row[addressid]);	
 		$this->setTimeOffID($row[timeoffid]);
