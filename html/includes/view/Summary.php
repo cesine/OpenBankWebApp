@@ -20,7 +20,7 @@ $queryBranchid =   "SELECT distinct *
                     FROM `clientaccount`
 		    WHERE `clientid` = $clientId";
 
-echo $clientId;
+echo "<h2>".$clientId." ClientId is:</h2>";
 
 $branch->query($queryBranchid);
 $branch->close();
