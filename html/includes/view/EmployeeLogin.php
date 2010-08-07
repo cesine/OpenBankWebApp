@@ -1,41 +1,34 @@
 <?php 
-
-session_start();
 include('includes/model/Employee.Class.php');
-require_once('includes/controller/Database.Class.php');
-echo "<h4> Please log in. </h4>\n";
-echo "<form action='?&content=EmployeeLogin&topMenu=EmployeeTopMenu' method='POST'>";
-
-$employee = new Employee();
-
 ?>
+<form action="?&content=EmployeeInfo&action=Login" method="post">
+<fieldset>
+<legend><font color=cornflowerblue><b>Please log in</b></font></legend>
+<table width="240" border="0" align="center" cellpadding="10"
+	cellspacing="3">
+	<tr>
+		<td class="fieldTitleLeftB">Employee Number</td>
 
-<form>
-	
-	<table  width="600" border="0">
-	
-	<!--  <table width="240" border="0" align="center" cellpadding="1" cellspacing="3">-->
-	
-		<tr>
-		
-			<td class="fieldTitleLeftB">Employee ID:</td>
-			<td><input type="text" name="EmployeeID" size="20" maxlength="8" value=""/></td>
-			
-		</tr>
-	
-		<tr>
-			<td valign="middle">&nbsp;</td>
-			<td height="35" valign="middle">
-			<input type="submit" name="EmployeeIDSubmit" value="   Log in   " />
-			</td>
-		</tr>
-	
-	</table>
-
+		<td><input type="text" value="20000001" name="$employeeid" size=8
+			maxlength=16></td>
+	</tr>
+	<tr>
+		<td class="fieldTitleLeftB">Password</td>
+		<td height=""><input type="password" name="$pass" value="csuar163" size=20
+			maxlength=16 ></td>
+	</tr>
+</table>
+<input type="submit" name="mysubmit" value="Submit">
+</fieldset>
 </form>
 
 <?php 
-
+/*
+ * 
+ * Most of this logic should be moved to the user class
+ * 
+ * 
+ * 
 $EmployeeID=$_POST["EmployeeID"]; 							// read employee ID from user input
 
 //if login button is pressed:
@@ -105,5 +98,5 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 	
 	
 } // end if (isset($_POST['EmployeeIDSubmit']))
-
+*/
 ?>

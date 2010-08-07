@@ -36,14 +36,18 @@ if($_GET['action']=='Logout'){
 /*
  * Check for login information, if present, create a user (which will try to authenticate)
  */
-$clientId=$_POST['$clientid'];
+$userId=$_POST['$clientid'];
 unset($_POST['$clientid']);
+if(isset($_POST['$employeeid'])){
+	$userId=$_POST['$employeeid'];
+	unset($_POST['$employeeid']);
+}
 $pass=$_POST['$pass'];
 unset($_POST['$pass']);
 //if both clientID and password are present, check for authentication
 if($_GET['action']=='Login'){
 	require_once ('includes/model/User.Class.php');
-	$userLoggedIn= new User($clientId,$pass);
+	$userLoggedIn= new User($userId,$pass);
 	if($userLoggedIn->isClient()||$userLoggedIn->isEmployee()){
 		$_SESSION['User']=serialize($userLoggedIn);
 	}else{
