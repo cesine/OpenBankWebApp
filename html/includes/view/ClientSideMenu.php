@@ -59,6 +59,14 @@ if (!isset($_SESSION['User'])){
 		href="index.php?&content=Statement"
 		class="linkVertMenu">Statements</a></td>
 	</tr>
+
+	<tr valign="middle">
+		<td height="22" align="center"><img
+		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
+		<td><a
+		href="index.php?&content=BillPayments"
+		class="linkVertMenu">Bill Payments</a></td>
+	</tr>
 	
 </tbody>
 </table>
