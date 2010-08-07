@@ -43,7 +43,7 @@ if($_GET['action']=='LoginAsClient' && isset($_SESSION['User'])){
 		$employeeAsClient= new Client($_POST['$clientid']);
 		$_SESSION['Client']=serialize($employeeAsClient);
 		//Now the client information is in the session variable, can use it to get the account information
-		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=Summary&action=AsClient'>";
+		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=AllAccountsSummary&action=AsClient'>";
 	}
 }
 
