@@ -14,6 +14,7 @@ class ClientAccount{
 	private $openingDate;
 	private $closingDate;
 	private $autoIncAccID;
+		
 
 	public function getClientAccountId() {
 		return $this->clientAccountId;
@@ -107,18 +108,19 @@ class ClientAccount{
 		//set all the member variables using 
 	}
 	
-/*	public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curentBal="0", $availBal, $status, CURDATE(), $dateNull){
+
+ public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curentBal="0", $availBal="0", $status="1", $curDate, $endDate='Null'){
 		$this->setAutoIncAccID($clientAccountId);
 		$this->setBranchId($userBranch);
 		$this->setclientId($clientId);
 		$this->setAccountTypeId($userAccountChoice);
 		$this->setCurrentBalance($curentBal);
-		$this->setAvailableBalance("0");
-		$this->setStatus("1");
+		$this->setAvailableBalance($availBal);
+		$this->setStatus($status);
 		$this->setOpeningDate($date);
-		$this->setClosingDate('NULL');
+		$this->setClosingDate($endDate);
 		
-	} */
+	} 
 	
 	public function InsertAccountIntoDatabase(){
 		//open a database, connect, insert the objects values, and insert into whatever extra other tables are needed
@@ -149,7 +151,8 @@ else
        <?php
     }
 	}
-	public function initializeClientAccount($row)
+	
+public function initializeClientAccount($row)
 	{
 		print_r($row);
 		$this->setClientAccountId($row[clientAccountId]);
