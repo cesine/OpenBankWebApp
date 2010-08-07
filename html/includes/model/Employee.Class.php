@@ -8,7 +8,7 @@ class Employee{
 	private $lastName;		
 	private $timeOffID;
 	private $status;
-	private $address;
+	public $address;
 	private $branchID;	
 	private $titleID;	
 	private $titleName;

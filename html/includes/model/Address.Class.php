@@ -4,7 +4,7 @@ class Address{
 	private $addressID;
 	private $streetNumber;
 	private $street;
-	private $postalCode;
+	public $postalCode;
 	
 	
 	public function getAddressID()
