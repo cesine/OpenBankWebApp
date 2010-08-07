@@ -39,6 +39,10 @@ if (!isset($_SESSION['User'])){
 }
 ?>
 	<?php 
+	if (isset($_SESSION['Employee']))
+	{
+		
+	
 	$employee=unserialize($_SESSION['Employee']);
 	if ($employee->canEditHR())
 	{
@@ -75,6 +79,7 @@ if (!isset($_SESSION['User'])){
 		class="linkVertMenu">Deactivate employee</a></td>
 	</tr>
 	<?php 
+	}
 	}
 	?>
 
