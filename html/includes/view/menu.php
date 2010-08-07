@@ -1,16 +1,9 @@
 <div id="top"> <!-- The top panel -->
-  <nav>
-    <ul>
-    	<li><a href="index.php">Home</a></li>
-      <li><a href="index.php?&content=Banking">Banking</a></li>
-      <li><a href="index.php?&content=Borrowing">Borrowing</a></li>
-      <li><a href="index.php?&content=Investing">Investing</a></li>
-      <!-- <li><a href="index.php?&content=Insurance">Insurance</a></li>-->
-       <li><a href="index.php?&content=BranchLocator">Branch Locator</a></li>
-      <li><a href="index.php?&content=EmployeeLogin">Employee Login</a></li>
-    </ul>
-	</nav>
 
+<table><tr><td width="60%"><li><a href="index.php">Home</a></li></td>
+<td width="20%"><li><a href="index.php?&content=BranchLocator">Branch Locator</a></li></td>
+<td width="20%"><li><a href="index.php?&content=EmployeeLogin">Employee Login</a></li></td>
+</tr></table>
 
 <div id="section">
 <h1>Open Bank</h1>
