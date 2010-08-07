@@ -99,6 +99,13 @@ class Address{
 		$this->setStreetNumber($row[streetnumber]);
 		$this->setPostalCode($row[postalcode]);	
 	}
+	
+	public function initializeProvinceCity($row)
+	{
+		// in the line ($row[]), parameter name [] from db table
+		$this->setAddressID($row[province]);
+		$this->setStreetNumber($row[city]);
+	}	
 
 	public function displayStreetNumber()
 	{
