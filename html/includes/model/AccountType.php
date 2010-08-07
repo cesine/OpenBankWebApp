@@ -30,5 +30,35 @@ class Account{
 	public function setAccountName($accountName) {
 		$this->AccountName=$accountName;
 	}	
+
+
+//functions to list all account types
+public function bankingPlans()
+{
+    $bankPlan = new Database();
+    $bankPlan->connect();
+    $bankingList = "SELECT a.accountname
+                    FROM servicetype s, accounttype a
+                    WHERE s.servicetypeid = a.servicetypeid
+                    AND s.serviceid =1
+                    ORDER BY a.accounttypeid";
+
+    $bankPlan->query($bankingList);
+    $rowsResulted = $bankPlan->queryResultsCount;
+     ?>
+<select name="accountType" size="4" >
+<?php
+    for ($n=0;$n<$rowsResulted;++$rowsResulted)
+    {
+        $eachRow=mysql_fetch_array($bankPlan->queryResultsResource);
+	extract($eachRow);
+	echo "<option value='$accountname'>$accountname</option>";
+    }
+ ?>
+   </select>
+    <?php
+    $bankPlan->close();
 }
+
+}//end of class
 ?>
