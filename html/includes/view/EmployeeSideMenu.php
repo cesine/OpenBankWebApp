@@ -14,6 +14,30 @@
 		</div>
 		</td>
 	</tr>
+<?php 
+echo "<tr valign='middle'>
+		<td width='14' height='33' align='center'></td>
+		<td width='124'>".$_SESSION['LoggedInMessage']."</td>
+	</tr>";
+
+if (!isset($_SESSION['User'])){
+	echo "<tr valign='middle'>
+		<td width='14' height='55' align='center'><img
+		src='/images/red_bullet_trans.gif' width='6' height='7'></td>
+		<td width='124'><a
+		href='index.php?&content=Login'
+		class='linkVertMenu'>Log in to Online Banking</a></td>
+	</tr>";
+}else{
+	echo "<tr valign='middle'>
+		<td width='14' height='21' align='center'><img
+		src='/images/red_bullet_trans.gif' width='6' height='7'></td>
+		<td width='124'><a
+		href='index.php?&content=Login&action=Logout'
+		class='linkVertMenu'>Logout</a></td>
+	</tr>";
+}
+?>
 
 	<tr valign="middle">
 		<td width="14" height="21" align="center"><img
