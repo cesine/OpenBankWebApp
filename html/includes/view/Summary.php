@@ -27,11 +27,6 @@ $queryBranchid =   "SELECT distinct *
 		    WHERE `clientid` = $clientId";
 
 $branch->query($queryBranchid);
-$queryResult=mysql_fetch_array($branch->queryResultsResource);
-//setting and getting branchid
-/*
- * Get all Client Accounts
- */
 $branch->close();
 
 
