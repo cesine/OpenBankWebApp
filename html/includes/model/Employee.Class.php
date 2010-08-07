@@ -167,7 +167,8 @@ class Employee{
 		$this->setTitleID($row[titleid]);	
 		$this->setTitleName($row[titleid]);			
 		$this->setSalary($row[salary]);
-		$this->setAddressID($row[addressid]);	
+		$this->setAddressID($row[addressid]);
+		$this->setAddress($row[addressid]);	
 		$this->setTimeOffID($row[timeoffid]);
 		$this->setStatus($row[status]);
 	}	
