@@ -222,7 +222,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			// note: in query we use data, selected by user
 			$queryEmployeeAddressNew=
 			"INSERT INTO address (addressid, streetnumber, street, postalcode)
-			 VALUES ('', 319, 'Westgate West', 'J7E-5G9')";
+			 VALUES ('NULL', 319, 'Westgate West', 'J7E-5G9')";
 									
 			$dbEmployeeAddressNew->query($queryEmployeeAddressNew);
 			$dbEmployeeAddressNew->close();
