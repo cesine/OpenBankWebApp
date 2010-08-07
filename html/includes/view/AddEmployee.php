@@ -25,10 +25,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<!-- Create field to put first name -->
 	<table border="1"> 
 		<tr><td width="180">First name:</td><td width="180">
-			<!-- <input type="text" name="choiceFirstName" maxlength=20 /> -->
-			<?php //echo "<input type=\"textbox\" name=\"text\" value=\"{$_POST['text']}>"; ?>
-			<?php //echo "<input type=\"textbox\" name=\"choiceFirstName\" value=\"{$_POST['choiceFirstName']}>"; ?>
-			<input id="text" name="choiceFirstName" value="<?php if(isset($_POST['choiceFirstName'])) { echo htmlentities($_POST['choiceFirstName']); } ?>" />
+		
+			<!-- Making A Value In A Textbox Stay  -->
+			<input id="text" name="choiceFirstName" maxlength=20
+			value="
+			<?php 
+				if(isset($_POST['choiceFirstName'])){ echo htmlentities($_POST['choiceFirstName']); } 
+			?>" />
+			
 		</td></tr>
 	</table>
 	<!-- End create field to put first name -->		
@@ -36,7 +40,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<!-- Create field to put last name -->
 	<table border="1"> 
 		<tr><td width="180">Last name:</td><td width="180">
-			<input type="text" name="choiceLastName" maxlength=20 />
+			
+			<!-- Making A Value In A Textbox Stay  -->
+			<input id="text" name="choiceLastName" maxlength=20
+			value="
+			<?php 
+				if(isset($_POST['choiceLastName'])){ echo htmlentities($_POST['choiceLastName']); } 
+			?>" />	
+			
 		</td></tr>
 	</table>
 	<!-- End create field to put last name -->	
@@ -67,7 +78,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<!-- Create field for street name -->
 	<table border="1"> 
 		<tr><td width="180">Street name:</td><td width="180">
-			<input type="text" name="choiceStreet" maxlength=25 />
+			
+			<!-- Making A Value In A Textbox Stay  -->
+			<input id="text" name="choiceStreet" maxlength=25
+			value="
+			<?php 
+				if(isset($_POST['choiceStreet'])){ echo htmlentities($_POST['choiceStreet']); } 
+			?>" />				
+			
 		</td></tr>
 	</table>
 	<!-- End create field to put first name -->		
@@ -75,7 +93,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<!-- Create field to put last name -->
 	<table border="1"> 
 		<tr><td width="180">Street number:</td><td width="180">
-			<input type="text" name="choiceStreetNumber" maxlength=6 />
+			<!-- <input type="text" name="choiceStreetNumber" maxlength=6 />-->
+			
+			<!-- Making A Value In A Textbox Stay  -->
+			<input id="text" name="choiceStreetNumber" maxlength=25
+			value="
+			<?php 
+				if(isset($_POST['choiceStreetNumber'])){ echo htmlentities($_POST['choiceStreetNumber']); } 
+			?>" />				
 		</td></tr>
 	</table>
 	<!-- End create field to put last name -->	
