@@ -13,20 +13,19 @@ if (isset($_SESSION['Client']))
 {
 	$client = unserialize($_SESSION['Client']);
 	$clientName = $client->getFirstName()." ".$client->getLastName();
-	//$userBranch = $client->getBranchID();
-	//$clientID = $client->getClientID();
+	$userBranch = $client->getBranchID();
+	$clientID = $client->getClientID();
 }
 
 
 echo "Dear ", $clientName, ", please choose the account you'd like to open.<br/>";
-
+$curDate = date("Y,m,d");
 $newAccount = new ClientAccount();
-$newAccount->setAutoIncAccID();
+$newAccount->setOpeningDate;($curDate);
 $newAccount->setBranchId($userBranch);
 $newAccount->setclientId($clientId);
-$newAccount->setAccountTypeId($userAccountChoice);
+$newAccount->setAccountTypeId("8");
 
 $newAccount->InsertAccountIntoDatabase();
-
 
 ?>
