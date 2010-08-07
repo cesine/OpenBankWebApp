@@ -2,6 +2,8 @@
 session_start();
 require_once ('includes/controller/Database.Class.php');
 require_once ('includes/model/User.Class.php');
+require_once ('includes/model/Client.Class.php');
+require_once ('includes/model/Employee.Class.php');
 if($_GET['action']=='Logout'){
 	//$_SESSION['LoggedInMessage']="";
 	//$_SESSION['User']="";
@@ -13,10 +15,8 @@ if($_GET['action']=='Logout'){
  */
 if($_GET['action']=='Login'){
 	$userId=$_POST['$clientid'];
-	unset($_POST['$clientid']);
 	if(isset($_POST['$employeeid'])){
 		$userId=$_POST['$employeeid'];
-		unset($_POST['$employeeid']);
 	}
 	$pass=$_POST['$pass'];
 	unset($_POST['$pass']);
@@ -24,14 +24,25 @@ if($_GET['action']=='Login'){
 	$userLoggedIn= new User($userId,$pass);
 	if($userLoggedIn->isClient()){
 		$_SESSION['User']=serialize($userLoggedIn);
-		//header('Location: index.php?&content=Summary'); //redirects page to summary page
-		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=Summary'>";
+		$client = new Client($_POST['$clientid']);
+		$_SESSION['Client']=serialize($client);
+		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=Summary'>";//redirects page to summary page
 	}elseif ($userLoggedIn->isEmployee()){
 		$_SESSION['User']=serialize($userLoggedIn);
-		//header('Location: index.php?&content=EmployeeInfo'); //redirects page to employee info page
-		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=EmployeeInfo'>";
+		$employee= new Employee($_POST['$employeeid']);
+		$_SESSION['Employee']=serialize(($employee));
+		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=EmployeeInfo'>";//redirects page to employee info page
 	}else{
 		session_unset;
+	}
+}
+if($_GET['action']=='LoginAsClient' && isset($_SESSION['User'])){
+	$user=unserialize($_SESSION['User']);
+	if ($user->isEmployee()){
+		$employeeAsClient= new Client($_POST['$clientid']);
+		$_SESSION['Client']=serialize($employeeAsClient);
+		//Now the client information is in the session variable, can use it to get the account information
+		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=Summary&action=AsClient'>";
 	}
 }
 

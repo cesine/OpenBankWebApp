@@ -1,6 +1,4 @@
-<?php 
-include('includes/model/Employee.Class.php');
-?>
+
 <form action="?&action=Login" method="post">
 <fieldset>
 <legend><font color=cornflowerblue><b>Please log in</b></font></legend>

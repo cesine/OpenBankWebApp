@@ -103,7 +103,9 @@ class Employee{
 		$this->titleID=$titleID;
 	}	
 	
-	
+	public function __construct($employeeid){
+		//build an employee object	
+	}
 	function displayEmployeeInRowFormatted()
 	{
 		
