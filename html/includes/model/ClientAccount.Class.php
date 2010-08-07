@@ -11,6 +11,7 @@ class ClientAccount{
 	private $status;
 	private $openingDate;
 	private $closingDate;
+	private $autoIncAccID;
 
 	public function getClientAccountId() {
 		return $this->clientAccountId;
@@ -42,7 +43,10 @@ class ClientAccount{
 	public function getClosingDate($closingDate) {
 		return $this->closingDate;
 	}
-        public function setClientAccountId($clientAccountId){
+	public function getAutoIncAccID() {
+		return $this->autoIncAccID;
+	}
+    public function setClientAccountId($clientAccountId){
 		$this->clientAccountId=$clientAccountId;
 	}
 	public function setBranchId($branchId){
@@ -72,6 +76,16 @@ class ClientAccount{
 	public function setClosingDate($closingDate){
 		$this->closingDate=$closingDate;
 	}
+	public function setAutoIncAccID(){
+		$clientAc = new Database();
+		$clientAc->connect();
+		$queryMax = "SELECT MAX(clientaccountid)
+		             FROM `clientaccount`";
+		
+		$clientAc->query($queryMax);
+		$clientAc->close();
+		$this->autoIncAccID=$clientAc->queryFirstResult[MAX(clientaccountid)]+1;
+	}
 	public function test(){
 		$this->setCurrentBalance(12.99);
 		'<br/>\n'.$this->CurrentBalance.			
@@ -85,9 +99,33 @@ class ClientAccount{
 		<TD class="tableDataRightC">'.$this->availableBalance.'</TD>
 		</TR>';
 	}
-	public function createAccount(){
-		//use auto increment to create a new account number, and take in the account information for them 
-		//add account page
+	/*
+	public function __construct($row){
+		//set all the member variables using 
+	}
+	*/
+	public function __construct($newClientAcID, $userBranch, $clientId, $userAccountChoice, $curentBal, $availBal="0", $status, $date, $dateNull){
+		$this->setAutoIncAccID();
+		$this->setBranchId($userBranch);
+		$this->setclientId($clientId);
+		$this->setCurrentBalance('0');
+		$this->setAccountTypeId($userAccountChoice);
+		$this->setAvailableBalance();
+		$this->setStatus('1');
+		$this->setOpeningDate(CURDATE());
+		$this->setClosingDate('NULL');
+		
+	}
+	public function InsertAccountIntoDatabase(){
+		//open a database, connect, insert the objects values, and insert into whatever extra other tables are needed
+		$newClientAccount = new Database();
+		$newClientAccount->connect();
+		$newDataRow = 
+		//change this to be a concatineted string from the object
+		//$queryAddAccount = "INSERT INTO clientaccount VALUES ($newClientAcID, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00)";
+		
+		//$newClientAccount->query($queryAddAccount);
+		$newClientAccount->close();
 	}
 }	
 ?>
