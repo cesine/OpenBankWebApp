@@ -74,7 +74,7 @@ if($userIsClient || $userIsEmployee){
 		include ('includes/view/Transfer.php');
 	}	
 }else{
-	echo "<p>You must log on to access pages".$content."</p>";
+	//echo "<p>You must log on to access pages".$content."</p>";
 }
 
 /*
