@@ -317,7 +317,7 @@ $branch->close();
 //query to determine clientid
 $clientAc = new Database();
 $clientAc->connect();
-$queryMax = "SELECT MAX( clientaccountid )
+$queryMax = "SELECT MAX(clientaccountid)
              FROM `clientaccount`";
 
 $clientAc->query($queryMax);
@@ -327,6 +327,7 @@ $maxClientAcID = $clientAccount->getClientAccountId();
 $clientAc->close();
 $newClientAcID=$maxClientAcID+1;
 //print new clientaccountid to check
+echo "Max: ", $maxClientAcID, "<br/>";
 echo "Your new account number is :", $newClientAcID, "<br/";
 
 
