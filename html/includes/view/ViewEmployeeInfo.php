@@ -161,24 +161,24 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 	Last Name
 	</td>
 	<td>
-	Postal code
-	</td>
-	<td>
-	Provance
-	</td>	
-	<td>
-	City
-	</td>	
-	<td>
 	Street number
 	</td>
 	<td>
 	Street name
-	</td>		
+	</td>
+	<td>
+	City
+	</td>
+	<td>
+	Province
+	</td>	
+	<td>
+	Postal code
+	</td>
 </tr>
 
 <?php
-
+$employee->displayEmployeePersonalInfo();
 //// Display personal info of employee from tables "employee", "address", "postalcodes" 
 //
 //$dbEmployeePersonalInfo = new Database();
