@@ -151,6 +151,7 @@ else
 	}
 	public function initializeClientAccount($row)
 	{
+		print_r($row);
 		$this->setClientAccountId($row[clientAccountId]);
 		$this->setBranchId($row[branchId]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setclientId($row[clientId]);
