@@ -8,7 +8,8 @@ if($_GET['action']=='Logout'){
 	//$_SESSION['LoggedInMessage']="";
 	//$_SESSION['User']="";
 	session_unset();
-	header('Location: index.php'); //redirects page to main page
+	//header('Location: index.php'); //redirects page to main page
+	echo "<meta http-equiv='REFRESH' content='0,url=index.php'>";//redirects page to summary page
 }
 /*
  * Check for login information, if present, create a user (which will try to authenticate)

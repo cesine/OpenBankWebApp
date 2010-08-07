@@ -17,6 +17,12 @@ if($content=="Banking"){
             Visit any <a href='index.php?&content=BranchLocator'>Branch</a><br />
           <img src='images/greyarrow.gif' border='0' /> Call us at 1-800-000-0000
         </div> ";
+}elseif($content=="Borrowing"){
+	echo "paste some text here";
+}elseif($content=="Investing"){
+	echo "paste some text here";
+}elseif($content=="Insurance"){
+	echo "paste some text here";
 }
 
 ?>
