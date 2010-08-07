@@ -23,6 +23,12 @@ if($content=="Banking"){
 	echo "paste some text here";
 }elseif($content=="Insurance"){
 	echo "paste some text here";
+}elseif($content=="PersonalServices"){
+	echo "paste some text here";
+}elseif($content=="BusinessServices"){
+	echo "paste some text here";
 }
+
+
 
 ?>
