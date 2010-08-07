@@ -1,6 +1,6 @@
 <div id="top"> <!-- The top panel -->
 
-<table><tr><td width="60%"><li><a href="index.php">Home</a></li></td>
+<table bgcolor="#000000"><tr valign="top"><td width="60%"><li><a href="index.php">Home</a></li></td>
 <td width="20%"><li><a href="index.php?&content=BranchLocator">Branch Locator</a></li></td>
 <td width="20%"><li><a href="index.php?&content=EmployeeLogin">Employee Login</a></li></td>
 </tr></table>

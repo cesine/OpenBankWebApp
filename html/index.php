@@ -52,7 +52,7 @@ if($topMenu =="ClientTopMenu"){
 }elseif($topMenu=="EmployeeTopMenu"){
 	include ('includes/view/employeetopmenu.php');	
 }else{
-	//include nothing when neither client nor employee are signed in
+	include ('includes/view/topmenu.php');
 }
 
 /*
