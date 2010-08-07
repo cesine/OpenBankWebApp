@@ -76,16 +76,18 @@ public function insurancePlans()
      ?>
 <select name="accountType" size="4" >
 <?php
-    for ($n=0;$n<$rowsSelected;++$rowsResulted)
+    for ($x=0;$x<$rowsSelected;++$rowsSelected)
     {
-        $row=mysql_fetch_array($bankPlan->queryResultsResource);
+        $row=mysql_fetch_array($insurePlan->queryResultsResource);
 	extract($row);
 	echo "<option value='$accountname'>$accountname</option>";
     }
- ?>
-   </select>
-    <?php
+ 
     $insurePlan->close();
+    ?>
+    </select>
+<?php
+
 }
 
 public function borrowingPlans()
@@ -103,16 +105,18 @@ public function borrowingPlans()
      ?>
 <select name="accountType" size="4" >
 <?php
-    for ($n=0;$n<$rowResults;++$rowsResulted)
+    for ($n=0;$n<$rowResults;++$rowResults)
     {
-        $Row=mysql_fetch_array($bankPlan->queryResultsResource);
+        $Row=mysql_fetch_array($borrowPlan->queryResultsResource);
 	extract($Row);
 	echo "<option value='$accountname'>$accountname</option>";
     }
- ?>
-   </select>
-    <?php
+ 
     $borrowPlan->close();
+    ?>
+    </select>
+<?php
+
 }
 
 public function investPlans()
@@ -130,16 +134,13 @@ public function investPlans()
      ?>
 <select name="accountType" size="4" >
 <?php
-    for ($n=0;$n<$allRows;++$rowsResulted)
+    for ($n=0;$n<$allRows;++$allRows)
     {
-        $oneRow=mysql_fetch_array($bankPlan->queryResultsResource);
+        $oneRow=mysql_fetch_array($investPlan->queryResultsResource);
 	extract($oneRow);
 	echo "<option value='$accountname'>$accountname</option>";
     }
-    //echo "</select>\n";
- 
-   
-    
+        
     $investPlan->close();
    ?>
     </select>
