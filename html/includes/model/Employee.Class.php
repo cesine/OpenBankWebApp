@@ -189,14 +189,14 @@ class Employee{
 	
 	public function displayEmployeePersonalInfo()
 	{
-		echo '	<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
+		echo '	<tr><TD class="tableDataLeftC">'.$this->employeeID.'</TD>
 				<TD class="tableDataRightC">'.$this->firstName.'</TD>
 				<TD class="tableDataRightC">'.$this->lastName.'</TD>
 				<TD class="tableDataRightC">'.$this->address->getStreetNumber().'</TD>
 				<TD class="tableDataRightC">'.$this->address->getStreet().'</TD>
 				<TD class="tableDataRightC">'.$this->address->getPostalCode()->getCity().'</TD>
 				<TD class="tableDataRightC">'.$this->address->getPostalCode()->getProvince().'</TD>
-				<TD class="tableDataRightC">'.$this->address->getPostalCode()->getPostalCodes().'</TD>';	
+				<TD class="tableDataRightC">'.$this->address->getPostalCode()->getPostalCodes().'</TD></tr>';	
 			
 	}	
 	
