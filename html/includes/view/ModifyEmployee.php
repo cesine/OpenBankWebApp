@@ -2,8 +2,8 @@
 //session_start();
 
 //include ('includes/view/employeetopmenu.php');  
-//require_once('includes/model/Employee.Class.php');
-require_once('includes/controller/Database.Class.php');
+require_once('includes/model/Employee.Class.php');
+//require_once('includes/controller/Database.Class.php');
 require_once('includes/model/Branch.Class.php');
 require_once('includes/model/EmployeeTitle.Class.php');
 require_once('includes/model/EmployeeWorkHistory.Class.php');
@@ -21,7 +21,7 @@ echo "<h4> Modify employee. </h4>\n";
 
 <?php 
 // create new objects
-$employee = new Employee();
+//$employee = new Employee();
 $branch = new Branch();
 $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
@@ -106,6 +106,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			$branchIDNew=$_POST["choiceBranch"];
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
+			
+			$employee = new Employee($selectedEmployee);
 			
 			
 		    // validate values 
