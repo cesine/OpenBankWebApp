@@ -1,3 +1,4 @@
+require_once('includes/model/Employee.Class.php');
 <p></p>
 <?php 
 
