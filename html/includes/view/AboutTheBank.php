@@ -280,7 +280,7 @@ elseif($content=="ForeignCurrency"){
 elseif($content=="LifeInsurance"){
 	echo "paste some text here 06";
 }
-elseif($content=="CreditCards 07"){
+elseif($content=="CreditCards"){
 	echo "paste some text here 07";
 }
 elseif($content=="LineOfCredit"){

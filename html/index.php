@@ -109,8 +109,10 @@ if($userIsClient || $userIsEmployee){
 if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
 }elseif($content=="Banking"|| $content=="Borrowing" || $content=="Insurance" || $content=="Investing" || $content=="PersonalServices" 
-			|| $content=="BusinessServices" || $content=="RSP"){
-	include('includes/view/AboutTheBank.php');
+			|| $content=="BusinessServices" || $content=="RSP" || $content=="TFSA" || $content=="Chequing" || $content=="Savings" 
+			|| $content=="ForeignCurrency" || $content=="LifeInsurance" || $content=="CreditCards" || $content=="LineOfCredit")
+			{
+				include('includes/view/AboutTheBank.php');
 }elseif($content=="Welcome"){
 	include ('includes/view/Welcome.php');
 }elseif ($content=="OpenNewAccount"){
