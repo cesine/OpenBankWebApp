@@ -323,9 +323,9 @@ $queryMax = "SELECT MAX( clientaccountid )
 $clientAc->query($queryMax);
 $result = mysql_fetch_array($clientAc->queryResultsResource);
 $clientAccount->setClientAccountId($result[clientaccountid]);
-$newClientAcID = 1+$clientAccount->getClientAccountId();
+$maxClientAcID = $clientAccount->getClientAccountId();
 $clientAc->close();
-
+$newClientAcID=$maxClientAcID+1;
 //print new clientaccountid to check
 echo "Your new account number is :", $newClientAcID, "<br/";
 
