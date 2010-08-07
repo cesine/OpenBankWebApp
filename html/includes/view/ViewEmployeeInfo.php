@@ -178,7 +178,7 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 </tr>
 
 <?php
-//$employee->displayEmployeeInRowFormatted();
+$employee->displayEmployeeInRowFormatted();
 $employee->displayEmployeePersonalInfo();
 //// Display personal info of employee from tables "employee", "address", "postalcodes" 
 //
