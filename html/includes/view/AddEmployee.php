@@ -68,22 +68,6 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	$address->PostalCodesList();	
 	
 ?>
-
-	<!-- Create field for street name -->
-	<!-- 
-	<table border="1"> 
-		<tr><td width="180">Street name:</td><td width="180">
-			
-			<!-- Making A Value In A Textbox Stay  -->
-			<input id="text" name="choiceStreet" maxlength=25 value="<?php if(isset($_POST['choiceStreet'])){ echo htmlentities($_POST['choiceStreet']); }?>" />				
-		<!--	
-		</td></tr>
-	</table>
-	-->
-	<!-- End create field to put street name -->
-	
-			
-	
 	<!-- Create field to put street number -->
 	<table border="1"> 
 		<tr><td width="180">Street number:</td><td width="180">
@@ -202,7 +186,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			{
 				$row=mysql_fetch_array($dbSelectProvinceCityStreet->queryResultsResource);
 				//$address->initializeProvinceCity($row);
-				$postalCodes->initializeProvinceCityStreet($row);
+				//$postalCodes->initializeProvinceCityStreet($row);
+				$address->initializeProvinceCityStreet($row);
 			}
 			
 			// save current values
