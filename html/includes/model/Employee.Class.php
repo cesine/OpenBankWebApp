@@ -143,7 +143,8 @@ class Employee{
 	<TD class="tableDataRightC">'.$this->firstName.'</TD>
 	<TD class="tableDataRightC">'.$this->lastName.'</TD>	
 	<TD class="tableDataRightC">'.$this->branchID.'</TD>	
-	<TD class="tableDataRightC">'.$this->titleID.'</TD>		
+	<TD class="tableDataRightC">'.$this->titleID.'</TD>	
+	<TD class="tableDataRightC">'.$this->titleName.'</TD>		
 	<TD class="tableDataLeftC">'.$this->salary.'</TD>
 	<TD class="tableDataRightC">'.$this->addressID.'</TD>	
 	<TD class="tableDataRightC">'.$this->timeOffID.'</TD>
