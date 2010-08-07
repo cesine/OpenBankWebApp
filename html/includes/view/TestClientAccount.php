@@ -20,5 +20,13 @@ if (isset($_SESSION['Client']))
 
 echo "Dear ", $clientName, ", please choose the account you'd like to open.<br/>";
 
+$newAccount = new ClientAccount();
+$newAccount->setAutoIncAccID();
+$newAccount->setBranchId($userBranch);
+$newAccount->setclientId($clientId);
+$newAccount->setAccountTypeId($userAccountChoice);
+
+$newAccount->InsertAccountIntoDatabase();
+
 
 ?>
