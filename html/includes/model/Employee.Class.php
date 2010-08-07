@@ -8,7 +8,7 @@ class Employee{
 	private $lastName;		
 	private $timeOffID;
 	private $status;
-	private $addressID;
+	private $address;
 	private $branchID;	
 	private $titleID;	
 	private $titleName;
@@ -47,9 +47,9 @@ class Employee{
 		return $this->status;
 	}	
 	
-	public function getAddressID()
+	public function getAddress()
 	{
-		return $this->addressID;
+		return $this->address;
 	}	
 	
 	public function getBranchID()
@@ -123,6 +123,9 @@ class Employee{
 		$this->titleName=$dbCheckBranchManager->queryFirstResult[titlename];
 				
 	}
+	public function setAddress($addressid) {
+		$this->address = new Address($addressid);
+	}
 	
 	public function __construct($employeeid){
 		//build an employee object	
@@ -188,7 +191,13 @@ class Employee{
 	{
 		echo '	<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
 				<TD class="tableDataRightC">'.$this->firstName.'</TD>
-				<TD class="tableDataRightC">'.$this->lastName.'</TD>';		
+				<TD class="tableDataRightC">'.$this->lastName.'</TD>
+				<TD class="tableDataRightC">'.$this->address->getStreetNumber().'</TD>
+				<TD class="tableDataRightC">'.$this->address->getStreet().'</TD>
+				<TD class="tableDataRightC">'.$this->address->getPostalCode()->getCity().'</TD>
+				<TD class="tableDataRightC">'.$this->address->getPostalCode()->getProvince().'</TD>
+				<TD class="tableDataRightC">'.$this->address->getPostalCode()->getPostalCodes().'</TD>';	
+			
 	}	
 	
 	public function EmployeeList()
