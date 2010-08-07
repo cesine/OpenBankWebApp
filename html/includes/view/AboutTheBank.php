@@ -263,8 +263,32 @@ if($content=="Banking"){?>
 </table>
 <?php 
 }elseif($content=="RSP"){
-	echo "paste some text here";
+	echo "paste some text here 01";
 }
+elseif($content=="TFSA"){
+	echo "paste some text here 02";
+}
+elseif($content=="Chequing"{
+	echo "paste some text here 03";
+}
+elseif($content=="Savings"{
+	echo "paste some text here 04";
+}
+elseif($content=="ForeignCurrency"{
+	echo "paste some text here 05";
+}
+elseif($content=="LifeInsurance"{
+	echo "paste some text here 06";
+}
+elseif($content=="CreditCards 07"{
+	echo "paste some text here 07";
+}
+elseif($content=="LineOfCredit"{
+	echo "paste some text here 08";
+}
+						
+
+
 ?>
 
 
