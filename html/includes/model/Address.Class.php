@@ -103,9 +103,9 @@ class Address{
 	public function initializeProvinceCityStreet($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
-		$this->setProvince($row[province]);
-		$this->setCity($row[city]);
-		$this->setStreet($row[street]);		
+		$this->setAddressID($row[province]);
+		$this->setStreetNumber($row[city]);
+		$this->setPostalCode($row[street]);		
 	}	
 
 	public function displayStreetNumber()
