@@ -2,34 +2,43 @@
 
  <?php include ('includes/view/menu.php')?>
 
-
-<table border="1" with="940"><tr valign="top"><td width="20%">
+<table border="0" with="940"><tr valign="top"><td width="20%">
 <!-- Sidemenu Cell -->
 
 <?php 
-
 $content = $_GET["content"];
-$topMenu = $_GET["topMenu"];
-
-if($content!="EmployeeLogin" && $content!="EmployeeInfo"
-	&& $content!="ViewEmployeeInfo" && $content!="AddEmployee"
-	&& $content!="ModifyEmployee" && $content!="DeactivateEmployee")
-{
-	include ('includes/view/sidemenu.php'); // should be corrected !!!
+$topMenu = $_GET["topMenu"];//old way of setting the top menu
+if (isset($_SESSION['User'])){
+	$user=unserialize($_SESSION['User']);
+	$userIsEmployee=$user->isEmployee();
+	$userIsClient=$user->isClient();
+	//print_r($user);
+}else{
+	$userIsEmployee=false;
+	$userIsClient=false;
 }
-
-if($content=="EmployeeInfo" || $content=="ViewEmployeeInfo" || 
-   $content=="AddEmployee"	|| $content=="ModifyEmployee" || 
-   $content=="DeactivateEmployee")
-{
-	include ('includes/view/EmployeeSideMenu.php'); // should be corrected !!!
+/*
+ * Control Logic to change the side menu and set the top menus
+ */
+if($content=="EmployeeLogin"||$userIsEmployee){
+	include ('includes/view/EmployeeSideMenu.php'); 
+	$topMenu="EmployeeTopMenu";
+}elseif($userIsClient){
+	include ('includes/view/ClientSideMenu.php');
+	$topMenu="ClientTopMenu";
+}else{
+	include ('includes/view/sidemenu.php'); 
+	$topMenu="";
 }
-
-
-
 ?>
 
 </td><td width= "80%">
+
+
+
+
+
+
 <!-- Main Content Cell -->
 <div id="content">
 <div id="main">
@@ -38,56 +47,52 @@ if($content=="EmployeeInfo" || $content=="ViewEmployeeInfo" ||
 /*
  * Control logic to change which small top menu to display in the main window
  */
-if($topMenu =="ClientTopMenu")
-{
+if($topMenu =="ClientTopMenu"){
 	include ('includes/view/clienttopmenu.php');
-}
-
-
-elseif($topMenu=="EmployeeTopMenu")
-{
+}elseif($topMenu=="EmployeeTopMenu"){
 	include ('includes/view/employeetopmenu.php');	
+}else{
+	//include nothing when neither client nor employee are signed in
 }
-
-
-/*
-else
-{
-	include ('includes/view/clienttopmenu.php');
-}
-
-*/
 
 /*
  * Main Control Switch to change which page to display
+ */
+
+if($userIsClient || $userIsEmployee){
+	if($content=="Statement"){
+		include ('includes/view/Statements.php');
+	}elseif ($content=="AccountType"){
+		include ('includes/view/AccountType.php');
+	}elseif ($content=="AddClient"){
+		include ('includes/view/AddClient.php');
+	}elseif($content=="Summary"){
+		include ('includes/view/Summary.php');
+	}elseif($content=="ViewAccount"){
+		include ('includes/view/ViewAccounts.php');
+	}elseif($content=="TransferFunds"){
+		include ('includes/view/Transfer.php');
+	}	
+}else{
+	echo "<p>You must log on to access pages".$content."</p>";
+}
+
+/*
+ * These pages can still be seen with out logging in.
+ * Please move them inside the if(userisClient or userisEmployee) section above 
+ * once they are finished, or if they use the user session information
  */
 
 if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
 }elseif($content=="Welcome"){
 	include ('includes/view/Welcome.php');
-}elseif($content=="Statement"){
-	include ('includes/view/Statements.php');
-}elseif ($content=="AccountType"){
-	include ('includes/view/AccountType.php');
-}elseif ($content=="AddClient"){
-	include ('includes/view/AddClient.php');
 }elseif ($content=="OpenNewAccount"){
 	include ('includes/view/OpenNewAccount.php');
-}elseif($content=="Summary"){
-	include ('includes/view/Summary.php');
-}elseif($content=="ViewAccount"){
-	include ('includes/view/ViewAccounts.php');
 }elseif($content=="Login"){
 	include ('includes/view/Login.php');
-}elseif($content=="TransferFunds"){
-	include ('includes/view/Transfer.php');
-
-
 }elseif($content=="EmployeeLogin"){
 	include ('includes/view/EmployeeLogin.php');
-}elseif($content=="EmployeeSideMenu"){
-	include ('includes/view/EmployeeSideMenu.php');	
 }elseif($content=="EmployeeInfo"){
 	include ('includes/view/EmployeeInfo.php');			
 }elseif($content=="ViewEmployeeInfo"){
@@ -98,13 +103,8 @@ if($content=="BranchLocator"){
 	include ('includes/view/ModifyEmployee.php');	
 }elseif($content=="DeactivateEmployee"){
 	include ('includes/view/DeactivateEmployee.php');	
-	
-	
 }elseif($content=="ZViewEmployeeInfo"){
 	include ('includes/view/ZViewEmployeeInfo.php');	// need to be removed later !!!	
-	
-
-
 }elseif($content=="EmployeeInterface"){
 	echo '<a href="?&content=Summary">View a Clients Info</a>
 	</p>

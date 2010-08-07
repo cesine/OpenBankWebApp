@@ -26,6 +26,7 @@ if (!isset($_SESSION['User']))
 <body>
 <?php 
 require_once ('includes/controller/Database.Class.php');
+require_once ('includes/model/User.Class.php');
 
 if($_GET['action']=='Logout'){
 	//$_SESSION['LoggedInMessage']="";

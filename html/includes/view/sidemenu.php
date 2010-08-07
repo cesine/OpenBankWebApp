@@ -7,7 +7,7 @@
 	<tr>
 		<td colspan="2" class="bgcoloroption0">
 		<div align="center">
-		<p class="fieldTitleLeftC">Banking Center</p>
+		<p class="fieldTitleLeftC">Online Services</p>
 		</div>
 		</td>
 	</tr>
@@ -20,11 +20,11 @@ echo "<tr valign='middle'>
 
 if (!isset($_SESSION['User'])){
 	echo "<tr valign='middle'>
-		<td width='14' height='55' align='center'><img
+		<td width='14' height='22' align='center'><img
 		src='/images/red_bullet_trans.gif' width='6' height='7'></td>
 		<td width='124'><a
 		href='index.php?&content=Login'
-		class='linkVertMenu'>Log in to Online Banking</a></td>
+		class='linkVertMenu'>Banking sign-on</a></td>
 	</tr>";
 }else{
 	echo "<tr valign='middle'>
@@ -37,28 +37,54 @@ if (!isset($_SESSION['User'])){
 }
 ?>
 	<tr valign="middle">
+		<td height="22" height='22' align="center"><img
+		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
+		<td><a
+		href=""
+		class="linkVertMenu">Brokerage sign-on</a></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" class="bgcoloroption0">
+		<div align="center">
+		<p class="fieldTitleLeftC">Banking Services</p>
+		</div>
+		</td>
+	</tr>
+	<tr valign="middle">
 		<td width="14" height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td width="124"><a
 		href="index.php?&content=OpenNewAccount"
 		class="linkVertMenu">Open an Account</a></td>
 	</tr>
-
 	<tr valign="middle">
 		<td height="22" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="index.php?&content=TransferFunds"
-		class="linkVertMenu">Transfer Funds</a></td>
-	</tr>
-
+		href="index.php?&content=Banking"
+		class="linkVertMenu">Day-to-Day Banking</a></td>
+	</tr>	
 	<tr valign="middle">
 		<td height="22" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="index.php?&content=Statement"
-		class="linkVertMenu">Statements</a></td>
+		href="index.php?&content=Borrowing"
+		class="linkVertMenu">Borrowing</a></td>
 	</tr>
-	
+	<tr valign="middle">
+		<td height="22" align="center"><img
+		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
+		<td><a
+		href="index.php?&content=Investing"
+		class="linkVertMenu">Investing</a></td>
+	</tr>
+	<tr valign="middle">
+		<td height="22" align="center"><img
+		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
+		<td><a
+		href="index.php?&content=Insurance"
+		class="linkVertMenu">Insurance</a></td>
+	</tr>		
 </tbody>
 </table>
