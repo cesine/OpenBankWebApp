@@ -75,7 +75,7 @@ $banking = new AccountType();
  <h3> Account Types </h3>
  
 <table border="0">
-    <tr><td > <b> <u>Banking Plans</u> </b></td> <td > <b><u> Insurance Plans </u></b> </td></tr>
+    <tr><td > <b> <u>Banking Plans</u> </b></td> <td>&nbsp;</td> <td > <b><u> Insurance Plans </u></b> </td></tr>
 
 <tr><td><select name="accountType" size="5" >
 <option value="powerChecking">Powerchequing Account</option>
@@ -85,6 +85,7 @@ $banking = new AccountType();
 <option value="businessSavings">Basic Business Savings Account</option>
 <option value="businessFC">Basic Business Foreign Currency Account</option>
         </select></td>
+        <td>&nbsp;</td>
     <td><select name="accountType" size="5" >
 <option value="lifeOne">Accidental Death Insurance - 1</option>
 <option value="lifeTwo">Accidental Death Insurance - 2</option>
@@ -92,7 +93,7 @@ $banking = new AccountType();
 <option value="lifeFour">Accidental Death Insurance - 4</option>
         </select> </td></tr>
 
-<tr><td > <b><u> Investment Plans </u></b></td> <td > <b><u> Borrowing Plans </u></b> </td></tr>
+<tr><td > <b><u> Investment Plans </u></b></td> <td>&nbsp;</td> <td > <b><u> Borrowing Plans </u></b> </td></tr>
 <tr>&nbsp;</tr>
 <tr><td><select name="accountType" size="5" >
 <option value="rSPSix">GIC(6mos) with Flex for RSPs Account</option>
@@ -104,6 +105,7 @@ $banking = new AccountType();
 <option value="tSFAEighteen">GIC(18mos) with Flex for TFSAs Account</option>
 <option value="tSFATfour">GIC(24mos) with Flex for TFSAs Account</option>
         </select></td>
+        <td>&nbsp;</td>
      <td><select name="accountType" size="5" >
 <option value="creditCard">Credit Card No-Fee Value VISA</option>
 <option value="lineOfCredits">Basic Line of Credit</option>
@@ -337,7 +339,7 @@ if ($newClientAccount->queryResultsResource)
     }
 else
     {
-        echo 'Sorry, there was a problem inserting values! ';
+        //echo 'Sorry, there was a problem inserting values! ';
         ?>
 <a href = "index.php?&content=OpenNewAccount">Please try again</a>
        <?php
