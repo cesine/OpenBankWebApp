@@ -1,4 +1,5 @@
 <?php
+require_once('includes/controller/Database.Class.php');
 
 class AccountType{
 	private $accountTypeId;
