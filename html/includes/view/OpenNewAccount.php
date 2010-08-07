@@ -73,9 +73,9 @@ $banking = new AccountType();
  ?>
 
  <h3> Account Types </h3>
- <p>&nbsp;</p>
-<table border="1">
- <tr><td > <b> Banking Plans </b></td> <td > <b> Insurance Plans</b> </td></tr>
+ 
+<table border="0">
+    <tr><td > <b> <u>Banking Plans</u> </b></td> <td > <b><u> Insurance Plans </u></b> </td></tr>
 
 <tr><td><select name="accountType" size="5" >
 <option value="powerChecking">Powerchequing Account</option>
@@ -92,8 +92,8 @@ $banking = new AccountType();
 <option value="lifeFour">Accidental Death Insurance - 4</option>
         </select> </td></tr>
 
-<tr><td > <b> Investment Plans </b></td> <td > <b> Borrowing Plans</b> </td></tr>
-
+<tr><td > <b><u> Investment Plans </u></b></td> <td > <b><u> Borrowing Plans </u></b> </td></tr>
+<tr>&nbsp;</tr>
 <tr><td><select name="accountType" size="5" >
 <option value="rSPSix">GIC(6mos) with Flex for RSPs Account</option>
 <option value="rSPTwelve">GIC(12mos) with Flex for RSPs Account</option>
@@ -328,12 +328,12 @@ $newClientAccount->query($queryAddAccount);
 if ($newClientAccount->queryResultsResource)
     {
         echo  "<br/>", "You're account has been created!" , "<br/>";
-        echo 'Pl. follow the link to make a';
+        echo 'Pl. follow the link to make a ';
         ?>
 <a href = "index.php?&content=Transfer">transaction</a>
 
        <?php
-       echo ' in your new account';
+       echo ' in your new account. <br/>';
     }
 else
     {
