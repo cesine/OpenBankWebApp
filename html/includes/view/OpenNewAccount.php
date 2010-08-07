@@ -99,25 +99,28 @@ echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you
 <P></P>
 <input type="submit" name="submitAccountName" value="submit" />
 <P></P> -->
+ <p>&nbsp;</p>
+ <h3> Account Types </h3>
+ <p>&nbsp;</p>
 
 <table width ="100%" border="1">
-    <thead> <h5> Account Types </h5> </thead>
-<tr><td width ="50%"><h6> Banking Plans</h6></td> <td width ="50%"><h6> Insurance Plans</h6> </td></tr>
+     
+    <tr><td width ="50%"><b> Banking Plans</b></td> <td width ="50%"> <b> Insurance Plans</b> </td></tr>
     <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
 
-    <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
+        <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
 
 
-    <tr><td width ="50%"> <h6>Borrowing Plans</h6></td> <td width ="50%"><b> Investment Plans</b> </td></tr>
+    <tr><td width ="50%"> <b>Borrowing Plans</b></td> <td width ="50%"><b> Investment Plans</b> </td></tr>
     <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
 
-    <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
+        <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
 
 </table>
-<P></P>
+<p>&nbsp;</p>
 <input type="submit" name="submitAccountName" value="Submit" />
-<input type="reset" name="submitAccountName" value="Reset" />
-<P></P>
+<input type="reset" name="submitReset" value="Reset" />
+<p>&nbsp;</p>
 
 <?php
 $clientAccount = new ClientAccount();
