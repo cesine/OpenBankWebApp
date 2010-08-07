@@ -67,30 +67,6 @@ if (isset($_POST["EmployeeIDSubmit"])) 						// if user press login button
 	
 	// check if employee is a Branch Manager
 	// if titleid=10 than employee is a Branch Manager
-	$dbCheckBranchManager = new Database();
-	$dbCheckBranchManager->connect();
-		
-	$queryCheckBranchManager="SELECT titleid 
-						   FROM employee
-						   WHERE employeeid=$EmployeeID";
-									
-	$dbCheckBranchManager->query($queryCheckBranchManager);		
-
-	for($count=0;$count<$dbCheckBranchManager->queryResultsCount;$count=$count+1)
-	{
-		$row=mysql_fetch_array($dbCheckBranchManager->queryResultsResource);
-		$employee->initializeEmployee($row);
-	}	
-	
-	echo "<h4> Employee title ID: $row[titleid] </h4>\n"; 							// correct			
-	//echo "<h4> Employee title ID: $employee->getTitleID()</h4>\n"; 				// wrong
-
-	if ($row[titleid]==10)
-	{
-		//include ('includes/view/employeetopmenu.php');       		
-	}
-	
-	$dbCheckBranchManager->close();		
 	
 	//include ('includes/view/employeetopmenu.php');	
 	
