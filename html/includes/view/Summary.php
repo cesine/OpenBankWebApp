@@ -1,6 +1,5 @@
 
 <?php 
-//client is opening a new account
 require_once('includes/model/AccountType.php');
 require_once('includes/model/ClientAccount.Class.php');
 ?>
@@ -14,17 +13,14 @@ if (isset($_SESSION['Client']))
 }
 
 
-//object to call planlist
-//$banking = new AccountType();
-//object to call ClientAccount
-//object for the Database to find the user's branch
 $branch = new Database();
 $branch->connect();
 
-//query to find client's branch id
 $queryBranchid =   "SELECT distinct *
                     FROM `clientaccount`
 		    WHERE `clientid` = $clientId";
+
+echo $clientId;
 
 $branch->query($queryBranchid);
 $branch->close();
@@ -38,9 +34,6 @@ for($count=0;$count<$branch->queryResultsCount;$count=$count+1){
 		$b = new ClientAccount();
 		$b->initializeClientAccount($row);	
 		$b->DisplayAcountDetailsInRow();
-	
-		//$b->__destruct(); //called automatically when the object goes out of scope
-	//}
 }//endl if to only print when there are any results
 
 echo '</div>';
