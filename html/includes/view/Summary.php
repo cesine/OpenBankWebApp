@@ -30,8 +30,8 @@ $branch->query($queryBranchid);
 $branch->close();
 
 
-for($count=0;$count<$queryResult->queryResultsCount;$count=$count+1){
-	$row=mysql_fetch_array($queryResult->queryResultsResource);
+for($count=0;$count<$branch->queryResultsCount;$count=$count+1){
+	$row=mysql_fetch_array($branch->queryResultsResource);
 		//echo "Here is the row: ";
 		//print_r($row);
 	
