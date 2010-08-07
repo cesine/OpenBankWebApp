@@ -1,8 +1,8 @@
 <p></p>
 <?php 
 //session_start();
-include('includes/model/Employee.Class.php');
 include ('includes/view/employeetopmenu.php'); 
+require_once('includes/model/Employee.Class.php');
 require_once('includes/controller/Database.Class.php'); 
 require_once('includes/model/Branch.Class.php');
 require_once('includes/model/EmployeeTitle.Class.php');
