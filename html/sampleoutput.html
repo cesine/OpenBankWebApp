@@ -1,10 +1,11 @@
 
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 <head>
 <title>The Bank</title>
-<!-- <link href="css/SOPStyles.css" rel="stylesheet" type="text/css" />-->
+<link href="css/SOPStyles.css" rel="stylesheet" type="text/css" />
 <link href="css/master.css" rel="stylesheet" type="text/css" />
 
 <script language="Javascript" src="javascript/script.js" type="text/javascript">
@@ -15,16 +16,16 @@
 </head>
 
 <body>
-<div id="top"> <!-- The top panel -->
+ <div id="top"> <!-- The top panel -->
   <nav>
     <ul>
     	<li><a href="index.php">Home</a></li>
-      <li><a href="index.php?&content=Summary&service=banking">Banking</a></li>
-      <li><a href="index.php?&content=Summary&service=borrowing">Borrowing</a></li>
-      <li><a href="index.php?&content=Summary&service=investing">Investing</a></li>
-      <!-- <li><a href="index.php?&content=Summary&service=insurance">Insurance</a></li>-->
+      <li><a href="index.php?&content=Banking">Banking</a></li>
+      <li><a href="index.php?&content=Borrowing">Borrowing</a></li>
+      <li><a href="index.php?&content=Investing">Investing</a></li>
+      <!-- <li><a href="index.php?&content=Insurance">Insurance</a></li>-->
        <li><a href="index.php?&content=BranchLocator">Branch Locator</a></li>
-      <li><a href="index.php?&content=Login">Log In</a></li>
+      <li><a href="index.php?&content=EmployeeLogin">Employee Login</a></li>
     </ul>
 	</nav>
 
@@ -34,11 +35,11 @@
 <p> Online Banking Made Easy: <br/>The Open Bank system is designed to model the website for any Canadian bank.</p>
 </div>
 </div>
-
-<table border="1" with="940"><tr valign="top"><td width="20%">
+<table border="0" with="940"><tr valign="top"><td width="20%">
 <!-- Sidemenu Cell -->
-<!-- Side Menu -->
 
+
+<!-- Side Menu For Employee (branch manager) -->
 
 <table width="145" 
 	style="BORDER-RIGHT: #999966 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #999966 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; BORDER-LEFT: #999966 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #999966 1px solid; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #f9f9f0; TEXT-ALIGN: left">
@@ -46,75 +47,321 @@
 	<tr>
 		<td colspan="2" class="bgcoloroption0">
 		<div align="center">
-		<p class="fieldTitleLeftC">Application Centre</p>
+		<p class="fieldTitleLeftC">Select An Employee Option</p>
 		</div>
 		</td>
 	</tr>
-
+<tr valign='middle'>
+		<td width='14' height='33' align='center'></td>
+		<td width='124'>Logged in as employee: 20000001</td>
+	</tr><tr valign='middle'>
+		<td width='14' height='21' align='center'><img
+		src='/images/red_bullet_trans.gif' width='6' height='7'></td>
+		<td width='124'><a
+		href='index.php?&content=Login&action=Logout'
+		class='linkVertMenu'>Logout</a></td>
+	</tr>
 	<tr valign="middle">
 		<td width="14" height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td width="124"><a
-		href="/portal/index.jsp?pageID=financial_services_banking&subPageId=Banking_Accounts&reqOption=DepositAccountOpen&action=display"
-		class="linkVertMenu">Open an Account</a></td>
+		href="index.php?&content=ViewEmployeeInfo"
+		class="linkVertMenu">View employee info</a></td>
 	</tr>
 
 	<tr valign="middle">
 		<td height="22" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="/portal/index.jsp?pageID=borrowing&subPageId=Borrowing_Apply&reqOption=SpecialRequests&module=apply"
-		class="linkVertMenu">Transfer Funds</a></td>
+		href="index.php?&content=AddEmployee"
+		class="linkVertMenu">Add employee</a></td>
 	</tr>
 
 	<tr valign="middle">
 		<td height="36" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="javascript:surfToHyperLinkWindow('https://access.scotiamcleoddirect.com')"
-		class="linkVertMenu">Debit</a></td>
+		href="index.php?&content=ModifyEmployee"
+		class="linkVertMenu">Modify employee</a></td>
 	</tr>
 
 	<tr valign="middle">
 		<td height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="/portal/SopInvestmentNav.jsp?func=ctx&subfunction=clrSelAcct&ctxId=411000"
-		class="linkVertMenu">Credit</a></td>
+		href="index.php?&content=DeactivateEmployee"
+		class="linkVertMenu">Deactivate employee</a></td>
 	</tr>
 </tbody>
 </table>
-
-
-
 </td><td width= "80%">
+
+
+
+
+
+
 <!-- Main Content Cell -->
 <div id="content">
 <div id="main">
-<table width="600" border="0" bgcolor="#bbb" >
-<tr><td>.</td></tr>
-<tr><td width="20%">
-<a href="index.php?&contents=AccountsSummary">Accounts Summary</a></td><td width="20%">
-<a href="">Bill Payments</a></td><td width="20%">
-<a href="">Transfers</a></td><td width="20%">
-<a href="">More Features</a></td></tr>
-<tr><td>.</td></tr></table>
-<p>&nbsp;</p><div><form action="?&content=BranchLocator&search=ByCity" method="post">
-<fieldset>
-<legend><font color=cornflowerblue><b>Search Branches </b></font></legend>
-<table>
-	<tr><td>Enter City (ex. Montreal):</td><td>
-    <input type="text" name="$FormCity" size ="32"  maxlength="64"  class="inputtext">
-  	</td></tr>
-</table>
-<input type="submit" name="mysubmit" value="Search">
-</fieldset>
-</form>
-     
 
-<h2>4 Branches are in your area:</h2><h3>Montreal W.I</h3><p><b>Branch Manager: </b>20000005</p><p><b>Branch Opening Hours</b></p><p>Mon-Fri 10:00-17:00</p>Destroying Montreal W.I
-<h3>Downtown T.O</h3><p><b>Branch Manager: </b>2147483647</p><p><b>Branch Opening Hours</b></p><p>Mon-Fri 10:00-17:00</p>Destroying Downtown T.O
-<h3>Quebec QC</h3><p><b>Branch Manager: </b>2147483647</p><p><b>Branch Opening Hours</b></p><p>Mon-Fri 10:00-17:00</p></div>
+<table  width="600" border="0" bgcolor="#bbb" ><tr><td>
+<a href="index.php?&content=EmployeeInfo&topMenu=EmployeeTopMenu">Employees Info</a></td><td>
+<a href="">Clients Info</a></td><td>
+<a href="">Branch Info</a></td><td>
+<a href="">My Employee Info</a></td></tr></table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  
+  <tr><td>
+   <form name=sumform0 method="post">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2">
+     <TR class="bgcoloroptionA">
+     <TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC" href="javascript:surfToMainHelp('business_ENG.htm')">Business Accounts</a></FONT></TD>
+     </TR>
+           <TR class="bgcoloroptionB"> 
+           <TD class=fieldTitleLeftC  colSpan=2>
+           <a class="helpLinkC" href="javascript:surfToMainHelp('Assets_ENG.htm')">Assets</a></td>
+           <TD class="bgcoloroption2">&nbsp;</td>
+           <TD class=fieldTitleLeftC  colSpan=2 ><a class="helpLinkC" href="javascript:surfToMainHelp('Liabilities_ENG.htm')">Liabilities</a></td>
+      </tr>
+
+      <TR class="bgcoloroption1"> 
+           <TD class=fieldTitleLeftC width="30%">
+                <a class="helpLinkC" href="javascript:surfToMainHelp('AccountName_ENG.htm')">Account Name </a>
+           </td>
+           <TD class=fieldTitleRightC  width="19%">
+                <a class="helpLinkC" href="javascript:surfToMainHelp('Balance_ENG.htm')">Balance</a>
+           </td>
+	   <TD  width="2%" class="bgcoloroption2">&nbsp;</TD>
+           <TD class=fieldTitleLeftC width="30%">
+              <a class="helpLinkC" href="javascript:surfToMainHelp('AccountName_ENG.htm')">Account Name </a>
+           </td>
+           <TD class=fieldTitleRightC  width="19%"> 
+                <a class="helpLinkC" href="javascript:surfToMainHelp('Balance_ENG.htm')">Balance</a>
+           </td>
+     </tr> 
+
+          
+          <tr>
+            <td colspan=5>
+              <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                    
+                   
+                   <tr class='bgcoloroption2'> 
+                    
+                      <TD class="acctC" vAlign=top align=left width="30%"><a class='accountLinkB' href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'>Current Account</a></td> 
+                                                               
+                      
+                      <TD class="dollarAmountC" vAlign=top  align=right width="19%">
+                              3,648.10
+                      </td>      
+                                   
+                      <td width="2%" class="bgcoloroption2">&nbsp;</td>
+                                          
+                            <TD class="acctC" vAlign=top align=left  width="30%"><a class='accountLinkB' href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=VIC;UN;VIS;BL;CAD;0;-5164040708525287575@-2339019577682681773'>ScotiaLine for business VISA</a><sup>*</sup></td>                         
+                                                                        
+                   
+                            
+                            <TD class="dollarAmountC" vAlign=top align=right  width="19%">
+                                0.00
+                            </td>
+                          
+                  </tr> 
+
+                  
+                   
+                 <tr><td colspan="5">&nbsp;</td></tr>
+                 <TR class=bgcoloroption1>
+                    <TD class=fieldTitleLeftC>
+                     <a class="helpLinkC" href="javascript:surfToMainHelp('Total_ENG.htm')">Total </a></TD>
+                    <TD class=totalC>$3,648.10
+		   </td>
+		   <td class="bgcoloroption2">&nbsp;</td>
+		   <TD class=fieldTitleLeftC>
+                   <a class="helpLinkC" href="javascript:surfToMainHelp('Total_ENG.htm')">Total </a></TD>
+                    <TD class=totalC>$0.00
+                   </td>
+                 </tr>
+                 <TR class=bgcoloroption2>
+                 <TD class=fieldTitleLeftC colSpan=4>
+                   <a class="helpLinkC" href="javascript:surfToMainHelp('BusinessEquity_ENG.htm')">
+                           Business Equity</a></TD>
+                  <TD class=totalC>$3,648.10
+                  </TD>
+                                      
+              </table> 
+            </td>     
+          </tr>
+          
+    </table>   
+   </form>
+  </tr></td> 
+  
+  <tr><td>
+   <form name=sumform1 method="post">
+   
+   
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="2">
+    <TR class="bgcoloroptionA">
+    <TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC" href="javascript:surfToMainHelp('business_ENG.htm')">Personal Accounts</a></FONT>
+	
+    </TD>
+    </TR>    
+
+           <TR class="bgcoloroptionB"> 
+           <TD class=fieldTitleLeftC  colSpan=2>
+           <a class="helpLinkC" href="javascript:surfToMainHelp('Assets_ENG.htm')">Assets</a></td>
+           <TD class="bgcoloroption2">&nbsp;</td>
+           <TD class=fieldTitleLeftC  colSpan=2 ><a class="helpLinkC" href="javascript:surfToMainHelp('Liabilities_ENG.htm')">Liabilities</a></td>
+      </tr>
+
+      <TR class="bgcoloroption1"> 
+           <TD class=fieldTitleLeftC width="30%">
+                <a class="helpLinkC" href="javascript:surfToMainHelp('AccountName_ENG.htm')">Account Name </a>
+           </td>
+           <TD class=fieldTitleRightC  width="19%">
+                <a class="helpLinkC" href="javascript:surfToMainHelp('Balance_ENG.htm')">Balance</a>
+           </td>
+	   <TD  width="2%" class="bgcoloroption2">&nbsp;</TD>
+           <TD class=fieldTitleLeftC width="30%">
+              <a class="helpLinkC" href="javascript:surfToMainHelp('AccountName_ENG.htm')">Account Name </a>
+           </td>
+           <TD class=fieldTitleRightC  width="19%"> 
+                <a class="helpLinkC" href="javascript:surfToMainHelp('Balance_ENG.htm')">Balance</a>
+           </td>
+     </tr> 
+
+          
+          <tr>
+            <td colspan=5>
+              <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                    
+                   
+                   <tr class='bgcoloroption2'> 
+                    
+                      <TD class="acctC" vAlign=top align=left width="30%"><a class='accountLinkB' href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=SAV;PC;SAV;PC;CAD;5.07000000000000028421709430404007434844970703125;4066729351047152490@-3336690819295176166'>Powerchequing</a></td> 
+                                                               
+                      
+                      <TD class="dollarAmountC" vAlign=top  align=right width="19%">
+                              5.07
+                      </td>      
+                                   
+                      <td width="2%" class="bgcoloroption2">&nbsp;</td>
+                                          
+                            <TD class="acctC" vAlign=top align=left  width="30%"><b><a class='accountLinkB' href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=TEQ;;TEQ;;;;2349897100850695816@3059326134147549449'>Scotia Total Equity Plan</a></b></td>                         
+                                                                        
+                   
+                            
+                            <TD class="dollarAmountC" vAlign=top align=right  width="19%">
+                                &nbsp;
+                            </td>
+                          
+                  </tr> 
+
+                                    
+                   
+                   <tr class='bgcoloroption1'> 
+                    
+                      <TD class="acctC" vAlign=top align=left width="30%">&nbsp;</td> 
+                                                               
+                      
+                      <TD class="dollarAmountC" vAlign=top  align=right width="19%">
+                              &nbsp;
+                      </td>      
+                                   
+                      <td width="2%" class="bgcoloroption2">&nbsp;</td>
+                                          
+                            <TD class="acctC" vAlign=top align=left  width="30%"><a class='accountLinkB' href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=SCL;;SCL;SL;CAD;23733.45000000000072759576141834259033203125;-5226249572034719199@4042590690771209851'>Line of Credit</a></td>                         
+                                                                        
+                   
+                            
+                            <TD class="dollarAmountC" vAlign=top align=right  width="19%">
+                                23,733.45
+                            </td>
+                          
+                  </tr> 
+
+                                    
+                   
+                   <tr class='bgcoloroption2'> 
+                    
+                      <TD class="acctC" vAlign=top align=left width="30%">&nbsp;</td> 
+                                                               
+                      
+                      <TD class="dollarAmountC" vAlign=top  align=right width="19%">
+                              &nbsp;
+                      </td>      
+                                   
+                      <td width="2%" class="bgcoloroption2">&nbsp;</td>
+                                          
+                            <TD class="acctC" vAlign=top align=left  width="30%"><a class='accountLinkB' href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=SCL;;SCL;SL;CAD;0;704823335699167669@8287708620258226603'>Line of Credit</a></td>                         
+                                                                        
+                   
+                            
+                            <TD class="dollarAmountC" vAlign=top align=right  width="19%">
+                                0.00
+                            </td>
+                          
+                  </tr> 
+
+                                    
+                   
+                   <tr class='bgcoloroption1'> 
+                    
+                      <TD class="acctC" vAlign=top align=left width="30%">&nbsp;</td> 
+                                                               
+                      
+                      <TD class="dollarAmountC" vAlign=top  align=right width="19%">
+                              &nbsp;
+                      </td>      
+                                   
+                      <td width="2%" class="bgcoloroption2">&nbsp;</td>
+                                          
+                            <TD class="acctC" vAlign=top align=left  width="30%"><a class='accountLinkB' href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=1322909'>Scotia Mortgage</a></td>                         
+                                                                        
+                   
+                            
+                            <TD class="dollarAmountC" vAlign=top align=right  width="19%">
+                                38,188.51
+                            </td>
+                          
+                  </tr> 
+
+                     
+              </table> 
+            </td>     
+          </tr>
+         
+         
+                 <tr><td colspan="5">&nbsp;</td></tr>
+                  <TR class=bgcoloroption1>
+                    <TD class=fieldTitleLeftC>
+                     <a class="helpLinkC" href="javascript:surfToMainHelp('Total_ENG.htm')">Total </a></TD>
+                     <TD class=totalC>$5.07
+		      </td>
+		      <td class="bgcoloroption2">&nbsp;</td>
+                   <TD class=fieldTitleLeftC>
+                     <a class="helpLinkC" href="javascript:surfToMainHelp('Total_ENG.htm')">Total </a></TD>
+                     <TD class=totalC>$61,921.96
+                   </td>
+                 </tr>
+                 
+                 <TR class=bgcoloroption2>
+                 <TD class=fieldTitleLeftC colSpan=4>
+                  <a class="helpLinkC" href="javascript:surfToMainHelp('PersonalEquity_ENG.htm')">
+                            Personal Equity </a></TD>
+                 <TD class=totalC>$-61,916.89
+                 </td>
+                 </tr>
+                 
+    </table>   
+   </form>
+  </tr></td>
+   
+   
+</table>
 </div>
 </div>
 </td></tr></table>
@@ -130,15 +377,5 @@
 </body>
 </html><hr><p><font color="red">Begin Debugging: </p><p>Printing the Session information in case you need to see it </font></p><blockquote>Array
 (
-)
-</blockquote><p><font color="red">Printing the URL information in case you need to see it (eg, index.php?&variable=value)</font></p><blockquote>Array
-(
-    [content] => BranchLocator
-    [search] => ByCity
-)
-</blockquote><p><font color="red">Printing the Post information in case you need to see it (eg, information that you submitted using the PoST method in a form) </font></p><blockquote>Array
-(
-    [$FormCity] => 
-    [mysubmit] => Search
-)
-</blockquote><font color="red">The content to display is BranchLocator<p>End Debugging.</font</p><hr>Destroying Quebec Q1
+    [LoggedInMessage] => Logged in as employee: 20000001
+    [User] => O:4:"User":6:{s:12:"

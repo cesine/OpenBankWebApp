@@ -102,8 +102,8 @@ class Client{
 		'<br/>'.$this->lastName.
 		'</p>';
 	}
-	public function __construct(){
-		echo 'Adding a client, changing firstName';
+	public function __construct($clientid){
+		//echo 'Adding a client, changing firstName';
 		$this->firstName="Jack";
 	}
 	public function addClient(){

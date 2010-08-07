@@ -1,9 +1,4 @@
 <?php 
-//session_start();
-include('includes/model/Employee.Class.php');
-include ('includes/view/employeetopmenu.php');  
-
-require_once('includes/controller/Database.Class.php');
 require_once('includes/model/Branch.Class.php');
 require_once('includes/model/Address.Class.php');
 require_once('includes/model/PostalCodes.Class.php');
@@ -19,7 +14,7 @@ echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='
 echo "<h4> View employee info. </h4>\n";
 
 // create new objects
-$employee = new Employee();
+$employee = new Employee(2);
 $address = new Address();
 $postalCodes = new PostalCodes();
 
