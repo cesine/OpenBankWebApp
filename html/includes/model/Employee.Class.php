@@ -14,7 +14,7 @@ class Employee{
 	private $titleName;
 	
 	public function canEditHR(){
-		return ($titleName=="Branch Manager");
+		return ($this->titleName=="Branch Manager");
 	}
 
 	public function getEmployeeID() 
