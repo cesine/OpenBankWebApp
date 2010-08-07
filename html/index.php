@@ -109,7 +109,9 @@ if($content=="BranchLocator"){
 }elseif($content=="DeactivateEmployee"){
 	include ('includes/view/DeactivateEmployee.php');	
 }elseif($content=="ZViewEmployeeInfo"){
-	include ('includes/view/ZViewEmployeeInfo.php');	// need to be removed later !!!	
+	include ('includes/view/ZViewEmployeeInfo.php');
+}elseif($content=="TestClientAccount"){
+	include ('includes/view/TestClientAccount.php');	// need to be removed later !!!	
 }elseif($content=="EmployeeInterface"){
 	echo '<a href="?&content=Summary">View a Clients Info</a>
 	</p>
