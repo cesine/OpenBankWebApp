@@ -27,7 +27,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		<tr><td width="180">First name:</td><td width="180">
 			<!-- <input type="text" name="choiceFirstName" maxlength=20 /> -->
 			<?php //echo "<input type=\"textbox\" name=\"text\" value=\"{$_POST['text']}>"; ?>
-			<?php echo "<input type=\"textbox\" name=\"choiceFirstName\" value=\"{$_POST['choiceFirstName']}>"; ?>
+			<?php //echo "<input type=\"textbox\" name=\"choiceFirstName\" value=\"{$_POST['choiceFirstName']}>"; ?>
+			<input id="text" name="choiceFirstName" value="<?php if(isset($_POST['choiceFirstName'])) { echo htmlentities($_POST['choiceFirstName']); } ?>" />
 		</td></tr>
 	</table>
 	<!-- End create field to put first name -->		
