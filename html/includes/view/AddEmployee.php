@@ -187,7 +187,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 				$row=mysql_fetch_array($dbSelectProvinceCityStreet->queryResultsResource);
 				//$address->initializeProvinceCity($row);
 				//$postalCodes->initializeProvinceCityStreet($row);
-				$address->initializeProvinceCityStreet($row);
+				//$address->initializeProvinceCityStreet($row);
+				$postalCodes->initializeProvinceCityStreet2($row);
 			}
 			
 			// save current values
