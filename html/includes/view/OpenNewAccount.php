@@ -65,7 +65,10 @@ $userGName = $row[firstname];
 $userLName = $row[lastname];
 $clientName->close();
 
-echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you'd like to open.<br/>"
+echo "Dear ", $userGName," ", $userLName, ", please choose the account you'd like to open.<br/>";
+
+$banking = new AccountType();
+
  ?>
 
  <!--displaying choice of account types
@@ -105,13 +108,15 @@ echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you
 
 <table width ="100%" border="1">
      
-    <tr><td width ="50%"><b> Banking Plans</b></td> <td width ="50%"> <b> Insurance Plans</b> </td></tr>
-    <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
+    <tr><th width ="50%"><b> Banking Plans </b></th> <td width ="50%"> <b> Insurance Plans</b> </td></tr>
+    <tr><td width ="50%">
+<?php $banking->bankingPlans();
+ ?>
 
         <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
 
 
-    <tr><td width ="50%"> <b>Borrowing Plans</b></td> <td width ="50%"><b> Investment Plans</b> </td></tr>
+    <tr><th width ="50%"> Borrowing Plans </th> <td width ="50%"><b> Investment Plans</b> </td></tr>
     <tr><td width ="50%"><select name="accountType" size="4" ></select></td>
 
         <td width ="50%"><select name="accountType" size="4" ></select> </td></tr>
@@ -124,8 +129,10 @@ echo "<br/> Dear ", $userGName," ", $userLName, ", please choose the account you
 
 <?php
 $clientAccount = new ClientAccount();
-$userChoice=$_POST["accountType"];
+$userChoice1=$_POST["accountType"];
 
+/*
+//belongs to the firsttable
 //if user submitted choice
 if (isset($_POST['submitAccountName'])) 
 {
@@ -218,6 +225,32 @@ switch ($userChoice)
 	
 }
 //end of if
+  */
+
+if (isset($_POST['submitAccountName']))
+{
+    if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);
+    if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);   if (strcmp($userChoice,"Powerchequing Account"))
+         $clientAccount->setAccountTypeId(1);
+
+
+
+
+
+
+
+
+}
+
 $userAccountChoice = $clientAccount->getAccountTypeId();
 echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
 
@@ -233,9 +266,9 @@ $queryBranchid =   "SELECT distinct `branchid`
 		   //WHERE 'clientid' = $_SESSION["User"];
 
 $branch->query($queryBranchid);
-$row=mysql_fetch_array($branch->queryResultsResource);
+$queryResult=mysql_fetch_array($branch->queryResultsResource);
 //setting and getting branchid
-$clientAccount->setBranchId($row[branchid]);
+$clientAccount->setBranchId($queryResult[branchid]);
 $userBranch = $clientAccount->getBranchId();
 
 $branch->close();
@@ -279,15 +312,13 @@ $newClientAccount->connect();
 $queryAddAccount = "INSERT INTO clientaccount
 VALUES (110005001, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00)";
 
-//$queryAddAccount = "INSERT INTO clientaccount SET clientaccountid = '110005000', branchid = '$userBranch', clientid = '54010015'
-//accounttypeid = '$userAccountChoice', currentbalance = DEFAULT, availablebalance = DEFAULT, status = '0',
-//openingdate = date('Y-m-d'), closingdate = DEFAULT";
 
-$result = $newClientAccount->query($queryAddAccount);
+
+$newClientAccount->query($queryAddAccount);
 
 
 
-if ($result)
+if ($newClientAccount->queryResultsResource)
     {
         echo  "<br/>", "You're account has been created!" , "<br/>";
         echo 'Pl. follow the link to make a transfer';
