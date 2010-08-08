@@ -195,8 +195,10 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			*/
 
 			$address->findProvinceCity($employeePostalCode);
-			$employeeProvince=$row[province];
-			$employeeCity=$row[city];				
+			//$employeeProvince=$row[province];
+			//$employeeCity=$row[city];
+			$employeeProvince=$address->getProvince();
+			$employeeCity=$address->getCity();				
 			
 
 
