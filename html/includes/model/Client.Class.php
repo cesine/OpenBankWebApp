@@ -10,8 +10,6 @@ class Client{
 	private $statusString;
 	private $address;
 	private $clientAccountsArray;	
-	private static $sqlTableName="client";
-	private static $sqlTableAttributes;
 	
 	//getters
 	public function getTableName() {
@@ -136,6 +134,16 @@ class Client{
 	public function __construct(){
 		$this->address = new Address();
 		$this->clientAccountsArray = array();
+		$this->setClientID(0);
+		$this->setFirstName("NoFirstName");
+		$this->setLastName("NoLastName");
+		$this->setSocialInsuranceNumber("875 345 281");
+		$this->setDateOfBirth("1954-05-21");
+		$this->setStartDate("2010-03-15");
+		$this->setStatus(1);
+		$this->setAddressID(10000315);
+		$this->setBranchID(10001);
+		$this->clientAccountsArray[0]=0;
 	}
 	public function initializeClient($clientid){
 		$db = new Database();
@@ -155,12 +163,22 @@ class Client{
 		$this->setStatus($row[status]);
 		
 		$this->setStatusString($row[status]);
-		
 		$this->setAddress($row[addressid]);
 		$this->setClientAccountsArray($row[clientid]);
-		
 	}
-	
+	public function saveToDatabase(){
+		$newAddresId=$this->address->saveToDatabase();
+		if($newAddresId != 0){
+			$this->setAddressId($newAddresId);
+		}
+		$dbInsertClient = new Database();
+		$dbInsertClient->connect();
+		$insertClientQuery="";
+		echo $insertClientQuery;
+		//$newClientid=$dbInsertClient->updateInsert($insertClientQuery);
+		$dbInsertClient->close();
+		return $newClientid;
+	}
 	public function addClient(){
 		$this->setFirstName($_POST["firstName"]);
 		$this->setLastName($_POST["lastName"]);

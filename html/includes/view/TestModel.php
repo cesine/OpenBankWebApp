@@ -67,6 +67,10 @@ if(isset($_SESSION['Client'])){
 	foreach ($client->getClientAccountsArray() as $accountNumber){
 		echo "Client has Account: $accountNumber<br/>";
 	}
+	echo "<h5>Testing inserting a client into the database.</h5>";
+	$newClientInserted=$client->saveToDatabase();
+	echo "This is the id of the new inserted client, or 
+		zero if the client already existed. ".$newClientInserted;
 	echo "</p>";
 }
 if(isset($_SESSION['Employee'])){
