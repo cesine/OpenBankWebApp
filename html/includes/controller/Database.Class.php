@@ -52,9 +52,38 @@ class Database {
 			$this->queryResultsCount="0";
 		}
 	}
+	/*
+	 * runs insert or update queries, returns the id number of the inserted row, 
+	 * if the row was an autoincrement.
+	 * 
+	 * duplicate insertions are done using unique keys on almost all atributes
+	 */
 	public function updateInsert($querystring){
-		$recordId=mysql_query($querystring,$this->link_id);
-		return $recordId;
+		$this->queryResultsResource=mysql_query($querystring,$this->link_id);
+		$this->queryResultsCount=0;
+		$this->queryFirstResult="";
+		return mysql_insert_id();
+		/*
+		 * Re: how to prevent duplicate rows but allow duplicate column entries
+		Posted by: laptop alias ()
+		Date: October 04, 2008 06:18AM
+		
+		The key can actually be 1000 bytes. 
+		
+		So maybe you could use a separate field for your PRIMARY KEY, and then guarantee uniqueness on only the first 333 bytes of each field like so: 
+		
+		DROP TABLE IF EXISTS `names`; 
+		
+		CREATE TABLE IF NOT EXISTS `names` ( 
+		`id` int(11) NOT NULL auto_increment, 
+		`fname` text NOT NULL, 
+		`mname` text NOT NULL, 
+		`lname` text NOT NULL, 
+		`rank` int(11) default NULL, 
+		PRIMARY KEY (`id`), 
+		UNIQUE KEY `name` (`fname`(333),`mname`(333),`lname`(333)) 
+		) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+		 */
 	}
 	public function close(){
 		//close the database connection
