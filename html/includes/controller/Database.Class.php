@@ -65,8 +65,15 @@ class Database {
 		$this->queryFirstResult="";
 		return mysql_insert_id();
 	}
+	/* untested
+	 * 
+	 */
 	public function update($querystring){
-		//TBD 
+		$this->queryResultsResource=mysqli_query($querystring);
+		$this->queryResultsCount=0;
+		$this->queryFirstResult="";
+		return $this->queryResultsResource;
+		 
 	}
 	/* DEPRECIATED: use insert or update instead (see above)
 	 * 
