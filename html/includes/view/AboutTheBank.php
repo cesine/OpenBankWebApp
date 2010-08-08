@@ -263,7 +263,7 @@ if($content=="Banking"){?>
 </table>
 <?php 
 }elseif($content=="RSP"){
-	echo "<tbody>
+	echo "<table><tbody>
 							<tr valign='top'>
 								<td rowspan='2'><br></td>
 								<td class='headline2'>RSP Solutions Centre<br><br></td>
@@ -272,7 +272,7 @@ if($content=="Banking"){?>
 								<td>
 								 A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
 <!-- 
-Note that you must contribute to your RSP by <strong>February 29th, 2008</strong> in order to receive a deduction on your 2007 tax return. Consult important Scotiabank <a href='/cda/content/0,1608,CID9988_LIDen,00.html'>RSP contribution cut-off date information here</a>. 
+Note that you must contribute to your RSP by <strong>February 29th, 2008</strong> in order to receive a deduction on your 2007 tax return. Consult important bank <a href=''>RSP contribution cut-off date information here</a>. 
 
  -->
 
@@ -285,14 +285,14 @@ Note that you must contribute to your RSP by <strong>February 29th, 2008</strong
 
 
 
-			  <a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID7212_LIDen,00.html_2';return this.s_oc?this.s_oc(e):true' href='/cda/content/0,1608,CID7212_LIDen,00.html' class='boldnav'>RSP Quick Facts</a><br>
+			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>RSP Quick Facts</a><br>
 			Information on who can invest, how much&nbsp;and&nbsp;how often,&nbsp;plus much more.  <br>
 			<br>
 
 
 
 
-			  <a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID7301_LIDen,00.html_2';return this.s_oc?this.s_oc(e):true' href='/cda/content/0,1608,CID7301_LIDen,00.html' class='boldnav'>Money Master  for RSPs account</a><br>
+			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Money Master  for RSPs account</a><br>
 
 			A competitive savings option for your RSP and RRIF.  <br>
 			<br>
@@ -300,8 +300,8 @@ Note that you must contribute to your RSP by <strong>February 29th, 2008</strong
 
 
 
-			  <a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID7215_LIDen,00.html_2';return this.s_oc?this.s_oc(e):true' href='/cda/content/0,1608,CID7215_LIDen,00.html' class='boldnav'>Pre-Authorized Contributions</a><br>
-			The <a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID7215_LIDen,00.html_3';return this.s_oc?this.s_oc(e):true' href='/cda/content/0,1608,CID7215_LIDen,00.html'><em>Pay Yourself First</em>™ plan</a> lets you make contributions regularly and automatically to your RSP.
+			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Pre-Authorized Contributions</a><br>
+			The <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href=''><em>Pay Yourself First</em>ï¿½ plan</a> lets you make contributions regularly and automatically to your RSP.
  <br>
 
 			<br>
@@ -309,10 +309,10 @@ Note that you must contribute to your RSP by <strong>February 29th, 2008</strong
 
 
 
-			  <a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID7216_LIDen,00.html_2';return this.s_oc?this.s_oc(e):true' href='/cda/content/0,1608,CID7216_LIDen,00.html' class='boldnav'>Scotia RSP Catch Up Line of Credit or Loan</a><br>
-			Maximize the growth potential of your RSP by boosting or catching up on your contributions. Use our <a onclick='s_objectID='http://cgi.scotiabank.com/cgi-bin/Scotiabank/Calculators/LoanSaver.cgi?SUBMIT=QUESTIONS_1';return this.s_oc?this.s_oc(e):true' href='http://cgi.scotiabank.com/cgi-bin/Scotiabank/Calculators/LoanSaver.cgi?SUBMIT=QUESTIONS' target='_blank'><font color='#cc0000'>Catch-Up Loan Calculator</font></a> to explore the benefits of borrowing and calculate repayment terms. <br>
+			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'> RSP Catch Up Line of Credit or Loan</a><br>
+			Maximize the growth potential of your RSP by boosting or catching up on your contributions. Use our <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' target='_blank'><font color='#cc0000'>Catch-Up Loan Calculator</font></a> to explore the benefits of borrowing and calculate repayment terms. <br>
 <br>
-<a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID5239_LIDen,00.html_1';return this.s_oc?this.s_oc(e):true' class='boldnav' href='/cda/content/0,1608,CID5239_LIDen,00.html'>Scotia RRSP Reality Check™</a><br>
+<a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' class='boldnav' href=''> RRSP Reality Checkï¿½</a><br>
 
 Find out how well your current savings and future contributions will provide for your retirement and learn how to address potential shortfalls.
  <br>
@@ -321,14 +321,14 @@ Find out how well your current savings and future contributions will provide for
 
 
 
-			  <a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID7217_LIDen,00.html_2';return this.s_oc?this.s_oc(e):true' href='/cda/content/0,1608,CID7217_LIDen,00.html' class='boldnav'>Self-Directed RSPs</a><br>
+			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Self-Directed RSPs</a><br>
 			Maximum diversification can be achieved through self-directed RSPs, which allow you to invest in the widest range of investments possible.
  <br>
 			<br>
 
 
 
-			  <a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID7218_LIDen,00.html_2';return this.s_oc?this.s_oc(e):true' href='/cda/content/0,1608,CID7218_LIDen,00.html' class='boldnav'>Spousal RSPs</a><br>
+			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Spousal RSPs</a><br>
 			Understand the basics of how spousal RSPs can be an effective tool in planning for retirement.
  <br>
 			<br>
@@ -336,7 +336,7 @@ Find out how well your current savings and future contributions will provide for
 
 
 
-			  <a onclick='s_objectID='http://www.scotiabank.com/cda/content/0,1608,CID10285_LIDen,00.html_2';return this.s_oc?this.s_oc(e):true' href='/cda/content/0,1608,CID10285_LIDen,00.html' class='boldnav'>Declaration of Trust Documentation</a><br>
+			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Declaration of Trust Documentation</a><br>
 
 			We encourage you to obtain the updated documentation that applies to your plan. <br>
 <br>
@@ -362,7 +362,7 @@ Find out how well your current savings and future contributions will provide for
 <td align='right'>
 <p align='center'><img src='/static/greyarrow.gif' vspace='5' width='4' height='7' hspace='2'></p>
 </td>
-<td class='rewardsText' height='20'>Online with&nbsp;<a onclick='s_objectID='http://www.scotiabank.com/passthru/invest_1';return this.s_oc?this.s_oc(e):true' class='calllink' href='http://www.scotiabank.com/passthru/invest' target='_blank'>Scotia OnLine</a></td>
+<td class='rewardsText' height='20'>Online with&nbsp;<a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' class='calllink' href='' target='_blank'> OnLine</a></td>
 </tr>
 
 <tr valign='top'>
@@ -370,14 +370,14 @@ Find out how well your current savings and future contributions will provide for
 <div align='center'><img src='/static/greyarrow.gif' vspace='5' width='4' height='7' hspace='2'></div>
 
 </td>
-<td class='rewardsText' height='20'><span class='calltext'>Visit any</span> <a onclick='s_objectID='http://www.scotiabank.com/branchlocator_1';return this.s_oc?this.s_oc(e):true' class='calllink' href='http://www.scotiabank.com/branchlocator' target='_blank'>Scotiabank Branch</a> </td>
+<td class='rewardsText' height='20'><span class='calltext'>Visit any</span> <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' class='calllink' href='' target='_blank'>bank Branch</a> </td>
 </tr>
 
 <tr valign='top'>
 <td width='24' align='right'>
 <div align='center'><img src='/static/greyarrow.gif' vspace='5' width='4' height='7' hspace='2'></div>
 </td>
-<td class='calltext' width='269' height='20'>Call <strong><font color='#cc0000'>1-800-4SCOTIA</font></strong> (1-800-472-6842).</td>
+<td class='calltext' width='269' height='20'>Call <strong><font color='#cc0000'>1-800-4</font></strong> (1-800-472-6842).</td>
 
 </tr>
 </tbody>
@@ -396,7 +396,7 @@ Find out how well your current savings and future contributions will provide for
 
   </td>
 							</tr>	
-						</tbody>";
+						</tbody></table>";
 }
 elseif($content=="TFSA"){
 	echo "paste some text here 02";
