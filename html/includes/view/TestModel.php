@@ -3,6 +3,7 @@ require_once 'includes/model/PostalCodes.Class.php';
 require_once 'includes/model/Address.Class.php';
 require_once 'includes/model/Client.Class.php';
 require_once 'includes/model/Employee.Class.php';
+require_once 'includes/model/ClientAccount.Class.php';
 
 
 echo "<h4>Testing setting some elements in a postal code, then printing it as it would appear in an addres.</h4>";
@@ -85,9 +86,16 @@ if(isset($_SESSION['Client'])){
 
 	echo "<h4>Testing client account</h4>";
 	echo "<h5>Testing creating a default client account.</h5>";
-	
-	
-	
+	$accountDefault= new ClientAccount();
+	echo "<table border=1>";
+	$accountDefault->displayAccountInRow();
+	echo "</table>";
+	$newAccountNumber=$accountDefault->saveToDatabase();
+	echo "This is the id of the new inserted client, or 
+		zero if the client already existed. ".$newAccountNumber;
+	echo "<table border=1>";
+	$accountDefault->displayAccountInRow();
+	echo "</table>";
 	
 	
 	echo "<h4>Testing transfers and bill payment</h4>";
