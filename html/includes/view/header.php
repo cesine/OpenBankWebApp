@@ -11,6 +11,13 @@ if($_GET['action']=='Logout'){
 	//header('Location: index.php'); //redirects page to main page
 	echo "<meta http-equiv='REFRESH' content='0,url=index.php'>";//redirects page to summary page
 }
+if($_GET['action']=='ExitClient'){
+	//$_SESSION['LoggedInMessage']="";
+	//$_SESSION['User']="";
+	unsset($_SESSION['Client']);
+	//header('Location: index.php'); //redirects page to main page
+	echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=ClientInfo'>";//redirects page to summary page
+}
 /*
  * Check for login information, if present, create a user (which will try to authenticate)
  */
@@ -45,6 +52,7 @@ if($_GET['action']=='LoginAsClient' && isset($_SESSION['User'])){
 		$employeeAsClient= new Client();
 		$employeeAsClient->initializeClient($_POST['$clientid']);
 		$_SESSION['Client']=serialize($employeeAsClient);
+		$_SESSION['LoggedInMessageClient']="Logged in as client: ".$employeeAsClient->getClientID();
 		//Now the client information is in the session variable, can use it to get the account information
 		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=AllAccountsSummary&action=AsClient'>";
 	}

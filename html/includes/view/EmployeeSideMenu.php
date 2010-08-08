@@ -17,7 +17,7 @@
 <?php 
 echo "<tr valign='middle'>
 		<td width='14' height='33' align='center'></td>
-		<td width='124'>".$_SESSION['LoggedInMessage']."</td>
+		<td width='124'>".$_SESSION['LoggedInMessageEmployee']."</td>
 	</tr>";
 
 if (!isset($_SESSION['User'])){

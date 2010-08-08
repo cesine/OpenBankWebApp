@@ -41,7 +41,7 @@ if (!isset($_SESSION['User'])){
 <?php 
 echo "<tr valign='middle'>
 		<td width='14' height='22' align='center'></td>
-		<td width='124'>".$_SESSION['LoggedInMessage']."</td>
+		<td width='124'>".$_SESSION['LoggedInMessageClient']."</td>
 	</tr>";
 ?>	
 	<tr>
@@ -50,13 +50,6 @@ echo "<tr valign='middle'>
 		<p class="fieldTitleLeftC">Banking Services</p>
 		</div>
 		</td>
-	</tr>
-	<tr valign="middle">
-		<td width="14" height="21" align="center"><img
-		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
-		<td width="124"><a
-		href="index.php?&content=OpenNewAccount"
-		class="linkVertMenu">Open an Account</a></td>
 	</tr>
 	<tr valign="middle">
 		<td height="22" align="center"><img

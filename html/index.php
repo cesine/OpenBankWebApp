@@ -8,14 +8,15 @@
 <?php 
 $content = $_GET["content"];
 $topMenu = $_GET["topMenu"];//old way of setting the top menu
-if (isset($_SESSION['User'])){
-	$user=unserialize($_SESSION['User']);
-	$userIsEmployee=$user->isEmployee();
-	$userIsClient=$user->isClient();
-	//print_r($user);
-}else{
-	$userIsEmployee=false;
-	$userIsClient=false;
+$userIsEmployee=false;
+$userIsClient=false;
+if (isset($_SESSION['Client'])){
+	$client=unserialize($_SESSION['Client']);
+	$userIsClient=true;
+}
+if (isset($_SESSION['Employee'])){
+	$employee=unserialize($_SESSION['Employee']);
+	$userIsEmployee=true;
 }
 /*
  * Control Logic to change the side menu and set the top menus
@@ -23,12 +24,15 @@ if (isset($_SESSION['User'])){
 if($userIsEmployee){
 	include ('includes/view/EmployeeSideMenu.php'); 
 	$topMenu="EmployeeTopMenu";
-}elseif($userIsClient){
+}
+if($userIsClient){
 	include ('includes/view/ClientSideMenu.php');
 	$topMenu="ClientTopMenu";
-}elseif($content=="BusinessServices"){
+}
+if($content=="BusinessServices"){
 	include ('includes/view/BusinesSideMenu.php');
-}else{
+}
+if(!($userIsEmployee) && !($userIsClient)){
 	include ('includes/view/sidemenu.php'); 
 	$topMenu="";
 }

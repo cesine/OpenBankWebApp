@@ -31,7 +31,62 @@
 <table border="0" with="940"><tr valign="top"><td width="20%">
 <!-- Sidemenu Cell -->
 
-<!-- Side Menu -->
+
+<!-- Side Menu For Employee (branch manager) -->
+
+<table width="145" 
+	style="BORDER-RIGHT: #999966 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #999966 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; BORDER-LEFT: #999966 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #999966 1px solid; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #f9f9f0; TEXT-ALIGN: left">
+	<tbody>
+	<tr>
+		<td colspan="2" class="bgcoloroption0">
+		<div align="center">
+		<p class="fieldTitleLeftC">Select An Employee Option</p>
+		</div>
+		</td>
+	</tr>
+<tr valign='middle'>
+		<td width='14' height='33' align='center'></td>
+		<td width='124'>Logged in as employee: 20000001</td>
+	</tr><tr valign='middle'>
+		<td width='14' height='21' align='center'><img
+		src='/images/red_bullet_trans.gif' width='6' height='7'></td>
+		<td width='124'><a
+		href='index.php?&content=Login&action=Logout'
+		class='linkVertMenu'>Logout</a></td>
+	</tr>		<tr valign="middle">
+		<td width="14" height="21" align="center"><img
+		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
+		<td width="124"><a
+		href="index.php?&content=ViewEmployeeInfo"
+		class="linkVertMenu">View employee info</a></td>
+	</tr>
+
+	<tr valign="middle">
+		<td height="22" align="center"><img
+		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
+		<td><a
+		href="index.php?&content=AddEmployee"
+		class="linkVertMenu">Add employee</a></td>
+	</tr>
+
+	<tr valign="middle">
+		<td height="36" align="center"><img
+		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
+		<td><a
+		href="index.php?&content=ModifyEmployee"
+		class="linkVertMenu">Modify employee</a></td>
+	</tr>
+
+	<tr valign="middle">
+		<td height="21" align="center"><img
+		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
+		<td><a
+		href="index.php?&content=DeactivateEmployee"
+		class="linkVertMenu">Deactivate employee</a></td>
+	</tr>
+	
+</tbody>
+</table><!-- Side Menu -->
 
 
 <table width="145" 
@@ -49,12 +104,12 @@
 		<td width='14' height='33' align='center'></td>
 		<td width='124'>Logged in as client: 54010015</td>
 	</tr><tr valign='middle'>
-		<td width='14' height='21' align='center'><img
-		src='/images/red_bullet_trans.gif' width='6' height='7'></td>
-		<td width='124'><a
-		href='index.php?&content=Login&action=Logout'
-		class='linkVertMenu'>Logout</a></td>
-	</tr>	<tr valign="middle">
+			<td width='14' height='21' align='center'><img
+			src='/images/red_bullet_trans.gif' width='6' height='7'></td>
+			<td width='124'><a
+			href='index.php?&action=ExitClient'
+			class='linkVertMenu'>Logout</a></td>
+		</tr>	<tr valign="middle">
 		<td width="14" height="21" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td width="124"><a
@@ -90,17 +145,7 @@
 </table>
 </td><td width= "80%">
 
-
-
-
-
-
-<!-- Main Content Cell -->
-<div id="content">
-<div id="main">
-
-<table width="600" border="0" bgcolor="#bbb" >
-<tr><td>.</td></tr>
+<table width="650" border="0" bgcolor="#bbb" >
 <tr>
 	<td width="20%">
 		<a href="index.php?&content=AllAccountsSummary">All Summary</a>
@@ -118,30 +163,67 @@
 		<a href="index.php?&content=InsuranceSummary">Insurance</a>
 	</td>
 </tr>
-<tr><td>.</td></tr>
 </table>
-<p>&nbsp;</p><h4>Testing setting some elements in a postal code, then printing it as it would appear in an addres.</h4><p>Montreal,
-			QC 
-			H3G-1M8</p><p>The above postal code is: H3G-1M8 </p><h4>Testing setting some elements in an address, then printing it as it would appear on a letter</h4><p>1455 deMaisonneuve West <br/>Montreal, QC H3G-1M8</p><h5>Changing the city via the address object</h5><p>1455 deMaisonneuve West <br/>Ville Marie, QC H3G-1M8</p><h5>Displaying an address in a row.</h5><table border=1><tr>
-		<td>1455</td>
-		<td>deMaisonneuve West</td>
-		<td>Ville Marie</td>
-		<td>QC</td>
-		<td>H3G-1M8</td>
-		</tr></table><h5>Displaying postal code selection box</h5><!-- Build dynamic list of postal codes -->
-<table border="1">
-	<tr>
-		<td width="180">Select postal code:</td>
-		<td width="180"><select name="choicePostalCode">
+<p>&nbsp;</p><!-- Main Content Cell -->
+<div id="content">
+<div id="main">
+<table cellpadding="0" cellspacing="2" width="100%">
+<tbody><tr>
+<td colspan="3" class="paddingTop paddingBottom" align="center">
+<table width="95%">
+<tbody><tr>
+<td></td>
+</tr>
+</tbody></table>
 
-		<option value='G1E-1A1'>G1E-1A1</option><option value='G1E-2E5'>G1E-2E5</option><option value='G1E-5A4'>G1E-5A4</option><option value='G4D-8I2'>G4D-8I2</option><option value='G4R-1Z7'>G4R-1Z7</option><option value='G8H-1E2'>G8H-1E2</option><option value='G8H-2A6'>G8H-2A6</option><option value='G8H-2E5'>G8H-2E5</option><option value='G8H-7T3'>G8H-7T3</option><option value='H0H-8J2'>H0H-8J2</option><option value='H0J-4C8'>H0J-4C8</option><option value='H1A-5F9'>H1A-5F9</option><option value='H1K-5D9'>H1K-5D9</option><option value='H1T-1A1'>H1T-1A1</option><option value='H2B-6G0'>H2B-6G0</option><option value='H2L-6E0'>H2L-6E0</option><option value='H3A-7F5'>H3A-7F5</option><option value='H3D-4E3'>H3D-4E3</option><option value='H3G-1A4'>H3G-1A4</option><option value='H3G-1E8'>H3G-1E8</option><option value='H3G-1M8'>H3G-1M8</option><option value='H3G-1R7'>H3G-1R7</option><option value='H3H-2S4'>H3H-2S4</option><option value='H3K-1Z2'>H3K-1Z2</option><option value='H3X-1F3'>H3X-1F3</option><option value='H4B-8G6'>H4B-8G6</option><option value='H4J-5R5'>H4J-5R5</option><option value='H5C-9H7'>H5C-9H7</option><option value='H5E-9J3'>H5E-9J3</option><option value='H6D-0F8'>H6D-0F8</option><option value='H6F-0K4'>H6F-0K4</option><option value='H7E-5G9'>H7E-5G9</option><option value='H8F-6H0'>H8F-6H0</option><option value='H9G-7I1'>H9G-7I1</option><option value='H9I-3B7'>H9I-3B7</option><option value='J0H-8J2'>J0H-8J2</option><option value='J3C-7H1'>J3C-7H1</option><option value='J5C-9H7'>J5C-9H7</option><option value='J6D-0F8'>J6D-0F8</option><option value='J7E-5G9'>J7E-5G9</option><option value='J7G-1L5'>J7G-1L5</option><option value='J7Y-1R1'>J7Y-1R1</option><option value='J8F-6H0'>J8F-6H0</option><option value='J9G-7I1'>J9G-7I1</option></select>
+</td>
+</tr>
+<tr>
+<td class="paddingLeft paddingTop paddingBottom" width="33%"><label for="X_TAMT" class="fieldname">Amount ($):</label></td><td class="paddingLeft paddingTop paddingBottom" width="33%"><label for="X_XBCRCD" class="fieldname">Currency:</label></td><td width="34%">&nbsp;</td>
+</tr>
+<tr>
+<td class="paddingBottom"><span id="zpFormField5StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField5StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><input value="" autocomplete="OFF" maxlength="8" size="8" name="X_TAMT" type="text"></td><td class="paddingBottom"><span id="zpFormField6StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField6StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><select class="" name="X_XBCRCD" id="X_XBCRCD" size="1"><option value="CAD">CAD</option><option value="USD">USD</option></select></td><td>&nbsp;</td>
+</tr>
+<tr>
+<td class="paddingLeft paddingTop paddingBottom" colspan="3"><label for="FROMACCT" class="fieldname">From:</label></td>
+</tr>
+<tr>
 
-		</select></td>
-	</tr>
+<td class="paddingBottom" colspan="3"><span id="zpFormField7StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField7StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><select class="" name="FROMACCT" id="FROMACCT" size="1" onchange="showTfsaNotification()"><option value="">Select an Account</option><option value="0">Investment Savings Account (ISA) 3018217195 - CAD - 9.92</option><option value="1">US$ Investment Savings Account (ISA) 3018374280 - USD - 0.30</option><option value="2">Conjoint 3018471648 - CAD - 1,302.57</option><option value="3">Tax-Free Investment Savings Account (TFSA) 3404320574 - CAD - 10.16</option><option value="4">BANK OF MONTREAL - 3224383 - CAD</option><option value="5">BANK OF MONTREAL - 4549947 - USD</option></select></td>
+</tr>
+<tr>
+<td class="paddingLeft paddingTop paddingBottom" colspan="3"><label for="X_TOACCT" class="fieldname">To:</label></td>
+</tr>
+<tr>
+<td colspan="3"><span id="zpFormField8StatusImg1" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg2" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg3" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg4" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg5" class="zpFormInternalEl" style="-moz-user-select: none;"><span id="zpFormField8StatusImg" class="zpFormInternalEl zpNotRequired zpCommonStatusImg" style="-moz-user-select: none;"></span></span></span></span></span></span><select class="" name="X_TOACCT" id="X_TOACCT" size="1" onchange="showTfsaNotification()"><option value="">Select an Account</option><option value="0">Investment Savings Account (ISA) 3018217195 - CAD - 9.92</option><option value="1">US$ Investment Savings Account (ISA) 3018374280 - USD - 0.30</option><option value="2">Conjoint 3018471648 - CAD - 1,302.57</option><option value="3">RSP Investment Savings Account (RISA) 3103086840 - CAD - 22.17</option><option value="4">Tax-Free Investment Savings Account (TFSA) 3404320574 - CAD - 10.16</option><option value="5">BANK OF MONTREAL - 3224383 - CAD</option><option value="6">BANK OF MONTREAL - 4549947 - USD</option></select></td>
+
+</tr>
+<tr>
+<td class="paddingLeft" colspan="3">
+<div style="display: none;" id="tfsa-notification-withdrawal">
+<table>
+<tbody><tr>
+<td><img alt="!" src="media/icon-exclamation.gif" border="0" height="31" width="32"></td><td width="15">&nbsp;</td><td>
+<div style="line-height: 18pt;" class="securesite_item">
+<a class="rsplink" target="PopWin" onclick="PopWin()" href="https://secure.bankname.ca/en_CA/web/help/help_tfsa.html">
+                        Are you moving this money into another bank's TFSA?
+                      </a>
+<br>
+<a class="rsplink" target="PopWin" onclick="PopWin()" href="https://secure.bankname.ca/en_CA/web/help/help_tfsa.html">
+                        How might this withdrawal affect my annual TFSA contribution limits?
+                      </a>
+
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+</tbody>
 </table>
-<!-- End Build dynamic list of postal codes -->
-		<hr><h4>Testing client</h4><table border=0 ><tr valign="top"><td ><p>Client Card Number </td><td>54010015</td></tr><tr valign=top><td>Accounts:</td><td><select name=''><option value='10000002'>10000002</option><option value='110001012'>110001012</option><option value='110001022'>110001022</option></select></td></tr><tr><td>Name:</td><td>Chantal Wordsworth</td></tr><tr><td>SSN:</td><td> 265 336 987</td></tr><tr><td>Date of Birth:</td><td>1945-07-05</td></tr><tr><td>Customer since:</td><td>1999-09-09</td></tr><tr><td>Status:</td><td>Former Customer</td></tr><tr valign=top><td>Address</td><td><p>1006 Avenue Bonavista <br/>Westmount, Quebec H3G-1R7</p></td></tr></table><h5>Testing editing the client object's last name,
-and city (through the address, through the postal code)</h5><table border=0 ><tr valign="top"><td ><p>Client Card Number </td><td>54010015</td></tr><tr valign=top><td>Accounts:</td><td><select name=''><option value='10000002'>10000002</option><option value='110001012'>110001012</option><option value='110001022'>110001022</option></select></td></tr><tr><td>Name:</td><td>Chantal Wordsworth-Brown</td></tr><tr><td>SSN:</td><td> 265 336 987</td></tr><tr><td>Date of Birth:</td><td>1945-07-05</td></tr><tr><td>Customer since:</td><td>1999-09-09</td></tr><tr><td>Status:</td><td>Former Customer</td></tr><tr valign=top><td>Address</td><td><p>1006 Avenue Bonavista <br/>WestmountVilleMarie, Quebec H3G-1R7</p></td></tr></table><h5>Displaying a selction box for the client's accounts</h5><select name=''><option value='10000002'>10000002</option><option value='110001012'>110001012</option><option value='110001022'>110001022</option></select><h5>Listing client's accounts in the view layer</h5><p>Client has Account: 10000002<br/>Client has Account: 110001012<br/>Client has Account: 110001022<br/></p>
+
+
 <table width="397" border="0" cellspacing="0" cellpadding="0">
 	<tbody>
 		<tr></tr>
@@ -262,5 +344,5 @@ and city (through the address, through the postal code)</h5><table border=0 ><tr
 </body>
 </html><hr><p><font color="red">Begin Debugging: </p><p>Printing the Session information in case you need to see it </font></p><blockquote>Array
 (
-    [LoggedInMessage] => Logged in as client: 54010015
+    [LoggedInMessageEmployee] => Logged in as employee: 20000001
     [User] => O:4:"User":6:{s:12:"

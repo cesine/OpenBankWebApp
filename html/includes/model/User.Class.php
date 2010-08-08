@@ -58,16 +58,16 @@ class User{
 		 * Display logged in as client, or swith to client if the user can be both client and employee
 		 */
 		if($this->isEmployee==false && $this->isClient==true){
-			$_SESSION['LoggedInMessage']="Logged in as client: ".$this->clientId;
+			$_SESSION['LoggedInMessageClient']="Logged in as client: ".$this->clientId;
 			$this->password="Authenticated";
 		}elseif($this->isEmployee==false && $this->isClient==false){
 			$_SESSION['LoggedInMessage']="Username or password invalid.";
 			$this->password="NotAuthenticated";
 		}elseif($this->isEmployee==true && $this->isClient==true){
-			$_SESSION['LoggedInMessage']="Logged in as employee: ".$this->employeeId."<br/><a href=''>Switch to ".$this->clientId."</a>";
+			$_SESSION['LoggedInMessageEmployee']="Logged in as employee: ".$this->employeeId."<br/><a href=''>Switch to ".$this->clientId."</a>";
 			$this->password="Authenticated";
 		}elseif($this->isEmployee==true && $this->isClient==false){
-			$_SESSION['LoggedInMessage']="Logged in as employee: ".$this->employeeId;
+			$_SESSION['LoggedInMessageEmployee']="Logged in as employee: ".$this->employeeId;
 			$this->password="Authenticated";
 		}else{
 			$_SESSION['LoggedInMessage']="Login error.";
