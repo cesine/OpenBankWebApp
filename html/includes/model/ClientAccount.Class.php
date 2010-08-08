@@ -7,6 +7,7 @@ class ClientAccount{
 	private $branchId;
 	private $clientId;
 	private $accountTypeId;
+	private $accountTypeName;
 	private $accountName;
 	private $currentBalance;
 	private $availableBalance;
@@ -14,7 +15,7 @@ class ClientAccount{
 	private $openingDate;
 	private $closingDate;
 	private $autoIncAccID;
-		
+
 
 	public function getClientAccountId() {
 		return $this->clientAccountId;
@@ -27,6 +28,9 @@ class ClientAccount{
 	}
 	public function getAccountTypeId(){
 		return $this->accountTypeId;
+	}
+	public function getAccountTypeIdName(){
+		return $this->accountTypeIdName;
 	}
 	public function getAccountName(){
 		return $this->accountName;
@@ -50,7 +54,7 @@ class ClientAccount{
 		$this->setAutoIncAccID();
 		return $this->autoIncAccID;
 	}
-    public function setClientAccountId($clientAccountId){
+	public function setClientAccountId($clientAccountId){
 		$this->clientAccountId=$clientAccountId;
 	}
 	public function setBranchId($branchId){
@@ -62,18 +66,26 @@ class ClientAccount{
 	public function setAccountTypeId($accountTypeId){
 		$this->accountTypeId=$accountTypeId;
 	}
+	public function setAccountTypeIdName($accountTypeId){
+		$db = new Database();
+		$db->connect();
+		$queryToDo= "SELECT DISTINCT accountname FROM accounttype	WHERE accounttypeid=".$accountTypeId;
+		$db->query($queryToDo);
+		$db->close();
+		$this->accountTypeIdName=$db->queryFirstResult['accountname'];
+	}
 	public function setAccountName($accountName){
 		$this->accountName=$accountName;
 	}
 	public function setCurrentBalance($currentBalance) {
 		$this->currentBalance=$currentBalance;
-	}	
+	}
 	public function setAvailableBalance($availableBalance){
 		$this->availableBalance=$availableBalance;
-	}	
+	}
 	public function setStatus($status) {
 		$this->status=$status;
-	}	
+	}
 	public function setOpeningDate($openingDate){
 		$this->openingDate=$openingDate;
 	}
@@ -86,7 +98,7 @@ class ClientAccount{
 		$queryMax = "SELECT MAX(clientaccountid)clientaccountid
 		             FROM `clientaccount`";
 
-                $clientAc->query($queryMax);
+		$clientAc->query($queryMax);
 		$clientAc->close();
 		$newAccNum=$clientAc->queryFirstResult[clientaccountid];
 		$this->autoIncAccID = $newAccNum+1;
@@ -105,15 +117,15 @@ class ClientAccount{
 		<TD class="tableDataRightC">'.$this->availableBalance.'</TD>
 		</TR>';
 	}
-	
+
 	public function __construct(){
-		$this->clientAccountId=0;
+		$this->clientAccountId="NULL";
 		$this->branchId=10004;
 		$this->clientId=54010026;
 		$this->accountTypeId=2;
 		$this->availableBalance="1342.53";
 		$this->currentBalance="1342.53";
-		$this->openingDate=date();
+		$this->openingDate=date(Y-M-D);
 		$this->closingDate="0000-00-00";
 		$this->status=1;
 	}
@@ -122,26 +134,38 @@ class ClientAccount{
 		$this->setBranchId($userBranch);
 		$this->setclientId($clientId);
 		$this->setAccountTypeId($userAccountChoice);
-        $this->setOpeningDate($date);
+		$this->setOpeningDate($date);
 		$this->setCurrentBalance($curentBal);
 		$this->setAvailableBalance($availBal);
 		$this->setStatus($status);
 		$this->setClosingDate($endDate);
-	} 
+	}
 	public function saveToDatabase(){
 		$newClientAccount = new Database();
 		$newClientAccount->connect();
 		$newDataRow = "NULL".",".$this->getBranchId().",".$this->getClientId().",".$this->getAccountTypeId().",".
-				$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
+		$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
 				",".$this->getClosingDate($endDate);
 		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
 		echo $queryAddAccount;
-		$newAccountId=$newClientAccount->updateInsert($queryAddAccount);
+		$newAccountId=$newClientAccount->insert($queryAddAccount);
 		$newClientAccount->close();
-		
+		if($newAccountId != 0){
+			$this->clientAccountId=$newAccountId;
+		}
+
 		return $newAccountId;
 	}
-	
+	public function displayAccountInRow(){
+		$this->setAccountTypeIdName($this->accountTypeId);
+		echo "<tr>
+		<td>$this->clientAccountId</td>
+		<td>$this->accountTypeName</td>
+		<td>$this->currentBalance</td>
+		<td>$this->availableBalance</td>
+		</tr>";
+	}
+
 	/*
 	 * This function is depreciated by new, more default function saveToDatabase
 	 */
@@ -150,34 +174,34 @@ class ClientAccount{
 		$newClientAccount = new Database();
 		$newClientAccount->connect();
 		$newDataRow = "NULL".",".$this->getBranchId().",".$this->getClientId().",".$this->getAccountTypeId().",".
-				$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
+		$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
 				",".$this->getClosingDate($endDate);
 		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
-		$newAccountId=$newClientAccount->updateInsert($queryAddAccount);
+		$newAccountId=$newClientAccount->insert($queryAddAccount);
 		$newClientAccount->close();
-		
-		
-	if ($newClientAccount->queryResultsResource)
-    {
-        echo  "<br/>", "You're account has been created!" , "<br/>";
-        echo 'Pl. follow the link to make a ';
-        ?>
-<a href = "index.php?&content=Transfer">transaction</a>
 
-       <?php
-       echo ' in your new account. <br/>';
-    }
-else
-    {
-        //echo 'Sorry, there was a problem inserting values! ';
-        ?>
-<a href = "index.php?&content=OpenNewAccount">Please try again</a>
-       <?php
-    }
-    return $newAccountId;
+
+		if ($newClientAccount->queryResultsResource)
+		{
+			echo  "<br/>", "You're account has been created!" , "<br/>";
+			echo 'Pl. follow the link to make a ';
+			?>
+			<a href="index.php?&content=Transfer">transaction</a>
+
+			<?php
+			echo ' in your new account. <br/>';
+		}
+		else
+		{
+			//echo 'Sorry, there was a problem inserting values! ';
+			?>
+			<a href="index.php?&content=OpenNewAccount">Please try again</a>
+			<?php
+		}
+		return $newAccountId;
 	}
-	
-public function initializeClientAccount($row)
+
+	public function initializeClientAccount($row)
 	{
 		print_r($row);
 		$this->setClientAccountId($row[clientaccountid]);
@@ -191,6 +215,6 @@ public function initializeClientAccount($row)
 		$this->setOpeningDate($row[openingdate]);
 		$this->setClosingDate($row[$closingDate]);
 	}
-	
-}	
+
+}
 ?>
