@@ -114,7 +114,16 @@ class Employee{
 		$this->setTimeOffID($row[timeoffid]);
 		$this->setStatus($row[status]);
 	}
-	
+	public function saveToDatabase(){
+		$this->address->saveToDatabase();
+		$dbToInsertEmployee = new Database();
+		$dbToInsertEmployee->connect();
+		$employeeInsertQuery="";
+		echo $employeeInsertQuery;
+		//$newIdInserted=$dbToInsertEmployee->updateInsert($employeeInsertQuery);
+		$dbToInsertEmployee->close();
+		return $newIdInserted;
+	}
 	function displayEmployeeInRowFormatted()
 	{
 		echo '<TR class="bgcoloroption1">
