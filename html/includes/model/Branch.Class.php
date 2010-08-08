@@ -122,11 +122,19 @@ class Branch{
 		$this->address = new Address();
 	}
 	public function __destruct() {
-       print "Destroying " . $this->branchName . "\n";
+       //print "Destroying " . $this->branchName . "\n";
    }
-   
-	
-   
+   public function displayBranchMap(){
+   		$postalcode=$this->address->getPostalCode();
+   			//display map to address
+		echo"
+		<iframe width='425' height='350' frameborder='0' scrolling='no' 
+		marginheight='0' marginwidth='0' 
+		src='http://maps.google.com/maps?&amp;q=$postalcode+Canada&amp;output=embed'></iframe><br /><small>
+		<a href='http://maps.google.com/maps?&amp;q=$postalcode+Canada&amp;source=embed' 
+		style='color:#0000FF;text-align:left'>View Larger Map</a></small>
+		";
+   }
    public function BranchList() 
 	{
 ?>
