@@ -1,14 +1,12 @@
 <?php 
 require_once 'includes/model/Address.Class.php';
 class Branch{
-	private $branchId;
 	private $branchName;
 	private $openingHours;
 	private $managerName;
 	private $managerId;
 	private $openingDate;
 	private $branchClientId;
-	private $addressId;
 	private $address;
 	private static $sqlTableName="branch";
 	private static $sqlTableAttributes;
@@ -20,9 +18,6 @@ class Branch{
 	public function getBranchName() {
 		return $this->branchName;
 	}
-	public function getBranchId() {
-		return $this->branchId;
-	}	
 	public function getOpeningHours(){
 		return $this->openingHours;
 	}
@@ -35,47 +30,17 @@ class Branch{
 	public function getOpeningDate(){
 		return $this->openingDate;
 	}
-	public function getAddress(){
-		return $this->address;
-	}
-	public function getAddressId(){
-		return $this->addressId;
-	}
 	public function setSqlTableName($sqlTNameIn) {
 		$this->sqlTablesName=$sqlTNameIn;
 	}
-	public function setBranchName() {
-		/*
-		 * get branch name  from its client row, in the client table
-		*/
-		$db = new Database();
-		$db->connect();
-		$queryToDo= "SELECT DISTINCT firstname FROM client WHERE clientid=".$this->branchClientId;
-		$db->query($queryToDo);
-		$db->close();//just closes the connection to the db so that some other object can connect. the 
-					//db object is still alive and contains the results. 
-		$this->branchName=$db->queryFirstResult[firstname];
-	}
-	public function setBranchNameFromString($branchnamein){
-		$this->branchName=$branchnamein;
-	}
-	public function setBranchId($branchidin){
-		$this->branchId=$branchidin;
+	public function setBranchName($branchNameIn) {
+		$this->branchName=$branchNameIn;
 	}
 	public function setOpeningHours($openingHoursIn){
 		$this->openingHours=$openingHoursIn;
 	}
 	public function setManagerName($managerNameIn){
 		$this->managerName=$managerNameIn;
-	}
-	public function setAddress($branchesclientid){
-	
-		
-		
-		
-		$result=$this->address->initializeAddress($addressid);
-		echo "This is the result of setting the address$addressid: ".$result;
-		$this->address->displayAddress();
 	}
 	public function setManagerNameFromId($manageridIn){
 		//echo "Setting Manager name from ID, getting id from object, then querying DB";
@@ -102,25 +67,27 @@ class Branch{
 	public function setOpeningDate($openingDateIn){
 		$this->openingDate=$openingDateIn;
 	}
-	
 	public function initializeBranch($row){
-		$this->branchId=$row[branchid];
+		
 		$this->setManagerId($row[managerid]);
 		$this->setManagerNameFromId($row[managerid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setOpeningDate($row[openingdate]);
 		$this->setOpeningHours($row[openinghours]);
 		$this->branchClientId=$row[branchsclientid];
 		
-		$this->setBranchName();
-		$this->setAddress($row[branchsclientid]);
-	}
-	public function initializeBranchFromID($branchid){
+		/*
+		 * get branch name and address from its client row, in the client table
+		*/
 		$db = new Database();
 		$db->connect();
-		$queryToDo= "SELECT DISTINCT * FROM branch	WHERE branchid=".$branchid;
+		$queryToDo= "SELECT DISTINCT firstname, addressid FROM client WHERE clientid=".$this->branchClientId;
 		$db->query($queryToDo);
-		$db->close();
-		$this->initializeBranch($db->queryFirstResult);
+		$db->close();//just closes the connection to the db so that some other object can connect. the 
+					//db object is still alive and contains the results. 
+		$this->branchName=$db->queryFirstResult[firstname];
+		$this->address = new Address();
+		$this->address->initializeAddress($db->queryFirstResult[addressid]);
+		//$this->address->displayAddress();
 	}
 	
 	public function test(){
@@ -145,8 +112,6 @@ class Branch{
 		$db->close();//this closes the dtabase link connection
 	}
 	public function displayBranch(){
-		$this->setAddress($this->addressId);
-		$this->setBranchName();
 		echo '<h3>'.$this->branchName.
 		'</h3><p><b>Branch Manager: </b>'.$this->managerName.'</p>';
 		echo $this->address->displayAddress().
@@ -155,10 +120,9 @@ class Branch{
 	}
 	public function __construct(){
 		$this->address = new Address();
-		//$this->address->displayAddress();
 	}
 	public function __destruct() {
-       //print "Destroying " . $this->branchName . "\n";
+       print "Destroying " . $this->branchName . "\n";
    }
    
 	
