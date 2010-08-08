@@ -166,14 +166,15 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			<!-- End create field to put salary -->	
 <?php 
 			
+			/*
 			//find province, city, street from postal code
 			$dbSelectProvinceCityStreet = new Database();
 			$dbSelectProvinceCityStreet->connect();
 							
-			$querySelectProvinceCityStreet="SELECT province, city, street 
-							   		FROM postalcodes, address
-							   		WHERE postalcodes='$employeePostalCode'
-							   		      AND postalcode=postalcodes";
+			$querySelectProvinceCityStreet="SELECT DISTINCT province, city, street 
+							   				FROM postalcodes, address
+							   				WHERE postalcodes='$employeePostalCode'	AND 
+							   					  postalcode=postalcodes";
 														
 			$dbSelectProvinceCityStreet->query($querySelectProvinceCityStreet);	
 			$result = $dbSelectProvinceCityStreet->query($querySelectProvinceCityStreet);						
@@ -191,6 +192,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			$employeeStreet=$row[street];
 										
 			$dbSelectProvinceCityStreet->close();	
+			*/
+
+			$address->findProvinceCity($employeePostalCode);
+			$employeeProvince=$row[province];
+			$employeeCity=$row[city];				
+			
+
+
 ?>
 
 			<!-- Show province, city and street according to postal code -->
@@ -207,7 +216,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 				</td></tr>	
 				<tr><td width="180">Street name:</td><td width="180">
 					<?php 
-						echo "<input type=text disabled name=\"choiceStreet\" value=\"" . $employeeStreet . "\">";
+						//echo "<input type=text disabled name=\"choiceStreet\" value=\"" . $employeeStreet . "\">";
 					?>				
 				</td></tr>								
 			</table>
@@ -215,6 +224,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 <?php 
 
+			/*
 			// insert row into table Address
 			$dbEmployeeAddressNew = new Database();
 			$dbEmployeeAddressNew->connect();
@@ -223,20 +233,11 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			$queryEmployeeAddressNew=
 			"INSERT INTO address (addressid, streetnumber, street, postalcode)
 			 VALUES ('NULL', $employeeStreetNumber, '$employeeStreet', '$employeePostalCode')";			
-			
-			/*
-			"INSERT INTO address (addressid, streetnumber, street, postalcode)
-			 VALUES ('NULL', 319, 'Westgate West', 'J7E-5G9')";
-			 */
-									
 			//$dbEmployeeAddressNew->query($queryEmployeeAddressNew);
 			$dbEmployeeAddressNew->updateInsert($queryEmployeeAddressNew);
 			$dbEmployeeAddressNew->close();
-			// end insert row into table Address		
-	
-
-			
-
+			// end insert row into table Address	
+			 */	
 
 		} // end input is OK		
 	
