@@ -166,39 +166,12 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			<!-- End create field to put salary -->	
 <?php 
 			
-			/*
-			//find province, city, street from postal code
-			$dbSelectProvinceCityStreet = new Database();
-			$dbSelectProvinceCityStreet->connect();
-							
-			$querySelectProvinceCityStreet="SELECT DISTINCT province, city, street 
-							   				FROM postalcodes, address
-							   				WHERE postalcodes='$employeePostalCode'	AND 
-							   					  postalcode=postalcodes";
-														
-			$dbSelectProvinceCityStreet->query($querySelectProvinceCityStreet);	
-			$result = $dbSelectProvinceCityStreet->query($querySelectProvinceCityStreet);						
-										   
-			for($count=0;$count<$dbSelectProvinceCityStreet->queryResultsCount;$count=$count+1)
-			{
-				$row=mysql_fetch_array($dbSelectProvinceCityStreet->queryResultsResource);
-				$address->initializeProvinceCityStreet($row);
-				//$postalCodes->initializeProvinceCityStreet2($row);
-			}
-			
-			// save current values
-			$employeeProvince=$row[province];
-			$employeeCity=$row[city];	
-			$employeeStreet=$row[street];
-										
-			$dbSelectProvinceCityStreet->close();	
-			*/
 
-			$address->findProvinceCity($employeePostalCode);
-			//$employeeProvince=$row[province];
-			//$employeeCity=$row[city];
+			//find province, city, street from postal code
+			$address->findProvinceCityStreet($employeePostalCode);
 			$employeeProvince=$address->getProvince();
-			$employeeCity=$address->getCity();				
+			$employeeCity=$address->getCity();	
+			$employeeStreet=$address->getStreet();			
 			
 
 
@@ -218,7 +191,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 				</td></tr>	
 				<tr><td width="180">Street name:</td><td width="180">
 					<?php 
-						//echo "<input type=text disabled name=\"choiceStreet\" value=\"" . $employeeStreet . "\">";
+						echo "<input type=text disabled name=\"choiceStreet\" value=\"" . $employeeStreet . "\">";
 					?>				
 				</td></tr>								
 			</table>
