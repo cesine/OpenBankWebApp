@@ -70,5 +70,22 @@ echo "</table>";
 echo "<h5>Testing employes list</h5>";
 $employee->EmployeeList();
 
+
+
+echo "<h4>Testing client account</h4>";
+echo "To Be Done (TBD)";
+
+
+
+
+echo "<h4>Testing transfers and bill payment</h4>";
+echo "To Be Done (TBD)";
+
+
+echo "<h4>Testing displaying recent transactions</h4>";
+echo "To Be Done (TBD)";
+
+
+
 echo"<p></p>";
 ?>
