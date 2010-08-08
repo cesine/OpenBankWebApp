@@ -1,8 +1,6 @@
 <?php
 
-class PostalCodes
-{
-	
+class PostalCodes{
 	private $postalCodes;	
 	private $city;
 	private $province;
@@ -41,12 +39,23 @@ class PostalCodes
 		$this->setCity($row[city]);	
 		$this->setProvince($row[province]);			
 	}
+	public function saveToDatabase(){
+		$dbInsertPostalCode = new Database();
+		$dbInsertPostalCode->connect();
+		$insertquery="INSERT INTO postalcodes (postalcodes,city,province)
+			VALUES ('$this->postalCodes','$this->city','$this->province')";
+		//echo $insertquery;
+		$dbInsertPostalCode->updateInsert($insertquery);
+		//because its not an autoincrement
+		$succcessOrNot=$dbInsertPostalCode->queryResultsResource;
+		$dbInsertPostalCode->close();
+		return $succcessOrNot;
+	}
 	public function displayPostalCodeInfo(){
 		echo"<p>$this->city,
 			$this->province 
 			$this->postalCodes</p>";
 	}
-	
 	public function initializeProvinceCityStreet2($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
@@ -54,21 +63,14 @@ class PostalCodes
 		$this->setCity($row[city]);
 		//$this->setStreet($row[street]);		
 	}		
-
-	public function displayInRowFormatted()
-	{
-		
+	public function displayInRowFormatted(){
 		echo '<TR class="bgcoloroption1">
 				<TD class="tableDataLeftC">'.$this->postalCodes.'</TD>
 				<TD class="tableDataLeftC">'.$this->province.'</TD>		
 				<TD class="tableDataLeftC">'.$this->city.'</TD>					
 	    	  </TR>';		
 	}	
-
-
-	public function displayCodeProvinceCity()
-	{
-		
+	public function displayCodeProvinceCity(){
 		echo '	<TD>'.$this->postalCodes.'</TD>
 				<TD>'.$this->province.'</TD>		
 				<TD>'.$this->city.'</TD>';		
