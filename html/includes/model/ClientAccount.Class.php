@@ -117,30 +117,45 @@ class ClientAccount{
 		$this->closingDate="0000-00-00";
 		$this->status=1;
 	}
-	
 	public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curDate, $curentBal="0", $availBal="0", $status="1", $endDate='Null'){
 		$this->setAutoIncAccID($clientAccountId);
 		$this->setBranchId($userBranch);
 		$this->setclientId($clientId);
 		$this->setAccountTypeId($userAccountChoice);
-                $this->setOpeningDate($date);
+        $this->setOpeningDate($date);
 		$this->setCurrentBalance($curentBal);
 		$this->setAvailableBalance($availBal);
 		$this->setStatus($status);
 		$this->setClosingDate($endDate);
-		
 	} 
+	public function saveToDatabase(){
+		$newClientAccount = new Database();
+		$newClientAccount->connect();
+		$newDataRow = "NULL".",".$this->getBranchId().",".$this->getClientId().",".$this->getAccountTypeId().",".
+				$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
+				",".$this->getClosingDate($endDate);
+		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
+		echo $queryAddAccount;
+		$newAccountId=$newClientAccount->updateInsert($queryAddAccount);
+		$newClientAccount->close();
+		
+		return $newAccountId;
+	}
 	
+	/*
+	 * This function is depreciated by new, more default function saveToDatabase
+	 */
 	public function InsertAccountIntoDatabase(){
 		//open a database, connect, insert the objects values, and insert into whatever extra other tables are needed
 		$newClientAccount = new Database();
 		$newClientAccount->connect();
-		$newDataRow = $this->getAutoIncAccID().",".$this->getBranchId().",".$this->getClientId().",".$this->getAccountTypeId().",".
+		$newDataRow = "NULL".",".$this->getBranchId().",".$this->getClientId().",".$this->getAccountTypeId().",".
 				$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
 				",".$this->getClosingDate($endDate);
 		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
-		$newClientAccount->updateInsert($queryAddAccount);
+		$newAccountId=$newClientAccount->updateInsert($queryAddAccount);
 		$newClientAccount->close();
+		
 		
 	if ($newClientAccount->queryResultsResource)
     {
@@ -159,6 +174,7 @@ else
 <a href = "index.php?&content=OpenNewAccount">Please try again</a>
        <?php
     }
+    return $newAccountId;
 	}
 	
 public function initializeClientAccount($row)
