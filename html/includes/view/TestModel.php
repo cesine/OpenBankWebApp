@@ -2,6 +2,7 @@
 require_once 'includes/model/PostalCodes.Class.php';
 require_once 'includes/model/Address.Class.php';
 require_once 'includes/model/Client.Class.php';
+require_once 'includes/model/Employee.Class.php';
 
 
 echo "<h4>Testing setting some elements in a postal code, then printing it as it would appear in an addres.</h4>";
@@ -66,22 +67,36 @@ if(isset($_SESSION['Client'])){
 	foreach ($client->getClientAccountsArray() as $accountNumber){
 		echo "Client has Account: $accountNumber<br/>";
 	}
-	
-	
-	
 	echo "</p>";
 }
-echo "<h4>Testing employee, displaying personal info in row</h4>";
-$employee= new Employee();
-$employee=unserialize($_SESSION['Employee']);
-echo "<table border=1>";
-$employee->displayEmployeePersonalInfo();
-echo "</table>";
+if(isset($_SESSION['Employee'])){
+	echo "<h4>Testing employee, displaying personal info in row</h4>";
+	$employee= new Employee();
+	$employee=unserialize($_SESSION['Employee']);
+	echo "<table border=1>";
+	$employee->displayEmployeePersonalInfo();
+	echo "</table>";
 
 
-echo "<h5>Testing employes list</h5>";
-$employee->EmployeeList();
-
+	echo "<h5>Testing employes list</h5>";
+	$employee->EmployeeList();
+	
+	
+	echo "<h5>Inserting an employee into the database</h5>";
+	$employee->setLastName("GotMarried");
+	$newEmpIdInserted=$employee->saveToDatabase();
+	echo "The id of the new employee is ".$newEmpIdInserted;
+	
+	echo "<h5>Inserting an default employee into the database</h5>";
+	$employeeDefault = new Employee();
+	echo "<table border=1>";
+	$employeeDefault->displayEmployeePersonalInfo();
+	echo "</table>";
+	$newEmpIdInserted=$employeeDefault->saveToDatabase();
+	echo "The id of the new employee is ".$newEmpIdInserted;
+	
+	
+}
 
 
 echo "<h4>Testing client account</h4>";

@@ -30,6 +30,7 @@ class PostalCodes{
 	        $this->province=$provinceIn;
 	}
 	public function __construct(){
+		
 		//null constructor
 	}
 	public function initializePostalCodes($row)
