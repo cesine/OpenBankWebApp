@@ -31,12 +31,20 @@ class PostalCodes
 	{
 	        $this->province=$provinceIn;
 	}
+	public function __construct(){
+		//null constructor
+	}
 	public function initializePostalCodes($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
 		$this->setPostalCodes($row[postalcodes]);
 		$this->setCity($row[city]);	
 		$this->setProvince($row[province]);			
+	}
+	public function displayPostalCodeInfo(){
+		echo"<p>$this->city,
+			$this->province 
+			$this->postalCodes</p>";
 	}
 	
 	public function initializeProvinceCityStreet2($row)

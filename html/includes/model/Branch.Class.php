@@ -73,7 +73,6 @@ class Branch{
 		$this->setManagerNameFromId($row[managerid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setOpeningDate($row[openingdate]);
 		$this->setOpeningHours($row[openinghours]);
-		
 		$this->branchClientId=$row[branchsclientid];
 		
 		/*
@@ -120,7 +119,7 @@ class Branch{
 		'</p>';
 	}
 	public function __construct(){
-		//echo 'Creating a branch.';	
+		$this->address = new Address();
 	}
 	public function __destruct() {
        print "Destroying " . $this->branchName . "\n";
