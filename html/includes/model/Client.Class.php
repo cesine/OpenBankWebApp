@@ -9,8 +9,7 @@ class Client{
 	private $status;
 	private $statusString;
 	private $address;
-	private $branchID;	//maybe we need
-	private $clientAccountID;	//maybe we need
+	private $clientAccountsArray;	
 	private static $sqlTableName="client";
 	private static $sqlTableAttributes;
 	
@@ -48,8 +47,8 @@ class Client{
 	public function getBranchID() {
 		return $this->branchID;
 	}
-	public function getClientAccountID() {
-		return $this->clientAccountID;
+	public function getClientAccountsArray() {
+		return $this->clientAccountsArray;
 	}
 	
 	//setters
@@ -94,8 +93,17 @@ class Client{
 	public function setBranchID($branchID) {
 		$this->branchID=$branchID;
 	}
-	public function setClientAccountID($clientAccountID) {
-		$this->clientAccountID=$clientAccountID;
+	public function setClientAccountsArray($clientid) {
+		$db = new Database();
+		$db->connect();
+		$queryToDo= "SELECT DISTINCT clientaccountid FROM clientaccount WHERE clientid=".$clientid;
+		$db->query($queryToDo);
+		$db->close();
+		
+		for($count=0;$count<$db->queryResultsCount;$count=$count+1){
+			$row=mysql_fetch_array($db->queryResultsResource);
+			$this->clientAccountsArray[$count]=$row[clientaccountid];
+		}
 	}
 	
 	public function test(){
@@ -111,9 +119,12 @@ class Client{
 		$this->setBranchID(10001);
 		$this->setClientAccountID(95432453);
 	}
+	
 	public function displayClientDetails(){
 		echo '<table border=0 ><tr valign="top"><td ><p>Client Card Number </td><td>'.$this->clientID.
-		'</td></tr><tr><td>Name:</td><td>'.$this->firstName.' '.$this->lastName.
+		'</td></tr><tr valign=top><td>Accounts:</td><td>';
+		$this->displaySelectClientAccount();
+		echo '</td></tr><tr><td>Name:</td><td>'.$this->firstName.' '.$this->lastName.
 		'</td></tr><tr><td>SSN:</td><td> '.$this->socialInsuranceNumber.
 		'</td></tr><tr><td>Date of Birth:</td><td>'.$this->dateOfBirth.
 		'</td></tr><tr><td>Customer since:</td><td>'.$this->startDate.
@@ -124,6 +135,7 @@ class Client{
 	}
 	public function __construct(){
 		$this->address = new Address();
+		$this->clientAccountsArray = array();
 	}
 	public function initializeClient($clientid){
 		$db = new Database();
@@ -145,6 +157,7 @@ class Client{
 		$this->setStatusString($row[status]);
 		
 		$this->setAddress($row[addressid]);
+		$this->setClientAccountsArray($row[clientid]);
 		
 	}
 	
@@ -159,6 +172,13 @@ class Client{
 		$this->setBranchID($_POST["branchID"]);
 		$this->setClientAccountID($_POST["clientAccountID"]);
 				
+	}
+	public function displaySelectClientAccount(){
+		echo "<select name='$selectAccount'>";
+		foreach ($this->clientAccountsArray as $accountNumber){
+			echo "<option value='$accountNumber'>$accountNumber</option>";
+		}
+		echo"</select>";
 	}
 }
 
