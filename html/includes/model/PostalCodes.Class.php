@@ -46,7 +46,7 @@ class PostalCodes{
 		$insertquery="INSERT INTO postalcodes (postalcodes,city,province)
 			VALUES ('$this->postalCodes','$this->city','$this->province')";
 		//echo $insertquery;
-		$dbInsertPostalCode->updateInsert($insertquery);
+		$dbInsertPostalCode->insert($insertquery);
 		//because its not an autoincrement
 		$succcessOrNot=$dbInsertPostalCode->queryResultsResource;
 		$dbInsertPostalCode->close();

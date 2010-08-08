@@ -104,7 +104,7 @@ class Address{
 		$addressInsertQuery= "INSERT INTO address (streetnumber,street,postalcode)
 			VALUES ('$this->streetNumber','$this->street','".$this->postalCode->getPostalCodes()."')";
 		//echo $addressInsertQuery;
-		$addresSuccess=$dbForAddressInsert->updateInsert($addressInsertQuery);
+		$addresSuccess=$dbForAddressInsert->insert($addressInsertQuery);
 		$dbForAddressInsert->close();
 		return $addresSuccess.$postalcodeSuccess;
 	}

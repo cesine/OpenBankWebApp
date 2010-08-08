@@ -150,7 +150,7 @@ class Employee{
 			'$this->titleID','$this->salary','$this->firstName','$this->lastName',
 			'$this->timeOffID','$this->status')";
 		echo $employeeInsertQuery;
-		$newIdInserted=$dbToInsertEmployee->updateInsert($employeeInsertQuery);
+		$newIdInserted=$dbToInsertEmployee->insert($employeeInsertQuery);
 		$dbToInsertEmployee->close();
 		return $newIdInserted;
 	}

@@ -80,6 +80,24 @@ if(isset($_SESSION['Client'])){
 		zero if the client already existed. ".$newClientInserted;
 	
 	echo "</p>";
+	
+	
+
+	echo "<h4>Testing client account</h4>";
+	echo "<h5>Testing creating a default client account.</h5>";
+	
+	
+	
+	
+	
+	echo "<h4>Testing transfers and bill payment</h4>";
+	echo "To Be Done (TBD)";
+	
+	
+	echo "<h4>Testing displaying recent transactions</h4>";
+	echo "To Be Done (TBD)";
+	
+	
 }
 if(isset($_SESSION['Employee'])){
 	echo "<h4>Testing employee, displaying personal info in row</h4>";
@@ -109,20 +127,6 @@ if(isset($_SESSION['Employee'])){
 	
 	
 }
-
-
-echo "<h4>Testing client account</h4>";
-echo "To Be Done (TBD)";
-
-
-
-
-echo "<h4>Testing transfers and bill payment</h4>";
-echo "To Be Done (TBD)";
-
-
-echo "<h4>Testing displaying recent transactions</h4>";
-echo "To Be Done (TBD)";
 
 
 
