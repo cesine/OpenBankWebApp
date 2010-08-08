@@ -29,15 +29,12 @@ require_once('includes/model/ClientAccount.Class.php');
 //$newAccount->InsertAccountIntoDatabase();
 
 echo "Testing query to receive max clientaccountid renaming field name";
-$clientAc = new Database();
-		$clientAc->connect();
-		$queryMax = "SELECT MAX(clientaccountid)clientaccountid
-		             FROM `clientaccount`";
+echo "Now calling from original class <br/>";
 
-		$clientAc->query($queryMax);
-		$clientAc->close();
-		$autoIncAccID=$clientAc->queryFirstResult[clientaccountid];
-		$newAccNum=$autoIncAccID+1;
+
+$newID = new ClientAccount();
+
+$newID->getAutoIncAccID();
 
 echo "<br/> Max id: ", $newAccNum; "<br/>";
 ?>
