@@ -120,6 +120,14 @@ class ClientAccount{
 		$this->closingDate="0000-00-00";
 		$this->status=1;
 	}
+	public function initializeAccountFromID($accountid){
+		$db = new Database();
+		$db->connect();
+		$queryGetAccountInfo="SELECT DISTINCT * FROM clientaccount WHERE clientaccountid=".$accountid;
+		$db->query($queryGetAccountInfo);
+		$db->close();
+		$this->initializeClientAccount($db->queryFirstResult);
+	}
 	public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curDate, $curentBal="0", $availBal="0", $status="1", $endDate='Null'){
 		$this->setAutoIncAccID($clientAccountId);
 		$this->setBranchId($userBranch);
@@ -200,7 +208,7 @@ class ClientAccount{
 
 	public function initializeClientAccount($row)
 	{
-		print_r($row);
+		//print_r($row);
 		$this->setClientAccountId($row[clientaccountid]);
 		$this->setBranchId($row[branchid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setclientId($row[clientid]);
@@ -208,9 +216,9 @@ class ClientAccount{
 		//$this->setAccountName($row[accountName]);
 		$this->setCurrentBalance($row[currentbalance]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setAvailableBalance($row[availablebalance]);
-		$this->setStatus($row[$status]);
+		$this->setStatus($row[status]);
 		$this->setOpeningDate($row[openingdate]);
-		$this->setClosingDate($row[$closingDate]);
+		$this->setClosingDate($row[closingdate]);
 	}
 
 }

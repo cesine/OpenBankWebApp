@@ -97,6 +97,16 @@ if(isset($_SESSION['Client'])){
 	$accountDefault->displayAccountInRow();
 	echo "</table>";
 	
+	echo "<h5>Eding the account info from the client above, then inserting it into the athe database.</h5>";
+	$accountToChange = new ClientAccount();
+	$accountToChange->initializeClientAccountFromID($client->clientAccountsArray[0]);
+	echo "<table border=1>";
+	$accountToChange->displayAccountInRow();
+	echo "</table>";
+	//$accountToChange->setAvailableBalance(200.00);
+	echo "<table border=1>";
+	//$accountToChange->displayAccountInRow();
+	echo "</table>";
 	
 	echo "<h4>Testing transfers and bill payment</h4>";
 	echo "To Be Done (TBD)";

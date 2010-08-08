@@ -10,7 +10,7 @@ class Client{
 	private $statusString;
 	private $address;
 	private $addressId;
-	private $clientAccountsArray;	
+	public $clientAccountsArray;	
 	
 	//getters
 	public function getTableName() {
