@@ -1,10 +1,6 @@
-
 <?php 
 require_once('includes/model/AccountType.php');
 require_once('includes/model/ClientAccount.Class.php');
-?>
-
-<?php
 
 if (isset($_SESSION['Client']))
 {
@@ -24,7 +20,7 @@ echo "<h2>".$clientId." ClientId is:</h2>";
 $branch->query($queryBranchid);
 $branch->close();
 
-echo '<table>';
+echo '<table border=1>';
 for($count=0;$count<$branch->queryResultsCount;$count=$count+1){
 	$row=mysql_fetch_array($branch->queryResultsResource);
 		//echo "Here is the row: ";
@@ -35,7 +31,7 @@ for($count=0;$count<$branch->queryResultsCount;$count=$count+1){
 		$b->DisplayAcountDetailsInRow();
 }//endl if to only print when there are any results
 echo '</table>';
-echo '</div>';
+
 ?>
 
 
