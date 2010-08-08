@@ -9,16 +9,13 @@ class Address{
 	private $country;
 
 
-	public function getAddressID()
-	{
+	public function getAddressID(){
 		return $this->addressID;
 	}
-	public function getStreetNumber()
-	{
+	public function getStreetNumber(){
 		return $this->streetNumber;
 	}
-	public function getStreet()
-	{
+	public function getStreet(){
 		return $this->street;
 	}
 	/*
@@ -27,49 +24,40 @@ class Address{
 	public function getPostalCodeObject(){
 		return $this->postalCode;
 	}
-	public function getPostalCode()
-	{
+	public function getPostalCode(){
 		return $this->postalCode->getPostalCodes();
 	}
-	public function getCity()
-	{
+	public function getCity(){
 		return $this->postalCode->getCity();
 	}
-	public function getProvince()
-	{
+	public function getProvince(){
 		return $this->postalCode->getProvince();
 	}
 	
 	
-	public function setAddressID($addressIDIn)
-	{
+	public function setAddressID($addressIDIn){
 		$this->addressID=$addressIDIn;
 	}
-	public function setStreetNumber($streetNumberIn)
-	{
+	public function setStreetNumber($streetNumberIn){
 		$this->streetNumber=$streetNumberIn;
 	}
-	public function setStreet($streetIn)
-	{
+	public function setStreet($streetIn){
 		$this->street=$streetIn;
 	}
 	/*
 	 * Map setCity, setProvince, setPostalCode through functions in the address class
 	 * to make using an address easy to do with out knowing that it uses PostalCode class
 	 */
-	public function setCity($cityIn)
-	{
+	public function setCity($cityIn){
 		$this->postalCode->setCity($cityIn);
 	}
-	public function setProvince($provinceIn)
-	{
+	public function setProvince($provinceIn){
 		$this->postalCode->setProvince($provinceIn);
 	}
 	public function setPostalCodeString($postalcodestring){
 		$this->postalCode->setPostalCodes($postalcodestring);
 	}
-	public function setPostalCode($row)
-	{
+	public function setPostalCode($row){
 		$this->postalCode = new PostalCodes();
 		$this->postalCode->initializePostalCodes($row);
 	}
@@ -85,8 +73,7 @@ class Address{
 	 * It uses the variable "queryFirstResult" from the db object, which is essentially the first row
 	 * hopefully in this case, the only row.
 	 */
-	public function initializeAddress($addressIdIn)
-	{
+	public function initializeAddress($addressIdIn){
 		//echo "Initialising an address object for: ".$addressIdIn;
 		$dbForAddress = new Database();
 		$dbForAddress->connect();
@@ -110,6 +97,17 @@ class Address{
 		$this->setProvince($row[province]);
 		$this->setPostalCodeString($row[postalcode]);
 	}
+	public function saveToDatabase(){
+		$postalcodeSuccess=$this->postalCode->saveToDatabase();
+		$dbForAddressInsert = new Database();
+		$dbForAddressInsert->connect();
+		$addressInsertQuery= "INSERT INTO address (streetnumber,street,postalcode)
+			VALUES ('$this->streetNumber','$this->street','".$this->postalCode->getPostalCodes()."')";
+		//echo $addressInsertQuery;
+		$addresSuccess=$dbForAddressInsert->updateInsert($addressInsertQuery);
+		$dbForAddressInsert->close();
+		return $addresSuccess.$postalcodeSuccess;
+	}
 	public function emptyIt(){
 		$this->streetNumber="";
 		$this->setStreet("");
@@ -121,8 +119,7 @@ class Address{
 		$this->setProvince("");
 		$this->setPostalCodeString("");
 	}
-	public function displayAddress()
-	{
+	public function displayAddress(){
 		echo '<p>'.$this->streetNumber." ".
 		$this->getStreet()." <br/>".
 		$this->getCity().", ".
@@ -139,15 +136,13 @@ class Address{
 		</tr>";
 	}
 
-	public function __construct()
-	{
+	public function __construct(){
 		$this->postalCode = new PostalCodes();
 		$this->emptyIt();
 	}
-	
 	public function PostalCodesList()
 	{
-?>
+		?>
 		<!-- Build dynamic list of postal codes -->
 		<table border="1">
 			<tr>
@@ -182,10 +177,8 @@ class Address{
 			</tr>
 		</table>
 		<!-- End Build dynamic list of postal codes -->
-<?php
-	} // end public function PostalCodesList()
-	
-	
+		<?php
+	} // end public function PostalCodesList()		
 	/* This function is needed in Add Employee class. 
 	 * User enter postal code and from it I find province, city, street*/
 	public function initializeProvinceCityStreet($row)
@@ -196,7 +189,6 @@ class Address{
 		$this->setStreet($row[street]);
 	}	
 
-	
 	/* This function is needed in Add Employee class. 
 	 * User enter postal code and from it I find province, city, street*/
 	public function findProvinceCityStreet($employeePostalCode)
