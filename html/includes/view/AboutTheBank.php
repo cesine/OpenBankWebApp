@@ -424,6 +424,7 @@ elseif($content=="LineOfCredit"){
 	$db->query($queryToDo);
 	$db->close();
 	print_r($db->queryFirstResult);
+	echo "Employee id is".$db->queryFirstResult[employeeid];
 }
 						
 
