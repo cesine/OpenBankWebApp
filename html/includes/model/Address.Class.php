@@ -208,33 +208,27 @@ class Address{
 	
 	/* This function is needed in Add Employee class. 
 	 * User enter postal code and from it I fetch province, city*/
-	public function findProvinceCity($employeePostalCode)
+	public function findProvinceCityStreet($employeePostalCode)
 	{
 			//find province, city from postal code
-			$dbSelectProvinceCity = new Database();
-			$dbSelectProvinceCity->connect();
+			$dbSelectProvinceCityStreet = new Database();
+			$dbSelectProvinceCityStreet->connect();
 							
-			$querySelectProvinceCity="SELECT DISTINCT province, city 
-							   				FROM postalcodes
-							   				WHERE postalcodes='$employeePostalCode'";
+			$querySelectProvinceCityStreet="SELECT DISTINCT province, city, street 
+							   				FROM postalcodes, address
+							   				WHERE postalcodes='$employeePostalCode' AND
+							   				postalcode=postalcodes";
 														
-			$dbSelectProvinceCity->query($querySelectProvinceCity);	
-			$result = $dbSelectProvinceCity->query($querySelectProvinceCity);						
+			$dbSelectProvinceCityStreet->query($querySelectProvinceCityStreet);	
+			$result = $dbSelectProvinceCityStreet->query($querySelectProvinceCityStreet);						
 										   
-			for($count=0;$count<$dbSelectProvinceCity->queryResultsCount;$count=$count+1)
+			for($count=0;$count<$dbSelectProvinceCityStreet->queryResultsCount;$count=$count+1)
 			{
-				$row=mysql_fetch_array($dbSelectProvinceCity->queryResultsResource);
-				$this->initializeProvinceCity($row);
-				//$address->initializeProvinceCity($row);
+				$row=mysql_fetch_array($dbSelectProvinceCityStreet->queryResultsResource);
+				$this->initializeProvinceCityStreet($row);
 			}
-			
-			// save current values
-			//$employeeProvince=$row[province];
-			//$employeeCity=$row[city];	
-			//$employeeStreet=$row[street];
-										
-			$dbSelectProvinceCity->close();	
 
+			$dbSelectProvinceCityStreet->close();	
 	}		
 
 
