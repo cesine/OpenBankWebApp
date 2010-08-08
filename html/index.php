@@ -36,15 +36,6 @@ if($userIsEmployee){
 
 </td><td width= "80%">
 
-
-
-
-
-
-<!-- Main Content Cell -->
-<div id="content">
-<div id="main">
-
 <?php
 /*
  * Control logic to change which small top menu to display in the main window
@@ -56,7 +47,11 @@ if($topMenu =="ClientTopMenu"){
 }else{
 	include ('includes/view/topmenu.php');
 }
-
+?>
+<!-- Main Content Cell -->
+<div id="content">
+<div id="main">
+<?php 
 /*
  * Main Control Switch to change which page to display
  */

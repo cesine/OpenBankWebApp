@@ -1,5 +1,4 @@
-<table width="600" border="0" bgcolor="#bbb" >
-<tr><td>.</td></tr>
+<table width="650" border="0" bgcolor="#bbb" >
 <tr>
 	<td width="20%">
 		<a href="index.php?&content=AllAccountsSummary">All Summary</a>
@@ -17,6 +16,5 @@
 		<a href="index.php?&content=InsuranceSummary">Insurance</a>
 	</td>
 </tr>
-<tr><td>.</td></tr>
 </table>
 <p>&nbsp;</p>
