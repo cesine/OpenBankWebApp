@@ -28,10 +28,11 @@ CREATE TABLE `accounttype` (
   `servicetypeid` int(2) unsigned NOT NULL,
   `accountname` varchar(50) NOT NULL,
   PRIMARY KEY (`accounttypeid`),
+  UNIQUE KEY `avoidduplicaterows` (`servicecategoryid`,`servicetypeid`,`accountname`),
   KEY `servicecategoryid` (`servicecategoryid`),
   KEY `servicetypeid` (`servicetypeid`),
-  CONSTRAINT `accounttype_ibfk_2` FOREIGN KEY (`servicetypeid`) REFERENCES `servicetype` (`servicetypeid`),
-  CONSTRAINT `accounttype_ibfk_1` FOREIGN KEY (`servicecategoryid`) REFERENCES `servicecategory` (`servicecategoryid`)
+  CONSTRAINT `accounttype_ibfk_1` FOREIGN KEY (`servicecategoryid`) REFERENCES `servicecategory` (`servicecategoryid`),
+  CONSTRAINT `accounttype_ibfk_2` FOREIGN KEY (`servicetypeid`) REFERENCES `servicetype` (`servicetypeid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,7 +42,7 @@ CREATE TABLE `accounttype` (
 
 LOCK TABLES `accounttype` WRITE;
 /*!40000 ALTER TABLE `accounttype` DISABLE KEYS */;
-INSERT INTO `accounttype` VALUES (1,1,1,'Powerchequing Account'),(2,1,2,'Money Master Savings Account'),(3,1,3,'US Dollar Account'),(4,1,4,'Credit Card No-Fee Value VISA'),(5,1,5,'Basic Line of Credit'),(6,1,6,'GIC(6mos) with Flex for RSPs Account'),(7,1,7,'GIC(6mos) with Flex for TFSAs Account'),(8,1,8,'Accidental Death Insurance - 1'),(9,1,6,'GIC(24mos) with Flex for RSPs Account'),(10,2,1,'Basic Business Chequing Account'),(11,2,2,'Basic Business Savings Account'),(12,2,3,'Basic Business Foreign Currency Account'),(13,1,6,'GIC(12mos) with Flex for RSPs Account'),(14,1,6,'GIC(18mos) with Flex for RSPs Account'),(15,1,7,'GIC(12mos) with Flex for TFSAs Account'),(16,1,7,'GIC(18mos) with Flex for TFSAs Account'),(17,1,7,'GIC(24mos) with Flex for TFSAs Account'),(18,1,8,'Accidental Death Insurance - 2'),(19,1,8,'Accidental Death Insurance - 3'),(20,1,8,'Accidental Death Insurance - 4');
+INSERT INTO `accounttype` VALUES (1,1,1,'Powerchequing Account'),(2,1,2,'Money Master Savings Account'),(3,1,3,'US Dollar Account'),(4,1,4,'Credit Card No-Fee Value VISA'),(5,1,5,'Basic Line of Credit'),(13,1,6,'GIC(12mos) with Flex for RSPs Account'),(14,1,6,'GIC(18mos) with Flex for RSPs Account'),(9,1,6,'GIC(24mos) with Flex for RSPs Account'),(6,1,6,'GIC(6mos) with Flex for RSPs Account'),(15,1,7,'GIC(12mos) with Flex for TFSAs Account'),(16,1,7,'GIC(18mos) with Flex for TFSAs Account'),(17,1,7,'GIC(24mos) with Flex for TFSAs Account'),(7,1,7,'GIC(6mos) with Flex for TFSAs Account'),(8,1,8,'Accidental Death Insurance - 1'),(18,1,8,'Accidental Death Insurance - 2'),(19,1,8,'Accidental Death Insurance - 3'),(20,1,8,'Accidental Death Insurance - 4'),(10,2,1,'Basic Business Chequing Account'),(11,2,2,'Basic Business Savings Account'),(12,2,3,'Basic Business Foreign Currency Account');
 /*!40000 ALTER TABLE `accounttype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,9 +59,10 @@ CREATE TABLE `address` (
   `street` varchar(25) NOT NULL,
   `postalcode` varchar(7) NOT NULL,
   PRIMARY KEY (`addressid`),
+  UNIQUE KEY `avoidduplicaterow` (`streetnumber`,`street`,`postalcode`),
   KEY `postalcode` (`postalcode`),
   CONSTRAINT `address_ibfk_1` FOREIGN KEY (`postalcode`) REFERENCES `postalcodes` (`postalcodes`)
-) ENGINE=InnoDB AUTO_INCREMENT=10000094 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10000293 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +71,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (10000001,1200,'Ste-Catherine','H3K-1Z2'),(10000002,98,'Hymus Ave.','H1T-1A1'),(10000003,1234,'Front Street','J7Y-1R1'),(10000004,1195,'Rue Paradis','G4R-1Z7'),(10000005,7632,'1st Street','H1A-5F9'),(10000006,8380,'2nd Street','H2B-6G0'),(10000007,9768,'3rd Avenue','J3C-7H1'),(10000008,5822,'Joliette Street','G4D-8I2'),(10000009,89,'Arnaud Avenue','H5E-9J3'),(10000010,3025,'Smith Street','H6F-0K4'),(10000011,8089,'Laure Avenue','J7G-1L5'),(10000012,1736,'Lafayette Avenue','G8H-2A6'),(10000013,7734,'Brochu Street','H9I-3B7'),(10000014,6702,'McRae Street','H0J-4C8'),(10000015,5654,'Arsenault Avenue','H1K-5D9'),(10000016,3092,'3rd Avenue','H2L-6E0'),(10000017,3957,'Brochu Avenue','H3A-7F5'),(10000018,6643,'Laure Street','H4B-8G6'),(10000019,9923,'Arnaud Avenue','H5C-9H7'),(10000020,2763,'Joliette Street','H6D-0F8'),(10000021,2357,'Lafayette Avenue','H7E-5G9'),(10000022,3551,'McRae Street','H8F-6H0'),(10000023,797,'Arsenault Avenue','H9G-7I1'),(10000024,5591,'Arnaud Street','H0H-8J2'),(10000025,3456,'Arsenault Avenue','H1K-5D9'),(10000026,47,'3rd Avenue','H2L-6E0'),(10000027,2363,'Brochu Avenue','H3A-7F5'),(10000028,824,'Laure Street','H4B-8G6'),(10000029,4158,'Joliette Avenue','J5C-9H7'),(10000030,1861,'Lafayette Avenue','J6D-0F8'),(10000031,9600,'McRae Street','J7E-5G9'),(10000032,1715,'Arsenault Avenue','J8F-6H0'),(10000033,8684,'2nd Street','J9G-7I1'),(10000034,47,'McRae Street','J0H-8J2'),(10000035,453,'Rue Paradis','G1E-5A4'),(10000036,345,'Rue Paradis','G1E-2E5'),(10000037,674,'Lafayette Avenue','G8H-2E5'),(10000038,2345,'Joliette Street','G1E-1A1'),(10000039,6756,'Lafayette Avenue','G8H-7T3'),(10000040,34,'Joliette Street','G8H-1E2'),(10000041,1400,'Maisonneuve blvd. west','H3G-1M8'),(10000042,675,'Avenue des Pins','H3G-1A4'),(10000043,1006,'Avenue Bonavista','H3G-1R7'),(10000044,54,'Stratford street','H3X-1F3'),(10000045,1278,'Avenue Grosvenor','H3G-1E8'),(10000046,865,'Blvd. Rene Levesque west','H3H-2S4'),(10000047,675,'Avenue des Pins','H3G-1A4'),(10000048,5674,'Sherbrooke street west','H4J-5R5'),(10000049,1400,'Maisonneuve blvd. west','H3G-1M8'),(10000050,24,'Avenue Mount Pleasant','H3D-4E3');
+INSERT INTO `address` VALUES (10000050,24,'Avenue Mount Pleasant','H3D-4E3'),(10000040,34,'Joliette Street','G8H-1E2'),(10000026,47,'3rd Avenue','H2L-6E0'),(10000034,47,'McRae Street','J0H-8J2'),(10000044,54,'Stratford street','H3X-1F3'),(10000009,89,'Arnaud Avenue','H5E-9J3'),(10000002,98,'Hymus Ave.','H1T-1A1'),(10000036,345,'Rue Paradis','G1E-2E5'),(10000035,453,'Rue Paradis','G1E-5A4'),(10000042,674,'Avenue des Pins','H3G-1A4'),(10000037,674,'Lafayette Avenue','G8H-2E5'),(10000047,675,'Avenue des Pins','H3G-1A4'),(10000023,797,'Arsenault Avenue','H9G-7I1'),(10000028,824,'Laure Street','H4B-8G6'),(10000046,865,'Blvd. Rene Levesque west','H3H-2S4'),(10000043,1006,'Avenue Bonavista','H3G-1R7'),(10000004,1195,'Rue Paradis','G4R-1Z7'),(10000001,1200,'Ste-Catherine','H3K-1Z2'),(10000003,1234,'Front Street','J7Y-1R1'),(10000045,1278,'Avenue Grosvenor','H3G-1E8'),(10000049,1400,'Maisonneuve blvd. west','H3G-1M8'),(10000041,1455,'Maisonneuve blvd. west','H3G-1M8'),(10000032,1715,'Arsenault Avenue','J8F-6H0'),(10000012,1736,'Lafayette Avenue','G8H-2A6'),(10000030,1861,'Lafayette Avenue','J6D-0F8'),(10000038,2345,'Joliette Street','G1E-1A1'),(10000021,2357,'Lafayette Avenue','H7E-5G9'),(10000027,2363,'Brochu Avenue','H3A-7F5'),(10000020,2763,'Joliette Street','H6D-0F8'),(10000010,3025,'Smith Street','H6F-0K4'),(10000016,3092,'3rd Avenue','H2L-6E0'),(10000025,3456,'Arsenault Avenue','H1K-5D9'),(10000022,3551,'McRae Street','H8F-6H0'),(10000017,3957,'Brochu Avenue','H3A-7F5'),(10000029,4158,'Joliette Avenue','J5C-9H7'),(10000024,5591,'Arnaud Street','H0H-8J2'),(10000015,5654,'Arsenault Avenue','H1K-5D9'),(10000048,5674,'Sherbrooke street west','H4J-5R5'),(10000008,5822,'Joliette Street','G4D-8I2'),(10000018,6643,'Laure Street','H4B-8G6'),(10000014,6702,'McRae Street','H0J-4C8'),(10000039,6756,'Lafayette Avenue','G8H-7T3'),(10000005,7632,'1st Street','H1A-5F9'),(10000013,7734,'Brochu Street','H9I-3B7'),(10000011,8089,'Laure Avenue','J7G-1L5'),(10000006,8380,'2nd Street','H2B-6G0'),(10000033,8684,'2nd Street','J9G-7I1'),(10000031,9600,'McRae Street','J7E-5G9'),(10000007,9768,'3rd Avenue','J3C-7H1'),(10000019,9923,'Arnaud Avenue','H5C-9H7');
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,6 +92,7 @@ CREATE TABLE `bankingplans` (
   `minimumbalance` decimal(10,2) NOT NULL,
   `interestrate` decimal(2,2) NOT NULL,
   UNIQUE KEY `accounttypeid` (`accounttypeid`),
+  UNIQUE KEY `avoidduplicaterows` (`monthlyfee`,`freetransactions`,`transactionfee`,`overdraftamount`,`overdraftprotectionfee`,`minimumbalance`,`interestrate`),
   CONSTRAINT `bankingplans_ibfk_1` FOREIGN KEY (`accounttypeid`) REFERENCES `accounttype` (`accounttypeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -100,7 +103,7 @@ CREATE TABLE `bankingplans` (
 
 LOCK TABLES `bankingplans` WRITE;
 /*!40000 ALTER TABLE `bankingplans` DISABLE KEYS */;
-INSERT INTO `bankingplans` VALUES (1,'4.00',20,'0.65','1000.00','5.00','0.00','0.00'),(2,'0.00',0,'0.00','0.00','0.00','0.00','0.99'),(3,'10.00',10,'0.99','0.00','0.00','0.00','0.00'),(10,'0.00',0,'0.00','0.00','0.00','0.00','0.00'),(11,'0.00',0,'0.00','0.00','0.00','0.00','0.00'),(12,'0.00',0,'0.00','0.00','0.00','0.00','0.00');
+INSERT INTO `bankingplans` VALUES (2,'0.00',0,'0.00','0.00','0.00','0.00','0.99'),(1,'4.00',20,'0.65','1000.00','5.00','0.00','0.00'),(3,'10.00',10,'0.99','0.00','0.00','0.00','0.00');
 /*!40000 ALTER TABLE `bankingplans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,6 +121,7 @@ CREATE TABLE `borrowingplans` (
   `graceperiod` int(2) unsigned NOT NULL,
   `interestrate` decimal(4,2) NOT NULL,
   UNIQUE KEY `accounttypeid` (`accounttypeid`),
+  UNIQUE KEY `avoidduplicaterows` (`creditlimit`,`monthlyfee`,`graceperiod`,`interestrate`),
   CONSTRAINT `borrowingplans_ibfk_1` FOREIGN KEY (`accounttypeid`) REFERENCES `accounttype` (`accounttypeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -140,17 +144,18 @@ DROP TABLE IF EXISTS `branch`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `branch` (
-  `branchid` int(5) unsigned NOT NULL,
+  `branchid` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `managerid` int(8) unsigned NOT NULL,
   `openingdate` date NOT NULL,
   `openinghours` tinytext NOT NULL,
   `branchsclientid` int(8) unsigned NOT NULL,
   PRIMARY KEY (`branchid`),
+  UNIQUE KEY `avoidduplicaterows` (`managerid`,`openingdate`,`branchsclientid`),
   KEY `managerid` (`managerid`),
   KEY `branchsclientid` (`branchsclientid`),
-  CONSTRAINT `branch_ibfk_2` FOREIGN KEY (`branchsclientid`) REFERENCES `client` (`clientid`),
-  CONSTRAINT `branch_ibfk_1` FOREIGN KEY (`managerid`) REFERENCES `employee` (`employeeid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `branch_ibfk_1` FOREIGN KEY (`managerid`) REFERENCES `employee` (`employeeid`),
+  CONSTRAINT `branch_ibfk_2` FOREIGN KEY (`branchsclientid`) REFERENCES `client` (`clientid`)
+) ENGINE=InnoDB AUTO_INCREMENT=10005 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,6 +185,7 @@ CREATE TABLE `client` (
   `startdate` date NOT NULL,
   `status` int(1) NOT NULL,
   PRIMARY KEY (`clientid`),
+  UNIQUE KEY `avoidduplicaterows` (`ssn`,`lastname`),
   KEY `addressid` (`addressid`),
   CONSTRAINT `client_ibfk_1` FOREIGN KEY (`addressid`) REFERENCES `address` (`addressid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=54010023 DEFAULT CHARSET=utf8;
@@ -203,7 +209,7 @@ DROP TABLE IF EXISTS `clientaccount`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clientaccount` (
-  `clientaccountid` int(8) unsigned NOT NULL,
+  `clientaccountid` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `branchid` int(5) unsigned NOT NULL,
   `clientid` int(8) unsigned NOT NULL,
   `accounttypeid` int(2) unsigned NOT NULL,
@@ -213,12 +219,14 @@ CREATE TABLE `clientaccount` (
   `openingdate` date NOT NULL,
   `closingdate` date DEFAULT NULL,
   PRIMARY KEY (`branchid`,`clientaccountid`),
+  UNIQUE KEY `avoidduplicaterows` (`branchid`,`clientid`,`status`,`accounttypeid`,`currentbalance`,`availablebalance`,`openingdate`,`closingdate`),
   KEY `accounttypeid` (`accounttypeid`),
   KEY `clientid` (`clientid`),
+  KEY `clientaccountid` (`clientaccountid`),
   CONSTRAINT `clientaccount_ibfk_1` FOREIGN KEY (`accounttypeid`) REFERENCES `accounttype` (`accounttypeid`),
   CONSTRAINT `clientaccount_ibfk_3` FOREIGN KEY (`clientid`) REFERENCES `client` (`clientid`),
   CONSTRAINT `clientaccount_ibfk_4` FOREIGN KEY (`branchid`) REFERENCES `branch` (`branchid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=210004002 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,7 +235,7 @@ CREATE TABLE `clientaccount` (
 
 LOCK TABLES `clientaccount` WRITE;
 /*!40000 ALTER TABLE `clientaccount` DISABLE KEYS */;
-INSERT INTO `clientaccount` VALUES (10000001,10001,54010001,2,'3500.00','3500.00',1,'2010-07-01',NULL),(10000002,10001,54010015,1,'700.00','1700.00',1,'2010-06-01',NULL),(10000003,10001,54010001,2,'4000.00','4000.00',1,'2010-01-01',NULL),(20000002,10001,54010002,2,'6500.00','6500.00',1,'2010-06-01',NULL),(110001001,10001,54010005,1,'4205.65','5205.65',1,'1990-11-05',NULL),(110001002,10001,54010009,1,'4800.30','5800.30',1,'2007-05-21',NULL),(110001003,10001,54010011,1,'2125.50','3125.50',1,'2003-09-07',NULL),(110001012,10001,54010015,1,'0.00','0.00',0,'1999-09-09','2007-05-01'),(110001019,10001,54010016,2,'14900.00','14900.00',1,'1998-03-20',NULL),(110001022,10001,54010015,2,'4500.00','4500.00',1,'2007-05-01',NULL),(110001039,10001,54010022,1,'3290.85','4290.85',1,'1999-08-14',NULL),(110001090,10001,54010020,1,'5690.00','6690.00',1,'2005-07-13',NULL),(110001102,10001,54010017,2,'12000.00','12000.00',1,'2002-08-31',NULL),(210001004,10001,54010013,11,'76239.05','76239.05',1,'1990-01-24',NULL),(210001005,10001,54010014,11,'34765.35','34765.35',1,'1991-02-17',NULL),(210001006,10001,54010019,10,'12980.99','12980.99',1,'1991-02-17',NULL),(210001007,10001,54010021,10,'18540.45','18540.45',1,'1990-01-24',NULL),(210001014,10001,54010018,11,'45000.00','45000.00',1,'1999-08-05',NULL),(110002001,10002,54010006,1,'6456.13','7456.13',1,'2001-12-01',NULL),(110002002,10002,54010010,1,'2750.00','3750.00',1,'1999-10-18',NULL),(210002001,10002,54010002,10,'86543.98','86543.98',1,'1992-01-01',NULL),(110003001,10003,54010007,1,'2100.00','3100.00',1,'2000-04-08',NULL),(210003001,10003,54010003,10,'75089.07','75089.07',1,'1994-01-01',NULL),(110004001,10004,54010008,1,'5089.67','6089.67',1,'2003-10-24',NULL),(110004002,10004,54010012,1,'0.00','0.00',0,'2008-11-04','2010-07-28'),(110004523,10004,54010008,7,'20000.00','20000.00',1,'2010-07-20',NULL),(210004001,10004,54010004,10,'26403.68','26403.68',1,'1995-01-01',NULL);
+INSERT INTO `clientaccount` VALUES (10000001,10001,54010001,2,'3500.00','3500.00',1,'2010-07-01',NULL),(10000003,10001,54010001,2,'4000.00','4000.00',1,'2010-01-01',NULL),(20000002,10001,54010002,2,'6500.00','6500.00',1,'2010-06-01',NULL),(110001001,10001,54010005,1,'4205.65','5205.65',1,'1990-11-05',NULL),(110001002,10001,54010009,1,'4800.30','5800.30',1,'2007-05-21',NULL),(110001003,10001,54010011,1,'2125.50','3125.50',1,'2003-09-07',NULL),(210001004,10001,54010013,11,'76239.05','76239.05',1,'1990-01-24',NULL),(210001005,10001,54010014,11,'34765.35','34765.35',1,'1991-02-17',NULL),(110001012,10001,54010015,1,'0.00','0.00',0,'1999-09-09','2007-05-01'),(10000002,10001,54010015,1,'700.00','1700.00',1,'2010-06-01',NULL),(110001022,10001,54010015,2,'4500.00','4500.00',1,'2007-05-01',NULL),(110001019,10001,54010016,2,'14900.00','14900.00',1,'1998-03-20',NULL),(110001102,10001,54010017,2,'12000.00','12000.00',1,'2002-08-31',NULL),(210001014,10001,54010018,11,'45000.00','45000.00',1,'1999-08-05',NULL),(210001006,10001,54010019,10,'12980.99','12980.99',1,'1991-02-17',NULL),(110001090,10001,54010020,1,'5690.00','6690.00',1,'2005-07-13',NULL),(210001007,10001,54010021,10,'18540.45','18540.45',1,'1990-01-24',NULL),(110001039,10001,54010022,1,'3290.85','4290.85',1,'1999-08-14',NULL),(210002001,10002,54010002,10,'86543.98','86543.98',1,'1992-01-01',NULL),(110002001,10002,54010006,1,'6456.13','7456.13',1,'2001-12-01',NULL),(110002002,10002,54010010,1,'2750.00','3750.00',1,'1999-10-18',NULL),(210003001,10003,54010003,10,'75089.07','75089.07',1,'1994-01-01',NULL),(110003001,10003,54010007,1,'2100.00','3100.00',1,'2000-04-08',NULL),(210004001,10004,54010004,10,'26403.68','26403.68',1,'1995-01-01',NULL),(110004001,10004,54010008,1,'5089.67','6089.67',1,'2003-10-24',NULL),(110004523,10004,54010008,7,'20000.00','20000.00',1,'2010-07-20',NULL),(110004002,10004,54010012,1,'0.00','0.00',0,'2008-11-04','2010-07-28');
 /*!40000 ALTER TABLE `clientaccount` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -274,14 +282,15 @@ CREATE TABLE `employee` (
   `timeoffid` int(5) unsigned NOT NULL,
   `status` int(1) unsigned NOT NULL,
   PRIMARY KEY (`employeeid`),
+  UNIQUE KEY `avoidduplicaterows` (`addressid`,`branchid`,`titleid`,`salary`,`firstname`,`lastname`,`timeoffid`,`status`),
   KEY `addressid` (`addressid`),
   KEY `branchid` (`branchid`),
   KEY `titleid` (`titleid`),
   KEY `timeoffid` (`timeoffid`),
-  CONSTRAINT `employee_ibfk_4` FOREIGN KEY (`timeoffid`) REFERENCES `employeetimeoffplan` (`timeoffid`),
   CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`addressid`) REFERENCES `address` (`addressid`),
   CONSTRAINT `employee_ibfk_2` FOREIGN KEY (`branchid`) REFERENCES `branch` (`branchid`),
-  CONSTRAINT `employee_ibfk_3` FOREIGN KEY (`titleid`) REFERENCES `employeetitle` (`titleid`)
+  CONSTRAINT `employee_ibfk_3` FOREIGN KEY (`titleid`) REFERENCES `employeetitle` (`titleid`),
+  CONSTRAINT `employee_ibfk_4` FOREIGN KEY (`timeoffid`) REFERENCES `employeetimeoffplan` (`timeoffid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20000038 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -332,6 +341,7 @@ CREATE TABLE `employeetimeoffhistory` (
   `reason` varchar(20) NOT NULL,
   `startdateoff` date NOT NULL,
   `dayreturntowork` date NOT NULL,
+  PRIMARY KEY (`employeeid`,`reason`,`startdateoff`,`dayreturntowork`),
   KEY `employeeid` (`employeeid`),
   CONSTRAINT `employeetimeoffhistory_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`employeeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -343,7 +353,7 @@ CREATE TABLE `employeetimeoffhistory` (
 
 LOCK TABLES `employeetimeoffhistory` WRITE;
 /*!40000 ALTER TABLE `employeetimeoffhistory` DISABLE KEYS */;
-INSERT INTO `employeetimeoffhistory` VALUES (20000001,'family live','0000-00-00','0000-00-00'),(20000002,'vacation','0000-00-00','0000-00-00'),(20000003,'vacation','0000-00-00','0000-00-00'),(20000003,'vacation','0000-00-00','0000-00-00'),(20000004,'vacation','0000-00-00','0000-00-00'),(20000005,'vacation','0000-00-00','0000-00-00'),(20000005,'vacation','0000-00-00','0000-00-00'),(20000005,'vacation','0000-00-00','0000-00-00'),(20000005,'sick days','0000-00-00','0000-00-00'),(20000006,'sick days','0000-00-00','0000-00-00'),(20000006,'sick days','0000-00-00','0000-00-00'),(20000007,'family live','0000-00-00','0000-00-00'),(20000007,'sick days','0000-00-00','0000-00-00'),(20000008,'family live','0000-00-00','0000-00-00'),(20000009,'family live','0000-00-00','0000-00-00'),(20000010,'sick days','0000-00-00','0000-00-00'),(20000011,'vacation','0000-00-00','0000-00-00'),(20000011,'sick days','0000-00-00','0000-00-00'),(20000011,'sick days','0000-00-00','0000-00-00'),(20000011,'sick days','0000-00-00','0000-00-00'),(20000012,'vacation','0000-00-00','0000-00-00'),(20000013,'vacation','0000-00-00','0000-00-00'),(20000014,'family live','0000-00-00','0000-00-00'),(20000014,'family live','0000-00-00','0000-00-00'),(20000014,'sick days','0000-00-00','0000-00-00'),(20000015,'vacation','0000-00-00','0000-00-00');
+INSERT INTO `employeetimeoffhistory` VALUES (20000001,'family live','0000-00-00','0000-00-00'),(20000002,'vacation','0000-00-00','0000-00-00'),(20000003,'vacation','0000-00-00','0000-00-00'),(20000004,'vacation','0000-00-00','0000-00-00'),(20000005,'sick days','0000-00-00','0000-00-00'),(20000005,'vacation','0000-00-00','0000-00-00'),(20000005,'vacation','0000-00-00','2010-08-16'),(20000005,'vacation','2010-08-12','0000-00-00'),(20000006,'sick days','0000-00-00','0000-00-00'),(20000006,'sick days','2010-08-09','2010-08-09'),(20000007,'family live','0000-00-00','0000-00-00'),(20000007,'sick days','0000-00-00','0000-00-00'),(20000008,'family live','0000-00-00','0000-00-00'),(20000009,'family live','2010-08-12','0000-00-00'),(20000010,'sick days','0000-00-00','0000-00-00'),(20000011,'sick days','0000-00-00','0000-00-00'),(20000011,'sick days','0000-00-00','2010-08-27'),(20000011,'sick days','2010-08-17','0000-00-00'),(20000011,'vacation','0000-00-00','0000-00-00'),(20000012,'vacation','0000-00-00','0000-00-00'),(20000013,'vacation','0000-00-00','0000-00-00'),(20000014,'family live','0000-00-00','0000-00-00'),(20000014,'family live','2010-08-10','0000-00-00'),(20000014,'sick days','0000-00-00','0000-00-00');
 /*!40000 ALTER TABLE `employeetimeoffhistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,11 +365,12 @@ DROP TABLE IF EXISTS `employeetimeoffplan`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employeetimeoffplan` (
-  `timeoffid` int(5) unsigned NOT NULL,
+  `timeoffid` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `timeoffname` varchar(30) NOT NULL,
   `numberofdays` int(2) NOT NULL,
-  PRIMARY KEY (`timeoffid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`timeoffid`),
+  UNIQUE KEY `avoidduplicaterows` (`timeoffname`,`numberofdays`)
+) ENGINE=InnoDB AUTO_INCREMENT=10005 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -368,7 +379,7 @@ CREATE TABLE `employeetimeoffplan` (
 
 LOCK TABLES `employeetimeoffplan` WRITE;
 /*!40000 ALTER TABLE `employeetimeoffplan` DISABLE KEYS */;
-INSERT INTO `employeetimeoffplan` VALUES (10001,'regular plan',20),(10002,'branch manager plan',25),(10003,'senior plan',30),(10004,'probation plan',10);
+INSERT INTO `employeetimeoffplan` VALUES (10002,'branch manager plan',25),(10004,'probation plan',10),(10001,'regular plan',20),(10003,'senior plan',30);
 /*!40000 ALTER TABLE `employeetimeoffplan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -380,11 +391,12 @@ DROP TABLE IF EXISTS `employeetitle`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employeetitle` (
-  `titleid` int(2) unsigned NOT NULL,
+  `titleid` int(2) unsigned NOT NULL AUTO_INCREMENT,
   `titlename` varchar(25) NOT NULL,
   `basesalary` decimal(8,2) NOT NULL,
-  PRIMARY KEY (`titleid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`titleid`),
+  UNIQUE KEY `avoidduplicaterows` (`titlename`,`basesalary`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -393,7 +405,7 @@ CREATE TABLE `employeetitle` (
 
 LOCK TABLES `employeetitle` WRITE;
 /*!40000 ALTER TABLE `employeetitle` DISABLE KEYS */;
-INSERT INTO `employeetitle` VALUES (10,'Branch Manager','100000.00'),(15,'Assistant Manager','70000.00'),(20,'Banking Consultant','55000.00'),(30,'Teller','30000.00');
+INSERT INTO `employeetitle` VALUES (15,'Assistant Manager','70000.00'),(20,'Banking Consultant','55000.00'),(10,'Branch Manager','100000.00'),(30,'Teller','30000.00');
 /*!40000 ALTER TABLE `employeetitle` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -425,7 +437,7 @@ CREATE TABLE `employeeworkhistory` (
 
 LOCK TABLES `employeeworkhistory` WRITE;
 /*!40000 ALTER TABLE `employeeworkhistory` DISABLE KEYS */;
-INSERT INTO `employeeworkhistory` VALUES (20000001,10001,'2010-08-05','0000-00-00',10,'32043.00'),(20000005,10001,'2007-01-01','2010-08-05',30,'28000.00'),(20000005,10001,'2010-08-05','0000-00-00',20,'33000.00'),(20000009,10001,'2010-01-01','0000-00-00',20,'55000.00'),(20000012,10001,'2010-08-07','0000-00-00',15,'34000.00'),(20000013,10001,'2005-01-01','0000-00-00',30,'30000.00'),(20000014,10001,'2008-01-01','2008-12-31',30,'30000.00'),(20000014,10001,'2009-01-01','2010-08-05',20,'40000.00'),(20000014,10001,'2010-08-05','0000-00-00',15,'60000.00'),(20000015,10001,'2005-01-01','0000-00-00',30,'35000.00'),(20000016,10001,'2005-01-01','0000-00-00',30,'30000.00'),(20000017,10001,'2009-01-01','2009-05-31',30,'25000.00'),(20000017,10001,'2009-06-01','2009-12-31',30,'30000.00'),(20000017,10001,'2010-01-01','0000-00-00',20,'45000.00'),(20000018,10001,'2005-01-01','2010-08-07',30,'35000.00'),(20000018,10001,'2010-08-07','0000-00-00',10,'45.00'),(20000018,10001,'2010-08-07','2010-08-07',10,'45.00'),(20000002,10002,'2010-01-01','0000-00-00',10,'110000.00'),(20000006,10002,'2010-01-01','2010-08-05',30,'20000.00'),(20000006,10002,'2010-08-05','0000-00-00',20,'40000.00'),(20000010,10002,'2010-01-01','0000-00-00',20,'58000.00'),(20000019,10002,'2005-01-01','0000-00-00',30,'30000.00'),(20000021,10002,'2005-01-01','0000-00-00',30,'35000.00'),(20000022,10002,'2005-01-01','0000-00-00',30,'300000.00'),(20000023,10002,'2005-01-01','0000-00-00',30,'32000.00'),(20000024,10002,'2005-01-01','0000-00-00',30,'32000.00'),(20000024,10002,'2005-01-01','0000-00-00',30,'35000.00'),(20000030,10002,'2005-01-01','2010-08-07',30,'35000.00'),(20000030,10002,'2010-08-07','0000-00-00',20,'60000.00'),(20000003,10003,'2010-01-01','0000-00-00',10,'110000.00'),(20000007,10003,'2010-01-01','2010-08-05',15,'60000.00'),(20000007,10003,'2010-08-05','0000-00-00',15,'70000.00'),(20000011,10003,'2005-01-01','0000-00-00',20,'60000.00'),(20000025,10003,'2005-01-01','0000-00-00',30,'30000.00'),(20000026,10003,'2005-01-01','0000-00-00',30,'32000.00'),(20000027,10003,'2005-01-01','0000-00-00',30,'35000.00'),(20000028,10003,'2005-01-01','0000-00-00',30,'30000.00'),(20000029,10003,'2005-01-01','0000-00-00',30,'32000.00'),(20000004,10004,'2010-01-01','0000-00-00',10,'100000.00'),(20000008,10004,'2010-01-01','0000-00-00',15,'75000.00'),(20000012,10004,'2005-01-01','2010-08-07',20,'65000.00');
+INSERT INTO `employeeworkhistory` VALUES (20000001,10001,'2010-08-05','0000-00-00',10,'32043.00'),(20000005,10001,'2007-01-01','2010-08-05',30,'28000.00'),(20000005,10001,'2010-08-05','0000-00-00',20,'33000.00'),(20000009,10001,'2010-01-01','0000-00-00',20,'55000.00'),(20000012,10001,'2010-08-07','0000-00-00',15,'34000.00'),(20000013,10001,'2005-01-01','0000-00-00',30,'30000.00'),(20000014,10001,'2008-01-01','2008-12-31',30,'30000.00'),(20000014,10001,'2009-01-01','2010-08-05',20,'40000.00'),(20000014,10001,'2010-08-05','0000-00-00',15,'60000.00'),(20000015,10001,'2005-01-01','0000-00-00',30,'35000.00'),(20000016,10001,'2005-01-01','0000-00-00',30,'30000.00'),(20000017,10001,'2009-01-01','2009-05-31',30,'25000.00'),(20000017,10001,'2010-01-01','0000-00-00',20,'45000.00'),(20000018,10001,'2005-01-01','2010-08-07',30,'35000.00'),(20000018,10001,'2010-08-07','0000-00-00',10,'45.00'),(20000018,10001,'2010-08-07','2010-08-07',10,'45.00'),(20000002,10002,'2010-01-01','0000-00-00',10,'110000.00'),(20000006,10002,'2010-01-01','2010-08-05',30,'20000.00'),(20000006,10002,'2010-08-05','0000-00-00',20,'40000.00'),(20000010,10002,'2010-01-01','0000-00-00',20,'58000.00'),(20000019,10002,'2005-01-01','0000-00-00',30,'30000.00'),(20000021,10002,'2005-01-01','0000-00-00',30,'35000.00'),(20000022,10002,'2005-01-01','0000-00-00',30,'300000.00'),(20000023,10002,'2005-01-01','0000-00-00',30,'32000.00'),(20000024,10002,'2005-01-01','0000-00-00',30,'32000.00'),(20000024,10002,'2005-01-01','0000-00-00',30,'35000.00'),(20000030,10002,'2005-01-01','2010-08-07',30,'35000.00'),(20000030,10002,'2010-08-07','0000-00-00',20,'60000.00'),(20000003,10003,'2010-01-01','0000-00-00',10,'110000.00'),(20000007,10003,'2010-01-01','2010-08-05',15,'60000.00'),(20000007,10003,'2010-08-05','0000-00-00',15,'70000.00'),(20000011,10003,'2005-01-01','0000-00-00',20,'60000.00'),(20000025,10003,'2005-01-01','0000-00-00',30,'30000.00'),(20000026,10003,'2005-01-01','0000-00-00',30,'32000.00'),(20000027,10003,'2005-01-01','0000-00-00',30,'35000.00'),(20000028,10003,'2005-01-01','0000-00-00',30,'30000.00'),(20000029,10003,'2005-01-01','0000-00-00',30,'32000.00'),(20000004,10004,'2010-01-01','0000-00-00',10,'100000.00'),(20000008,10004,'2010-01-01','0000-00-00',15,'75000.00'),(20000012,10004,'2005-01-01','2010-08-07',20,'65000.00');
 /*!40000 ALTER TABLE `employeeworkhistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -538,10 +550,10 @@ DROP TABLE IF EXISTS `servicecategory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `servicecategory` (
-  `servicecategoryid` int(2) unsigned NOT NULL,
+  `servicecategoryid` int(2) unsigned NOT NULL AUTO_INCREMENT,
   `servicecategoryname` varchar(10) NOT NULL,
   UNIQUE KEY `servicecategoryid` (`servicecategoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -562,13 +574,14 @@ DROP TABLE IF EXISTS `servicetype`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `servicetype` (
-  `servicetypeid` int(2) unsigned NOT NULL,
+  `servicetypeid` int(2) unsigned NOT NULL AUTO_INCREMENT,
   `serviceid` int(2) unsigned NOT NULL,
   `servicetypename` varchar(25) NOT NULL,
   UNIQUE KEY `servicetypeid` (`servicetypeid`),
+  UNIQUE KEY `avoidduplicaterows` (`serviceid`,`servicetypename`),
   KEY `serviceid` (`serviceid`),
   CONSTRAINT `servicetype_ibfk_1` FOREIGN KEY (`serviceid`) REFERENCES `service` (`serviceid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -577,7 +590,7 @@ CREATE TABLE `servicetype` (
 
 LOCK TABLES `servicetype` WRITE;
 /*!40000 ALTER TABLE `servicetype` DISABLE KEYS */;
-INSERT INTO `servicetype` VALUES (1,1,'Chequing'),(2,1,'Savings'),(3,1,'Foreign Currency'),(4,4,'Credit Cards'),(5,4,'Line Of Credit'),(6,2,'RSP'),(7,2,'TFSA'),(8,3,'Life');
+INSERT INTO `servicetype` VALUES (1,1,'Chequing'),(3,1,'Foreign Currency'),(2,1,'Savings'),(6,2,'RSP'),(7,2,'TFSA'),(8,3,'Life'),(4,4,'Credit Cards'),(5,4,'Line Of Credit');
 /*!40000 ALTER TABLE `servicetype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -589,7 +602,7 @@ DROP TABLE IF EXISTS `transaction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `transaction` (
-  `transactionid` int(8) unsigned NOT NULL,
+  `transactionid` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `branchid` int(5) unsigned NOT NULL,
   `accountid` int(8) unsigned NOT NULL,
   `date` date NOT NULL,
@@ -600,9 +613,9 @@ CREATE TABLE `transaction` (
   `transactiondescription` varchar(50) NOT NULL,
   `transperformedby` int(10) unsigned NOT NULL,
   PRIMARY KEY (`transactionid`),
-  KEY `transaction_ibfk_1` (`branchid`,`accountid`),
+  UNIQUE KEY `avoidduplicaterows` (`branchid`,`accountid`,`date`,`transactionfeecharged`,`transactionfeetype`,`depositamount`,`withdrawalamount`,`transactiondescription`,`transperformedby`),
   CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`branchid`, `accountid`) REFERENCES `clientaccount` (`branchid`, `clientaccountid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=91300002 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -611,7 +624,7 @@ CREATE TABLE `transaction` (
 
 LOCK TABLES `transaction` WRITE;
 /*!40000 ALTER TABLE `transaction` DISABLE KEYS */;
-INSERT INTO `transaction` VALUES (27,10001,110001012,'2007-05-01','0.00','Free transaction',NULL,'4500.00','Account transfer; Closed account ',0),(28,10001,110001022,'2007-05-01','0.00','Free transaction','4500.00',NULL,'Opened account tranferring money',0),(231,10004,110004002,'2010-07-28','0.00','Free transaction',NULL,'1454.56','On ATM; Closed account ',0),(476,10001,210001014,'2010-07-30','0.99','Service charges','33000.00','0.00','Check deposit on Mtl branch',0),(531,10001,110001039,'2010-07-28','0.00','Free transaction',NULL,'124.00','Bill payment on ATM; To HydroQuebec',0),(543,10001,110001090,'2010-07-25','0.00','Free transaction',NULL,'79.00','Bill payment online; To HydroQuebec',0),(558,10001,110001019,'2010-08-01','0.00','Free transaction',NULL,'1329.00','Bill payment by telephone; To Mountainlake Univ.',0),(559,10001,210001004,'2010-08-02','0.00','Free transaction','1329.00',NULL,'Received payment by telephone; From Oscar Wilde',0),(91100001,10001,10000001,'2010-07-01','0.00','free transaction','5000.00',NULL,'my first deposit on saving account',0),(91100002,10001,10000001,'2010-07-05','0.00','free transaction',NULL,'1000.00','withdraw money for trip',0),(91100003,10001,10000001,'2010-07-10','0.00','free transaction',NULL,'1000.00','withdraw money for trip',0),(91100004,10001,10000001,'2010-07-15','0.00','free transaction','500.00',NULL,'deposit money left from trip',0),(91200001,10001,10000002,'2010-06-01','0.00','free transaction','1000.00',NULL,'my first deposit on checking account',0),(91200002,10001,10000002,'2010-06-02','0.00','free transaction',NULL,'100.00','bill payment',0),(91200003,10001,10000002,'2010-06-03','0.00','free transaction',NULL,'200.00','bill payment',0),(91200004,10001,10000002,'2010-06-10','0.00','free transaction',NULL,'500.00','bill payment',0),(91200005,10001,10000002,'2010-06-15','0.00','free transaction','500.00',NULL,'my second deposit on checking account',0),(91300001,10001,10000003,'2010-01-01','0.00','free transaction','4000.00',NULL,'deposit money for future studing',0);
+INSERT INTO `transaction` VALUES (91100001,10001,10000001,'2010-07-01','0.00','free transaction','5000.00',NULL,'my first deposit on saving account',0),(91100002,10001,10000001,'2010-07-05','0.00','free transaction',NULL,'1000.00','withdraw money for trip',0),(91100003,10001,10000001,'2010-07-10','0.00','free transaction',NULL,'1000.00','withdraw money for trip',0),(91100004,10001,10000001,'2010-07-15','0.00','free transaction','500.00',NULL,'deposit money left from trip',0),(91200001,10001,10000002,'2010-06-01','0.00','free transaction','1000.00',NULL,'my first deposit on checking account',0),(91200002,10001,10000002,'2010-06-02','0.00','free transaction',NULL,'100.00','bill payment',0),(91200003,10001,10000002,'2010-06-03','0.00','free transaction',NULL,'200.00','bill payment',0),(91200004,10001,10000002,'2010-06-10','0.00','free transaction',NULL,'500.00','bill payment',0),(91200005,10001,10000002,'2010-06-15','0.00','free transaction','500.00',NULL,'my second deposit on checking account',0),(91300001,10001,10000003,'2010-01-01','0.00','free transaction','4000.00',NULL,'deposit money for future studing',0),(27,10001,110001012,'2007-05-01','0.00','Free transaction',NULL,'4500.00','Account transfer; Closed account ',0),(558,10001,110001019,'2010-08-01','0.00','Free transaction',NULL,'1329.00','Bill payment by telephone; To Mountainlake Univ.',0),(28,10001,110001022,'2007-05-01','0.00','Free transaction','4500.00',NULL,'Opened account tranferring money',0),(531,10001,110001039,'2010-07-28','0.00','Free transaction',NULL,'124.00','Bill payment on ATM; To HydroQuebec',0),(543,10001,110001090,'2010-07-25','0.00','Free transaction',NULL,'79.00','Bill payment online; To HydroQuebec',0),(559,10001,210001004,'2010-08-02','0.00','Free transaction','1329.00',NULL,'Received payment by telephone; From Oscar Wilde',0),(476,10001,210001014,'2010-07-30','0.99','Service charges','33000.00','0.00','Check deposit on Mtl branch',0),(231,10004,110004002,'2010-07-28','0.00','Free transaction',NULL,'1454.56','On ATM; Closed account ',0);
 /*!40000 ALTER TABLE `transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -624,4 +637,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-08-07 23:03:01
+-- Dump completed on 2010-08-08  9:00:23
