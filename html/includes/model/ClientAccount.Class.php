@@ -69,7 +69,8 @@ class ClientAccount{
 	public function setAccountTypeIdName($accountTypeId){
 		$db = new Database();
 		$db->connect();
-		$queryToDo= "SELECT DISTINCT accountname FROM accounttype	WHERE accounttypeid=".$accountTypeId;
+		$queryToDo= "SELECT DISTINCT accountname FROM accounttype	
+			WHERE accounttypeid=".$accountTypeId;
 		$db->query($queryToDo);
 		$db->close();
 		$this->accountTypeIdName=$db->queryFirstResult['accountname'];
@@ -92,6 +93,9 @@ class ClientAccount{
 	public function setClosingDate($closingDate){
 		$this->closingDate=$closingDate;
 	}
+	/*
+	 * Depreciated, can use the mysql_insert_id to find out the value of the autoincrement
+	 */
 	public function setAutoIncAccID(){
 		$clientAc = new Database();
 		$clientAc->connect();
@@ -116,14 +120,15 @@ class ClientAccount{
 		$this->accountTypeId=2;
 		$this->availableBalance="1342.53";
 		$this->currentBalance="1342.53";
-		$this->openingDate=date(Y-M-D);
+		$this->openingDate=date('Y-m-d');
 		$this->closingDate="0000-00-00";
 		$this->status=1;
 	}
 	public function initializeAccountFromID($accountid){
 		$db = new Database();
 		$db->connect();
-		$queryGetAccountInfo="SELECT DISTINCT * FROM clientaccount WHERE clientaccountid=".$accountid;
+		$queryGetAccountInfo="SELECT DISTINCT * FROM clientaccount 
+				WHERE clientaccountid=".$accountid;
 		$db->query($queryGetAccountInfo);
 		$db->close();
 		$this->initializeClientAccount($db->queryFirstResult);
@@ -142,10 +147,13 @@ class ClientAccount{
 	public function saveToDatabase(){
 		$newClientAccount = new Database();
 		$newClientAccount->connect();
-		$newDataRow = "NULL".",".$this->getBranchId().",".$this->getClientId().",".$this->getAccountTypeId().",".
-		$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
-				",".$this->getClosingDate($endDate);
-		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
+		$queryAddAccount = "INSERT INTO clientaccount (clientaccountid,branchid,
+			clientid,accounttypeid,currentbalance,
+			availablebalance,status,
+			openingdate,closingdate) VALUES ('NULL','$this->branchId',
+			'$this->clientId','$this->accountTypeId','$this->currentBalance',
+			'$this->availableBalance','$this->status',
+			'$this->openingDate','$this->closingDate')";
 		echo $queryAddAccount;
 		$newAccountId=$newClientAccount->insert($queryAddAccount);
 		$newClientAccount->close();
