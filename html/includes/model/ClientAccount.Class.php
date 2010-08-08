@@ -107,11 +107,18 @@ class ClientAccount{
 	}
 	
 	public function __construct(){
-		//set all the member variables using 
+		$this->clientAccountId=0;
+		$this->branchId=10004;
+		$this->clientId=54010026;
+		$this->accountTypeId=2;
+		$this->availableBalance="1342.53";
+		$this->currentBalance="1342.53";
+		$this->openingDate=date();
+		$this->closingDate="0000-00-00";
+		$this->status=1;
 	}
 	
-
- public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curDate, $curentBal="0", $availBal="0", $status="1", $endDate='Null'){
+	public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curDate, $curentBal="0", $availBal="0", $status="1", $endDate='Null'){
 		$this->setAutoIncAccID($clientAccountId);
 		$this->setBranchId($userBranch);
 		$this->setclientId($clientId);
