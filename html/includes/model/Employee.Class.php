@@ -97,6 +97,7 @@ class Employee{
 	}
 	public function __construct(){
 		$this->address = new Address();
+		$this->addressId=$this->address->getAddressID();
 		//setting the new employee to default values, basically for a teller
 		$this->titleID ="30";
 		$this->salary ="30000";
