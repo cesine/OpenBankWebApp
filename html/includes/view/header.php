@@ -25,7 +25,8 @@ if($_GET['action']=='Login'){
 	$userLoggedIn= new User($userId,$pass);
 	if($userLoggedIn->isClient()){
 		$_SESSION['User']=serialize($userLoggedIn);
-		$client = new Client($_POST['$clientid']);
+		$client = new Client();
+		$client->initializeClient($_POST['$clientid']);
 		$_SESSION['Client']=serialize($client);
 		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=AllAccountsSummary'>";//redirects page to summary page
 	}elseif ($userLoggedIn->isEmployee()){

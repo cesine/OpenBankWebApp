@@ -7,6 +7,7 @@ class Client{
 	private $dateOfBirth;
 	private $startDate;
 	private $status;
+	private $statusString;
 	private $address;
 	private $branchID;	//maybe we need
 	private $clientAccountID;	//maybe we need
@@ -38,8 +39,11 @@ class Client{
 	public function getStatus() {
 		return $this->status;
 	}
+	public function getStatusString() {
+		return $this->statusString;
+	}
 	public function getAddress() {
-		return $this->addressID;
+		return $this->address;
 	}
 	public function getBranchID() {
 		return $this->branchID;
@@ -73,15 +77,19 @@ class Client{
 	public function setStatus($status) {
 		$this->status=$status;
 	}
+	public function setStatusString($status) {
+		if ($status==0){
+			$this->statusString="Former Customer";
+		}else{
+			$this->statusString="Current Customer";
+		}
+	}
 	public function setAddress($addressid) {
-		$db = new Database();
-		$db->connect();
-		$queryToDo= "SELECT DISTINCT * FROM address WHERE addressid=".$addressid;
-		$db->query($queryToDo);
-		$db->close();//just closes the connection to the db so that some other object can connect. the 
-					//db object is still alive and contains the results. 
 		$this->address = new Address();
-		$this->address->initializeAddress($db->queryFirstResult[addressid]);
+		$this->address->initializeAddress($addressid);
+	}
+	public function setAddressObject($addressobject){
+		$this->address=$addressobject;
 	}
 	public function setBranchID($branchID) {
 		$this->branchID=$branchID;
@@ -104,22 +112,42 @@ class Client{
 		$this->setClientAccountID(95432453);
 	}
 	public function displayClientDetails(){
-		echo '<p class="name">'.$this->clientID.
-		'<br/>'.$this->firstName.
-		'<br/>'.$this->lastName.
-		'<br/>'.$this->socialInsuranceNumber.
-		'<br/>'.$this->dateOfBirth.
-		'<br/>'.$this->startDate.
-		'<br/>'.$this->status.
-		'<br/>'.$this->Address.
-		'<br/>'.$this->branchID.
-		'<br/>'.$this->clientAccountID.
-		'</p>';
+		echo '<table border=0 ><tr valign="top"><td ><p>Client Card Number </td><td>'.$this->clientID.
+		'</td></tr><tr><td>Name:</td><td>'.$this->firstName.' '.$this->lastName.
+		'</td></tr><tr><td>SSN:</td><td> '.$this->socialInsuranceNumber.
+		'</td></tr><tr><td>Date of Birth:</td><td>'.$this->dateOfBirth.
+		'</td></tr><tr><td>Customer since:</td><td>'.$this->startDate.
+		'</td></tr><tr><td>Status:</td><td>'.$this->statusString.
+		'</td></tr><tr valign=top><td>Address</td><td>';
+		$this->address->displayAddress();
+		echo'</td></tr></table>';
 	}
-	public function __construct($clientid){
-		//echo 'Adding a client, changing firstName';
-		$this->clientID = $clientid;
+	public function __construct(){
+		$this->address = new Address();
 	}
+	public function initializeClient($clientid){
+		$db = new Database();
+		$db->connect();
+		$queryToDo= "SELECT DISTINCT * FROM client WHERE clientid=".$clientid;
+		$db->query($queryToDo);
+		$db->close();
+		$this->initializeClientFromRow($db->queryFirstResult);
+	}
+	public function initializeClientFromRow($row){
+		$this->setFirstName($row[firstname]);
+		$this->setLastName($row[lastname]);
+		$this->setClientID($row[clientid]);
+		$this->setSocialInsuranceNumber($row[ssn]);
+		$this->setDateOfBirth($row[dateofbirth]);
+		$this->setStartDate($row[startdate]);
+		$this->setStatus($row[status]);
+		
+		$this->setStatusString($row[status]);
+		
+		$this->setAddress($row[addressid]);
+		
+	}
+	
 	public function addClient(){
 		$this->setFirstName($_POST["firstName"]);
 		$this->setLastName($_POST["lastName"]);
