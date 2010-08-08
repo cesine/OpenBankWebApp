@@ -34,7 +34,7 @@ echo "Now calling from original class <br/>";
 
 $newID = new ClientAccount();
 
-$newID->getAutoIncAccID();
+$newAccNum = $newID->getAutoIncAccID();
 
 echo "<br/> Max id: ", $newAccNum; "<br/>";
 ?>
