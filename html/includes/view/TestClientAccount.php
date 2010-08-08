@@ -36,8 +36,8 @@ $clientAc = new Database();
 
 		$clientAc->query($queryMax);
 		$clientAc->close();
-		$this->autoIncAccID=$clientAc->queryFirstResult[clientaccountid];
-		$newAccNum=autoIncAccID+1;
+		$autoIncAccID=$clientAc->queryFirstResult[clientaccountid];
+		$newAccNum=$autoIncAccID+1;
 
 echo "<br/> Max id: ", $newAccNum; "<br/>";
 ?>
