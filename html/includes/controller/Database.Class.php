@@ -52,11 +52,24 @@ class Database {
 			$this->queryResultsCount="0";
 		}
 	}
-	/*
-	 * runs insert or update queries, returns the id number of the inserted row, 
+	
+	
+	/* returns the id number of the inserted row, 
 	 * if the row was an autoincrement.
 	 * 
 	 * duplicate insertions are done using unique keys on almost all atributes
+	 */
+	public function insert($querystring){
+		$this->queryResultsResource=mysql_query($querystring,$this->link_id);
+		$this->queryResultsCount=0;
+		$this->queryFirstResult="";
+		return mysql_insert_id();
+	}
+	public function update($querystring){
+		//TBD 
+	}
+	/* DEPRECIATED: use insert or update instead (see above)
+	 * 
 	 */
 	public function updateInsert($querystring){
 		$this->queryResultsResource=mysql_query($querystring,$this->link_id);

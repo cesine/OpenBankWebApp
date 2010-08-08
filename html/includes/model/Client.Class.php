@@ -191,7 +191,7 @@ class Client{
 			'$this->socialInsuranceNumber', '$this->firstName', '$this->lastName', '$this->addressId', 
 			'$this->dateOfBirth', '$this->startDate', '$this->status')";
 		//echo $insertClientQuery;
-		$newClientid=$dbInsertClient->updateInsert($insertClientQuery);
+		$newClientid=$dbInsertClient->insert($insertClientQuery);
 		$dbInsertClient->close();
 		return $newClientid;
 	}
