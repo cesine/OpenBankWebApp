@@ -1,7 +1,7 @@
 
 <?php 
 //client is opening a new account
-require_once('includes/model/AccountType.php');
+//require_once('includes/model/AccountType.php');
 require_once('includes/model/ClientAccount.Class.php');
 
 
@@ -172,27 +172,19 @@ switch ($userChoice)
 }
 //end of switch
 
-$userAccountChoice = $clientAccount->getAccountTypeId();
+//$userAccountChoice = $clientAccount->getAccountTypeId();
 
-//to check if insert executed, should change after GIna updates Database.class
-if ($newClientAccount->queryResultsResource)
-    {
-        echo  "<br/>", "You're account has been created!" , "<br/>";
-        echo 'Pl. follow the link to make a ';
-        ?>
-<a href = "index.php?&content=Transfer">transaction</a>
+$curDate = date("Y,m,d");
+$clientAccount->setOpeningDate($curDate);
+$clientAccount->setBranchId($userBranch);
+$clientAccount->setclientId($clientId);
 
-       <?php
-       echo ' in your new account. <br/>';
-    }
-else
-    {
-        //echo 'Sorry, there was a problem inserting values! ';
-        ?>
-<a href = "index.php?&content=OpenNewAccount">Please try again</a>
-       <?php
-    }
+//inserting in the table
+$clientAccount->InsertAccountIntoDatabase();
 
+
+//for now, print the link statements after insert are in InsertAccIntoDatabase function
+//in the ClientAccount class
     
     }
 //end of if
