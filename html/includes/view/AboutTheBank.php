@@ -418,6 +418,12 @@ elseif($content=="CreditCards"){
 }
 elseif($content=="LineOfCredit"){
 	echo "paste some text here 08";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT firstname,lastname FROM employee e	WHERE e.employeeid=".$manageridIn;
+	$db->query($queryToDo);
+	$db->close();
+	print_r($db->queryFirstResult);
 }
 						
 
