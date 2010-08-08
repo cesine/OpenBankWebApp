@@ -39,12 +39,22 @@ $client= new Client();
 $client=unserialize($_SESSION['Client']);
 $client->displayClientDetails();
 
-echo "<h5>Testing editing the client object's last name, 
+echo "<h5>Testing editing the client object's last name,
 and city (through the address, through the postal code)</h5>";
 $client->setLastName($client->getLastName()."-Brown");
 $clientsAddress=$client->getAddress();
 $clientsAddress->setCity("WestmountVilleMarie");
 $client->setAddressObject($clientsAddress);
 $client->displayClientDetails();
+
+echo "<h5>Displaying a selction box for the client's accounts</h5>";
+$client->displaySelectClientAccount();
+
+echo "<h5>Listing client's accounts in the view layer</h5>";
+echo "<p>";
+foreach ($client->getClientAccountsArray() as $accountNumber){
+	echo "Client has Account: $accountNumber<br/>";
+}
+echo "</p>";
 
 ?>
