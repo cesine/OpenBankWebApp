@@ -7,8 +7,6 @@ require_once('includes/model/ClientAccount.Class.php');
 
 echo "<form action='?&content=OpenNewAccount' method='POST'>";
 
-
-
  
 //session variable	
 if (isset($_SESSION['Client']))
@@ -22,18 +20,14 @@ if (isset($_SESSION['Client']))
 
 echo "Dear ", $clientName, ", please choose the account you'd like to open.<br/>";
 
-//object to call planlist
-//$banking = new AccountType();
+
 //object to call ClientAccount
 $clientAccount = new ClientAccount();
-//object for the Database to find the user's branch
 
 
-//checking branch query result
-//echo "The cliend's branch is", $userBranch, "<br/>";
  ?>
 <p>&nbsp;</p>
- <b > <big> Account Types </big></b>
+ <b style =" text-align: center"> <big> Account Types </big></b>
  <p>&nbsp;</p>
  
 <table border="0">
@@ -54,8 +48,8 @@ $clientAccount = new ClientAccount();
 <option value="lifeThree">Accidental Death Insurance - 3</option>
 <option value="lifeFour">Accidental Death Insurance - 4</option>
         </select> </td></tr>
-<tr>&nbsp;</tr>
-<tr>&nbsp;</tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
 <tr>&nbsp;</tr>
 <tr>&nbsp;</tr>
 <tr><td > <b><u> Investment Plans </u></b></td> <td>&nbsp;&nbsp;&nbsp;</td> <td > <b><u> Borrowing Plans </u></b> </td></tr>
@@ -79,21 +73,7 @@ $clientAccount = new ClientAccount();
 
 </table>
 
-<!--dynamic list
 
-<table  border="1">
-     
-    <tr><th > Banking Plans </th> <td > <b> Insurance Plans</b> </td></tr>
-    <tr><td > <?php //$banking->bankingPlans();?> </td>
-        <td > <?php //$banking->insurancePlans(); ?> </td></tr>
-
-    <tr><th > Borrowing Plans </th> <td ><b> Investment Plans</b> </td></tr>
-    <tr><td > <?php //$banking->borrowingPlans(); ?> </td>
-        <td > <?php //$banking->investPlans(); ?> </td></tr>
-
-</table>
-
--->
 <p>&nbsp;</p>
 <input type="submit" name="submitAccountName" value="Submit" />
 <input type="reset" name="submitReset" value="Reset" />
@@ -103,8 +83,6 @@ $clientAccount = new ClientAccount();
 
 $userChoice=$_POST["accountType"];
 
-
-//belongs to the firsttable
 //if user submitted choice
 if (isset($_POST['submitAccountName'])) 
 {
@@ -194,88 +172,9 @@ switch ($userChoice)
 }
 //end of switch
 
-	
-
-
-/*belongs to the second table
-
-if (isset($_POST['submitAccountName']))
-{
-    if (!strcmp($userChoice,"Powerchequing Account"))
-         $clientAccount->setAccountTypeId(1);
-    elseif (!strcmp($userChoice,"Money Master Savings Account"))
-         $clientAccount->setAccountTypeId(2);
-    elseif (!strcmp($userChoice,"US Dollar Account"))
-         $clientAccount->setAccountTypeId(3);
-    elseif (!strcmp($userChoice,"Basic Business Chequing Account"))
-         $clientAccount->setAccountTypeId(10);
-    elseif (!strcmp($userChoice,"Basic Business Savings Account"))
-         $clientAccount->setAccountTypeId(11);
-    elseif (!strcmp($userChoice,"Basic Business Foreign Currency Account"))
-         $clientAccount->setAccountTypeId(12);
-    elseif (!strcmp($userChoice,"GIC(6mos) with Flex for RSPs Account"))
-         $clientAccount->setAccountTypeId(6);
-    elseif (!strcmp($userChoice,"GIC(6mos) with Flex for TFSAs Account"))
-         $clientAccount->setAccountTypeId(7);
-    elseif (!strcmp($userChoice,"GIC(24mos) with Flex for RSPs Account"))
-         $clientAccount->setAccountTypeId(9);
-    elseif (!strcmp($userChoice,"GIC(12mos) with Flex for RSPs Account"))
-         $clientAccount->setAccountTypeId(13);
-    elseif (!strcmp($userChoice,"GIC(18mos) with Flex for RSPs Account"))
-         $clientAccount->setAccountTypeId(14);
-    elseif (!strcmp($userChoice,"GIC(12mos) with Flex for TFSAs Account"))
-         $clientAccount->setAccountTypeId(15);
-    elseif (!strcmp($userChoice,"GIC(18mos) with Flex for TFSAs Account"))
-         $clientAccount->setAccountTypeId(16);
-    elseif (!strcmp($userChoice,"GIC(24mos) with Flex for TFSAs Account"))
-         $clientAccount->setAccountTypeId(17);
-    elseif (!strcmp($userChoice,"Accidental Death Insurance - 1"))
-         $clientAccount->setAccountTypeId(8);
-    elseif (!strcmp($userChoice,"Accidental Death Insurance - 2"))
-         $clientAccount->setAccountTypeId(18);
-    elseif (!strcmp($userChoice,"Accidental Death Insurance - 3"))
-         $clientAccount->setAccountTypeId(19);
-    elseif (!strcmp($userChoice,"Accidental Death Insurance - 4"))
-         $clientAccount->setAccountTypeId(20);
-    elseif (!strcmp($userChoice,"Credit Card No-Fee Value VISA"))
-         $clientAccount->setAccountTypeId(4);
-    elseif (!strcmp($userChoice,"Basic Line of Credit"))
-         $clientAccount->setAccountTypeId(5);
-    else echo"Please try again.<br/>";
-
-}
-else
-    $clientAccount->setAccountTypeId('');
-
-*/
-
 $userAccountChoice = $clientAccount->getAccountTypeId();
 
-//printing user's choice, comment it out later on
-echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
-
-
-
-
-//print new clientaccountid to check
-echo "Max: ", $maxClientAcID, "<br/>";
-$newClientAcID=$maxClientAcID+1;
-echo "Your new account number is :", $newClientAcID, "<br/";
-
-
-//inserting new account
-//$newClientAccount = new Database();
-//$newClientAccount->connect();
-//
-//$queryAddAccount = "INSERT INTO clientaccount
-//VALUES ($newClientAcID, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00)";
-//$newClientAcc = new Client($newClientAcID, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00)
-//
-//
-//$newClientAccount->query($queryAddAccount);
-
-
-
+//to check if insert executed, should change after GIna updates Database.class
 if ($newClientAccount->queryResultsResource)
     {
         echo  "<br/>", "You're account has been created!" , "<br/>";
@@ -294,8 +193,7 @@ else
        <?php
     }
 
-    $newClientAccount->close();
-
+    
     }
 //end of if
 ?>
