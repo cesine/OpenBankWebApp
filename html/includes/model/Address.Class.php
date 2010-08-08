@@ -196,18 +196,9 @@ class Address{
 		$this->setStreet($row[street]);
 	}	
 
-	/* This function is needed in Add Employee class. 
-	 * User enter postal code and from it I find province, city*/
-	public function initializeProvinceCity($row)
-	{
-		// in the line ($row[]), parameter name [] from db table
-		$this->setProvince($row[province]);
-		$this->setCity($row[city]);
-	}		
-	
 	
 	/* This function is needed in Add Employee class. 
-	 * User enter postal code and from it I fetch province, city*/
+	 * User enter postal code and from it I find province, city, street*/
 	public function findProvinceCityStreet($employeePostalCode)
 	{
 			//find province, city from postal code
@@ -229,9 +220,7 @@ class Address{
 			}
 
 			$dbSelectProvinceCityStreet->close();	
-	}		
-
-
+	} // end public function findProvinceCityStreet($employeePostalCode)		
 
 }
 ?>
