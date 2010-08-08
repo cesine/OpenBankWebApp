@@ -133,7 +133,8 @@ $postalCodes = new PostalCodes();
 $selectedInfo=$_POST["choice1"];
 $selectedEmployee=$_POST["choice2"];
 
-$employee = new Employee($selectedEmployee);
+$employee = new Employee();
+$employee->initializeEmployee($selectedEmployee);
 
 //if submit selection button is pressed:
 if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button

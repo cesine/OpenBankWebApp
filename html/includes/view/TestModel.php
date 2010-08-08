@@ -33,28 +33,38 @@ echo "</table>";
 echo"<h5>Displaying postal code selection box</h5>";
 $address->PostalCodesList();
 
-echo"<hr>";
-echo"<h4>Testing client</h4>";
-$client= new Client();
-$client=unserialize($_SESSION['Client']);
-$client->displayClientDetails();
 
-echo "<h5>Testing editing the client object's last name,
-and city (through the address, through the postal code)</h5>";
-$client->setLastName($client->getLastName()."-Brown");
-$clientsAddress=$client->getAddress();
-$clientsAddress->setCity("WestmountVilleMarie");
-$client->setAddressObject($clientsAddress);
-$client->displayClientDetails();
+if(isset($_SESSION['Client'])){
+	echo"<hr>";
+	echo"<h4>Testing client</h4>";
+	$client= new Client();
+	$client=unserialize($_SESSION['Client']);
+	$client->displayClientDetails();
 
-echo "<h5>Displaying a selction box for the client's accounts</h5>";
-$client->displaySelectClientAccount();
+	echo "<h5>Testing editing the client object's last name,
+			and city (through the address, through the postal code)</h5>";
+	$client->setLastName($client->getLastName()."-Brown");
+	$clientsAddress=$client->getAddress();
+	$clientsAddress->setCity("WestmountVilleMarie");
+	$client->setAddressObject($clientsAddress);
+	$client->displayClientDetails();
 
-echo "<h5>Listing client's accounts in the view layer</h5>";
-echo "<p>";
-foreach ($client->getClientAccountsArray() as $accountNumber){
-	echo "Client has Account: $accountNumber<br/>";
+	echo "<h5>Displaying a selction box for the client's accounts</h5>";
+	$client->displaySelectClientAccount();
+
+	echo "<h5>Listing client's accounts in the view layer</h5>";
+	echo "<p>";
+	foreach ($client->getClientAccountsArray() as $accountNumber){
+		echo "Client has Account: $accountNumber<br/>";
+	}
+	echo "</p>";
 }
-echo "</p>";
+echo "<h4>Testing employee, displaying personal info in row</h4>";
+$employee= new Employee();
+$employee=unserialize($_SESSION['Employee']);
+echo "<table border=1>";
+$employee->displayEmployeePersonalInfo();
+echo "</table>";
 
+echo"<p></p>";
 ?>

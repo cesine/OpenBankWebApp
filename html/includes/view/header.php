@@ -31,7 +31,8 @@ if($_GET['action']=='Login'){
 		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=AllAccountsSummary'>";//redirects page to summary page
 	}elseif ($userLoggedIn->isEmployee()){
 		$_SESSION['User']=serialize($userLoggedIn);
-		$employee= new Employee($_POST['$employeeid']);
+		$employee= new Employee();
+		$employee->initializeEmployee($_POST['$employeeid']);
 		$_SESSION['Employee']=serialize(($employee));
 		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=EmployeeInfo'>";//redirects page to employee info page
 	}else{
@@ -41,7 +42,8 @@ if($_GET['action']=='Login'){
 if($_GET['action']=='LoginAsClient' && isset($_SESSION['User'])){
 	$user=unserialize($_SESSION['User']);
 	if ($user->isEmployee()){
-		$employeeAsClient= new Client($_POST['$clientid']);
+		$employeeAsClient= new Client();
+		$employeeAsClient->initializeClient($_POST['$clientid']);
 		$_SESSION['Client']=serialize($employeeAsClient);
 		//Now the client information is in the session variable, can use it to get the account information
 		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=AllAccountsSummary&action=AsClient'>";
