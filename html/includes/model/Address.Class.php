@@ -109,9 +109,9 @@ class Address{
 		return $addresSuccess.$postalcodeSuccess;
 	}
 	public function emptyIt(){
-		$this->streetNumber="";
+		$this->streetNumber="0";
 		$this->setStreet("");
-		$this->addressID="";
+		$this->addressID="0";
 		$this->country="";
 		$this->appartmentNumber="";
 		$this->setStreet("");

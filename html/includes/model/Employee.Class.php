@@ -9,6 +9,7 @@ class Employee{
 	private $timeOffID;
 	private $status;
 	private $address;
+	private $addressId;
 	private $branchID;
 	private $titleID;
 	private $titleName;
@@ -36,6 +37,9 @@ class Employee{
 	}
 	public function getAddress(){
 		return $this->address;
+	}
+	public function getAddressId(){
+		return $this->addressId;
 	}
 	public function getBranchID(){
 		return $this->branchID;
@@ -86,6 +90,11 @@ class Employee{
 	public function setAddress($addressid) {
 		$this->address->initializeAddress($addressid);
 	}
+	public function setAddressId($addressid) {
+		//set the local addressid to the new id, and then get the rest of the details from the db
+		$this->addressId=$addressid;
+		$this->setAddress($this->addressId);
+	}
 	public function __construct(){
 		$this->address = new Address();
 		//setting the new employee to default values, basically for a teller
@@ -93,6 +102,10 @@ class Employee{
 		$this->salary ="30000";
 		$this->branchID ="10004";
 		$this->timeOffID ="10001";
+		$this->firstName ="NoFirstName";
+		$this->lastName="NoLastName";
+		$this->status="1";
+		$this->setTitleName($this->titleID);
 	}	
 	public function initializeEmployee($employeeid){
 		//build an employee object using just the employee id
@@ -120,14 +133,19 @@ class Employee{
 		$this->setStatus($row[status]);
 	}
 	public function saveToDatabase(){
-		$this->address->saveToDatabase();
+		//insert the address in the db if it is not already there, if it is already there then the 
+		//existing id will be used
+		$newAddresId=$this->address->saveToDatabase() ;
+		if($newAddresId != 0){
+			$this->setAddressId($newAddresId);
+		}
 		$dbToInsertEmployee = new Database();
 		$dbToInsertEmployee->connect();
 		$employeeInsertQuery="
 			INSERT INTO employee (`employeeid`, `addressid`, `branchid`, 
 			`titleid`, `salary`, `firstname`, `lastname`, 
 			`timeoffid`, `status`) VALUES 
-			(NULL, '".$this->address->getAddressID()."','$this->branchID',
+			(NULL, '".$this->addressId."','$this->branchID',
 			'$this->titleID','$this->salary','$this->firstName','$this->lastName',
 			'$this->timeOffID','$this->status')";
 		echo $employeeInsertQuery;
