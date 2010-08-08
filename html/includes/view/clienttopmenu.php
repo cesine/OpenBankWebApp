@@ -1,3 +1,4 @@
+<nav>
 <table width="650" border="0" bgcolor="#bbb" >
 <tr>
 	<td width="20%">
@@ -17,4 +18,5 @@
 	</td>
 </tr>
 </table>
+</nav>
 <p>&nbsp;</p>
