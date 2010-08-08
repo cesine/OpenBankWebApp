@@ -144,6 +144,19 @@ class Address{
 		$this->postalCode = new PostalCodes();
 		$this->emptyIt();
 	}
+	
+	/* This function is needed in Add Employee class. 
+	 * User enter postal code and from it I fetch province, city, street*/
+	public function initializeProvinceCityStreet($row)
+	{
+		// in the line ($row[]), parameter name [] from db table
+		$this->setProvince($row[province]);
+		$this->setCity($row[city]);
+		$this->setStreet($row[street]);
+	}	
+	
+	
+	
 
 	public function PostalCodesList()
 	{
