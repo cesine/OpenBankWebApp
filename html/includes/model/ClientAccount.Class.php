@@ -108,15 +108,6 @@ class ClientAccount{
 		'<br/>\n'.$this->CurrentBalance.			
 		'</p>\n\n';
 	}
-	public function DisplayAcountDetailsInRow(){
-		echo "Anshu Garg";
-		echo '<TR class="bgcoloroption1">
-		<TD class="tableDataLeftC">'.$this->accountName.'</TD>
-		<TD class="tableDataLeftC">'.$this->clientAccountId.'</TD>
-		<TD class="tableDataRightC">'.$this->currentBalance.'</TD>
-		<TD class="tableDataRightC">'.$this->availableBalance.'</TD>
-		</TR>';
-	}
 
 	public function __construct(){
 		$this->clientAccountId="NULL";
@@ -156,13 +147,19 @@ class ClientAccount{
 
 		return $newAccountId;
 	}
+	public function DisplayAcountDetailsInRow(){
+		echo "Anshu Garg";
+		echo "<table>";//added a table around the row to make sure the rest of the page displays
+		$this->displayAccountInRow();
+		echo "</table>";
+	}
 	public function displayAccountInRow(){
 		$this->setAccountTypeIdName($this->accountTypeId);
-		echo "<tr>
-		<td>$this->clientAccountId</td>
-		<td>$this->accountTypeName</td>
-		<td>$this->currentBalance</td>
-		<td>$this->availableBalance</td>
+		echo "<tr class='bgcoloroption1'>
+		<td class='tableDataRightC'>$this->accountTypeName</td>
+		<td class='tableDataRightC'>$this->clientAccountId</td>
+		<td class='tableDataRightC'>$this->currentBalance</td>
+		<td class='tableDataRightC'>$this->availableBalance</td>
 		</tr>";
 	}
 
