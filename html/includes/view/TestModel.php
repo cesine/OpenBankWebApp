@@ -99,14 +99,26 @@ if(isset($_SESSION['Client'])){
 	
 	echo "<h5>Eding the account info from the client above, then inserting it into the athe database.</h5>";
 	$accountToChange = new ClientAccount();
-	$accountToChange->initializeClientAccountFromID($client->clientAccountsArray[0]);
+	$accountToChange->initializeAccountFromID($client->clientAccountsArray[0]);
 	echo "<table border=1>";
 	$accountToChange->displayAccountInRow();
 	echo "</table>";
-	//$accountToChange->setAvailableBalance(200.00);
+	$accountToChange->setAvailableBalance(200.00);
 	echo "<table border=1>";
-	//$accountToChange->displayAccountInRow();
+	$accountToChange->displayAccountInRow();
 	echo "</table>";
+	$newAccountNumber=$accountToChange->saveToDatabase();
+	echo "This is the id of the new inserted client, or 
+		zero if the client already existed. ".$newAccountNumber;
+	echo "<table border=1>";
+	$accountToChange->displayAccountInRow();
+	echo "</table>";
+	
+	
+	
+	echo "Testing the date function.".date(Y)."-".date(m)."-".date(d).date('Y-m-d');
+	
+	
 	
 	echo "<h4>Testing transfers and bill payment</h4>";
 	echo "To Be Done (TBD)";

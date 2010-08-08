@@ -162,6 +162,7 @@ class Client{
 		$db->query($queryToDo);
 		$db->close();
 		$this->initializeClientFromRow($db->queryFirstResult);
+		$this->setClientAccountsArray($this->clientID);
 	}
 	public function initializeClientFromRow($row){
 		$this->setFirstName($row[firstname]);
@@ -208,6 +209,7 @@ class Client{
 				
 	}
 	public function displaySelectClientAccount(){
+		$this->setClientAccountsArray($this->clientID);
 		echo "<select name='$selectAccount'>";
 		foreach ($this->clientAccountsArray as $accountNumber){
 			echo "<option value='$accountNumber'>$accountNumber</option>";
