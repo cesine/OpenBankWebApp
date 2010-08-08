@@ -137,8 +137,16 @@ class Address{
 	}
 
 	public function __construct(){
+		//set the default address to 
 		$this->postalCode = new PostalCodes();
-		$this->emptyIt();
+		$this->streetNumber="1455";
+		$this->setStreet("deMaisonneuve West");
+		$this->addressID="10000315";
+		$this->country="Canada";
+		$this->appartmentNumber="";
+		$this->setCity("Montreal");
+		$this->setProvince("Quebec");
+		$this->setPostalCodeString("H3G-1M8");
 	}
 	public function PostalCodesList()
 	{
