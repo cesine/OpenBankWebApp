@@ -14,9 +14,9 @@ if($_GET['action']=='Logout'){
 if($_GET['action']=='ExitClient'){
 	//$_SESSION['LoggedInMessage']="";
 	//$_SESSION['User']="";
-	unsset($_SESSION['Client']);
+	unset($_SESSION['Client']);
 	//header('Location: index.php'); //redirects page to main page
-	echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=ClientInfo'>";//redirects page to summary page
+	echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=LoginAsClient'>";//redirects page to summary page
 }
 /*
  * Check for login information, if present, create a user (which will try to authenticate)
