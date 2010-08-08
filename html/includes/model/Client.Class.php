@@ -9,6 +9,7 @@ class Client{
 	private $status;
 	private $statusString;
 	private $address;
+	private $addressId;
 	private $clientAccountsArray;	
 	
 	//getters
@@ -41,6 +42,9 @@ class Client{
 	}
 	public function getAddress() {
 		return $this->address;
+	}
+	public function getAddressId() {
+		return $this->addressId;
 	}
 	public function getBranchID() {
 		return $this->branchID;
@@ -85,6 +89,10 @@ class Client{
 		$this->address = new Address();
 		$this->address->initializeAddress($addressid);
 	}
+	public function setAddressId($addressid){
+		$this->addresId=$addressid;
+		$this->setAddress($addresid);
+	}
 	public function setAddressObject($addressobject){
 		$this->address=$addressobject;
 	}
@@ -119,6 +127,7 @@ class Client{
 	}
 	
 	public function displayClientDetails(){
+		$this->setStatusString($this->status);
 		echo '<table border=0 ><tr valign="top"><td ><p>Client Card Number </td><td>'.$this->clientID.
 		'</td></tr><tr valign=top><td>Accounts:</td><td>';
 		$this->displaySelectClientAccount();
@@ -133,11 +142,12 @@ class Client{
 	}
 	public function __construct(){
 		$this->address = new Address();
+		$this->addressId= $this->address->getAddressID();
 		$this->clientAccountsArray = array();
-		$this->setClientID(0);
-		$this->setFirstName("NoFirstName");
-		$this->setLastName("NoLastName");
-		$this->setSocialInsuranceNumber("875 345 281");
+		$this->setClientID(54010023);
+		$this->setFirstName("John");
+		$this->setLastName("Smith");
+		$this->setSocialInsuranceNumber("875 345 280");
 		$this->setDateOfBirth("1954-05-21");
 		$this->setStartDate("2010-03-15");
 		$this->setStatus(1);
@@ -163,7 +173,7 @@ class Client{
 		$this->setStatus($row[status]);
 		
 		$this->setStatusString($row[status]);
-		$this->setAddress($row[addressid]);
+		$this->setAddressId($row[addressid]);
 		$this->setClientAccountsArray($row[clientid]);
 	}
 	public function saveToDatabase(){
@@ -173,9 +183,15 @@ class Client{
 		}
 		$dbInsertClient = new Database();
 		$dbInsertClient->connect();
-		$insertClientQuery="";
-		echo $insertClientQuery;
-		//$newClientid=$dbInsertClient->updateInsert($insertClientQuery);
+		$insertClientQuery="
+			INSERT INTO `client` (`clientid`, 
+			`ssn`, `firstname`, `lastname`, `addressid`, 
+			`dateofbirth`, `startdate`, `status`) 
+			VALUES (NULL, 
+			'$this->socialInsuranceNumber', '$this->firstName', '$this->lastName', '$this->addressId', 
+			'$this->dateOfBirth', '$this->startDate', '$this->status')";
+		//echo $insertClientQuery;
+		$newClientid=$dbInsertClient->updateInsert($insertClientQuery);
 		$dbInsertClient->close();
 		return $newClientid;
 	}
