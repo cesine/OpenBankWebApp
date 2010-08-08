@@ -83,13 +83,13 @@ class ClientAccount{
 	public function setAutoIncAccID(){
 		$clientAc = new Database();
 		$clientAc->connect();
-		$queryMax = "SELECT MAX(clientaccountid)
+		$queryMax = "SELECT MAX(clientaccountid)clientaccountid
 		             FROM `clientaccount`";
-		
-		$clientAc->query($queryMax);
+
+                $clientAc->query($queryMax);
 		$clientAc->close();
-		$this->autoIncAccID=$clientAc->queryFirstResult[MAX(clientaccountid)];
-		$newAccNum=autoIncAccID+1;
+		$newAccNum=$clientAc->queryFirstResult[clientaccountid];
+		$this->autoIncAccID = $newAccNum+1;
 	}
 	public function test(){
 		$this->setCurrentBalance(12.99);
@@ -111,15 +111,15 @@ class ClientAccount{
 	}
 	
 
- public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curentBal="0", $availBal="0", $status="1", $curDate, $endDate='Null'){
+ public function initializeAccFrom($clientAccountId, $userBranch, $clientId, $userAccountChoice, $curDate, $curentBal="0", $availBal="0", $status="1", $endDate='Null'){
 		$this->setAutoIncAccID($clientAccountId);
 		$this->setBranchId($userBranch);
 		$this->setclientId($clientId);
 		$this->setAccountTypeId($userAccountChoice);
+                $this->setOpeningDate($date);
 		$this->setCurrentBalance($curentBal);
 		$this->setAvailableBalance($availBal);
 		$this->setStatus($status);
-		$this->setOpeningDate($date);
 		$this->setClosingDate($endDate);
 		
 	} 
@@ -132,7 +132,7 @@ class ClientAccount{
 				$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
 				",".$this->getClosingDate($endDate);
 		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
-		$newClientAccount->query($queryAddAccount);
+		$newClientAccount->updateInsert($queryAddAccount);
 		$newClientAccount->close();
 		
 	if ($newClientAccount->queryResultsResource)
