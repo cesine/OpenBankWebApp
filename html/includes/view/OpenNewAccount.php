@@ -8,58 +8,15 @@ require_once('includes/model/ClientAccount.Class.php');
 echo "<form action='?&content=OpenNewAccount' method='POST'>";
 
 
-?>
 
-
-
-<P>&nbsp;</P>
-<!-- 
-<table border="1">
-<tr><td>Services:</td><td><select name="service" size="4" single="single">
-<option value="banking">Banking</option>
-<option value="investments">Investments</option>
-<option value="insurance">Insurance</option>
-<option value="borrowing">Borrowing</option>
-</select>
-</td>
-</tr></table>
-
-<P> </P>
-
-<table border="1"> 
-<tr><td>Category:</td><td><select name="serviceCategory" size="2" single="single">
-<option value="personal">Personal</option>
-<option value="business">Business</option>
-</select>
-</td>
-</tr></table>
-
-<P> </P>
-
-<table border="1"> 
-<tr><td>Type:</td><td><select name="serviceType" size="8" single="single">
-<option value="checking">Chequing</option>
-<option value="savings">Savings</option>
-<option value="foreignCurrency">Foreign Currency</option>
-<option value="creditCard">Credit cards</option>
-<option value="lineOfCredits">Line of credits</option>
-<option value="rSP">RSP</option>
-<option value="tSFA">TSFA</option>
-<option value="life">Life</option>
-</select>
-</td>
-</tr></table>
-
-<P></P>
-
- -->
- <?php
  
-	
+//session variable	
 if (isset($_SESSION['Client']))
 {
 	$client = unserialize($_SESSION['Client']);
 	$clientName = $client->getFirstName()." ".$client->getLastName();
+	$userBranch = $client->getBranchID();
+	$clientID = $client->getClientID();
 }
 
 
@@ -70,22 +27,6 @@ echo "Dear ", $clientName, ", please choose the account you'd like to open.<br/>
 //object to call ClientAccount
 $clientAccount = new ClientAccount();
 //object for the Database to find the user's branch
-$branch = new Database();
-$branch->connect();
-
-//query to find client's branch id
-$queryBranchid =   "SELECT distinct `branchid`
-                    FROM `clientaccount`
-		    WHERE `clientid` = 54010015";
-		   //WHERE 'clientid' = $_SESSION["User"];
-
-$branch->query($queryBranchid);
-$queryResult=mysql_fetch_array($branch->queryResultsResource);
-//setting and getting branchid
-$clientAccount->setBranchId($queryResult[branchid]);
-$userBranch = $clientAccount->getBranchId();
-
-$branch->close();
 
 
 //checking branch query result
@@ -316,19 +257,6 @@ echo  "<br/>", "You picked account type ", $userAccountChoice, "<br/>";
 
 
 
-//query to determine clientaccountid
-$clientAc = new Database();
-$clientAc->connect();
-$queryMax = "SELECT MAX(clientaccountid)
-             FROM `clientaccount`";
-
-$clientAc->query($queryMax);
-$result = mysql_fetch_array($clientAc->queryResultsResource);
-//$clientAccount->setClientAccountId($result[clientaccountid]);
-//$maxClientAcID = $clientAccount->getClientAccountId();
-$maxClientAcID=$result[clientaccountid];
-$clientAc->close();
-
 //print new clientaccountid to check
 echo "Max: ", $maxClientAcID, "<br/>";
 $newClientAcID=$maxClientAcID+1;
@@ -336,15 +264,15 @@ echo "Your new account number is :", $newClientAcID, "<br/";
 
 
 //inserting new account
-$newClientAccount = new Database();
-$newClientAccount->connect();
-
-$queryAddAccount = "INSERT INTO clientaccount
-VALUES ($newClientAcID, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00)";
-
-
-
-$newClientAccount->query($queryAddAccount);
+//$newClientAccount = new Database();
+//$newClientAccount->connect();
+//
+//$queryAddAccount = "INSERT INTO clientaccount
+//VALUES ($newClientAcID, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00)";
+//$newClientAcc = new Client($newClientAcID, $userBranch, 54010015, $userAccountChoice, 0.00, 0.00, 1, CURDATE(), 0000-00-00)
+//
+//
+//$newClientAccount->query($queryAddAccount);
 
 
 
