@@ -88,7 +88,8 @@ class ClientAccount{
 		
 		$clientAc->query($queryMax);
 		$clientAc->close();
-		$this->autoIncAccID=$clientAc->queryFirstResult[MAX(clientaccountid)]+1;
+		$this->autoIncAccID=$clientAc->queryFirstResult[MAX(clientaccountid)];
+		$newAccNum=autoIncAccID+1;
 	}
 	public function test(){
 		$this->setCurrentBalance(12.99);
@@ -128,8 +129,8 @@ class ClientAccount{
 		$newClientAccount = new Database();
 		$newClientAccount->connect();
 		$newDataRow = $this->getAutoIncAccID().",".$this->getBranchId().",".$this->getClientId().",".$this->getAccountTypeId().",".
-				$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus().",".getOpeningDate().
-				",".getClosingDate();
+				$this->getCurrentBalance().",".$this->getAvailableBalance().",".$this->getStatus($status).",".$this->getOpeningDate().
+				",".$this->getClosingDate($endDate);
 		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
 		$newClientAccount->query($queryAddAccount);
 		$newClientAccount->close();
