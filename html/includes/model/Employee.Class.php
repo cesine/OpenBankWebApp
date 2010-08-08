@@ -88,6 +88,11 @@ class Employee{
 	}
 	public function __construct(){
 		$this->address = new Address();
+		//setting the new employee to default values, basically for a teller
+		$this->titleID ="30";
+		$this->salary ="30000";
+		$this->branchID ="10004";
+		$this->timeOffID ="10001";
 	}	
 	public function initializeEmployee($employeeid){
 		//build an employee object using just the employee id
@@ -118,9 +123,15 @@ class Employee{
 		$this->address->saveToDatabase();
 		$dbToInsertEmployee = new Database();
 		$dbToInsertEmployee->connect();
-		$employeeInsertQuery="";
+		$employeeInsertQuery="
+			INSERT INTO employee (`employeeid`, `addressid`, `branchid`, 
+			`titleid`, `salary`, `firstname`, `lastname`, 
+			`timeoffid`, `status`) VALUES 
+			(NULL, '".$this->address->getAddressID()."','$this->branchID',
+			'$this->titleID','$this->salary','$this->firstName','$this->lastName',
+			'$this->timeOffID','$this->status')";
 		echo $employeeInsertQuery;
-		//$newIdInserted=$dbToInsertEmployee->updateInsert($employeeInsertQuery);
+		$newIdInserted=$dbToInsertEmployee->updateInsert($employeeInsertQuery);
 		$dbToInsertEmployee->close();
 		return $newIdInserted;
 	}
