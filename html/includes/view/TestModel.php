@@ -66,5 +66,9 @@ echo "<table border=1>";
 $employee->displayEmployeePersonalInfo();
 echo "</table>";
 
+
+echo "<h5>Testing employes list</h5>";
+$employee->EmployeeList();
+
 echo"<p></p>";
 ?>
