@@ -147,6 +147,7 @@ class Address{
 		$this->setCity("Montreal");
 		$this->setProvince("Quebec");
 		$this->setPostalCodeString("H3G-1M8");
+		//$this->displayAddress();
 	}
 	public function PostalCodesList()
 	{

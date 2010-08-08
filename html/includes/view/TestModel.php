@@ -71,6 +71,14 @@ if(isset($_SESSION['Client'])){
 	$newClientInserted=$client->saveToDatabase();
 	echo "This is the id of the new inserted client, or 
 		zero if the client already existed. ".$newClientInserted;
+	
+	echo "<h5>Testing inserting a default client into the database.</h5>";
+	$clientDefault = new Client();
+	$clientDefault->displayClientDetails();
+	$newClientInserted=$clientDefault->saveToDatabase();
+	echo "This is the id of the new inserted client, or 
+		zero if the client already existed. ".$newClientInserted;
+	
 	echo "</p>";
 }
 if(isset($_SESSION['Employee'])){
