@@ -41,7 +41,7 @@ if($search=="ByCity" && $searchCity!=""){
 		WHERE c.clientid=b.branchsclientid AND
 		c.addressid=a.addressid AND
 		a.postalcode=p.postalcodes AND
-		p.city LIKE '".$searchCity."%'";
+		p.city LIKE '%".$searchCity."%'";
 }else{
 	$querystrg="SELECT DISTINCT * FROM branch";
 }
@@ -56,10 +56,10 @@ $dbToGetAllBranches->close();
 /*
  * Print out the number of branches found
  */
-echo "<h2>".$dbToGetAllBranches->queryResultsCount." Branches are in your area:</h2>";
+echo "<h2>".$dbToGetAllBranches->queryResultsCount." Branches available:</h2>";
 //if($dbToGetAllBranches->queryResultsCount=="0"){//cant get it to work...
 //$count=$dbToGetAllBranches->queryResultsCount;
-
+echo "</div>";
 for($count=0;$count<$dbToGetAllBranches->queryResultsCount;$count=$count+1){
 	$row=mysql_fetch_array($dbToGetAllBranches->queryResultsResource);
 		//echo "Here is the row: ";
@@ -67,9 +67,14 @@ for($count=0;$count<$dbToGetAllBranches->queryResultsCount;$count=$count+1){
 	
 		$b = new Branch();
 		$b->initializeBranch($row);	
+		echo "<div>";
 		$b->displayBranch();
+		$b->displayBranchMap();
 	
 		//$b->__destruct(); //called automatically when the object goes out of scope
+		
+
+		echo "</div>";
 	//}
 }//endl if to only print when there are any results
 

@@ -45,6 +45,30 @@ echo"<h5>Displaying postal code selection box</h5>";
 $address->PostalCodesList();
 
 
+echo "<h5>Adding postalcodes for the banks.</h5>";
+$postalC = new PostalCodes();
+
+$postalC->setPostalCodes("M5C-2E9");
+$postalC->setCity("Toronto");
+$postalC->setProvince("Ontario");
+$postalC->saveToDatabase();
+
+
+$postalC->setPostalCodes("H2L-2G9,");
+$postalC->setCity("Montreal");
+$postalC->setProvince("Quebec");
+$postalC->saveToDatabase();
+
+$postalC->setPostalCodes("H9R-1E2");
+$postalC->setCity("Pointe-Claire Montreal");
+$postalC->setProvince("Quebec");
+$postalC->saveToDatabase();
+
+$postalC->setPostalCodes("G1N-4E2");
+$postalC->setCity("Quebec");
+$postalC->setProvince("Quebec");
+$postalC->saveToDatabase();
+
 if(isset($_SESSION['Client'])){
 	echo"<hr height=10s>";
 	echo"<h4>Testing client</h4>";

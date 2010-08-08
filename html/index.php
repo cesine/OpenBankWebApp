@@ -32,7 +32,7 @@ if($userIsClient){
 if($content=="BusinessServices"){
 	include ('includes/view/BusinesSideMenu.php');
 }
-if(!($userIsEmployee) && !($userIsClient)){
+if(!($userIsEmployee) && !($userIsClient)&& $content!="BusinessServices"){
 	include ('includes/view/sidemenu.php'); 
 	$topMenu="";
 }
@@ -122,7 +122,7 @@ if($content=="BranchLocator"){
 	include ('includes/view/Login.php');
 }elseif($content=="EmployeeLogin"){
 	include ('includes/view/EmployeeLogin.php');
-}else{
+}elseif($content==""){
 	$content="PersonalServices";
 	include('includes/view/AboutTheBank.php');
 }

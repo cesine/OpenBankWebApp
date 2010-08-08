@@ -1,6 +1,8 @@
 <footer>
 	<section id="about">
-	<p>&copy; Team 1	</p>
+	<div>
+		<p>&copy; Team 1	</p>
+		</div>
 	</section>
 </footer>
 
