@@ -154,49 +154,98 @@ class Address{
 		$this->setCity($row[city]);
 		$this->setStreet($row[street]);
 	}	
-	
-	
-	
 
 	public function PostalCodesList()
 	{
-		?>
-<!-- Build dynamic list of postal codes -->
-<table border="1">
-	<tr>
-		<td width="180">Select postal code:</td>
-		<td width="180"><select name="choicePostalCode">
-
-		<?php
-
-		//Build dynamic selection list
-		$dbSelectPostalCode = new Database();
-		$dbSelectPostalCode->connect();
-			
-		$querySelectPostalCode="SELECT DISTINCT postalcodes
-									   		FROM postalcodes";
-
-		$dbSelectPostalCode->query($querySelectPostalCode);
-		$result = $dbSelectPostalCode->query($querySelectPostalCode);
-			
-		//Put results of query into dynamic list
-		for($count=0;$count<$dbSelectPostalCode->queryResultsCount;$count=$count+1)
-		{
-			$row=mysql_fetch_array($dbSelectPostalCode->queryResultsResource);
-			extract($row);
-			echo "<option value='$postalcodes'>$postalcodes</option>";
-
-		}//endl if to only print when there are any results
-		echo "</select>\n";
-		$dbSelectPostalCode->close();
-		?>
-
-		</select></td>
-	</tr>
-</table>
-<!-- End Build dynamic list of postal codes -->
-		<?php
+?>
+		<!-- Build dynamic list of postal codes -->
+		<table border="1">
+			<tr>
+				<td width="180">Select postal code:</td>
+				<td width="180"><select name="choicePostalCode">
+		
+				<?php
+		
+				//Build dynamic selection list
+				$dbSelectPostalCode = new Database();
+				$dbSelectPostalCode->connect();
+					
+				$querySelectPostalCode="SELECT DISTINCT postalcodes
+											   		FROM postalcodes";
+		
+				$dbSelectPostalCode->query($querySelectPostalCode);
+				$result = $dbSelectPostalCode->query($querySelectPostalCode);
+					
+				//Put results of query into dynamic list
+				for($count=0;$count<$dbSelectPostalCode->queryResultsCount;$count=$count+1)
+				{
+					$row=mysql_fetch_array($dbSelectPostalCode->queryResultsResource);
+					extract($row);
+					echo "<option value='$postalcodes'>$postalcodes</option>";
+		
+				}//endl if to only print when there are any results
+				echo "</select>\n";
+				$dbSelectPostalCode->close();
+				?>
+		
+				</select></td>
+			</tr>
+		</table>
+		<!-- End Build dynamic list of postal codes -->
+<?php
 	} // end public function PostalCodesList()
+	
+	
+	/* This function is needed in Add Employee class. 
+	 * User enter postal code and from it I find province, city, street*/
+	public function initializeProvinceCityStreet($row)
+	{
+		// in the line ($row[]), parameter name [] from db table
+		$this->setProvince($row[province]);
+		$this->setCity($row[city]);
+		$this->setStreet($row[street]);
+	}	
+
+	/* This function is needed in Add Employee class. 
+	 * User enter postal code and from it I find province, city*/
+	public function initializeProvinceCity($row)
+	{
+		// in the line ($row[]), parameter name [] from db table
+		$this->setProvince($row[province]);
+		$this->setCity($row[city]);
+	}		
+	
+	
+	/* This function is needed in Add Employee class. 
+	 * User enter postal code and from it I fetch province, city*/
+	public function findProvinceCity($employeePostalCode)
+	{
+			//find province, city from postal code
+			$dbSelectProvinceCity = new Database();
+			$dbSelectProvinceCity->connect();
+							
+			$querySelectProvinceCity="SELECT DISTINCT province, city 
+							   				FROM postalcodes
+							   				WHERE postalcodes='$employeePostalCode'";
+														
+			$dbSelectProvinceCity->query($querySelectProvinceCity);	
+			$result = $dbSelectProvinceCity->query($querySelectProvinceCity);						
+										   
+			for($count=0;$count<$dbSelectProvinceCity->queryResultsCount;$count=$count+1)
+			{
+				$row=mysql_fetch_array($dbSelectProvinceCity->queryResultsResource);
+				$this->initializeProvinceCity($row);
+				//$address->initializeProvinceCity($row);
+			}
+			
+			// save current values
+			//$employeeProvince=$row[province];
+			//$employeeCity=$row[city];	
+			//$employeeStreet=$row[street];
+										
+			$dbSelectProvinceCity->close();	
+
+	}		
 
 
 
