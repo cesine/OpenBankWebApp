@@ -14,7 +14,6 @@ echo "<form action='?&content=ViewEmployeeInfo' method='POST'>";
 echo "<h4> View employee info. </h4>\n";
 
 // create new objects
-//$employee = new Employee(2);
 $address = new Address();
 $postalCodes = new PostalCodes();
 
@@ -29,7 +28,7 @@ $postalCodes = new PostalCodes();
 			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
 			//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
 		?>
-		<select name="choice1">
+		<select name="choiceInfo">
 		
 			<option value="personal info" selected>personal info</option>
 			<option value="work history">work history</option>
@@ -82,18 +81,21 @@ $postalCodes = new PostalCodes();
 <p></p>
 
 <!-- Select employee to show -->
+<!-- 
 <table border="1"> 
 	<tr><td width="180">Select employee to show:</td><td width="180">
+ -->	
 	
 		<?php
 			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
 			//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
 		?>	
 	
-		<select name="choice2">
+		<!--  <select name="choice2"> -->
 		
 		<?php 
 			
+			/*
 			//Build dynamic selection list
 			$dbSelectEmployee = new Database();
 			$dbSelectEmployee->connect();
@@ -114,12 +116,18 @@ $postalCodes = new PostalCodes();
 			}//endl if to only print when there are any results
 			echo "</select>\n";	
 			$dbSelectEmployee->close();
+			*/
+		
+			// create dynamic list of employee and let user to select
+			$employee->EmployeeList(); 		
+		
 						
 		?>
-		
+<!--  		
 		</select>
 	</td></tr>
 </table>
+-->
 <!-- End select employee to show -->
 
 <!-- read input from user after submition -->
@@ -130,8 +138,9 @@ $postalCodes = new PostalCodes();
 
 <?php
 
-$selectedInfo=$_POST["choice1"];
-$selectedEmployee=$_POST["choice2"];
+$selectedInfo=$_POST["choiceInfo"];
+//$selectedEmployee=$_POST["choice2"];
+$selectedEmployee=$_POST["choiceEmployee"];
 
 $employee = new Employee();
 $employee->initializeEmployee($selectedEmployee);
