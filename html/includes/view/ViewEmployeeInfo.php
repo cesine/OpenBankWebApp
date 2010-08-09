@@ -30,7 +30,7 @@ $postalCodes = new PostalCodes();
 		?>
 		<select name="choiceInfo">
 		
-			<option value="personal info" selected>personalinfo</option>
+			<option value="personalinfo" selected>personal info</option>
 			<option value="work history">work history</option>
 			<option value="time off history">time off history</option>
 		
