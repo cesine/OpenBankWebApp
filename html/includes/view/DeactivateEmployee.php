@@ -24,6 +24,11 @@ $employee->initializeEmployee($selectedEmployee);
 //if submit selection button is pressed:
 if (isset($_POST["SelectEmployee"])) 						
 {
+	$employee->changeStatus($selectedEmployee);
+?>
+	<P></P>
+<?php 
+	echo "<h4> Employee with ID $selectedEmployee not active. </h4>\n";
 	
 } // end if (isset($_POST["SelectEmployee"])) 	
 
