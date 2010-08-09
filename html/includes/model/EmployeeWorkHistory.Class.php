@@ -1,6 +1,4 @@
 <?php
-
-//require_once('includes/controller/Database.Class.php');
 require_once('includes/model/EmployeeTitle.Class.php');
 
 class EmployeeWorkHistory{
@@ -136,6 +134,7 @@ class EmployeeWorkHistory{
 		$this->setSalary($row[salary]);
 	}		
 	
+	/*
 	public function displayEmployeeWorkHistory2()
 	{
 		echo '	<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
@@ -148,7 +147,8 @@ class EmployeeWorkHistory{
 	public function displayEmployeeWorkHistorySalary()
 	{
 		echo '<TD class="tableDataRightC">'.$this->salary.'</TD>';	
-	}		
+	}	
+		
 
 	public function EmployeeWorkHistoryCurrent($selectedEmployee)
 	{
@@ -222,6 +222,9 @@ class EmployeeWorkHistory{
 <?php 
 	} // end public function EmployeeWorkHistoryCurrent()	
 	
+*/	
+	
+	// show work history till today
 	public function employeeHistory($selectedEmployee)
 	{
 ?>
@@ -280,6 +283,8 @@ class EmployeeWorkHistory{
 <?php 
 	} // end public function employeeHistory($selectedEmployee)
 	
+	
+	// show last line from working history
 	public function employeeHistoryCurrent($selectedEmployee)
 	{
 ?>
