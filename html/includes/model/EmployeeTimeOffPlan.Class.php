@@ -130,7 +130,7 @@ class EmployeeTimeOffPlan{
 		$this->setEmployeeID($row[employeeid]);
 		$this->setReason($row[reason]);
 		$this->setStartDate($row[startdateoff]);
-		$this->setReturnDate($row[dayreturntowork]);	
+		$this->setRerurnDate($row[dayreturntowork]);	
 	}		
 	
 	public function displayEmployeeTimeOffName()
