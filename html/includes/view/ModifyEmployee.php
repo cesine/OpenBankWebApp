@@ -200,7 +200,9 @@ if (isset($_POST['SelectedOptionsSubmit']))
 <?php 
 
 		$employeeWorkHistory = new EmployeeWorkHistory();
-		$employeeWorkHistory->employeeHistoryCurrent($selectedEmployee);
+		//$employeeWorkHistory->employeeHistoryCurrent($selectedEmployee);
+		
+		$employeeWorkHistory->employeeHistory($selectedEmployee);		
 		
 		// save current values
 		$branchIDCurrent=$employeeWorkHistory->getBranchID();
