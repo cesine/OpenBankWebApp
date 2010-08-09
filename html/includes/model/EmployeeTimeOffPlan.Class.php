@@ -136,7 +136,7 @@ class EmployeeTimeOffPlan{
 			<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
 			<TD class="tableDataRightC">'.$this->reason.'</TD>
 			<TD class="tableDataRightC">'.$this->startDate.'</TD>	
-			<TD class="tableDataRightC">'.$this->rerurnDate.'</TD>				
+			<TD class="tableDataRightC">'.$this->returnDate.'</TD>				
 		</TR>';				
 	}		
 	
