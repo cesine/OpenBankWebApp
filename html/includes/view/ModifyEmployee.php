@@ -148,97 +148,68 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		
 			$employeeTitle->findTitleID($titleNameNew);
 			$titleIDNew=$employeeTitle->getTitleID();
-			echo "<h4> new title name:  $titleNameNew</h4>\n";	
-			echo "<h4> new title ID:    $titleIDNew</h4>\n";		
+			//echo "<h4> new title name:  $titleNameNew</h4>\n";	
+			//echo "<h4> new title ID:    $titleIDNew</h4>\n";		
 				
-				// find title id from title name
-				if ($titleNameNew=="Branch Manager")
-				{
-					$titleIDNew = 10;
-				}	
+			
+			// put "last date" for old title
+			
+			$dbEmployeeTitleOld = new Database();
+			$dbEmployeeTitleOld->connect();
+				
+			// note: in query we use data, selected by user
+			$queryEmployeeTitleOld=
+				
+			"UPDATE employeeworkhistory 
+    		 SET    lastdate = CURDATE()
+			 WHERE  employeeid=$selectedEmployee AND lastdate='0000-00-00'";				
 
-				elseif ($titleNameNew=="Assistant Manager")
-				{
-					$titleIDNew = 15;
-				}	
+			$dbEmployeeTitleOld->updateInsert($queryEmployeeTitleOld);
+			$dbEmployeeTitleOld->close();
+			
+			// end put "last date" for old title
 
-				elseif ($titleNameNew=="Banking Consultant")
-				{
-					$titleIDNew = 20;
-				}	
+			
+			
+			// put "start date" for new title
+			
+			$dbEmployeeTitleNew = new Database();
+			$dbEmployeeTitleNew->connect();
+				
+			// note: in query we use data, selected by user
+			$queryEmployeeTitleNew=
+				
+			"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
+											  titleid, salary)
+                VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', $titleIDNew, $salaryNew)";
 
-				elseif ($titleNameNew=="Teller")
-				{
-					$titleIDNew = 30;
-				}					
-				// end find title id from title name	
-
-				
-				
-				
-				
-				/*
-				
-				// put "last date" for old title
-				$dbEmployeeTitleOld = new Database();
-				$dbEmployeeTitleOld->connect();
-				
-				// note: in query we use data, selected by user
-				$queryEmployeeTitleOld=
-				
-				"UPDATE employeeworkhistory 
-				 SET    lastdate = CURDATE()
-				 WHERE  employeeid=$selectedEmployee AND lastdate='0000-00-00'";				
-
-				//$dbEmployeeTitleOld->query($queryEmployeeTitleOld);
-				$dbEmployeeTitleOld->updateInsert($queryEmployeeTitleOld);
-				$dbEmployeeTitleOld->close();
-				// end put "last date" for old title
-				
-				// put "start date" for new title
-				$dbEmployeeTitleNew = new Database();
-				$dbEmployeeTitleNew->connect();
-				
-				// note: in query we use data, selected by user
-				$queryEmployeeTitleNew=
-				
-				"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
-												  titleid, salary)
-                 VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', $titleIDNew, $salaryNew)";
-									
-				//$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
-				//$dbEmployeeTitleNew->updateInsert($queryEmployeeTitleNew);
-				$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
-				$dbEmployeeTitleNew->close();
-				// end put "start date" for new title
+			$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
+			$dbEmployeeTitleNew->close();
+			
+			// end put "start date" for new title
 
 								 
-				// update branch/title/salary in employee table
-				$dbEmployeeUpdate = new Database();
-				$dbEmployeeUpdate->connect();
+			// update branch/title/salary in employee table
+			$dbEmployeeUpdate = new Database();
+			$dbEmployeeUpdate->connect();
 				
-				// note: in query we use data, selected by user
-				$queryEmployeeUpdate=
+			// note: in query we use data, selected by user
+			$queryEmployeeUpdate=
 				
-				"UPDATE employee 
-				 SET    branchid=$branchIDNew, titleid=$titleIDNew, salary=$salaryNew
-				 WHERE  employeeid=$selectedEmployee";				
+			"UPDATE employee 
+			 SET    branchid=$branchIDNew, titleid=$titleIDNew, salary=$salaryNew
+			 WHERE  employeeid=$selectedEmployee";				
 				
-				//$dbEmployeeUpdate->query($queryEmployeeUpdate);
-				//$dbEmployeeUpdate->update($queryEmployeeUpdate);
-				$dbEmployeeUpdate->updateInsert($queryEmployeeUpdate);
-				$dbEmployeeUpdate->close();
-				// end update branch/title/salary in employee table	
-				 
-				  
-				  
-				 
-				 */
-				
-				echo "<h4> New info: </h4>\n";
+			$dbEmployeeUpdate->updateInsert($queryEmployeeUpdate);
+			$dbEmployeeUpdate->close();
+			// end update branch/title/salary in employee table	
+
+			echo "<h4> New info: </h4>\n";
+			$employeeWorkHistory->employeeHistoryCurrent($selectedEmployee);	
 ?>				
 				
 				<!-- Show new info -->
+				<!--  
 				<table width="100%" border="1" cellpadding="3" cellspacing="1">
 				<tr>
 					<td>
@@ -263,9 +234,11 @@ if (isset($_POST['SelectedOptionsSubmit']))
 					Salary
 					</td>	
 				</tr>
+				-->
 				
 				<?php
 					
+					/*
 					// Display new info of employee from table "employeeworkhistory" 
 					$dbEmployeeWorkHistoryNew = new Database();
 					$dbEmployeeWorkHistoryNew->connect();
@@ -290,11 +263,13 @@ if (isset($_POST['SelectedOptionsSubmit']))
 					}
 			
 					$dbEmployeeWorkHistoryNew->close();
+					*/
 				
 ?>
-		
+<!--  		
 				</table>
 				<P></P>
+-->				
 <?php 									
 	
 		
