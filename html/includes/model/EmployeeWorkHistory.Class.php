@@ -252,9 +252,6 @@ class EmployeeWorkHistory{
 		</tr>
 		
 		<?php
-		
-			$employeeTitle = new EmployeeTitle();
-			//$employeeWorkHistory = new EmployeeWorkHistory();			
 			
 			// Display current info of employee from table "employeeworkhistory" 
 			$dbEmployeeWorkHistory = new Database();
@@ -272,45 +269,77 @@ class EmployeeWorkHistory{
 			for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
 			{
 				$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
-				
-				//$employeeWorkHistory->initializeEmployeeWorkHistory($row);
-				//$employeeWorkHistory->displayEmployeeWorkHistory2();
-				
-				/*
-				$this->initializeEmployeeWorkHistory($row);
-				$this->displayEmployeeWorkHistory2();
-				
-				//$employeeWorkHistory->initializeEmployeeWorkHistory($row);
-				
-				$this->initializeEmployeeWorkHistory($row);
-				
-				$employeeTitle->initializeEmployeeTitle($row);
-				$employeeTitle->displayEmployeeTitleName();	
-				
-				//$employeeWorkHistory->displayEmployeeWorkHistorySalary();
-				$this->displayEmployeeWorkHistorySalary();	
-				*/
-
 				$this->initializeEmployeeWorkHistoryNew($row);
 				$this->displayEmployeeWorkHistoryInRowFormattedNew();
 			}
-			// save current values
-			/*
-			$branchIdCurrent=$row[branchid];	
-			$startDateCurrent=$row[startdate];	
-			$lastDateCurrent=$row[lastdate];
-			$titleIDCurrent=$row[titleid];	
-			$titleNameCurrent=$row[titlename];			
-			$salaryCurrent=$row[salary];
-			*/											
-		
 			$dbEmployeeWorkHistory->close();
 		?>
 		</table>
 		<P></P>		
 
 <?php 
-	} // end public function EmployeeWorkHistory()	
+	} // end public function employeeHistory($selectedEmployee)
+	
+	public function employeeHistoryCurrent($selectedEmployee)
+	{
+?>
+		<!-- Show current info -->
+		<table width="100%" border="1" cellpadding="3" cellspacing="1">
+		<tr>
+			<td>
+			Employee ID
+			</td>
+			<td>
+			Branch ID
+			</td>
+			<td>
+			Start date
+			</td>
+			<td>
+			Last date
+			</td>
+			<td>
+			Title ID
+			</td>
+			<td>
+			Title name
+			</td>					
+			<td>
+			Salary
+			</td>	
+		</tr>
+		
+		<?php
+			
+			// Display current info of employee from table "employeeworkhistory" 
+			$dbEmployeeWorkHistory = new Database();
+			$dbEmployeeWorkHistory->connect();
+			
+			// note: in query we use data, selected by user
+			$queryEmployeeWorkHistory=
+			"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
+			 FROM   employeeworkhistory e, employeetitle t	
+			 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";
+										
+			$dbEmployeeWorkHistory->query($queryEmployeeWorkHistory);
+			
+			//Put results of query 1 into table on the screen
+			for($count=0;$count<$dbEmployeeWorkHistory->queryResultsCount;$count=$count+1)
+			{
+				$row=mysql_fetch_array($dbEmployeeWorkHistory->queryResultsResource);	
+				$this->initializeEmployeeWorkHistoryNew($row);
+				$this->displayEmployeeWorkHistoryInRowFormattedNew();
+			}
+			$dbEmployeeWorkHistory->close();
+		?>
+		</table>
+		<P></P>		
+
+<?php 
+	} // end public function employeeHistoryCurrent($selectedEmployee)	
+	
+	
+	
 }
 ?>
 
