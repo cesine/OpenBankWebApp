@@ -64,7 +64,7 @@ class EmployeeWorkHistory{
 
 	public function setLastDate($lastDateIn) 
 	{
-		$this->lastDateIn=$lastDateIn;
+		$this->lastDate=$lastDateIn;
 	}	
 	
 	public function setTitleID($titleIDIn) 
