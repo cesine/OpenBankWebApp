@@ -39,96 +39,12 @@ $postalCodes = new PostalCodes();
 	</td></tr>
 </table>
 
-<!-- Select branch to show -->
-<!--  
-<table border="1"> 
-	<tr><td width="180">Select option to show:</td><td width="180">
-		<select name="choice2">
-		
-		<?php 
-		
-			
-			/*
-			//Build dynamic selection list
-			$dbSelectBrach = new Database();
-			$dbSelectBrach->connect();
-			
-			$querySelectBrach="SELECT DISTINCT branchid 
-							   FROM branch";
-										
-			$dbSelectBrach->query($querySelectBrach);	
-			$result = $dbSelectBrach->query($querySelectBrach);						
-						   
-			//Put results of query into dynamic list
-			for($count=0;$count<$dbSelectBrach->queryResultsCount;$count=$count+1)
-			{
-				$row=mysql_fetch_array($dbSelectBrach->queryResultsResource);
-				extract($row);
-				echo "<option value='$branchid'>$branchid</option>";
-			
-			}//endl if to only print when there are any results
-			echo "</select>\n";	
-			$dbSelectBrach->close();
-			*/			
-		?>
-		
-		</select>
-	</td></tr>
-</table>
--->
-<!-- End select branch to show -->
-
 <p></p>
 
-<!-- Select employee to show -->
-<!-- 
-<table border="1"> 
-	<tr><td width="180">Select employee to show:</td><td width="180">
- -->	
-	
-		<?php
-			//echo "<form action='?&content=ViewEmployeeInfo' method='POST'>\n";
-			//echo "<form action='?&content=ViewEmployeeInfo&topMenu=EmployeeTopMenu' method='POST'>"; 
-		?>	
-	
-		<!--  <select name="choice2"> -->
-		
-		<?php 
-			
-			/*
-			//Build dynamic selection list
-			$dbSelectEmployee = new Database();
-			$dbSelectEmployee->connect();
-			
-			$querySelectEmployee="SELECT DISTINCT employeeid 
-							   FROM employee";
-										
-			$dbSelectEmployee->query($querySelectEmployee);	
-			$result = $dbSelectEmployee->query($querySelectEmployee);						
-						   
-			//Put results of query into dynamic list
-			for($count=0;$count<$dbSelectEmployee->queryResultsCount;$count=$count+1)
-			{
-				$row=mysql_fetch_array($dbSelectEmployee->queryResultsResource);
-				extract($row);
-				echo "<option value='$employeeid'>$employeeid</option>";
-			
-			}//endl if to only print when there are any results
-			echo "</select>\n";	
-			$dbSelectEmployee->close();
-			*/
-		
-			// create dynamic list of employee and let user to select
-			$employee->EmployeeList(); 		
-		
-						
-		?>
-<!--  		
-		</select>
-	</td></tr>
-</table>
--->
-<!-- End select employee to show -->
+<?php 
+	// create dynamic list of employee and let user to select
+	$employee->EmployeeList(); 	
+?>
 
 <!-- read input from user after submition -->
 <P></P>
@@ -139,14 +55,13 @@ $postalCodes = new PostalCodes();
 <?php
 
 $selectedInfo=$_POST["choiceInfo"];
-//$selectedEmployee=$_POST["choice2"];
 $selectedEmployee=$_POST["choiceEmployee"];
 
 $employee = new Employee();
 $employee->initializeEmployee($selectedEmployee);
 
 //if submit selection button is pressed:
-if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
+if (isset($_POST["SelectedOptionsSubmit"])) 						
 {
 	
 	echo "<h4> Selected: </h4>\n";
@@ -188,47 +103,8 @@ if (isset($_POST["SelectedOptionsSubmit"])) 						// if user press login button
 </tr>
 
 <?php
-//$employee->displayEmployeeInRowFormatted();
 $employee->displayEmployeePersonalInfo();
-//// Display personal info of employee from tables "employee", "address", "postalcodes" 
-//
-//$dbEmployeePersonalInfo = new Database();
-//$dbEmployeePersonalInfo->connect();
-//
-//// note: in query we use data, selected by user
-//$queryEmployeePersonalInfo=
-//"SELECT e.employeeid, e.firstname, e.lastname,
-//        p.postalcodes, p.province, p.city, a.streetnumber, a.street
-//FROM    employee e, address a, postalcodes p	
-//WHERE   e.addressid=a.addressid AND
-//        a.postalcode=p.postalcodes AND
-//        e.employeeid=$selectedEmployee";
-//							
-//$dbEmployeePersonalInfo->query($queryEmployeePersonalInfo);	
-//
-////Put results of query into table on the screen
-//for($count=0;$count<$dbEmployeePersonalInfo->queryResultsCount;$count=$count+1)
-//{
-//	$row=mysql_fetch_array($dbEmployeePersonalInfo->queryResultsResource);	
-//
-//	$employee->initializeEmployee($row);
-//	$employee->displayEmployeePersonalInfo();
-//	
-//	$postalCodes->initializePostalCodes($row);
-//	$postalCodes->displayCodeProvinceCity($row);
-//	
-//	$address->initializeAddressZ($row);
-//	$address->displayStreetNumber();
-//	
-//	$postalCodes->displayStreet();
-//}
-//
-//$dbEmployeePersonalInfo->close();
-
 ?>
 </table>
 <P></P>
 
-<?php
-//echo "Province: $row[province]\n"; // correct
-?>
