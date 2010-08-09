@@ -123,6 +123,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			?>
 				
 			<!-- Show old info -->
+			<!--  
 			<table width="100%" border="1" cellpadding="3" cellspacing="1">
 			<tr>
 				<td>
@@ -147,9 +148,11 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				Salary
 				</td>	
 			</tr>
+		-->	
 			
 			<?php
 			
+				/*
 				$employeeTitle = new EmployeeTitle();
 				$employeeWorkHistory = new EmployeeWorkHistory();			
 				
@@ -185,12 +188,27 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$salaryCurrent=$row[salary];											
 			
 				$dbEmployeeWorkHistory->close();
+				
+				*/
 			
 			?>
-	
+	<!-- 
 			</table>
 			<P></P>	
-<?php 				
+			
+ -->			
+<?php 
+
+		$employeeWorkHistory = new EmployeeWorkHistory();
+		$employeeWorkHistory->employeeHistory($selectedEmployee);
+		
+		// save current values
+		$branchIDCurrent=$employeeWorkHistory->getBranchID();
+		$startDateCurrent=$employeeWorkHistory->getStartDate();
+		$lastDateCurrent=$employeeWorkHistory->getLastDate();
+		$titleIDCurrent=$employeeWorkHistory->getTitleID();	
+		$titleNameCurrent=$employeeWorkHistory->gettitlename();		
+		$salaryCurrent=$employeeWorkHistory->getSalary();		
 			
 				// find title id from title name
 			
