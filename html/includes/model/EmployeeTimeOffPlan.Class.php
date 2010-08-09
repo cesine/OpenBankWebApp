@@ -128,9 +128,9 @@ class EmployeeTimeOffPlan{
 	{
 		// in the line ($row[]), parameter name [] from db table
 		$this->setEmployeeID($row[employeeid]);
-		$this->setTimeOffID($row[timeoffid]);
-		$this->setTimeOffName($row[timeoffname]);
-		$this->setNumberOfDays($row[numberofdays]);	
+		$this->setReason($row[reason]);
+		$this->setStartDateOff($row[startdateoff]);
+		$this->setReturnDate($row[dayreturntowork]);	
 	}		
 	
 	public function displayEmployeeTimeOffName()
