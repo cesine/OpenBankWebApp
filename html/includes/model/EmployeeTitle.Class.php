@@ -55,7 +55,13 @@ class EmployeeTitle{
 		$this->setTitleID($row[titleid]);
 		$this->setTitleName($row[titlename]);
 		$this->setBaseSalary($row[basesalary]);	
-	}	
+	}
+
+	public function initializeEmployeeTitleID($row)
+	{
+		// in the line ($row[]), parameter name [] from db table
+		$this->setTitleID($row[titleid]);
+	}		
 	
 	public function displayEmployeeTitleName()
 	{
@@ -122,7 +128,7 @@ class EmployeeTitle{
 		{
 			$row=mysql_fetch_array($dbEmployeeTitleID->queryResultsResource);	
 			//$employeeTitle->initializeEmployeeTitle($row);
-			$this->initializeEmployeeTitle($row);
+			$this->initializeEmployeeTitleID($row);
 		}
 		// save values
 		//$titleIDNew=$row[titleid];
