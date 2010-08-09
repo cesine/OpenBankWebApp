@@ -23,7 +23,6 @@
 ?>
 		<!-- display personal info of employee on the screen -->
 		
-		<!-- create header for table -->
 		<table width="100%" border="1" cellpadding="3" cellspacing="1">
 		<tr>
 			<td>
