@@ -61,15 +61,12 @@
 
 		echo "<h4> Work history: </h4>\n";
 		$employeeWorkHistory = new EmployeeWorkHistory();
-		$employeeWorkHistory->employeeHistory($selectedEmployee);
-?>
+		$employeeWorkHistory->employeeHistory($employeeID);
 
-		<P></P>
-<?php 		
 		echo "<h4> Time off history: </h4>\n";		
 		$employeeTimeOff = new EmployeeTimeOffPlan();
-		$employeeTimeOff->findEmployeeTimeOffPlan($selectedEmployee);			
-		$employeeTimeOff->findEmployeeTimeOff($selectedEmployee);					
+		$employeeTimeOff->findEmployeeTimeOffPlan($employeeID);			
+		$employeeTimeOff->findEmployeeTimeOff($employeeID);					
 
 	} // end if (isset($_SESSION['Employee']))
 
