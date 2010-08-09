@@ -2,6 +2,8 @@
 require_once('includes/model/Branch.Class.php');
 require_once('includes/model/Address.Class.php');
 require_once('includes/model/PostalCodes.Class.php');
+require_once('includes/model/EmployeeTitle.Class.php');
+require_once('includes/model/EmployeeWorkHistory.Class.php');
 
 echo "<form action='?&content=ViewEmployeeInfo' method='POST'>";
 
@@ -11,7 +13,7 @@ echo "<form action='?&content=ViewEmployeeInfo' method='POST'>";
 
 <?php 
 
-echo "<h5> View employee info. </h5>\n";
+echo "<h4> View employee info. </h4>\n";
 
 // create new objects
 $address = new Address();
@@ -64,7 +66,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 {
 	if ($selectedInfo=="personalInfo")
 	{
-		echo "<h5> Personal Info: </h5>\n";
+		echo "<h4> Personal Info: </h4>\n";
 ?>
 		<!-- display personal info of employee on the screen -->
 		
@@ -108,12 +110,16 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 	
 	elseif ($selectedInfo=="workHistory")
 	{
-		echo "<h5> Work history: </h5>\n";		
+		echo "<h4> Work history: </h4>\n";
+		$employeeWorkHistory = new EmployeeWorkHistory();
+		$employeeWorkHistory->employeeWorkHistory($selectedEmployee);
+
+		
 		
 	} // end elseif (choiceInfo=="work history")
 	elseif ($selectedInfo=="timeOffHistory")
 	{
-		echo "<h5> Time off history: </h5>\n";			
+		echo "<h4> Time off history: </h4>\n";			
 		
 	} // end elseif (choiceInfo=="time off history")
 
