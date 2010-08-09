@@ -57,11 +57,13 @@ class EmployeeTitle{
 		$this->setBaseSalary($row[basesalary]);	
 	}
 
+	
 	public function initializeEmployeeTitleID($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
 		$this->setTitleID($row[titleid]);
-	}		
+	}
+			
 	
 	public function displayEmployeeTitleName()
 	{
