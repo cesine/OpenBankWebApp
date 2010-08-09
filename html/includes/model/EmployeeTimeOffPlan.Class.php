@@ -101,19 +101,11 @@ class EmployeeTimeOffPlan{
 	}
 	
 	
-	function displayEmployeeTimeOff()
+	function displayEmployeeTimeOffPlan()
 	{
-		//echo "<h4> Time off plan ID: $this->timeOffID</h4>\n";
-		//echo "<h4> Time off plan name: $this->timeOffName</h4>\n";	
-		//echo "<h4> Number of allowed days off: $this->numberOfDays</h4>\n";				
-		
-		echo '
-		<TR class="bgcoloroption1">
-			<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
-			<TD class="tableDataRightC">'.$this->reason.'</TD>
-			<TD class="tableDataRightC">'.$this->startDate.'</TD>	
-			<TD class="tableDataRightC">'.$this->returnDate.'</TD>				
-		</TR>';		
+		echo "<h4> Time off plan ID: $this->timeOffID</h4>\n";
+		echo "<h4> Time off plan name: $this->timeOffName</h4>\n";	
+		echo "<h4> Number of allowed days off: $this->numberOfDays</h4>\n";				
 	}	
 
 	public function initializeEmployeeTimeOffPlane($row)
@@ -228,6 +220,33 @@ class EmployeeTimeOffPlan{
 <?php 		
 
 	}// end public function findEmployeeTimeOff()	
+	
+	public function findEmployeeTimeOffPlan($selectedEmployee)
+	{
+		//Show employee time off plan 
+
+		$dbEmployeeTimeOffPlan = new Database();
+		$dbEmployeeTimeOffPlan->connect();
+			
+		// note: in query we use data, selected by user
+		$queryEmployeeTimeOffPlan=
+		"SELECT p.timeoffid, p.timeoffname, p.numberofdays  
+		 FROM   employeetimeoffplan p, employee e	
+		 WHERE  e.employeeid=$selectedEmployee AND e.timeoffid=p.timeoffid";
+										
+		$dbEmployeeTimeOffPlan->query($queryEmployeeTimeOffPlan);
+			
+		//Put results of query 1 into table on the screen
+		for($count=0;$count<$dbEmployeeTimeOffPlan->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbEmployeeTimeOffPlan->queryResultsResource);	
+			$this->initializeEmployeeTimeOffPlan($row);
+			$this->displayEmployeeTimeOffPlan();
+		}
+		$dbEmployeeTimeOffPlan->close();
+
+	}// end public function findEmployeeTimeOffPlan()		
+	
 	
 }
 ?>
