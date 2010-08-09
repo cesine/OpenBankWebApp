@@ -1,5 +1,5 @@
 <?php
-require_once('includes/controller/Database.Class.php');
+//require_once('includes/controller/Database.Class.php');
 
 class EmployeeTitle{
 	private $titleID;
