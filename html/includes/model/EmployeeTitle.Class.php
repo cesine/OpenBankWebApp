@@ -120,19 +120,16 @@ class EmployeeTitle{
 				
 		"SELECT titleid  
 		 FROM   employeetitle	
-		 WHERE  titlename=$titleNameNew";					
+		 WHERE  titlename='$titleNameNew'";					
 											
 		$dbEmployeeTitleID->query($queryEmployeeTitleID);
 				
 		for($count=0;$count<$dbEmployeeTitleID->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbEmployeeTitleID->queryResultsResource);	
-			//$employeeTitle->initializeEmployeeTitle($row);
 			$this->initializeEmployeeTitleID($row);
 		}
-		// save values
-		//$titleIDNew=$row[titleid];
-					
+		
 		$dbEmployeeTitleID->close();
 			
 	} // end public function findTitleID()		
