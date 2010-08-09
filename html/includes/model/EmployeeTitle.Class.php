@@ -100,6 +100,38 @@ class EmployeeTitle{
 		<!-- End Build dynamic list of employee title names -->
 <?php 		
 	} // end public function displayEmployeeTitleList()	
+	
+	
+	public function findTitleID($titleNameNew)
+	{
+		// find title id from title name
+	
+		$dbEmployeeTitleID = new Database();
+		$dbEmployeeTitleID->connect();
+				
+		// note: in query we use data, selected by user
+		$queryEmployeeTitleID=
+				
+		"SELECT titleid  
+		 FROM   employeetitle	
+		 WHERE  titlename=$titleNameNew";					
+											
+		$dbEmployeeTitleID->query($queryEmployeeTitleID);
+				
+		for($count=0;$count<$dbEmployeeTitleID->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbEmployeeTitleID->queryResultsResource);	
+			//$employeeTitle->initializeEmployeeTitle($row);
+			$this->initializeEmployeeTitle($row);
+		}
+		// save values
+		//$titleIDNew=$row[titleid];
+					
+		$dbEmployeeTitleID->close();
+			
+	} // end public function findTitleID()		
+	
+	
 		
 	
 	/*
