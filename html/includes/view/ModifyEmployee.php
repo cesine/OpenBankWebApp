@@ -286,7 +286,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				 WHERE  employeeid=$selectedEmployee";				
 				
 				//$dbEmployeeUpdate->query($queryEmployeeUpdate);
-				$dbEmployeeUpdate->update($queryEmployeeUpdate);
+				//$dbEmployeeUpdate->update($queryEmployeeUpdate);
+				$dbEmployeeUpdate->updateInsert($queryEmployeeUpdate);
 				$dbEmployeeUpdate->close();
 				// end update branch/title/salary in employee table	
 				
