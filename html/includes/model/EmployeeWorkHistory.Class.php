@@ -8,7 +8,8 @@ class EmployeeWorkHistory{
 	private $branchID;	
 	private $startDate;	
 	private $lastDate;	
-	private $titleID;					
+	private $titleID;
+	private $titlename;						
 	private $salary;
 	
 	public function getEmployeeID() 
@@ -34,6 +35,11 @@ class EmployeeWorkHistory{
 	public function getTitleID()
 	{
 		return $this->titleID;
+	}	
+
+	public function gettitlename()
+	{
+		return $this->titlename;
 	}		
 	
 	public function getSalary() 
@@ -66,6 +72,11 @@ class EmployeeWorkHistory{
 		$this->titleID=$titleIDIn;
 	}	
 	
+	public function settitlename($titlenameIn) 
+	{
+		$this->titlename=$titlenameIn;
+	}		
+	
 	public function setSalary($salaryIn) 
 	{
 		$this->salary=$salaryIn;
@@ -84,6 +95,22 @@ class EmployeeWorkHistory{
 			<TD class="tableDataRightC">'.$this->salary.'</TD>				
 		</TR>';		
 	}
+	
+	// title name added
+	function displayEmployeeWorkHistoryInRowFormattedNew()
+	{
+		
+		echo '
+		<TR class="bgcoloroption1">
+			<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
+			<TD class="tableDataRightC">'.$this->branchID.'</TD>		
+			<TD class="tableDataRightC">'.$this->startDate.'</TD>
+			<TD class="tableDataRightC">'.$this->lastDate.'</TD>	
+			<TD class="tableDataRightC">'.$this->titleID.'</TD>		
+			<TD class="tableDataRightC">'.$this->titlename.'</TD>				
+			<TD class="tableDataRightC">'.$this->salary.'</TD>				
+		</TR>';		
+	}	
 
 	public function initializeEmployeeWorkHistory($row)
 	{
@@ -94,7 +121,20 @@ class EmployeeWorkHistory{
 		$this->setLastDate($row[lastdate]);	
 		$this->setTitleID($row[titleid]);				
 		$this->setSalary($row[salary]);
-	}	
+	}
+
+	// title name added
+	public function initializeEmployeeWorkHistoryNew($row)
+	{
+		// in the line ($row[]), parameter name [] from db table
+		$this->setEmployeeID($row[employeeid]);
+		$this->setBranchID($row[branchid]);			
+		$this->setStartDate($row[startdate]);
+		$this->setLastDate($row[lastdate]);	
+		$this->setTitleID($row[titleid]);	
+		$this->settitlename($row[titlename]);						
+		$this->setSalary($row[salary]);
+	}		
 	
 	public function displayEmployeeWorkHistory2()
 	{
@@ -236,6 +276,7 @@ class EmployeeWorkHistory{
 				//$employeeWorkHistory->initializeEmployeeWorkHistory($row);
 				//$employeeWorkHistory->displayEmployeeWorkHistory2();
 				
+				/*
 				$this->initializeEmployeeWorkHistory($row);
 				$this->displayEmployeeWorkHistory2();
 				
@@ -247,7 +288,11 @@ class EmployeeWorkHistory{
 				$employeeTitle->displayEmployeeTitleName();	
 				
 				//$employeeWorkHistory->displayEmployeeWorkHistorySalary();
-				$this->displayEmployeeWorkHistorySalary();								
+				$this->displayEmployeeWorkHistorySalary();	
+				*/
+
+				$this->initializeEmployeeWorkHistoryNew($row);
+				$this->displayEmployeeWorkHistoryInRowFormattedNew();
 			}
 			// save current values
 			/*
