@@ -119,6 +119,42 @@ class Employee{
 		$dbConstructEmployee->close();
 		$this->initializeEmployeeFromRow($dbConstructEmployee->queryFirstResult);
 	}
+	
+	public function changeStatus($selectedEmployee)
+	{
+		//make employee not active
+		$dbChangeStatus = new Database();
+		$dbChangeStatus->connect();
+				
+		// note: in query we use data, selected by user
+		$queryChangeStatus=
+				
+		"UPDATE employee
+   		 SET    status=0
+		 WHERE  employeeid=$selectedEmployee";				
+
+		$dbChangeStatus->updateInsert($queryChangeStatus);
+		$dbChangeStatus->close();	
+
+		
+		// put "last date" for old title
+			
+		$dbEmployeeTitleOld = new Database();
+		$dbEmployeeTitleOld->connect();
+				
+		// note: in query we use data, selected by user
+		$queryEmployeeTitleOld=
+				
+		"UPDATE employeeworkhistory 
+   		 SET    lastdate = CURDATE()
+		 WHERE  employeeid=$selectedEmployee AND lastdate='0000-00-00'";				
+
+		$dbEmployeeTitleOld->updateInsert($queryEmployeeTitleOld);
+		$dbEmployeeTitleOld->close();
+			
+		// end put "last date" for old title		
+	}	
+	
 	public function initializeEmployeeFromRow($row)
 	{
 		// in the line ($row[employeeid]), parameter name [] from db table
