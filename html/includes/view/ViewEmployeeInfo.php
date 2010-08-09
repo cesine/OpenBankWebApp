@@ -5,9 +5,7 @@ require_once('includes/model/PostalCodes.Class.php');
 require_once('includes/model/EmployeeTitle.Class.php');
 require_once('includes/model/EmployeeWorkHistory.Class.php');
 require_once('includes/model/EmployeeTimeOffPlan.Class.php');
-
 echo "<form action='?&content=ViewEmployeeInfo' method='POST'>";
-
 ?>
 
 <p></p>
@@ -112,7 +110,6 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 		echo "<h4> Work history: </h4>\n";
 		$employeeWorkHistory = new EmployeeWorkHistory();
 		$employeeWorkHistory->employeeHistory($selectedEmployee);
-
 		
 		
 	} // end elseif (choiceInfo=="work history")
