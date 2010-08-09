@@ -41,8 +41,6 @@ $postalCodes = new PostalCodes();
 	</td></tr>
 </table>
 
-<p></p>
-
 <?php 
 	// create dynamic list of employee and let user to select
 	$employee->EmployeeList(); 	
@@ -122,6 +120,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 	{
 		echo "<h4> Time off history: </h4>\n";		
 		$employeeTimeOff = new EmployeeTimeOffPlan();
+		$employeeTimeOff->findEmployeeTimeOffPlan($selectedEmployee);			
 		$employeeTimeOff->findEmployeeTimeOff($selectedEmployee);			
 		
 	} // end elseif (choiceInfo=="time off history")
