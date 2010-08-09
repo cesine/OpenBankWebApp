@@ -11,7 +11,7 @@ echo "<form action='?&content=ViewEmployeeInfo' method='POST'>";
 
 <?php 
 
-echo "<h4> View employee info. </h4>\n";
+echo "<h5> View employee info. </h5>\n";
 
 // create new objects
 $address = new Address();
@@ -64,19 +64,56 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 {
 	if ($selectedInfo=="personalInfo")
 	{
-		echo "<h4> Personal Info: </h4>\n";
-		//echo "<h5> kind of information: $selectedInfo </h5>\n";
-		//echo "<h5> employee ID:         $selectedEmployee </h5>\n";
+		echo "<h5> Personal Info: </h5>\n";
+?>
+		<!-- display personal info of employee on the screen -->
 		
+		<!-- create header for table -->
+		<table width="100%" border="1" cellpadding="3" cellspacing="1">
+		<tr>
+			<td>
+			Employee ID
+			</td>
+			<td>
+			First Name
+			</td>
+			<td>
+			Last Name
+			</td>
+			<td>
+			Street number
+			</td>
+			<td>
+			Street name
+			</td>
+			<td>
+			City
+			</td>
+			<td>
+			Province
+			</td>	
+			<td>
+			Postal code
+			</td>
+		</tr>
+		
+		<?php
+		$employee->displayEmployeePersonalInfo();
+		?>
+		</table>
+		<P></P>
+<?php 
 	} // end if (choiceInfo=="personal info")
+	
+	
 	elseif ($selectedInfo=="workHistory")
 	{
-		echo "<h4> Work history: </h4>\n";		
+		echo "<h5> Work history: </h5>\n";		
 		
 	} // end elseif (choiceInfo=="work history")
 	elseif ($selectedInfo=="timeOffHistory")
 	{
-		echo "<h4> Time off history: </h4>\n";			
+		echo "<h5> Time off history: </h5>\n";			
 		
 	} // end elseif (choiceInfo=="time off history")
 
@@ -84,40 +121,5 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 
 ?>
 
-<!-- display personal info of employee on the screen -->
 
-<!-- create header for table -->
-<table width="100%" border="1" cellpadding="3" cellspacing="1">
-<tr>
-	<td>
-	Employee ID
-	</td>
-	<td>
-	First Name
-	</td>
-	<td>
-	Last Name
-	</td>
-	<td>
-	Street number
-	</td>
-	<td>
-	Street name
-	</td>
-	<td>
-	City
-	</td>
-	<td>
-	Province
-	</td>	
-	<td>
-	Postal code
-	</td>
-</tr>
-
-<?php
-$employee->displayEmployeePersonalInfo();
-?>
-</table>
-<P></P>
 
