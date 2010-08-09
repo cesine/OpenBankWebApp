@@ -172,9 +172,6 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			$employeeProvince=$address->getProvince();
 			$employeeCity=$address->getCity();	
 			$employeeStreet=$address->getStreet();			
-			
-
-
 ?>
 
 			<!-- Show province, city and street according to postal code -->
