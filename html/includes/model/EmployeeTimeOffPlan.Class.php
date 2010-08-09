@@ -128,6 +128,16 @@ class EmployeeTimeOffPlan{
 	public function displayEmployeeTimeOffName()
 	{
 		echo '<TD class="tableDataRightC">'.$this->timeOffName.'</TD>';		
+	}
+
+	public function displayEmployeeTimeOff()
+	{
+		
+		echo '<TD class="tableDataRightC">'.$this->employeeID.'</TD>';	
+		echo '<TD class="tableDataRightC">'.$this->reason.'</TD>';	
+		echo '<TD class="tableDataRightC">'.$this->startDate.'</TD>';	
+		echo '<TD class="tableDataRightC">'.$this->rerurnDate.'</TD>';									
+		
 	}		
 	
 	public function displayEmployeeTimeOffPlanList()
