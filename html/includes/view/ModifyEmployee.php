@@ -200,7 +200,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 <?php 
 
 		$employeeWorkHistory = new EmployeeWorkHistory();
-		$employeeWorkHistory->employeeHistory($selectedEmployee);
+		$employeeWorkHistory->employeeHistoryCurrent($selectedEmployee);
 		
 		// save current values
 		$branchIDCurrent=$employeeWorkHistory->getBranchID();
@@ -208,7 +208,17 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		$lastDateCurrent=$employeeWorkHistory->getLastDate();
 		$titleIDCurrent=$employeeWorkHistory->getTitleID();	
 		$titleNameCurrent=$employeeWorkHistory->gettitlename();		
-		$salaryCurrent=$employeeWorkHistory->getSalary();		
+		$salaryCurrent=$employeeWorkHistory->getSalary();	
+
+		echo "<h4> employee ID: $selectedEmployee</h4>\n";
+		echo "<h4> branch ID:   $branchIDCurrent</h4>\n";	
+		echo "<h4> start date:  $startDateCurrent</h4>\n";
+		echo "<h4> last date:   $lastDateCurrent</h4>\n";
+		echo "<h4> title ID:    $titleIDCurrent</h4>\n";
+		echo "<h4> title name:  $titleNameCurrent</h4>\n";
+		echo "<h4> salary:      $salaryCurrent</h4>\n";	
+		
+		
 			
 				// find title id from title name
 			
@@ -256,7 +266,13 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				{
 					$titleIDNew = 30;
 				}					
-				// end find title id from title name				
+				// end find title id from title name	
+
+				
+				
+				
+				
+				/*
 				
 				// put "last date" for old title
 				$dbEmployeeTitleOld = new Database();
@@ -308,6 +324,11 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$dbEmployeeUpdate->updateInsert($queryEmployeeUpdate);
 				$dbEmployeeUpdate->close();
 				// end update branch/title/salary in employee table	
+				 
+				  
+				  
+				 
+				 */
 				
 				echo "<h4> New info: </h4>\n";
 ?>				
