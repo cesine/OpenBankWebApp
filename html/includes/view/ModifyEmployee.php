@@ -102,7 +102,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
 			
-			echo "<h4> new title name1:  $titleNameNew</h4>\n";				
+			//echo "<h4> new title name1:  $titleNameNew</h4>\n";				
 			
 			$employee = new Employee();
 			$employee->initializeEmployee($selectedEmployee);
