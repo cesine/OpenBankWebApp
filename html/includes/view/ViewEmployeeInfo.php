@@ -111,8 +111,8 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 	elseif ($selectedInfo=="workHistory")
 	{
 		echo "<h4> Work history: </h4>\n";
-		$employeeWorkHistory = new EmployeeWorkHistory();
-		$employeeWorkHistory->EmployeeWorkHistory($selectedEmployee);
+		//$employeeWorkHistory = new EmployeeWorkHistory();
+		//$employeeWorkHistory->EmployeeWorkHistory($selectedEmployee);
 
 		
 		
