@@ -16,7 +16,6 @@ echo "<h4> Modify employee. </h4>\n";
 
 <?php 
 // create new objects
-//$employee = new Employee();
 $branch = new Branch();
 $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
@@ -101,9 +100,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			$branchIDNew=$_POST["choiceBranch"];
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
-			
-			//echo "<h4> new title name1:  $titleNameNew</h4>\n";				
-			
+							
 			$employee = new Employee();
 			$employee->initializeEmployee($selectedEmployee);
 			
@@ -122,9 +119,6 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			else
 			{
 				echo "<h4> Old info: </h4>\n";
-
-			//$employeeWorkHistory = new EmployeeWorkHistory();
-			//$employeeWorkHistory->employeeHistoryCurrent($selectedEmployee);
 			
 			$employeeWorkHistory->employeeHistory($selectedEmployee);		
 			
@@ -206,72 +200,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 
 			echo "<h4> New info: </h4>\n";
 			$employeeWorkHistory->employeeHistoryCurrent($selectedEmployee);	
-?>				
-				
-				<!-- Show new info -->
-				<!--  
-				<table width="100%" border="1" cellpadding="3" cellspacing="1">
-				<tr>
-					<td>
-					Employee ID
-					</td>
-					<td>
-					Branch ID
-					</td>
-					<td>
-					Start date
-					</td>
-					<td>
-					Last date
-					</td>
-					<td>
-					Title ID
-					</td>
-					<td>
-					Title name
-					</td>					
-					<td>
-					Salary
-					</td>	
-				</tr>
-				-->
-				
-				<?php
-					
-					/*
-					// Display new info of employee from table "employeeworkhistory" 
-					$dbEmployeeWorkHistoryNew = new Database();
-					$dbEmployeeWorkHistoryNew->connect();
-					
-					// note: in query we use data, selected by user
-					$queryEmployeeWorkHistoryNew=
-					"SELECT e.employeeid, e.branchid, e.startdate, e.lastdate, e.titleid, t.titlename, e.salary  
-					 FROM   employeeworkhistory e, employeetitle t	
-					 WHERE  e.employeeid=$selectedEmployee AND e.lastdate='0000-00-00' AND t.titleid=e.titleid";						
-												
-					$dbEmployeeWorkHistoryNew->query($queryEmployeeWorkHistoryNew);
-					
-					//Put results of query 1 into table on the screen
-					for($count=0;$count<$dbEmployeeWorkHistoryNew->queryResultsCount;$count=$count+1)
-					{
-						$row=mysql_fetch_array($dbEmployeeWorkHistoryNew->queryResultsResource);	
-						$employeeWorkHistory->initializeEmployeeWorkHistory($row);
-						$employeeWorkHistory->displayEmployeeWorkHistory2();
-						$employeeTitle->initializeEmployeeTitle($row);
-						$employeeTitle->displayEmployeeTitleName();	
-						$employeeWorkHistory->displayEmployeeWorkHistorySalary();								
-					}
 			
-					$dbEmployeeWorkHistoryNew->close();
-					*/
-				
-?>
-<!--  		
-				</table>
-				<P></P>
--->				
-<?php 									
-	
 		
 			} // end input is OK
 
