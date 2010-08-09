@@ -257,7 +257,7 @@ class EmployeeTimeOffPlan{
 
 	}// end public function findEmployeeTimeOffPlan()		
 	
-	
+
 }
 ?>
 
