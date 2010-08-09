@@ -102,6 +102,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
 			
+			echo "<h4> new title name1:  $titleNameNew</h4>\n";				
+			
 			$employee = new Employee();
 			$employee->initializeEmployee($selectedEmployee);
 			
@@ -144,34 +146,6 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			echo "<h4> salary:      $salaryCurrent</h4>\n";	
 			*/
 		
-		
-			
-				// find title id from title name
-			
-				/*
-				$dbEmployeeTitleID = new Database();
-				$dbEmployeeTitleID->connect();
-				
-				// note: in query we use data, selected by user
-				$queryEmployeeTitleID=
-				
-				"SELECT titleid  
-				 FROM   employeetitle	
-				 WHERE  titlename=$titleNameNew";					
-											
-				$dbEmployeeTitleID->query($queryEmployeeTitleID);
-				
-				for($count=0;$count<$dbEmployeeTitleID->queryResultsCount;$count=$count+1)
-				{
-					$row=mysql_fetch_array($dbEmployeeTitleID->queryResultsResource);	
-					$employeeTitle->initializeEmployeeTitle($row);
-				}
-				// save values
-				$titleIDNew=$row[titleid];
-					
-				$dbEmployeeTitleID->close();
-				*/
-			
 			$employeeTitle->findTitleID($titleNameNew);
 			$titleIDNew=$employeeTitle->getTitleID();
 			echo "<h4> new title name:  $titleNameNew</h4>\n";	
