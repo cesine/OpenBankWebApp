@@ -182,7 +182,7 @@ class EmployeeWorkHistory{
 <?php 
 	} // end public function EmployeeWorkHistoryCurrent()	
 	
-	public function employeeWorkHistory($selectedEmployee)
+	public function EmployeeWorkHistory($selectedEmployee)
 	{
 ?>
 		<!-- Show current info -->
