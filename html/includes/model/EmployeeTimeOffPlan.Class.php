@@ -240,7 +240,7 @@ class EmployeeTimeOffPlan{
 		for($count=0;$count<$dbEmployeeTimeOffPlan->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbEmployeeTimeOffPlan->queryResultsResource);	
-			$this->initializeEmployeeTimeOffPlan($row);
+			$this->initializeEmployeeTimeOffPlane($row);
 			$this->displayEmployeeTimeOffPlan();
 		}
 		$dbEmployeeTimeOffPlan->close();
