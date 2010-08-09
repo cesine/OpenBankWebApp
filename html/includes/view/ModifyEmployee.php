@@ -267,8 +267,6 @@ if (isset($_POST['SelectedOptionsSubmit']))
 												  titleid, salary)
                  VALUES ($selectedEmployee, $branchIDNew, CURDATE(), '', $titleIDNew, $salaryNew)";
 									
-				//$dbEmployeeTitleNew->query($queryEmployeeTitleNew);
-				//$dbEmployeeTitleNew->updateInsert($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
 				// end put "start date" for new title
@@ -285,8 +283,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				 SET    branchid=$branchIDNew, titleid=$titleIDNew, salary=$salaryNew
 				 WHERE  employeeid=$selectedEmployee";				
 				
-				//$dbEmployeeUpdate->query($queryEmployeeUpdate);
-				$dbEmployeeUpdate->update($queryEmployeeUpdate);
+				//$dbEmployeeUpdate->update($queryEmployeeUpdate); // require 2 parameters
+				$dbEmployeeUpdate->updateInsert($queryEmployeeUpdate);
 				$dbEmployeeUpdate->close();
 				// end update branch/title/salary in employee table	
 				
