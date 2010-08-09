@@ -30,7 +30,7 @@ $postalCodes = new PostalCodes();
 		?>
 		<select name="choiceInfo">
 		
-			<option value="personal info" selected>personal info</option>
+			<option value="personal info" selected>personalinfo</option>
 			<option value="work history">work history</option>
 			<option value="time off history">time off history</option>
 		
@@ -62,7 +62,7 @@ $employee->initializeEmployee($selectedEmployee);
 //if submit selection button is pressed:
 if (isset($_POST["SelectedOptionsSubmit"])) 						
 {
-	if (choiceInfo=="personal info")
+	if (choiceInfo=="personalinfo")
 	{
 		echo "<h4> Personal Info: </h4>\n";
 		//echo "<h5> kind of information: $selectedInfo </h5>\n";
