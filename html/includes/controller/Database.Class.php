@@ -1,7 +1,7 @@
 <?php
 
 //include the variables which are defined in the config file.
-require_once 'includes/controller/configMySQL.php';
+require_once 'configMySQL.php';
 
 /*
  * A class which opens and closes a connection to the database
