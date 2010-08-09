@@ -172,9 +172,10 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$dbEmployeeTitleID->close();
 				*/
 			
-			$employeeTitle->findTitleID();
-			$titleNameNew=$employeeTitle->getTitleID();
-			echo "<h4> new title name:  $titleNameNew</h4>\n";			
+			$employeeTitle->findTitleID($titleNameNew);
+			$titleIDNew=$employeeTitle->getTitleID();
+			echo "<h4> new title name:  $titleNameNew</h4>\n";	
+			echo "<h4> new title ID:    $titleIDNew</h4>\n";		
 				
 				// find title id from title name
 				if ($titleNameNew=="Branch Manager")
