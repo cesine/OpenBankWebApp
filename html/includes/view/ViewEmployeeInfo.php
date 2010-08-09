@@ -32,8 +32,7 @@ $postalCodes = new PostalCodes();
 		
 			<option value="personal info" selected>personal info</option>
 			<option value="work history">work history</option>
-			<option value="shedule">shedule</option>
-			<option value="holidays">holidays</option>
+			<option value="time off history">time off history</option>
 		
 		</select>
 	</td></tr>
@@ -63,11 +62,25 @@ $employee->initializeEmployee($selectedEmployee);
 //if submit selection button is pressed:
 if (isset($_POST["SelectedOptionsSubmit"])) 						
 {
-	
-	echo "<h4> Selected: </h4>\n";
-	echo "<h5> kind of information: $selectedInfo </h5>\n";
-	echo "<h5> employee ID:         $selectedEmployee </h5>\n";
-}
+	if (choiceInfo=="personal info")
+	{
+		echo "<h4> Personal Info: </h4>\n";
+		//echo "<h5> kind of information: $selectedInfo </h5>\n";
+		//echo "<h5> employee ID:         $selectedEmployee </h5>\n";
+		
+	} // end if (choiceInfo=="personal info")
+	elseif (choiceInfo=="work history")
+	{
+		echo "<h4> Work history: </h4>\n";		
+		
+	} // end elseif (choiceInfo=="work history")
+	elseif (choiceInfo=="time off history")
+	{
+		echo "<h4> Time off history: </h4>\n";			
+		
+	} // end elseif (choiceInfo=="time off history")
+
+} // end if (isset($_POST["SelectedOptionsSubmit"])) 
 
 ?>
 
