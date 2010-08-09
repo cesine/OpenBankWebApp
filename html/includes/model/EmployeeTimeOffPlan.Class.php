@@ -132,12 +132,12 @@ class EmployeeTimeOffPlan{
 
 	public function displayEmployeeTimeOff()
 	{
-		
-		echo '<TD class="tableDataRightC">'.$this->employeeID.'</TD>';	
-		echo '<TD class="tableDataRightC">'.$this->reason.'</TD>';	
-		echo '<TD class="tableDataRightC">'.$this->startDate.'</TD>';	
-		echo '<TD class="tableDataRightC">'.$this->rerurnDate.'</TD>';									
-		
+		echo'<TR class="bgcoloroption1">
+			<TD class="tableDataLeftC">'.$this->employeeID.'</TD>
+			<TD class="tableDataRightC">'.$this->reason.'</TD>
+			<TD class="tableDataRightC">'.$this->startDate.'</TD>	
+			<TD class="tableDataRightC">'.$this->rerurnDate.'</TD>				
+		</TR>';				
 	}		
 	
 	public function displayEmployeeTimeOffPlanList()
