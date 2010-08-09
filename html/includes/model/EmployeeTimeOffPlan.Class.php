@@ -108,7 +108,7 @@ class EmployeeTimeOffPlan{
 		echo "<h4> Number of allowed days off: $this->numberOfDays</h4>\n";				
 	}	
 
-	public function initializeEmployeeTimeOffPlane($row)
+	public function initializeEmployeeTimeOffPlan($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
 		$this->setTimeOffID($row[timeoffid]);
@@ -240,7 +240,7 @@ class EmployeeTimeOffPlan{
 		for($count=0;$count<$dbEmployeeTimeOffPlan->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbEmployeeTimeOffPlan->queryResultsResource);	
-			$this->initializeEmployeeTimeOffPlane($row);
+			$this->initializeEmployeeTimeOffPlan($row);
 			$this->displayEmployeeTimeOffPlan();
 		}
 		$dbEmployeeTimeOffPlan->close();
