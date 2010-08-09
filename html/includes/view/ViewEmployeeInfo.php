@@ -4,6 +4,7 @@ require_once('includes/model/Address.Class.php');
 require_once('includes/model/PostalCodes.Class.php');
 require_once('includes/model/EmployeeTitle.Class.php');
 require_once('includes/model/EmployeeWorkHistory.Class.php');
+require_once('includes/model/EmployeeTimeOffPlan.Class.php');
 
 echo "<form action='?&content=ViewEmployeeInfo' method='POST'>";
 
@@ -119,7 +120,9 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 	} // end elseif (choiceInfo=="work history")
 	elseif ($selectedInfo=="timeOffHistory")
 	{
-		echo "<h4> Time off history: </h4>\n";			
+		echo "<h4> Time off history: </h4>\n";		
+		$employeeTimeOff = new EmployeeTimeOffPlan();
+		$employeeTimeOff->findEmployeeTimeOff($selectedEmployee);			
 		
 	} // end elseif (choiceInfo=="time off history")
 
