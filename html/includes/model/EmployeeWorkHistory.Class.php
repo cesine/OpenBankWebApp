@@ -1,6 +1,6 @@
 <?php
 
-require_once('includes/controller/Database.Class.php');
+//require_once('includes/controller/Database.Class.php');
 require_once('includes/model/EmployeeTitle.Class.php');
 
 class EmployeeWorkHistory{
@@ -277,7 +277,6 @@ class EmployeeWorkHistory{
 	
 	
 	
-}
-?>
+
 
 
