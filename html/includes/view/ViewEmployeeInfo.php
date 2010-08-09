@@ -112,7 +112,7 @@ if (isset($_POST["SelectedOptionsSubmit"]))
 	{
 		echo "<h4> Work history: </h4>\n";
 		$employeeWorkHistory = new EmployeeWorkHistory();
-		$employeeWorkHistory->employeeWorkHistory($selectedEmployee);
+		$employeeWorkHistory->EmployeeWorkHistory($selectedEmployee);
 
 		
 		
