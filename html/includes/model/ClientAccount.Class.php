@@ -16,9 +16,9 @@ class ClientAccount
 	private $accountTypeName;
 	private $accountName;
 	
-	private $serviceCategoryId;
-	private $serviceTypeId;
-	private $serviceId;
+	public $serviceCategoryId;
+	public $serviceTypeId;
+	public $serviceId;
 
 	
 	public function getClientAccountId() {
