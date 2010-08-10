@@ -118,8 +118,11 @@ class Client{
 		
 		//$queryToDo= "SELECT DISTINCT clientaccountid FROM clientaccount WHERE clientid=".$clientid;
 
-		$index1 = 0;
-		$index2 = 0;
+		$personalBanking = 0;
+		$personalBorrow = 0;
+		$personalInvest = 0;
+		$personalInsure = 0;
+		$businessBanking = 0;
 		
 		for($count=0;$count<$db->queryResultsCount;$count=$count+1)
 		{
@@ -128,19 +131,35 @@ class Client{
 			$account->initializeClientAccount($row);
 			$this->clientAccountsArray[$count]=$account;
 
-			if ( $account->serviceCategoryId == 1)
+			if ( ($account->serviceCategoryId == 1) && 
+					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3) )
 			{
-				echo "Personal";
-				echo $index1;
-				$this->clientPersonalBankingAccountsArray[$index1] = $account;
-				$index1 = $index1 + 1;
+				$this->clientPersonalBankingAccountsArray[$personalBanking] = $account;
+				$personalBanking = $personalBanking + 1;
 			}
-			elseif ( $account->serviceCategoryId == 2)
+			elseif ( ($account->serviceCategoryId == 1) && 
+					($account->serviceTypeId == 4 || $account->serviceTypeId == 5) )
 			{
-				echo "Business";
-				echo $index2;
-				$this->clientBusinessBankingAccountsArray[$index2] = $account;
-				$index2 = $index2 + 1;
+				$this->clientPersonalBorrowingAccountsArray[$personalBorrow] = $account;
+				$personalBorrow = $personalBorrow + 1;
+			}
+			elseif ( ($account->serviceCategoryId == 1) && 
+					($account->serviceTypeId == 6 || $account->serviceTypeId == 7) )
+			{
+				$this->clientPersonalInvestingAccountsArray[$personalInvest] = $account;
+				$personalInvest = $personalInvest + 1;
+			}
+			elseif ( ($account->serviceCategoryId == 1) && 
+					($account->serviceTypeId == 8) )
+			{
+				$this->clientPersonalInsuranceAccountsArray[$personalInsure] = $account;
+				$personalInsure = $personalInsure + 1;
+			}
+			elseif ( ($account->serviceCategoryId == 2) && 
+					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3) )
+			{
+				$this->clientBusinessBankingAccountsArray[$businessBanking] = $account;
+				$businessBanking = $businessBanking + 1;
 			}
 		}
 	}
