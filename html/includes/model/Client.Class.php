@@ -117,6 +117,9 @@ class Client{
 		$db->close();
 		
 		//$queryToDo= "SELECT DISTINCT clientaccountid FROM clientaccount WHERE clientid=".$clientid;
+
+		$index1 = 0;
+		$index2 = 0;
 		
 		for($count=0;$count<$db->queryResultsCount;$count=$count+1)
 		{
@@ -125,9 +128,6 @@ class Client{
 			$account->initializeClientAccount($row);
 			$this->clientAccountsArray[$count]=$account;
 
-			$index1 = 0;
-			$index2 = 0;
-			
 			if ( $account->serviceCategoryId == 1)
 			{
 				echo "Personal";
