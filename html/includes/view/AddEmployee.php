@@ -115,6 +115,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		
 		$employee->setTimeOffID($employeeTimeOffPlanID);	
 		
+		/*
 		$address->setPostalCodeString($_POST["choicePostalCode"]);
 		$employeePostalCode=$_POST["choicePostalCode"];	
 			
@@ -123,8 +124,9 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		
 		$address->setStreet($_POST["choiceStreet"]);
 		$employeeStreet=$_POST["choiceStreet"];
+		*/
 		
-		$employee->setAddressFromObject($address);
+		//$employee->setAddressFromObject($address);
 		
 	    // validate values 
 		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet==""||
@@ -165,13 +167,29 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			<!-- End create field to put salary -->	
 <?php 			
 
-			//find province, city from postal code
-			$employeeProvince=$address->getProvince();
-			$employeeCity=$address->getCity();	
+		$address->setPostalCodeString($_POST["choicePostalCode"]); 		// set postal code
+		$employeePostalCode=$_POST["choicePostalCode"];	
+			
+		$address->setStreetNumber($_POST["choiceStreetNumber"]); 		// set street number
+		$employeeStreetNumber=$_POST["choiceStreetNumber"];	
+		
+		$address->setStreet($_POST["choiceStreet"]); 					// set street name
+		$employeeStreet=$_POST["choiceStreet"];			
 
-			// find number of days off allowed from plan off id
-			$timeOffPlan->findNumberOfDays($employeeTimeOffPlanID);
-			$employeeNumberOfDays=$timeOffPlan->getNumberOfDays();
+		//find province, city from postal code
+		$address->findProvinceCity($employeePostalCode);
+		$employeeProvince=$address->getProvince();
+		$address->setProvince($employeeProvince); 						// set provance
+			
+		$employeeCity=$address->getCity();	
+		$address->setCity($employeeCity); 								// set sity
+			
+		$employee->setAddressFromObject($address);
+		
+
+		// find number of days off allowed from plan off id
+		$timeOffPlan->findNumberOfDays($employeeTimeOffPlanID);
+		$employeeNumberOfDays=$timeOffPlan->getNumberOfDays();
 
 ?>
 
@@ -205,38 +223,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			if ($selectedEmployee!=0)
 			{
 				// if it is not a duplicate, update table employeeworkhistory
-				
-				
-				// all variables are correct
-				echo "<h4> Employee with ID: $selectedEmployee is added. </h4>\n";				
-				echo "<h4> branch ID:   $employeeBranch</h4>\n";	
-				echo "<h4> title:  $employeeTitle</h4>\n";
-				echo "<h4> title id:  $employeeTitleID</h4>\n";				
-				echo "<h4> salary:   $employeeBaseSalary</h4>\n";
-				
-				/*
-				// put "start date" for new title
-				
-				$dbEmployeeTitleNew = new Database();
-				$dbEmployeeTitleNew->connect();
-					
-				// note: in query we use data, selected by user
-				$queryEmployeeTitleNew=
-					
-				"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
-												  titleid, salary)
-	                VALUES ($selectedEmployee, $employeeBranch, CURDATE(), '', $employeeTitleID, $employeeBaseSalary)";
-	
-				$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
-				$dbEmployeeTitleNew->close();
-				
-				// end put "start date" for new title	
-				 
-				 */		
-
-				// update employee work history, when new employee is added
-				$employee->saveHistoryToDatabase($selectedEmployee,$employeeBranch, $employeeTitleID,$employeeBaseSalary);
-				
+				$employee->saveHistoryToDatabase($selectedEmployee,$employeeBranch, $employeeTitleID,$employeeBaseSalary);				
 				
 			} // end if ($selectedEmployee!=0) // it is no duplicates
 			elseif($selectedEmployee==0)
