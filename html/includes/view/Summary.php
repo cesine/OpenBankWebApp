@@ -18,6 +18,12 @@ if (isset($_SESSION['Client']))
 ?>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<?php 
+	$count = count($clientBusinessBankingAccountsArray);
+	
+	if ( $count != 0 )
+	{
+?>
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -64,7 +70,9 @@ if (isset($_SESSION['Client']))
 	
 	</tr>
 	</td>
-
+<?php
+	} 
+?>
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -91,7 +99,6 @@ if (isset($_SESSION['Client']))
 	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
 	{
 ?>
-
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="30%"><a
@@ -126,7 +133,6 @@ if (isset($_SESSION['Client']))
 	foreach($client->$clientPersonalInvestingAccountsArray as $clientAccount)
 	{
 ?>
-
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="30%"><a
