@@ -196,31 +196,39 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 <?php 
 
 			//echo $employee->saveToDatabase();
-			echo $selectedEmployee = $employee->saveToDatabase();
-			echo "Employee with ID: $selectedEmployee is added";
-			
-		
-			/*
-			// put "start date" for new title
-			
-			$dbEmployeeTitleNew = new Database();
-			$dbEmployeeTitleNew->connect();
-				
-			// note: in query we use data, selected by user
-			$queryEmployeeTitleNew=
-				
-			"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
-											  titleid, salary)
-                VALUES ($selectedEmployee, $employeeBranch, CURDATE(), '', $employeeTitle, $employeeBaseSalary)";
+			echo $selectedEmployee = $employee->saveToDatabase();				
 
-			$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
-			$dbEmployeeTitleNew->close();
-			
-			// end put "start date" for new title
-			 
-			 */
-			 
-			
+			if ($selectedEmployee!=0)
+			{
+				// if it is not a duplicate, update table employeeworkhistory
+				echo "<h4> Employee with ID: $selectedEmployee is added. </h4>\n";
+				
+				// put "start date" for new title
+				
+				$dbEmployeeTitleNew = new Database();
+				$dbEmployeeTitleNew->connect();
+					
+				// note: in query we use data, selected by user
+				$queryEmployeeTitleNew=
+					
+				"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
+												  titleid, salary)
+	                VALUES ($selectedEmployee, $employeeBranch, CURDATE(), '', $employeeTitle, $employeeBaseSalary)";
+	
+				$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
+				$dbEmployeeTitleNew->close();
+				
+				// end put "start date" for new title				
+				
+				
+			} // end if ($selectedEmployee!=0) // it is no duplicates
+			elseif($selectedEmployee!=0)
+			{
+				// if it is a duplicate
+				echo "<h4> Duplicates are not allowed. Insertion is failed </h4>\n";
+				
+			} // end elseif($selectedEmployee!=0) // it is a duplicate
+		
 
 		} // end input is OK		
 	
