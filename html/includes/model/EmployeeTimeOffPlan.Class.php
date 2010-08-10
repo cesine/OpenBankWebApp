@@ -283,7 +283,7 @@ class EmployeeTimeOffPlan{
 		for($count=0;$count<$dbEmployeeTimeOffPlanID->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbEmployeeTimeOffPlanID->queryResultsResource);	
-			$this->initializeEmployeeTitleID($row);
+			$this->initializeEmployeeTimeOffPlanID($row);
 		}
 		
 		$dbEmployeeTimeOffPlanID->close();
