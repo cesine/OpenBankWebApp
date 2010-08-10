@@ -115,16 +115,25 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		
 		$employee->setTimeOffID($employeeTimeOffPlanID);	
 		
-		/*
-		$address->setPostalCodeString($_POST["choicePostalCode"]);
+		
+		$address->setPostalCodeString($_POST["choicePostalCode"]); 		// set postal code
 		$employeePostalCode=$_POST["choicePostalCode"];	
 			
-		$address->setStreetNumber($_POST["choiceStreetNumber"]);
+		$address->setStreetNumber($_POST["choiceStreetNumber"]); 		// set street number
 		$employeeStreetNumber=$_POST["choiceStreetNumber"];	
 		
-		$address->setStreet($_POST["choiceStreet"]);
+		$address->setStreet($_POST["choiceStreet"]); 					// set street name
 		$employeeStreet=$_POST["choiceStreet"];
-		*/
+		
+		//find province, city from postal code
+		$address->findProvinceCity($employeePostalCode);
+		$employeeProvince=$address->getProvince();
+		$address->setProvince($employeeProvince); 						// set provance
+			
+		$employeeCity=$address->getCity();	
+		$address->setCity($employeeCity); 								// set sity
+			
+		$employee->setAddressFromObject($address);
 		
 		//$employee->setAddressFromObject($address);
 		
@@ -167,15 +176,9 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			<!-- End create field to put salary -->	
 <?php 			
 
-		$address->setPostalCodeString($_POST["choicePostalCode"]); 		// set postal code
-		$employeePostalCode=$_POST["choicePostalCode"];	
-			
-		$address->setStreetNumber($_POST["choiceStreetNumber"]); 		// set street number
-		$employeeStreetNumber=$_POST["choiceStreetNumber"];	
-		
-		$address->setStreet($_POST["choiceStreet"]); 					// set street name
-		$employeeStreet=$_POST["choiceStreet"];			
 
+		/*
+		// postal code, street number and street are set before
 		//find province, city from postal code
 		$address->findProvinceCity($employeePostalCode);
 		$employeeProvince=$address->getProvince();
@@ -185,6 +188,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$address->setCity($employeeCity); 								// set sity
 			
 		$employee->setAddressFromObject($address);
+		*/
 		
 
 		// find number of days off allowed from plan off id
