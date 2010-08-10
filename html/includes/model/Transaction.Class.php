@@ -98,8 +98,8 @@ class Transaction{
 		$this->setDate("2010-01-01");
 		$this->setTransactionFeeCharged(5);
 		$this->setTransactionFeeType("monthly fee");
-		$this->setDepositAmount(1000);
-		$this->setWithdrawalAmount(0);
+		$this->setDepositAmount("NULL");
+		$this->setWithdrawalAmount("NULL");
 		$this->setBalance(1000);
 		$this->setTransactionDescription("my deposit");
 	}
@@ -110,7 +110,7 @@ class Transaction{
 				`withdrawalamount` , `balanceaftertransaction` , 
 				`transactiondescription` , `transperformedby`)
 				VALUES (NULL ,  '".$this->getBranchId()."',  '".$this->getAccountId()."',  '".$this->getDate()."',
-				  '".$this->getTransactionFeeCharged()."',  '".$this->getTransactionFeeType()."',  '".$this->getDepositAmount()."',
+				  '".$this->getTransactionFeeCharged()."',  '".$this->getTransactionFeeType()."',  ".$this->getDepositAmount().",
 				   ".$this->getWithdrawalAmount()." ,  '".$this->getBalance()."',  
 				   '".$this->getTransactionDescription()."',  '".$this->getTransactionPerformedBy()."')";
 		return $queryInsertTransaction;

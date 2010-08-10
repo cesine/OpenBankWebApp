@@ -34,7 +34,7 @@ if(isset($_SESSION)){
 	/*
 	 * get all transactions for this account and display most recent 5 transactions
 	 */
-	$numberOfTransactionsToDisplay=8;
+	$numberOfTransactionsToDisplay=15;
 	$sumWithdrawals=0;
 	$sumDeposits=0;
 	
@@ -46,6 +46,7 @@ if(isset($_SESSION)){
 	$dbGetSomeTransactions->query($queryOrderedByDate);
 	
 	$dbGetSomeTransactions->close();
+	$numberOfTransactionsToDisplay=$dbGetSomeTransactions->queryResultsCount;
 	
 	for($count=0; $count<$numberOfTransactionsToDisplay; $count++){
 		$transaction= new Transaction();
