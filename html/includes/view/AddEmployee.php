@@ -102,10 +102,12 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$employee->setTitleName($_POST["choiceTitle"]);
 		$employeeTitle=$_POST["choiceTitle"];
 		
-		// get id from title name
-		
-		$employee->setTimeOffID($_POST["choiceTimeOffPlan"]);
+		// get time off plan id from time off plan name
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
+		$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);
+		$employeeTimeOffPlanID=$timeOffPlan->getTimeOffID();
+		
+		$employee->setTimeOffID($employeeTimeOffPlanID);	
 		
 		$address->setPostalCodeString($_POST["choicePostalCode"]);
 		$employeePostalCode=$_POST["choicePostalCode"];	
