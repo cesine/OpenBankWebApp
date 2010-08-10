@@ -50,7 +50,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	$workHistory = new EmployeeWorkHistory();
 	$timeOffPlan = new EmployeeTimeOffPlan();	
 	$address = new Address();
-	$postalCode = new PostalCodes();
+	//$postalCode = new PostalCodes();
 	$employee=new Employee();
 	
 	// create dynamic list of branches and let user to select
@@ -91,13 +91,10 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	
 <?php
 
-
-
 	//if submit selection button is pressed:
 	if (isset($_POST['EmployeeInfoSubmit'])) 	
 	{
-		
-		
+				
 		$employee->setFirstName($_POST["choiceFirstName"]);
 		$employeeFirstName=$_POST["choiceFirstName"];
 		
@@ -158,9 +155,9 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			echo "<h4>Street number should contain only digits.</h4>";	
 		}		
 		else 																	// input is OK
-		{
+		{			
 			
-			
+			/*
 			//find base salary for selected title name
 			$dbSelectBaseSalary = new Database();
 			$dbSelectBaseSalary->connect();
@@ -182,10 +179,11 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			$employeeBaseSalary=$row[basesalary];	
 			//echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
 			$dbSelectBaseSalary->close();	
+			*/
 
-			//$title->EmployeeTitleBaseSalary();
-			//$employeeBaseSalary=$title->getBaseSalary();
-			//echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
+			$title->EmployeeTitleBaseSalary($employeeTitle);
+			$employeeBaseSalary=$title->getBaseSalary();
+			echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
 			
 			// show base salary for selected title, which can be corrected
 ?>
