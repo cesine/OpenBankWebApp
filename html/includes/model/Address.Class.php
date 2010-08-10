@@ -188,18 +188,20 @@ class Address{
 		<!-- End Build dynamic list of postal codes -->
 		<?php
 	} // end public function PostalCodesList()		
+	
+	
 	/* This function is needed in Add Employee class. 
-	 * User enter postal code and from it I find province, city, street*/
-	public function initializeProvinceCityStreet($row)
+	 * User enter postal code and from it I find province, city*/
+	public function initializeProvinceCity($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
 		$this->setProvince($row[province]);
 		$this->setCity($row[city]);
-		$this->setStreet($row[street]);
 	}	
 
 	/* This function is needed in Add Employee class. 
 	 * User enter postal code and from it I find province, city, street*/
+	/*
 	public function findProvinceCityStreet($employeePostalCode)
 	{
 			//find province, city from postal code
@@ -221,6 +223,31 @@ class Address{
 			}
 
 			$dbSelectProvinceCityStreet->close();	
+	} // end public function findProvinceCityStreet($employeePostalCode)	
+	*/
+
+	/* This function is needed in Add Employee class. 
+	 * User enter postal code and from it I find province, city, street*/
+	public function findProvinceCity($employeePostalCode)
+	{
+			//find province, city from postal code
+			$dbSelectProvinceCity = new Database();
+			$dbSelectProvinceCity->connect();
+							
+			$querySelectProvinceCityStreet="SELECT DISTINCT province, city 
+							   				FROM postalcodes
+							   				WHERE postalcodes='$employeePostalCode'";
+														
+			$dbSelectProvinceCity->query($querySelectProvinceCity);	
+			$result = $dbSelectProvinceCity->query($querySelectProvinceCity);						
+										   
+			for($count=0;$count<$dbSelectProvinceCity->queryResultsCount;$count=$count+1)
+			{
+				$row=mysql_fetch_array($dbSelectProvinceCity->queryResultsResource);
+				$this->initializeProvinceCity($row);
+			}
+
+			$dbSelectProvinceCity->close();	
 	} // end public function findProvinceCityStreet($employeePostalCode)		
 
 }
