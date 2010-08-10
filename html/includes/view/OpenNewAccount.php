@@ -42,7 +42,7 @@ $clientAccount = new ClientAccount();
 <option value="businessFC">Basic Business Foreign Currency Account</option>
         </select></td>
         <td>&nbsp;&nbsp;&nbsp;</td>
-    <td><select name="accountType" size="5" >
+    <td><select name="accountType" size="5" multiple ="single">
 <option value="lifeOne">Accidental Death Insurance - 1</option>
 <option value="lifeTwo">Accidental Death Insurance - 2</option>
 <option value="lifeThree">Accidental Death Insurance - 3</option>
@@ -185,7 +185,7 @@ $clientAccount->setclientId($clientID);
 
 //print the link statements after opening the new account
 //if ($newClientAccount->queryResultsResource)
-if ($clientAccount->saveToDatabase())
+if ($clientAccount->saveToDatabase() != 0)
 		{
 			echo  "<br/>", "Your account has been created!" , "<br/>";
 			echo 'Pl. follow the link to check ';
@@ -197,7 +197,7 @@ if ($clientAccount->saveToDatabase())
 		}
 		else
 		{
-			//echo 'Sorry, there was a problem inserting values! ';
+			echo "<br/";
 			?>
 			<a href="index.php?&content=OpenNewAccount">Please try again</a>
 			<?php
