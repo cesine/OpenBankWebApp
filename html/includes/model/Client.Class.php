@@ -125,7 +125,7 @@ class Client{
 			$account->initializeClientAccount($row);
 			$this->clientAccountsArray[$count]=$account;
 			
-			if ( $account->serviceCategoryId == 1)
+			if ( $account->serviceCategoryId === 1)
 			{
 				$index = count($clientPersonalBankingAccountsArray);
 				$this->clientPersonalBankingAccountsArray[$index] = $account;
