@@ -365,7 +365,8 @@ class Employee{
 		{
 			$row=mysql_fetch_array($dbEmployeeDeactevatedAll->queryResultsResource);	
 			$this->initializeEmployeeIDFirstLastName($row);
-			$this->displayEmployeePersonalInfo();
+			//$this->displayEmployeePersonalInfo();
+			$this->displayEmployeeInRowFormatted();
 		}		
 		$dbEmployeeDeactevatedAll->close();
 ?>
