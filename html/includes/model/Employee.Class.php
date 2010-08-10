@@ -261,7 +261,8 @@ class Employee{
 		$dbSelectEmployee->connect();
 			
 		$querySelectEmployee="SELECT DISTINCT employeeid
-									   FROM employee";
+							  FROM employee
+							  WHERE status=1";
 
 		$dbSelectEmployee->query($querySelectEmployee);
 		$result = $dbSelectEmployee->query($querySelectEmployee);
