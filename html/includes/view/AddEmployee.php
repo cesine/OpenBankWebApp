@@ -131,12 +131,24 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$address->setProvince($employeeProvince); 						// set provance
 			
 		$employeeCity=$address->getCity();	
-		echo "<h5> city: $employeeCity </h5>\n";
 		$address->setCity($employeeCity); 								// set sity
+		
+		
+		echo "<h5> first name: 		$employeeFirstName </h5>\n";
+		echo "<h5> last name: 		$employeeLastName </h5>\n";
+		echo "<h5> branch: 			$employeeBranch </h5>\n";
+		echo "<h5> title: 			$employeeTitle </h5>\n";
+		echo "<h5> title id: 		$employeeTitleID </h5>\n";
+		echo "<h5> time off name: 	$employeeTimeOffPlan </h5>\n";	
+		echo "<h5> time off ID: 	$employeeTimeOffPlanID </h5>\n";
+		echo "<h5> postal code: 	$employeePostalCode </h5>\n";
+		echo "<h5> street number: 	$employeeStreetNumber </h5>\n";
+		echo "<h5> province: 		$employeeProvince </h5>\n";
+		echo "<h5> city: 			$employeeCity </h5>\n";	
 			
 		$employee->setAddressFromObject($address);
 		
-		//$employee->setAddressFromObject($address);
+		
 		
 	    // validate values 
 		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet==""||
