@@ -53,8 +53,9 @@ class EmployeeTimeOffPlan{
 	
 	
 	public function setTimeOffID($timeOffIDIn) 
-	{
+	{	
 		$this->timeOffID=$timeOffIDIn;
+		echo "<h5> time off ID inside set: $this->timeOffID </h5>\n";			
 	}
 	
 	public function setTimeOffName($timeOffNameIn) 
