@@ -288,7 +288,20 @@ if($content=="Banking"){?>
 </table>
 </td>
 <br>
-<br>";
+<br>"
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype`
+	WHERE `servicecategory`.`servicecategoryname` = "Personal"
+	AND `servicetype`.`servicetypename` = "RSP"
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	ORDER BY `accounttype`.`accountname` ASC";
+	$db->query($queryToDo);
+	$db->close();
+	print_r($db->queryFirstResult);
+	echo $db->queryFirstResult[accountname];
 }
 elseif($content=="TFSA"){
 	echo "paste some text here 02";
