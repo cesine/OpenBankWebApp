@@ -364,6 +364,7 @@ class Employee{
 		for($count=0;$count<$dbEmployeeDeactevatedAll->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbEmployeeDeactevatedAll->queryResultsResource);	
+			$this->initializeEmployeeIDFirstLastName($row);
 			$this->displayEmployeePersonalInfo();
 		}		
 		$dbEmployeeDeactevatedAll->close();
