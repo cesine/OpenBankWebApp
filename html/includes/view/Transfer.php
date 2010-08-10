@@ -29,7 +29,7 @@ if(isset($_SESSION)){
 			$transactionFromAccount->setBalance($fromAccount->getCurrentBalance() - $_POST[amount]);
 			$transactionFromAccount->setDate(date('Y-m-d'));
 			$transactionFromAccount->setWithdrawalAmount($_POST[amount]);
-			$transactionFromAccount->setDepositAmount("");
+			$transactionFromAccount->setDepositAmount("NULL");
 			$transactionFromAccount->setClientID($client->getClientId());
 			$transactionFromAccount->setTransactionDescription("Online Fund Transfer");
 			$transactionFromAccount->setTransactionFeeCharged(0);
@@ -56,7 +56,7 @@ if(isset($_SESSION)){
 			$transactionToAccount->setAccountId($_POST[toaccount]);
 			$transactionToAccount->setBalance($toAccount->getCurrentBalance() + $_POST[amount]);
 			$transactionToAccount->setDate(date('Y-m-d'));
-			$transactionToAccount->setWithdrawalAmount("");
+			$transactionToAccount->setWithdrawalAmount("NULL");
 			$transactionToAccount->setDepositAmount($_POST[amount]);
 			$transactionToAccount->setClientID($client->getClientId());
 			$transactionToAccount->setTransactionDescription("Online Fund Transfer");
@@ -87,13 +87,18 @@ if(isset($_SESSION)){
 			$dbTransferMoney->connect();
 			$transferResultArray=$dbTransferMoney->transactionSafeInsertUpdate($transferQueryArray);
 			$dbTransferMoney->close();
-			echo "All 4 transactions have been run, here are the results: ";
-			print_r($transferResultArray);
-			
-			
-			echo "<p>Money Transfered.</p>";
+			//echo "All 4 transactions have been run, here are the results: ";
+			//print_r($transferResultArray);
+					
+			echo "<p>Your money has been transfered.</p>";
 			$_SESSION['DisplayAccount']=$_POST[fromaccount];
 			include 'includes/view/RecentActivity.php';
+			$_SESSION['DisplayAccount']=$_POST[toaccount];
+			include 'includes/view/RecentActivity.php';
+			/*
+			 * Dont allow multiple pushes of the reload or back button to create multiple transfers
+			 */
+			unset($_POST);
 		}
 	}else{	
 		echo "<form action='' method='post'>
