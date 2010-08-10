@@ -246,6 +246,8 @@ class Address{
 				$row=mysql_fetch_array($dbSelectProvinceCity->queryResultsResource);
 				$this->initializeProvinceCity($row);
 			}
+			
+			echo "<h5> city inside find: $row[city] </h5>\n";
 
 			$dbSelectProvinceCity->close();	
 	} // end public function findProvinceCityStreet($employeePostalCode)		
