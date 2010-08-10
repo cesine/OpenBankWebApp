@@ -284,6 +284,7 @@ class EmployeeTimeOffPlan{
 		{
 			$row=mysql_fetch_array($dbEmployeeTimeOffPlanID->queryResultsResource);	
 			$this->initializeEmployeeTimeOffPlanID($row);
+			echo "time off id inside $row[timeoffid]";
 		}
 		
 		$dbEmployeeTimeOffPlanID->close();
