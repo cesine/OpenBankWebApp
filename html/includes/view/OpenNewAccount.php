@@ -178,7 +178,7 @@ $curDate = date("Y-m-d");
 $clientAccount->setOpeningDate($curDate);
 $clientAccount->setBranchId($userBranch);
 $clientAccount->setclientId($clientId);
-
+echo "<br/";
 //inserting in the table
 echo $clientAccount->saveToDatabase();
 
