@@ -65,7 +65,7 @@ class PostalCodes{
 		//$this->setStreet($row[street]);		
 	}
 
-	public function initializeProvinceCityStreet($row)
+	public function initializeProvinceCity($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
 		$this->setProvince($row[province]);
@@ -92,7 +92,7 @@ class PostalCodes{
 			$dbSelectProvinceCity = new Database();
 			$dbSelectProvinceCity->connect();
 							
-			$querySelectProvinceCityStreet="SELECT DISTINCT province, city 
+			$querySelectProvinceCity="SELECT DISTINCT province, city 
 							   				FROM postalcodes
 							   				WHERE postalcodes='$employeePostalCode'";
 														
@@ -102,10 +102,12 @@ class PostalCodes{
 			for($count=0;$count<$dbSelectProvinceCity->queryResultsCount;$count=$count+1)
 			{
 				$row=mysql_fetch_array($dbSelectProvinceCity->queryResultsResource);
-				$this->initializeProvinceCityStreet($row);
+				$this->initializeProvinceCity($row);
 			}
 			
+			$employeeProvince=$row[province];
 			$employeeCity=$row[city];
+			echo "<h5> province inside find: $employeeProvince </h5>\n";			
 			echo "<h5> city inside find: $employeeCity </h5>\n";
 
 			$dbSelectProvinceCity->close();	
