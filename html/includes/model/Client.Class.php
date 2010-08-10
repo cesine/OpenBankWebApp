@@ -12,6 +12,9 @@ class Client{
 	private $address;
 	private $addressId;
 	public $clientAccountsArray;	
+
+	public $clientBusinessAccountsArray;
+	public $clientPersonalAccountsArray;
 	
 	//getters
 	public function getTableName() {
@@ -103,13 +106,22 @@ class Client{
 	public function setClientAccountsArray($clientid) {
 		$db = new Database();
 		$db->connect();
-		$queryToDo= "SELECT DISTINCT clientaccountid FROM clientaccount WHERE clientid=".$clientid;
+		
+		$queryToDo="SELECT DISTINCT * FROM clientaccount 
+				WHERE clientaccountid=".$accountid;
 		$db->query($queryToDo);
 		$db->close();
 		
-		for($count=0;$count<$db->queryResultsCount;$count=$count+1){
+		//$queryToDo= "SELECT DISTINCT clientaccountid FROM clientaccount WHERE clientid=".$clientid;
+		
+		for($count=0;$count<$db->queryResultsCount;$count=$count+1)
+		{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			$this->clientAccountsArray[$count]=$row[clientaccountid];
+			$account = new ClientAccount();
+			$account->initializeClientAccount($row);
+			$this->clientAccountsArray[$count]=$account;
+			
+			//$this->clientAccountsArray[$count]=$row[clientaccountid];
 		}
 	}
 	

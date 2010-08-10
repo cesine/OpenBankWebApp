@@ -18,16 +18,19 @@ if (isset($_SESSION['Client']))
 	$clientId = $client->getClientID();
 
 	$client->setClientAccountsArray($clientId);
-	
+
 	echo '<table border=1>';
-	foreach($client->clientAccountsArray as $accountid){
-			//echo "Here is the row: ";
-			//print_r($row);
-		
-			$account = new ClientAccount();
-			$account->initializeAccountFromID($accountid);	
-			$account->displayAccountInRow();
+	foreach($client->clientAccountsArray as $clientAccount)
+	{
+			$clientAccount->displayAccountInRow();
 	}//endl if to only print when there are any results
+	
+//	foreach($client->clientAccountsArray as $accountid)
+//	{
+//			$account = new ClientAccount();
+//			$account->initializeAccountFromID($accountid);	
+//			$account->displayAccountInRow();
+//	}//endl if to only print when there are any results
 	echo '</table>';
 	
 	
