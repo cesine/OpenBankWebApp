@@ -11,9 +11,61 @@ if(isset($_SESSION)){
 
 	
 	if($_POST['action']=="transfer"){
-		echo "<p>Money Transfered.</p>";
-		$_SESSION['DisplayAccount']=$_POST[fromaccount];
-		include 'includes/view/RecentActivity.php';
+		
+		/*
+		 * build and insert 1 transaction for from account
+		 * build and insert 1 transaction for to account
+		 * update balance for from account
+		 * update balance for to account
+		 * http://www.learn-mysql-tutorial.com/Transactions.cfm
+		 */
+		$fromAccount = new ClientAccount();
+		$fromAccount->initializeAccountFromID($_POST[fromaccount]);
+		if ($_POST[amount]> $fromAccount->getAvailableBalance()){
+			echo "Sorry, Insufficient Balance for this transfer.";
+		}else{
+			$transactionFromAccount= new Transaction();
+			$transactionFromAccount->setAccountId($_POST[fromaccount]);
+			$transactionFromAccount->setBalance($fromAccount->getAvailableBalance() - $_POST[amount]);
+			$transactionFromAccount->setDate('Y-m-d');
+			$transactionFromAccount->setWithdrawalAmount($_POST[amount]);
+			$transactionFromAccount->setClientID($client->getClientId());
+			$transactionFromAccount->setTransactionDescription("Online Fund Transfer");
+			$transactionFromAccount->setTransactionFeeCharged(0);
+			$transactionFromAccount->setBranchId($client->getBranchID());
+			$transactionFromAccount->setTransactionFeeType("free transaction");
+			if(isset($_SESSION['Employee'])){
+				$employee=unserialize($_SESSION['Employee']);
+				$person=$employee->getEmployeeID();
+			}else{
+				$person=$client->getClientID();
+			}
+			$transactionFromAccount->setTransactionPerformedBy($person);
+			
+			$queryInsertToTransaction="INSERT INTO  transaction (
+				`transactionid` ,`branchid` ,`accountid` , `date` ,
+				`transactionfeecharged` ,	`transactionfeetype` ,	`depositamount` ,
+				`withdrawalamount` , `balanceaftertransaction` , 
+				`transactiondescription` , `transperformedby`)
+				VALUES (NULL ,  '".$transactionFromAccount->getBranchId()."',  '".$transactionFromAccount->getAccountId()."',  '".$transactionFromAccount->getDate()."',
+				  '".$transactionFromAccount->getTransactionFeeCharged()."',  '".$transactionFromAccount->getTransactionFeeType()."',  '".$transactionFromAccount->getDepositAmount()."',
+				   ".$transactionFromAccount->getWithdrawalAmount()." ,  '".$transactionFromAccount->getBalance()."',  
+				   '".$transactionFromAccount->getTransactionDescription()."',  '".$transactionFromAccount->getTransactionPerformedBy()."')";
+			echo $queryInsertToTransaction;
+			
+			
+			$toAccount= new ClientAccount();
+			$toAccount->initializeAccountFromID($_POST[toaccount]);
+			
+			$transactionToAccount= new Transaction();
+			$transactionToAccount->setAccountId($_POST[toaccount]);
+			$transactionToAccount->setBalance(3);
+			
+			
+			echo "<p>Money Transfered.</p>";
+			$_SESSION['DisplayAccount']=$_POST[fromaccount];
+			include 'includes/view/RecentActivity.php';
+		}
 	}else{	
 		echo "<form action='' method='post'>
 		<table cellpadding='0' cellspacing='2' width='100%' border=0>
@@ -30,7 +82,7 @@ if(isset($_SESSION)){
 			</tr>
 			<tr>
 				<td >
-				<input value='' autocomplete='OFF' maxlength='8' size='8'
+				<input value='' autocomplete='OFF' maxlength='12' size='12'
 					name='amount' type='text'>
 				</td>
 			</tr>

@@ -52,8 +52,22 @@ class Database {
 			$this->queryResultsCount="0";
 		}
 	}
-	
-	
+	/*
+	 * Atomic: The statements in a transaction are treated as a single unit. 
+	 * Either all the designated operations are performed, or none are performed. 
+	 * Only when all operations are performed successfully are the results of 
+	 * that transaction applied to the database.
+	 */
+	public function transactionSafeInsertUpdate($queryArray){
+		mysql("START TRANSACTION");
+		//foreach array do an insert or update
+		$c=0;
+		foreach($queryArray as $query){
+			$querySuccessResultsArray[$c]=$this->insert($query);
+		}
+		mysql("COMMIT");
+		return $querySuccessResultsArray;
+	}
 	/* returns the id number of the inserted row, 
 	 * if the row was an autoincrement.
 	 * 
