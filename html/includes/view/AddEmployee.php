@@ -176,21 +176,6 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			<!-- End create field to put salary -->	
 <?php 			
 
-
-		/*
-		// postal code, street number and street are set before
-		//find province, city from postal code
-		$address->findProvinceCity($employeePostalCode);
-		$employeeProvince=$address->getProvince();
-		$address->setProvince($employeeProvince); 						// set provance
-			
-		$employeeCity=$address->getCity();	
-		$address->setCity($employeeCity); 								// set sity
-			
-		$employee->setAddressFromObject($address);
-		*/
-		
-
 		// find number of days off allowed from plan off id
 		$timeOffPlan->findNumberOfDays($employeeTimeOffPlanID);
 		$employeeNumberOfDays=$timeOffPlan->getNumberOfDays();
