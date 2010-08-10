@@ -264,95 +264,21 @@ if($content=="Banking"){?>
 <?php 
 }elseif($content=="RSP"){
 	echo "<table><tbody>
-							<tr valign='top'>
-								<td rowspan='2'><br></td>
-								<td class='headline2'>RSP Solutions Centre<br><br></td>
-							</tr>
-							<tr valign='top'>
-								<td>
-								 A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
-<!-- 
-Note that you must contribute to your RSP by <strong>February 29th, 2008</strong> in order to receive a deduction on your 2007 tax return. Consult important bank <a href=''>RSP contribution cut-off date information here</a>. 
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	</tr>
 
- -->
-
-<br><br>
+	<tr valign='top'>
+	<td>
+	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	<br><br>
 						  
 								
-								 
-									
+  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Money Master  for RSPs account</a><br>
 
 
 
-
-			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>RSP Quick Facts</a><br>
-			Information on who can invest, how much&nbsp;and&nbsp;how often,&nbsp;plus much more.  <br>
-			<br>
-
-
-
-
-			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Money Master  for RSPs account</a><br>
-
-			A competitive savings option for your RSP and RRIF.  <br>
-			<br>
-
-
-
-
-			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Pre-Authorized Contributions</a><br>
-			The <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href=''><em>Pay Yourself First</em>� plan</a> lets you make contributions regularly and automatically to your RSP.
- <br>
-
-			<br>
-
-
-
-
-			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'> RSP Catch Up Line of Credit or Loan</a><br>
-			Maximize the growth potential of your RSP by boosting or catching up on your contributions. Use our <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' target='_blank'><font color='#cc0000'>Catch-Up Loan Calculator</font></a> to explore the benefits of borrowing and calculate repayment terms. <br>
-<br>
-<a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' class='boldnav' href=''> RRSP Reality Check�</a><br>
-
-Find out how well your current savings and future contributions will provide for your retirement and learn how to address potential shortfalls.
- <br>
-			<br>
-
-
-
-
-			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Self-Directed RSPs</a><br>
-			Maximum diversification can be achieved through self-directed RSPs, which allow you to invest in the widest range of investments possible.
- <br>
-			<br>
-
-
-
-			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Spousal RSPs</a><br>
-			Understand the basics of how spousal RSPs can be an effective tool in planning for retirement.
- <br>
-			<br>
-
-
-
-
-			  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Declaration of Trust Documentation</a><br>
-
-			We encourage you to obtain the updated documentation that applies to your plan. <br>
-<br>
-<table align='center' background='/static/callrectbg.gif' border='0' cellpadding='0' cellspacing='0'>
-<tbody>
-<tr>
-<td colspan='3'><img src='/static/callrecttop.gif' width='320' height='10'></td>
-</tr>
-
-<tr>
-<td class='greyLine' width='1'><img src='/static/spacer.gif' width='1'></td>
-<td width='318'>
-<table width='93%' align='center' border='0' cellpadding='0' cellspacing='0'>
-<tbody>
-<tr valign='top'>
-<td colspan='2' align='right' height='22'>
 
 <div align='left'><span class='headline3'>You can contribute to your RSPs:</span></div>
 </td>
