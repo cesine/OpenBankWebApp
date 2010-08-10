@@ -1,4 +1,5 @@
 <?php 
+require_once 'includes/model/ClientAccount.Class.php';
 class Client{
 	private $clientID;
 	private $firstName;
@@ -209,13 +210,26 @@ class Client{
 				
 	}
 	public function displaySelectClientAccount(){
+		$selectAccount='$selectAccount';
+		$this->displaySelectAccountWithChooseSelect($selectAccount);
+	}
+	public function displaySelectAccountWithChooseSelect($selectvariablename){
+		setlocale(LC_MONETARY, 'en_US');
 		$this->setClientAccountsArray($this->clientID);
-		echo "<select name='$selectAccount'>";
+		echo "<select name='";
+		echo $selectvariablename;
+		echo "'>";
 		foreach ($this->clientAccountsArray as $accountNumber){
-			echo "<option value='$accountNumber'>$accountNumber</option>";
+			$account= new ClientAccount();
+			$account->initializeAccountFromID($accountNumber);
+			//Dont display account if it matches insurance
+			if ( !(preg_match('/.*Insurance.*/',$account->getAccountTypeName())) ){
+				echo "<option value='$accountNumber'>".$account->getAccountTypeName()." ".$account->getClientAccountId();
+				echo money_format('%(#5n', $account->getCurrentBalance());
+				echo "</option>";
+			}
 		}
 		echo"</select>";
 	}
 }
-
 ?>

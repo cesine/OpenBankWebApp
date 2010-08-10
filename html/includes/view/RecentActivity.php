@@ -9,7 +9,7 @@ if(isset($_SESSION)){
 	$client = unserialize($_SESSION['Client']);
 	//$client->displaySelectClientAccount();
 
-	$selectedAccountId=$client->clientAccountsArray[0];
+	$selectedAccountId=$_SESSION['DisplayAccount'];//$client->clientAccountsArray[0];
 	
 	
 	/*
@@ -41,7 +41,7 @@ if(isset($_SESSION)){
 	$dbGetSomeTransactions= new Database();
 	$dbGetSomeTransactions->connect();
 	$queryOrderedByDate="SELECT * FROM `transaction` 
-	WHERE `accountid`=10000002	ORDER BY date ";//DESC if i want most recent on top
+	WHERE `accountid`=".$selectedAccountId." ORDER BY date ";//DESC if i want most recent on top
 	//echo $queryOrderedByDate;
 	$dbGetSomeTransactions->query($queryOrderedByDate);
 	

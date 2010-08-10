@@ -218,6 +218,7 @@ class ClientAccount{
 		$this->setStatus($row[status]);
 		$this->setOpeningDate($row[openingdate]);
 		$this->setClosingDate($row[closingdate]);
+		$this->setAccountTypeName($row[accounttypeid]);
 	}
 
 }
