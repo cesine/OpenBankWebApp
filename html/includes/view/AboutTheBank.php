@@ -288,7 +288,7 @@ if($content=="Banking"){?>
 </table>
 </td>
 <br>
-<br>"
+<br>
 	$db = new Database();
 	$db->connect();
 	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`
