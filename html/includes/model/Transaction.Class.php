@@ -1,16 +1,17 @@
-<?php 
+<?php
 class Transaction{
 	private $transactionID;
 	private $clientID;
-	private $accounteID;
+	private $accountId;
 	private $date;
 	private $transactionFeeCharged;
 	private $transactionFeeType;
 	private $depositAmount;
 	private $withdrawalAmount;
 	private $balance;
-	private $transactionDescription;	
-	
+	private $transactionDescription;
+	private $transactionPerformedBy;
+
 
 	public function getTransactionID() {
 		return $this->transactionID;
@@ -18,8 +19,8 @@ class Transaction{
 	public function getClientID(){
 		return $this->clientID;
 	}
-	public function getAccounteID(){
-		return $this->accounteID;
+	public function getAccountId(){
+		return $this->accountId;
 	}
 	public function getDate(){
 		return $this->date;
@@ -41,17 +42,17 @@ class Transaction{
 	}
 	public function getTransactionDescription(){
 		return $this->transactionDescription;
-	}	
-	
-		
+	}
+
+
 	public function setTransactionID($transactionID) {
 		$this->transactionID=$transactionID;
 	}
 	public function setClientID($clientID){
 		$this->clientID=$clientID;
 	}
-	public function setAccounteID($accounteID){
-		$this->accounteID=$accounteID;
+	public function setAccountId($accountId){
+		$this->accountId=$accountId;
 	}
 	public function setDate($date){
 		$this->date=$date;
@@ -74,27 +75,27 @@ class Transaction{
 	public function setTransactionDescription($transactionDescription){
 		$this->transactionDescription=$transactionDescription;
 	}
-	
+
 	function test()
 	{
 		echo 'Testing the transactions functionalities.';
 		$this->setTransactionID(0001);
 		$this->setClientID(0002);
-		$this->setAccounteID(0003);
+		$this->setAccountId(0003);
 		$this->setDate("2010-01-01");
 		$this->setTransactionFeeCharged(5);
 		$this->setTransactionFeeType("monthly fee");
 		$this->setDepositAmount(1000);
-		$this->setWithdrawalAmount(0);	
+		$this->setWithdrawalAmount(0);
 		$this->setBalance(1000);
-		$this->setTransactionDescription("my deposit");	
+		$this->setTransactionDescription("my deposit");
 	}
 	function displayTransaction()
 	{
 		echo '<p class="Transaction ID">'.
 		$this->transactionID.
 		'<br/>'.$this->clientID.		
-		'<br/>'.$this->accounteID.
+		'<br/>'.$this->accountId.
 		'<br/>'.$this->date.		
 		'<br/>'.$this->transactionFeeCharged.		
 		'<br/>'.$this->depositAmount.		
@@ -105,39 +106,36 @@ class Transaction{
 	}
 	function __construct()
 	{
-			//echo 'Creating transaction. Change somethings';
-			$this->transactionID =0001;
-			$this->clientID =0002;
-			$this->accounteID =0003;			
-			$this->date ="2010-01-01";			
-			$this->transactionFeeCharged =5;			
-			$this->depositAmount =1000;			
-			$this->withdrawalAmount =0;			
-			$this->balance =1000;
-			$this->transactionDescription ="my deposit";
+		//echo 'Creating transaction. Change somethings';
+		$this->transactionID =0001;
+		$this->clientID =0002;
+		$this->accountId =0003;
+		$this->date ="2010-01-01";
+		$this->transactionFeeCharged =5;
+		$this->depositAmount =1000;
+		$this->withdrawalAmount =0;
+		$this->balance =1000;
+		$this->transactionDescription ="my deposit";
 			
-		}	
-
-	function displayTransactionInRow()
-	{
-		echo '<tr><td>'.$this->date
-		.'</td><td>'.$this->transactionDescription	
-		.'</td><td align="right">'.$this->withdrawalAmount				
-		.'</td><td align="right">'.$this->depositAmount		
-		.'</td><td align="right">'.$this->balance		
-		.'</td></tr>'; 	
 	}
-	
+
+	function displayTransactionInRow($count)
+	{
+		echo "<TR VALIGN='top' class='bgcoloroption".($count%2+1)."'>
+				<TD class='tableDataLeftC' nowrap>".$this->getDate()."</TD>
+				<TD class='tableDataLeftC'>".$this->getTransactionDescription()."<br></TD>		
+				<TD class='tableDataRightC' align=right>".$this->getWithdrawalAmount()."</TD>
+				<TD class='tableDataCenterC' align=right>".$this->getDepositAmount()."</TD>
+				<TD class='tableDataCenterC'>".$this->getBalance()."</TD>	
+			</TR>";	
+	}
+
+	/*
+	 * depreciated, use displayTransactionInRow instead
+	 */
 	function displayTransactionInRowFormatted()
 	{
-		
-	echo '<TR class="bgcoloroption1">
-	<TD class="tableDataLeftC">'.$this->date.'</TD>
-	<TD class="tableDataLeftC">'.$this->transactionDescription.'</TD>
-	<TD class="tableDataRightC">'.$this->depositAmount.'</TD>
-	<TD class="tableDataRightC">'.$this->withdrawalAmount.'</TD>
-	<td class="tableDataRightC" align="right">'.$this->balance.'</td>		
-	</TR>';		
+		$this->displayTransactionInRow();
 	}
 
 	public function initializeTransaction($row)
@@ -147,7 +145,7 @@ class Transaction{
 		$this->setTransactionDescription($row[transactiondescription]);
 		$this->setDepositAmount($row[depositamount]);
 		$this->setWithdrawalAmount($row[withdrawalamount]);
-		$this->setBalance($row[balance]);
+		$this->setBalance($row[balanceaftertransaction]);
 	}
 
 
