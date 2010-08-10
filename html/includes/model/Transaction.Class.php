@@ -9,6 +9,7 @@ class Transaction{
 	private $depositAmount;
 	private $withdrawalAmount;
 	private $balance;
+	private $branchId;
 	private $transactionDescription;
 	private $transactionPerformedBy;
 
@@ -40,8 +41,14 @@ class Transaction{
 	public function getBalance(){
 		return $this->balance;
 	}
+	public function getBranchId(){
+		return $this->branchId;
+	}
 	public function getTransactionDescription(){
 		return $this->transactionDescription;
+	}
+	public function getTransactionPerformedBy(){
+		return $this->transactionPerformedBy;
 	}
 
 
@@ -71,6 +78,12 @@ class Transaction{
 	}
 	public function setBalance($balance){
 		$this->balance=$balance;
+	}
+	public function setBranchId($branchid){
+		$this->branchId=$branchid;
+	}
+	public function setTransactionPerformedBy($transperformedby){
+		$this->transactionPerformedBy=$transperformedby;
 	}
 	public function setTransactionDescription($transactionDescription){
 		$this->transactionDescription=$transactionDescription;
@@ -116,6 +129,7 @@ class Transaction{
 		$this->withdrawalAmount =0;
 		$this->balance =1000;
 		$this->transactionDescription ="my deposit";
+		$this->transactionPerformedBy=$this->clientID;
 			
 	}
 
