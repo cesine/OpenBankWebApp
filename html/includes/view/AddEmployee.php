@@ -7,14 +7,8 @@ require_once('includes/model/EmployeeWorkHistory.Class.php');
 require_once('includes/model/EmployeeTimeOffPlan.Class.php');
 require_once('includes/model/Address.Class.php');
 require_once('includes/model/PostalCodes.Class.php');
-
-echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'>";
-
-?>
-
-<p></p>
-
-<?php 
+echo "<form action='?&content=AddEmployee' method='POST'>";
+//echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'>";
 
 	echo "<h4> Add employee. </h4>\n";
 ?>
@@ -109,8 +103,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		
 		// get time off plan id from time off plan name
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];			
-		//$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);      // doesn't work, return empty id
-		$timeOffPlan->findTimeOffPlanID2($employeeTimeOffPlan);		
+		$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);      // doesn't work, return empty id
+		//$timeOffPlan->findTimeOffPlanID2($employeeTimeOffPlan);		
 		$employeeTimeOffPlanID=$timeOffPlan->getTimeOffID();		
 		//echo "<h5> time off name: $employeeTimeOffPlan </h5>\n";	
 		//echo "<h5> time off ID: $employeeTimeOffPlanID </h5>\n";	
