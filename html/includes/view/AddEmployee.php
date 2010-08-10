@@ -132,7 +132,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$employeeCity=$postalCode->getCity();	
 		$postalCode->setCity($employeeCity); 								// set city
 		
-		$address->initializeAddress($streetNumber, $street, $postalCode);
+		$address->initializeAddress2($streetNumber, $street, $postalCode);
 		
 		
 		echo "<h5> first name: 		$employeeFirstName </h5>\n";
