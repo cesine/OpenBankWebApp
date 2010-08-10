@@ -7,14 +7,14 @@ if (isset($_SESSION['Client']))
 	$client = unserialize($_SESSION['Client']);
 	$clientId = $client->getClientID();
 
-
+	$client->setClientAccountsArray($clientId);
+	
 	echo '<table border=1>';
 	foreach($client->clientAccountsArray as $accountid){
 			//echo "Here is the row: ";
 			//print_r($row);
 		
 			$account = new ClientAccount();
-			$account->setClientAccountsArray($clientId);
 			$account->initializeAccountFromID($accountid);	
 			$account->displayAccountInRow();
 	}//endl if to only print when there are any results
