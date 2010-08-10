@@ -13,8 +13,12 @@ class Client{
 	private $addressId;
 	public $clientAccountsArray;	
 
-	public $clientBusinessAccountsArray;
-	public $clientPersonalAccountsArray;
+	public $clientBusinessBankingAccountsArray;
+	
+	public $clientPersonalBankingAccountsArray;
+	public $clientPersonalInvestingAccountsArray;	
+	public $clientPersonalBorrowingAccountsArray;	
+	public $clientPersonalInsuranceAccountsArray;	
 	
 	//getters
 	public function getTableName() {
@@ -121,7 +125,14 @@ class Client{
 			$account->initializeClientAccount($row);
 			$this->clientAccountsArray[$count]=$account;
 			
-			//$this->clientAccountsArray[$count]=$row[clientaccountid];
+			if ( $account->serviceCategoryId == 1)
+			{
+				$this->clientPersonalBankingAccountsArray[count($clientPersonalBankingAccountsArray)] = $account;
+			}
+			else
+			{
+				$this->clientBusinessBankingAccountsArray[count($clientBusinessBankingAccountsArray)] = $account;
+			}
 		}
 	}
 	
