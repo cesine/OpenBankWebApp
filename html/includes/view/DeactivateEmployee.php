@@ -17,6 +17,11 @@ $employee->EmployeeList();
 <input type="submit" name="DeactivateEmployee" value="deactivate employee" />
 <P></P>
 
+<!-- show bottom "Deactivated employee Info" -->
+<P></P>
+<input type="submit" name="DeactivateEmployeeInfo" value="Deactivated employee info" />
+<P></P>
+
 <?php
 
 $selectedEmployee=$_POST["choiceEmployee"];
@@ -32,21 +37,14 @@ if (isset($_POST["DeactivateEmployee"]))
 	<P></P>
 <?php 
 	echo "<h4> Employee with ID $selectedEmployee is deactivated!. </h4>\n";
-?>
-
-	<!-- show bottom "Deactivated employee Info" -->
-	<P></P>
-	<input type="submit" name="DeactivateEmployeeInfo" value="Deactivated employee info" />
-	<P></P>
-
-<?php 
-
-	if (isset($_POST["DeactivateEmployeeInfo"])) 						
-	{
-		echo "<h4> Deactivated employee info. </h4>\n";
-	}
 	
-} // end if (isset($_POST["SelectEmployee"])) 	
+} // end if (isset($_POST["SelectEmployee"])) 
+
+	
+if (isset($_POST["DeactivateEmployeeInfo"])) 						
+{
+	echo "<h4> Deactivated employee info. </h4>\n";
+} // end if (isset($_POST["DeactivateEmployeeInfo"])) 	
 
 
 ?>
