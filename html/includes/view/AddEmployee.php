@@ -114,7 +114,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$address->setStreet("My street");
 
 		
-		$employee->setAddressFromObject($adress);
+		$employee->setAddressFromObject($address);
 		/*
 		echo "<h4> Selected: </h4>\n";
 		echo "<h5> first name: 		$employeeFirstName </h5>\n";
