@@ -156,38 +156,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		}		
 		else 																	// input is OK
 		{			
-			
-			/*
+					
 			//find base salary for selected title name
-			$dbSelectBaseSalary = new Database();
-			$dbSelectBaseSalary->connect();
-							
-			$querySelectBaseSalary="SELECT basesalary 
-							   		FROM employeetitle
-							   		WHERE titlename='$employeeTitle'";
-														
-			$dbSelectBaseSalary->query($querySelectBaseSalary);	
-			$result = $dbSelectBaseSalary->query($querySelectBaseSalary);						
-										   
-			for($count=0;$count<$dbSelectBaseSalary->queryResultsCount;$count=$count+1)
-			{
-				$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
-				$title->initializeEmployeeTitle($row);
-			}
-			
-			// save current values
-			$employeeBaseSalary=$row[basesalary];	
-			//echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
-			$dbSelectBaseSalary->close();	
-			*/
-
 			$title->EmployeeTitleBaseSalary($employeeTitle);
-			$employeeBaseSalary=$title->getBaseSalary();
-			echo "<h5> base salary:  	$employeeBaseSalary </h5>\n";				
+			$employeeBaseSalary=$title->getBaseSalary();		
 			
 			// show base salary for selected title, which can be corrected
 ?>
-			<!-- Create field to put salary, by defalt base salary -->
+			<!-- Create field to put salary, by default base salary -->
 			<table border="1"> 
 				<tr><td width="180">Salary (base by default):</td><td width="180">
 					<?php 
@@ -199,14 +175,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 				</td></tr>
 			</table>
 			<!-- End create field to put salary -->	
-<?php 
-			
+<?php 			
 
 			//find province, city from postal code
-//			$address->findProvinceCityStreet($employeePostalCode);
 			$employeeProvince=$address->getProvince();
 			$employeeCity=$address->getCity();	
-			//$employeeStreet=$address->getStreet();			
+
+			$timeOffPlan->findNumberOfDays($employeeTimeOffPlanID);
+			$employeeNumberOfDays=$timeOffPlan->getNumberOfDays();
 ?>
 
 			<!-- Show province, city according to postal code -->
@@ -220,7 +196,12 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 					<?php 
 						echo "<input type=text disabled name=\"choiceCity\" value=\"" . $employeeCity . "\">";
 					?>				
-				</td></tr>								
+				</td></tr>	
+				<tr><td width="180">Number of days off allowed:</td><td width="180">
+					<?php 
+						echo "<input type=text disabled name=\"choiceNumberOfDays\" value=\"" . $employeeNumberOfDays . "\">";
+					?>				
+				</td></tr>												
 			</table>
 			<!-- End Show province and city according to postal code -->	
 
