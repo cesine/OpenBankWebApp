@@ -177,9 +177,9 @@ switch ($userChoice)
 $curDate = date("Y-m-d");
 $clientAccount->setOpeningDate($curDate);
 $clientAccount->setBranchId($userBranch);
-//$clientAccount->setclientId($clientId);
-
-
+$clientAccount->setclientId($clientId);
+$clientAccount->setCurrentBalance('0');
+$clientAccount->setAvailableBalance('0');
 //inserting in the table
 echo $clientAccount->saveToDatabase();
 
