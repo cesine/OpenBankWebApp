@@ -1,11 +1,7 @@
 <?php 
 require_once('includes/model/AccountType.php');
 require_once('includes/model/ClientAccount.Class.php');
-
-
-
-
-
+require_once('includes/model/Client.Class.php');
 
 echo  'Set the account you want to display on the RecentActivity page using; 
 	  $_SESSION[\'DisplayAccount\']=the account id number you want; ';

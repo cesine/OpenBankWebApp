@@ -127,11 +127,13 @@ class Client{
 			
 			if ( $account->serviceCategoryId == 1)
 			{
-				$this->clientPersonalBankingAccountsArray[count($clientPersonalBankingAccountsArray)] = $account;
+				$index = count($clientPersonalBankingAccountsArray);
+				$this->clientPersonalBankingAccountsArray[$index] = $account;
 			}
 			else
 			{
-				$this->clientBusinessBankingAccountsArray[count($clientBusinessBankingAccountsArray)] = $account;
+				$index = count($clientBusinessBankingAccountsArray);
+				$this->clientBusinessBankingAccountsArray[$index] = $account;
 			}
 		}
 	}
