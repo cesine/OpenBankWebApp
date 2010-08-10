@@ -175,25 +175,25 @@ switch ($userChoice)
 //$userAccountChoice = $clientAccount->getAccountTypeId();
 
 $curDate = date("Y-m-d");
-$clientAccount->setOpeningDate($curDate);
+//$clientAccount->setOpeningDate($curDate);
 $clientAccount->setBranchId($userBranch);
 $clientAccount->setclientId($clientID);
-$clientAccount->setCurrentBalance('0.00');
-$clientAccount->setAvailableBalance('0.00');
+//$clientAccount->setCurrentBalance('0.00');
+//$clientAccount->setAvailableBalance('0.00');
 //inserting in the table
-echo $clientAccount->saveToDatabase();
+//echo $clientAccount->saveToDatabase();
 
-//for now, print the link statements after insert are in InsertAccIntoDatabase function
-//in the ClientAccount class
-if ($newClientAccount->queryResultsResource)
+//print the link statements after opening the new account
+//if ($newClientAccount->queryResultsResource)
+if ($clientAccount->saveToDatabase())
 		{
-			echo  "<br/>", "You're account has been created!" , "<br/>";
+			echo  "<br/>", "Your account has been created!" , "<br/>";
 			echo 'Pl. follow the link to check ';
 			?>
 			<a href="index.php?&content=AllAccountsSummary">your accounts</a>
 
 			<?php
-			echo ' in your new account. <br/>';
+			echo '. <br/>';
 		}
 		else
 		{
