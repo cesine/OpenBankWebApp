@@ -6,30 +6,19 @@ if (isset($_SESSION['Client']))
 {
 	$client = unserialize($_SESSION['Client']);
 	$clientId = $client->getClientID();
+
+
+	echo '<table border=1>';
+	foreach($client->clientAccountsArray as $account){
+			//echo "Here is the row: ";
+			//print_r($row);
+		
+			$account = new ClientAccount();
+			$account->initializeClientAccount($row);	
+			$account->displayAccountInRow();
+	}//endl if to only print when there are any results
+	echo '</table>';
 }
-
-$branch = new Database();
-$branch->connect();
-
-$queryBranchid =   "SELECT distinct *
-                    FROM `clientaccount`
-		    WHERE `clientid` = $clientId";
-
-$branch->query($queryBranchid);
-$branch->close();
-
-echo '<table border=1>';
-for($count=0;$count<$branch->queryResultsCount;$count=$count+1){
-	$row=mysql_fetch_array($branch->queryResultsResource);
-		//echo "Here is the row: ";
-		//print_r($row);
-	
-		$b = new ClientAccount();
-		$b->initializeClientAccount($row);	
-		$b->displayAccountInRow();
-}//endl if to only print when there are any results
-echo '</table>';
-
 ?>
 
 
