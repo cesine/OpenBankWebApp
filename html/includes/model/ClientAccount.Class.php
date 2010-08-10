@@ -4,7 +4,7 @@ class ClientAccount
 	private $clientAccountId;
 	private $branchId;
 	private $clientId;
-	private $currentBalance;
+	public  $currentBalance;
 	private $availableBalance;
 	private $status;
 	private $openingDate;
@@ -13,7 +13,7 @@ class ClientAccount
 	private $autoIncAccID;
 	
 	private $accountTypeId;
-	private $accountTypeName;
+	public  $accountTypeName;
 	private $accountName;
 	
 	public $serviceCategoryId;
