@@ -14,6 +14,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 <p></p>
 
 <?php 
+
 	echo "<h4> Add employee. </h4>\n";
 ?>
 
@@ -210,6 +211,26 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			$dbEmployeeAddressNew->close();
 			// end insert row into table Address	
 			 */	
+
+
+			$employee->saveToDatabase();
+			
+			// put "start date" for new title
+			
+			$dbEmployeeTitleNew = new Database();
+			$dbEmployeeTitleNew->connect();
+				
+			// note: in query we use data, selected by user
+			$queryEmployeeTitleNew=
+				
+			"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
+											  titleid, salary)
+                VALUES ($selectedEmployee, $employeeBranch, CURDATE(), '', $employeeTitle, $employeeBaseSalary)";
+
+			$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
+			$dbEmployeeTitleNew->close();
+			
+			// end put "start date" for new title
 
 		} // end input is OK		
 	
