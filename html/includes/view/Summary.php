@@ -9,12 +9,12 @@ if (isset($_SESSION['Client']))
 
 
 	echo '<table border=1>';
-	foreach($client->clientAccountsArray as $account){
+	foreach($client->clientAccountsArray as $accountid){
 			//echo "Here is the row: ";
 			//print_r($row);
 		
 			$account = new ClientAccount();
-			$account->initializeClientAccount($row);	
+			$account->initializeAccountFromID($accountid);	
 			$account->displayAccountInRow();
 	}//endl if to only print when there are any results
 	echo '</table>';
