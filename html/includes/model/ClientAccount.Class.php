@@ -6,17 +6,23 @@ class ClientAccount{
 	private $clientAccountId;
 	private $branchId;
 	private $clientId;
-	private $accountTypeId;
-	private $accountTypeName;
-	private $accountName;
 	private $currentBalance;
 	private $availableBalance;
 	private $status;
 	private $openingDate;
 	private $closingDate;
+	
 	private $autoIncAccID;
+	
+	private $accountTypeId;
+	private $accountTypeName;
+	private $accountName;
+	
+	private $serviceCategoryId;
+	private $serviceTypeId;
+	private $serviceId;
 
-
+	
 	public function getClientAccountId() {
 		return $this->clientAccountId;
 	}
@@ -69,14 +75,14 @@ class ClientAccount{
 	public function setAccountTypeName($accountTypeId){
 		$db = new Database();
 		$db->connect();
-		$queryToDo= "SELECT DISTINCT accountname FROM accounttype	
+		$queryToDo= "SELECT DISTINCT servicecategoryid, servicetypeid, accountname FROM accounttype	
 			WHERE accounttypeid=$accountTypeId";
 		$db->query($queryToDo);
 		$db->close();
 		
-		echo $queryToDo;
-		
 		$this->accountTypeName=$db->queryFirstResult[accountname];
+		$this->serviceCategoryId=$db->queryFirstResult[servicecategoryid];
+		$this->$serviceTypeId=$db->queryFirstResult[servicetypeid];
 	}
 	public function setAccountName($accountName){
 		$this->accountName=$accountName;
@@ -174,6 +180,8 @@ class ClientAccount{
 	public function displayAccountInRow(){
 		$this->setAccountTypeName($this->accountTypeId);
 		echo "<tr class='bgcoloroption1'>
+		<td class='tableDataRightC'>$this->serviceTypeId</td>
+		<td class='tableDataRightC'>$this->serviceCategoryId</td>
 		<td class='tableDataRightC'>$this->accountTypeName</td>
 		<td class='tableDataRightC'>$this->clientAccountId</td>
 		<td class='tableDataRightC'>$this->currentBalance</td>
