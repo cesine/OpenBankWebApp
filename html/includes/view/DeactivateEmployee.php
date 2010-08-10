@@ -43,17 +43,10 @@ if (isset($_POST["DeactivateEmployee"]))
 ?>
 	<P></P>
 <?php 
-	echo "<h4> Employee with ID $selectedEmployee is deactivated!. </h4>\n";
-	
-} // end if (isset($_POST["SelectEmployee"])) 
-
-	
-//if (isset($_POST["DeactivateEmployeeInfo"])) 						
-{
+	echo "<h4> Employee with ID $selectedEmployee is deactivated!. </h4>\n";	
 	echo "<h4> Deactivated employee info. </h4>\n";
 ?>
-		<!-- display personal info of deactivated employee -->
-		
+		<!-- display personal info of deactivated employee -->		
 		<table width="100%" border="1" cellpadding="3" cellspacing="1">
 		<tr>
 			<td>
@@ -91,11 +84,15 @@ if (isset($_POST["DeactivateEmployee"]))
 
 		echo "<h4> Work history: </h4>\n";
 		$employeeWorkHistory = new EmployeeWorkHistory();
-		$employeeWorkHistory->employeeHistory($selectedEmployee);
+		$employeeWorkHistory->employeeHistory($selectedEmployee);	
+		
+		$employee->EmployeeDeactevatedAll();
+	
+} // end if (isset($_POST["SelectEmployee"])) 
+
+	
+
 		
 
 	
-} // end if (isset($_POST["DeactivateEmployeeInfo"])) 	
-
-
 ?>
