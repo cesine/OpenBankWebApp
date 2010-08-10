@@ -44,7 +44,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 	$workHistory = new EmployeeWorkHistory();
 	$timeOffPlan = new EmployeeTimeOffPlan();	
 	$address = new Address();
-	//$postalCode = new PostalCodes();
+	$postalCode = new PostalCodes();
 	$employee=new Employee();
 	
 	// create dynamic list of branches and let user to select
@@ -127,11 +127,11 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$employeeStreet=$_POST["choiceStreet"];
 		
 		//find province, city from postal code
-		$address->findProvinceCity($employeePostalCode);
-		$employeeProvince=$address->getProvince();
+		$postalCode->findProvinceCity($employeePostalCode);
+		$employeeProvince=$postalCode->getProvince();
 		$address->setProvince($employeeProvince); 						// set provance
 			
-		$employeeCity=$address->getCity();	
+		$employeeCity=$postalCode->getCity();	
 		$address->setCity($employeeCity); 								// set sity
 		
 		
