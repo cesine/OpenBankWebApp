@@ -293,6 +293,7 @@ class EmployeeTimeOffPlan{
 		$dbEmployeeTimeOffPlanID->close();
 		
 		$this->timeOffID=$dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid];
+		$this->setTimeOffID($dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid]);
 		echo "OK";
 		echo "<h5> time off ID inside: $timeOffID </h5>\n";		
 			
