@@ -163,7 +163,7 @@ class ClientAccount{
 			'$this->clientId','$this->accountTypeId','$this->currentBalance',
 			'$this->availableBalance','$this->status',
 			'$this->openingDate','$this->closingDate')";
-		echo $queryAddAccount;
+		$queryAddAccount;
 		$newAccountId=$newClientAccount->insert($queryAddAccount);
 		$newClientAccount->close();
 		if($newAccountId != 0){
