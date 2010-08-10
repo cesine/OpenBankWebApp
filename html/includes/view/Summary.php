@@ -15,8 +15,6 @@ $queryBranchid =   "SELECT distinct *
                     FROM `clientaccount`
 		    WHERE `clientid` = $clientId";
 
-echo "<h2>".$clientId." ClientId is:</h2>";
-
 $branch->query($queryBranchid);
 $branch->close();
 
@@ -28,7 +26,7 @@ for($count=0;$count<$branch->queryResultsCount;$count=$count+1){
 	
 		$b = new ClientAccount();
 		$b->initializeClientAccount($row);	
-		$b->DisplayAcountDetailsInRow();
+		$b->displayAccountInRow();
 }//endl if to only print when there are any results
 echo '</table>';
 
