@@ -98,12 +98,14 @@ class Address{
 		$this->setPostalCodeString($row[postalcode]);
 	}
 	
+	/*
 	public function initializeAddress2($streetNumberIn, $streetIn, $postalCodeIn)
 	{
 		$this->streetNumber=$streetNumberIn;
 		$this->street=$streetIn;
 		$this->postalCode=$postalCodeIn;
-	}	
+	}
+	*/	
 	
 	public function saveToDatabase(){
 		$postalcodeSuccess=$this->postalCode->saveToDatabase();
