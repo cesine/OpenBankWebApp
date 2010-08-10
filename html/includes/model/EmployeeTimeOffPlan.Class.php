@@ -294,7 +294,7 @@ class EmployeeTimeOffPlan{
 		
 		$this->timeOffID=$dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid];
 		echo "OK";
-		echo "<h5> time off ID inside: $row[timeoffid] </h5>\n";		
+		echo "<h5> time off ID inside: $timeOffID </h5>\n";		
 			
 	} // end public function findTitleID()		
 	
