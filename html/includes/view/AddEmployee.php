@@ -111,8 +111,6 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		//$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);      // doesn't work, return empty id
 		$timeOffPlan->findTimeOffPlanID2($employeeTimeOffPlan);		
 		$employeeTimeOffPlanID=$timeOffPlan->getTimeOffID();		
-		//echo "<h5> time off name: $employeeTimeOffPlan </h5>\n";	
-		//echo "<h5> time off ID: $employeeTimeOffPlanID </h5>\n";	
 		
 		$employee->setTimeOffID($employeeTimeOffPlanID);	
 		
@@ -132,7 +130,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$address->setProvince($employeeProvince); 						// set provance
 			
 		$employeeCity=$postalCode->getCity();	
-		$address->setCity($employeeCity); 								// set sity
+		$address->setCity($employeeCity); 								// set city
 		
 		
 		echo "<h5> first name: 		$employeeFirstName </h5>\n";
