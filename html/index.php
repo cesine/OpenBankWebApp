@@ -72,6 +72,8 @@ if($userIsClient || $userIsEmployee){
 		include ('includes/view/Summary.php');
 	}elseif($content=="ViewAccount"){
 		include ('includes/view/ViewAccounts.php');
+	}elseif($content=="RecentActivity"){
+		include ('includes/view/RecentActivity.php');
 	}elseif($content=="TransferFunds"){
 		include ('includes/view/Transfer.php');
 	}elseif($content=="LoginAsClient"){
