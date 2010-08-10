@@ -319,6 +319,7 @@ class Employee{
 		
 		<!-- display personal info of deactivated employee -->		
 		<table width="100%" border="1" cellpadding="3" cellspacing="1">
+		<!--  
 		<tr>
 			<td>
 			Employee ID
@@ -345,6 +346,7 @@ class Employee{
 			Postal code
 			</td>
 		</tr>
+		-->
 		
 <?php						
 	
@@ -364,8 +366,11 @@ class Employee{
 		for($count=0;$count<$dbEmployeeDeactevatedAll->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbEmployeeDeactevatedAll->queryResultsResource);	
-			$this->initializeEmployeeFromRow($row);
+			
+			//$this->initializeEmployeeFromRow($row);
 			//$this->displayEmployeePersonalInfo();
+			
+			$this->initializeEmployee($row[employeeid]);
 			$this->displayEmployeeInRowFormatted();
 		}		
 		$dbEmployeeDeactevatedAll->close();
