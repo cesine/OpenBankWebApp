@@ -76,7 +76,7 @@ class ClientAccount{
 		
 		echo $queryToDo;
 		
-		$this->$accountTypeName=$db->queryFirstResult[accountname];
+		$this->accountTypeName=$db->queryFirstResult[accountname];
 	}
 	public function setAccountName($accountName){
 		$this->accountName=$accountName;
