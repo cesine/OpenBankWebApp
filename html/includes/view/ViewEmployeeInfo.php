@@ -41,7 +41,7 @@ $postalCodes = new PostalCodes();
 
 <?php 
 	// create dynamic list of employee and let user to select
-	$employee->EmployeeList(); 	
+	$employee->EmployeeListAll(); 	
 ?>
 
 <!-- read input from user after submition -->
