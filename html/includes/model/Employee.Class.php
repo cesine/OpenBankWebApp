@@ -188,6 +188,7 @@ class Employee{
 		echo $employeeInsertQuery;
 		$newIdInserted=$dbToInsertEmployee->insert($employeeInsertQuery);
 		$dbToInsertEmployee->close();
+		
 		return $newIdInserted;
 	}
 	function displayEmployeeInRowFormatted()
