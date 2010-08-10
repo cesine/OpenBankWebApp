@@ -247,44 +247,44 @@ class Employee{
 
 	public function EmployeeList()
 	{
-		?>
-<!-- Select employee to show -->
-<table border="1">
-	<tr>
-		<td width="180">Select employee to show:</td>
-		<td width="180"><select name="choiceEmployee">
-
-		<?php
-			
-		//Build dynamic selection list
-		$dbSelectEmployee = new Database();
-		$dbSelectEmployee->connect();
-			
-		$querySelectEmployee="SELECT DISTINCT employeeid
-							  FROM employee
-							  WHERE status=1";
-
-		$dbSelectEmployee->query($querySelectEmployee);
-		$result = $dbSelectEmployee->query($querySelectEmployee);
-			
-		//Put results of query into dynamic list
-		for($count=0;$count<$dbSelectEmployee->queryResultsCount;$count=$count+1)
-		{
-			$row=mysql_fetch_array($dbSelectEmployee->queryResultsResource);
-			extract($row);
-			echo "<option value='$employeeid'>$employeeid</option>";
-
-		}//endl if to only print when there are any results
-		echo "</select>\n";
-		$dbSelectEmployee->close();
-
-		?>
-
-		</select></td>
-	</tr>
-</table>
-<!-- End select employee to show -->
-		<?php
+?>
+		<!-- Select employee to show -->
+		<table border="1">
+			<tr>
+				<td width="180">Select employee to show:</td>
+				<td width="180"><select name="choiceEmployee">
+		
+				<?php
+					
+				//Build dynamic selection list
+				$dbSelectEmployee = new Database();
+				$dbSelectEmployee->connect();
+					
+				$querySelectEmployee="SELECT DISTINCT employeeid
+									  FROM employee
+									  WHERE status=1";
+		
+				$dbSelectEmployee->query($querySelectEmployee);
+				$result = $dbSelectEmployee->query($querySelectEmployee);
+					
+				//Put results of query into dynamic list
+				for($count=0;$count<$dbSelectEmployee->queryResultsCount;$count=$count+1)
+				{
+					$row=mysql_fetch_array($dbSelectEmployee->queryResultsResource);
+					extract($row);
+					echo "<option value='$employeeid'>$employeeid</option>";
+		
+				}//endl if to only print when there are any results
+				echo "</select>\n";
+				$dbSelectEmployee->close();
+		
+				?>
+		
+				</select></td>
+			</tr>
+		</table>
+		<!-- End select employee to show -->
+<?php
 	} // end public function EmployeeList()
 	
 	
@@ -309,6 +309,74 @@ class Employee{
 		// end update employee work history, when new employee is added				
 			
 	} // end public function saveHistoryToDatabase()
+	
+	
+	
+	public function EmployeeDeactevatedAll()
+	{
+		// show personal info of all deactivated employees
+?>
+		
+		<!-- display personal info of deactivated employee -->		
+		<table width="100%" border="1" cellpadding="3" cellspacing="1">
+		<tr>
+			<td>
+			Employee ID
+			</td>
+			<td>
+			First Name
+			</td>
+			<td>
+			Last Name
+			</td>
+			<td>
+			Street number
+			</td>
+			<td>
+			Street name
+			</td>
+			<td>
+			City
+			</td>
+			<td>
+			Province
+			</td>	
+			<td>
+			Postal code
+			</td>
+		</tr>
+		
+<?php						
+	
+		// find all deactivated employees
+		$dbEmployeeDeactevatedAll = new Database();
+		$dbEmployeeDeactevatedAll->connect();
+				
+		// note: in query we use data, selected by user
+		$queryEmployeeDeactevatedAll=
+				
+		"SELECT DISTINCT employeeid 
+		 FROM   employee	
+		 WHERE  status=0'";					
+											
+		$dbEmployeeDeactevatedAll->query($queryEmployeeDeactevatedAll);
+				
+		for($count=0;$count<$dbEmployeeDeactevatedAll->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbEmployeeDeactevatedAll->queryResultsResource);	
+			$this->displayEmployeePersonalInfo();
+		}		
+		$dbEmployeeDeactevatedAll->close();
+?>
+		</table>
+		<P></P>
+<?php 			
+		
+			
+	} // end public function EmployeeDeactevatedAll()		
+	
+	
+	
 }
 
 
