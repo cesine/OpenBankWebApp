@@ -29,8 +29,8 @@ class ClientAccount{
 	public function getAccountTypeId(){
 		return $this->accountTypeId;
 	}
-	public function getAccountTypeIdName(){
-		return $this->accountTypeIdName;
+	public function getAccountTypeName(){
+		return $this->accountTypeName;
 	}
 	public function getAccountName(){
 		return $this->accountName;
@@ -66,14 +66,14 @@ class ClientAccount{
 	public function setAccountTypeId($accountTypeId){
 		$this->accountTypeId=$accountTypeId;
 	}
-	public function setAccountTypeIdName($accountTypeId){
+	public function setAccountTypeName($accountTypeId){
 		$db = new Database();
 		$db->connect();
 		$queryToDo= "SELECT DISTINCT accountname FROM accounttype	
 			WHERE accounttypeid=".$accountTypeId;
 		$db->query($queryToDo);
 		$db->close();
-		$this->accountTypeIdName=$db->queryFirstResult['accountname'];
+		$this->$accountTypeName=$db->queryFirstResult['accountname'];
 	}
 	public function setAccountName($accountName){
 		$this->accountName=$accountName;
@@ -169,7 +169,7 @@ class ClientAccount{
 		//echo "</table>";
 	}
 	public function displayAccountInRow(){
-		$this->setAccountTypeIdName($this->accountTypeId);
+		$this->setAccountTypeName($this->accountTypeId);
 		echo "<tr class='bgcoloroption1'>
 		<td class='tableDataRightC'>$this->accountTypeName</td>
 		<td class='tableDataRightC'>$this->clientAccountId</td>
