@@ -133,8 +133,8 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$postalCode->setCity($employeeCity); 								// set city
 		
 		//$address->initializeAddress2($employeeStreetNumber, $employeeStreet, $employeePostalCode);
-		
-		
+				
+		/*
 		echo "<h5> first name: 		$employeeFirstName </h5>\n";
 		echo "<h5> last name: 		$employeeLastName </h5>\n";
 		echo "<h5> branch: 			$employeeBranch </h5>\n";
@@ -147,6 +147,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		echo "<h5> street name: 	$employeeStreet </h5>\n";
 		echo "<h5> province: 		$employeeProvince </h5>\n";
 		echo "<h5> city: 			$employeeCity </h5>\n";	
+		*/
 			
 		$employee->setAddressFromObject($address);
 		
