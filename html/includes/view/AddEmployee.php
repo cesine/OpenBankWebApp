@@ -104,6 +104,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		// find title id from title name
 		$title->findTitleID($employeeTitle);
 		$employeeTitleID=$title->getTitleID();
+		$employee->setTitleID($employeeTitleID);
 		
 		// get time off plan id from time off plan name
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];			
@@ -171,7 +172,9 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 					
 			//find base salary for selected title name
 			$title->EmployeeTitleBaseSalary($employeeTitle);
-			$employeeBaseSalary=$title->getBaseSalary();		
+			$employeeBaseSalary=$title->getBaseSalary();
+			$employee->setSalary($employeeBaseSalary);	
+			echo "<h5> salary: 	$employeeBaseSalary </h5>\n";		
 			
 			// show base salary for selected title, which can be corrected
 ?>
