@@ -125,20 +125,22 @@ class Client{
 			$account->initializeClientAccount($row);
 			$this->clientAccountsArray[$count]=$account;
 
-			$index1 = count($clientPersonalBankingAccountsArray);
-			$index2 = count($clientBusinessBankingAccountsArray);
+			$index1 = 0;
+			$index2 = 0;
 			
 			if ( $account->serviceCategoryId == 1)
 			{
 				echo "Personal";
 				echo $index1;
 				$this->clientPersonalBankingAccountsArray[$index1] = $account;
+				$index1 = $index1 + 1;
 			}
 			elseif ( $account->serviceCategoryId == 2)
 			{
 				echo "Business";
 				echo $index2;
 				$this->clientBusinessBankingAccountsArray[$index2] = $account;
+				$index2 = $index2 + 1;
 			}
 		}
 	}
