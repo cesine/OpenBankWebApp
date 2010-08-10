@@ -102,6 +102,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$employee->setTitleName($_POST["choiceTitle"]);
 		$employeeTitle=$_POST["choiceTitle"];
 		
+		// get id from title name
+		
 		$employee->setTimeOffID($_POST["choiceTimeOffPlan"]);
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
 		
@@ -234,7 +236,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 
 
-			$employee->saveToDatabase();
+			echo $employee->saveToDatabase();
 			
 			// put "start date" for new title
 			
