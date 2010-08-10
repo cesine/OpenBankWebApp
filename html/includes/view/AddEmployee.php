@@ -203,6 +203,10 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 				// if it is not a duplicate, update table employeeworkhistory
 				echo "<h4> Employee with ID: $selectedEmployee is added. </h4>\n";
 				
+				echo "<h4> branch ID:   $employeeBranch</h4>\n";	
+				echo "<h4> title:  $employeeTitle</h4>\n";
+				echo "<h4> salary:   $employeeBaseSalary</h4>\n";
+				
 				// put "start date" for new title
 				
 				$dbEmployeeTitleNew = new Database();
