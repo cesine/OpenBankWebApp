@@ -98,7 +98,7 @@ class Address{
 		$this->setPostalCodeString($row[postalcode]);
 	}
 	
-	public function initializeAddress($streetNumberIn, $streetIn, $postalCodeIn)
+	public function initializeAddress2($streetNumberIn, $streetIn, $postalCodeIn)
 	{
 		$this->streetNumber=$streetNumberIn;
 		$this->street=$streetIn;
