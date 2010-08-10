@@ -280,49 +280,15 @@ if($content=="Banking"){?>
 
 
 
-<div align='left'><span class='headline3'>You can contribute to your RSPs:</span></div>
+<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
 </td>
 </tr>
 
-<tr>
-<td align='right'>
-<p align='center'><img src='/static/greyarrow.gif' vspace='5' width='4' height='7' hspace='2'></p>
-</td>
-<td class='rewardsText' height='20'>Online with&nbsp;<a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' class='calllink' href='' target='_blank'> OnLine</a></td>
-</tr>
-
-<tr valign='top'>
-<td align='right'>
-<div align='center'><img src='/static/greyarrow.gif' vspace='5' width='4' height='7' hspace='2'></div>
-
-</td>
-<td class='rewardsText' height='20'><span class='calltext'>Visit any</span> <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' class='calllink' href='' target='_blank'>bank Branch</a> </td>
-</tr>
-
-<tr valign='top'>
-<td width='24' align='right'>
-<div align='center'><img src='/static/greyarrow.gif' vspace='5' width='4' height='7' hspace='2'></div>
-</td>
-<td class='calltext' width='269' height='20'>Call <strong><font color='#cc0000'>1-800-4</font></strong> (1-800-472-6842).</td>
-
-</tr>
 </tbody>
 </table>
 </td>
-<td class='greyLine' width='1'><img src='/static/spacer.gif' width='1'></td>
-</tr>
-
-<tr>
-<td colspan='3'><img src='/static/callrectbottom.gif' width='320' height='10'></td>
-</tr>
-</tbody>
-</table>
- <br>
-			<br>
-
-  </td>
-							</tr>	
-						</tbody></table>";
+<br>
+<br>";
 }
 elseif($content=="TFSA"){
 	echo "paste some text here 02";
