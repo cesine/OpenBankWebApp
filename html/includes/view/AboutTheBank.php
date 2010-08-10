@@ -291,13 +291,13 @@ if($content=="Banking"){?>
 <br>
 	$db = new Database();
 	$db->connect();
-	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`
+	$queryToDo= 'SELECT DISTINCT `accounttype`.`accountname`
 	FROM `accounttype` , `servicecategory` , `service` , `servicetype`
-	WHERE `servicecategory`.`servicecategoryname` = "Personal"
-	AND `servicetype`.`servicetypename` = "RSP"
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'RSP'
 	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
-	ORDER BY `accounttype`.`accountname` ASC";
+	ORDER BY `accounttype`.`accountname` ASC';
 	$db->query($queryToDo);
 	$db->close();
 	print_r($db->queryFirstResult);
