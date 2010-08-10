@@ -1,5 +1,4 @@
 <?php
-//require_once('includes/controller/Database.Class.php');
 
 class EmployeeTitle{
 	private $titleID;
@@ -155,12 +154,9 @@ class EmployeeTitle{
 			$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
 			$this->initializeEmployeeTitle($row);		
 		}
-		//$employeeBaseSalary=$row[basesalary];	
 		$dbSelectBaseSalary->close();
 	} // end public function EmployeeTitleBaseSalary()
-
-	
-	
+		
 }
 ?>
 
