@@ -103,11 +103,13 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$employee->setTimeOffID($_POST["choiceTimeOffPlan"]);
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
 		
-		$adress->setPostalCodeString($_POST["choicePostalCode"]);
+		$address->setPostalCodeString($_POST["choicePostalCode"]);
 		$employeePostalCode=$_POST["choicePostalCode"];	
 			
-		$adress->setStreetNumber($_POST["choiceStreetNumber"]);
+		$address->setStreetNumber($_POST["choiceStreetNumber"]);
 		$employeeStreetNumber=$_POST["choiceStreetNumber"];	
+		
+		$address->setStreet("My street");
 
 		
 		$employee->setAddressFromObject($adress);
