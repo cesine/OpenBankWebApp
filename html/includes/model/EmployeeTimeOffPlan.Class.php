@@ -269,7 +269,7 @@ class EmployeeTimeOffPlan{
 	{
 		// find time off plan id from title name
 		
-		echo "<h5> time off name inside: $employeeTimeOffPlan </h5>\n";		
+		//echo "<h5> time off name inside: $employeeTimeOffPlan </h5>\n"; // parametr is correct		
 	
 		$dbEmployeeTimeOffPlanID = new Database();
 		$dbEmployeeTimeOffPlanID->connect();
@@ -279,7 +279,7 @@ class EmployeeTimeOffPlan{
 				
 		"SELECT timeoffid  
 		 FROM   employeetimeoffplan	
-		 WHERE  timeoffname='$employeeTimeOffPlan'";					
+		 WHERE  timeoffname=$employeeTimeOffPlan";					
 											
 		$dbEmployeeTimeOffPlanID->query($EmployeeTimeOffPlanID);
 				
@@ -298,7 +298,8 @@ class EmployeeTimeOffPlan{
 		$this->timeOffID=$dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid];
 		$this->setTimeOffID($dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid]);
 		echo "OK";
-		echo "<h5> time off ID inside: $timeOffID </h5>\n";		
+		echo "<h5> time off ID inside: $timeOffID </h5>\n";	
+		echo "<h5> time off ID inside: $this->timeOffID </h5>\n";	
 			
 	} // end public function findTitleID()		
 	
