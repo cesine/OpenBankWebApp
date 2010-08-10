@@ -1,8 +1,6 @@
 <?php
-
-
-class ClientAccount{
-
+class ClientAccount
+{
 	private $clientAccountId;
 	private $branchId;
 	private $clientId;
@@ -22,8 +20,6 @@ class ClientAccount{
 	private $serviceTypeId;
 	private $serviceId;
 
-	public $clientBusinessAccountsArray;
-	public $clientPersonalAccountsArray;
 	
 	public function getClientAccountId() {
 		return $this->clientAccountId;
@@ -73,18 +69,6 @@ class ClientAccount{
 	}
 	public function setAccountTypeId($accountTypeId){
 		$this->accountTypeId=$accountTypeId;
-	}
-	public function setAccountTypeName($accountTypeId){
-		$db = new Database();
-		$db->connect();
-		$queryToDo= "SELECT DISTINCT servicecategoryid, servicetypeid, accountname FROM accounttype	
-			WHERE accounttypeid=$accountTypeId";
-		$db->query($queryToDo);
-		$db->close();
-		
-		$this->accountTypeName=$db->queryFirstResult[accountname];
-		$this->serviceCategoryId=$db->queryFirstResult[servicecategoryid];
-		$this->serviceTypeId=$db->queryFirstResult[servicetypeid];
 	}
 	public function setAccountName($accountName){
 		$this->accountName=$accountName;
@@ -179,17 +163,6 @@ class ClientAccount{
 		$this->displayAccountInRow();
 		//echo "</table>";
 	}
-	public function displayAccountInRow(){
-		echo "<tr class='bgcoloroption1'>
-		<td class='tableDataRightC'>$this->serviceTypeId</td>
-		<td class='tableDataRightC'>$this->serviceCategoryId</td>
-		<td class='tableDataRightC'>$this->accountTypeName</td>
-		<td class='tableDataRightC'>$this->clientAccountId</td>
-		<td class='tableDataRightC'>$this->currentBalance</td>
-		<td class='tableDataRightC'>$this->availableBalance</td>
-		</tr>";
-	}
-
 	/*
 	 * This function is depreciated by new, more default function saveToDatabase
 	 */
@@ -213,15 +186,34 @@ class ClientAccount{
 		$this->setBranchId($row[branchid]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setclientId($row[clientid]);
 		$this->setAccountTypeId($row[accounttypeid]);
-		//$this->setAccountName($row[accountName]);
 		$this->setCurrentBalance($row[currentbalance]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setAvailableBalance($row[availablebalance]);
 		$this->setStatus($row[status]);
 		$this->setOpeningDate($row[openingdate]);
 		$this->setClosingDate($row[closingdate]);
 		$this->setAccountTypeName($row[accounttypeid]);
-	//	$this->setAccountTypeName($this->accountTypeId);
 	}
-
+	public function setAccountTypeName($accountTypeId){
+		$db = new Database();
+		$db->connect();
+		$queryToDo= "SELECT DISTINCT servicecategoryid, servicetypeid, accountname FROM accounttype	
+			WHERE accounttypeid=$accountTypeId";
+		$db->query($queryToDo);
+		$db->close();
+		
+		$this->accountTypeName=$db->queryFirstResult[accountname];
+		$this->serviceCategoryId=$db->queryFirstResult[servicecategoryid];
+		$this->serviceTypeId=$db->queryFirstResult[servicetypeid];
+	}
+	public function displayAccountInRow(){
+		echo "<tr class='bgcoloroption1'>
+		<td class='tableDataRightC'>$this->serviceTypeId</td>
+		<td class='tableDataRightC'>$this->serviceCategoryId</td>
+		<td class='tableDataRightC'>$this->accountTypeName</td>
+		<td class='tableDataRightC'>$this->clientAccountId</td>
+		<td class='tableDataRightC'>$this->currentBalance</td>
+		<td class='tableDataRightC'>$this->availableBalance</td>
+		</tr>";
+	}
 }
 ?>
