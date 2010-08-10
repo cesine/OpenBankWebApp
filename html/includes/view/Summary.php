@@ -14,6 +14,7 @@ if (isset($_SESSION['Client']))
 			//print_r($row);
 		
 			$account = new ClientAccount();
+			$account->setClientAccountsArray($clientId);
 			$account->initializeAccountFromID($accountid);	
 			$account->displayAccountInRow();
 	}//endl if to only print when there are any results
