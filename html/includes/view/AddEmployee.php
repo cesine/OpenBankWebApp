@@ -144,6 +144,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		echo "<h5> time off ID: 	$employeeTimeOffPlanID </h5>\n";
 		echo "<h5> postal code: 	$employeePostalCode </h5>\n";
 		echo "<h5> street number: 	$employeeStreetNumber </h5>\n";
+		echo "<h5> street name: 	$employeeStreet </h5>\n";
 		echo "<h5> province: 		$employeeProvince </h5>\n";
 		echo "<h5> city: 			$employeeCity </h5>\n";	
 			
