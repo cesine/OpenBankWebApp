@@ -7,7 +7,7 @@
 <?php 
 	echo "<h4> Deactivate employee. </h4>\n";
 	$employee= new Employee();
-	$employee->EmployeeDeactevatedAll();
+	//$employee->EmployeeDeactevatedAll();
 ?>
 	<p></p>
 <?php 
@@ -88,7 +88,7 @@ if (isset($_POST["DeactivateEmployee"]))
 		$employeeWorkHistory = new EmployeeWorkHistory();
 		$employeeWorkHistory->employeeHistory($selectedEmployee);	
 		
-		$employee->EmployeeDeactevatedAll();
+		//$employee->EmployeeDeactevatedAll();
 	
 } // end if (isset($_POST["SelectEmployee"])) 
 
