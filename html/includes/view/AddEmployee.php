@@ -104,8 +104,11 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		
 		// get time off plan id from time off plan name
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
+		
 		$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);
+		
 		$employeeTimeOffPlanID=$timeOffPlan->getTimeOffID();
+		
 		echo "<h5> time off name: $employeeTimeOffPlan </h5>\n";	
 		echo "<h5> time off ID: $employeeTimeOffPlanID </h5>\n";	
 		
