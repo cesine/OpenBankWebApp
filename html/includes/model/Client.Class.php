@@ -127,11 +127,13 @@ class Client{
 			
 			if ( $account->serviceCategoryId === 1)
 			{
+				echo "Personal";
 				$index = count($clientPersonalBankingAccountsArray);
 				$this->clientPersonalBankingAccountsArray[$index] = $account;
 			}
 			elseif ( $account->serviceCategoryId === 2)
 			{
+				echo "Business";
 				$index = count($clientBusinessBankingAccountsArray);
 				$this->clientBusinessBankingAccountsArray[$index] = $account;
 			}
