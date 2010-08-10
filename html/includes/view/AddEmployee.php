@@ -131,6 +131,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$address->setProvince($employeeProvince); 						// set provance
 			
 		$employeeCity=$address->getCity();	
+		echo "<h5> city: $employeeCity </h5>\n";
 		$address->setCity($employeeCity); 								// set sity
 			
 		$employee->setAddressFromObject($address);
