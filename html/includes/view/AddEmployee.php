@@ -1,6 +1,7 @@
 <p></p>
 <?php 
 require_once('includes/model/Branch.Class.php');
+require_once('includes/model/Employee.Class.php');
 require_once('includes/model/EmployeeTitle.Class.php');
 require_once('includes/model/EmployeeWorkHistory.Class.php');
 require_once('includes/model/EmployeeTimeOffPlan.Class.php');
@@ -51,6 +52,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	$timeOffPlan = new EmployeeTimeOffPlan();	
 	$address = new Address();
 	$postalCode = new PostalCodes();
+	$employee=new Employee();
 	
 	// create dynamic list of branches and let user to select
 	$branch->BranchList();
@@ -87,7 +89,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	if (isset($_POST['EmployeeInfoSubmit'])) 	
 	{
 		
-		$employee=new Employee();
+		
 		$employee->setFirstName($_POST["choiceFirstName"]);
 		$employeeFirstName=$_POST["choiceFirstName"];
 		
@@ -187,7 +189,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			
 
 			//find province, city, street from postal code
-			$address->findProvinceCityStreet($employeePostalCode);
+//			$address->findProvinceCityStreet($employeePostalCode);
 			$employeeProvince=$address->getProvince();
 			$employeeCity=$address->getCity();	
 			$employeeStreet=$address->getStreet();			
@@ -229,6 +231,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 			$dbEmployeeAddressNew->close();
 			// end insert row into table Address	
 			 */	
+
 
 
 			$employee->saveToDatabase();
