@@ -281,14 +281,20 @@ class EmployeeTimeOffPlan{
 		$dbEmployeeTimeOffPlanID->query($EmployeeTimeOffPlanID);
 				
 		//for($count=0;$count<$dbEmployeeTimeOffPlanID->queryResultsCount;$count=$count+1)
+		/*
 		{
-			$row=mysql_fetch_array($dbEmployeeTimeOffPlanID->queryResultsResource);	
+			$row=mysql_fetch_array($dbEmployeeTimeOffPlanID->queryResultsResource);
 			$this->initializeEmployeeTimeOffPlanID($row);
 			echo "OK";
 			echo "<h5> time off ID inside: $row[timeoffid] </h5>\n";
 		}
+		*/
 		
 		$dbEmployeeTimeOffPlanID->close();
+		
+		$this->timeOffID=$dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid];
+		echo "OK";
+		echo "<h5> time off ID inside: $row[timeoffid] </h5>\n";		
 			
 	} // end public function findTitleID()		
 	
