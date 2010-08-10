@@ -104,11 +104,6 @@ class PostalCodes{
 				$row=mysql_fetch_array($dbSelectProvinceCity->queryResultsResource);
 				$this->initializeProvinceCity($row);
 			}
-			
-			$employeeProvince=$row[province];
-			$employeeCity=$row[city];
-			echo "<h5> province inside find: $employeeProvince </h5>\n";			
-			echo "<h5> city inside find: $employeeCity </h5>\n";
 
 			$dbSelectProvinceCity->close();	
 	} // end public function findProvinceCityStreet($employeePostalCode)		
