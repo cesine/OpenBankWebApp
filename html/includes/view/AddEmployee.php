@@ -176,7 +176,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			$title->EmployeeTitleBaseSalary($employeeTitle);
 			$employeeBaseSalary=$title->getBaseSalary();
 			$employee->setSalary($employeeBaseSalary);	
-			echo "<h5> salary: 	$employeeBaseSalary </h5>\n";		
+			//echo "<h5> salary: 	$employeeBaseSalary </h5>\n";		
 			
 			// show base salary for selected title, which can be corrected
 ?>
@@ -225,13 +225,13 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 <?php 
 
 			//echo $employee->saveToDatabase();
-			echo $selectedEmployee = $employee->saveToDatabase();
-			echo "<h4> Employee with ID $selectedEmployee is inserted. </h4>\n";				
+			echo $selectedEmployee = $employee->saveToDatabase();		
 
 			if ($selectedEmployee!=0)
 			{
 				// if it is not a duplicate, update table employeeworkhistory
-				$employee->saveHistoryToDatabase($selectedEmployee,$employeeBranch, $employeeTitleID,$employeeBaseSalary);				
+				$employee->saveHistoryToDatabase($selectedEmployee,$employeeBranch, $employeeTitleID,$employeeBaseSalary);
+				echo "<h4> Employee with ID $selectedEmployee is inserted. </h4>\n";						
 				
 			} // end if ($selectedEmployee!=0) // it is no duplicates
 			elseif($selectedEmployee==0)
