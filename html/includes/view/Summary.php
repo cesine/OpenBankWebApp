@@ -43,7 +43,6 @@ if (isset($_SESSION['Client']))
 <?php 
 	foreach($client->clientBusinessBankingAccountsArray as $clientAccount)
 	{
-		$clientAccount->displayAccountInRow();
 ?>
 					<tr class='bgcoloroption2'>
 
@@ -91,7 +90,6 @@ if (isset($_SESSION['Client']))
 <?php 
 	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
 	{
-		$clientAccount->displayAccountInRow();
 ?>
 
 					<tr class='bgcoloroption2'>
@@ -127,7 +125,6 @@ if (isset($_SESSION['Client']))
 <?php 
 	foreach($client->$clientPersonalInvestingAccountsArray as $clientAccount)
 	{
-		$clientAccount->displayAccountInRow();
 ?>
 
 					<tr class='bgcoloroption2'>
