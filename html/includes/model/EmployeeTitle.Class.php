@@ -135,12 +135,9 @@ class EmployeeTitle{
 		$dbEmployeeTitleID->close();
 			
 	} // end public function findTitleID()		
+				
 	
-	
-		
-	
-	/*
-	public function EmployeeTitleBaseSalary()
+	public function EmployeeTitleBaseSalary($employeeTitle)
 	{
 		//find base salary for selected title name
 		$dbSelectBaseSalary = new Database();
@@ -148,7 +145,7 @@ class EmployeeTitle{
 						
 		$querySelectBaseSalary="SELECT basesalary 
 						   		FROM employeetitle
-						   		WHERE titlename=$employeeTitle";
+						   		WHERE titlename='$employeeTitle'";
 													
 		$dbSelectBaseSalary->query($querySelectBaseSalary);	
 		$result = $dbSelectBaseSalary->query($querySelectBaseSalary);						
@@ -156,14 +153,12 @@ class EmployeeTitle{
 		for($count=0;$count<$dbSelectBaseSalary->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbSelectBaseSalary->queryResultsResource);
-			$title=new EmployeeTitle();
-			$title->initializeEmployeeTitle($row);
-			//initializeEmployeeTitle($row);			
+			$this->initializeEmployeeTitle($row);		
 		}
-		$employeeBaseSalary=$row[basesalary];	
+		//$employeeBaseSalary=$row[basesalary];	
 		$dbSelectBaseSalary->close();
 	} // end public function EmployeeTitleBaseSalary()
-	*/
+
 	
 	
 }
