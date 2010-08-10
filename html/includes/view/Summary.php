@@ -2,6 +2,16 @@
 require_once('includes/model/AccountType.php');
 require_once('includes/model/ClientAccount.Class.php');
 
+
+
+
+
+
+echo  'Set the account you want to display on the RecentActivity page using; 
+	  $_SESSION['DisplayAccount']=the account id number you want; ';
+	 
+
+
 if (isset($_SESSION['Client']))
 {
 	$client = unserialize($_SESSION['Client']);
@@ -19,8 +29,17 @@ if (isset($_SESSION['Client']))
 			$account->displayAccountInRow();
 	}//endl if to only print when there are any results
 	echo '</table>';
+	
+	
+	
+	
+	
+	
+	
 }
 ?>
+
+
 
 
 
