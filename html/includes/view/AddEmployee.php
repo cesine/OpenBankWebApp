@@ -183,7 +183,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 			$timeOffPlan->findNumberOfDays($employeeTimeOffPlanID);
 			$employeeNumberOfDays=$timeOffPlan->getNumberOfDays();
-			$timeOffPlan->displayEmployeeTimeOffPlanInRowFormatted();
+
 ?>
 
 			<!-- Show province, city according to postal code -->
@@ -208,6 +208,9 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 <?php 
 
+
+			// for debagging
+			$timeOffPlan->displayEmployeeTimeOffPlanInRowFormatted();
 
 			echo $employee->saveToDatabase();
 			//$selectedEmployee = 
