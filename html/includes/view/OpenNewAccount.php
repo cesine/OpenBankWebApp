@@ -185,7 +185,26 @@ echo $clientAccount->saveToDatabase();
 
 //for now, print the link statements after insert are in InsertAccIntoDatabase function
 //in the ClientAccount class
-    
+if ($newClientAccount->queryResultsResource)
+		{
+			echo  "<br/>", "You're account has been created!" , "<br/>";
+			echo 'Pl. follow the link to check ';
+			?>
+			<a href="index.php?&content=AllAccountsSummary">your accounts</a>
+
+			<?php
+			echo ' in your new account. <br/>';
+		}
+		else
+		{
+			//echo 'Sorry, there was a problem inserting values! ';
+			?>
+			<a href="index.php?&content=OpenNewAccount">Please try again</a>
+			<?php
+		}   
     }
-//end of if
+//end of if client is logged in
+
+    
+
 ?>
