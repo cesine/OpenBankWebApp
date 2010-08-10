@@ -174,13 +174,13 @@ switch ($userChoice)
 
 //$userAccountChoice = $clientAccount->getAccountTypeId();
 
-$curDate = date("Y,m,d");
+$curDate = date("Y-m-d");
 $clientAccount->setOpeningDate($curDate);
 $clientAccount->setBranchId($userBranch);
 $clientAccount->setclientId($clientId);
 
 //inserting in the table
-$clientAccount->InsertAccountIntoDatabase();
+$clientAccount->saveToDatabase();
 
 
 //for now, print the link statements after insert are in InsertAccIntoDatabase function
