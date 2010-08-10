@@ -63,7 +63,14 @@ class PostalCodes{
 		$this->setProvince($row[province]);
 		$this->setCity($row[city]);
 		//$this->setStreet($row[street]);		
-	}		
+	}
+
+	public function initializeProvinceCityStreet($row)
+	{
+		// in the line ($row[]), parameter name [] from db table
+		$this->setProvince($row[province]);
+		$this->setCity($row[city]);
+	}			
 	public function displayInRowFormatted(){
 		echo '<TR class="bgcoloroption1">
 				<TD class="tableDataLeftC">'.$this->postalCodes.'</TD>
@@ -77,7 +84,32 @@ class PostalCodes{
 				<TD>'.$this->city.'</TD>';		
 	}	
 
-	
+	/* This function is needed in Add Employee class. 
+	 * User enter postal code and from it I find province, city*/
+	public function findProvinceCity($employeePostalCode)
+	{
+			//find province, city from postal code
+			$dbSelectProvinceCity = new Database();
+			$dbSelectProvinceCity->connect();
+							
+			$querySelectProvinceCityStreet="SELECT DISTINCT province, city 
+							   				FROM postalcodes
+							   				WHERE postalcodes='$employeePostalCode'";
+														
+			$dbSelectProvinceCity->query($querySelectProvinceCity);	
+			$result = $dbSelectProvinceCity->query($querySelectProvinceCity);						
+										   
+			for($count=0;$count<$dbSelectProvinceCity->queryResultsCount;$count=$count+1)
+			{
+				$row=mysql_fetch_array($dbSelectProvinceCity->queryResultsResource);
+				$this->initializeProvinceCityStreet($row);
+			}
+			
+			$employeeCity=$row[city];
+			echo "<h5> city inside find: $employeeCity </h5>\n";
+
+			$dbSelectProvinceCity->close();	
+	} // end public function findProvinceCityStreet($employeePostalCode)		
 	
 }
 
