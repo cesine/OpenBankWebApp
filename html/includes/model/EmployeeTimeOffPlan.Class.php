@@ -283,22 +283,22 @@ class EmployeeTimeOffPlan{
 											
 		$dbEmployeeTimeOffPlanID->query($EmployeeTimeOffPlanID);
 				
-		/*
+		
 		// it doesn't go inside this loop
 		for($count=0;$count<$dbEmployeeTimeOffPlanID->queryResultsCount;$count=$count+1)
 		
 		{
 			$row=mysql_fetch_array($dbEmployeeTimeOffPlanID->queryResultsResource);
-			$this->initializeEmployeeTimeOffPlanID($row);
+			$this->initializeEmployeeTimeOffPlan($row);;
 			echo "OK";
 			echo "<h5> time off ID inside: $row[timeoffid] </h5>\n";
 		}
-		*/
+		
 		
 		$dbEmployeeTimeOffPlanID->close();
 		
-		$this->timeOffID=$dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid];
-		$this->setTimeOffID($dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid]);
+		//$this->timeOffID=$dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid];
+		//$this->setTimeOffID($dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid]);
 
 		//echo "<h5> time off ID inside: $timeOffID </h5>\n";	 		// id is empty
 		//echo "<h5> time off ID inside: $this->timeOffID </h5>\n";	// id is empty
