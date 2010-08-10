@@ -326,7 +326,34 @@ class EmployeeTimeOffPlan{
 			$this->setTimeOffID(10003);
 		}							
 			
-	} // end public function findTitleID2()		
+	} // end public function findTitleID2()	
+
+	
+	public function findNumberOfDays($employeeTimeOffPlanID)
+	{
+		// find number of days off from plan off id
+	
+		$dbNumberOfDays = new Database();
+		$dbNumberOfDays->connect();
+				
+		// note: in query we use data, selected by user
+		$queryNumberOfDays=
+				
+		"SELECT numberofdays  
+		 FROM   employeetimeoffplan	
+		 WHERE  timeoffid=$employeeTimeOffPlan";					
+											
+		$dbNumberOfDays->query($queryNumberOfDays);
+				
+		for($count=0;$count<$dbNumberOfDays->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbNumberOfDays->queryResultsResource);	
+			$this->initializeEmployeeTimeOff($row);
+		}
+		
+		$dbNumberOfDays->close();
+			
+	} // end public function findNumberOfDays($employeeTimeOffPlanID)	
 	
 
 }
