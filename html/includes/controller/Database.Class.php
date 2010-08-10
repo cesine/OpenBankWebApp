@@ -59,13 +59,13 @@ class Database {
 	 * that transaction applied to the database.
 	 */
 	public function transactionSafeInsertUpdate($queryArray){
-		mysql("START TRANSACTION");
+		mysql_query("START TRANSACTION");
 		//foreach array do an insert or update
 		$c=0;
 		foreach($queryArray as $query){
 			$querySuccessResultsArray[$c]=$this->insert($query);
 		}
-		mysql("COMMIT");
+		mysql_query("COMMIT");
 		return $querySuccessResultsArray;
 	}
 	/* returns the id number of the inserted row, 
@@ -74,9 +74,11 @@ class Database {
 	 * duplicate insertions are done using unique keys on almost all atributes
 	 */
 	public function insert($querystring){
+		//echo $querystring;
 		$this->queryResultsResource=mysql_query($querystring,$this->link_id);
 		$this->queryResultsCount=0;
 		$this->queryFirstResult="";
+		//echo "<p>".mysql_insert_id()."</p>";
 		return mysql_insert_id();
 	}
 	/* untested

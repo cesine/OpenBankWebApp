@@ -103,6 +103,27 @@ class Transaction{
 		$this->setBalance(1000);
 		$this->setTransactionDescription("my deposit");
 	}
+	function buildInsertTransactionQuery(){
+		$queryInsertTransaction="INSERT INTO  transaction (
+				`transactionid` ,`branchid` ,`accountid` , `date` ,
+				`transactionfeecharged` ,	`transactionfeetype` ,	`depositamount` ,
+				`withdrawalamount` , `balanceaftertransaction` , 
+				`transactiondescription` , `transperformedby`)
+				VALUES (NULL ,  '".$this->getBranchId()."',  '".$this->getAccountId()."',  '".$this->getDate()."',
+				  '".$this->getTransactionFeeCharged()."',  '".$this->getTransactionFeeType()."',  '".$this->getDepositAmount()."',
+				   ".$this->getWithdrawalAmount()." ,  '".$this->getBalance()."',  
+				   '".$this->getTransactionDescription()."',  '".$this->getTransactionPerformedBy()."')";
+		return $queryInsertTransaction;
+	}
+	function saveToDatabase(){
+		$dbInsertTrans = new Database();
+		$dbInsertTrans->connect();
+		$queryInsertTransaction=$this->buildInsertTransactionQuery();
+		echo $queryInsertTransaction;
+		$newTransID= $dbInsertTrans->insert($queryInsertTransaction);
+		$dbInsertTrans->close();
+		return $newTransID;
+	}
 	function displayTransaction()
 	{
 		echo '<p class="Transaction ID">'.

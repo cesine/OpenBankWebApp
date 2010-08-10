@@ -34,14 +34,14 @@ if(isset($_SESSION)){
 	/*
 	 * get all transactions for this account and display most recent 5 transactions
 	 */
-	$numberOfTransactionsToDisplay=5;
+	$numberOfTransactionsToDisplay=8;
 	$sumWithdrawals=0;
 	$sumDeposits=0;
 	
 	$dbGetSomeTransactions= new Database();
 	$dbGetSomeTransactions->connect();
 	$queryOrderedByDate="SELECT * FROM `transaction` 
-	WHERE `accountid`=".$selectedAccountId." ORDER BY date ";//DESC if i want most recent on top
+	WHERE `accountid`=".$selectedAccountId." ORDER BY transactionid ";//date DESC";//LIMIT ".$numberOfTransactionsToDisplay;//DESC if i want most recent on top
 	//echo $queryOrderedByDate;
 	$dbGetSomeTransactions->query($queryOrderedByDate);
 	
