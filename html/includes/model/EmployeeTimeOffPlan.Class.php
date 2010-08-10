@@ -279,12 +279,14 @@ class EmployeeTimeOffPlan{
 				
 		"SELECT timeoffid  
 		 FROM   employeetimeoffplan	
-		 WHERE  timeoffname=$employeeTimeOffPlan";					
+		 WHERE  timeoffname='$employeeTimeOffPlan'";					
 											
 		$dbEmployeeTimeOffPlanID->query($EmployeeTimeOffPlanID);
 				
-		//for($count=0;$count<$dbEmployeeTimeOffPlanID->queryResultsCount;$count=$count+1)
 		/*
+		// it doesn't go inside this loop
+		for($count=0;$count<$dbEmployeeTimeOffPlanID->queryResultsCount;$count=$count+1)
+		
 		{
 			$row=mysql_fetch_array($dbEmployeeTimeOffPlanID->queryResultsResource);
 			$this->initializeEmployeeTimeOffPlanID($row);
@@ -297,11 +299,34 @@ class EmployeeTimeOffPlan{
 		
 		$this->timeOffID=$dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid];
 		$this->setTimeOffID($dbEmployeeTimeOffPlanID->queryFirstResult[timeoffid]);
-		echo "OK";
-		echo "<h5> time off ID inside: $timeOffID </h5>\n";	
-		echo "<h5> time off ID inside: $this->timeOffID </h5>\n";	
+
+		//echo "<h5> time off ID inside: $timeOffID </h5>\n";	 		// id is empty
+		//echo "<h5> time off ID inside: $this->timeOffID </h5>\n";	// id is empty
 			
-	} // end public function findTitleID()		
+	} // end public function findTitleID()	
+
+	
+	public function findTimeOffPlanID2($employeeTimeOffPlan)
+	{
+		// find time off plan id from title name
+		if ($employeeTimeOffPlan="branch manager plan")
+		{
+			$this->setTimeOffID(10002);
+		}
+		elseif ($employeeTimeOffPlan="probation plan")
+		{
+			$this->setTimeOffID(10004);
+		}	
+		elseif ($employeeTimeOffPlan="regular plan")
+		{
+			$this->setTimeOffID(10001);
+		}
+		elseif ($employeeTimeOffPlan="senior plan")
+		{
+			$this->setTimeOffID(10003);
+		}							
+			
+	} // end public function findTitleID2()		
 	
 
 }
