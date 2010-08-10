@@ -80,8 +80,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<!-- End create field to put street number -->	
 
 <?php 
-		// create dynamic list of postal codes
-		$address->PostalCodesList();		
+	// create dynamic list of postal codes
+	$address->PostalCodesList();		
 ?>
 
 	<!-- read input from user after submition -->
@@ -183,6 +183,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 			$timeOffPlan->findNumberOfDays($employeeTimeOffPlanID);
 			$employeeNumberOfDays=$timeOffPlan->getNumberOfDays();
+			$timeOffPlan->displayEmployeeTimeOffPlanInRowFormatted();
 ?>
 
 			<!-- Show province, city according to postal code -->
