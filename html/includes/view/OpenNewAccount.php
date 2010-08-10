@@ -180,7 +180,7 @@ $clientAccount->setBranchId($userBranch);
 $clientAccount->setclientId($clientId);
 
 //inserting in the table
-echo "<br/", $clientAccount->saveToDatabase();
+echo $clientAccount->saveToDatabase();
 
 //for now, print the link statements after insert are in InsertAccIntoDatabase function
 //in the ClientAccount class
