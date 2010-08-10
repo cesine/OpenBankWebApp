@@ -87,7 +87,9 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	if (isset($_POST['EmployeeInfoSubmit'])) 	
 	{
 		
-		$employeeFirstName=$_POST["choiceFirstName"];
+		$employee=new Employee();
+		$employee->setFirstName($_POST["choiceFirstName"]);
+		//$employeeFirstName=$_POST["choiceFirstName"];
 		$employeeLastName=$_POST["choiceLastName"];	
 		$employeeBranch=$_POST["choiceBranch"];	
 		$employeeTitle=$_POST["choiceTitle"];
