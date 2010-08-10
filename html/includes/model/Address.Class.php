@@ -247,7 +247,8 @@ class Address{
 				$this->initializeProvinceCity($row);
 			}
 			
-			echo "<h5> city inside find: $row[city] </h5>\n";
+			$employeeCity=$row[city];
+			echo "<h5> city inside find: $employeeCity </h5>\n";
 
 			$dbSelectProvinceCity->close();	
 	} // end public function findProvinceCityStreet($employeePostalCode)		
