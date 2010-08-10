@@ -97,6 +97,14 @@ class Address{
 		$this->setProvince($row[province]);
 		$this->setPostalCodeString($row[postalcode]);
 	}
+	
+	public function initializeAddress($streetNumberIn, $streetIn, $postalCodeIn)
+	{
+		$this->streetNumber=$streetNumberIn;
+		$this->street=$streetIn;
+		$this->postalCode=$postalCodeIn;
+	}	
+	
 	public function saveToDatabase(){
 		$postalcodeSuccess=$this->postalCode->saveToDatabase();
 		$dbForAddressInsert = new Database();
