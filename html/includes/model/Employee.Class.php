@@ -357,7 +357,7 @@ class Employee{
 		// note: in query we use data, selected by user
 		$queryEmployeeDeactevatedAll=
 				
-		"SELECT DISTINCT employeeid 
+		"SELECT *
 		 FROM   employee	
 		 WHERE  status=0'";					
 											
@@ -367,10 +367,10 @@ class Employee{
 		{
 			$row=mysql_fetch_array($dbEmployeeDeactevatedAll->queryResultsResource);	
 			
-			//$this->initializeEmployeeFromRow($row);
+			$this->initializeEmployeeFromRow($row);
 			//$this->displayEmployeePersonalInfo();
 			
-			$this->initializeEmployee($row[employeeid]);
+			//$this->initializeEmployee($row[employeeid]);
 			$this->displayEmployeeInRowFormatted();
 		}		
 		$dbEmployeeDeactevatedAll->close();
