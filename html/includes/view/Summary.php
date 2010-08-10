@@ -21,10 +21,10 @@ if (isset($_SESSION['Client']))
 //			$clientAccount->displayAccountInRow();
 //	}//endl if to only print when there are any results
 
-	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
-	{
-			$clientAccount->displayAccountInRow();
-	}//endl if to only print when there are any results
+//	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
+//	{
+//			$clientAccount->displayAccountInRow();
+//	}//endl if to only print when there are any results
 
 	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
 	{
