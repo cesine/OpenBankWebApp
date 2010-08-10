@@ -89,14 +89,28 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		
 		$employee=new Employee();
 		$employee->setFirstName($_POST["choiceFirstName"]);
-		//$employeeFirstName=$_POST["choiceFirstName"];
+		$employeeFirstName=$_POST["choiceFirstName"];
+		
+		$employee->setLastName($_POST["choiceLastName"]);		
 		$employeeLastName=$_POST["choiceLastName"];	
+
+		$employee->setBranchID($_POST["choiceBranch"]);
 		$employeeBranch=$_POST["choiceBranch"];	
+		
+		$employee->setTitleName($_POST["choiceTitle"]);
 		$employeeTitle=$_POST["choiceTitle"];
+		
+		$employee->setTimeOffID($_POST["choiceTimeOffPlan"]);
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
+		
+		$adress->setPostalCodeString($_POST["choicePostalCode"]);
 		$employeePostalCode=$_POST["choicePostalCode"];	
-		$employeeStreetNumber=$_POST["choiceStreetNumber"];			
-	
+			
+		$adress->setStreetNumber($_POST["choiceStreetNumber"]);
+		$employeeStreetNumber=$_POST["choiceStreetNumber"];	
+
+		
+		$employee->setAddressFromObject($adress);
 		/*
 		echo "<h4> Selected: </h4>\n";
 		echo "<h5> first name: 		$employeeFirstName </h5>\n";
