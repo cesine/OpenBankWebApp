@@ -225,7 +225,8 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 <?php 
 
 			//echo $employee->saveToDatabase();
-			echo $selectedEmployee = $employee->saveToDatabase();				
+			echo $selectedEmployee = $employee->saveToDatabase();
+			echo "<h4> Employee with ID $selectedEmployee is inserted. </h4>\n";				
 
 			if ($selectedEmployee!=0)
 			{
