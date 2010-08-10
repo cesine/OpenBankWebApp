@@ -164,7 +164,6 @@ class ClientAccount{
 		return $newAccountId;
 	}
 	public function DisplayAcountDetailsInRow(){
-		echo "Anshu Garg";
 		//echo "<table>";//added a table around the row to make sure the rest of the page displays
 		$this->displayAccountInRow();
 		//echo "</table>";
