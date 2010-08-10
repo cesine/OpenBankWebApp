@@ -183,7 +183,7 @@ $clientAccount->setclientId($clientID);
 //echo $clientAccount->saveToDatabase();
 
 //print the link statements after opening the new account
-if ($clientAccount->saveToDatabase() == 0)
+if ($clientAccount->saveToDatabase() != 0)
 		{
 			echo  "<br/>", "Your account has been created! " ;
 			echo 'Pl. follow the link to check <br/>';
