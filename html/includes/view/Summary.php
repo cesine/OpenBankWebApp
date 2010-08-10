@@ -16,20 +16,16 @@ if (isset($_SESSION['Client']))
 	$client->setClientAccountsArray($clientId);
 
 	echo '<table border=1>';
-//	foreach($client->clientAccountsArray as $clientAccount)
-//	{
-//			$clientAccount->displayAccountInRow();
-//	}//endl if to only print when there are any results
 
-//	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
-//	{
-//			$clientAccount->displayAccountInRow();
-//	}//endl if to only print when there are any results
+	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
+	{
+			$clientAccount->displayAccountInRow();
+	}//endl if to only print when there are any results
 
-//	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
-//	{
-//			$clientAccount->displayAccountInRow();
-//	}//endl if to only print when there are any results
+	foreach($client->clientBusinessBankingAccountsArray as $clientAccount)
+	{
+			$clientAccount->displayAccountInRow();
+	}//endl if to only print when there are any results
 	
 //	foreach($client->clientAccountsArray as $accountid)
 //	{
