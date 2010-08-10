@@ -127,10 +127,10 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		//find province, city from postal code
 		$postalCode->findProvinceCity($employeePostalCode);
 		$employeeProvince=$postalCode->getProvince();
-		$address->setProvince($employeeProvince); 						// set provance
+		$postalCode->setProvince($employeeProvince); 						// set provance
 			
 		$employeeCity=$postalCode->getCity();	
-		$address->setCity($employeeCity); 								// set city
+		$postalCode->setCity($employeeCity); 								// set city
 		
 		$address->initializeAddress($streetNumber, $street, $postalCode);
 		
