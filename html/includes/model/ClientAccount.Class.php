@@ -82,7 +82,7 @@ class ClientAccount{
 		
 		$this->accountTypeName=$db->queryFirstResult[accountname];
 		$this->serviceCategoryId=$db->queryFirstResult[servicecategoryid];
-		$this->$serviceTypeId=$db->queryFirstResult[servicetypeid];
+		$this->serviceTypeId=$db->queryFirstResult[servicetypeid];
 	}
 	public function setAccountName($accountName){
 		$this->accountName=$accountName;
