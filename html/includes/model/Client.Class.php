@@ -108,7 +108,7 @@ class Client{
 		$db->connect();
 		
 		$queryToDo="SELECT DISTINCT * FROM clientaccount 
-				WHERE clientaccountid=".$accountid;
+				WHERE clientid=".$clientid;
 		$db->query($queryToDo);
 		$db->close();
 		
