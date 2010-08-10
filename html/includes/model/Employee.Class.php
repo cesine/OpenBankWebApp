@@ -285,6 +285,29 @@ class Employee{
 <!-- End select employee to show -->
 		<?php
 	} // end public function EmployeeList()
+	
+	
+	public function saveHistoryToDatabase($selectedEmployee,$employeeBranch, $employeeTitleID,$employeeBaseSalary )
+	{
+
+		// update employee work history, when new employee is added
+				
+		$dbEmployeeTitleNew = new Database();
+		$dbEmployeeTitleNew->connect();
+						
+		// note: in query we use data, selected by user
+		$queryEmployeeTitleNew=
+						
+		"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
+													  titleid, salary)
+	                VALUES ($selectedEmployee, $employeeBranch, CURDATE(), '', $employeeTitleID, $employeeBaseSalary)";
+		
+		$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
+		$dbEmployeeTitleNew->close();
+					
+		// end update employee work history, when new employee is added				
+			
+	} // end public function saveHistoryToDatabase()
 }
 
 
