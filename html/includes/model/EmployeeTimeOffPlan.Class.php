@@ -348,7 +348,7 @@ class EmployeeTimeOffPlan{
 		for($count=0;$count<$dbNumberOfDays->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbNumberOfDays->queryResultsResource);	
-			$this->initializeEmployeeTimeOff($row);
+			$this->initializeEmployeeTimeOffPlan($row);
 		}
 		
 		$dbNumberOfDays->close();
