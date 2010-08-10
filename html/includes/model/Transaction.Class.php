@@ -135,7 +135,7 @@ class Transaction{
 	 */
 	function displayTransactionInRowFormatted()
 	{
-		$this->displayTransactionInRow();
+		$this->displayTransactionInRow(1);
 	}
 
 	public function initializeTransaction($row)

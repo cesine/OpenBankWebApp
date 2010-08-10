@@ -10,6 +10,8 @@ if(isset($_SESSION)){
 	//$client->displaySelectClientAccount();
 
 	$selectedAccountId=$client->clientAccountsArray[0];
+	
+	
 	/*
 	 * print out the Page header and transaction table header
 	 */
@@ -17,10 +19,8 @@ if(isset($_SESSION)){
 				width='600'>
 				<tbody>		<tr bgcolor='#ffffff'>
 						<td width='58%'><font class='regularTextBold'>Transaction Detail for:
-						<font color='#666666'>&nbsp;</font>Current Period</font></td>
-						<td class='tableTitleRightC' width='42%'><span
-							class='tableDataRightC'> </span></td>
-					</tr>
+						<font color='#666666'>&nbsp;</font>Current Period in Account - $selectedAccountId</font></td>
+						</tr>
 				</tbody>
 			</table><TABLE border='0' cellspacing='1' cellpadding='3' width='100%'>
 				<TR class='bgcoloroption0'>
