@@ -95,6 +95,13 @@ class Employee{
 		$this->addressId=$addressid;
 		$this->setAddress($this->addressId);
 	}
+	
+
+	public function setAddressFromObject($addressIn){
+		$this->address=$addressIn;
+	}	
+	
+	
 	public function __construct(){
 		$this->address = new Address();
 		$this->addressId=$this->address->getAddressID();
