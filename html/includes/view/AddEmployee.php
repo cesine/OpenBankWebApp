@@ -214,6 +214,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 				echo "<h4> title id:  $employeeTitleID</h4>\n";				
 				echo "<h4> salary:   $employeeBaseSalary</h4>\n";
 				
+				/*
 				// put "start date" for new title
 				
 				$dbEmployeeTitleNew = new Database();
@@ -229,7 +230,12 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 				$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
 				
-				// end put "start date" for new title				
+				// end put "start date" for new title	
+				 
+				 */		
+
+				// update employee work history, when new employee is added
+				$employee->saveHistoryToDatabase($selectedEmployee,$employeeBranch, $employeeTitleID,$employeeBaseSalary);
 				
 				
 			} // end if ($selectedEmployee!=0) // it is no duplicates
