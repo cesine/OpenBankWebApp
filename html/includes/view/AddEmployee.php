@@ -45,7 +45,6 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 <?php 
 	// create new objects
-	//$employee = new Employee();
 	$branch = new Branch();
 	$title = new EmployeeTitle();
 	$workHistory = new EmployeeWorkHistory();
@@ -61,14 +60,16 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	$title->displayEmployeeTitleList();	
 	
 	// create dynamic list of employee's time off plan names and let user to select
-	$timeOffPlan->displayEmployeeTimeOffPlanList();		
-	
-	// create dynamic list of postal codes
-	$address->PostalCodesList();	
+	$timeOffPlan->displayEmployeeTimeOffPlanList();			
 	
 ?>
-	<!-- Create field to put street number -->
+	<!-- Create fields to put street and street number -->
 	<table border="1"> 
+		<tr><td width="180">Street name:</td><td width="180">			
+			<!-- Making A Value In A Textbox Stay  -->
+			<input id="text" name="choiceStreet" maxlength=25 value="<?php if(isset($_POST['choiceStreet'])){ echo htmlentities($_POST['choiceStreet']); }?>" />				
+		</td></tr>
+		
 		<tr><td width="180">Street number:</td><td width="180">
 			<!-- <input type="text" name="choiceStreetNumber" maxlength=6 />-->
 			
@@ -84,6 +85,9 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	<P></P>
 	
 <?php
+
+	// create dynamic list of postal codes
+	$address->PostalCodesList();	
 
 	//if submit selection button is pressed:
 	if (isset($_POST['EmployeeInfoSubmit'])) 	
@@ -103,15 +107,12 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$employeeTitle=$_POST["choiceTitle"];
 		
 		// get time off plan id from time off plan name
-		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];	
-		
-		//$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan); // doesn't work
-		$timeOffPlan->findTimeOffPlanID2($employeeTimeOffPlan);
-		
-		$employeeTimeOffPlanID=$timeOffPlan->getTimeOffID();
-		
-		echo "<h5> time off name: $employeeTimeOffPlan </h5>\n";	
-		echo "<h5> time off ID: $employeeTimeOffPlanID </h5>\n";	
+		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];			
+		//$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);      // doesn't work, return empty id
+		$timeOffPlan->findTimeOffPlanID2($employeeTimeOffPlan);		
+		$employeeTimeOffPlanID=$timeOffPlan->getTimeOffID();		
+		//echo "<h5> time off name: $employeeTimeOffPlan </h5>\n";	
+		//echo "<h5> time off ID: $employeeTimeOffPlanID </h5>\n";	
 		
 		$employee->setTimeOffID($employeeTimeOffPlanID);	
 		
@@ -121,8 +122,8 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		$address->setStreetNumber($_POST["choiceStreetNumber"]);
 		$employeeStreetNumber=$_POST["choiceStreetNumber"];	
 		
-		$address->setStreet("My street");
-
+		$address->setStreet($_POST["choiceStreet"]);
+		$employeeStreet=$_POST["choiceStreet"];
 		
 		$employee->setAddressFromObject($address);
 		/*
@@ -137,15 +138,16 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 		
 		
 	    // validate values 
-		if($employeeFirstName=="" || $employeeLastName=="" || 
+		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet==""||
 		   empty($employeeStreetNumber)==true)
 		{
 			echo "<h4>Empty values are not valid.</h4>";
 		}	
 		elseif (is_numeric($employeeFirstName)==true ||
-				is_numeric($employeeLastName)==true) 
+				is_numeric($employeeLastName)==true ||
+				is_numeric($employeeStreet)==true)
 		{
-			echo "<h4>First name and last name should be a string.</h4>";	
+			echo "<h4>First name, last name and street name should be a string.</h4>";	
 		}
 		elseif (is_numeric($employeeStreetNumber)==false) 
 		{
@@ -198,14 +200,14 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 <?php 
 			
 
-			//find province, city, street from postal code
+			//find province, city from postal code
 //			$address->findProvinceCityStreet($employeePostalCode);
 			$employeeProvince=$address->getProvince();
 			$employeeCity=$address->getCity();	
-			$employeeStreet=$address->getStreet();			
+			//$employeeStreet=$address->getStreet();			
 ?>
 
-			<!-- Show province, city and street according to postal code -->
+			<!-- Show province, city according to postal code -->
 			<table border="1"> 
 				<tr><td width="180">Province:</td><td width="180">
 					<?php 
@@ -216,35 +218,15 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 					<?php 
 						echo "<input type=text disabled name=\"choiceCity\" value=\"" . $employeeCity . "\">";
 					?>				
-				</td></tr>	
-				<tr><td width="180">Street name:</td><td width="180">
-					<?php 
-						echo "<input type=text disabled name=\"choiceStreet\" value=\"" . $employeeStreet . "\">";
-					?>				
 				</td></tr>								
 			</table>
 			<!-- End Show province and city according to postal code -->	
 
 <?php 
 
-			/*
-			// insert row into table Address
-			$dbEmployeeAddressNew = new Database();
-			$dbEmployeeAddressNew->connect();
-				
-			// note: in query we use data, selected by user
-			$queryEmployeeAddressNew=
-			"INSERT INTO address (addressid, streetnumber, street, postalcode)
-			 VALUES ('NULL', $employeeStreetNumber, '$employeeStreet', '$employeePostalCode')";			
-			//$dbEmployeeAddressNew->query($queryEmployeeAddressNew);
-			$dbEmployeeAddressNew->updateInsert($queryEmployeeAddressNew);
-			$dbEmployeeAddressNew->close();
-			// end insert row into table Address	
-			 */	
-
-
 
 			echo $employee->saveToDatabase();
+			//$selectedEmployee = 
 			
 			// put "start date" for new title
 			
