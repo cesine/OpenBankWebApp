@@ -341,7 +341,7 @@ class EmployeeTimeOffPlan{
 				
 		"SELECT numberofdays  
 		 FROM   employeetimeoffplan	
-		 WHERE  timeoffid=$employeeTimeOffPlan";					
+		 WHERE  timeoffid=$employeeTimeOffPlanID";					
 											
 		$dbNumberOfDays->query($queryNumberOfDays);
 				
