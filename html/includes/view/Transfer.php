@@ -21,14 +21,15 @@ if(isset($_SESSION)){
 		 */
 		$fromAccount = new ClientAccount();
 		$fromAccount->initializeAccountFromID($_POST[fromaccount]);
-		if ($_POST[amount]> $fromAccount->getAvailableBalance()){
+		if ($_POST[amount]> $fromAccount->getCurrentBalance()){
 			echo "Sorry, Insufficient Balance for this transfer.";
 		}else{
 			$transactionFromAccount= new Transaction();
 			$transactionFromAccount->setAccountId($_POST[fromaccount]);
-			$transactionFromAccount->setBalance($fromAccount->getAvailableBalance() - $_POST[amount]);
-			$transactionFromAccount->setDate('Y-m-d');
+			$transactionFromAccount->setBalance($fromAccount->getCurrentBalance() - $_POST[amount]);
+			$transactionFromAccount->setDate(date('Y-m-d'));
 			$transactionFromAccount->setWithdrawalAmount($_POST[amount]);
+			$transactionFromAccount->setDepositAmount("");
 			$transactionFromAccount->setClientID($client->getClientId());
 			$transactionFromAccount->setTransactionDescription("Online Fund Transfer");
 			$transactionFromAccount->setTransactionFeeCharged(0);
@@ -41,17 +42,11 @@ if(isset($_SESSION)){
 				$person=$client->getClientID();
 			}
 			$transactionFromAccount->setTransactionPerformedBy($person);
+			$queryInsertForFromTransaction=$transactionFromAccount->buildInsertTransactionQuery();
+			//echo $queryInsertForFromTransaction;
+			//echo $transactionFromAccount->saveToDatabase();
 			
-			$queryInsertToTransaction="INSERT INTO  transaction (
-				`transactionid` ,`branchid` ,`accountid` , `date` ,
-				`transactionfeecharged` ,	`transactionfeetype` ,	`depositamount` ,
-				`withdrawalamount` , `balanceaftertransaction` , 
-				`transactiondescription` , `transperformedby`)
-				VALUES (NULL ,  '".$transactionFromAccount->getBranchId()."',  '".$transactionFromAccount->getAccountId()."',  '".$transactionFromAccount->getDate()."',
-				  '".$transactionFromAccount->getTransactionFeeCharged()."',  '".$transactionFromAccount->getTransactionFeeType()."',  '".$transactionFromAccount->getDepositAmount()."',
-				   ".$transactionFromAccount->getWithdrawalAmount()." ,  '".$transactionFromAccount->getBalance()."',  
-				   '".$transactionFromAccount->getTransactionDescription()."',  '".$transactionFromAccount->getTransactionPerformedBy()."')";
-			echo $queryInsertToTransaction;
+			
 			
 			
 			$toAccount= new ClientAccount();
@@ -59,7 +54,41 @@ if(isset($_SESSION)){
 			
 			$transactionToAccount= new Transaction();
 			$transactionToAccount->setAccountId($_POST[toaccount]);
-			$transactionToAccount->setBalance(3);
+			$transactionToAccount->setBalance($toAccount->getCurrentBalance() + $_POST[amount]);
+			$transactionToAccount->setDate(date('Y-m-d'));
+			$transactionToAccount->setWithdrawalAmount("");
+			$transactionToAccount->setDepositAmount($_POST[amount]);
+			$transactionToAccount->setClientID($client->getClientId());
+			$transactionToAccount->setTransactionDescription("Online Fund Transfer");
+			$transactionToAccount->setTransactionFeeCharged(0);
+			$transactionToAccount->setBranchId($client->getBranchID());
+			$transactionToAccount->setTransactionFeeType("free transaction");
+			$transactionToAccount->setTransactionPerformedBy($person);
+			$queryInsertForToTransaction=$transactionToAccount->buildInsertTransactionQuery();
+			//echo $queryInsertForToTransaction;
+			
+		
+			$temp=$fromAccount->getCurrentBalance()-$_POST[amount];
+			$queryUpdateFromAccountBallance="UPDATE `clientaccount` 
+				SET `currentbalance` = ".$temp." WHERE `clientaccountid` = ".$fromAccount->getClientAccountId()." AND `branchid` = ".$client->getBranchID();
+			//echo $queryUpdateFromAccountBallance;
+			$temp=$toAccount->getCurrentBalance()+$_POST[amount];
+			$queryUpdateToAccountBallance="UPDATE `clientaccount` 
+				SET `currentbalance` = ".$temp." 
+				WHERE `clientaccountid` = ".$toAccount->getClientAccountId()." AND `branchid` = ".$client->getBranchID();
+			//echo $queryInsertForToTransaction;
+			
+			$transferQueryArray[0]=$queryInsertForFromTransaction;
+			$transferQueryArray[1]=$queryUpdateFromAccountBallance;
+			$transferQueryArray[2]=$queryInsertForToTransaction;
+			$transferQueryArray[3]=$queryUpdateToAccountBallance;
+			
+			$dbTransferMoney = new Database();
+			$dbTransferMoney->connect();
+			$transferResultArray=$dbTransferMoney->transactionSafeInsertUpdate($transferQueryArray);
+			$dbTransferMoney->close();
+			echo "All 4 transactions have been run, here are the results: ";
+			print_r($transferResultArray);
 			
 			
 			echo "<p>Money Transfered.</p>";
