@@ -79,6 +79,11 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	</table>
 	<!-- End create field to put street number -->	
 
+<?php 
+		// create dynamic list of postal codes
+		$address->PostalCodesList();		
+?>
+
 	<!-- read input from user after submition -->
 	<P></P>
 	<input type="submit" name="EmployeeInfoSubmit" value="submit selection" />
@@ -86,8 +91,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 	
 <?php
 
-	// create dynamic list of postal codes
-	$address->PostalCodesList();	
+
 
 	//if submit selection button is pressed:
 	if (isset($_POST['EmployeeInfoSubmit'])) 	
