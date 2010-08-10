@@ -210,7 +210,7 @@ echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'
 
 
 			// for debagging
-			$timeOffPlan->displayEmployeeTimeOffPlanInRowFormatted();
+			//$timeOffPlan->displayEmployeeTimeOffPlanInRowFormatted();
 
 			echo $employee->saveToDatabase();
 			//$selectedEmployee = 
