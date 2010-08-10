@@ -165,6 +165,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			$employeeProvince=$address->getProvince();
 			$employeeCity=$address->getCity();	
 
+			// find number of days off allowed from plan off id
 			$timeOffPlan->findNumberOfDays($employeeTimeOffPlanID);
 			$employeeNumberOfDays=$timeOffPlan->getNumberOfDays();
 
@@ -182,23 +183,24 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 						echo "<input type=text disabled name=\"choiceCity\" value=\"" . $employeeCity . "\">";
 					?>				
 				</td></tr>	
+				<!--  
 				<tr><td width="180">Number of days off allowed:</td><td width="180">
 					<?php 
-						echo "<input type=text disabled name=\"choiceNumberOfDays\" value=\"" . $employeeNumberOfDays . "\">";
+						//echo "<input type=text disabled name=\"choiceNumberOfDays\" value=\"" . $employeeNumberOfDays . "\">";
 					?>				
-				</td></tr>												
+				</td></tr>	
+				-->											
 			</table>
 			<!-- End Show province and city according to postal code -->	
 
 <?php 
 
-
-			// for debagging
-			//$timeOffPlan->displayEmployeeTimeOffPlanInRowFormatted();
-
 			echo $employee->saveToDatabase();
-			//$selectedEmployee = 
+			//$selectedEmployee = saveToDatabase();
+			echo "Employee with ID: $selectedEmployee is added";
 			
+		
+			/*
 			// put "start date" for new title
 			
 			$dbEmployeeTitleNew = new Database();
@@ -215,6 +217,10 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			$dbEmployeeTitleNew->close();
 			
 			// end put "start date" for new title
+			 
+			 */
+			 
+			
 
 		} // end input is OK		
 	
