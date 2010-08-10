@@ -127,10 +127,10 @@ class ClientAccount{
 		$this->branchId=10004;
 		$this->clientId=54010026;
 		$this->accountTypeId=2;
-		$this->availableBalance="1342.53";
-		$this->currentBalance="1342.53";
+		$this->availableBalance="0.00";
+		$this->currentBalance="0.00";
 		$this->openingDate=date('Y-m-d');
-		$this->closingDate="0000-00-00";
+		$this->closingDate="NULL";
 		$this->status=1;
 	}
 	public function initializeAccountFromID($accountid){
@@ -202,26 +202,7 @@ class ClientAccount{
 		$queryAddAccount = "INSERT INTO clientaccount VALUES ($newDataRow)";
 		$newAccountId=$newClientAccount->insert($queryAddAccount);
 		$newClientAccount->close();
-
-
-		if ($newClientAccount->queryResultsResource)
-		{
-			echo  "<br/>", "You're account has been created!" , "<br/>";
-			echo 'Pl. follow the link to make a ';
-			?>
-			<a href="index.php?&content=Transfer">transaction</a>
-
-			<?php
-			echo ' in your new account. <br/>';
-		}
-		else
-		{
-			//echo 'Sorry, there was a problem inserting values! ';
-			?>
-			<a href="index.php?&content=OpenNewAccount">Please try again</a>
-			<?php
-		}
-		return $newAccountId;
+        return $newAccountId;
 	}
 
 	public function initializeClientAccount($row)
