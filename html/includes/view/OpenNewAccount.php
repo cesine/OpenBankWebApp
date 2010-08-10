@@ -181,7 +181,7 @@ $clientAccount->setclientId($clientID);
 //$clientAccount->setCurrentBalance('0.00');
 //$clientAccount->setAvailableBalance('0.00');
 //inserting in the table
-//echo $clientAccount->saveToDatabase();
+echo $clientAccount->saveToDatabase();
 
 //print the link statements after opening the new account
 //if ($newClientAccount->queryResultsResource)
