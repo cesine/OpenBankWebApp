@@ -104,7 +104,7 @@ if (isset($_SESSION['Client']))
 
 						<TD class="acctC" vAlign=top align=left width="30%"><a
 							class='accountLinkB'
-							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php $clientAccount->accountTypeName;?></a></td>
+							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php $clientAccount->displayAccountInRow();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php $clientAccount->currentBalance;?></td>
 
 					</tr>
