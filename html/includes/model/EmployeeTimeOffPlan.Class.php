@@ -116,6 +116,12 @@ class EmployeeTimeOffPlan{
 		$this->setNumberOfDays($row[numberofdays]);	
 	}	
 	
+	public function initializeEmployeeTimeOffPlanID($row)
+	{
+		// in the line ($row[]), parameter name [] from db table
+		$this->setTimeOffID($row[timeoffid]);
+	}		
+	
 	public function initializeEmployeeTimeOff($row)
 	{
 		// in the line ($row[]), parameter name [] from db table
@@ -250,12 +256,39 @@ class EmployeeTimeOffPlan{
 		for($count=0;$count<$dbEmployeeTimeOffPlan->queryResultsCount;$count=$count+1)
 		{
 			$row=mysql_fetch_array($dbEmployeeTimeOffPlan->queryResultsResource);	
-			$this->initializeEmployeeTimeOffPlan($row);
-			$this->displayEmployeeTimeOffPlan();
+			$this->initializeEmployeeTimeOffPlanID($row);
+			//$this->displayEmployeeTimeOffPlan();
 		}
 		$dbEmployeeTimeOffPlan->close();
 
-	}// end public function findEmployeeTimeOffPlan()		
+	}// end public function findEmployeeTimeOffPlan()	
+
+	
+		public function findTimeOffPlanID($employeeTimeOffPlan)
+	{
+		// find time off plan id from title name
+	
+		$dbEmployeeTimeOffPlanID = new Database();
+		$dbEmployeeTimeOffPlanID->connect();
+				
+		// note: in query we use data, selected by user
+		$queryEmployeeTimeOffPlanID=
+				
+		"SELECT timeoffid  
+		 FROM   employeetimeoffplan	
+		 WHERE  timeoffname='$employeeTimeOffPlan'";					
+											
+		$dbEmployeeTimeOffPlanID->query($EmployeeTimeOffPlanID);
+				
+		for($count=0;$count<$dbEmployeeTimeOffPlanID->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbEmployeeTimeOffPlanID->queryResultsResource);	
+			$this->initializeEmployeeTitleID($row);
+		}
+		
+		$dbEmployeeTimeOffPlanID->close();
+			
+	} // end public function findTitleID()		
 	
 
 }
