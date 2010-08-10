@@ -1,3 +1,8 @@
+<?php 
+	require_once('includes/model/Employee.Class.php');
+	require_once('includes/model/EmployeeWorkHistory.Class.php');	
+?>
+
 <p></p>
 <?php 
 	echo "<h4> Deactivate employee. </h4>\n";
@@ -18,9 +23,11 @@ $employee->EmployeeList();
 <P></P>
 
 <!-- show bottom "Deactivated employee Info" -->
+<!--  
 <P></P>
 <input type="submit" name="DeactivateEmployeeInfo" value="Deactivated employee info" />
 <P></P>
+-->
 
 <?php
 
@@ -41,9 +48,53 @@ if (isset($_POST["DeactivateEmployee"]))
 } // end if (isset($_POST["SelectEmployee"])) 
 
 	
-if (isset($_POST["DeactivateEmployeeInfo"])) 						
+//if (isset($_POST["DeactivateEmployeeInfo"])) 						
 {
 	echo "<h4> Deactivated employee info. </h4>\n";
+?>
+		<!-- display personal info of deactivated employee -->
+		
+		<table width="100%" border="1" cellpadding="3" cellspacing="1">
+		<tr>
+			<td>
+			Employee ID
+			</td>
+			<td>
+			First Name
+			</td>
+			<td>
+			Last Name
+			</td>
+			<td>
+			Street number
+			</td>
+			<td>
+			Street name
+			</td>
+			<td>
+			City
+			</td>
+			<td>
+			Province
+			</td>	
+			<td>
+			Postal code
+			</td>
+		</tr>
+		
+<?php
+		$employee->displayEmployeePersonalInfo();
+?>
+		</table>
+		<P></P>
+<?php 	
+
+		echo "<h4> Work history: </h4>\n";
+		$employeeWorkHistory = new EmployeeWorkHistory();
+		$employeeWorkHistory->employeeHistory($selectedEmployee);
+		
+
+	
 } // end if (isset($_POST["DeactivateEmployeeInfo"])) 	
 
 
