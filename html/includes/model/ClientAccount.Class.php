@@ -22,6 +22,8 @@ class ClientAccount{
 	private $serviceTypeId;
 	private $serviceId;
 
+	public $clientBusinessAccountsArray;
+	public $clientPersonalAccountsArray;
 	
 	public function getClientAccountId() {
 		return $this->clientAccountId;
@@ -178,7 +180,6 @@ class ClientAccount{
 		//echo "</table>";
 	}
 	public function displayAccountInRow(){
-		$this->setAccountTypeName($this->accountTypeId);
 		echo "<tr class='bgcoloroption1'>
 		<td class='tableDataRightC'>$this->serviceTypeId</td>
 		<td class='tableDataRightC'>$this->serviceCategoryId</td>
@@ -219,6 +220,7 @@ class ClientAccount{
 		$this->setOpeningDate($row[openingdate]);
 		$this->setClosingDate($row[closingdate]);
 		$this->setAccountTypeName($row[accounttypeid]);
+	//	$this->setAccountTypeName($this->accountTypeId);
 	}
 
 }
