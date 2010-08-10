@@ -166,9 +166,9 @@ class ClientAccount{
 		$queryAddAccount;
 		$newAccountId=$newClientAccount->insert($queryAddAccount);
 		$newClientAccount->close();
-		if($newAccountId != 0){
-			$this->clientAccountId=$newAccountId;
-		}
+//		if($newAccountId != 0){
+//			$this->clientAccountId=$newAccountId;
+//		}
 
 		return $newAccountId;
 	}
