@@ -163,6 +163,7 @@ if (isset($_SESSION['Client']))
 <?php 
 	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
 	{
+		$clientAccount->displayAccountInRow();
 ?>
 			<tr>
 				<td colspan=5>
@@ -192,77 +193,6 @@ if (isset($_SESSION['Client']))
 
 
 
-					<tr class='bgcoloroption1'>
-
-						<TD class="acctC" vAlign=top align=left width="30%">&nbsp;</td>
-
-
-						<TD class="dollarAmountC" vAlign=top align=right width="19%">
-						&nbsp;</td>
-
-						<td width="2%" class="bgcoloroption2">&nbsp;</td>
-
-						<TD class="acctC" vAlign=top align=left width="30%"><a
-							class='accountLinkB'
-							href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=SCL;;SCL;SL;CAD;23733.45000000000072759576141834259033203125;-5226249572034719199@4042590690771209851'>Line
-						of Credit</a></td>
-
-
-
-						<TD class="dollarAmountC" vAlign=top align=right width="19%">
-						23,733.45</td>
-
-					</tr>
-
-
-
-					<tr class='bgcoloroption2'>
-
-						<TD class="acctC" vAlign=top align=left width="30%">&nbsp;</td>
-
-
-						<TD class="dollarAmountC" vAlign=top align=right width="19%">
-						&nbsp;</td>
-
-						<td width="2%" class="bgcoloroption2">&nbsp;</td>
-
-						<TD class="acctC" vAlign=top align=left width="30%"><a
-							class='accountLinkB'
-							href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=SCL;;SCL;SL;CAD;0;704823335699167669@8287708620258226603'>Line
-						of Credit</a></td>
-
-
-
-						<TD class="dollarAmountC" vAlign=top align=right width="19%">0.00
-						</td>
-
-					</tr>
-
-
-
-					<tr class='bgcoloroption1'>
-
-						<TD class="acctC" vAlign=top align=left width="30%">&nbsp;</td>
-
-
-						<TD class="dollarAmountC" vAlign=top align=right width="19%">
-						&nbsp;</td>
-
-						<td width="2%" class="bgcoloroption2">&nbsp;</td>
-
-						<TD class="acctC" vAlign=top align=left width="30%"><a
-							class='accountLinkB'
-							href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=1322909'>Scotia
-						Mortgage</a></td>
-
-
-
-						<TD class="dollarAmountC" vAlign=top align=right width="19%">
-						38,188.51</td>
-
-					</tr>
-
-
 				</table>
 				</td>
 			</tr>
@@ -270,35 +200,6 @@ if (isset($_SESSION['Client']))
 <?php 
 		}//endl if to only print when there are any results
 ?>
-			<tr>
-				<td colspan=5>
-				<table width="100%" border="0" cellspacing="0" cellpadding="2">
-					<tr class='bgcoloroption2'>
-
-						<TD class="acctC" vAlign=top align=left width="30%"><a
-							class='accountLinkB'
-							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=SAV;PC;SAV;PC;CAD;5.07000000000000028421709430404007434844970703125;4066729351047152490@-3336690819295176166'>Powerchequing</a></td>
-
-
-						<TD class="dollarAmountC" vAlign=top align=right width="19%">5.07
-						</td>
-
-						<td width="2%" class="bgcoloroption2">&nbsp;</td>
-
-						<TD class="acctC" vAlign=top align=left width="30%"><b><a
-							class='accountLinkB'
-							href='/portal/index.jsp?pageID=borrowing&reqOption=AccountDetails&accountNum=TEQ;;TEQ;;;;2349897100850695816@3059326134147549449'>Scotia
-						Total Equity Plan</a></b></td>
-
-
-
-						<TD class="dollarAmountC" vAlign=top align=right width="19%">
-						&nbsp;</td>
-
-					</tr>
-
-
-
 					<tr class='bgcoloroption1'>
 
 						<TD class="acctC" vAlign=top align=left width="30%">&nbsp;</td>
