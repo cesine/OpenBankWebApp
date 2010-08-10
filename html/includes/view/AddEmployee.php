@@ -101,6 +101,10 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$employee->setTitleName($_POST["choiceTitle"]);
 		$employeeTitle=$_POST["choiceTitle"];
 		
+		// find title id from title name
+		$title->findTitleID($employeeTitle);
+		$employeeTitleID=$title->getTitleID();
+		
 		// get time off plan id from time off plan name
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];			
 		//$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);      // doesn't work, return empty id
@@ -201,10 +205,13 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			if ($selectedEmployee!=0)
 			{
 				// if it is not a duplicate, update table employeeworkhistory
-				echo "<h4> Employee with ID: $selectedEmployee is added. </h4>\n";
 				
+				
+				// all variables are correct
+				echo "<h4> Employee with ID: $selectedEmployee is added. </h4>\n";				
 				echo "<h4> branch ID:   $employeeBranch</h4>\n";	
 				echo "<h4> title:  $employeeTitle</h4>\n";
+				echo "<h4> title id:  $employeeTitleID</h4>\n";				
 				echo "<h4> salary:   $employeeBaseSalary</h4>\n";
 				
 				// put "start date" for new title
@@ -217,7 +224,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 					
 				"INSERT INTO employeeworkhistory (employeeid, branchid, startdate, lastdate, 
 												  titleid, salary)
-	                VALUES ($selectedEmployee, $employeeBranch, CURDATE(), '', $employeeTitle, $employeeBaseSalary)";
+	                VALUES ($selectedEmployee, $employeeBranch, CURDATE(), '', $employeeTitleID, $employeeBaseSalary)";
 	
 				$dbEmployeeTitleNew->insert($queryEmployeeTitleNew);
 				$dbEmployeeTitleNew->close();
@@ -226,12 +233,12 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 				
 				
 			} // end if ($selectedEmployee!=0) // it is no duplicates
-			elseif($selectedEmployee!=0)
+			elseif($selectedEmployee==0)
 			{
 				// if it is a duplicate
 				echo "<h4> Duplicates are not allowed. Insertion is failed </h4>\n";
 				
-			} // end elseif($selectedEmployee!=0) // it is a duplicate
+			} // end elseif($selectedEmployee==0) // it is a duplicate
 		
 
 		} // end input is OK		
