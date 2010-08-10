@@ -223,7 +223,7 @@ class Client{
 			$account= new ClientAccount();
 			$account->initializeAccountFromID($accountNumber);
 			//Dont display account if it matches insurance
-			if ( !(preg_match('/.*Insurance.*/',$account->getAccountTypeName())) ){
+			if ( !(preg_match('/.*Insurance.*/',$account->getAccountTypeName())) && $account->getStatus()!=0 ){
 				echo "<option value='$accountNumber'>".$account->getAccountTypeName()." ".$account->getClientAccountId();
 				echo money_format('%(#5n', $account->getCurrentBalance());
 				echo "</option>";
