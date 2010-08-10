@@ -70,9 +70,12 @@ class ClientAccount{
 		$db = new Database();
 		$db->connect();
 		$queryToDo= "SELECT DISTINCT accountname FROM accounttype	
-			WHERE accounttypeid=".$accountTypeId;
+			WHERE accounttypeid=$accountTypeId";
 		$db->query($queryToDo);
 		$db->close();
+		
+		echo $queryToDo;
+		
 		$this->$accountTypeName=$db->queryFirstResult[accountname];
 	}
 	public function setAccountName($accountName){
