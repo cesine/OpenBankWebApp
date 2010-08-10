@@ -6,6 +6,7 @@
 <p></p>
 <?php 
 	echo "<h4> Deactivate employee. </h4>\n";
+	$employee->EmployeeDeactevatedAll();
 ?>
 	<p></p>
 <?php 
