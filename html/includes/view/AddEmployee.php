@@ -103,8 +103,8 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		
 		// get time off plan id from time off plan name
 		$employeeTimeOffPlan=$_POST["choiceTimeOffPlan"];			
-		$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);      // doesn't work, return empty id
-		//$timeOffPlan->findTimeOffPlanID2($employeeTimeOffPlan);		
+		//$timeOffPlan->findTimeOffPlanID($employeeTimeOffPlan);      // doesn't work, return empty id
+		$timeOffPlan->findTimeOffPlanID2($employeeTimeOffPlan);		
 		$employeeTimeOffPlanID=$timeOffPlan->getTimeOffID();		
 		//echo "<h5> time off name: $employeeTimeOffPlan </h5>\n";	
 		//echo "<h5> time off ID: $employeeTimeOffPlanID </h5>\n";	
@@ -121,16 +121,6 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$employeeStreet=$_POST["choiceStreet"];
 		
 		$employee->setAddressFromObject($address);
-		/*
-		echo "<h4> Selected: </h4>\n";
-		echo "<h5> first name: 		$employeeFirstName </h5>\n";
-		echo "<h5> last name:  		$employeeLastName </h5>\n";		
-		echo "<h5> branch:  		$employeeBranch </h5>\n";	
-		echo "<h5> title:  			$employeeTitle </h5>\n";	
-		echo "<h5> time off plan:  	$employeeTimeOffPlan </h5>\n";	
-		echo "<h5> postal code:  	$employeePostalCode </h5>\n";	
-		 */						
-		
 		
 	    // validate values 
 		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet==""||
