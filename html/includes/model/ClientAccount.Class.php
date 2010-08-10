@@ -73,7 +73,7 @@ class ClientAccount{
 			WHERE accounttypeid=".$accountTypeId;
 		$db->query($queryToDo);
 		$db->close();
-		$this->$accountTypeName=$db->queryFirstResult['accountname'];
+		$this->$accountTypeName=$db->queryFirstResult[accountname];
 	}
 	public function setAccountName($accountName){
 		$this->accountName=$accountName;
