@@ -131,7 +131,7 @@ if(isset($_SESSION)){
 				<td align='right' ><label
 					for='toaccount' >To: </label>";
 		$fromaccount='$fromaccount';
-		$client->displaySelectAccountWithChooseSelect("toaccount");
+		$client->displaySelectAccountForToSelect("toaccount");
 		echo "</td>
 			</tr>
 			</tbody>
