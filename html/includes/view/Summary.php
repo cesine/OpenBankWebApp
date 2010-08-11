@@ -42,7 +42,7 @@ if($content=="AllAccountsSummary")
 
 			<TR class="bgcoloroption1">
 				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleRightC align=right>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Balance</a></td>
 			</tr>
 
 			<tr>
@@ -84,11 +84,11 @@ if($content=="AllAccountsSummary")
 				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;;&nbsp;<a class="helpLinkC">Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;;&nbsp;;&nbsp;<a class="helpLinkC">Account Name </a></td>
 				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
@@ -105,7 +105,7 @@ if($content=="AllAccountsSummary")
 ?>
 					<tr class='bgcoloroption2'>
 
-						<TD class="acctC" vAlign=top align=left width="30%"><a
+						<TD class="acctC" vAlign=top align=left width="50%"><a
 							class='accountLinkB'
 							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right><?php echo $clientAccount->getCurrentBalance();?></td>
@@ -119,12 +119,12 @@ if($content=="AllAccountsSummary")
 			</tr>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Investment</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Investment</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
 				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
