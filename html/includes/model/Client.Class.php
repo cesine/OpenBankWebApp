@@ -298,7 +298,8 @@ class Client{
 			if ( $account->getStatus() != 0 )
 			{
 				if ( ($account->serviceCategoryId == 1 || $account->serviceCategoryId) && 
-					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3) )
+					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3
+						|| $account->serviceTypeId == 5) )
 				{
 					echo "<option value='$accountNumber'>".$account->getAccountTypeName()." ".$account->getClientAccountId();
 					echo money_format('%(#5n', $account->getCurrentBalance());
@@ -322,7 +323,8 @@ class Client{
 			if ( $account->getStatus() != 0 )
 			{
 				if ( ($account->serviceCategoryId == 1 || $account->serviceCategoryId) && 
-					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3) )
+					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3
+						|| $account->serviceTypeId == 5 || $account->serviceTypeId == 4) )
 				{
 					echo "<option value='$accountNumber'>".$account->getAccountTypeName()." ".$account->getClientAccountId();
 					echo money_format('%(#5n', $account->getCurrentBalance());
