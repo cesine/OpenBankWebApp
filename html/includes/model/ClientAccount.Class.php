@@ -127,7 +127,7 @@ class ClientAccount
 		$dbChargeMonthlyFees->query($getAccountsAndFees);
 		for($count=0;$count<$dbChargeMonthlyFees->queryResultsCount;$count++){
 			$row=mysql_fetch_array($dbChargeMonthlyFees->queryResultsResource);
-			echo $row[accountid];
+			echo "Charging ".$row[accounttypeid]."<br/>";
 		}
 	}
 
