@@ -28,7 +28,7 @@ if($content=="AllAccountsSummary")
 {
 ?>
 
-<table width="500" border="1" cellspacing="0" cellpadding="0">
+<table width="600" border="1" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -42,7 +42,7 @@ if($content=="AllAccountsSummary")
 
 			<TR class="bgcoloroption1">
 				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
 			<tr>
