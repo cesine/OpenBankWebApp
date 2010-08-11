@@ -10,8 +10,8 @@ if(isset($_SESSION)){
 	//$client->displaySelectClientAccount();$clientAccountId$clientAccountId
 
 	//$selectedAccountId=$_SESSION['DisplayAccount'];//$client->clientAccountsArray[0];
-	$selectedAccountId=$client->clientAccountsArray[0]->getClientAccountId();	
-	
+	//$selectedAccountId=$client->clientAccountsArray[0]->getClientAccountId();	
+	$selectedAccountId = $_GET['accountid'];
 	/*
 	 * print out the Page header and transaction table header
 	 */
