@@ -268,14 +268,27 @@ if($content=="Banking"){?>
 	<td rowspan='2'><br></td>
 	<td class='headline2'>RSP Solutions Centre<br><br></td>
 	</tr>
+
 	<tr valign='top'>
 	<td>
 	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
 	<br><br>
-	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
-	</td></tr></tbody></table></td>
-	<br>
-	<br>";
+						  
+								
+  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Money Master  for RSPs account</a><br>
+
+
+
+
+<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+<br>
+<br>";
 	$db = new Database();
 	$db->connect();
 	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
@@ -294,49 +307,13 @@ if($content=="Banking"){?>
 	}
 }
 elseif($content=="TFSA"){
-	echo "<table><tbody>
-	<tr valign='top'>
-	<td rowspan='2'><br></td>
-	<td class='headline2'>The TFSA Solutions Centre<br><br></td>
-	</tr>
-	<tr valign='top'>
-	<td>
-	You can save tax-free and still have the flexibility to withdraw your savings at any time, for any purpose, you decide why and when.  You will be surprised how quickly your tax-free savings can add up.
-	<br><br>
-	<div align='left'><span class='headline3'>You can choose your TFSA online with:</span></div>
-	</td></tr></tbody></table></td>
-	<br>
-	<br>";
+	echo "paste some text here 02";
 }
 elseif($content=="Chequing"){
-	echo "<table><tbody>
-	<tr valign='top'>
-	<td rowspan='2'><br></td>
-	<td class='headline2'>Chequing Simplified<br><br></td>
-	</tr>
-	<tr valign='top'>
-	<td>
-	We offer a simplified chequing account to simplify the way you bank and to help you get control of your money. Whether you are looking to open a new account, or make changes to your existing account, we're with you every step of the way.
-	<br><br>
-	<div align='left'><span class='headline3'>We offer great options:</span></div>
-	</td></tr></tbody></table></td>
-	<br>
-	<br>";
+	echo "paste some text here 03";
 }
 elseif($content=="Savings"){
-	echo "<table><tbody>
-	<tr valign='top'>
-	<td rowspan='2'><br></td>
-	<td class='headline2'>The Right Savings Account for You<br><br></td>
-	</tr>
-	<tr valign='top'>
-	<td>
-	We have the right savings account for you, regardless of how you want your savings to work for you.
-	<br><br>
-	<div align='left'><span class='headline3'>We offer great options:</span></div>
-	</td></tr></tbody></table></td>
-	<br>
-	<br>";
+	echo "paste some text here 04";
 }
 elseif($content=="ForeignCurrency"){
 	echo "paste some text here 05";
@@ -345,34 +322,10 @@ elseif($content=="LifeInsurance"){
 	echo "paste some text here 06";
 }
 elseif($content=="CreditCards"){
-	echo "<table><tbody>
-	<tr valign='top'>
-	<td rowspan='2'><br></td>
-	<td class='headline2'>Credit Cards that work for You.<br><br></td>
-	</tr>
-	<tr valign='top'>
-	<td>
-	Once you receive your new credit card you can activate it online quickly and securely. It only takes a couple of minutes and you'll be on your way to enjoying the many benefits of your new card.
-	<br><br>
-	<div align='left'><span class='headline3'>We offer great options:</span></div>
-	</td></tr></tbody></table></td>
-	<br>
-	<br>";
+	echo "paste some text here 07";
 }
 elseif($content=="LineOfCredit"){
-	echo "<table><tbody>
-	<tr valign='top'>
-	<td rowspan='2'><br></td>
-	<td class='headline2'>A Line of Credit made Easy<br><br></td>
-	</tr>
-	<tr valign='top'>
-	<td>
-	Imagine the difference a Personal Line of Credit can make in your life. It gives you real control over your finances because you have immediate access to money whenever and wherever you need it or want it.
-	<br><br>
-	<div align='left'><span class='headline3'>We offer great options:</span></div>
-	</td></tr></tbody></table></td>
-	<br>
-	<br>";
+	echo "paste some text here 08";
 	$db = new Database();
 	$db->connect();
 	$queryToDo= "SELECT DISTINCT * FROM employee e";

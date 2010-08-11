@@ -203,7 +203,7 @@ class Employee{
 			(NULL, '".$this->addressId."','$this->branchID',
 			'$this->titleID','$this->salary','$this->firstName','$this->lastName',
 			'$this->timeOffID','$this->status')";
-		echo $employeeInsertQuery;
+		//echo $employeeInsertQuery;
 		$newIdInserted=$dbToInsertEmployee->insert($employeeInsertQuery);
 		$dbToInsertEmployee->close();
 		

@@ -111,12 +111,24 @@ class Address{
 		$postalcodeSuccess=$this->postalCode->saveToDatabase();
 		$dbForAddressInsert = new Database();
 		$dbForAddressInsert->connect();
-		$addressInsertQuery= "INSERT INTO address (streetnumber,street,postalcode)
-			VALUES ('$this->streetNumber','$this->street','".$this->postalCode->getPostalCodes()."')";
+		$addressInsertQuery= "INSERT INTO address (addressid, streetnumber,street,postalcode)
+			VALUES (NULL,'$this->streetNumber','$this->street','".$this->postalCode->getPostalCodes()."')";
 		//echo $addressInsertQuery;
-		$addresSuccess=$dbForAddressInsert->insert($addressInsertQuery);
+		$addresIdInDB=$dbForAddressInsert->insert($addressInsertQuery);
 		$dbForAddressInsert->close();
-		return $addresSuccess.$postalcodeSuccess;
+		if ($addresIdInDB==0){
+			$findAddress="SELECT * FROM address WHERE streetNumber='".$this->streetNumber."' AND street='".$this->street."' AND postalcode='".$this->postalCode->getPostalCodes()."'";
+			//echo $findAddress;
+			$anotheDb= new Database();
+			$anotheDb->connect();
+			$anotheDb->query($findAddress);
+			$row=$anotheDb->queryFirstResult;
+			$addresIdInDB= $row[addressid];
+			print_r($row);
+			$anotheDb->close();
+		}
+		
+		return $addresIdInDB;
 	}
 	public function emptyIt(){
 		$this->streetNumber="0";
