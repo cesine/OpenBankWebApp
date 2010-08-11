@@ -28,7 +28,7 @@ if($content=="AllAccountsSummary")
 {
 ?>
 
-<table width="500" border="0" cellspacing="0" cellpadding="0">
+<table width="500" border="1" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -37,11 +37,11 @@ if($content=="AllAccountsSummary")
 				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Business Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">&nbsp;&nbsp;Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
 				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
@@ -58,9 +58,8 @@ if($content=="AllAccountsSummary")
 ?>
 					<tr class='bgcoloroption2'>
 
-						<TD class="acctC" vAlign=top align=left width="30%"><a
-							class='accountLinkB'
-							href=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $clientAccount->getAccountTypeName();?></a></td>
+						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
+							href=''><?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
@@ -85,11 +84,11 @@ if($content=="AllAccountsSummary")
 				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
 				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
