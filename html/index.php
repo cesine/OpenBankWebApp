@@ -117,9 +117,10 @@ if($userIsClient || $userIsEmployee){
 
 if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
-}elseif($content=="Banking"|| $content=="Borrowing" || $content=="Insurance" || $content=="Investing" || $content=="PersonalServices" 
-			|| $content=="BusinessServices" || $content=="RSP" || $content=="TFSA" || $content=="Chequing" || $content=="Savings" 
-			|| $content=="ForeignCurrency" || $content=="LifeInsurance" || $content=="CreditCards" || $content=="LineOfCredit")
+}elseif($content=="PersonalBanking"|| $content= "BusinessBanking" || $content=="Borrowing" || $content=="Insurance" || $content=="Investing" || $content=="PersonalServices" 
+			|| $content=="BusinessServices" || $content=="RSP" || $content=="TFSA" || $content=="BusinessChequing" || $content=="BusinessSavings" 
+			|| $content=="BusinessForeignCurrency" || $content=="LifeInsurance" || $content=="CreditCards" || $content=="LineOfCredit"
+			|| $content=="PersonalChequing" || $content=="PersonalSavings" || $content=="PersonalForeignCurrency")
 			{
 				include('includes/view/AboutTheBank.php');
 }elseif($content=="Welcome"){
