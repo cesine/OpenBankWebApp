@@ -297,7 +297,7 @@ if($content=="Banking"){?>
 			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
 			
 			
-			echo "<table border='1'><tr>cell1<td><tr>cell2<td><tr>cell3<td></td></tr></table>".$row[accountname].$row[investmentterm]." months ".$row[interestrate]."% ".'<br/>';
+			echo "<table border='1'><tr>$row[accountname]<td><tr>$row[investmentterm] months<td><tr>$row[interestrate]%<td></td></tr></table>";
 	}
 }
 elseif($content=="TFSA"){
