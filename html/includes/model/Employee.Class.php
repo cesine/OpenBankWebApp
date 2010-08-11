@@ -482,6 +482,22 @@ class Employee{
 		$dbEmployeeCurrentFirstName->close();
 	} // end public function EmployeeCurrentFirstName()
 	
+	public function updateFirstName($selectedEmployee, $firstNameNew)
+	{
+			$dbUpdateFirstName = new Database();
+			$dbUpdateFirstName->connect();
+				
+			// note: in query we use data, selected by user
+			$queryUpdateFirstName=
+				
+			"UPDATE employee
+    		 SET    firstname = '$firstNameNew'
+			 WHERE  employeeid=$selectedEmployee'";				
+
+			$dbUpdateFirstName->updateInsert($queryUpdateFirstName);
+			$dbUpdateFirstName->close();
+	} // end public function UpdateFirstName()	
+	
 	
 	
 }
