@@ -15,11 +15,11 @@ if (isset($_SESSION['Client']))
 
 	$client->setClientAccountsArray($clientId);
 	
-	echo '<table>';
-	foreach($client->clientAccountsArray as $clientAccount){
-		$clientAccount->displayAccountInRow();
-	}
-	echo '</table>';
+//	echo '<table>';
+//	foreach($client->clientAccountsArray as $clientAccount){
+//		$clientAccount->displayAccountInRow();
+//	}
+//	echo '</table>';
 }
 ?>
 
@@ -38,7 +38,7 @@ if (isset($_SESSION['Client']))
 
 			<TR class="bgcoloroption1">
 				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC"><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleRightC><a class="helpLinkC">Balance</a></td>
 				<TD width="2%" class="bgcoloroption2">&nbsp;</TD>
 			</tr>
 
