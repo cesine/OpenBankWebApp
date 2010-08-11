@@ -33,12 +33,11 @@ if (isset($_SESSION['Client']))
 			</TR>
 			<TR class="bgcoloroptionB">
 				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Banking</a></td>
-				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
 				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC width="19%" align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 				<TD width="2%" class="bgcoloroption2">&nbsp;</TD>
 			</tr>
 

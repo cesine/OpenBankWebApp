@@ -134,28 +134,24 @@ class Client{
 			if ( ($account->serviceCategoryId == 1) && 
 					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3) )
 			{
-				echo "Personal Banking";
 				$this->clientPersonalBankingAccountsArray[$personalBanking] = $account;
 				$personalBanking = $personalBanking + 1;
 			}
 			elseif ( ($account->serviceCategoryId == 1) && 
 					($account->serviceTypeId == 4 || $account->serviceTypeId == 5) )
 			{
-				echo "Personal Borrowing";
 				$this->clientPersonalBorrowingAccountsArray[$personalBorrow] = $account;
 				$personalBorrow = $personalBorrow + 1;
 			}
 			elseif ( ($account->serviceCategoryId == 1) && 
 					($account->serviceTypeId == 6 || $account->serviceTypeId == 7) )
 			{
-				echo "Personal Investing";
 				$this->clientPersonalInvestingAccountsArray[$personalInvest] = $account;
 				$personalInvest = $personalInvest + 1;
 			}
 			elseif ( ($account->serviceCategoryId == 1) && 
 					($account->serviceTypeId == 8) )
 			{
-				echo "Personal Insurance";
 				$this->clientPersonalInsuranceAccountsArray[$personalInsure] = $account;
 				$personalInsure = $personalInsure + 1;
 			}
