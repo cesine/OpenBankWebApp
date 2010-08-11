@@ -240,7 +240,7 @@ if($content=="BankingSummary")
 {
 ?>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="600" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
