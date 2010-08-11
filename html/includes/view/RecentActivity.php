@@ -18,19 +18,17 @@ if(isset($_SESSION)){
 	if ( $selectedAccountId == "" )
 		$selectedAccountId=$_SESSION['DisplayAccount'];
 		
-	echo $selectedAccountId;		
-		
 	$clientAccount = $client->getClientAccount($selectedAccountId);
 	$clientAccountName = $clientAccount->getAccountTypeName();
 	$currentBalance = $clientAccount->getCurrentBalance();
+	$availableBalance = $clientAccount->getAvailableBalance();
 	$accountTypeId = $clientAccount->getAccountTypeId();
 	
 	if ( $selectedAccountType == "Banking")
 	{
-		$bankingPlan = new BankingPlans();
-		$bankingPlan->setAccountTypeId($accountTypeId);
-		$overdraftAmount = $bankingPlan->getOverdraftAmount();
-		$availableBalance = $overdraftAmount + $currentBalance;
+//		$bankingPlan = new BankingPlans();
+//		$bankingPlan->setAccountTypeId($accountTypeId);
+//		$overdraftAmount = $bankingPlan->getOverdraftAmount();
 		
 		echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
 					width='600'>
@@ -83,7 +81,7 @@ if(isset($_SESSION)){
 						<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
 						<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
 						<TD class='tableDataRightC' valign=top>$currentBalance</TD>
-						<TD class='tableDataRightC' valign=top>$availableCredit</TD>
+						<TD class='tableDataRightC' valign=top>$availableBalance</TD>
 					</TR><tr><td></td></tr><tr></tr></table>";
 		
 	}

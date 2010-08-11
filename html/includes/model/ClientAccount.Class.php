@@ -5,7 +5,7 @@ class ClientAccount
 	private $branchId;
 	private $clientId;
 	public  $currentBalance;
-	private $availableBalance;
+	public $availableBalance;
 	private $status;
 	private $openingDate;
 	private $closingDate;
