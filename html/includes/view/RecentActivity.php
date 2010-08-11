@@ -24,6 +24,7 @@ if(isset($_SESSION)){
 		$bankingPlan = new BankingPlans();
 		$bankingPlan->setAccountTypeId($accountTypeId);
 		$overdraftAmount = $bankingPlan->getOverdraftAmount();
+		$availableBalance = $overdraftAmount + $currentBalance;
 		
 		echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
 					width='600'>
@@ -41,11 +42,11 @@ if(isset($_SESSION)){
 						<TD class='fieldTitleRightC' valign=top width=\"25%\">Current<br> Balance CAD</TD>
 						<TD class='fieldTitleRightC' valign=top width=\"25%\">Available<br> Balance CAD</TD>
 					</TR>
-						<TR class='bgcoloroption0'>
+						<TR class='bgcoloroption1'>
 						<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
 						<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
 						<TD class='tableDataRightC' valign=top>$currentBalance</TD>
-						<TD class='tableDataRightC' valign=top>$overdraftAmount</TD>
+						<TD class='tableDataRightC' valign=top>$availableBalance + </TD>
 					</TR><tr><td></td></tr><tr></tr></table>";
 		
 	}
