@@ -371,7 +371,36 @@ elseif($content=="ForeignCurrency"){
 	echo "paste some text here 05";
 }
 elseif($content=="LifeInsurance"){
-	echo "paste some text here 06";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>Life Insurance<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	Learn how we can help shield you and your family from life's financial uncertainties. Take one of the most important steps to protect your family's future and ensure that their financial needs will be met.
+	<br><br>
+	<div align='left'><span class='headline3'>We have many options:</span></div>
+	</td></tr></tbody></table><br>";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`, `insuranceplans`.`coverage`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype`, `insuranceplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'Life'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	and `insuranceplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `accounttype`.`accountname` ASC";
+	$db->query($queryToDo);
+	echo "<table width = 400 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			echo "<tr><td>$row[accountname]</td><td>$$row[coverage]</td></tr>";
+	}
+	echo "</table>";
 }
 elseif($content=="CreditCards"){
 	echo "paste some text here 07";
