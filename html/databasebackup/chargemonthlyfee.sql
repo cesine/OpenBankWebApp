@@ -13,27 +13,29 @@ BEGIN
 	DECLARE monthcharge DECIMAL;
 	DECLARE feetype INT;
 	DECLARE newbalance DECIMAL;
-	DECLARE endapplife DATE;
 	DECLARE sec INT;	
-	SET endapplife = "2010-08-12";
-	SET @sec = SECOND(CURTIME());	
-	SET @q  = CONCAT("INSERT INTO `bankapp`.`log` (`logId`, 
-	`timestampoflog`, `message`) VALUES (NULL, NULL, 
-	'testfromconsole first",@sec,"');");
-	PREPARE ps_q FROM @q;
-	EXECUTE ps_q;
-	DEALLOCATE PREPARE ps_q;
+	DECLARE account INT;
+	DECLARE cursor1 CURSOR FOR SELECT clientaccountid FROM `clientaccount` WHERE accounttypeid=1;
+ 	SET @newbalance =2;
+        SET @fee=3;
+        SET account=210004074;
+
+	open cursor1;
+	FETCH cursor1 INTO account;
+ 
 	
+	SET @newbalance =2;
+	SET @fee=3;
 	SET @q  = CONCAT("INSERT INTO  transaction 
 	(`transactionid` ,`branchid` ,`accountid` , 
-	`date` ,`transactionfeecharged` ,	`transactionfeetype` ,	
+	`date` ,`transactionfeecharged`,`transactionfeetype` ,	
 	`depositamount` ,`withdrawalamount` , `balanceaftertransaction` ,
 	`transactiondescription` , `transperformedby`)	
 	VALUES 
-	(NULL,10001,10000001,",
-	CURDATE(),",2,'fee',
-	NULL,2,202,
-	Monthly Fee, 20000001);");
+	(NULL,10001,",@account,",",
+	CURDATE(),",",@fee,",'fee',
+	NULL,",@fee,",",@newbalance,",
+	'Monthly Fee', 20000001);");
 
 	PREPARE ps_q FROM @q;
 	EXECUTE ps_q;
