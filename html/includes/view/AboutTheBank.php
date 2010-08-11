@@ -273,13 +273,6 @@ if($content=="Banking"){?>
 	<td>
 	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
 	<br><br>
-						  
-								
-  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Money Master  for RSPs account</a><br>
-
-
-
-
 <div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
 </td>
 </tr>
@@ -302,7 +295,9 @@ if($content=="Banking"){?>
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
 			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
-			echo $row[accountname].$row[investmentterm]." months ".$row[interestrate]."% ".'<br/>';
+			
+			
+			echo "<table border='1'><tr>cell1<td><tr>cell2<td><tr>cell3<td></td></tr></table>".$row[accountname].$row[investmentterm]." months ".$row[interestrate]."% ".'<br/>';
 	}
 }
 elseif($content=="TFSA"){
