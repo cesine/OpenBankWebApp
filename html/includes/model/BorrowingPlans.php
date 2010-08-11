@@ -36,8 +36,25 @@ class BorrowingPlans
 	public function setAccountTypeId($accountTypeId)
 	{
 		$this->accountTypeId=$accountTypeId;
+	    $bankPlan = new Database();
+	    $bankPlan->connect();
+	    $plan = "SELECT DISTINCT *
+	                    FROM borrowingplans b
+	                    WHERE b.accounttypeid = ".$accountTypeId;
+	    
+	    $bankPlan->query($plan);
+	    $bankPlan->close();
+		$this->initializeBorrowingPlan($bankPlan->queryFirstResult);
 	}
 		
+	public function initializeBorrowingPlan($row)
+	{
+		$this->setMonthlyFee($row[monthlyfee]);
+		$this->setCreditLimit($row[creditlimit]);
+		$this->setGracePeriod($row[graceperiod]);
+		$this->setInterestRate($row[interestrate]);
+	}
+			
 	public function setMonthlyFee($monthlyFee)
 	{
 		$this->monthlyFee=$monthlyFee;
