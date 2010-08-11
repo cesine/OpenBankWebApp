@@ -71,7 +71,6 @@ class BankingPlans
 		
 	public function initializeBankingPlan($row)
 	{
-		print_r($row);
 		$this->setMonthlyFee($row[monthlyfee]);
 		$this->setFreeTransactions($row[freetransactions]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
 		$this->setTransactionFee($row[transactionfee]);
