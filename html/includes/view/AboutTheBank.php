@@ -398,19 +398,179 @@ elseif($content=="PersonalChequing"){
 	echo "</table>";
 }
 elseif($content=="PersonalSavings"){
-	echo "paste some text here 04";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	<br><br>
+	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+	</td></tr></tbody></table><br>";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'RSP'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `investmentplans`.`investmentterm` ASC";
+	$db->query($queryToDo);
+	echo "<table width = 600 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
+			
+			
+			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+	}
+	echo "</table>";
 }
 elseif($content=="PersonalForeignCurrency"){
-	echo "paste some text here 05";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	<br><br>
+	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+	</td></tr></tbody></table><br>";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'RSP'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `investmentplans`.`investmentterm` ASC";
+	$db->query($queryToDo);
+	echo "<table width = 600 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
+			
+			
+			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+	}
+	echo "</table>";
 }
 elseif($content=="BusinessChequing"){
-	echo "paste some text here 04";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	<br><br>
+	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+	</td></tr></tbody></table><br>";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'RSP'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `investmentplans`.`investmentterm` ASC";
+	$db->query($queryToDo);
+	echo "<table width = 600 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
+			
+			
+			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+	}
+	echo "</table>";
 }
 elseif($content=="BusinessSavings"){
-	echo "paste some text here 04";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	<br><br>
+	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+	</td></tr></tbody></table><br>";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'RSP'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `investmentplans`.`investmentterm` ASC";
+	$db->query($queryToDo);
+	echo "<table width = 600 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
+			
+			
+			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+	}
+	echo "</table>";
 }
 elseif($content=="BusinessForeignCurrency"){
-	echo "paste some text here 05";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	<br><br>
+	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+	</td></tr></tbody></table><br>";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'RSP'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `investmentplans`.`investmentterm` ASC";
+	$db->query($queryToDo);
+	echo "<table width = 600 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
+			
+			
+			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+	}
+	echo "</table>";
 }
 elseif($content=="LifeInsurance"){
 	echo "<table><tbody>
