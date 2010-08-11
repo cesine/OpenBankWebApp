@@ -106,7 +106,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		
 <?php
 		
-		//if (isset($_POST['SubmitChanges'])) 	
+		if (isset($_POST['SelectedOptionsSubmit2'])) 	
 		//if ($_POST['SubmitChanges']) 							
 		{
 
