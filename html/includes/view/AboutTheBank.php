@@ -291,14 +291,16 @@ if($content=="Banking"){?>
 	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
 	ORDER BY `investmentplans`.`investmentterm` ASC";
 	$db->query($queryToDo);
+	"<table border='1'>
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
 			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
 			
 			
-			echo "<table border='1'><tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr></table>";
+			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
 	}
+	</table>
 }
 elseif($content=="TFSA"){
 	echo "paste some text here 02";
