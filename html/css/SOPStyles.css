@@ -38,7 +38,7 @@ TH { vertical-align: top; TEXT-ALIGN: center; FONT-SIZE: 9pt; FONT-FAMILY: Arial
 .colheading { FONT-SIZE: 12.5px; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; }
 .fieldTitleLeftA { FONT-SIZE: 12px; COLOR: #000000; BACKGROUND-COLOR: #f1f1e0; FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
 .fieldTitleLeftB { FONT-SIZE: 13px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
-.fieldTitleLeftC { FONT-SIZE: 12px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
+.fieldTitleLeftC { FONT-SIZE: 12px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; LINE-HEIGHT: 150%; }
 .fieldTitleLeftWhiteC { FONT-SIZE: 12px; COLOR: #FFFFFF; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
 .fieldTitleLeftRedC { FONT-SIZE: 12px; COLOR: #a50000; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
 .fieldTitleLeftD { FONT-SIZE: 10px; COLOR: black; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; }
