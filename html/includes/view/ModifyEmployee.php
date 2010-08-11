@@ -19,6 +19,9 @@ echo "<h4> Modify employee. </h4>\n";
 $branch = new Branch();
 $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
+
+// show dynamic list with employee title names
+$employeeTitle->displayEmployeeTitleList();	
 ?>
 
 <!-- Choose what should be changed -->
@@ -42,6 +45,8 @@ $employeeWorkHistory = new EmployeeWorkHistory();
 <?php
 
 $selectedInfo=$_POST["choiceInfo"];
+$selectedEmployee=$_POST["choiceEmployee"];	
+
 
 //if submit selection button is pressed:
 if (isset($_POST['SelectedOptionsSubmit'])) 	
@@ -73,13 +78,20 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		$branch->BranchList();
 			
 		// show dynamic list with employee title names
-		$employeeTitle->displayEmployeeTitleList();	
+		//$employeeTitle->displayEmployeeTitleList();
+
+		$employee->EmployeeCurrentSalary($selectedEmployee);		
+		$employeeCurSalary=$employee->getSalary();
+		
 ?>
 
 		<!-- Create field to change salary -->
 		<table border="1"> 
 			<tr><td width="180">Salary:</td><td width="180">
 				<input type="text" name="choiceSalary" value=0 maxlength=8 />
+				<?php 
+					echo "<input type=text name=\"choiceSalary\" maxlength=\"8\" value=\"" . $employeeCurSalary . "\">";
+				?>				
 			</td></tr>
 		</table>
 		<!-- End create field to change salary -->		
@@ -96,7 +108,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		//if ($_POST['SubmitChanges']) 							
 		{
 
-			$selectedEmployee=$_POST["choiceEmployee"];				
+			//$selectedEmployee=$_POST["choiceEmployee"];				
 			$branchIDNew=$_POST["choiceBranch"];
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
