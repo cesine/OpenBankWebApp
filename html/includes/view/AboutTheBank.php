@@ -286,7 +286,7 @@ if($content=="Banking"){?>
 
 </tbody>
 </table>
-</td>
+
 <br>
 <br>";
 	$db = new Database();
@@ -304,7 +304,7 @@ if($content=="Banking"){?>
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
 			print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
-			echo "Charging ".$row[accounttypeid]."<br/>";
+			echo "Charging ".$row[accountname].[investmentterm].[interestrate]"<br/>";
 	}
 }
 elseif($content=="TFSA"){
