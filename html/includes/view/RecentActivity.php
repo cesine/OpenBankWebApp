@@ -51,7 +51,7 @@ if(isset($_SESSION)){
 		
 	}
 
-	echo "<br><br><br><br>";
+	echo "<br><br>";
 	
 	/*
 	 * print out the Page header and transaction table header
