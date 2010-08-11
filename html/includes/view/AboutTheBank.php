@@ -1,8 +1,8 @@
 <?php
 
-if($content=="PersonalBanking")
-{
-?>
+//$content = $_GET["content"];
+
+if($content=="Banking"){?>
 <table width="397" border="0" cellspacing="0" cellpadding="0">
 	<tbody>
 		<tr></tr>
@@ -17,11 +17,11 @@ if($content=="PersonalBanking")
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="index.php?&content=Banking"
 							class="boldnav">Day-To-Day Banking</a> <br>
-							<a href="index.php?&content=PersonalChequing"
+							<a href="index.php?&content=Chequing"
 							style="font-size: 11px;">Chequing</a>,
-							<a href="index.php?&content=PersonalSavings"
+							<a href="index.php?&content=Savings"
 							style="font-size: 11px;">Savings</a>,
-							<a href="index.php?&content=PersonalForeignCurrency"
+							<a href="index.php?&content=ForeignCurrency"
 							style="font-size: 11px;">Foreign Currency</a>
 						</td>
 					</tr>
@@ -33,42 +33,7 @@ if($content=="PersonalBanking")
 		</tr>
 	</tbody>
 </table>
-
-<?php 
-}elseif($content=="BusinessBanking")
-{
-?>
-<table width="397" border="0" cellspacing="0" cellpadding="0">
-	<tbody>
-		<tr></tr>
-		<tr valign="top">
-			<td width="5"><img src="/static/spacer.gif" width="5" height="10"></td>
-			<td width="188">
-			<table width="188" border="0" cellspacing="0" cellpadding="0">
-							<tbody>
-
-					<tr valign="top">
-						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
-							height="5" hspace="4" vspace="6" border="0"></td>
-						<td><a href="index.php?&content=Banking"
-							class="boldnav">Daily Business Banking</a> <br>
-							<a href="index.php?&content=BusinessChequing"
-							style="font-size: 11px;">Chequing</a>,
-							<a href="index.php?&content=BusinessSavings"
-							style="font-size: 11px;">Savings</a>,
-							<a href="index.php?&content=BusinessForeignCurrency"
-							style="font-size: 11px;">Foreign Currency</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<br>
-			</td>
-			<td width="11"><img src="/static/spacer.gif" width="5" height="10"></td>
-		</tr>
-	</tbody>
-</table>
-
+			
 <?php 			
 }elseif($content=="Borrowing"){
 ?>
@@ -131,7 +96,6 @@ if($content=="PersonalBanking")
 		</tr>
 	</tbody>
 </table>
-
 <?php 			
 }elseif($content=="Insurance"){
 ?>
@@ -161,7 +125,6 @@ if($content=="PersonalBanking")
 		</tr>
 	</tbody>
 </table>
-
 <?php 			
 }elseif($content=="PersonalServices"){?>
 
@@ -177,13 +140,13 @@ if($content=="PersonalBanking")
 					<tr valign="top">
 						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
-						<td><a href="index.php?&content=PersonalBanking"
+						<td><a href="index.php?&content=Banking"
 							class="boldnav">Day-To-Day Banking</a> <br>
-							<a href="index.php?&content=PersonalChequing"
+							<a href="index.php?&content=Chequing"
 							style="font-size: 11px;">Chequing</a>,
-							<a href="index.php?&content=PersonalSavings"
+							<a href="index.php?&content=Savings"
 							style="font-size: 11px;">Savings</a>,
-							<a href="index.php?&content=PersonalForeignCurrency"
+							<a href="index.php?&content=ForeignCurrency"
 							style="font-size: 11px;">Foreign Currency</a>
 						</td>
 					</tr>
@@ -266,7 +229,6 @@ if($content=="PersonalBanking")
 		</tr>
 	</tbody>
 </table>
-
 <?php 
 }elseif($content=="BusinessServices"){?>
 <table width="397" border="0" cellspacing="0" cellpadding="0">
@@ -282,12 +244,12 @@ if($content=="PersonalBanking")
 						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td><a href="index.php?&content=Banking"
-							class="boldnav">Daily Business Banking</a> <br>
-							<a href="index.php?&content=BusinessChequing"
+							class="boldnav">Day-To-Day Banking</a> <br>
+							<a href="index.php?&content=Chequing"
 							style="font-size: 11px;">Chequing</a>,
-							<a href="index.php?&content=BusinessSavings"
+							<a href="index.php?&content=Savings"
 							style="font-size: 11px;">Savings</a>,
-							<a href="index.php?&content=BusinessForeignCurrency"
+							<a href="index.php?&content=ForeignCurrency"
 							style="font-size: 11px;">Foreign Currency</a>
 						</td>
 					</tr>
@@ -367,7 +329,7 @@ elseif($content=="TFSA"){
 	}
 	echo "</table>";
 }
-elseif($content=="PersonalChequing"){
+elseif($content=="Chequing"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
@@ -402,19 +364,10 @@ elseif($content=="PersonalChequing"){
 	}
 	echo "</table>";
 }
-elseif($content=="BusinessChequing"){
+elseif($content=="Savings"){
 	echo "paste some text here 04";
 }
-elseif($content=="BusinessSavings"){
-	echo "paste some text here 04";
-}
-elseif($content=="PersonalSavings"){
-	echo "paste some text here 04";
-}
-elseif($content=="PersonalForeignCurrency"){
-	echo "paste some text here 05";
-}
-elseif($content=="BusinessForeignCurrency"){
+elseif($content=="ForeignCurrency"){
 	echo "paste some text here 05";
 }
 elseif($content=="LifeInsurance"){
@@ -437,6 +390,5 @@ elseif($content=="LineOfCredit"){
 
 
 ?>
-
 
 
