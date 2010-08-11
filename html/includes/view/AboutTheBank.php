@@ -406,14 +406,36 @@ elseif($content=="CreditCards"){
 	echo "paste some text here 07";
 }
 elseif($content=="LineOfCredit"){
-	echo "paste some text here 08";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	Imagine the difference a Personal Line of Credit can make in your life. It gives you real control over your finances because you have immediate access to money whenever and wherever you need it or want it.
+	<br><br>
+	<div align='left'><span class='headline3'>You can obtain a line of credit online:</span></div>
+	</td></tr></tbody></table><br>";
 	$db = new Database();
 	$db->connect();
-	$queryToDo= "SELECT DISTINCT * FROM employee e";
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`, `borrowingplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype`, `borrowingplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'Line Of Credit'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	AND `borrowingplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `accounttype`.`accountname` ASC";
 	$db->query($queryToDo);
-	$db->close();
-	print_r($db->queryFirstResult);
-	echo "Employee id is".$db->queryFirstResult[employeeid];
+	echo "<table width = 600 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			echo "<tr><td>$row[accountname]</td><td>$row[interestrate]%</td></tr>";
+	}
+	echo "</table>";
 }
 						
 
