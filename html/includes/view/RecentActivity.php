@@ -59,7 +59,7 @@ if(isset($_SESSION)){
 	echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
 				width='600'>
 				<tbody>		<tr bgcolor='#ffffff'>
-						<td width='58%'><font class='regularTextBold'>Transaction Details for:<br>
+						<td width='58%' align=center><font class='regularTextBold'>Transaction Details for:<br>
 						<font color='#666666'>&nbsp;</font>Current Period in Account - $selectedAccountId</font></td>
 						</tr>
 				</tbody>
