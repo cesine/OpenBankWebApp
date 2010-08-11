@@ -7,6 +7,7 @@ require_once('includes/model/EmployeeWorkHistory.Class.php');
 require_once('includes/model/EmployeeTimeOffPlan.Class.php');
 require_once('includes/model/Address.Class.php');
 require_once('includes/model/PostalCodes.Class.php');
+require_once('includes/model/EmployeeLogin.Class.php');
 echo "<form action='?&content=AddEmployee' method='POST'>";
 //echo "<form action='?&content=AddEmployee&topMenu=EmployeeTopMenu' method='POST'>";
 
@@ -46,6 +47,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 	$address = new Address();
 	$postalCode = new PostalCodes();
 	$employee=new Employee();
+	$login=new EmployeeLogin();
 	
 	// create dynamic list of branches and let user to select
 	$branch->BranchList();
@@ -139,6 +141,9 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		$employeeCity=$postalCode->getCity();	
 		$postalCode->setCity($employeeCity); 								// set city
 		
+		$login->setLogin($_POST["choicePassword"]);
+		$employeeLogin=($_POST["choicePassword"]);
+		
 		//$address->initializeAddress2($employeeStreetNumber, $employeeStreet, $employeePostalCode);
 				
 		/*
@@ -161,7 +166,7 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 		
 		
 	    // validate values 
-		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet==""||
+		if($employeeFirstName=="" || $employeeLastName=="" || $employeeStreet==""||$employeeLogin==""||
 		   empty($employeeStreetNumber)==true)
 		{
 			echo "<h4>Empty values are not valid.</h4>";
@@ -237,8 +242,9 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 
 			if ($selectedEmployee!=0)
 			{
-				// if it is not a duplicate, update table employeeworkhistory
+				// if it is not a duplicate, update table employeeworkhistory and login
 				$employee->saveHistoryToDatabase($selectedEmployee,$employeeBranch, $employeeTitleID,$employeeBaseSalary);
+				$employee->saveLoginToDatabase($selectedEmployee,$employeeLogin);
 				echo "<h4> Employee with ID $selectedEmployee is inserted. </h4>\n";						
 				
 			} // end if ($selectedEmployee!=0) // it is no duplicates
