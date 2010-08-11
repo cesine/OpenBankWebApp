@@ -118,7 +118,8 @@ if($content=="BranchLocator"){
 	include ('includes/view/BranchLocator.php');
 }elseif($content=="PersonalBanking" || $content=="BusinessBanking"|| $content=="Borrowing" || $content=="Insurance" || $content=="Investing" || $content=="PersonalServices" 
 			|| $content=="BusinessServices" || $content=="RSP" || $content=="TFSA" || $content=="PersonalChequing" || $content=="PersonalSavings" 
-			|| $content=="PersonalForeignCurrency" || $content=="LifeInsurance" || $content=="CreditCards" || $content=="LineOfCredit")
+			|| $content=="PersonalForeignCurrency" || $content=="LifeInsurance" || $content=="CreditCards" || $content=="LineOfCredit" 
+			|| $content=="BusinessChequing" || $content=="BusinessSavings" || $content=="BusinessForeignCurrency")
 			{
 				include('includes/view/AboutTheBank.php');
 }elseif($content=="Welcome"){
