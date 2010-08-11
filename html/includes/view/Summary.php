@@ -37,7 +37,7 @@ if($content=="AllAccountsSummary")
 				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Business Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC"><blockquote>Banking</blockquote></a></td>
+				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">&nbsp;&nbsp;Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
@@ -60,7 +60,7 @@ if($content=="AllAccountsSummary")
 
 						<TD class="acctC" vAlign=top align=left width="30%"><a
 							class='accountLinkB'
-							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+							href=''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
