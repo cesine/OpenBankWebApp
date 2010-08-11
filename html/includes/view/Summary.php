@@ -356,11 +356,11 @@ if($content=="InvestingSummary")
 		<form name=sumform0 method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<TR class="bgcoloroptionA">
-				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
+				<TD colSpan=5><FONT class=fieldTitleLeftC>Personal Accounts</a></FONT></TD>
 			</TR>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Investment</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Investment</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
@@ -385,7 +385,7 @@ if($content=="InvestingSummary")
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="acctC" vAlign=top align=left width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><?php echo $clientAccount->getClientAccountId();?></a></td>
+							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><font color=blue><?php echo $clientAccount->getClientAccountId();?></font></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
@@ -445,7 +445,7 @@ if($content=="BorrowingSummary")
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="acctC" vAlign=top align=left width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><?php echo $clientAccount->getClientAccountId();?></a></td>
+							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><font color=blue><?php echo $clientAccount->getClientAccountId();?></font></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
