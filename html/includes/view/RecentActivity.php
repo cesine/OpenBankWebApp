@@ -31,8 +31,8 @@ if(isset($_SESSION)){
 				<TR class='bgcoloroption0'>
 					<td class='fieldTitleLeftC' valign=top>Account Name<br></td>
 					<td class='fieldTitleLeftC' valign=top>Account Number<br></td>
-					<TD class='fieldTitleRightC' valign=top>Current Balance CAD</TD>
-					<TD class='fieldTitleRightC' valign=top>Available Balance CAD</TD>
+					<TD class='fieldTitleRightC' valign=top>Current<br> Balance CAD</TD>
+					<TD class='fieldTitleRightC' valign=top>Available<br> Balance CAD</TD>
 				</TR>
 					<TR class='bgcoloroption0'>
 					<td class='fieldTitleLeftC' valign=top>$clientAccountName<br></td>
