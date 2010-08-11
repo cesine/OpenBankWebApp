@@ -34,15 +34,15 @@ if($content=="AllAccountsSummary")
 		<form name=sumform0 method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<TR class="bgcoloroptionA">
-				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Business Accounts</a></FONT></TD>
+				<TD colSpan=5><FONT class=fieldTitleLeftC>Business Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC align=right>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleRightC align=right>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Balance</a></td>
 			</tr>
 
 			<tr>
@@ -59,7 +59,7 @@ if($content=="AllAccountsSummary")
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><font color=blue><?php echo $clientAccount->getAccountTypeName();?></font></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
@@ -81,15 +81,15 @@ if($content=="AllAccountsSummary")
 		<form name=sumform0 method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<TR class="bgcoloroptionA">
-				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
+				<TD colSpan=5><FONT class=fieldTitleLeftC>Personal Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleRightC align=right>Balance</a></td>
 			</tr>
 
 			<tr>
@@ -106,7 +106,7 @@ if($content=="AllAccountsSummary")
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><font color=blue><?php echo $clientAccount->getAccountTypeName();?></font></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
@@ -118,13 +118,13 @@ if($content=="AllAccountsSummary")
 			</tr>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Investment</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Investment</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleRightC align=right>Balance</a></td>
 			</tr>
 
 			<tr>
@@ -141,7 +141,7 @@ if($content=="AllAccountsSummary")
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><font color=blue><?php echo $clientAccount->getAccountTypeName();?></font></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
@@ -153,13 +153,13 @@ if($content=="AllAccountsSummary")
 			</tr>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Borrowing</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Borrowing</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleRightC align=right>Balance</a></td>
 			</tr>
 
 			<tr>
@@ -176,7 +176,7 @@ if($content=="AllAccountsSummary")
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><font color=blue><?php echo $clientAccount->getAccountTypeName();?></font></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
@@ -246,7 +246,7 @@ if($content=="BankingSummary")
 		<form name=sumform0 method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<TR class="bgcoloroptionA">
-				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Business Accounts</a></FONT></TD>
+				<TD colSpan=5><FONT class=fieldTitleLeftC>Business Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
 				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Banking</a></td>
@@ -295,7 +295,7 @@ if($content=="BankingSummary")
 		<form name=sumform0 method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<TR class="bgcoloroptionA">
-				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
+				<TD colSpan=5><FONT class=fieldTitleLeftC>Personal Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
 				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Banking</a></td>
