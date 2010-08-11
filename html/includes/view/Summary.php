@@ -3,8 +3,8 @@ require_once('includes/model/AccountType.php');
 require_once('includes/model/ClientAccount.Class.php');
 require_once('includes/model/Client.Class.php');
 
-echo  'Set the account you want to display on the RecentActivity page using;
-	  $_SESSION[\'DisplayAccount\']=the account id number you want; ';
+//echo  'Set the account you want to display on the RecentActivity page using;
+	  //$_SESSION[\'DisplayAccount\']=the account id number you want; ';
 
 
 
@@ -37,11 +37,11 @@ if($content=="AllAccountsSummary")
 				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Business Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC"><blockquote>Banking</blockquote></a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">&nbsp;&nbsp;&nbsp;Account Name </a></td>
 				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
