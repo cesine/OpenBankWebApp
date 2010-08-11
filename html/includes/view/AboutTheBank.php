@@ -286,8 +286,6 @@ if($content=="Banking"){?>
 
 </tbody>
 </table>
-
-<br>
 <br>";
 	$db = new Database();
 	$db->connect();
@@ -304,7 +302,7 @@ if($content=="Banking"){?>
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
 			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
-			echo "Charging ".$row[accountname].$row[investmentterm].$row[interestrate]."<br/>";
+			echo $row[accountname].$row[investmentterm]." months ".$row[interestrate]."% ".'<br/>';
 	}
 }
 elseif($content=="TFSA"){
