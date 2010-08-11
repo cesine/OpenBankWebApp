@@ -88,7 +88,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		<!-- Create field to change salary -->
 		<table border="1"> 
 			<tr><td width="180">Salary:</td><td width="180">
-				<input type="text" name="choiceSalary" value=0 maxlength=8 />
+				<!--  <input type="text" name="choiceSalary" value=0 maxlength=8 />-->
 				<?php 
 					echo "<input type=text name=\"choiceSalary\" maxlength=\"8\" value=\"" . $employeeCurSalary . "\">";
 				?>				
