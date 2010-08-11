@@ -347,7 +347,7 @@ if($content=="InvestingSummary")
 {
 ?>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="600" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -405,7 +405,7 @@ if($content=="BorrowingSummary")
 {
 ?>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="600" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -415,12 +415,12 @@ if($content=="BorrowingSummary")
 			</TR>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Borrowing</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Borrowing</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
 				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
@@ -437,9 +437,9 @@ if($content=="BorrowingSummary")
 ?>
 					<tr class='bgcoloroption2'>
 
-						<TD class="acctC" vAlign=top align=left width="30%"><a
+						<TD class="acctC" vAlign=top align=left width="50%"><a
 							class='accountLinkB'
-							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+							href=''><?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
@@ -463,7 +463,7 @@ if($content=="InsuranceSummary")
 {
 ?>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="600" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -473,12 +473,12 @@ if($content=="InsuranceSummary")
 			</TR>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Insurance</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Insurance</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
 				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
@@ -495,9 +495,9 @@ if($content=="InsuranceSummary")
 ?>
 					<tr class='bgcoloroption2'>
 
-						<TD class="acctC" vAlign=top align=left width="30%"><a
+						<TD class="acctC" vAlign=top align=left width="50%"><a
 							class='accountLinkB'
-							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+							href=''><?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
