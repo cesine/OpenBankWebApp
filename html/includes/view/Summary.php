@@ -486,10 +486,10 @@ if($content=="InsuranceSummary")
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 
 <?php 
- 	$count = count($client->clientPersonalInvestingAccountsArray);
+ 	$count = count($client->clientPersonalInsuranceAccountsArray);
  	if ( $count != 0 )
 	{
-		foreach($client->clientPersonalInvestingAccountsArray as $clientAccount)
+		foreach($client->clientPersonalInsuranceAccountsArray as $clientAccount)
 		{
 ?>
 					<tr class='bgcoloroption2'>
