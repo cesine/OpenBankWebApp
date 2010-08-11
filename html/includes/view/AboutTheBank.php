@@ -412,23 +412,20 @@ elseif($content=="PersonalSavings"){
 	</td></tr></tbody></table><br>";
 	$db = new Database();
 	$db->connect();
-	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
-	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`, `bankingplans`.`freetransactions` , `bankingplans`.`overdraftamount`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype`, `bankingplans`
 	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
-	AND `servicetype`.`servicetypename` = 'RSP'
+	AND `servicetype`.`servicetypename` = 'Savings'
 	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
-	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
-	ORDER BY `investmentplans`.`investmentterm` ASC";
+	AND `bankingplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `bankingplans`.`freetransactions` ASC";
 	$db->query($queryToDo);
 	echo "<table width = 600 border = 0 cellpadding = 20>";
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
-			
-			
-			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>$row[freetransactions] months</td><td>$row[overdraftamount]%</td></tr>";
 	}
 	echo "</table>";
 }
@@ -517,23 +514,20 @@ elseif($content=="BusinessSavings"){
 	</td></tr></tbody></table><br>";
 	$db = new Database();
 	$db->connect();
-	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
-	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
-	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
-	AND `servicetype`.`servicetypename` = 'RSP'
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`, `bankingplans`.`freetransactions` , `bankingplans`.`overdraftamount`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype`, `bankingplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Business'
+	AND `servicetype`.`servicetypename` = 'Savings'
 	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
-	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
-	ORDER BY `investmentplans`.`investmentterm` ASC";
+	AND `bankingplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `bankingplans`.`freetransactions` ASC";
 	$db->query($queryToDo);
 	echo "<table width = 600 border = 0 cellpadding = 20>";
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
-			
-			
-			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>$row[freetransactions] months</td><td>$row[overdraftamount]%</td></tr>";
 	}
 	echo "</table>";
 }
