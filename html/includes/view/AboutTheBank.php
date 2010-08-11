@@ -9,7 +9,7 @@ if($content=="PersonalBanking"){?>
 		<tr valign="top">
 			<td width="5"><img src="/static/spacer.gif" width="5" height="10"></td>
 			<td width="188">
-			<table width="188" border="0" cellspacing="0" cellpadding="0">
+			<table width="200" border="0" cellspacing="0" cellpadding="0">
 							<tbody>
 
 					<tr valign="top">
