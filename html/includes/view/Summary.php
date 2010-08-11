@@ -518,3 +518,6 @@ if($content=="InsuranceSummary")
 	</tr>
 </table>
 
+<?php
+ }
+?>
