@@ -24,7 +24,20 @@ BEGIN
 	EXECUTE ps_q;
 	DEALLOCATE PREPARE ps_q;
 	
-	
+	SET @q  = CONCAT("INSERT INTO  transaction 
+	(`transactionid` ,`branchid` ,`accountid` , 
+	`date` ,`transactionfeecharged` ,	`transactionfeetype` ,	
+	`depositamount` ,`withdrawalamount` , `balanceaftertransaction` ,
+	`transactiondescription` , `transperformedby`)	
+	VALUES 
+	(NULL,10001,10000001,",
+	CURDATE(),"2,'fee',
+	NULL,2,202,
+	Monthly Fee, 20000001);");
+
+	PREPARE ps_q FROM @q;
+	EXECUTE ps_q;
+	DEALLOCATE PREPARE ps_q;
 END 
 $$
 DELIMITER ;
