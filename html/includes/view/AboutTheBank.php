@@ -401,12 +401,12 @@ elseif($content=="PersonalSavings"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
-	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	<td class='headline2'>Savings Account<br><br></td>
 	</tr>
 
 	<tr valign='top'>
 	<td>
-	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	We offer the right savings account for you regardless of how you want your savings to work for you.
 	<br><br>
 	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
 	</td></tr></tbody></table><br>";
@@ -503,12 +503,12 @@ elseif($content=="BusinessSavings"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
-	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	<td class='headline2'>Business Savings Account<br><br></td>
 	</tr>
 
 	<tr valign='top'>
 	<td>
-	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	We offer the right savings account for your business, regardless of whether it's a large or small company.
 	<br><br>
 	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
 	</td></tr></tbody></table><br>";
@@ -527,7 +527,7 @@ elseif($content=="BusinessSavings"){
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			echo "<tr><td>$row[accountname]</td><td>$row[freetransactions] months</td><td>$row[overdraftamount]%</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>$row[freetransactions] Free transactions</td><td>$row[overdraftamount] Overdraft protection</td></tr>";
 	}
 	echo "</table>";
 }
