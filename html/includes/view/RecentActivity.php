@@ -10,6 +10,8 @@ if(isset($_SESSION)){
 	$client= new Client();
 	$client = unserialize($_SESSION['Client']);
 
+	$client->setClientAccountsArray($clientId);
+		
 	$selectedAccountId = $_GET['accountid'];
 	$selectedAccountType = $_GET['accounttype'];
 	
