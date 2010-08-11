@@ -37,12 +37,12 @@ if($content=="AllAccountsSummary")
 				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Business Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
 			</tr>
 
 			<tr>
