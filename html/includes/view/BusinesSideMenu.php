@@ -55,8 +55,8 @@ echo "<tr valign='middle'>
 		<td height="22" align="center"><img
 		src="/images/red_bullet_trans.gif" width="6" height="7"></td>
 		<td><a
-		href="index.php?&content=Banking"
-		class="linkVertMenu">Day-to-Day Banking</a></td>
+		href="index.php?&content=BusinessBanking"
+		class="linkVertMenu">Daily Business Banking</a></td>
 	</tr>	
 	
 </tbody>
