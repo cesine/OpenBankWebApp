@@ -291,7 +291,7 @@ if($content=="Banking"){?>
 	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
 	ORDER BY `investmentplans`.`investmentterm` ASC";
 	$db->query($queryToDo);
-	"<table border='1'>
+	echo "<table border='1'>";
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
@@ -300,7 +300,7 @@ if($content=="Banking"){?>
 			
 			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
 	}
-	</table>
+	echo "</table>";
 }
 elseif($content=="TFSA"){
 	echo "paste some text here 02";
