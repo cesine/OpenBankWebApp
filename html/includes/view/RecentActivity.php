@@ -9,8 +9,8 @@ if(isset($_SESSION)){
 	$client = unserialize($_SESSION['Client']);
 	//$client->displaySelectClientAccount();
 
-	$selectedAccountId=$_SESSION['DisplayAccount'];//$client->clientAccountsArray[0];
-	
+	//$selectedAccountId=$_SESSION['DisplayAccount'];//$client->clientAccountsArray[0];
+	$selectedAccountId=$client->clientAccountsArray[0];	
 	
 	/*
 	 * print out the Page header and transaction table header
