@@ -361,10 +361,11 @@ class Client{
 				return $clientAccount;
 			}
 		}
-				foreach ($this->clientPersonalBorrowingAccountsArray as $clientAccount)
+		foreach ($this->clientPersonalBorrowingAccountsArray as $clientAccount)
 		{
 			if ( $clientAccount->getClientAccountId() == $accountId )
 			{
+				echo "Anshu Garg";
 				return $clientAccount;
 			}
 		}
