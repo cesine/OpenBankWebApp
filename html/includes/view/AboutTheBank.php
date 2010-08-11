@@ -431,34 +431,30 @@ elseif($content=="PersonalForeignCurrency"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
-	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	<td class='headline2'>Personal $US Account<br><br></td>
 	</tr>
-
 	<tr valign='top'>
 	<td>
-	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	We offer an easy-to-use $US account for your frequent or infrequent trips across the border.
 	<br><br>
-	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+	<div align='left'><span class='headline3'>You can see the great options available to you:</span></div>
 	</td></tr></tbody></table><br>";
 	$db = new Database();
 	$db->connect();
-	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
-	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`, `bankingplans`.`freetransactions` , `bankingplans`.`overdraftamount`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype`, `bankingplans`
 	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
-	AND `servicetype`.`servicetypename` = 'RSP'
+	AND `servicetype`.`servicetypename` = 'Foreign Currency'
 	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
-	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
-	ORDER BY `investmentplans`.`investmentterm` ASC";
+	AND `bankingplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `bankingplans`.`freetransactions` ASC";
 	$db->query($queryToDo);
 	echo "<table width = 600 border = 0 cellpadding = 20>";
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
-			
-			
-			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>$row[freetransactions] Free transactions</td><td>$row[overdraftamount] Overdraft protection</td></tr>";
 	}
 	echo "</table>";
 }
@@ -531,34 +527,30 @@ elseif($content=="BusinessForeignCurrency"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
-	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	<td class='headline2'>Business Foreign Currency ($US) Account<br><br></td>
 	</tr>
-
 	<tr valign='top'>
 	<td>
-	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
+	We offer an easy-to-use $US account for your frequent or infrequent trips across the border.
 	<br><br>
-	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+	<div align='left'><span class='headline3'>You can see the great options available to you:</span></div>
 	</td></tr></tbody></table><br>";
 	$db = new Database();
 	$db->connect();
-	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
-	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
-	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
-	AND `servicetype`.`servicetypename` = 'RSP'
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`, `bankingplans`.`freetransactions` , `bankingplans`.`overdraftamount`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype`, `bankingplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Business'
+	AND `servicetype`.`servicetypename` = 'Foreign Currency'
 	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
-	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
-	ORDER BY `investmentplans`.`investmentterm` ASC";
+	AND `bankingplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `bankingplans`.`freetransactions` ASC";
 	$db->query($queryToDo);
 	echo "<table width = 600 border = 0 cellpadding = 20>";
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
-			
-			
-			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>$row[freetransactions] Free transactions</td><td>$row[overdraftamount] Overdraft protection</td></tr>";
 	}
 	echo "</table>";
 }
