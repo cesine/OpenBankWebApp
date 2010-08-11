@@ -21,7 +21,7 @@ if(isset($_SESSION)){
 		 */
 		$fromAccount = new ClientAccount();
 		$fromAccount->initializeAccountFromID($_POST[fromaccount]);
-		if ($_POST[amount]> $fromAccount->getCurrentBalance()){
+		if ($_POST[amount]> $fromAccount->getAvailableBalance()){
 			echo "Sorry, Insufficient Balance for this transfer.";
 		}else{
 			$transactionFromAccount= new Transaction();
