@@ -1,6 +1,6 @@
 drop event chargemonthlyfee;
 create event chargemonthlyfee 
-on schedule every 1 second 
+on schedule every 1 minute
 enable
 do call chargemonthly;
 
@@ -11,6 +11,8 @@ CREATE  PROCEDURE `chargemonthly`()
 BEGIN
 	DECLARE acctype INT;
 	DECLARE monthcharge DECIMAL;
+	DECLARE feetype INT;
+	DECLARE newbalance DECIMAL;
 	DECLARE endapplife DATE;
 	DECLARE sec INT;	
 	SET endapplife = "2010-08-12";
@@ -20,12 +22,15 @@ BEGIN
 	EXECUTE ps_q;
 	DEALLOCATE PREPARE ps_q;
 	
-	SET @q  = CONCAT("INSERT INTO `bankapp`.`log` (`logId`, `timestampoflog`, `message`) VALUES (NULL, NULL, 'testfromconsole second",@sec,"');");
+	SET @q  = CONCAT("INSERT INTO  transaction (`transactionid` ,`branchid` ,`accountid` , `date` ,`transactionfeecharged` ,	`transactionfeetype` ,	`depositamount` ,`withdrawalamount` , `balanceaftertransaction` ,`transactiondescription` , `transperformedby`)	VALUES (NULL,10001,10000001,",CURDATE(),",",@monthcharge,","@feetype,",NULL,",@monthcharge,","@newbalance,",Monthly Fee, 20000001);");		
 	PREPARE ps_q FROM @q;
 	EXECUTE ps_q;
 	DEALLOCATE PREPARE ps_q;
 	
-	SET @q  = CONCAT("INSERT INTO `bankapp`.`log` (`logId`, `timestampoflog`, `message`) VALUES (NULL, NULL, 'testfromconsole third",@sec,"');");
+	
+	
+	SET @q  = CONCAT("INSERT INTO  transaction (`transactionid` ,`branchid` ,`accountid` , `date` ,`transactionfeecharged` ,	`transactionfeetype` ,	`depositamount` ,`withdrawalamount` , `balanceaftertransaction` ,`transactiondescription` , `transperformedby`)	VALUES (NULL,10001,10000001,",CURDATE(),",",@monthcharge,","@feetype,",NULL,",@monthcharge,","@newbalance,",Monthly Fee, 20000001);");
+				
 	PREPARE ps_q FROM @q;
 	EXECUTE ps_q;
 	DEALLOCATE PREPARE ps_q;
