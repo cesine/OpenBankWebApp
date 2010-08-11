@@ -12,6 +12,7 @@ $userIsClient=false;
 <table border="0" with="940">
 
 	<tr valign="top">
+		<td width="100%">
 		<?php
 		/*
 		 * Control logic to change which small top menu to display in the main window
@@ -24,7 +25,7 @@ $userIsClient=false;
 			include ('includes/view/topmenu.php');
 		}
 		?>
-	</tr>
+	</td></tr>
 	
 	<tr valign="top">
 		<td width="20%">
