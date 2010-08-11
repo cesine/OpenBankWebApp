@@ -377,8 +377,7 @@ class Client{
 			}
 		}
 		
-		$count = count($clientPersonalBorrowingAccountsArray);
-		if ( $count > 0 )
+		if ( isset($clientPersonalBorrowingAccountsArray) )
 		{
 			foreach ($this->clientPersonalBorrowingAccountsArray as $clientAccount)
 			{
