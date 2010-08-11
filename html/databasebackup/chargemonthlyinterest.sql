@@ -3,9 +3,9 @@ DELIMITER $$
 CREATE PROCEDURE chargemonthlyinterest
 
 BEGIN
-	DECLARE acctype INT;
-	DECLARE monthlycharge DECIMAL;
-	DECLARE endapplicationlife ='2010-08-12';
+	DECLARE acctype INT(5);
+	DECLARE monthcharge DECIMAL(10,2);
+	DECLARE endapplife TEXT "2010-08-12"';
 	USE bankapp; 							/*set to appropriate database */
 	
 	WHILE (CURDATE()<endapplicationlife)
