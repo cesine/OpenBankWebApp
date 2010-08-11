@@ -63,7 +63,7 @@ if(!($userIsEmployee) && !($userIsClient)&& $content!="BusinessServices"){
 </td>
 <td width= "80%">
 
-<?php
+<!--<?php
 /*
  * Control logic to change which small top menu to display in the main window
  */
@@ -76,6 +76,7 @@ if($topMenu =="ClientTopMenu"){
 }
 ?>
 
+-->
 <!-- Main Content Cell -->
 <div id="content">
 <div id="main">
