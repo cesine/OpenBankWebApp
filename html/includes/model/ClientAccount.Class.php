@@ -165,10 +165,9 @@ class ClientAccount
 	public function saveToDatabase(){
 		$newClientAccount = new Database();
 		$newClientAccount->connect();
-		$queryAddAccount = "INSERT INTO clientaccount (clientaccountid,branchid,
-			clientid,accounttypeid,currentbalance,
-			availablebalance,status,
-			openingdate,closingdate) VALUES ('NULL','$this->branchId',
+		$queryAddAccount = "INSERT INTO clientaccount 
+						(clientaccountid, branchid, clientid, accounttypeid, currentbalance,
+						 	availablebalance, status, openingdate, closingdate) VALUES ('NULL','$this->branchId',
 			'$this->clientId','$this->accountTypeId','$this->currentBalance',
 			'$this->availableBalance','$this->status',
 			'$this->openingDate','$this->closingDate')";
