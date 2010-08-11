@@ -1,3 +1,9 @@
+drop event chargemonthlyfee;
+create event chargemonthlyfee 
+on schedule every 1 second 
+enable
+do call chargemonthly;
+
 DROP PROCEDURE IF EXISTS `chargemonthly`;
 DELIMITER $$
 CREATE  PROCEDURE `chargemonthly`()
