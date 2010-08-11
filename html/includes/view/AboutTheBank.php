@@ -409,7 +409,7 @@ elseif($content=="LineOfCredit"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
-	<td class='headline2'>RSP Solutions Centre<br><br></td>
+	<td class='headline2'>Personal Line of Credit<br><br></td>
 	</tr>
 
 	<tr valign='top'>
