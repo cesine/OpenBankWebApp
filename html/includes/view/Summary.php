@@ -24,7 +24,8 @@ if (isset($_SESSION['Client']))
 ?>
 
 <?php 
-if($content=="AllAccountsSummary"){
+if($content=="AllAccountsSummary")
+{
 ?>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -335,6 +336,70 @@ if($content=="BankingSummary"){
 				</td>
 
 			</tr>
+		</table>
+		</form>
+	</tr>
+	</td>
+</table>
+<?php
+ }
+?>
+
+<?php 
+if($content=="InvestingSummary")
+{
+?>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+		<form name=sumform0 method="post">
+		<table width="100%" border="0" cellspacing="0" cellpadding="2">
+			<TR class="bgcoloroptionA">
+				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
+			</TR>
+
+			<TR class="bgcoloroptionB">
+				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Investment</a></td>
+				<TD class="bgcoloroption2">&nbsp;</td>
+			</tr>
+
+			<TR class="bgcoloroption1">
+				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+			</tr>
+
+			<tr>
+				<td colspan=5>
+				<table width="100%" border="0" cellspacing="0" cellpadding="2">
+
+<?php 
+ 	$count = count($client->clientPersonalInvestingAccountsArray);
+ 	if ( $count != 0 )
+	{
+		foreach($client->clientPersonalInvestingAccountsArray as $clientAccount)
+		{
+?>
+					<tr class='bgcoloroption2'>
+
+						<TD class="acctC" vAlign=top align=left width="30%"><a
+							class='accountLinkB'
+							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
+					</tr>
+<?php 
+		}//endl if to only print when there are any results
+	}
+?>
+				</table>
+				</td>
+			</tr>
+
+
+
+
+
+
 		</table>
 		</form>
 	</tr>
