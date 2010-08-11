@@ -31,10 +31,10 @@ if($userIsClient){
 	include ('includes/view/ClientSideMenu.php');
 	$topMenu="ClientTopMenu";
 }
-if($content=="BusinessServices"){
+if($content=="BusinessServices" || $content=="BusinessBanking"){
 	include ('includes/view/BusinesSideMenu.php');
 }
-if(!($userIsEmployee) && !($userIsClient)&& $content!="BusinessServices"){
+if(!($userIsEmployee) && !($userIsClient)&& $content!="BusinessServices" && $content != "BusinessBanking"){
 	include ('includes/view/sidemenu.php'); 
 	$topMenu="";
 }
