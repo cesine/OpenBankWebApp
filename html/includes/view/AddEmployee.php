@@ -70,8 +70,15 @@ echo "<form action='?&content=AddEmployee' method='POST'>";
 			<!-- Making A Value In A Textbox Stay  -->
 			<input id="text" name="choiceStreetNumber" maxlength=6 value="<?php if(isset($_POST['choiceStreetNumber'])){ echo htmlentities($_POST['choiceStreetNumber']); }?>" />				
 		</td></tr>
+		
+		<tr><td width="180">Password:</td><td width="180">			
+			<!-- Making A Value In A Textbox Stay  -->
+			<input id="text" name="choicePassword" maxlength=20 value="<?php if(isset($_POST['choicePassword'])){ echo htmlentities($_POST['choicePassword']); }?>" />				
+		</td></tr>		
 	</table>
 	<!-- End create field to put street number -->	
+	
+	
 
 <?php 
 	// create dynamic list of postal codes
