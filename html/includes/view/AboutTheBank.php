@@ -303,7 +303,41 @@ if($content=="Banking"){?>
 	echo "</table>";
 }
 elseif($content=="TFSA"){
-	echo "paste some text here 02";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>TFSA for Everyone<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	You can save tax-free and still have the flexibility to withdraw your savings at any time, for any purpose, you decide why and when.
+	<br><br>
+<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+</td>
+</tr>
+
+</tbody>
+</table>
+<br>";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`, `investmentplans`.`investmentterm`, `investmentplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype`, `investmentplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'TFSA'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	and `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `investmentplans`.`investmentterm` ASC";
+	$db->query($queryToDo);
+	echo "<table width = 600 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			echo "<tr><td>$row[accountname]</td><td>$row[investmentterm] months</td><td>$row[interestrate]%</td></tr>";
+	}
+	echo "</table>";
 }
 elseif($content=="Chequing"){
 	echo "paste some text here 03";
