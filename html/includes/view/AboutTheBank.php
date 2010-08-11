@@ -268,27 +268,14 @@ if($content=="Banking"){?>
 	<td rowspan='2'><br></td>
 	<td class='headline2'>RSP Solutions Centre<br><br></td>
 	</tr>
-
 	<tr valign='top'>
 	<td>
 	A Registered Savings Plan (RSP) is a great way to reduce your taxes today while saving for a comfortable retirement tomorrow.
 	<br><br>
-						  
-								
-  <a onclick='s_objectID='';return this.s_oc?this.s_oc(e):true' href='' class='boldnav'>Money Master  for RSPs account</a><br>
-
-
-
-
-<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
-</td>
-</tr>
-
-</tbody>
-</table>
-</td>
-<br>
-<br>";
+	<div align='left'><span class='headline3'>You can contribute to your RSPs online with:</span></div>
+	</td></tr></tbody></table></td>
+	<br>
+	<br>";
 	$db = new Database();
 	$db->connect();
 	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`
