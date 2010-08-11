@@ -12,7 +12,7 @@ if(isset($_SESSION)){
 	
 	if ( $selectedAccountId == "" )
 		$selectedAccountId=$_SESSION['DisplayAccount'];
-	//	
+		
 	/*
 	 * print out the Page header and transaction table header
 	 */

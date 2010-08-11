@@ -300,7 +300,7 @@ class Client{
 				if ( 	($account->serviceCategoryId == 1 || $account->serviceCategoryId == 2 ) 
 								&& 
 						($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3
-								|| $account->serviceTypeId == 5) 
+								|| $account->serviceTypeId == 5 || $account->serviceTypeId == 6 || $account->serviceTypeId == 7 ) 
 					)
 				{
 					echo "<option value='$accountNumber'>".$account->getAccountTypeName()." ".$account->getClientAccountId();
@@ -327,7 +327,7 @@ class Client{
 				if ( 	($account->serviceCategoryId == 1 || $account->serviceCategoryId == 2 ) 
 								&& 
 						($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3
-							|| $account->serviceTypeId == 5 || $account->serviceTypeId == 4) 
+							|| $account->serviceTypeId == 4 || $account->serviceTypeId == 5 || $account->serviceTypeId == 6 || $account->serviceTypeId == 7 ) 
 					)
 				{
 					echo "<option value='$accountNumber'>".$account->getAccountTypeName()." ".$account->getClientAccountId();
