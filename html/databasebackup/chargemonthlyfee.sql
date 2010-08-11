@@ -39,7 +39,7 @@ REPEAT
 	'NULL',monthlycharge,newbalance,
 	'Monthly Fee', 20000001);
 
-	UPDATE clientaccount SET `currentbalance` = newbalance WHERE `clientaccoutid`=account;
+	UPDATE clientaccount SET `currentbalance` = newbalance WHERE `clientaccountid`=account;
 
 UNTIL done END REPEAT;
 END 
