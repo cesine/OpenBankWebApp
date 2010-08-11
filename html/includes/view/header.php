@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['DayOfTheMonth'])){
+	$_SESSION['DayOfTheMonth']=2;
+}
 require_once ('includes/controller/Database.Class.php');
 require_once ('includes/model/User.Class.php');
 require_once ('includes/model/Client.Class.php');
@@ -8,6 +11,7 @@ if($_GET['action']=='Logout'){
 	//$_SESSION['LoggedInMessage']="";
 	//$_SESSION['User']="";
 	session_unset();
+	unset($_GET);
 	//header('Location: index.php'); //redirects page to main page
 	echo "<meta http-equiv='REFRESH' content='0,url=index.php'>";//redirects page to summary page
 }
@@ -57,7 +61,14 @@ if($_GET['action']=='LoginAsClient' && isset($_SESSION['User'])){
 		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=AllAccountsSummary&action=AsClient'>";
 	}
 }
-
+if($_SESSION['DayOfTheMonth']==1){
+	$_SESSION['DayOfTheMonth']=2;
+	$manageAccounts= new ClientAccount();
+	$manageAccounts->chargeMonthlyFees();
+}
+if(isset($_POST['amountofdays'])){
+	$_SESSION['DayOfTheMonth']=$_SESSION['DayOfTheMonth']+$_POST['amountofdays'];
+}
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
