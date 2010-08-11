@@ -16,6 +16,7 @@ echo "<h4> Modify employee. </h4>\n";
 
 <?php 
 // create new objects
+$employee = new Employee();
 $branch = new Branch();
 $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
@@ -50,6 +51,53 @@ if (isset($_POST['SelectedOptionsSubmit']))
 
 	if ($selectedInfo=="first name")
 	{
+		
+		// create dynamic list of employee and let user to select
+		$employee->EmployeeList(); 
+?>
+
+		<!-- Create field to change first name -->
+		<table border="1"> 
+			<tr><td width="180">First name:</td><td width="180">
+				<input type="text" name="choiceFirstName" value=0 maxlength=8 />
+			</td></tr>
+		</table>
+		<!-- End create field to change first name -->		
+		
+		<!-- read input from user after submition -->
+		<P></P>
+		<input type="submit" name="SelectedOptionsSubmit" value="submit changes" /> 
+		<!--  <input type="submit" name="SubmitChanges" value="submit changes" />	-->	
+		<P></P>	
+<?php 
+
+			$selectedEmployee=$_POST["choiceEmployee"];				
+			$firstNameNew=$_POST["choiceFirstName"];
+		
+			
+		    // validate values 
+			if($firstNameNew=="")
+			{
+				echo "<h4>Please, provide first name.</h4>";
+			}	
+			elseif (is_numeric($firstNameNew)==true) 
+			{
+				echo "<h4>In first name digits are not allowed.</h4>";	
+	
+			}
+			else
+			{
+				echo "<h4> Old info: </h4>\n";
+				$employee->EmployeeCurrentFirstName($selectedEmployee);
+				$employeeFirstNameCurrent=$employee->getFirstName();
+				echo "<h4> First name: $employeeFirstNameCurrent</h4>\n";	
+
+				echo "<h4> New info: </h4>\n";
+				echo "<h4> First name: $firstNameNew</h4>\n";
+				$employee->updateFirstName($selectedEmployee,$firstNameNew);					
+
+			}
+				
 		
 	} // end if ($selectedInfo=="first name")
 	
