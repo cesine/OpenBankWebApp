@@ -176,6 +176,12 @@ class Employee{
 		$this->setTimeOffID($row[timeoffid]);
 		$this->setStatus($row[status]);
 	}
+	
+	public function initializeEmployeeSalary($row)
+	{
+		$this->setSalary($row[salary]);
+	}
+	
 	public function saveToDatabase(){
 		//insert the address in the db if it is not already there, if it is already there then the 
 		//existing id will be used
@@ -262,7 +268,8 @@ class Employee{
 					
 				$querySelectEmployee="SELECT DISTINCT employeeid
 									  FROM employee
-									  WHERE status=1";
+									  WHERE status=1
+									  ORDER BY employeeid";
 		
 				$dbSelectEmployee->query($querySelectEmployee);
 				$result = $dbSelectEmployee->query($querySelectEmployee);
@@ -305,7 +312,8 @@ class Employee{
 				$dbSelectEmployee->connect();
 					
 				$querySelectEmployee="SELECT DISTINCT employeeid
-									  FROM employee";
+									  FROM employee
+									  ORDER BY employeeid";
 		
 				$dbSelectEmployee->query($querySelectEmployee);
 				$result = $dbSelectEmployee->query($querySelectEmployee);
@@ -423,7 +431,29 @@ class Employee{
 <?php 			
 		
 			
-	} // end public function EmployeeDeactevatedAll()		
+	} // end public function EmployeeDeactevatedAll()	
+
+	
+	public function EmployeeCurrentSalary($selectedEmployee)
+	{
+		//find base salary for selected title name
+		$dbEmployeeCurrentSalary = new Database();
+		$dbEmployeeCurrentSalary->connect();
+						
+		$queryEmployeeCurrentSalary="SELECT salary 
+						   		FROM employee
+						   		WHERE employeeid=$selectedEmployee";
+													
+		$dbEmployeeCurrentSalary->query($queryEmployeeCurrentSalary);	
+		$result = $dbEmployeeCurrentSalary->query($queryEmployeeCurrentSalary);						
+									   
+		for($count=0;$count<$dbEmployeeCurrentSalary->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbEmployeeCurrentSalary->queryResultsResource);
+			$this->initializeEmployeeSalary($row);		
+		}
+		$dbEmployeeCurrentSalary->close();
+	} // end public function EmployeeTitleBaseSalary()
 	
 	
 	
