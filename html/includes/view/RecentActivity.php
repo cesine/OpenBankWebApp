@@ -1,6 +1,6 @@
 <?php
 require_once 'includes/model/Transaction.Class.php';
-
+require_once 'includes/model/BankingPlans.php';
 /*
  * Get client from session variable, then display list of
  */
