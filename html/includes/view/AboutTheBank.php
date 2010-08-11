@@ -403,6 +403,15 @@ elseif($content=="PersonalSavings"){
 elseif($content=="PersonalForeignCurrency"){
 	echo "paste some text here 05";
 }
+elseif($content=="BusinessChequing"){
+	echo "paste some text here 04";
+}
+elseif($content=="BusinessSavings"){
+	echo "paste some text here 04";
+}
+elseif($content=="BusinessForeignCurrency"){
+	echo "paste some text here 05";
+}
 elseif($content=="LifeInsurance"){
 	echo "<table><tbody>
 	<tr valign='top'>
