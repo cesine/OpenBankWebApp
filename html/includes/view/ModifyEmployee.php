@@ -20,8 +20,8 @@ $branch = new Branch();
 $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
 
-// show dynamic list with employee title names
-$employeeTitle->displayEmployeeTitleList();	
+// create dynamic list of employee and let user to select
+$employee->EmployeeList(); 
 ?>
 
 <!-- Choose what should be changed -->
@@ -72,13 +72,13 @@ if (isset($_POST['SelectedOptionsSubmit']))
 	{
 
 		// create dynamic list of employee and let user to select
-		$employee->EmployeeList(); 
+		//$employee->EmployeeList(); 
 
 		// create dynamic list of branches and let user to select
 		$branch->BranchList();
 			
 		// show dynamic list with employee title names
-		//$employeeTitle->displayEmployeeTitleList();
+		$employeeTitle->displayEmployeeTitleList();
 
 		$employee->EmployeeCurrentSalary($selectedEmployee);		
 		$employeeCurSalary=$employee->getSalary();
