@@ -1,6 +1,7 @@
 
 <?php 
-class EmployeeLogin{
+class EmployeeLogin
+{
 	private $ID;
 	private $login;
 
@@ -43,3 +44,5 @@ class EmployeeLogin{
 		$this->setID($row[employeeid]);
 		$this->setLogin($row[passwd]);
 	}
+}
+?>
