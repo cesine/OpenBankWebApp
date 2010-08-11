@@ -278,28 +278,20 @@ if($content=="Banking"){?>
 	<br>";
 	$db = new Database();
 	$db->connect();
-	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname`
-	FROM `accounttype` , `servicecategory` , `service` , `servicetype`
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `investmentplans`.`investmentterm` , `investmentplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `investmentplans`
 	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
 	AND `servicetype`.`servicetypename` = 'RSP'
 	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
-	ORDER BY `accounttype`.`accountname` ASC";
-	
-	
-	
+	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `investmentplans`.`investmentterm` ASC";
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($dbC->queryResultsResource);
 			print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
 			echo "Charging ".$row[accounttypeid]."<br/>";
 	}
-	
-	
-//	$db->query($queryToDo);
-//	$db->close();
-//	print_r($db->queryFirstResult);
-//	echo $db->queryFirstResult[accountname];
 }
 elseif($content=="TFSA"){
 	echo "<table><tbody>
