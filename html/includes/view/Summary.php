@@ -18,12 +18,6 @@ if (isset($_SESSION['Client']))
 ?>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-<?php 
-	$count = count($clientBusinessBankingAccountsArray);
-	
-	if ( $count != 0 )
-	{
-?>
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -47,19 +41,23 @@ if (isset($_SESSION['Client']))
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 
 <?php 
-	foreach($client->clientBusinessBankingAccountsArray as $clientAccount)
+	$count = count($clientBusinessBankingAccountsArray);
+	if ( $count != 0 )
 	{
+		foreach($client->clientBusinessBankingAccountsArray as $clientAccount)
+		{
 ?>
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="30%"><a
 							class='accountLinkB'
-							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php $clientAccount->getAccountTypeName();?></a></td>
-						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php $clientAccount->getCurrentBalance();?></td>
+							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 					
 <?php 
 		}//endl if to only print when there are any results
+	}
 ?>
 				</table>
 				</td>
@@ -70,9 +68,6 @@ if (isset($_SESSION['Client']))
 	
 	</tr>
 	</td>
-<?php
-	} 
-?>
 
 	<tr>
 		<td>
@@ -96,9 +91,12 @@ if (isset($_SESSION['Client']))
 				<td colspan=5>
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 
-<?php 
-	foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
+<?php
+ 	$count = count(clientPersonalBankingAccountsArray);
+	if ( $count != 0 )
 	{
+		foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
+		{
 ?>
 					<tr class='bgcoloroption2'>
 
@@ -110,6 +108,7 @@ if (isset($_SESSION['Client']))
 					</tr>
 <?php 
 		}//endl if to only print when there are any results
+	}
 ?>
 				</table>
 				</td>
@@ -131,22 +130,69 @@ if (isset($_SESSION['Client']))
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 
 <?php 
-	foreach($client->$clientPersonalInvestingAccountsArray as $clientAccount)
+ 	$count = count($clientPersonalInvestingAccountsArray);
+	if ( $count != 0 )
 	{
+		foreach($client->$clientPersonalInvestingAccountsArray as $clientAccount)
+		{
 ?>
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="30%"><a
 							class='accountLinkB'
-							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php $clientAccount->getAccountTypeName();?></a></td>
-						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php $clientAccount->getCurrentBalance();?></td>
+							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
 		}//endl if to only print when there are any results
+	}
 ?>
 				</table>
 				</td>
 			</tr>
+
+			<TR class="bgcoloroptionB">
+				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Borrowing</a></td>
+				<TD class="bgcoloroption2">&nbsp;</td>
+			</tr>
+
+			<TR class="bgcoloroption1">
+				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleRightC width="19%"><a class="helpLinkC">Balance</a></td>
+				<TD width="2%" class="bgcoloroption2">&nbsp;</TD>
+			</tr>
+
+			<tr>
+				<td colspan=5>
+				<table width="100%" border="0" cellspacing="0" cellpadding="2">
+
+<?php 
+ 	$count = count($clientPersonalBorrowingAccountsArray);
+	if ( $count != 0 )
+	{
+		foreach($client->$clientPersonalBorrowingAccountsArray as $clientAccount)
+		{
+?>
+					<tr class='bgcoloroption2'>
+
+						<TD class="acctC" vAlign=top align=left width="30%"><a
+							class='accountLinkB'
+							href='/portal/index.jsp?pageID=financial_services_banking&reqOption=AccountDetails&accountNum=DDA;CA;DDA;CA;CAD;3648.09999999999990905052982270717620849609375;2322629620217624967@3708478640705414144'><?php echo $clientAccount->getAccountTypeName();?></a></td>
+						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
+					</tr>
+<?php 
+		}//endl if to only print when there are any results
+	}
+?>
+				</table>
+				</td>
+			</tr>
+
+
+
+
+
+
 		</table>
 		</form>
 	</tr>
