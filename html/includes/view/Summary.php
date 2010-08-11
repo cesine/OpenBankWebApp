@@ -136,9 +136,9 @@ if (isset($_SESSION['Client']))
 
 <?php 
  	$count = count($clientPersonalInvestingAccountsArray);
-	if ( $count != 0 )
+	echo "Anshu Garg";
+ 	if ( $count != 0 )
 	{
-		echo "Anshu Garg";
 		foreach($client->$clientPersonalInvestingAccountsArray as $clientAccount)
 		{
 ?>
