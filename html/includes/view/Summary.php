@@ -437,8 +437,7 @@ if($content=="BorrowingSummary")
 ?>
 					<tr class='bgcoloroption2'>
 
-						<TD class="acctC" vAlign=top align=left width="50%"><a
-							class='accountLinkB'
+						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
 							href=''><?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
@@ -495,8 +494,7 @@ if($content=="InsuranceSummary")
 ?>
 					<tr class='bgcoloroption2'>
 
-						<TD class="acctC" vAlign=top align=left width="50%"><a
-							class='accountLinkB'
+						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
 							href=''><?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right width="19%"><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
