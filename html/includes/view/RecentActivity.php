@@ -1,6 +1,8 @@
 <?php
 require_once 'includes/model/Transaction.Class.php';
 require_once 'includes/model/BankingPlans.php';
+require_once 'includes/model/BorrowingPlans.php';
+
 /*
  * Get client from session variable, then display list of
  */
@@ -46,11 +48,42 @@ if(isset($_SESSION)){
 						<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
 						<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
 						<TD class='tableDataRightC' valign=top>$currentBalance</TD>
-						<TD class='tableDataRightC' valign=top>$availableBalance + </TD>
+						<TD class='tableDataRightC' valign=top>$availableBalance</TD>
 					</TR><tr><td></td></tr><tr></tr></table>";
 		
 	}
-
+	elseif ( $selectedAccountType == "Borrowing")
+	{
+		$borrowingPlan = new BorrowingPlans();
+		$borrowingPlan->setAccountTypeId($accountTypeId);
+		$creditLimit = $borrowingPlan->getCreditLimit();
+		$availableCredit = $creditLimit - $currentBalance;
+		
+		echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
+					width='600'>
+					<tbody>	
+						<tr bgcolor='#ffffff'>
+							<td width='58%' align=center><font class='regularTextBold'>Account Details for:<br>
+							<font color='#666666'>&nbsp;</font>$clientAccountName - $selectedAccountId</font></td>
+						</tr>
+					</tbody>
+				</table>
+				<TABLE border='0' cellspacing='1' cellpadding='3' width='100%'>
+					<TR class='bgcoloroption0'>
+						<td class='fieldTitleLeftC' valign=top width=\"30%\">Account Name<br></td>
+						<td class='fieldTitleLeftC' valign=top width=\"20%\">Account Number<br></td>
+						<TD class='fieldTitleRightC' valign=top width=\"25%\">Current<br> Balance CAD</TD>
+						<TD class='fieldTitleRightC' valign=top width=\"25%\">Available<br> Credit CAD</TD>
+					</TR>
+						<TR class='bgcoloroption1'>
+						<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
+						<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
+						<TD class='tableDataRightC' valign=top>$currentBalance</TD>
+						<TD class='tableDataRightC' valign=top>$availableCredit</TD>
+					</TR><tr><td></td></tr><tr></tr></table>";
+		
+	}
+	
 	echo "<br><br>";
 	
 	/*
