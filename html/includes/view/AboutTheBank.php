@@ -49,13 +49,13 @@ if($content=="PersonalBanking"){?>
 					<tr valign="top">
 						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
-						<td><a href="index.php?&content=Banking"
+						<td><a href="index.php?&content=BusinessBanking"
 							class="boldnav">Daily Business Banking</a> <br>
-							<a href="index.php?&content=Chequing"
+							<a href="index.php?&content=BusinessChequing"
 							style="font-size: 11px;">Chequing</a>,
-							<a href="index.php?&content=Savings"
+							<a href="index.php?&content=BusinessSavings"
 							style="font-size: 11px;">Savings</a>,
-							<a href="index.php?&content=ForeignCurrency"
+							<a href="index.php?&content=BusinessForeignCurrency"
 							style="font-size: 11px;">Foreign Currency</a>
 						</td>
 					</tr>
@@ -174,13 +174,13 @@ if($content=="PersonalBanking"){?>
 					<tr valign="top">
 						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
-						<td><a href="index.php?&content=Banking"
+						<td><a href="index.php?&content=PersonalBanking"
 							class="boldnav">Day-To-Day Banking</a> <br>
-							<a href="index.php?&content=Chequing"
+							<a href="index.php?&content=PersonalChequing"
 							style="font-size: 11px;">Chequing</a>,
-							<a href="index.php?&content=Savings"
+							<a href="index.php?&content=PersonalSavings"
 							style="font-size: 11px;">Savings</a>,
-							<a href="index.php?&content=ForeignCurrency"
+							<a href="index.php?&content=PersonalForeignCurrency"
 							style="font-size: 11px;">Foreign Currency</a>
 						</td>
 					</tr>
@@ -277,13 +277,13 @@ if($content=="PersonalBanking"){?>
 					<tr valign="top">
 						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
-						<td><a href="index.php?&content=Banking"
+						<td><a href="index.php?&content=BusinessBanking"
 							class="boldnav">Daily Business Banking</a> <br>
-							<a href="index.php?&content=Chequing"
+							<a href="index.php?&content=BusinessChequing"
 							style="font-size: 11px;">Chequing</a>,
-							<a href="index.php?&content=Savings"
+							<a href="index.php?&content=BusinessSavings"
 							style="font-size: 11px;">Savings</a>,
-							<a href="index.php?&content=ForeignCurrency"
+							<a href="index.php?&content=BusinessForeignCurrency"
 							style="font-size: 11px;">Foreign Currency</a>
 						</td>
 					</tr>
