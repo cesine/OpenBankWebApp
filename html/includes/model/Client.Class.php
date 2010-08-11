@@ -11,6 +11,7 @@ class Client{
 	private $statusString;
 	private $address;
 	private $addressId;
+	
 	public $clientAccountsArray;	
 
 	public $clientBusinessBankingAccountsArray;
@@ -129,7 +130,7 @@ class Client{
 			$row=mysql_fetch_array($db->queryResultsResource);
 			$account = new ClientAccount();
 			$account->initializeClientAccount($row);
-			$this->clientAccountsArray[$count]=$account;
+			$this->clientAccountsArray[$count]=$account->getClientAccountId();
 
 			if ( ($account->serviceCategoryId == 1) && 
 					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3) )
