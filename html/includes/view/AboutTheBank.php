@@ -298,7 +298,7 @@ elseif($content=="TFSA"){
 	</tr>
 	<tr valign='top'>
 	<td>
-	You can save tax-free and still have the flexibility to withdraw your savings at any time, for any purpose – you decide why and when.  You’ll be surprised how quickly your tax-free savings can add up.
+	You can save tax-free and still have the flexibility to withdraw your savings at any time, for any purpose, you decide why and when.  You will be surprised how quickly your tax-free savings can add up.
 	<br><br>
 	<div align='left'><span class='headline3'>You can choose your TFSA online with:</span></div>
 	</td></tr></tbody></table></td>
@@ -306,10 +306,34 @@ elseif($content=="TFSA"){
 	<br>";
 }
 elseif($content=="Chequing"){
-	echo "paste some text here 03";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>Chequing Simplified<br><br></td>
+	</tr>
+	<tr valign='top'>
+	<td>
+	We offer a simplified chequing account to simplify the way you bank and to help you get control of your money. Whether you are looking to open a new account, or make changes to your existing account, we're with you every step of the way.
+	<br><br>
+	<div align='left'><span class='headline3'>We offer great options:</span></div>
+	</td></tr></tbody></table></td>
+	<br>
+	<br>";
 }
 elseif($content=="Savings"){
-	echo "paste some text here 04";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>The Right Savings Account for You<br><br></td>
+	</tr>
+	<tr valign='top'>
+	<td>
+	We have the right savings account for you, regardless of how you want your savings to work for you.
+	<br><br>
+	<div align='left'><span class='headline3'>We offer great options:</span></div>
+	</td></tr></tbody></table></td>
+	<br>
+	<br>";
 }
 elseif($content=="ForeignCurrency"){
 	echo "paste some text here 05";
@@ -318,10 +342,34 @@ elseif($content=="LifeInsurance"){
 	echo "paste some text here 06";
 }
 elseif($content=="CreditCards"){
-	echo "paste some text here 07";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>Credit Cards that work for You.<br><br></td>
+	</tr>
+	<tr valign='top'>
+	<td>
+	Once you receive your new credit card you can activate it online quickly and securely. It only takes a couple of minutes and you'll be on your way to enjoying the many benefits of your new card.
+	<br><br>
+	<div align='left'><span class='headline3'>We offer great options:</span></div>
+	</td></tr></tbody></table></td>
+	<br>
+	<br>";
 }
 elseif($content=="LineOfCredit"){
-	echo "paste some text here 08";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>A Line of Credit made Easy<br><br></td>
+	</tr>
+	<tr valign='top'>
+	<td>
+	Imagine the difference a Personal Line of Credit can make in your life. It gives you real control over your finances because you have immediate access to money whenever and wherever you need it or want it.
+	<br><br>
+	<div align='left'><span class='headline3'>We offer great options:</span></div>
+	</td></tr></tbody></table></td>
+	<br>
+	<br>";
 	$db = new Database();
 	$db->connect();
 	$queryToDo= "SELECT DISTINCT * FROM employee e";
