@@ -367,6 +367,28 @@ class Employee{
 	} // end public function saveHistoryToDatabase()
 	
 	
+	public function saveLoginToDatabase($selectedEmployee,$employeeLogin)
+	{
+
+		// update employee login table, when new employee is added
+				
+		$dbEmployeeLogin = new Database();
+		$dbEmployeeLogin->connect();
+						
+		// note: in query we use data, selected by user
+		$queryEmployeeLogin=
+						
+		"INSERT INTO employeelogin (employeeid, passwd)
+	                VALUES ($selectedEmployee, $employeeLogin)";
+		
+		$dbEmployeeLogin->insert($queryEmployeeLogin);
+		$dbEmployeeLogin->close();
+					
+		// end update employee work history, when new employee is added				
+			
+	} // end update employee login table, when new employee is added	
+	
+	
 	
 	public function EmployeeDeactevatedAll()
 	{
