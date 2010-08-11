@@ -30,7 +30,7 @@ if(isset($_SESSION)){
 					width='600'>
 					<tbody>	
 						<tr bgcolor='#ffffff'>
-							<td width='58%'><font class='regularTextBold'>Account Details for:<br>
+							<td width='58%' align=center><font class='regularTextBold'>Account Details for:<br>
 							<font color='#666666'>&nbsp;</font>$clientAccountName - $selectedAccountId</font></td>
 						</tr>
 					</tbody>
