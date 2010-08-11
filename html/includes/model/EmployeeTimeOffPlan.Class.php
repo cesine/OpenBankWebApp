@@ -260,6 +260,10 @@ class EmployeeTimeOffPlan{
 			$this->initializeEmployeeTimeOffPlanID($row);
 			//$this->displayEmployeeTimeOffPlan();
 		}
+		
+		echo "<h4> Time off plan name: $row[timeoffname] </h4>\n";
+		echo "<h4> Number of days off according plan: $row[numberofdays] </h4>\n";		
+		
 		$dbEmployeeTimeOffPlan->close();
 
 	}// end public function findEmployeeTimeOffPlan()	
