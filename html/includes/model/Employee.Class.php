@@ -182,6 +182,11 @@ class Employee{
 		$this->setSalary($row[salary]);
 	}
 	
+	public function initializeEmployeeFirstName($row)
+	{
+		$this->setFirstName($row[firstname]);
+	}
+	
 	public function saveToDatabase(){
 		//insert the address in the db if it is not already there, if it is already there then the 
 		//existing id will be used
@@ -454,6 +459,28 @@ class Employee{
 		}
 		$dbEmployeeCurrentSalary->close();
 	} // end public function EmployeeTitleBaseSalary()
+	
+	
+	public function EmployeeCurrentFirstName($selectedEmployee)
+	{
+		//find base salary for selected title name
+		$dbEmployeeCurrentFirstName = new Database();
+		$dbEmployeeCurrentFirstName->connect();
+						
+		$queryEmployeeCurrentFirstName="SELECT firstname 
+						   		FROM employee
+						   		WHERE employeeid=$selectedEmployee";
+													
+		$dbEmployeeCurrentFirstName->query($queryEmployeeCurrentFirstName);	
+		$result = $dbEmployeeCurrentFirstName->query($queryEmployeeCurrentFirstNamey);						
+									   
+		for($count=0;$count<$dbEmployeeCurrentFirstName->queryResultsCount;$count=$count+1)
+		{
+			$row=mysql_fetch_array($dbEmployeeCurrentFirstName->queryResultsResource);
+			$this->initializeEmployeeFirstName($row);		
+		}
+		$dbEmployeeCurrentFirstName->close();
+	} // end public function EmployeeCurrentFirstName()
 	
 	
 	
