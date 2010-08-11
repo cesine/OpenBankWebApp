@@ -291,7 +291,19 @@ if($content=="Banking"){?>
 	echo $db->queryFirstResult[accountname];
 }
 elseif($content=="TFSA"){
-	echo "paste some text here 02";
+	echo "	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>The TFSA Solutions Centre<br><br></td>
+	</tr>
+	<tr valign='top'>
+	<td>
+	You can save tax-free and still have the flexibility to withdraw your savings at any time, for any purpose – you decide why and when.  You’ll be surprised how quickly your tax-free savings can add up.
+	<br><br>
+	<div align='left'><span class='headline3'>You can choose your TFSA online with:</span></div>
+	</td></tr></tbody></table></td>
+	<br>
+	<br>";
 }
 elseif($content=="Chequing"){
 	echo "paste some text here 03";
