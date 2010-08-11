@@ -38,7 +38,7 @@ if (isset($_SESSION['Client']))
 
 			<TR class="bgcoloroption1">
 				<TD class=fieldTitleLeftC width="30%"><a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC width="19%"><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleRightC"><a class="helpLinkC">Balance</a></td>
 				<TD width="2%" class="bgcoloroption2">&nbsp;</TD>
 			</tr>
 
@@ -136,7 +136,6 @@ if (isset($_SESSION['Client']))
 
 <?php 
  	$count = count($client->clientPersonalInvestingAccountsArray);
-	echo "Anshu Garg";
  	if ( $count != 0 )
 	{
 		foreach($client->clientPersonalInvestingAccountsArray as $clientAccount)
