@@ -299,9 +299,10 @@ if($content=="Banking"){?>
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
 	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
 	ORDER BY `investmentplans`.`investmentterm` ASC";
+	$db->query($queryToDo);
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
-			$row=mysql_fetch_array($dbC->queryResultsResource);
+			$row=mysql_fetch_array($db->queryResultsResource);
 			print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
 			echo "Charging ".$row[accounttypeid]."<br/>";
 	}
