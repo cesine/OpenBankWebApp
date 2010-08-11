@@ -100,7 +100,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		
 		<!-- read input from user after submition -->
 		<P></P>
-		<input type="submit" name="SelectedOptionsSubmit" value="submit changes" /> 
+		<input type="submit" name="SelectedOptionsSubmit2" value="submit changes" /> 
 		<!--  <input type="submit" name="SubmitChanges" value="submit changes" />	-->	
 		<P></P>		
 		
