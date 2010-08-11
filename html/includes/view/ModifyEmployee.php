@@ -19,6 +19,7 @@ echo "<h4> Modify employee. </h4>\n";
 $branch = new Branch();
 $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
+$employee = new Employee();
 
 // create dynamic list of employee and let user to select
 $employee->EmployeeList(); 
@@ -46,6 +47,7 @@ $employee->EmployeeList();
 
 $selectedInfo=$_POST["choiceInfo"];
 $selectedEmployee=$_POST["choiceEmployee"];	
+echo "<h4> Selected employee $selectedEmployee. </h4>\n";
 
 
 //if submit selection button is pressed:
@@ -113,7 +115,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
 							
-			$employee = new Employee();
+			//$employee = new Employee();
 			$employee->initializeEmployee($selectedEmployee);
 			
 			
