@@ -2,7 +2,29 @@
 
  <?php include ('includes/view/menu.php')?>
 
-<table border="0" with="940"><tr valign="top"><td width="20%">
+<table border="0" with="940">
+
+	<tr valign="top">
+		<?php
+		$content = $_GET["content"];
+		$topMenu = $_GET["topMenu"];//old way of setting the top menu
+		$userIsEmployee=false;
+		$userIsClient=false;
+		/*
+		 * Control logic to change which small top menu to display in the main window
+		 */
+		if($topMenu =="ClientTopMenu"){
+			include ('includes/view/clienttopmenu.php');
+		}elseif($topMenu=="EmployeeTopMenu"){
+			include ('includes/view/employeetopmenu.php');	
+		}else{
+			include ('includes/view/topmenu.php');
+		}
+		?>
+	</tr>
+	
+	<tr valign="top">
+		<td width="20%">
 <!-- Sidemenu Cell -->
 
 <?php 
@@ -38,7 +60,8 @@ if(!($userIsEmployee) && !($userIsClient)&& $content!="BusinessServices"){
 }
 ?>
 
-</td><td width= "80%">
+</td>
+<td width= "80%">
 
 <?php
 /*
@@ -52,6 +75,7 @@ if($topMenu =="ClientTopMenu"){
 	include ('includes/view/topmenu.php');
 }
 ?>
+
 <!-- Main Content Cell -->
 <div id="content">
 <div id="main">
@@ -133,7 +157,9 @@ if($content=="BranchLocator"){
 
 </div>
 </div>
-</td></tr></table>
+</td>
+</tr>
+</table>
 
 
 <?php  include ('includes/view/footer.php')?>
