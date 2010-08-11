@@ -14,6 +14,12 @@ if (isset($_SESSION['Client']))
 	$clientId = $client->getClientID();
 
 	$client->setClientAccountsArray($clientId);
+	
+	echo '<table>';
+	foreach($client->clientAccountsArray as $clientAccount){
+		$clientAccount->displayAccountInRow();
+	}
+	echo '</table>';
 }
 ?>
 
