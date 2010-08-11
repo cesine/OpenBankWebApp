@@ -298,13 +298,13 @@ if($content=="BankingSummary")
 				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Number </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Number </a></td>
+				<TD class=fieldTitleRightC align=right>Balance</a></td>
 			</tr>
 
 			<tr>
@@ -365,9 +365,9 @@ if($content=="InvestingSummary")
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Number </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Number </a></td>
+				<TD class=fieldTitleRightC align=right>Balance</a></td>
 			</tr>
 
 			<tr>
@@ -416,18 +416,18 @@ if($content=="BorrowingSummary")
 		<form name=sumform0 method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<TR class="bgcoloroptionA">
-				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
+				<TD colSpan=5><FONT class=fieldTitleLeftC>Personal Accounts</a></FONT></TD>
 			</TR>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Borrowing</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Borrowing</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Number </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Number </a></td>
+				<TD class=fieldTitleRightC align=right>Balance</a></td>
 			</tr>
 
 			<tr>
@@ -475,18 +475,18 @@ if($content=="InsuranceSummary")
 		<form name=sumform0 method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<TR class="bgcoloroptionA">
-				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Personal Accounts</a></FONT></TD>
+				<TD colSpan=5><FONT class=fieldTitleLeftC>Personal Accounts</a></FONT></TD>
 			</TR>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Insurance</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Insurance</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
+				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
 				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Number </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleRightC align=right>Balance</a></td>
 			</tr>
 
 			<tr>
