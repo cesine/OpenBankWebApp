@@ -123,7 +123,7 @@ if(isset($_SESSION)){
 			<tr>
 				<td align='right'><label
 					for='fromaccount' >From: </label>";
-		$client->displaySelectAccountWithChooseSelect("fromaccount");
+		$client->displaySelectAccountForFromSelect("fromaccount");
 		echo "</td>
 			</tr>
 			
