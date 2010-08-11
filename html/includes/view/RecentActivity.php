@@ -9,22 +9,37 @@ if(isset($_SESSION)){
 	$client = unserialize($_SESSION['Client']);
 
 	$selectedAccountId = $_GET['accountid'];
+	$selectedAccountType = $_GET['accounttype'];
 	
 	if ( $selectedAccountId == "" )
 		$selectedAccountId=$_SESSION['DisplayAccount'];
 		
-
 	$clientAccount = $client->getClientAccount($selectedAccountId);
-
-	echo $clientAccount->getAccountTypeName();
-		
+	$clientAccountName = $clientAccount->getAccountTypeName();
+	
+	echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
+				width='600'>
+				<tbody>	
+					<tr bgcolor='#ffffff'>
+						<td width='58%'><font class='regularTextBold'>Account Details for:
+						<font color='#666666'>&nbsp;</font>$clientAccountName - $selectedAccountId</font></td>
+						</tr>
+				</tbody>
+			</table><TABLE border='0' cellspacing='1' cellpadding='3' width='100%'>
+				<TR class='bgcoloroption0'>
+					<td class='fieldTitleLeftC' valign=top>Account Name<br></td>
+					<td class='fieldTitleLeftC' valign=top>Account Number<br></td>
+					<TD class='fieldTitleRightC' valign=top>Current Balance CAD</TD>
+					<TD class='fieldTitleRightC' valign=top>Available Balance CAD</TD>
+				</TR>";
+	
 	/*
 	 * print out the Page header and transaction table header
 	 */
 	echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
 				width='600'>
 				<tbody>		<tr bgcolor='#ffffff'>
-						<td width='58%'><font class='regularTextBold'>Transaction Detail for:
+						<td width='58%'><font class='regularTextBold'>Transaction Details for:
 						<font color='#666666'>&nbsp;</font>Current Period in Account - $selectedAccountId</font></td>
 						</tr>
 				</tbody>
