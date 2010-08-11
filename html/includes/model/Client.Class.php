@@ -297,9 +297,11 @@ class Client{
 			//Dont display account if it matches insurance
 			if ( $account->getStatus() != 0 )
 			{
-				if ( ($account->serviceCategoryId == 1 || $account->serviceCategoryId) && 
-					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3
-						|| $account->serviceTypeId == 5) )
+				if ( 	($account->serviceCategoryId == 1 || $account->serviceCategoryId == 2 ) 
+								&& 
+						($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3
+								|| $account->serviceTypeId == 5) 
+					)
 				{
 					echo "<option value='$accountNumber'>".$account->getAccountTypeName()." ".$account->getClientAccountId();
 					echo money_format('%(#5n', $account->getCurrentBalance());
@@ -322,9 +324,11 @@ class Client{
 			//Dont display account if it matches insurance
 			if ( $account->getStatus() != 0 )
 			{
-				if ( ($account->serviceCategoryId == 1 || $account->serviceCategoryId) && 
-					($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3
-						|| $account->serviceTypeId == 5 || $account->serviceTypeId == 4) )
+				if ( 	($account->serviceCategoryId == 1 || $account->serviceCategoryId == 2 ) 
+								&& 
+						($account->serviceTypeId == 1 || $account->serviceTypeId == 2 || $account->serviceTypeId == 3
+							|| $account->serviceTypeId == 5 || $account->serviceTypeId == 4) 
+					)
 				{
 					echo "<option value='$accountNumber'>".$account->getAccountTypeName()." ".$account->getClientAccountId();
 					echo money_format('%(#5n', $account->getCurrentBalance());
