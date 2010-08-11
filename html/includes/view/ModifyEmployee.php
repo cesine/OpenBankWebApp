@@ -47,7 +47,7 @@ $employee->EmployeeList();
 
 $selectedInfo=$_POST["choiceInfo"];
 $selectedEmployee=$_POST["choiceEmployee"];	
-echo "<h4> Selected employee $selectedEmployee. </h4>\n";
+//echo "<h4> Selected employee $selectedEmployee. </h4>\n";
 
 
 //if submit selection button is pressed:
@@ -110,7 +110,8 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		//if ($_POST['SubmitChanges']) 							
 		{
 
-			//$selectedEmployee=$_POST["choiceEmployee"];				
+			$selectedEmployee=$_POST["choiceEmployee"];	
+			echo "<h4> Selected employee $selectedEmployee. </h4>\n";			
 			$branchIDNew=$_POST["choiceBranch"];
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
