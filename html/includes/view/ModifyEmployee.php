@@ -52,11 +52,14 @@ if (isset($_POST['SelectedOptionsSubmit']))
 	if ($selectedInfo=="first name")
 	{
 		
+		/*
 		// create dynamic list of employee and let user to select
 		$employee->EmployeeList(); 
+		*/
 ?>
 
 		<!-- Create field to change first name -->
+		<!--  
 		<table border="1"> 
 			<tr><td width="180">First name:</td><td width="180">
 				<input type="text" name="choiceFirstName" value=0 maxlength=8 />
@@ -65,12 +68,14 @@ if (isset($_POST['SelectedOptionsSubmit']))
 		<!-- End create field to change first name -->		
 		
 		<!-- read input from user after submition -->
+		<!--  
 		<P></P>
 		<input type="submit" name="SelectedOptionsSubmit" value="submit changes" /> 
-		<!--  <input type="submit" name="SubmitChanges" value="submit changes" />	-->	
 		<P></P>	
+		-->
+		
 <?php 
-
+			/*
 			$selectedEmployee=$_POST["choiceEmployee"];				
 			$firstNameNew=$_POST["choiceFirstName"];
 		
@@ -97,6 +102,7 @@ if (isset($_POST['SelectedOptionsSubmit']))
 				$employee->updateFirstName($selectedEmployee,$firstNameNew);					
 
 			}
+			*/
 				
 		
 	} // end if ($selectedInfo=="first name")
