@@ -303,8 +303,8 @@ if($content=="Banking"){?>
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
-			echo "Charging ".$row[accountname].investmentterm.interestrate."<br/>";
+			//print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
+			echo "Charging ".$row[accountname].$row[investmentterm].$row[interestrate]."<br/>";
 	}
 }
 elseif($content=="TFSA"){
