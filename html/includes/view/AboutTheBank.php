@@ -15,7 +15,7 @@ if($content=="PersonalBanking"){?>
 						<td width="13"><img src="images/greyarrow.gif" alt="image" width="5"
 							height="5" hspace="4" vspace="6" border="0"></td>
 						<td width="200"><a href="index.php?&content=PersonalBanking"
-							class="boldnav">Day-To-Day Banking</a> <br>
+							class="boldnav"><font color="black">Day-To-Day Banking</font></a> <br>
 							<a href="index.php?&content=PersonalChequing"
 							style="font-size: 11px;">Chequing</a>,
 							<a href="index.php?&content=PersonalSavings"
