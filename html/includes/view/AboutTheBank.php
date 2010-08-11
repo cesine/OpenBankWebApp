@@ -622,7 +622,7 @@ elseif($content=="CreditCards"){
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			echo "<tr><td>$row[accountname]</td><td>$row[interestrate]%</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>Interest rate: $row[interestrate]%</td></tr>";
 	}
 	echo "</table>";
 }
@@ -654,7 +654,7 @@ elseif($content=="LineOfCredit"){
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			echo "<tr><td>$row[accountname]</td><td>$row[interestrate]%</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>Interest rate: $row[interestrate]%</td></tr>";
 	}
 	echo "</table>";
 }
