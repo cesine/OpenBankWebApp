@@ -342,6 +342,10 @@ class Client{
 	public function getClientAccount($accountId)
 	{
 		echo $accountId;
+		foreach($clientAccountsArray as $clientAccountId)
+		{
+			echo $clientAccountId;
+		}
 		
 		if ( isset($clientBusinessBankingAccountsArray) )
 		{
