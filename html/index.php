@@ -149,18 +149,18 @@ if($content=="BranchLocator"){
 <?php  include ('includes/view/footer.php')?>
 <?php 
 //for debugging this will print out all the information in the session
-echo'<hr><p><font color="red">Begin Debugging: </p><p>Printing the Session information in case you need to see it </font></p>';
-echo '<blockquote>';
-print_r($_SESSION);	
-echo '</blockquote>';
-echo '<p><font color="red">Printing the URL information in case you need to see it (eg, index.php?&variable=value)</font></p>';
-echo '<blockquote>';
-print_r($_GET);
-echo '</blockquote>';
-echo '<p><font color="red">Printing the Post information in case you need to see it (eg, information that you submitted using the PoST method in a form) </font></p>';
-echo '<blockquote>';
-print_r($_POST);
-echo '</blockquote>';
-echo '<font color="red">The content to display is '.$content;
-echo '<p>End Debugging.</font</p><hr>';
+//echo'<hr><p><font color="red">Begin Debugging: </p><p>Printing the Session information in case you need to see it </font></p>';
+//echo '<blockquote>';
+//print_r($_SESSION);	
+//echo '</blockquote>';
+//echo '<p><font color="red">Printing the URL information in case you need to see it (eg, index.php?&variable=value)</font></p>';
+//echo '<blockquote>';
+//print_r($_GET);
+//echo '</blockquote>';
+//echo '<p><font color="red">Printing the Post information in case you need to see it (eg, information that you submitted using the PoST method in a form) </font></p>';
+//echo '<blockquote>';
+//print_r($_POST);
+//echo '</blockquote>';
+//echo '<font color="red">The content to display is '.$content;
+//echo '<p>End Debugging.</font</p><hr>';
 ?>
