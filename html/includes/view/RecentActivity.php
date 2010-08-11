@@ -29,16 +29,16 @@ if(isset($_SESSION)){
 			</table>
 			<TABLE border='0' cellspacing='1' cellpadding='3' width='100%'>
 				<TR class='bgcoloroption0'>
-					<td class='fieldTitleLeftC' valign=top>Account Name<br></td>
-					<td class='fieldTitleLeftC' valign=top>Account Number<br></td>
-					<TD class='fieldTitleRightC' valign=top>Current<br> Balance CAD</TD>
-					<TD class='fieldTitleRightC' valign=top>Available<br> Balance CAD</TD>
+					<td class='fieldTitleLeftC' valign=top width=\"30%\">Account Name<br></td>
+					<td class='fieldTitleLeftC' valign=top width=\"20%\">Account Number<br></td>
+					<TD class='fieldTitleRightC' valign=top width=\"25%\">Current<br> Balance CAD</TD>
+					<TD class='fieldTitleRightC' valign=top width=\"25%\">Available<br> Balance CAD</TD>
 				</TR>
 					<TR class='bgcoloroption0'>
-					<td class='fieldTitleLeftC' valign=top>$clientAccountName<br></td>
-					<td class='fieldTitleLeftC' valign=top>$selectedAccountId<br></td>
-					<TD class='fieldTitleRightC' valign=top>$currentBalance</TD>
-					<TD class='fieldTitleRightC' valign=top>Available Balance CAD</TD>
+					<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
+					<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
+					<TD class='tableDataRightC' valign=top>$currentBalance</TD>
+					<TD class='tableDataRightC' valign=top>Available Balance CAD</TD>
 				</TR><tr><td></td></tr><tr></tr></table>";
 	
 	/*
