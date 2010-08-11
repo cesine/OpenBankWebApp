@@ -291,7 +291,7 @@ if($content=="Banking"){?>
 	echo $db->queryFirstResult[accountname];
 }
 elseif($content=="TFSA"){
-	echo "	echo "<table><tbody>
+	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
 	<td class='headline2'>The TFSA Solutions Centre<br><br></td>
