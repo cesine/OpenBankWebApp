@@ -362,7 +362,7 @@ elseif($content=="TFSA"){
 	}
 	echo "</table>";
 }
-elseif($content=="Chequing"){
+elseif($content=="PersonalChequing"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
@@ -397,10 +397,10 @@ elseif($content=="Chequing"){
 	}
 	echo "</table>";
 }
-elseif($content=="Savings"){
+elseif($content=="PersonalSavings"){
 	echo "paste some text here 04";
 }
-elseif($content=="ForeignCurrency"){
+elseif($content=="PersonalForeignCurrency"){
 	echo "paste some text here 05";
 }
 elseif($content=="LifeInsurance"){
