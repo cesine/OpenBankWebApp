@@ -13,7 +13,7 @@ if($_GET['action']=='Logout'){
 	session_unset();
 	unset($_GET);
 	//header('Location: index.php'); //redirects page to main page
-	echo "<meta http-equiv='REFRESH' content='0,url=index.php'>";//redirects page to summary page
+	echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content='>";//redirects page to summary page
 }
 if($_GET['action']=='ExitClient'){
 	//$_SESSION['LoggedInMessage']="";
