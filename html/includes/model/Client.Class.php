@@ -340,39 +340,63 @@ class Client{
 	}
 	public function getClientAccount($accountId)
 	{
-		foreach ($this->clientBusinessBankingAccountsArray as $clientAccount)
+		$count = count($clientBusinessBankingAccountsArray);
+		if ( $count != 0 )
 		{
-			if ( $clientAccount->getClientAccountId() == $accountId )
+			foreach ($this->clientBusinessBankingAccountsArray as $clientAccount)
 			{
-				return $clientAccount;
+				if ( $clientAccount->getClientAccountId() == $accountId )
+				{
+					return $clientAccount;
+				}
 			}
 		}
-		foreach ($this->clientPersonalBankingAccountsArray as $clientAccount)
+		
+		$count = count($clientPersonalBankingAccountsArray);
+		if ( $count != 0 )
 		{
-			if ( $clientAccount->getClientAccountId() == $accountId )
+			foreach ($this->clientPersonalBankingAccountsArray as $clientAccount)
 			{
-				return $clientAccount;
+				if ( $clientAccount->getClientAccountId() == $accountId )
+				{
+					return $clientAccount;
+				}
 			}
 		}
-		foreach ($this->clientPersonalInvestingAccountsArray as $clientAccount)
+		
+		$count = count($clientPersonalInvestingAccountsArray);
+		if ( $count != 0 )
 		{
-			if ( $clientAccount->getClientAccountId() == $accountId )
+			foreach ($this->clientPersonalInvestingAccountsArray as $clientAccount)
 			{
-				return $clientAccount;
+				if ( $clientAccount->getClientAccountId() == $accountId )
+				{
+					return $clientAccount;
+				}
 			}
 		}
-		foreach ($this->clientPersonalBorrowingAccountsArray as $clientAccount)
+		
+		$count = count($clientPersonalBorrowingAccountsArray);
+		if ( $count != 0 )
 		{
-			if ( $clientAccount->getClientAccountId() == $accountId )
+			foreach ($this->clientPersonalBorrowingAccountsArray as $clientAccount)
 			{
-				return $clientAccount;
+				if ( $clientAccount->getClientAccountId() == $accountId )
+				{
+					return $clientAccount;
+				}
 			}
 		}
-		foreach ($this->clientPersonalInsuranceAccountsArray as $clientAccount)
+		
+		$count = count($clientPersonalInsuranceAccountsArray);
+		if ( $count != 0 )
 		{
-			if ( $clientAccount->getClientAccountId() == $accountId )
+			foreach ($this->clientPersonalInsuranceAccountsArray as $clientAccount)
 			{
-				return $clientAccount;
+				if ( $clientAccount->getClientAccountId() == $accountId )
+				{
+					return $clientAccount;
+				}
 			}
 		}
 	}
