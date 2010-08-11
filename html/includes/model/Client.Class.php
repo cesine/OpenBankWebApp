@@ -338,10 +338,11 @@ class Client{
 		}
 		echo"</select>";
 	}
+	
 	public function getClientAccount($accountId)
 	{
 		$count = count($clientBusinessBankingAccountsArray);
-		if ( $count != 0 )
+		if ( $count > 0 )
 		{
 			foreach ($this->clientBusinessBankingAccountsArray as $clientAccount)
 			{
@@ -353,7 +354,7 @@ class Client{
 		}
 		
 		$count = count($clientPersonalBankingAccountsArray);
-		if ( $count != 0 )
+		if ( $count > 0 )
 		{
 			foreach ($this->clientPersonalBankingAccountsArray as $clientAccount)
 			{
@@ -365,7 +366,7 @@ class Client{
 		}
 		
 		$count = count($clientPersonalInvestingAccountsArray);
-		if ( $count != 0 )
+		if ( $count > 0 )
 		{
 			foreach ($this->clientPersonalInvestingAccountsArray as $clientAccount)
 			{
@@ -377,7 +378,7 @@ class Client{
 		}
 		
 		$count = count($clientPersonalBorrowingAccountsArray);
-		if ( $count != 0 )
+		if ( $count > 0 )
 		{
 			foreach ($this->clientPersonalBorrowingAccountsArray as $clientAccount)
 			{
@@ -389,7 +390,7 @@ class Client{
 		}
 		
 		$count = count($clientPersonalInsuranceAccountsArray);
-		if ( $count != 0 )
+		if ( $count > 0 )
 		{
 			foreach ($this->clientPersonalInsuranceAccountsArray as $clientAccount)
 			{
