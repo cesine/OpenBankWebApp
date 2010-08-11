@@ -431,11 +431,11 @@ elseif($content=="PersonalForeignCurrency"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
-	<td class='headline2'>Personal $US Account<br><br></td>
+	<td class='headline2'>Personal \$US Account<br><br></td>
 	</tr>
 	<tr valign='top'>
 	<td>
-	We offer an easy-to-use $US account for your frequent or infrequent trips across the border.
+	We offer an easy-to-use \$US account for your frequent or infrequent trips across the border.
 	<br><br>
 	<div align='left'><span class='headline3'>You can see the great options available to you:</span></div>
 	</td></tr></tbody></table><br>";
@@ -527,11 +527,11 @@ elseif($content=="BusinessForeignCurrency"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
-	<td class='headline2'>Business Foreign Currency ($US) Account<br><br></td>
+	<td class='headline2'>Business Foreign Currency (\$US) Account<br><br></td>
 	</tr>
 	<tr valign='top'>
 	<td>
-	We offer an easy-to-use $US account for your frequent or infrequent trips across the border.
+	We offer an easy-to-use \$US account for your frequent or infrequent trips across the border.
 	<br><br>
 	<div align='left'><span class='headline3'>You can see the great options available to you:</span></div>
 	</td></tr></tbody></table><br>";
