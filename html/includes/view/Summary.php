@@ -28,7 +28,7 @@ if($content=="AllAccountsSummary")
 {
 ?>
 
-<table width="600" border="1" cellspacing="0" cellpadding="0">
+<table width="600" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
