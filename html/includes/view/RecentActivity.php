@@ -18,76 +18,76 @@ if(isset($_SESSION)){
 	if ( $selectedAccountId == "" )
 		$selectedAccountId=$_SESSION['DisplayAccount'];
 		
-//	$clientAccount = $client->getClientAccount($selectedAccountId);
-//	
-//	$clientAccountName = $clientAccount->getAccountTypeName();
-//	$currentBalance = $clientAccount->getCurrentBalance();
-//	$availableBalance = $clientAccount->getAvailableBalance();
-//	$accountTypeId = $clientAccount->getAccountTypeId();
+	$clientAccount = $client->getClientAccount($selectedAccountId);
 	
-//	if ( $selectedAccountType == "Banking")
-//	{
-////		$bankingPlan = new BankingPlans();
-////		$bankingPlan->setAccountTypeId($accountTypeId);
-////		$overdraftAmount = $bankingPlan->getOverdraftAmount();
-//		
-//		echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
-//					width='600'>
-//					<tbody>	
-//						<tr bgcolor='#ffffff'>
-//							<td width='58%' align=center><font class='regularTextBold'>Account Details for:<br>
-//							<font color='#666666'>&nbsp;</font>$clientAccountName - $selectedAccountId</font></td>
-//						</tr>
-//					</tbody>
-//				</table>
-//				<TABLE border='0' cellspacing='1' cellpadding='3' width='100%'>
-//					<TR class='bgcoloroption0'>
-//						<td class='fieldTitleLeftC' valign=top width=\"30%\">Account Name<br></td>
-//						<td class='fieldTitleLeftC' valign=top width=\"20%\">Account Number<br></td>
-//						<TD class='fieldTitleRightC' valign=top width=\"25%\">Current<br> Balance CAD</TD>
-//						<TD class='fieldTitleRightC' valign=top width=\"25%\">Available<br> Balance CAD</TD>
-//					</TR>
-//						<TR class='bgcoloroption1'>
-//						<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
-//						<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
-//						<TD class='tableDataRightC' valign=top>$currentBalance</TD>
-//						<TD class='tableDataRightC' valign=top>$availableBalance</TD>
-//					</TR><tr><td></td></tr><tr></tr></table>";
-//		
-//	}
-//	elseif ( $selectedAccountType == "Borrowing")
-//	{
-//		$borrowingPlan = new BorrowingPlans();
-//		$borrowingPlan->setAccountTypeId($accountTypeId);
-//		$creditLimit = $borrowingPlan->getCreditLimit();
-//		$availableCredit = $creditLimit - $currentBalance;
-//		
-//		echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
-//					width='600'>
-//					<tbody>	
-//						<tr bgcolor='#ffffff'>
-//							<td width='58%' align=center><font class='regularTextBold'>Account Details for:<br>
-//							<font color='#666666'>&nbsp;</font>$clientAccountName - $selectedAccountId</font></td>
-//						</tr>
-//					</tbody>
-//				</table>
-//				<TABLE border='0' cellspacing='1' cellpadding='3' width='100%'>
-//					<TR class='bgcoloroption0'>
-//						<td class='fieldTitleLeftC' valign=top width=\"30%\">Account Name<br></td>
-//						<td class='fieldTitleLeftC' valign=top width=\"20%\">Account Number<br></td>
-//						<TD class='fieldTitleRightC' valign=top width=\"25%\">Current<br> Balance CAD</TD>
-//						<TD class='fieldTitleRightC' valign=top width=\"25%\">Available<br> Credit CAD</TD>
-//					</TR>
-//						<TR class='bgcoloroption1'>
-//						<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
-//						<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
-//						<TD class='tableDataRightC' valign=top>$currentBalance</TD>
-//						<TD class='tableDataRightC' valign=top>$availableBalance</TD>
-//					</TR><tr><td></td></tr><tr></tr></table>";
-//		
-//	}
-//	
-//	echo "<br><br>";
+	$clientAccountName = $clientAccount->getAccountTypeName();
+	$currentBalance = $clientAccount->getCurrentBalance();
+	$availableBalance = $clientAccount->getAvailableBalance();
+	$accountTypeId = $clientAccount->getAccountTypeId();
+	
+	if ( $selectedAccountType == "Banking")
+	{
+//		$bankingPlan = new BankingPlans();
+//		$bankingPlan->setAccountTypeId($accountTypeId);
+//		$overdraftAmount = $bankingPlan->getOverdraftAmount();
+		
+		echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
+					width='600'>
+					<tbody>	
+						<tr bgcolor='#ffffff'>
+							<td width='58%' align=center><font class='regularTextBold'>Account Details for:<br>
+							<font color='#666666'>&nbsp;</font>$clientAccountName - $selectedAccountId</font></td>
+						</tr>
+					</tbody>
+				</table>
+				<TABLE border='0' cellspacing='1' cellpadding='3' width='100%'>
+					<TR class='bgcoloroption0'>
+						<td class='fieldTitleLeftC' valign=top width=\"30%\">Account Name<br></td>
+						<td class='fieldTitleLeftC' valign=top width=\"20%\">Account Number<br></td>
+						<TD class='fieldTitleRightC' valign=top width=\"25%\">Current<br> Balance CAD</TD>
+						<TD class='fieldTitleRightC' valign=top width=\"25%\">Available<br> Balance CAD</TD>
+					</TR>
+						<TR class='bgcoloroption1'>
+						<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
+						<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
+						<TD class='tableDataRightC' valign=top>$currentBalance</TD>
+						<TD class='tableDataRightC' valign=top>$availableBalance</TD>
+					</TR><tr><td></td></tr><tr></tr></table>";
+		
+	}
+	elseif ( $selectedAccountType == "Borrowing")
+	{
+		$borrowingPlan = new BorrowingPlans();
+		$borrowingPlan->setAccountTypeId($accountTypeId);
+		$creditLimit = $borrowingPlan->getCreditLimit();
+		$availableCredit = $creditLimit - $currentBalance;
+		
+		echo "<table bgcolor='#a50000' border='0' cellpadding='0' cellspacing='0'
+					width='600'>
+					<tbody>	
+						<tr bgcolor='#ffffff'>
+							<td width='58%' align=center><font class='regularTextBold'>Account Details for:<br>
+							<font color='#666666'>&nbsp;</font>$clientAccountName - $selectedAccountId</font></td>
+						</tr>
+					</tbody>
+				</table>
+				<TABLE border='0' cellspacing='1' cellpadding='3' width='100%'>
+					<TR class='bgcoloroption0'>
+						<td class='fieldTitleLeftC' valign=top width=\"30%\">Account Name<br></td>
+						<td class='fieldTitleLeftC' valign=top width=\"20%\">Account Number<br></td>
+						<TD class='fieldTitleRightC' valign=top width=\"25%\">Current<br> Balance CAD</TD>
+						<TD class='fieldTitleRightC' valign=top width=\"25%\">Available<br> Credit CAD</TD>
+					</TR>
+						<TR class='bgcoloroption1'>
+						<td class='tableDataLeftC' valign=top>$clientAccountName<br></td>
+						<td class='tableDataLeftC' valign=top>$selectedAccountId<br></td>
+						<TD class='tableDataRightC' valign=top>$currentBalance</TD>
+						<TD class='tableDataRightC' valign=top>$availableBalance</TD>
+					</TR><tr><td></td></tr><tr></tr></table>";
+		
+	}
+	
+	echo "<br><br>";
 	
 	/*
 	 * print out the Page header and transaction table header
