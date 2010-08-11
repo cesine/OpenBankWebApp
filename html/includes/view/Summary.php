@@ -81,7 +81,6 @@ if (isset($_SESSION['Client']))
 			</TR>
 			<TR class="bgcoloroptionB">
 				<TD class=fieldTitleLeftC colSpan=2><a class="helpLinkC">Banking</a></td>
-				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
