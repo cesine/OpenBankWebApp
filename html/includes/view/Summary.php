@@ -69,7 +69,6 @@ if($content=="AllAccountsSummary")
 				</table>
 				<br></br>
 				<br></br>
-				<br></br>
 				</td>
 			</tr>
 		</table>
@@ -151,6 +150,8 @@ if($content=="AllAccountsSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
 				</td>
 			</tr>
 
@@ -186,6 +187,8 @@ if($content=="AllAccountsSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
 				</td>
 			</tr>
 
@@ -223,6 +226,8 @@ if($content=="AllAccountsSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
 				</td>
 			</tr>
 		</table>
@@ -283,6 +288,8 @@ if($content=="BankingSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
 				</td>
 			</tr>
 
@@ -332,6 +339,8 @@ if($content=="BankingSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
 				</td>
 
 			</tr>
@@ -395,6 +404,8 @@ if($content=="InvestingSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
 				</td>
 			</tr>
 		</table>
@@ -455,6 +466,8 @@ if($content=="BorrowingSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
 				</td>
 			</tr>
 		</table>
@@ -514,6 +527,8 @@ if($content=="InsuranceSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
 				</td>
 			</tr>
 		</table>
