@@ -26,7 +26,13 @@ if(isset($_SESSION)){
 		}else{
 			$transactionFromAccount= new Transaction();
 			$transactionFromAccount->setAccountId($_POST[fromaccount]);
-			$transactionFromAccount->setBalance($fromAccount->getCurrentBalance() - $_POST[amount]);
+			
+//			if ( $fromAccount->getAccountTypeId() == 1 || $fromAccount->getAccountTypeId() == 2 ||
+//					$fromAccount->getAccountTypeId() == 3 || $fromAccount->getAccountTypeId() == 10 ||
+//						$fromAccount->getAccountTypeId() == 11 || $fromAccount->getAccountTypeId() == 12 )
+//			{
+				$transactionFromAccount->setBalance($fromAccount->getCurrentBalance() - $_POST[amount]);
+//			}
 			$transactionFromAccount->setDate(date('Y-m-d'));
 			$transactionFromAccount->setWithdrawalAmount($_POST[amount]);
 			$transactionFromAccount->setDepositAmount("NULL");
@@ -45,9 +51,6 @@ if(isset($_SESSION)){
 			$queryInsertForFromTransaction=$transactionFromAccount->buildInsertTransactionQuery();
 			//echo $queryInsertForFromTransaction;
 			//echo $transactionFromAccount->saveToDatabase();
-			
-			
-			
 			
 			$toAccount= new ClientAccount();
 			$toAccount->initializeAccountFromID($_POST[toaccount]);
@@ -68,15 +71,16 @@ if(isset($_SESSION)){
 			//echo $queryInsertForToTransaction;
 			
 		
-			$temp=$fromAccount->getCurrentBalance()-$_POST[amount];
+			$temp1=$fromAccount->getCurrentBalance()-$_POST[amount];
+			$temp2=$fromAccount->getAvailableBalance()-$_POST[amount];			
 			$queryUpdateFromAccountBallance="UPDATE `clientaccount` 
-				SET `currentbalance` = ".$temp." WHERE `clientaccountid` = ".$fromAccount->getClientAccountId()." AND `branchid` = ".$client->getBranchID();
-			//echo $queryUpdateFromAccountBallance;
-			$temp=$toAccount->getCurrentBalance()+$_POST[amount];
+				SET `currentbalance` =".$temp1.", availablebalance =".$temp2." WHERE `clientaccountid` = ".$fromAccount->getClientAccountId()." AND `branchid` = ".$client->getBranchID();
+			
+			$temp1=$toAccount->getCurrentBalance()+$_POST[amount];
+			$temp2=$toAccount->getAvailableBalance()+$_POST[amount];			
 			$queryUpdateToAccountBallance="UPDATE `clientaccount` 
-				SET `currentbalance` = ".$temp." 
+				SET `currentbalance` =".$temp1.", availablebalance =".$temp2." 
 				WHERE `clientaccountid` = ".$toAccount->getClientAccountId()." AND `branchid` = ".$client->getBranchID();
-			//echo $queryInsertForToTransaction;
 			
 			$transferQueryArray[0]=$queryInsertForFromTransaction;
 			$transferQueryArray[1]=$queryUpdateFromAccountBallance;
