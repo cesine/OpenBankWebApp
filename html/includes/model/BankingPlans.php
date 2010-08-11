@@ -10,6 +10,10 @@ class BankingPlans
 	private $minimumBalance;
 	private $interestRate;
 
+	public function __construct()
+	{
+	}
+	
 	public function getAccountTypeId() 
 	{
 		return $this->$accountTypeId;
@@ -53,8 +57,27 @@ class BankingPlans
 	public function setAccountTypeId($accountTypeId)
 	{
 		$this->accountTypeId=$accountTypeId;
+		
+	    $bankPlan = new Database();
+	    $bankPlan->connect();
+	    $plan = "SELECT DISTINCT *
+	                    FROM bankingplans b
+	                    WHERE b.accounttypeid = ".$accountTypeId;
+	    
+	    $bankPlan->query($plan);
+	    $bankPlan->close();
+		$this->initializeBankingPlan($bankPlan->queryFirstResult);
 	}
 		
+	public function initializeBankingPlan($row)
+	{
+		print_r($row);
+		$this->setMonthlyFee($row[monthlyfee]);
+		$this->setFreeTransactions($row[freetransactions]);//note: the name takes the managerid as a parameter,as long as you have the managerid it will work
+		$this->setTransactionFee($row[transactionfee]);
+		$this->setOverdraftAmount($row[overdraftamount]);
+	}
+	
 	public function setMonthlyFee($monthlyFee)
 	{
 		$this->monthlyFee=$monthlyFee;
