@@ -291,7 +291,7 @@ if($content=="Banking"){?>
 	AND `investmentplans`.`accounttypeid` = `accounttype`.`accounttypeid`
 	ORDER BY `investmentplans`.`investmentterm` ASC";
 	$db->query($queryToDo);
-	echo "<table CELLPADDING=10>";
+	echo "<table CELLPADDING='10'>";
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
