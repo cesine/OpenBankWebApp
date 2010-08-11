@@ -2,7 +2,7 @@
 
  <?php include ('includes/view/menu.php')?>
 
-<table border="0" with="940">
+<table border="0" width="940">
 
 	<tr valign="top">
 		<td width="20%">

@@ -1,4 +1,4 @@
-<?php  include ('includes/view/header.php')?>
+<?php  include ('includes/view/header_anshu.php')?>
 
  <?php include ('includes/view/menu.php')?>
 
@@ -9,10 +9,10 @@ $userIsEmployee=false;
 $userIsClient=false;
 ?>
 
-<table border="0" with="940">
+<table border="0" width="940">
 
 	<tr valign="top">
-		<td width="100%">
+	<td width="100%">
 		<?php
 		/*
 		 * Control logic to change which small top menu to display in the main window
