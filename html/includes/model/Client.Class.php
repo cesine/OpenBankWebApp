@@ -378,6 +378,7 @@ class Client{
 		
 		if ( isset($clientPersonalBorrowingAccountsArray) )
 		{
+			echo $accountId;
 			foreach ($this->clientPersonalBorrowingAccountsArray as $clientAccount)
 			{
 				if ( $clientAccount->getClientAccountId() == $accountId )
