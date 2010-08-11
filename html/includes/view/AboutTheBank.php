@@ -403,7 +403,36 @@ elseif($content=="LifeInsurance"){
 	echo "</table>";
 }
 elseif($content=="CreditCards"){
-	echo "paste some text here 07";
+	echo "<table><tbody>
+	<tr valign='top'>
+	<td rowspan='2'><br></td>
+	<td class='headline2'>Life Insurance<br><br></td>
+	</tr>
+
+	<tr valign='top'>
+	<td>
+	Use our cards for all your everyday purchases, such as groceries, gas or travel. Get rewards, flexibility and convenience with a VISA card. 
+	<br><br>
+	<div align='left'><span class='headline3'>We have many options:</span></div>
+	</td></tr></tbody></table><br>";
+	$db = new Database();
+	$db->connect();
+	$queryToDo= "SELECT DISTINCT `accounttype`.`accountname` , `borrowingplans`.`interestrate`
+	FROM `accounttype` , `servicecategory` , `service` , `servicetype` , `borrowingplans`
+	WHERE `servicecategory`.`servicecategoryname` = 'Personal'
+	AND `servicetype`.`servicetypename` = 'Credit Cards'
+	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
+	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
+	AND `borrowingplans`.`accounttypeid` = `accounttype`.`accounttypeid`
+	ORDER BY `accounttype`.`accountname` ASC";
+	$db->query($queryToDo);
+	echo "<table width = 400 border = 0 cellpadding = 20>";
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($db->queryResultsResource);
+			echo "<tr><td>$row[accountname]</td><td>$$row[interestrate]</td></tr>";
+	}
+	echo "</table>";
 }
 elseif($content=="LineOfCredit"){
 	echo "<table><tbody>
