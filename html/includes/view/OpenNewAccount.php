@@ -179,6 +179,39 @@ switch ($userChoice)
 $clientAccount->setBranchId($userBranch);
 $clientAccount->setclientId($clientID);
 
+if ( $clientAccount->getAccountTypeId() == 1 )
+{
+	$clientAccount->setAvailableBalance(1000);
+}
+elseif ( $clientAccount->getAccountTypeId() == 2 )
+{
+	$clientAccount->setAvailableBalance(0);
+}
+elseif ( $clientAccount->getAccountTypeId() == 3 )
+{
+	$clientAccount->setAvailableBalance(0);
+}
+elseif ( $clientAccount->getAccountTypeId() == 4 )
+{
+	$clientAccount->setAvailableBalance(500);
+}
+elseif ( $clientAccount->getAccountTypeId() == 5 )
+{
+	$clientAccount->setAvailableBalance(50000);
+}
+elseif ( $clientAccount->getAccountTypeId() == 10 )
+{
+	$clientAccount->setAvailableBalance(5000);
+}
+elseif ( $clientAccount->getAccountTypeId() == 11 )
+{
+	$clientAccount->setAvailableBalance(500);
+}
+elseif ( $clientAccount->getAccountTypeId() == 12 )
+{
+	$clientAccount->setAvailableBalance(0);
+}
+
 //inserting in the table
 //echo $clientAccount->saveToDatabase();
 
