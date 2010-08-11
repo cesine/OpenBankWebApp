@@ -365,7 +365,6 @@ class Client{
 		{
 			if ( $clientAccount->getClientAccountId() == $accountId )
 			{
-				echo "Anshu Garg";
 				return $clientAccount;
 			}
 		}
