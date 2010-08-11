@@ -29,6 +29,8 @@ if($content=="AllAccountsSummary")
 ?>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
 	<tr>
 		<td>
 		<form name=sumform0 method="post">
@@ -74,8 +76,8 @@ if($content=="AllAccountsSummary")
 		</table>
 		</form>
 	
-	</tr>
 	</td>
+	</tr>
 
 	<tr>
 		<td>
@@ -227,19 +229,17 @@ if($content=="AllAccountsSummary")
 				</table>
 				</td>
 			</tr>
-
-
-
-
-
 		</table>
 		</form>
-	</tr>
 	</td>
+	</tr>
 </table>
 <?php
  }
 ?>
+
+
+
 
 <?php 
 if($content=="BankingSummary"){
@@ -291,8 +291,8 @@ if($content=="BankingSummary"){
 		</table>
 		</form>
 	
-	</tr>
 	</td>
+	</tr>
 
 	<tr>
 		<td>
@@ -338,12 +338,15 @@ if($content=="BankingSummary"){
 			</tr>
 		</table>
 		</form>
-	</tr>
 	</td>
+	</tr>
 </table>
 <?php
  }
 ?>
+
+
+
 
 <?php 
 if($content=="InvestingSummary")
@@ -394,6 +397,13 @@ if($content=="InvestingSummary")
 				</table>
 				</td>
 			</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+</table>
+			
+			
 
 <?php 
 if($content=="BorrowingSummary")
@@ -444,15 +454,10 @@ if($content=="BorrowingSummary")
 				</table>
 				</td>
 			</tr>
-
-
-
-
-
 		</table>
 		</form>
-	</tr>
 	</td>
+	</tr>
 </table>
 <?php
  }
