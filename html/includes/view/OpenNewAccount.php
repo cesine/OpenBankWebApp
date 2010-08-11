@@ -35,7 +35,7 @@ $clientAccount = new ClientAccount();
 
 <tr><td><select name="accountType" size="5" >
 <option value="powerChecking">Powerchequing Account</option>
-<option value="moneyMasterSavings">Money Master Savings Account</option>
+<option value="moneyMasterSavings" selected>Money Master Savings Account</option>
 <option value="usDollarAccount">US Dollar Account</option>
 <option value="businessChecking">Basic Business Chequing Account</option>
 <option value="businessSavings">Basic Business Savings Account</option>
