@@ -19,10 +19,6 @@ echo "<h4> Modify employee. </h4>\n";
 $branch = new Branch();
 $employeeTitle = new EmployeeTitle();
 $employeeWorkHistory = new EmployeeWorkHistory();
-$employee = new Employee();
-
-// create dynamic list of employee and let user to select
-$employee->EmployeeList(); 
 ?>
 
 <!-- Choose what should be changed -->
@@ -46,9 +42,6 @@ $employee->EmployeeList();
 <?php
 
 $selectedInfo=$_POST["choiceInfo"];
-$selectedEmployee=$_POST["choiceEmployee"];	
-//echo "<h4> Selected employee $selectedEmployee. </h4>\n";
-
 
 //if submit selection button is pressed:
 if (isset($_POST['SelectedOptionsSubmit'])) 	
@@ -74,49 +67,41 @@ if (isset($_POST['SelectedOptionsSubmit']))
 	{
 
 		// create dynamic list of employee and let user to select
-		//$employee->EmployeeList(); 
+		$employee->EmployeeList(); 
 
 		// create dynamic list of branches and let user to select
 		$branch->BranchList();
 			
 		// show dynamic list with employee title names
-		$employeeTitle->displayEmployeeTitleList();
-
-		$employee->EmployeeCurrentSalary($selectedEmployee);		
-		$employeeCurSalary=$employee->getSalary();
-		
+		$employeeTitle->displayEmployeeTitleList();	
 ?>
 
 		<!-- Create field to change salary -->
 		<table border="1"> 
 			<tr><td width="180">Salary:</td><td width="180">
-				<!--  <input type="text" name="choiceSalary" value=0 maxlength=8 />-->
-				<?php 
-					echo "<input type=text name=\"choiceSalary\" maxlength=\"8\" value=\"" . $employeeCurSalary . "\">";
-				?>				
+				<input type="text" name="choiceSalary" value=0 maxlength=8 />
 			</td></tr>
 		</table>
 		<!-- End create field to change salary -->		
 		
 		<!-- read input from user after submition -->
 		<P></P>
-		<input type="submit" name="SelectedOptionsSubmit2" value="submit changes" /> 
+		<input type="submit" name="SelectedOptionsSubmit" value="submit changes" /> 
 		<!--  <input type="submit" name="SubmitChanges" value="submit changes" />	-->	
 		<P></P>		
 		
 <?php
 		
-		if (isset($_POST['SelectedOptionsSubmit2'])) 	
+		//if (isset($_POST['SubmitChanges'])) 	
 		//if ($_POST['SubmitChanges']) 							
 		{
 
-			$selectedEmployee=$_POST["choiceEmployee"];	
-			echo "<h4> Selected employee $selectedEmployee. </h4>\n";			
+			$selectedEmployee=$_POST["choiceEmployee"];				
 			$branchIDNew=$_POST["choiceBranch"];
 			$titleNameNew=$_POST["choiceTitle"];
 			$salaryNew=$_POST["choiceSalary"];	
 							
-			//$employee = new Employee();
+			$employee = new Employee();
 			$employee->initializeEmployee($selectedEmployee);
 			
 			
@@ -232,3 +217,4 @@ if (isset($_POST['SelectedOptionsSubmit']))
 } // if (isset($_POST["SelectedOptionsSubmit"])) 
 
 ?>
+
