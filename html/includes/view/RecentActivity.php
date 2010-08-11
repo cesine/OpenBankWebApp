@@ -16,7 +16,7 @@ if(isset($_SESSION)){
 
 	$clientAccount = $client->getClientAccount($selectedAccountId);
 
-	echo $clientAccount;
+	echo $clientAccount->getAccountTypeName();
 		
 	/*
 	 * print out the Page header and transaction table header
