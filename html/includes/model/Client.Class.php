@@ -338,5 +338,43 @@ class Client{
 		}
 		echo"</select>";
 	}
+	public function getClientAccount($accountId)
+	{
+		foreach ($this->clientBusinessBankingAccountsArray as $clientAccount)
+		{
+			if ( $clientAccount->getClientAccountId() == $accountId )
+			{
+				return $clientAccount;
+			}
+		}
+		foreach ($this->clientPersonalBankingAccountsArray as $clientAccount)
+		{
+			if ( $clientAccount->getClientAccountId() == $accountId )
+			{
+				return $clientAccount;
+			}
+		}
+		foreach ($this->clientPersonalInvestingAccountsArray as $clientAccount)
+		{
+			if ( $clientAccount->getClientAccountId() == $accountId )
+			{
+				return $clientAccount;
+			}
+		}
+				foreach ($this->clientPersonalBorrowingAccountsArray as $clientAccount)
+		{
+			if ( $clientAccount->getClientAccountId() == $accountId )
+			{
+				return $clientAccount;
+			}
+		}
+		foreach ($this->clientPersonalInsuranceAccountsArray as $clientAccount)
+		{
+			if ( $clientAccount->getClientAccountId() == $accountId )
+			{
+				return $clientAccount;
+			}
+		}
+	}
 }
 ?>
