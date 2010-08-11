@@ -67,15 +67,13 @@ if($content=="AllAccountsSummary")
 	}
 ?>
 				</table>
+				<br></br>
+				<br></br>
+				<br></br>
 				</td>
 			</tr>
-		<br></br>
-		<br></br>
-		<br></br>
-
 		</table>
 		</form>
-	
 	</td>
 	</tr>
 
