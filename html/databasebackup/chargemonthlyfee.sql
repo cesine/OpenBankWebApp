@@ -31,7 +31,7 @@ BEGIN
 	`transactiondescription` , `transperformedby`)	
 	VALUES 
 	(NULL,10001,10000001,",
-	CURDATE(),"2,'fee',
+	CURDATE(),",2,'fee',
 	NULL,2,202,
 	Monthly Fee, 20000001);");
 
