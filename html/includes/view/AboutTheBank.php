@@ -285,6 +285,9 @@ if($content=="Banking"){?>
 	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
 	ORDER BY `accounttype`.`accountname` ASC";
+	
+	
+	
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($dbC->queryResultsResource);
