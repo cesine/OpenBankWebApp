@@ -406,7 +406,7 @@ elseif($content=="CreditCards"){
 	echo "<table><tbody>
 	<tr valign='top'>
 	<td rowspan='2'><br></td>
-	<td class='headline2'>Life Insurance<br><br></td>
+	<td class='headline2'>Credit Cards<br><br></td>
 	</tr>
 
 	<tr valign='top'>
@@ -430,7 +430,7 @@ elseif($content=="CreditCards"){
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			echo "<tr><td>$row[accountname]</td><td>$$row[interestrate]</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>$row[interestrate]%</td></tr>";
 	}
 	echo "</table>";
 }
