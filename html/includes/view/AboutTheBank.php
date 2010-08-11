@@ -2,7 +2,7 @@
 
 //$content = $_GET["content"];
 
-if($content=="Banking"){?>
+if($content=="PersonalBanking"){?>
 <table width="397" border="0" cellspacing="0" cellpadding="0">
 	<tbody>
 		<tr></tr>

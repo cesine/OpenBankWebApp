@@ -116,7 +116,7 @@ if($userIsClient || $userIsEmployee){
 
 if($content=="BranchLocator"){	
 	include ('includes/view/BranchLocator.php');
-}elseif($content=="Banking"|| $content=="Borrowing" || $content=="Insurance" || $content=="Investing" || $content=="PersonalServices" 
+}elseif($content=="PersonalBanking"|| $content=="Borrowing" || $content=="Insurance" || $content=="Investing" || $content=="PersonalServices" 
 			|| $content=="BusinessServices" || $content=="RSP" || $content=="TFSA" || $content=="Chequing" || $content=="Savings" 
 			|| $content=="ForeignCurrency" || $content=="LifeInsurance" || $content=="CreditCards" || $content=="LineOfCredit")
 			{
