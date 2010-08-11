@@ -11,7 +11,7 @@ if(isset($_POST['amountofdays'])){
 <div>
 <p>&copy; Team 1</p>
 <p></p>
-<form action='' method='post'>
+<!--<form action='' method='post'>
 <p>Today is the <?php echo $_SESSION['DayOfTheMonth'];?> day of the
 month.</p>
 Advance Date by days: (ex. 1) <input value='1' autocomplete='OFF'
@@ -19,15 +19,8 @@ Advance Date by days: (ex. 1) <input value='1' autocomplete='OFF'
 	type='submit' name='mysubmit' value='Submit'>
 </p>
 </form>
-<?php
-if($_SESSION['DayOfTheMonth']==1){
-	echo "<p>Its time to charge monthly fees.</p>";
-	$_SESSION['DayOfTheMonth']=2;
-	$manageAccounts= new ClientAccount();
-	$manageAccounts->chargeMonthlyFees();
-	
-}
-?>
+-->
+
 </div>
 </section>
 </footer>

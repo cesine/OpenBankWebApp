@@ -20,7 +20,6 @@ if(isset($_SESSION)){
 		
 	$clientAccount = new ClientAccount();
 	$clientAccount->initializeAccountFromID($selectedAccountId);		
-	//$clientAccount = $client->getClientAccount($selectedAccountId);
 	
 	$clientAccountName = $clientAccount->getAccountTypeName();
 	$currentBalance = $clientAccount->getCurrentBalance();
