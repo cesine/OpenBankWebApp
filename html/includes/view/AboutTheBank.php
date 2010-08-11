@@ -425,7 +425,7 @@ elseif($content=="PersonalSavings"){
 	for($count=0;$count<$db->queryResultsCount;$count++)
 	{
 			$row=mysql_fetch_array($db->queryResultsResource);
-			echo "<tr><td>$row[accountname]</td><td>$row[freetransactions] months</td><td>$row[overdraftamount]%</td></tr>";
+			echo "<tr><td>$row[accountname]</td><td>$row[freetransactions] Free transactions</td><td>$row[overdraftamount] Overdraft protection</td></tr>";
 	}
 	echo "</table>";
 }
