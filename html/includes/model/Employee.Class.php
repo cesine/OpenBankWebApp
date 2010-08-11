@@ -379,7 +379,7 @@ class Employee{
 		$queryEmployeeLogin=
 						
 		"INSERT INTO employeelogin (employeeid, passwd)
-	                VALUES ($selectedEmployee, $employeeLogin)";
+	                VALUES ($selectedEmployee, '$employeeLogin')";
 		
 		$dbEmployeeLogin->insert($queryEmployeeLogin);
 		$dbEmployeeLogin->close();
