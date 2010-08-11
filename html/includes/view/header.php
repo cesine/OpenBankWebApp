@@ -61,14 +61,7 @@ if($_GET['action']=='LoginAsClient' && isset($_SESSION['User'])){
 		echo "<meta http-equiv='REFRESH' content='0,url=index.php?&content=AllAccountsSummary&action=AsClient'>";
 	}
 }
-if($_SESSION['DayOfTheMonth']==1){
-	$_SESSION['DayOfTheMonth']=2;
-	$manageAccounts= new ClientAccount();
-	$manageAccounts->chargeMonthlyFees();
-}
-if(isset($_POST['amountofdays'])){
-	$_SESSION['DayOfTheMonth']=$_SESSION['DayOfTheMonth']+$_POST['amountofdays'];
-}
+
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
