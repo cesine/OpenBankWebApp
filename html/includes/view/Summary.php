@@ -188,13 +188,13 @@ if($content=="AllAccountsSummary")
 			</tr>
 
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Insurance</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Insurance</a></td>
 				<TD class="bgcoloroption2">&nbsp;</td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleRightC  width="19%" align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleRightC  width="19%" align=right>Balance</a></td>
 				<TD width="2%" class="bgcoloroption2">&nbsp;</TD>
 			</tr>
 
@@ -249,13 +249,13 @@ if($content=="BankingSummary")
 				<TD colSpan=5><FONT class=fieldTitleLeftC><a class="helpLinkC">Business Accounts</a></FONT></TD>
 			</TR>
 			<TR class="bgcoloroptionB">
-				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Banking</a></td>
+				<TD class=fieldTitleLeftC colSpan=2>&nbsp;&nbsp;&nbsp;Banking</a></td>
 			</tr>
 
 			<TR class="bgcoloroption1">
-				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Name </a></td>
-				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="helpLinkC">Account Number </a></td>
-				<TD class=fieldTitleRightC align=right><a class="helpLinkC">Balance</a></td>
+				<TD class=fieldTitleLeftC width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Name </a></td>
+				<TD class=fieldTitleLeftC width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Number </a></td>
+				<TD class=fieldTitleRightC align=right>Balance</a></td>
 			</tr>
 
 			<tr>
@@ -273,7 +273,7 @@ if($content=="BankingSummary")
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="acctC" vAlign=top align=left width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><?php echo $clientAccount->getClientAccountId();?></a></td>
+							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><font color=blue><?php echo $clientAccount->getClientAccountId();?></font></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
@@ -322,7 +322,7 @@ if($content=="BankingSummary")
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="acctC" vAlign=top align=left width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><?php echo $clientAccount->getClientAccountId();?></a></td>
+							href='index.php?&content=RecentActivity&accountid=<?php echo $clientAccount->getClientAccountId();?>'><font color=blue><?php echo $clientAccount->getClientAccountId();?></font></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
