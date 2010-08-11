@@ -7,11 +7,12 @@ require_once 'includes/model/Transaction.Class.php';
 if(isset($_SESSION)){
 	$client= new Client();
 	$client = unserialize($_SESSION['Client']);
-	//$client->displaySelectClientAccount();$clientAccountId$clientAccountId
 
-	//$selectedAccountId=$_SESSION['DisplayAccount'];//$client->clientAccountsArray[0];
-	//$selectedAccountId=$client->clientAccountsArray[0]->getClientAccountId();	
 	$selectedAccountId = $_GET['accountid'];
+	
+	if ( $selectedAccountId == "" )
+		$selectedAccountId=$_SESSION['DisplayAccount'];
+	//	
 	/*
 	 * print out the Page header and transaction table header
 	 */
