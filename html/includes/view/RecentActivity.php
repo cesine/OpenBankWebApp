@@ -18,12 +18,12 @@ if(isset($_SESSION)){
 	if ( $selectedAccountId == "" )
 		$selectedAccountId=$_SESSION['DisplayAccount'];
 		
-	$clientAccount = $client->getClientAccount($selectedAccountId);
-	
-	$clientAccountName = $clientAccount->getAccountTypeName();
-	$currentBalance = $clientAccount->getCurrentBalance();
-	$availableBalance = $clientAccount->getAvailableBalance();
-	$accountTypeId = $clientAccount->getAccountTypeId();
+//	$clientAccount = $client->getClientAccount($selectedAccountId);
+//	
+//	$clientAccountName = $clientAccount->getAccountTypeName();
+//	$currentBalance = $clientAccount->getCurrentBalance();
+//	$availableBalance = $clientAccount->getAvailableBalance();
+//	$accountTypeId = $clientAccount->getAccountTypeId();
 	
 //	if ( $selectedAccountType == "Banking")
 //	{
