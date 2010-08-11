@@ -47,7 +47,7 @@ if (isset($_SESSION['Client']))
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 
 <?php 
-	$count = count($clientBusinessBankingAccountsArray);
+	$count = count($client->clientBusinessBankingAccountsArray);
 	if ( $count != 0 )
 	{
 		foreach($client->clientBusinessBankingAccountsArray as $clientAccount)
@@ -97,7 +97,7 @@ if (isset($_SESSION['Client']))
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 
 <?php
- 	$count = count(clientPersonalBankingAccountsArray);
+ 	$count = count($client->clientPersonalBankingAccountsArray);
 	if ( $count != 0 )
 	{
 		foreach($client->clientPersonalBankingAccountsArray as $clientAccount)
@@ -135,7 +135,7 @@ if (isset($_SESSION['Client']))
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 
 <?php 
- 	$count = count($clientPersonalInvestingAccountsArray);
+ 	$count = count($client->clientPersonalInvestingAccountsArray);
 	echo "Anshu Garg";
  	if ( $count != 0 )
 	{
@@ -173,7 +173,7 @@ if (isset($_SESSION['Client']))
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 
 <?php 
- 	$count = count($clientPersonalBorrowingAccountsArray);
+ 	$count = count($client->clientPersonalBorrowingAccountsArray);
 	if ( $count != 0 )
 	{
 		foreach($client->$clientPersonalBorrowingAccountsArray as $clientAccount)
