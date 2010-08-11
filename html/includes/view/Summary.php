@@ -59,7 +59,7 @@ if($content=="AllAccountsSummary")
 					<tr class='bgcoloroption2'>
 
 						<TD class="acctC" vAlign=top align=left width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='accountLinkB'
-							href='index.php?&content=RecentActivity&accountid='<?php $clientAccount->getClientAccountId();?>><?php echo $clientAccount->getAccountTypeName();?></a></td>
+							href='index.php?&content=RecentActivity&accountid='<?php echo $clientAccount->getClientAccountId();?>><?php echo $clientAccount->getAccountTypeName();?></a></td>
 						<TD class="dollarAmountC" vAlign=top align=right><?php echo $clientAccount->getCurrentBalance();?></td>
 					</tr>
 <?php 
