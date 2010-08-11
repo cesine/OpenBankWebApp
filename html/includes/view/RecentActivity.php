@@ -19,6 +19,7 @@ if(isset($_SESSION)){
 		$selectedAccountId=$_SESSION['DisplayAccount'];
 		
 	$clientAccount = $client->getClientAccount($selectedAccountId);
+	
 	$clientAccountName = $clientAccount->getAccountTypeName();
 	$currentBalance = $clientAccount->getCurrentBalance();
 	$availableBalance = $clientAccount->getAvailableBalance();
