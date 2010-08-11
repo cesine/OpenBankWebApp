@@ -31,7 +31,8 @@ if($userIsClient){
 	include ('includes/view/ClientSideMenu.php');
 	$topMenu="ClientTopMenu";
 }
-if($content=="BusinessServices" || $content=="BusinessBanking"){
+if($content=="BusinessServices" || $content=="BusinessBanking" 
+		|| $content=="BusinessChequing" || $content=="BusinessSavings" || $content=="BusinessForeignCurrency" ){
 	include ('includes/view/BusinesSideMenu.php');
 }
 if(!($userIsEmployee) && !($userIsClient)&& $content!="BusinessServices" && $content != "BusinessBanking"){
