@@ -107,6 +107,29 @@ class ClientAccount
 		'<br/>\n'.$this->CurrentBalance.			
 		'</p>\n\n';
 	}
+	public function chargeMonthlyFees(){
+		//go in the database
+		/*
+		 * for each account type
+		 * 	get monthly fee 
+		 * SELECT a.accounttypeid, monthlyfee 
+		 * FROM accounttype a, bankingplans b
+		 * WHERE a.accounttypeid=b.accounttypeid
+		 * 
+		 * 	for each account of that type
+		 * 		charge fee
+		 */
+		$dbChargeMonthlyFees= new Database();
+		$dbChargeMonthlyFees->connect();
+		$getAccountsAndFees="SELECT a.accounttypeid, monthlyfee 
+					FROM accounttype a, bankingplans b
+		 			WHERE a.accounttypeid=b.accounttypeid";
+		$dbChargeMonthlyFees->query($getAccountsAndFees);
+		for($count=0;$count<$dbChargeMonthlyFees->queryResultsCount;$count++){
+			$row=mysql_fetch_array($dbChargeMonthlyFees->queryResultsResource);
+			echo $row[accountid];
+		}
+	}
 
 	public function __construct(){
 		$this->clientAccountId="NULL";
