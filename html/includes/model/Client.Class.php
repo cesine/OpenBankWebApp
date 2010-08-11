@@ -330,7 +330,7 @@ class Client{
 				}
 			}
 		}
-				echo"</select>";
+		echo"</select>";
 	}
 }
 ?>
