@@ -69,6 +69,9 @@ if($content=="AllAccountsSummary")
 				</table>
 				</td>
 			</tr>
+		<br></br>
+		<br></br>
+		<br></br>
 
 		</table>
 		</form>
@@ -76,6 +79,7 @@ if($content=="AllAccountsSummary")
 	</td>
 	</tr>
 
+	
 	<tr>
 		<td>
 		<form name=sumform0 method="post">

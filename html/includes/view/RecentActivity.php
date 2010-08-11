@@ -41,7 +41,7 @@ if(isset($_SESSION)){
 					<TD class='tableDataRightC' valign=top>Available Balance CAD</TD>
 				</TR><tr><td></td></tr><tr></tr></table>";
 	
-	echo "<br><br>";
+	echo "<br><br><br><br>";
 	
 	/*
 	 * print out the Page header and transaction table header
