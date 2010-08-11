@@ -285,10 +285,18 @@ if($content=="Banking"){?>
 	AND `servicecategory`.`servicecategoryid` = `accounttype`.`servicecategoryid`
 	AND `servicetype`.`servicetypeid` = `accounttype`.`servicetypeid`
 	ORDER BY `accounttype`.`accountname` ASC";
-	$db->query($queryToDo);
-	$db->close();
-	print_r($db->queryFirstResult);
-	echo $db->queryFirstResult[accountname];
+	for($count=0;$count<$db->queryResultsCount;$count++)
+	{
+			$row=mysql_fetch_array($dbC->queryResultsResource);
+			print_r($row);//will print out the entire row in an array so that you can see which elements you want to use, generally the names of the elements match the database atrribute names
+			echo "Charging ".$row[accounttypeid]."<br/>";
+	}
+	
+	
+//	$db->query($queryToDo);
+//	$db->close();
+//	print_r($db->queryFirstResult);
+//	echo $db->queryFirstResult[accountname];
 }
 elseif($content=="TFSA"){
 	echo "<table><tbody>
