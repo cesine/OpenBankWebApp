@@ -39,7 +39,7 @@ if(isset($_SESSION)){
 					<td class='fieldTitleLeftC' valign=top>$selectedAccountId<br></td>
 					<TD class='fieldTitleRightC' valign=top>$currentBalance</TD>
 					<TD class='fieldTitleRightC' valign=top>Available Balance CAD</TD>
-				</TR><tr></tr><tr></tr></table>";
+				</TR><tr><td></td></tr><tr></tr></table>";
 	
 	/*
 	 * print out the Page header and transaction table header
