@@ -1,6 +1,6 @@
 drop event chargemonthlyfee;
 create event chargemonthlyfee 
-on schedule every 1 minute
+on schedule every 1 month
 enable
 do call chargemonthly;
 
