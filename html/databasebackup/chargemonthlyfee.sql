@@ -17,7 +17,9 @@ BEGIN
 	DECLARE newbalance DECIMAL;
 	DECLARE account INT;
 	DECLARE q TEXT;
-	DECLARE cursor1 CURSOR FOR SELECT a.clientaccountid, a.currentbalance, b.monthlyfee FROM `clientaccount` a, `bankingplans` b WHERE a.accounttypeid=b.accounttypeid AND a.accounttypeid=1;
+	DECLARE cursor1 CURSOR FOR SELECT a.clientaccountid, a.currentbalance, b.monthlyfee FROM `clientaccount` a, `bankingplans` b WHERE a.accounttypeid=b.accounttypeid 
+UNION 
+SELECT a.clientaccountid, a.currentbalance, b.monthlyfee FROM `clientaccount` a, `borrowingplans` b WHERE a.accounttypeid=b.accounttypeid ;
 	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done=1;
 
  	SET newbalance =2;
